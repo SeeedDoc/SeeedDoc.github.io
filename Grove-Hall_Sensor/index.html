@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Grove Hall Sensor - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Grove Hall Sensor";
+    var mkdocs_page_input_path = "Grove-Hall_Sensor.md";
+    var mkdocs_page_url = "/Grove-Hall_Sensor/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove 3 Axis Digital Gyro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove EL Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove EMG Detector</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove GSR Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove Gas Sensor MQ2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove Gas Sensor MQ3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove Gas Sensor MQ5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove Gas Sensor MQ9</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove Gas Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Grove Hall Sensor</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#grove-hall-sensor">Grove - Hall Sensor</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#version-tracker">Version Tracker</a></li>
+                
+                    <li><a class="toctree-l4" href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#specifications">Specifications</a></li>
+                
+                    <li><a class="toctree-l4" href="#application-ideas">Application Ideas</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-started">Getting Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+                    <li><a class="toctree-l4" href="#help-us-make-it-better">Help us make it better</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove High Temperature Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove I2C FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove I2C Hub</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove I2C Motor Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove I2C Motor Driver V1.3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove I2C Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove IMU 10DOF</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove NFC Tag</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove Speaker</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove Switch P</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove Variable Color LED</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi R232 Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Grove Hall Sensor</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <!-- 
++++
+title       = "Grove - Hall Sensor"
++++
+ -->
+
+<h1 id="grove-hall-sensor">Grove - Hall Sensor</h1>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/img/Grove-Hall_Sensor_New.jpg" /></p>
+<h2 id="introduction">Introduction</h2>
+<p>The Hall sensor is based on Hall Effect, which is the production of a voltage difference across an electrical conductor, transverse to an electric current in the conductor and a magnetic field perpendicular to the current. There is a continuous-time switch on this Grove. The output of these devices switches low (turns on) when a magnetic field (south polarity) perpendicular to the Hall sensor exceeds the operate point threshold BOP, and it switches high (turn off) when the magnetic field disappears. The twig can be used to measure RPM.</p>
+<p><a href="http://www.seeedstudio.com/depot/grove-hall-sensor-p-965.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
+<h2 id="version-tracker">Version Tracker</h2>
+<table>
+<thead>
+<tr>
+<th>Revision</th>
+<th>Descriptions</th>
+<th>Release</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v0.9b</td>
+<td>Initial public release</td>
+<td>3,Oct,2011</td>
+</tr>
+</tbody>
+</table>
+<h2 id="features">Features</h2>
+<ul>
+<li>Grove Compatible Interface</li>
+<li>400ns transition period for rise and fall.</li>
+<li>Continuous-time hall effect sensor</li>
+<li>Reverse battery protection</li>
+</ul>
+<h2 id="specifications">Specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Min</th>
+<th>Typical</th>
+<th>Max</th>
+<th>Unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supply Voltage</td>
+<td>3.8</td>
+<td>5.0</td>
+<td>24</td>
+<td>V</td>
+</tr>
+<tr>
+<td>Supply Current</td>
+<td>4.1</td>
+<td>-</td>
+<td>24</td>
+<td>mA</td>
+</tr>
+<tr>
+<td>Operating Temperature</td>
+<td>-40</td>
+<td>-</td>
+<td>85</td>
+<td>ºC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-ideas">Application Ideas</h2>
+<ul>
+<li>RPM meter.</li>
+<li>Simple dc motor.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>The Hall Sensor is used by utilizing the external interrupts available on the arduino/seeeduino. In this example we are using interrupt 0, found on digital pin 2. For other interrupts, see the <a href="http://www.arduino.cc/en/Reference/AttachInterrupt">attachInterrupt()</a>.</p>
+<ul>
+<li>Connect the Hall Sensor to Digital port 2 of the <a href="../Grove-Base_Shield">Grove - Base Shield</a> using a 4 pin cable and connect Grove-LED to Digital Port 4.</li>
+<li>Then connect Arduino to PC by using a USB cable.</li>
+<li>Download the <a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/res/Grove-Hall_Sensor_Demo_Code.zip">Hall Sensor Code</a></li>
+<li>Open one of two code. For example Demo <strong>MagnetControlLED</strong></li>
+</ul>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/img/Hall_Sensor_Demo_Code.jpg" /></p>
+<ul>
+<li>Upload the code, Please click <a href="../Upload_Code">here</a> if you do not know how to upload.</li>
+<li>When a magnet whose south pole is facing up is approaching to the onboard sensor, the LED will be turned on. Otherwise, the LED will be turned off.</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/res/Twig_Hall_Sensor_v0.9b.zip">Grove-Hall Sensor Eagle File</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/res/Grove-Hall_Sensor_Demo_Code.zip">Hall Sensor Demo Code</a></li>
+<li><a href="http://www.allegromicro.com/en/Products/Part_Numbers/1101/1101.pdf">A1101 datasheet</a></li>
+</ul>
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/L2FCSPY" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_Hall_Sensor"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Hall_Sensor -->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Grove-High_Temperature_Sensor/" class="btn btn-neutral float-right" title="Grove High Temperature Sensor">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Grove-Gas_Sensor/" class="btn btn-neutral" title="Grove Gas Sensor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Grove-Gas_Sensor/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Grove-High_Temperature_Sensor/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

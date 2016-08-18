@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Arch Max v1.1 - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Arch Max v1.1";
+    var mkdocs_page_input_path = "Arch_Max_v1.1.md";
+    var mkdocs_page_url = "/Arch_Max_v1.1/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Arch Max v1.1</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#arch-max-v11">Arch Max v1.1</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#version-tracker">Version Tracker</a></li>
+                
+                    <li><a class="toctree-l4" href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#specifications">Specifications</a></li>
+                
+                    <li><a class="toctree-l4" href="#hardware-overview">Hardware Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#debug">Debug</a></li>
+                
+                    <li><a class="toctree-l4" href="#update-or-restore-firmware">Update or Restore Firmware</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+                    <li><a class="toctree-l4" href="#help-us-make-it-better">Help us make it better</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove 3 Axis Digital Gyro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove EL Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove EMG Detector</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove GSR Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove Gas Sensor MQ2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove Gas Sensor MQ3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove Gas Sensor MQ5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove Gas Sensor MQ9</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove Gas Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove Hall Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove High Temperature Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove I2C FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove I2C Hub</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove I2C Motor Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove I2C Motor Driver V1.3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove I2C Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove IMU 10DOF</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove NFC Tag</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove Speaker</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove Switch P</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove Variable Color LED</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi R232 Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Arch Max v1.1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <!-- 
++++
+title       = "Arch Max v1.1"
++++
+ -->
+
+<h1 id="arch-max-v11">Arch Max v1.1</h1>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/img/Arch_Max_v1.1_product_view.jpg" /></p>
+<h2 id="introduction">Introduction</h2>
+<p>The Arch Max is a mbed enabled development board for rapid prototyping. It is based on an STM32F407VET6 microcontroller with an ARM Cortex-M4F core running at 168MHz. It provides <a href="https://en.wikipedia.org/wiki/Joint_Test_Action_Group#Serial_Wire_Debug">Serial Wire Debug</a>(SWD) debug, drag-and-drop programming and USB serial communication.</p>
+<p><a href="http://www.seeedstudio.com/depot/Arch-Max-v11-p-2632.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
+<h2 id="version-tracker">Version Tracker</h2>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Version</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../Arch_Max">Arch Max v1.0</a></td>
+<td>v1.0</td>
+<td>5V cannot be powered by USB, user should connect to ext-power</td>
+</tr>
+<tr>
+<td>Arch Max v1.1</td>
+<td>v1.1</td>
+<td>5V cannot be powered by USB</td>
+</tr>
+</tbody>
+</table>
+<h2 id="features">Features</h2>
+<ul>
+<li>mbed enabled<ul>
+<li>Online development tools(include IDE)</li>
+<li>Complete and straightforward C/C++ SDK</li>
+<li>Massive examples and tutorials</li>
+</ul>
+</li>
+<li>High-performance STM32F407VET6<ul>
+<li>ARM Cortex-M4 MCU with FPU of 168MHz</li>
+<li>512 KB Flash memory, 192 KB RAM</li>
+</ul>
+</li>
+<li>On-board programming and debug<ul>
+<li>Drag-and-drop programming</li>
+<li>USB serial communication</li>
+<li>SWD debug with GDB+ pyOCD/OpenOCD, Keil or IAR</li>
+</ul>
+</li>
+<li>Arduino form factor, compatible with lots of shields</li>
+<li>Built-in Ethernet port, USB and SD card slot for Internet connectivity and data exchange</li>
+</ul>
+<h2 id="specifications">Specifications</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter/Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Work Voltage</td>
+<td>5V</td>
+</tr>
+<tr>
+<td>Microcontroller</td>
+<td>STM32F407VET6</td>
+</tr>
+<tr>
+<td>Flash Memory</td>
+<td>512KB</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>192KB</td>
+</tr>
+<tr>
+<td>UART</td>
+<td>4</td>
+</tr>
+<tr>
+<td>I2C</td>
+<td>3</td>
+</tr>
+<tr>
+<td>SPI</td>
+<td>3</td>
+</tr>
+<tr>
+<td>CAN</td>
+<td>2</td>
+</tr>
+<tr>
+<td>SDIO</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Camera interface</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Eth</td>
+<td>1</td>
+</tr>
+<tr>
+<td>ADC Channels</td>
+<td>8</td>
+</tr>
+<tr>
+<td>I/O pins</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Digital I/O Max Input Voltage</td>
+<td>5.0V</td>
+</tr>
+<tr>
+<td>Diameter</td>
+<td>90mm x 44mm</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hardware-overview">Hardware Overview</h2>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/img/Arch_Max_Pinout.png" /></p>
+<h2 id="usage">Usage</h2>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/img/Get_started_with_mbed.png" /></p>
+<ol>
+<li>Click <a href="https://developer.mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeed-Arch-MAX">here</a> to login or signup to mbed</li>
+<li>Import the mbed_blinky program</li>
+<li>Click the <strong>Compile</strong> icon of the top toolbar to compile the program, then download a compiled hex file.</li>
+<li>Drag-n-drop the downloaded bin file into the mbed disk</li>
+</ol>
+<p>You can open <strong>main.cpp</strong> to change the program. For example, use the following code to blink the LED every 0.1 second</p>
+<pre><code>    #include &quot;mbed.h&quot;
+
+    DigitalOut led(LED1);          // on-board led is connected to D13
+
+    int main()
+    {
+        while (true) {
+            led = !led;
+            wait(0.1);
+        }
+    }
+</code></pre>
+
+<h2 id="debug">Debug</h2>
+<p>To enable SWD debug or to get debug message through USB Virtual serial, please install <a href="https://developer.mbed.org/handbook/Windows-serial-configuration">a driver from mbed</a>.</p>
+<h2 id="update-or-restore-firmware">Update or Restore Firmware</h2>
+<p>The latest firmware version for the Arch Max is v0203 built at Oct 8, 2014. To check your firmware version and built date, open the mbed.HTM file of your mbed disk in a text editor.</p>
+<p><a href="https://developer.mbed.org/media/uploads/yihui/lpc11u35_nrf51822_if_mbed_v203_20141008.bin">The firmware v0203 2014-10-08 for Arch Max</a></p>
+<ul>
+<li>Press and hold the Arch Max's button to power it on.</li>
+<li>A CRP DISABLD disk will show<ul>
+<li>On Windows, replace firmware.bin with the above firmware</li>
+<li>On Linux/Mac, enter command: <strong>dd if={new_firmware.bin} of={firmware.bin} conv=notrunc</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/res/ARCH_Max.zip">Schematics Eagle file for ARCH Max</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/res/Arch_Max.pdf">Schematics PDF file for ARCH Max</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/res/STM32F407.pdf">STM32F407 datasheet</a></li>
+</ul>
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/XY55DPR" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Arch_Max_v1.1"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_Max_v1.1 -->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Arch_Pro/" class="btn btn-neutral float-right" title="Arch Pro">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Arch_Link/" class="btn btn-neutral" title="Arch Link"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Arch_Link/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Arch_Pro/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

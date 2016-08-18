@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Grove Touch Sensor - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Grove Touch Sensor";
+    var mkdocs_page_input_path = "Grove-Touch_Sensor.md";
+    var mkdocs_page_url = "/Grove-Touch_Sensor/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove 3 Axis Digital Gyro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove EL Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove EMG Detector</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove GSR Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove Gas Sensor MQ2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove Gas Sensor MQ3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove Gas Sensor MQ5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove Gas Sensor MQ9</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove Gas Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove Hall Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove High Temperature Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove I2C FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove I2C Hub</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove I2C Motor Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove I2C Motor Driver V1.3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove I2C Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove IMU 10DOF</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove NFC Tag</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove Speaker</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove Switch P</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Grove Touch Sensor</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#grove-touch-sensor">Grove - Touch Sensor</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#specifications">Specifications</a></li>
+                
+                    <li><a class="toctree-l4" href="#demonstration">Demonstration</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+                    <li><a class="toctree-l4" href="#help-us-make-it-better">Help us make it better</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove Variable Color LED</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi R232 Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Grove Touch Sensor</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <!-- 
++++
+title       = "Grove - Touch Sensor"
++++
+ -->
+
+<h1 id="grove-touch-sensor">Grove - Touch Sensor</h1>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Touch_Sensor/img/Grove-Touch_Sensor.jpg" /></p>
+<h2 id="introduction">Introduction</h2>
+<p>Grove - Touch Sensor enables you to replace press with touch. It can detect the change in capacitance when a finger is near by. That means no matter your finger directly touches the pad or just stays close to the pad, Grove - Touch Sensor would outputs HIGH also.</p>
+<p><a href="http://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
+<h2 id="specifications">Specifications</h2>
+<ul>
+<li>Operating Voltage: 2.0 - 5.5V</li>
+<li>Operating Current(Vcc=3V):1.5 - 3.0μA</li>
+<li>Operating Current(VDD=3V):3.5 - 7.0μA</li>
+<li>Output Response Time: 60 - 220mS</li>
+<li>Used Chipset: TTP223-BA6</li>
+</ul>
+<p><strong>Option features</strong></p>
+<table>
+<thead>
+<tr>
+<th>AHLB</th>
+<th>TOG</th>
+<th>LPMB</th>
+<th>MOTB</th>
+<th>SLRFTB</th>
+<th>RST</th>
+<th>Q</th>
+<th>OPDO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Output Active High / Low</td>
+<td>Toggle mode</td>
+<td>Power Mode</td>
+<td>Max. On Time</td>
+<td>Sampling length</td>
+<td>RESET PIN</td>
+<td>CMOS Output</td>
+<td>Open Drain Mode</td>
+</tr>
+<tr>
+<td>V</td>
+<td>V</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>X</td>
+<td>V</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Active High</td>
+<td>Disabled</td>
+<td>LOW</td>
+<td>Infinite</td>
+<td>1.6 msec</td>
+<td>N/A</td>
+<td>Present</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<h2 id="demonstration">Demonstration</h2>
+<h3 id="with-arduino">With <a href="../index.php?title=ArduinoAndaction=editAndredlink=1">Arduino</a></h3>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Touch_Sensor/img/Touch_LED.jpg" />
+This demo is going to show you how to turn on/off an LED.</p>
+<p><strong>Demo Code:</strong></p>
+<pre><code>const int TouchPin=9;
+const int ledPin=12;
+void setup() {
+pinMode(TouchPin, INPUT);
+pinMode(ledPin,OUTPUT);
+} 
+ 
+void loop() {
+int sensorValue = digitalRead(TouchPin);
+if(sensorValue==1)
+{
+digitalWrite(ledPin,HIGH);
+}
+else
+{
+digitalWrite(ledPin,LOW);
+}
+}
+</code></pre>
+
+<h3 id="with-raspberry-pi">With <a href="../GrovePiPlus" title="GrovePi+">Raspberry Pi</a></h3>
+<ol>
+<li>You should have a raspberry pi and a grovepi or grovepi+.</li>
+<li>You should have completed configuring the development environment, otherwise follow <a href="../GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.</li>
+<li>
+<p>Connection</p>
+<ul>
+<li>Plug the sensor to grovepi socket D4 by using a grove cable.</li>
+</ul>
+</li>
+<li>
+<p>Navigate to the demos' directory:</p>
+</li>
+</ol>
+<pre><code>    cd yourpath/GrovePi/Software/Python/
+</code></pre>
+
+<ul>
+<li>To see the code</li>
+</ul>
+<pre><code>    nano grove_touch_sensor.py   # &quot;Ctrl+x&quot; to exit #
+</code></pre>
+
+<pre><code>    import time
+    import grovepi
+
+    # Connect the Grove Touch Sensor to digital port D4
+    # SIG,NC,VCC,GND
+    touch_sensor = 4
+
+    grovepi.pinMode(touch_sensor,&quot;INPUT&quot;)
+
+    while True:
+        try:
+            print grovepi.digitalRead(touch_sensor)
+            time.sleep(.5)
+
+        except IOError:
+            print &quot;Error&quot;
+
+</code></pre>
+
+<p>5.Run the demo.</p>
+<pre><code>    sudo python grove_touch_sensor.py
+</code></pre>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Touch_Sensor/res/Touch_sensor_Eagle_File.zip">Eagle Files</a></li>
+<li><a href="http://garden.seeedstudio.com/images/d/d5/TTP223.pdf">TTP223pdf</a></li>
+<li><a href="../Upload_Code">how to upload code</a></li>
+</ul>
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/G9X9752" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_Touch_Sensor"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Touch_Sensor -->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Grove-Variable_Color_LED/" class="btn btn-neutral float-right" title="Grove Variable Color LED">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Grove-Switch-P/" class="btn btn-neutral" title="Grove Switch P"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Grove-Switch-P/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Grove-Variable_Color_LED/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

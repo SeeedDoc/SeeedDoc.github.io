@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Arch BLE - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Arch BLE";
+    var mkdocs_page_input_path = "Arch_BLE.md";
+    var mkdocs_page_url = "/Arch_BLE/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Arch BLE</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#arch-ble">Arch BLE</a></li>
+                
+                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
+                
+                    <li><a class="toctree-l4" href="#features">Features</a></li>
+                
+                    <li><a class="toctree-l4" href="#hardware-overview">Hardware Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#get-started">Get Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#applications">Applications</a></li>
+                
+                    <li><a class="toctree-l4" href="#update-or-restore-firmware">Update or Restore Firmware</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+                    <li><a class="toctree-l4" href="#help-us-make-it-better">Help us make it better</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove 3 Axis Digital Gyro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove EL Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove EMG Detector</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove GSR Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove Gas Sensor MQ2</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove Gas Sensor MQ3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove Gas Sensor MQ5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove Gas Sensor MQ9</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove Gas Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove Hall Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove High Temperature Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove I2C FM Receiver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove I2C Hub</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove I2C Motor Driver</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove I2C Motor Driver V1.3</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove I2C Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove IMU 10DOF</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove NFC Tag</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove Speaker</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove Switch P</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove Touch Sensor</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove Variable Color LED</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi R232 Board v1.0</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Arch BLE</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <!--
++++
+title       = "Arch BLE"
++++
+ -->
+
+<h1 id="arch-ble">Arch BLE</h1>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Arch_BLE.jpg" /></p>
+<h2 id="introduction">Introduction</h2>
+<p>Arch BLE is an mbed enabled development board based Nordic nRF51822. With Arduino form factor and Grove connectors, it is extremely easy to create a bluetooth low energy device.</p>
+<p>The nRF51822 is a powerful multi-protocol single chip solution for ULP wireless applications. It incorporates Nordic’s latest best-in-class performance radio transceiver, an ARM Cortex M0 MCU and 256kB flash + 16kB RAM memory. The nRF51822 supports Bluetooth® low energy and 2.4 GHz protocol stacks.</p>
+<p><a href="https://www.seeedstudio.com/Arch-BLE-p-1998.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>mbed enabled<ul>
+<li>Online IDE</li>
+<li>Easy to use C/C++ SDK</li>
+<li>Handy libraries</li>
+</ul>
+</li>
+<li>CMSIS DAP based on LPC11U35<ul>
+<li>Drag-n-drop programming</li>
+<li>Debug using CMSIS DAP standard</li>
+<li>USB virtual serial for communication</li>
+</ul>
+</li>
+<li>Arduino form factor with Grove connectors</li>
+<li>Nordic nRF51822 Multi-protocol Bluetooth® 4.0 low energy/2.4GHz RF SoC<ul>
+<li>ARM Cortex M0 processor</li>
+<li>256kB flash/16kB RAM</li>
+<li>Configurable I/O mapping for digital I/O</li>
+</ul>
+</li>
+<li>USB Micro B connector</li>
+</ul>
+<h2 id="hardware-overview">Hardware Overview</h2>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Arch_BLE_Pinout.png" /></p>
+<h2 id="get-started">Get Started</h2>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Get_started_with_mbed.png" /></p>
+<ol>
+<li>Click <a href="https://developer.mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeed-Arch-BLE">this link</a> to <strong>login or signup to mbed</strong></li>
+<li>Import the mbed_blinky program</li>
+<li>Click the <strong>Compile</strong> icon of the top toolbar to compile the program, then download a compiled hex file.</li>
+<li>Drag-n-drop the downloaded hex file into the MBED disk</li>
+</ol>
+<p>You can open <strong>main.cpp</strong> to change the program. For example, use the following code to blink the LED every 0.1s</p>
+<pre><code>    #include &quot;mbed.h&quot;
+
+    DigitalOut led(p30);           // on-board led is connected to p30
+
+    int main()
+    {
+        while (true) {
+            led = !led;
+            wait(0.1);
+        }
+    }
+</code></pre>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+If you are get a compiling error that 'device.h' is not found, try to update the mbed library to the latest revision in your program.
+</div>
+
+<h2 id="applications">Applications</h2>
+<ul>
+<li>
+<p>Color Pixels, a colorful LED strip, can be controlled by mobile phone.</p>
+<ul>
+<li>Hardware<ul>
+<li><a href="http://www.seeedstudio.com/depot/Arch-BLE-p-1998.html?cPath=19_21">Arch BLE</a></li>
+<li><a href="http://www.seeedstudio.com/depot/Digital-RGB-LED-FlexiStrip-30-LED-1-Meter-p-1665.html">Digital RGB LED Strip</a></li>
+<li>Android device with BLE</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Ble_color_pixels_bb.png" />
+<img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Color_pixels_app.png" /></p>
+<ul>
+<li>
+<p>Make it run</p>
+<ol>
+<li>Download <a href="http://tangram.qiniudn.com/BLE_Color_Pixels_ARCH_BLE.hex">BLE_Color_Pixels_Arch_BLE.hex</a></li>
+<li>Copy the hex file to the MBED disk of your Arch BLE</li>
+<li>Download <a href="http://tangram.qiniudn.com/seeed_ble_color_pixels.apk">the Color Pixels Android app</a></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p>If you want to change the program, click <a href="https://mbed.org/compiler/#import:/teams/Seeed/code/BLE_Color_Pixels/;platform:Seeed-Arch-BLE">this link</a> to import the Color Pixels program to mbed online IDE.</p>
+<p>If the BLE device is disconnected frequently, we can improve the stability by changing the BLE parameters - Advertising Duration (main.cpp), Min Interval and Max Interval (nRF51822/projectconfig.h)</p>
+<pre><code>#define CFG_GAP_CONNECTION_MIN_INTERVAL_MS           20                     /**&lt; Minimum acceptable connection interval */
+#define CFG_GAP_CONNECTION_MAX_INTERVAL_MS          200                     /**&lt; Maximum acceptable connection interval */
+</code></pre>
+
+<h2 id="update-or-restore-firmware">Update or Restore Firmware</h2>
+<p>The latest firmware version for the Arch BLE is v0203 built at Oct 08 2014. To check your firmware version and built date, open the MBED.HTM file of your MBED disk in a text editor.</p>
+<p>Change log:</p>
+<ul>
+<li>2014-06-26: First version</li>
+<li>2014-08-25: Support to drag-n-drop hex file generated by gcc toolchain and without softdevice</li>
+<li>2014-10-08: Use USB EJECT INSET instead of reconnecting USB, increase intel hex data line buffer (from 64 bytes to 128 bytes)</li>
+</ul>
+<p>Known issues:</p>
+<ul>
+<li>Issues when <em>directly</em> downloading the hex file into the MBED disk with the Chrome browser. The reason is Chrome creates a temporary file while downloading. If you are using Chrome, please save the hex file to a different location and <em>then</em> copy it to the MBED disk.</li>
+</ul>
+<p>Firmware:</p>
+<ul>
+<li><a href="https://developer.mbed.org/media/uploads/yihui/lpc11u35_nrf51822_if_mbed_v203_20141008.bin">The firmware v0203 2014-10-08 for Arch BLE</a></li>
+<li><a href="https://developer.mbed.org/media/uploads/yihui/lpc11u35_nrf51822_if_mbed_v203_20140825.bin">The firmware v0203 2014-08-25 for Arch BLE</a></li>
+</ul>
+<p>To flash a new firmware:</p>
+<ul>
+<li>Hold the Arch BLE's button and power it ON.</li>
+<li>A CRP DISABLD disk will pop up.<ul>
+<li>On Windows, replace firmware.bin with the above firmware.</li>
+<li>On Linux/Mac, use command: <strong>dd if={new_firmware.bin} of={firmware.bin} conv=notrunc</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/res/Arch_BLE_v1.0_pdf.pdf">Schematic pdf</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/res/Arch_BLE_v1.0_Eagle.zip">Eagle file</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/res/Lpc11u35_nrf51822_if_mbed.bin.zip">LPC11U35 Firmware</a></li>
+<li><a href="http://tangram.qiniudn.com/seeed_ble_color_pixels.apk">Seeed ble color pixels app for Android</a></li>
+<li><a href="https://github.com/Seeed-Studio/ble_color_pixels">Sources of ble color pixels app</a></li>
+</ul>
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/X2N5S8Y" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Arch_BLE"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_BLE -->
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Arch_GPRS_V2/" class="btn btn-neutral float-right" title="Arch GPRS V2">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Arch_GPRS_V2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
