@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Grove - IMU 10DOF </title>
+
+  
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+  <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
+  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body class="theme-base-0b">
+<div class="sidebar">
+    <a href="https://seeeddoc.github.io/hugo/">
+    <h2>Seeed Wiki</h2>
+    </a>
+
+    
+    
+    <div class="toc">
+       
+    </div>
+    
+    </br> 
+    </br>
+     <p>Copyright &copy; 2016 Seeed Development Limited </p>
+</div>
+
+
+<div class="content container">
+  <div class="page">
+    
+
+<h1 id="grove-imu-10dof">Grove - IMU 10DOF</h1>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/img/Grove-imu-10dof.JPG" alt="" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Grove - IMU 10DOF is a combination of <a href="../Grove-IMU_9DOF">Grove - IMU 9DOF</a> and <a href="../Grove-Barometer_Sensor-BMP180 &quot;Grove - Barometer Sensor (BMP180">Grove - Barometer Sensor (BMP180)</a>&rdquo;). This module is base on MPU-9250 and BMP180, the MPU-9250 is a 9-axis MotionTracking device that combines a 3-axis gyroscope, 3-axis accelerometer, 3-axis magnetometer and a Digital Motion Processor(DMP), and BMP180 is a high precision, ultra-low power digital pressure sensors for consumer applications. This module is very suitable for the application of smartphones, tablets and wearable devices.</p>
+
+<p><a href="http://www.seeedstudio.com/Grove-IMU-10DOF-p-2386.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
+
+<h2 id="specifications">Specifications</h2>
+
+<ul>
+<li>I2C interface</li>
+<li>MPU-9250 I2C address selectable</li>
+<li>Low Power Consumption</li>
+<li>400kHz Fast Mode I2C for communicating with all registers</li>
+<li>Digital-output X-, Y-, and Z-Axis angular rate sensors (gyroscopes) with a user-programmable full-scale range of ±250, ±500, ±1000, and ±2000°/sec</li>
+<li>Digital-output 3-Axis accelerometer with a programmable full scale range of ±2g, ±4g, ±8g and ±16g</li>
+<li>Digital-output magnetometer with a full scale range of ±4800uT</li>
+<li>Digital-output barometer with range of 300 ~ 1100hPa(+9000m ~ -500m relating to sea level)</li>
+<li>Dimensions: 25.43mm x 20.35mm</li>
+</ul>
+
+<h2 id="hardware-overview">Hardware Overview</h2>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/img/Grove-imu10dof-layout.jpg" alt="" /></p>
+
+<ul>
+<li>1：MPU-9250 I2C address select Pad, default connected <strong>a</strong> and <strong>b</strong> address is 0x68, if connect <strong>b</strong> and <strong>c</strong> address is 0x69</li>
+<li>2：MPU-9250 interrupt pin, the interrupt should be configured, available interrupt sources are: motion detection, fifo overflow, data ready, i2c master error</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>We will provide an example here to show you how to use this sensor.</p>
+
+<h3 id="hardware-installation">Hardware Installation</h3>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/img/Imu-10dof-hardware-connection.JPG" alt="" /></p>
+
+<h3 id="software-setup">Software Setup</h3>
+
+<ol>
+<li>Download the library from <a href="https://github.com/Seeed-Studio/IMU_10DOF">https://github.com/Seeed-Studio/IMU_10DOF</a>.</li>
+<li>Unzip it into the libraries file of Arduino IDE by the path.</li>
+<li>Open the code directly by the path: File -&gt; Example -&gt; IMU_10DOF_Test.</li>
+<li>Upload the code. Note that you should select the correct board type and COM port.</li>
+</ol>
+
+<p>You can see:
+<img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/img/Imu-10dof-test.png" alt="" /></p>
+
+<p><strong>Orientation of Axes</strong>
+The diagram below shows the orientation of the axes of sensitivity and the polarity of rotation.
+<img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/img/Imu-10dof-dir-axes.png" alt="" /></p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/res/Grove-IMU_10DOF_v1.0_sch_pcb.zip">Grove - IMU 10DOF v1.0 eagle file</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/res/Grove-IMU_10DOF_v1.0.pdf">Grove - IMU 10DOF v1.0 schematics pdf file</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/res/Grove-IMU_10DOF_V1.1_Eagle_file.zip">Grove - IMU 10DOF v1.1 eagle file</a></li>
+<li><a href="https://github.com/Seeed-Studio/IMU_10DOF">Get library from github</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/res/BMP180.pdf">BMP180 datasheet</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IMU_10DOF/res/MPU-9250A_Product_Specification.pdf">MPU-9250 datasheet</a></li>
+</ul>
+
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/GFPKPLY" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_IMU_10DOF"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_IMU_10DOF -->
+
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
+<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<script>
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.page',
+        headingSelector: 'h1, h2, h3',
+      });
+</script>
+</body>
+</html>
+

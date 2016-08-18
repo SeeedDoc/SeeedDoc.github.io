@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Grove - Touch Sensor </title>
+
+  
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+  <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
+  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body class="theme-base-0b">
+<div class="sidebar">
+    <a href="https://seeeddoc.github.io/hugo/">
+    <h2>Seeed Wiki</h2>
+    </a>
+
+    
+    
+    <div class="toc">
+       
+    </div>
+    
+    </br> 
+    </br>
+     <p>Copyright &copy; 2016 Seeed Development Limited </p>
+</div>
+
+
+<div class="content container">
+  <div class="page">
+    
+
+<h1 id="grove-touch-sensor">Grove - Touch Sensor</h1>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Touch_Sensor/img/Grove-Touch_Sensor.jpg" alt="" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Grove - Touch Sensor enables you to replace press with touch. It can detect the change in capacitance when a finger is near by. That means no matter your finger directly touches the pad or just stays close to the pad, Grove - Touch Sensor would outputs HIGH also.</p>
+
+<p><a href="http://www.seeedstudio.com/Grove-Touch-Sensor-p-747.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
+
+<h2 id="specifications">Specifications</h2>
+
+<ul>
+<li>Operating Voltage: 2.0 - 5.5V</li>
+<li>Operating Current(Vcc=3V):1.5 - 3.0μA</li>
+<li>Operating Current(VDD=3V):3.5 - 7.0μA</li>
+<li>Output Response Time: 60 - 220mS</li>
+<li>Used Chipset: TTP223-BA6</li>
+</ul>
+
+<p><strong>Option features</strong></p>
+
+<table>
+<thead>
+<tr>
+<th>AHLB</th>
+<th>TOG</th>
+<th>LPMB</th>
+<th>MOTB</th>
+<th>SLRFTB</th>
+<th>RST</th>
+<th>Q</th>
+<th>OPDO</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Output Active High / Low</td>
+<td>Toggle mode</td>
+<td>Power Mode</td>
+<td>Max. On Time</td>
+<td>Sampling length</td>
+<td>RESET PIN</td>
+<td>CMOS Output</td>
+<td>Open Drain Mode</td>
+</tr>
+
+<tr>
+<td>V</td>
+<td>V</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>X</td>
+<td>V</td>
+<td>X</td>
+</tr>
+
+<tr>
+<td>Active High</td>
+<td>Disabled</td>
+<td>LOW</td>
+<td>Infinite</td>
+<td>1.6 msec</td>
+<td>N/A</td>
+<td>Present</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="demonstration">Demonstration</h2>
+
+<h3 id="with-arduino-index-php-title-arduinoandaction-editandredlink-1">With <a href="../index.php?title=ArduinoAndaction=editAndredlink=1">Arduino</a></h3>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Touch_Sensor/img/Touch_LED.jpg" alt="" />
+This demo is going to show you how to turn on/off an LED.</p>
+
+<p><strong>Demo Code:</strong></p>
+
+<pre><code>const int TouchPin=9;
+const int ledPin=12;
+void setup() {
+pinMode(TouchPin, INPUT);
+pinMode(ledPin,OUTPUT);
+} 
+ 
+void loop() {
+int sensorValue = digitalRead(TouchPin);
+if(sensorValue==1)
+{
+digitalWrite(ledPin,HIGH);
+}
+else
+{
+digitalWrite(ledPin,LOW);
+}
+}
+</code></pre>
+
+<h3 id="with-raspberry-pi-grovepiplus-grovepi">With <a href="../GrovePiPlus" title="GrovePi+">Raspberry Pi</a></h3>
+
+<ol>
+<li>You should have a raspberry pi and a grovepi or grovepi+.</li>
+<li>You should have completed configuring the development environment, otherwise follow <a href="../GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.</li>
+
+<li><p>Connection</p>
+
+<ul>
+<li>Plug the sensor to grovepi socket D4 by using a grove cable.</li>
+</ul></li>
+
+<li><p>Navigate to the demos&rsquo; directory:</p></li>
+</ol>
+
+<pre><code>    cd yourpath/GrovePi/Software/Python/
+</code></pre>
+
+<ul>
+<li>To see the code</li>
+</ul>
+
+<pre><code>    nano grove_touch_sensor.py   # &quot;Ctrl+x&quot; to exit #
+</code></pre>
+
+<pre><code>    import time
+    import grovepi
+
+    # Connect the Grove Touch Sensor to digital port D4
+    # SIG,NC,VCC,GND
+    touch_sensor = 4
+
+    grovepi.pinMode(touch_sensor,&quot;INPUT&quot;)
+
+    while True:
+        try:
+            print grovepi.digitalRead(touch_sensor)
+            time.sleep(.5)
+
+        except IOError:
+            print &quot;Error&quot;
+
+</code></pre>
+
+<p>5.Run the demo.</p>
+
+<pre><code>    sudo python grove_touch_sensor.py
+</code></pre>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Touch_Sensor/res/Touch_sensor_Eagle_File.zip">Eagle Files</a></li>
+<li><a href="http://garden.seeedstudio.com/images/d/d5/TTP223.pdf">TTP223pdf</a></li>
+<li><a href="../Upload_Code">how to upload code</a></li>
+</ul>
+
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/G9X9752" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_Touch_Sensor"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Touch_Sensor -->
+
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
+<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<script>
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.page',
+        headingSelector: 'h1, h2, h3',
+      });
+</script>
+</body>
+</html>
+
