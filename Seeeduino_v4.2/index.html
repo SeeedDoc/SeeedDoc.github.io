@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Seeeduino v4.2 - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Seeeduino v4.2";
+    var mkdocs_page_input_path = "Seeeduino_v4.2.md";
+    var mkdocs_page_url = "/Seeeduino_v4.2/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+        
+            
+    <ul class="subnav">
+    <li><span>Arduino</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Energy_Shield/">Energy Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Seeeduino v4.2</a>
+        
+            <ul>
+            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+            
+                <li class="toctree-l3"><a href="#version">Version</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#whats-new-in-seeeduino-v42">What's New in Seeeduino V4.2</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#application-ideas">Application Ideas</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#specification">Specification</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#install-the-driver">Install the Driver</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-started">Getting Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#getting-started-on-linux">Getting Started on Linux</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+                    <li><a class="toctree-l4" href="#faq">FAQ</a></li>
+                
+                    <li><a class="toctree-l4" href="#help-us-to-make-it-better">Help us to make it better</a></li>
+                
+            
+            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>BeagleBone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Raspberry Pi</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>LinkIt</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>mbed</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RePhone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Wio</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link/">Wio Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Node/">Wio Node</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Others</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Platform_Others/">Platform Others</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Grove</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove_System/">Grove System</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sensor</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-RTC/">Grove - RTC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Actuator</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actuator/">Actuator</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Display</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../I2C_LCD/">I2C LCD</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Communication</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communication/">Communication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GPS/">Grove - GPS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC/">Grove - NFC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>IoT</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorial</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../survey_end/">Survey</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>MakerPro</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MakerPro/">Maker Pro</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Platform &raquo;</li>
+        
+      
+        
+          <li>Arduino &raquo;</li>
+        
+      
+    
+    <li>Seeeduino v4.2</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Seeeduino v4.2</h1>
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+                <p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/cover.JPG" /></p>
+<p>Seeeduino v4 is an Open Source, Arduino-compatible ATmega328 MCU development board. We think Seeeduino v4 is one of the best Arduino derivatives/compatibles available. Seeeduino v4 is feature rich, much more stable, easy-to-use and even good looking.</p>
+<p>Seeeduino v4 is based the Arduino UNO bootloader, an ATmega16U2 as a UART-to-USB converter (basically work like an FTDI USB2UART chip). The board comes with an additional set of through-hole pads for all pins. These pads are aligned to 0.1&rdquo; grid. This makes it easy to solder additional pin-headers to plug into breadboard or create your own attachment/shield with 0.1&rdquo; dot-matrix general purpose PCBs.</p>
+<p>You can program the board via a micro-USB cable. Also, you can power the board via a DC Jack input (7 to 15V DC) is acceptable. There is a switch to choose the system&rsquo;s supply voltage either 3.3V or 5V, which is very useful if you want to set the system to 3.3V to interact with low voltage sensors.</p>
+<p>Finally, the three on-board Grove interfaces can make your board connect to Grove modules easily. Want to make something awesome, maybe just a Seeeduino v4.2 and some Groves is enough.</p>
+<h3 id="version">Version<a class="headerlink" href="#version" title="Permanent link"></a></h3>
+<p>This document applies to the following version of products:</p>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th>Released Date</th>
+<th>How to Buy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seeeduino V4.0</td>
+<td>Aug 15, 2014</td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/EOL.png" /></td>
+</tr>
+<tr>
+<td>Seeeduino V4.2</td>
+<td>Aug 24, 2015</td>
+<td><a href="http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now_small.png" /></a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="whats-new-in-seeeduino-v42">What&rsquo;s New in Seeeduino V4.2<a class="headerlink" href="#whats-new-in-seeeduino-v42" title="Permanent link"></a></h3>
+<p>There&rsquo;re many updates from V4.0 to V4.2. Listed below:</p>
+<ul>
+<li>Cancel some pad on the top left corner.</li>
+<li>Change the usb location to middle</li>
+<li>Improve DCDC circuit to get a better performance</li>
+<li>Add an I2C Grove connector</li>
+<li>Change some silkscreen and part location</li>
+</ul>
+<h2 id="application-ideas">Application Ideas<a class="headerlink" href="#application-ideas" title="Permanent link"></a></h2>
+<ul>
+<li>DIY</li>
+<li>IoT and Smart Home</li>
+<li>Robot</li>
+<li>Learning</li>
+</ul>
+<p>Here is some funny project for your reference.</p>
+<table>
+<thead>
+<tr>
+<th>Paper Man</th>
+<th>Fingerprint Lock</th>
+<th>Monitor Stand</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/project1.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/project2.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/project3.jpg" /></td>
+</tr>
+<tr>
+<td><a href="http://www.instructables.com/id/Paper-Man-a-machine-created-by-Arduino-and-NFC/">Make it Now</a></td>
+<td><a href="http://www.instructables.com/id/Door-to-Open-Source-Hardware-A-fingerprint-lock-so/">Make it Now</a></td>
+<td><a href="http://www.instructables.com/id/DIY-a-Programmable-Acrylic-Monitor-Stand/">Make it Now</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Desk Promo</th>
+<th>Tiger Machine</th>
+<th>Colorful Pyramid</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/project4.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/project5.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/project6.jpg" /></td>
+</tr>
+<tr>
+<td><a href="http://www.instructables.com/id/Desk-promo/">Make it Now</a></td>
+<td><a href="http://www.instructables.com/id/How-to-Make-Your-Tiny-Tiger-Machine/">Make it Now</a></td>
+<td><a href="http://www.instructables.com/id/DIY-a-colorful-pyramid/">Make it Now</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
+<ul>
+<li>Fully compatible with Arduino UNO</li>
+<li>ATmega328 microcontroller</li>
+<li>14 Digital I/O Pins (6 PWM outputs)</li>
+<li>6 Analog Inputs</li>
+<li>ISP Header</li>
+<li>Arduino UNO-R3 Shield Compatible</li>
+<li>Micro USB programming and power supply</li>
+<li>On-board Grove connectors</li>
+<li>3.3/5V system operation power switch</li>
+<li>Additional pads aligned to 0.1&rdquo; grid</li>
+</ul>
+<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link"></a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DC Jack Input</td>
+<td>7-12V</td>
+</tr>
+<tr>
+<td>DC Output Current</td>
+<td></td>
+</tr>
+<tr>
+<td>5V Pin</td>
+<td>With Micro USB    500mA Max</td>
+</tr>
+<tr>
+<td>5V Pin</td>
+<td>With DC Jack Power    2000mA Max</td>
+</tr>
+<tr>
+<td>3V3 Pin</td>
+<td>500mA Max</td>
+</tr>
+<tr>
+<td>DC Current per I/O Pin</td>
+<td>40mA</td>
+</tr>
+<tr>
+<td>Flash Memory</td>
+<td>32 KB</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>2 KB</td>
+</tr>
+<tr>
+<td>EEPROM</td>
+<td>1 KB</td>
+</tr>
+<tr>
+<td>Clock Speed</td>
+<td>16 MHz</td>
+</tr>
+<tr>
+<td>Dimension</td>
+<td>68.6mm x 53.4mm</td>
+</tr>
+<tr>
+<td>Weight</td>
+<td>26g</td>
+</tr>
+</tbody>
+</table>
+<h1 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part is based on Seeeduino V4.2</p>
+</div>
+<p>The images below show an overview of Seeeduino v4.2 hardware features. The pin-out and alternate functions of various pins of Seeeduino v4.2 are shown in the pin-out diagram. This could be used as a quick reference.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/hardware.JPG" /></p>
+<ul>
+<li><strong>LED-D13</strong>
+An LED is connected to D13 pin of the board. This can be used as an on-board LED indicator for programs/sketches.</li>
+<li><strong>USB Input</strong>
+USB Port is used to connect the board to your PC for programming and for powering up. Micro USB is the ubiquitous version of USB, found in most Android phones, and other devices. You probably have dozens of these cables laying around your house.</li>
+<li><strong>RX/TX Indicator</strong>
+The TX and RX LED indicators are connected to TX and RX of USB-to-UART chip. They work automatically, they let you know when the board is sending or receiving data respectively.</li>
+<li><strong>System Power Switch</strong>
+Slide switch is used to change the logic level and operating voltage of the board to either 5V or 3.3V. Nowadays, many new and great sensors are being developed to work only with 3.3V, with other Arduino boards you would need to place a logic level converter between the board and these sensor(s). With the Seeeduino V4 board all you have to do is slide the switch!</li>
+<li><strong>DC Input</strong>
+The DC power jack allows your Seeeduino board to be powered from a wall adapter so that you can supply more power to your project if needed. For example, when using DC motors or other high power devices. The DC input can be 7V-15V.</li>
+<li><strong>Reset</strong>
+This button is conveniently placed on the side to allow you to reset the Seeeduino board even when a shield is placed on top. This is not the case in other Arduino boards where the button is placed on top making it hard to access.</li>
+<li><strong>Power Pins &amp; Analog Pins</strong>
+Just like the extra Digital header pads, these extra connections are something we have personally come to realize people need in their projects, especially the power connections if you want to power more than one sensor/device without the use of a breadboard.</li>
+<li><strong>Grove Connectors</strong>
+SeeedStudio has a variety of sensors/devices that can make use of this I2C or UART connection. In addition, we sell independent Grove connectors to help you make our own sensor connections. The I2C Grove connector is also connected to analog pin A4 and A5 for SDA and SCL respectively if you would like to use those pins instead. The UART Grove connector is connected to digital pins 0 and 1 for RX and TX respectively.</li>
+<li><strong>ICSP</strong>
+This is the ICSP connection for the ATmega328P, it is located in the standard ICSP/SPI position for Arduino Uno, Due, Mega, and Leonardo compatible hardware (e.g. shields) that may use this connector. The SPI pins in this port: MISO, SCK, and MOSI, are also connected to digital pins 12, 13, and 11 respectively just like those of the Arduino Uno.</li>
+<li><strong>USB 2 Uart</strong>
+Pinout of USB-2-Uart. These pads can be used to interact with other UART devices by putting the on-board ATmega328 in reset mode. This makes Seeeduino V4.2 to be used a USB2UART utility board.</li>
+<li><strong>Additional 0.1&rdquo; Grid aligned header Pads</strong>
+Sometimes it is very convenient to connect a sensor/device to your board directly instead of going through a breadboard, or perhaps you want to solder the sensor directly to the board once you&rsquo;ve completed your project, or maybe you want to monitor the output of the pins while they&rsquo;re been used by other devices. In any cases we have added these extra pads to help you along the way. These pads are aligned in 0.1&rdquo; grid and can conveniently work with general purpose dot-matrix PCBs.</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Take gentle care in handling micro USB socket, or you might break the socket off.</p>
+</div>
+<h2 id="install-the-driver">Install the Driver<a class="headerlink" href="#install-the-driver" title="Permanent link"></a></h2>
+<p>First of all, you need to:</p>
+<ul>
+<li>
+<p><strong>Get a Micro-USB cable</strong></p>
+<ul>
+<li>You need a Micro-USB cable first; the data cable of an Android Phone will do fine.
+If you can&rsquo;t find one, you can buy one <a href="http://www.seeedstudio.com/depot/Micro-USB-Cable-48cm-p-1475.html?cPath=98_100">here</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Connect the board</strong></p>
+<ul>
+<li>The Seeeduino V4.2 automatically draw power from either the USB connection to the computer or an external power supply. Connect the Arduino board to your computer using the USB cable. The green power LED (labelled <strong>PWR</strong>) should go on.</li>
+</ul>
+</li>
+</ul>
+<h3 id="for-windows">For Windows<a class="headerlink" href="#for-windows" title="Permanent link"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This drive is available for Windows XP, Windows Vista, Windows 7, Windows 8/8.1 and Windows 10.</p>
+</div>
+<p><a href="https://github.com/Seeed-Studio/Signed_USB_Serial_Driver/archive/master.zip"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/download_driver.png" /></a></p>
+<ul>
+<li>Plug in your board and wait for Windows to begin its driver installation process. After a few moments, the process will fail, despite best efforts.</li>
+<li>Click on the Start Menu, and open up the Control Panel.</li>
+<li>While in the Control Panel, navigate to System and Security. Next, click on System. Once the System window is up, open the <strong>Device Manager</strong>.</li>
+<li>Look under Ports (COM &amp; LPT). You should find an open port named &ldquo;Seeeduino v4&rdquo;. If there is no COM &amp; LPT section, look under &ldquo;Other Devices&rdquo; for &ldquo;Unknown Device&rdquo;.</li>
+<li>Right click on the &ldquo;Seeeduino v4&rdquo; port and choose the &ldquo;Update Driver Software&rdquo; option.</li>
+<li>Next, choose the &ldquo;Browse my computer for Driver software&rdquo; option.</li>
+<li>Finally, navigate to and select the driver file named &ldquo;SeeeduinoV4.inf&rdquo;</li>
+<li>Windows will finish up the driver installation from there.</li>
+</ul>
+<h3 id="for-mac-osx">For Mac OSX<a class="headerlink" href="#for-mac-osx" title="Permanent link"></a></h3>
+<p>You don&rsquo;t need to install any drivers. </p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This part is based on Arduino 1.6.9 under Windows 10.</p>
+</div>
+<p>First of all, you need to Install an Arduino Software.</p>
+<p><a href="https://www.arduino.cc/en/Main/Software"><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Seeeduino_Stalker_V3_1/master/images/Download_IDE.png" /></a></p>
+<h3 id="launch-the-arduino-application">Launch the Arduino application<a class="headerlink" href="#launch-the-arduino-application" title="Permanent link"></a></h3>
+<p>Double-click the Arduino application (arduino.exe) you have previously downloaded. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If the Arduino Software loads in a different language, you can change it in the preferences dialog. See the <a href="https://www.arduino.cc/en/Guide/Environment#languages">Arduino Software (IDE) page</a> for details.</p>
+</div>
+<h3 id="open-the-blink-example">Open the Blink example<a class="headerlink" href="#open-the-blink-example" title="Permanent link"></a></h3>
+<p>Open the LED blink example sketch: <strong>File &gt; Examples &gt;01.Basics &gt; Blink</strong>.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/blink.png" /></p>
+<h3 id="add-seeeduino-to-your-arduino-ide">Add Seeeduino to your Arduino IDE<a class="headerlink" href="#add-seeeduino-to-your-arduino-ide" title="Permanent link"></a></h3>
+<p>Click on <strong>File &gt; Preference</strong>, and fill Additional Boards Manager URLs with below url:
+    <em>https://raw.githubusercontent.com/Seeed-Studio/Seeeduino-Boards/master/package_seeeduino_index.json</em></p>
+<p>Click OK to finish the setting. Then Click on <strong>Tools &gt; Board &gt; Boards Manager</strong>, find <strong>Seeeduino by Seeed Studio</strong>, and Install it.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/add_board.png" /></p>
+<h3 id="select-your-board">Select your board<a class="headerlink" href="#select-your-board" title="Permanent link"></a></h3>
+<p>You&rsquo;ll need to select the entry in the <strong>Tools &gt; Board</strong> menu that corresponds to your Arduino.
+Selecting a <strong>Seeeduino V4</strong>.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/select_board.png" /></p>
+<h3 id="select-your-serial-port">Select your serial port<a class="headerlink" href="#select-your-serial-port" title="Permanent link"></a></h3>
+<p>Select the serial device of the Arduino board from the Tools | Serial Port menu. This is likely to be COM3 or higher (<strong>COM1</strong> and <strong>COM2</strong> are usually reserved for hardware serial ports). To find out, you can disconnect your Arduino board and re-open the menu; the entry that disappears should be the Arduino board. Reconnect the board and select that serial port.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/select_port.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On the Mac, this should be something with <strong>/dev/tty.USBmodem</strong>.</p>
+</div>
+<h3 id="upload-the-program">Upload the program<a class="headerlink" href="#upload-the-program" title="Permanent link"></a></h3>
+<p>Now, simply click the &ldquo;Upload&rdquo; button in the environment. Wait a few seconds - you should see the RX and TX LED indicators on the board flashing. If the upload is successful, the message &ldquo;Done uploading.&rdquo; will appear in the status bar.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/upload_button.png" /></p>
+<p>A few seconds after the upload finishes, you should see the pin 13 (L) LED on the board start to blink (in orange). If it does, congratulations! You&rsquo;ve gotten Arduino up-and-running. If you have problems, please see the troubleshooting suggestions.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/SeeeduinoV4/master/images/Seeeduino_v4_2_L.jpg" /></p>
+<h2 id="getting-started-on-linux">Getting Started on Linux<a class="headerlink" href="#getting-started-on-linux" title="Permanent link"></a></h2>
+<p>For using on Linux, please go to <a href="http://playground.arduino.cc/Learning/Linux">Installing Arduino on Linux</a></p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
+<ul>
+<li>
+<p><strong>Schematic</strong></p>
+<ul>
+<li><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/SeeeduinoV4.2.zip">Seeeduino V4.2 in EAGLE file</a></li>
+<li><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/Seeeduino_v4.2_sch.pdf">Seeeduino V4.2 in PDF</a></li>
+<li><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/Seeeduino_v4.0_sch.pdf">Seeeduino V4.0 in EAGLE file</a></li>
+<li><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/Seeeduino_v4.0_sch.pdf">Seeeduino V4.0 in PDF</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Datasheet</strong></p>
+<ul>
+<li><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/ATmega328.pdf">ATmega328P</a></li>
+<li><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/ATmega16u2.pdf">ATmega16U2</a></li>
+</ul>
+</li>
+<li>
+<p><strong><a href="https://github.com/SeeedDocument/SeeeduinoV4/raw/master/resources/resources_seeeduino_v4.zip">Download above all</a></strong></p>
+</li>
+<li>
+<p><strong>References</strong></p>
+<ul>
+<li><a href="https://www.arduino.cc/en/Guide/HomePage">Getting Started with Arduino</a></li>
+<li><a href="https://www.arduino.cc/en/Reference/HomePage">Arduino Language Reference</a></li>
+<li><a href="https://www.arduino.cc/en/Main/Software">Download the Arduino Software(IDE)</a></li>
+<li><a href="https://www.arduino.cc/en/Main/FAQ">Arduino FAQ</a></li>
+<li><a href="https://www.arduino.cc/en/guide/introduction">Arduino Introduction</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Arduino">Wikipedia page for Arduino</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link"></a></h2>
+<h4 id="q1-whats-the-different-between-arduino-uno-and-seeeduino-v4">Q1. What&rsquo;s the different between Arduino UNO and Seeeduino V4<a class="headerlink" href="#q1-whats-the-different-between-arduino-uno-and-seeeduino-v4" title="Permanent link"></a></h4>
+<p>Seeeduino V4 is fully compatible with Arduino UNO. The mainly difference list below:</p>
+<ul>
+<li>Use a micro USB to power and program the board</li>
+<li>3 on-board Grove connector</li>
+<li>3.3/5V system power switch</li>
+<li>DCDC circuit instead of LDO, more efficiency</li>
+<li>Others circuit improve</li>
+</ul>
+<h4 id="q2-i-cant-upload-my-sketch-to-seeeduino-v4">Q2. I can&rsquo;t upload my sketch to Seeeduino V4<a class="headerlink" href="#q2-i-cant-upload-my-sketch-to-seeeduino-v4" title="Permanent link"></a></h4>
+<p>Please check,</p>
+<ul>
+<li>If the Power LED on</li>
+<li>If you choose the right Port and Board (Seeeduino V4)</li>
+<li>Close and reopen Arduino IDE and try again</li>
+</ul>
+<h4 id="q3-where-can-i-find-technical-support-if-i-have-some-other-issue">Q3. Where can I find technical support if I have some other issue.<a class="headerlink" href="#q3-where-can-i-find-technical-support-if-i-have-some-other-issue" title="Permanent link"></a></h4>
+<p>You can post a question to <a href="http://www.seeed.cc/discover.html?t=Arduino">Seeed Forum</a> or send an email to <strong>techsupport@seeed.cc</strong>.</p>
+<h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+<p>Thank you for choosing Seeed. As one of the world-leading open-hardware suppliers, Seeedstudio has been continuously creating well-quality and diversified modules for our customers, makers and developers. As a young company, it is inevitable that there are things we neglected the importance, for example, our document system. It is a little shame however true that we have been continuously receiving complaint about how hard it is to use our document system——ugly interface, confusing content, and the URL that can never be opened etc. Here we sincerely apologize for all the inconvenient you’ve experienced during using the old system.</p>
+<p>It is time to say good bye to the user-unfriendly old document system now, in order to bring better experience to our users, we have launched a project to optimize the document system from the middle of 2016. The work includes:</p>
+<ul>
+<li>Replace the old WiKi system with a new one that developed from Mkdocs, a more widely used and cooler project documentation tool.  </li>
+<li>Review and rewrite documents for hundreds of products to make them more understandable.</li>
+<li>Inspected repair all the URL to make sure it can be linked to the right page.</li>
+</ul>
+<p>Although we have tried our best to optimize, it is still possible that we make some mistakes, so if you find anything that needs to be updated, it is very welcome to submit the amended version as our contributor or give us suggestions in the survey below. Please don&rsquo;t forget to leave your email address if you need our reply, we will reply to you as soon as we can.</p>
+<p>By the way, we will feel very happy and encouraged if we receive 5 stars from you. With the help and encouragement from you, we believe that we can make this document better and better!</p>
+                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Seeeduino" frameborder="0"></iframe></iframe>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../UartSBee_v5/" class="btn btn-neutral float-right" title="UartSBee v5">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Seeeduino_Stalker_V3.1/" class="btn btn-neutral" title="Seeeduino Stalker V3.1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Seeeduino_Stalker_V3.1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../UartSBee_v5/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

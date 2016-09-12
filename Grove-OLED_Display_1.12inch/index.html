@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Grove - OLED Display 1.12&#34; - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Grove - OLED Display 1.12&#34;";
+    var mkdocs_page_input_path = "Grove-OLED_Display_1.12inch.md";
+    var mkdocs_page_url = "/Grove-OLED_Display_1.12inch/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+        
+            
+    <ul class="subnav">
+    <li><span>Arduino</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Energy_Shield/">Energy Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>BeagleBone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Raspberry Pi</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>LinkIt</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>mbed</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RePhone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Wio</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link/">Wio Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Node/">Wio Node</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Others</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Platform_Others/">Platform Others</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Grove</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove_System/">Grove System</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sensor</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-RTC/">Grove - RTC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Actuator</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actuator/">Actuator</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Display</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Grove - OLED Display 1.12&#34;</a>
+        
+            <ul>
+            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+            
+                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
+                
+                    <li><a class="toctree-l4" href="#platform-support">Platform Support</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#connection">Connection</a></li>
+                
+                    <li><a class="toctree-l4" href="#download-the-library">Download the library</a></li>
+                
+                    <li><a class="toctree-l4" href="#upload-example-to-an-arduino">Upload example to an Arduino</a></li>
+                
+                    <li><a class="toctree-l4" href="#apis-of-the-library">APIs of the library</a></li>
+                
+                    <li><a class="toctree-l4" href="#init">init()</a></li>
+                
+                    <li><a class="toctree-l4" href="#cleardisplay">clearDisplay()</a></li>
+                
+                    <li><a class="toctree-l4" href="#setnormaldisplay">setNormalDisplay()</a></li>
+                
+                    <li><a class="toctree-l4" href="#setcontrastlevelunsigned-char-contrastlevel">setContrastLevel(unsigned char ContrastLevel)</a></li>
+                
+                    <li><a class="toctree-l4" href="#setinversedisplay">setInverseDisplay())</a></li>
+                
+                    <li><a class="toctree-l4" href="#sethorizontalmode">setHorizontalMode()</a></li>
+                
+                    <li><a class="toctree-l4" href="#settextxyxy">setTextXY(X,Y)</a></li>
+                
+                    <li><a class="toctree-l4" href="#putcharunsigned-char-c">putChar(unsigned char c)</a></li>
+                
+                    <li><a class="toctree-l4" href="#putstringcont-char-string">putString(cont char *string)</a></li>
+                
+                    <li><a class="toctree-l4" href="#putnumberlong-n">putNumber(long n)</a></li>
+                
+                    <li><a class="toctree-l4" href="#drawbitmapunsigned-char-bitmaparray-int-bytes">drawBitmap(unsigned char *bitmaparray, int bytes)</a></li>
+                
+                    <li><a class="toctree-l4" href="#sethorizontalscrollproperties">setHorizontalScrollProperties</a></li>
+                
+                    <li><a class="toctree-l4" href="#activatescroll">activateScroll()</a></li>
+                
+                    <li><a class="toctree-l4" href="#deactivatescroll">deactivateScroll()</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#resources">Resources</a></li>
+                
+            
+            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../I2C_LCD/">I2C LCD</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Communication</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communication/">Communication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GPS/">Grove - GPS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC/">Grove - NFC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>IoT</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorial</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../survey_end/">Survey</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>MakerPro</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MakerPro/">Maker Pro</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Grove &raquo;</li>
+        
+      
+        
+          <li>Display &raquo;</li>
+        
+      
+    
+    <li>Grove - OLED Display 1.12&#34;</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Grove - OLED Display 1.12"</h1>
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+                <p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/main.jpg" /></p>
+<p>It is a 16 color grayscale 128x64 dot matrix OLED display module with Grove compatible 4pin I2C interface. 
+This module is constructed with 96x96 dot matrix OLED module LY120 and SSD1327 driver IC. 
+Comparing to LCD, OLED screens are more competitive, which has a number of advantages such as high 
+brightness, self-emission, high contrast ratio, slim / thin outline, wide viewing angle, wide temperature 
+range, and low power consumption. </p>
+<ul>
+<li>Communicate Mode: I2C </li>
+<li>Grayscale Display: 16 Gray shades. </li>
+<li>Supports both Normal and Inverse Color Display. </li>
+<li>Supports Continuous Horizontal Scrolling. </li>
+<li>Grove compatible Interface </li>
+</ul>
+<p><a href="http://www.seeedstudio.com/Grove-OLED-Display-1.12%22-p-824.html"><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now.png" /></a></p>
+<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating Voltage</td>
+<td>3.3/5 V</td>
+</tr>
+<tr>
+<td>Dot Matrix</td>
+<td>96x96</td>
+</tr>
+<tr>
+<td>Display Color</td>
+<td>16 Grayscale</td>
+</tr>
+<tr>
+<td>OLED Display</td>
+<td>LY120-96096</td>
+</tr>
+<tr>
+<td>Driver Chip</td>
+<td>SSD1327Z</td>
+</tr>
+<tr>
+<td>Dot Size</td>
+<td>0.15(W)mm x 0.15(H)mm</td>
+</tr>
+<tr>
+<td>Dot Pitch</td>
+<td>0.75(W)mm x 0.175(H)mm</td>
+</tr>
+<tr>
+<td>Operating Temperature</td>
+<td>-40~70 oC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="platform-support">Platform Support<a class="headerlink" href="#platform-support" title="Permanent link"></a></h3>
+<table>
+<thead>
+<tr>
+<th>Arduino</th>
+<th>Wio</th>
+<th>BeagleBone</th>
+<th>Raspberry Pi</th>
+<th>LinkIt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/arduino_logo.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/wio_logo.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/bbg_logo.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/raspberry_pi_logo.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/linkit_logo.jpg" /></td>
+</tr>
+</tbody>
+</table>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This chapter is based on Win10 and Arduino IDE 1.6.9</p>
+</div>
+<p>This is an easy-to-use module, what you need to do is connect the module to I2C port of a Base Shield. There&rsquo;re 4 pins, defined as below.</p>
+<table>
+<thead>
+<tr>
+<th>pin</th>
+<th>Function</th>
+<th>Note</th>
+<th>Cable color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pin1</td>
+<td>SCL</td>
+<td>I2C Clock</td>
+<td>YELLOW</td>
+</tr>
+<tr>
+<td>pin2</td>
+<td>SDA</td>
+<td>I2C Data</td>
+<td>WHITE</td>
+</tr>
+<tr>
+<td>pin3</td>
+<td>VCC</td>
+<td>Power, 5V/3.3V</td>
+<td>RED</td>
+</tr>
+<tr>
+<td>pin4</td>
+<td>GND</td>
+<td>Ground</td>
+<td>BLACK</td>
+</tr>
+</tbody>
+</table>
+<p>Here we will show you how this Grove - OLED Display works via a simple demo. First of all, you need to prepare the below stuffs:</p>
+<table>
+<thead>
+<tr>
+<th>Seeeduino V4</th>
+<th>Grove - OLED Display 1.12``</th>
+<th>Base Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_1.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/product.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_4.jpg" /></td>
+</tr>
+<tr>
+<td><a href="http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html">Get ONE Now</a></td>
+<td><a href="http://www.seeedstudio.com/Grove-OLED-Display-1.12%22-p-824.html">Get ONE Now</a></td>
+<td><a href="http://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html">Get ONE Now</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="connection">Connection<a class="headerlink" href="#connection" title="Permanent link"></a></h3>
+<p>Thanks to the benefit of Grove series modules, you don&rsquo;t need to make soldering or bread board, what you need to do is connect the modules to the right port of Base Shield. For this demo, we have only one Grove module. </p>
+<ul>
+<li><strong>Grove - OLED Display 1.12``</strong> is an <strong>I2C</strong> module, we connect it to <strong>I2C</strong> port at this demo.</li>
+</ul>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/connectin.jpeg" /></p>
+<h3 id="download-the-library">Download the library<a class="headerlink" href="#download-the-library" title="Permanent link"></a></h3>
+<p>We provide an Arduino Library for this Grove - OLED Display 1.12``, click on the below button to download it. </p>
+<p><a href="https://github.com/Seeed-Studio/OLED_Display_96X96/archive/master.zip"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/library.png" /></a></p>
+<p>Unzip the file and put to libraries folder of your Arduino IDE. 
+There&rsquo;re many examples in this library, which is consist of</p>
+<ul>
+<li>OLED_Bitmap_Inverse_Display</li>
+<li>OLED_Draw_Bitmap</li>
+<li>OLED_Hello_World</li>
+<li>OLED_Inverse_Display</li>
+<li>OLED_PrintNumbers</li>
+<li>OLED_Scroll_Left</li>
+<li>OLED_Scroll_Right</li>
+<li>OLED_Z_Display_Driver_Test_Suite</li>
+</ul>
+<h3 id="upload-example-to-an-arduino">Upload example to an Arduino<a class="headerlink" href="#upload-example-to-an-arduino" title="Permanent link"></a></h3>
+<p>Now let&rsquo;s try upload <strong>OLED_Hello_World</strong> to Seeeduino V4. Open your Arduino IDE, click on </p>
+<p><strong>File &gt; Example &gt; OLED_Display_96x96-master &gt; OLED_Hello_World</strong></p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/example.png" /></p>
+<p>The code is open, select the right board and right COM Port, then click on Upload button which will take few seconds. </p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/arduino.png" /></p>
+<p>If the code is uploaded correctly, take look at your display, something was printed on it. </p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_OLED_1.12/master/images/play.jpeg" /></p>
+<p>Then please try the other examples to see what will happen.</p>
+<h3 id="apis-of-the-library">APIs of the library<a class="headerlink" href="#apis-of-the-library" title="Permanent link"></a></h3>
+<p>Seeed Gray OLED library provides complete software interfaces to exercise the capabilities of 
+SSD1327Z driver with a 96x96 gray OLED. Almost all useful features are implemented and all 
+functions are in public scope. This makes Seeed Gray OLED Library extensible. Seeed Gray OLED 
+library uses Arduino Wire library. Hence initialize wire library before initializing Seeed OLED library. </p>
+<h3 id="init">init()<a class="headerlink" href="#init" title="Permanent link"></a></h3>
+<p>Initializes the Seeed OLED frame and sets the display to Normal mode.</p>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.init();  //initialze SEEED Gray OLED display
+</code></pre>
+<h3 id="cleardisplay">clearDisplay()<a class="headerlink" href="#cleardisplay" title="Permanent link"></a></h3>
+<p>Clears the whole screen. Should be used before starting a fresh start or after scroll deactivation. 
+This function also sets the cursor to top left corner. </p>
+<p>Example: </p>
+<pre><code>SeeedGrayOled.clearDisplay();  //clear the screen and set start position to top left corner
+</code></pre>
+<h3 id="setnormaldisplay">setNormalDisplay()<a class="headerlink" href="#setnormaldisplay" title="Permanent link"></a></h3>
+<p>Configures the display to normal mode(non-inverse) mode. </p>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.setNormalDisplay();//Set display to normal mode (i.e non-inverse mode)
+</code></pre>
+<h3 id="setcontrastlevelunsigned-char-contrastlevel">setContrastLevel(unsigned char ContrastLevel)<a class="headerlink" href="#setcontrastlevelunsigned-char-contrastlevel" title="Permanent link"></a></h3>
+<p>Set the contrast ratio of OLED display. ContrastLevel can be any number from 0 - 255. 
+Example: </p>
+<pre><code>SeeedGrayOled.setContrastLevel(127); //Set display contrast ratio to half level( i.e 256/2 1 ).
+</code></pre>
+<h3 id="setinversedisplay">setInverseDisplay())<a class="headerlink" href="#setinversedisplay" title="Permanent link"></a></h3>
+<p>Configures the display to inverse mode. 
+Example:</p>
+<pre><code>SeeedGrayOled.setInverseDisplay();      //Set display to inverse mode
+</code></pre>
+<h3 id="sethorizontalmode">setHorizontalMode()<a class="headerlink" href="#sethorizontalmode" title="Permanent link"></a></h3>
+<p>Configures the display to horizontal addressing mode. 
+Example:</p>
+<pre><code>SeeedGrayOled.setHorizontalMode();      //Set addressing mode to Horizontal Mode
+</code></pre>
+<h4 id="setverticalmode">setVerticalMode()<a class="headerlink" href="#setverticalmode" title="Permanent link"></a></h4>
+<p>Configures the display to vertical addressing mode. Texts are drawn in vertical mode. Please set 
+the display to vertical mode before printing text. 
+Example:</p>
+<pre><code>SeeedGrayOled.setVerticalMode();      //Set addressing mode to Vertical Mode
+</code></pre>
+<h3 id="settextxyxy">setTextXY(X,Y)<a class="headerlink" href="#settextxyxy" title="Permanent link"></a></h3>
+<p>Set the text&rsquo;s position (cursor) to Xth Text Row, Yth Text Column.96x96 OLED is divided into 12 
+rows and 12 Columns of text. This row and column should not be confused with OLED Row and 
+Column. </p>
+<ul>
+<li>X can be any number from 0 - 11. </li>
+<li>Y can be any number from 0 - 11. </li>
+</ul>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.setTextXY(0,0);  //Set the cursor to 0th Text Row, 0th Text Column
+</code></pre>
+<h3 id="putcharunsigned-char-c">putChar(unsigned char c)<a class="headerlink" href="#putcharunsigned-char-c" title="Permanent link"></a></h3>
+<p>Print a character to OLED display starting from current address-pointer set by setTextXY(X,Y). This 
+function is internally used by putString(). </p>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.putChar('S'); //Print the character S
+</code></pre>
+<h3 id="putstringcont-char-string">putString(cont char *string)<a class="headerlink" href="#putstringcont-char-string" title="Permanent link"></a></h3>
+<p>Print string to OLED display starting from current address-pointer set by setTextXY(X,Y) 
+Example:</p>
+<pre><code>SeeedGrayOled.putString("Hello World!"); //Print the String
+</code></pre>
+<h3 id="putnumberlong-n">putNumber(long n)<a class="headerlink" href="#putnumberlong-n" title="Permanent link"></a></h3>
+<p>Print numbers to OLED display starting from current address-pointer set by setTextXY(X,Y). 
+Number can be any char,int or long datatype. It also takes care of -ve sign. </p>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.putNumber(-56123); //Print number -56123
+</code></pre>
+<h3 id="drawbitmapunsigned-char-bitmaparray-int-bytes">drawBitmap(unsigned char *bitmaparray, int bytes)<a class="headerlink" href="#drawbitmapunsigned-char-bitmaparray-int-bytes" title="Permanent link"></a></h3>
+<p>Display a binary bitmap on the OLED matrix. The data is provided through a pointer to uni-dimensional array holding bitmap. The bitmap data is available in continuous rows of columns 
+as like Horizontal Addressing mode. bytes is size of bitmap in bytes. </p>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.drawBitmap(SeeedLogo,96*96/8);   //  Draw binary Bitmap (96 pixels *96 pixels  / 8) bytes
+</code></pre>
+<h3 id="sethorizontalscrollproperties">setHorizontalScrollProperties<a class="headerlink" href="#sethorizontalscrollproperties" title="Permanent link"></a></h3>
+<p>Set the properties of horizontal scroll. </p>
+<ul>
+<li>Direction can be any of Scroll_Left and Scroll_Right. </li>
+<li>startRow can be 0 - 127 </li>
+<li>endRow can be 0 - 127. It should be greater than startRow </li>
+<li>startColumn can be 0 - 63 </li>
+<li>endColumn can be 0 - 63. It should be greater than startRow </li>
+<li>scrollSpeed can be any of defines:Scroll_2Frames, Scroll_3Frames, Scroll_4Frames, Scroll_5Frames, Scroll_25Frames,Scroll_64Frames, Scroll_128Frames,Scroll_256Frames. </li>
+</ul>
+<p>Example:</p>
+<pre><code>SeeedGrayOled.setHorizontalScrollProperties(Scroll_Left,72,95,0,47,Scroll_5Frames);  //Set the properties of Horizontal Scroll
+</code></pre>
+<h3 id="activatescroll">activateScroll()<a class="headerlink" href="#activatescroll" title="Permanent link"></a></h3>
+<p>Enable scrolling. This should be used only after setting horizontal scroll properties. 
+Example:</p>
+<pre><code>SeeedGrayOled.activateScroll();   //Enable scrolling.
+</code></pre>
+<h3 id="deactivatescroll">deactivateScroll()<a class="headerlink" href="#deactivatescroll" title="Permanent link"></a></h3>
+<p>Disable scrolling. This should be used after activateScroll(); 
+Example:</p>
+<pre><code>SeeedGrayOled.activateScroll();   //Disable scrolling.
+</code></pre>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
+<ul>
+<li><a href="https://github.com/Seeed-Studio/OLED_Display_96X96">Github Repository of the Library</a></li>
+<li><a href="https://github.com/SeeedDocument/Grove_OLED_1.12/raw/master/resources/OLED%20Display.zip">Schematic in Eagle</a></li>
+<li><a href="https://github.com/SeeedDocument/Grove_OLED_1.12/raw/master/resources/SSD1327_datasheet.pdf">SSD1327 Datasheet</a></li>
+<li><a href="https://github.com/SeeedDocument/Grove_OLED_1.12/raw/master/resources/LY120-096096.pdf">LY120 Datasheet</a></li>
+<li><a href="https://github.com/SeeedDocument/Grove_OLED_1.12/raw/master/resources/Make_A_96X96_Image1.zip">Reference for Make a 96x96 Image</a></li>
+<li><a href="https://github.com/SeeedDocument">Github Repository of this Document</a></li>
+</ul>
+                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/F79KN2D" frameborder="0"></iframe></iframe>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../I2C_LCD/" class="btn btn-neutral float-right" title="I2C LCD">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Grove-LED_Bar/" class="btn btn-neutral" title="Grove - LED Bar"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Grove-LED_Bar/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../I2C_LCD/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

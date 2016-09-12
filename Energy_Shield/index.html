@@ -18,7 +18,8 @@
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
 
   
   <script>
@@ -62,444 +63,1108 @@
 <li>
           
             <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+        
+            
+    <ul class="subnav">
+    <li><span>Arduino</span></li>
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
         
     </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+
         
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-<li>
-          
-            <li>
+            
     <li class="toctree-l1 ">
         <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
         
     </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+
         
-    </li>
-<li>
-          
-            <li>
+            
     <li class="toctree-l1 ">
         <a class="" href="../EL_Shield/">EL Shield</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 current">
         <a class="current" href="./">Energy Shield</a>
         
             <ul>
+            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
             
-                <li class="toctree-l3"><a href="#energy-shield">Energy Shield</a></li>
-                
-                    <li><a class="toctree-l4" href="#introduction">Introduction</a></li>
-                
-                    <li><a class="toctree-l4" href="#features">Features</a></li>
-                
-                    <li><a class="toctree-l4" href="#specifications">Specifications</a></li>
-                
-                    <li><a class="toctree-l4" href="#hardware-overview">Hardware Overview</a></li>
-                
-                    <li><a class="toctree-l4" href="#usage">Usage</a></li>
-                
-                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
-                
-                    <li><a class="toctree-l4" href="#help-us-make-it-better">Help us make it better</a></li>
+                <li class="toctree-l3"><a href="#features">Features</a></li>
                 
             
+                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#1-charge-examples">1. Charge Examples</a></li>
+                
+                    <li><a class="toctree-l4" href="#2-shield-power-for-device">2. Shield power for device</a></li>
+                
+                    <li><a class="toctree-l4" href="#3-conversion-efficiency">3. Conversion Efficiency</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#resources">Resources</a></li>
+                
+            
+            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
             </ul>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove 125KHz RFID Reader</a>
+        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
         
     </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove 2 Coil Latching Relay</a>
+
         
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove 3 Axis Analog Accelerometer</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove 3 Axis Compass V1.0</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove 3 Axis Digital Accelerometer 1.5g</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove 3 Axis Digital Accelerometer 400g</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove 3 Axis Digital Gyro</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove 315MHz RF Kit</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove 4 Digit Display</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove 433MHz Simple RF Link Kit</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove 6 Axis AccelerometerAndCompass V2.0</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove Alcohol Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove Barometer High Accuracy</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove Barometer Sensor BMP180</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove Barometer Sensor BMP280</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove Barometer Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove EL Driver</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove EMG Detector</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove FM Receiver</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove GSR Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove Gas Sensor MQ2</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove Gas Sensor MQ3</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove Gas Sensor MQ5</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove Gas Sensor MQ9</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove Gas Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove Hall Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove High Temperature Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove I2C FM Receiver</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove I2C Hub</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove I2C Motor Driver</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove I2C Motor Driver V1.3</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove I2C Touch Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove IMU 10DOF</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove NFC Tag</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove Speaker</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove Switch P</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove Touch Sensor</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove Variable Color LED</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-<li>
-          
-            <li>
+            
     <li class="toctree-l1 ">
         <a class="" href="../RS232_Shield/">RS232 Shield</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi R232 Board v1.0</a>
+        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
+        
+    </li>
+
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../UartSBee_v5/">UartSBee v5</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>BeagleBone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Raspberry Pi</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>LinkIt</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>mbed</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RePhone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Wio</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link/">Wio Link</a>
+        
+    </li>
+
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
         
     </li>
-<li>
-          
-            <li>
+
+        
+            
     <li class="toctree-l1 ">
         <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
         
     </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Node/">Wio Node</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Others</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Platform_Others/">Platform Others</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Grove</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove_System/">Grove System</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sensor</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-RTC/">Grove - RTC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Actuator</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actuator/">Actuator</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Display</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../I2C_LCD/">I2C LCD</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Communication</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communication/">Communication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GPS/">Grove - GPS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC/">Grove - NFC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>IoT</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorial</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../survey_end/">Survey</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>MakerPro</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MakerPro/">Maker Pro</a>
+        
+    </li>
+
+        
+    </ul>
 <li>
           
         </ul>
@@ -523,6 +1188,14 @@
     <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Platform &raquo;</li>
+        
+      
+        
+          <li>Arduino &raquo;</li>
+        
+      
     
     <li>Energy Shield</li>
     <li class="wy-breadcrumbs-aside">
@@ -534,25 +1207,19 @@
           <div role="main">
             <div class="section">
               
-                <!-- 
-+++
-title       = "Energy Shield"
-+++
- -->
-
-<h1 id="energy-shield">Energy Shield</h1>
-<h2 id="introduction">Introduction</h2>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Energy_Shield.jpg" /></p>
+                <h1>Energy Shield</h1>
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+                <p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Energy_Shield.jpg" /></p>
 <p>Energy Shield is a LiPo battery based power shield that keeps your project alive. It keeps its battery charged whenever an available power source exists. It accepts a wide range of power sources, from common solar cells via JST connector and USB via USB port on microcontroller, to 9V and 12V DC adapters via DC Jack on your Arduino. Meanwhile it can not only provide power for your Arduino project, with a standard USB port populated on the shield, it’s also capable of rescuing your mobile electric devices from dying batteries, such as mobile phone, mp3 and tablet.</p>
-<p><a href="http://www.seeedstudio.com/energy-shield-p-1373.html"><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
-<h2 id="features">Features</h2>
+<p><a href="http://www.seeedstudio.com/energy-shield-p-1373.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
 <ul>
 <li>Accept wide range of power inputs</li>
 <li>Overvoltage protection</li>
 <li>85%+ high power conversion efficiency</li>
 <li>Comprehensive LEDs indicators for charging and working status</li>
 </ul>
-<h2 id="specifications">Specifications</h2>
+<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
 <p><strong>Power Output Specifications</strong></p>
 <table>
 <thead>
@@ -618,11 +1285,11 @@ title       = "Energy Shield"
 </table>
 <p><strong>Working Mode Explanation</strong></p>
 <p>Energy shield can draw current from three different ports to charge the battery, including JST connector, USB port @ Arduino and DC jack. The voltage ranges vary as below:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Working_Mode_Explanation.jpg" /></p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Working_Mode_Explanation.jpg" /></p>
 <p>When input voltage is under 6.6V, you can switch the working mode of Energy Shield between “Charge” and “ON” via the working mode select switch. In “Charge” condition, Lipo battery doesn’t output but only pull current from any existing power source. In “ON” condition, the battery gets charged as well as supplies power to the whole system.</p>
 <p>However when input voltage exceeds 6.6V, Energy Shield is forced to enter the “Charge” mode regardless of the switch status.</p>
-<h2 id="hardware-overview">Hardware Overview</h2>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Energy_Shield_Interface_V2.0.jpg" /></p>
+<h2 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h2>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Energy_Shield_Interface_V2.0.jpg" /></p>
 <p><strong>Hardware Config</strong></p>
 <p>U1: ISL97516 IC, boost chip;</p>
 <p>U3: CN3065 IC, charge management chip;</p>
@@ -637,8 +1304,8 @@ title       = "Energy Shield"
 <p>JST socket：provided for external power sources that requires JST connector, like solar panel;</p>
 <p>Battery socket: used to hook up LiPo battery;</p>
 <p>USB port: output 5V for other devices;</p>
-<h2 id="usage">Usage</h2>
-<h3 id="1-charge-examples">1. Charge Examples</h3>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"></a></h2>
+<h3 id="1-charge-examples">1. Charge Examples<a class="headerlink" href="#1-charge-examples" title="Permanent link"></a></h3>
 <p>You can charge the Lipo battery with massive external power sources. Here we show you usages of two common powersources. </p>
 <p><strong>1) Solar Panel</strong>    </p>
 <p>Solar panel is one of the most common green power sources we use. The typical output of one unit is around 5V. We provide <a href="http://www.seeedstudio.com/s/solar%20panel.html">lots of solar panels</a> at our store. They are all pre-assembled with JST connencors which can seamlessly match up with Energy Shield. </p>
@@ -648,39 +1315,32 @@ title       = "Energy Shield"
 Make sure there is sufficient light to provide considerable current.
 </div>
 
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Charge_using_Solar_Panel_.jpg" /></p>
-<p>Now, press down SW2. You will find the "Charge" indicator LED lights up. The other indicator "Capacity" indicates remaining power of battery. When the remaining power is below 30%, it turns red. When remaining power is between 30% - 80%, it turns yellow. Otherwise it's green.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Remaining_power_indicator.jpg" /></p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Charge_using_Solar_Panel_.jpg" /></p>
+<p>Now, press down SW2. You will find the &ldquo;Charge&rdquo; indicator LED lights up. The other indicator &ldquo;Capacity&rdquo; indicates remaining power of battery. When the remaining power is below 30%, it turns red. When remaining power is between 30% - 80%, it turns yellow. Otherwise it&rsquo;s green.</p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Remaining_power_indicator.jpg" /></p>
 <p><strong>2) 9V Adaptor</strong>    </p>
-<p>If you are using a DC adaptor to supply power to your project, then 9V adaptor won't be unfamiliar to you. By connecting a 9V adapter to DC Jack of Arduino, you can run your project as well as charge the battery simultaneously.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Charge_using_9V_Jack.jpg" /></p>
-<h3 id="2-shield-power-for-device">2. Shield power for device</h3>
+<p>If you are using a DC adaptor to supply power to your project, then 9V adaptor won&rsquo;t be unfamiliar to you. By connecting a 9V adapter to DC Jack of Arduino, you can run your project as well as charge the battery simultaneously.</p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Charge_using_9V_Jack.jpg" /></p>
+<h3 id="2-shield-power-for-device">2. Shield power for device<a class="headerlink" href="#2-shield-power-for-device" title="Permanent link"></a></h3>
 <p><strong>1) Supply Power For Arduino</strong></p>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Charge_for_Arduino.jpg" /></p>
-<p>Switch the working mode select switch to "ON". Check on the power indicator LED on Arduino to see if it works appropriately.</p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Charge_for_Arduino.jpg" /></p>
+<p>Switch the working mode select switch to &ldquo;ON&rdquo;. Check on the power indicator LED on Arduino to see if it works appropriately.</p>
 <p><strong>2) Supply Power For Mobile Devices</strong></p>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Charge_for_Phone.jpg" /></p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Charge_for_Phone.jpg" /></p>
 <p>Use the standard USB port on the shield to supply power to mobile devices.</p>
-<h3 id="3-conversion-efficiency">3. Conversion Efficiency</h3>
-<p><img alt="" src="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/img/Convert_effect.jpg" /></p>
+<h3 id="3-conversion-efficiency">3. Conversion Efficiency<a class="headerlink" href="#3-conversion-efficiency" title="Permanent link"></a></h3>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/img/Convert_effect.jpg" /></p>
 <p>The graph above describes the conversion efficiency of boost circuit of Energy Shield. Boost circuit boosts the voltage of Lipo battery, which is typically 4.2V or 3.7V with the drop of remaining power, to 5V and supplies outward. You can find this conversion efficiency peaks when output current is around 200mA.</p>
-<h2 id="resources">Resources</h2>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
 <ul>
-<li><a href="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/res/Energy_Shield_Eagel_File.zip">Energy Shield Eagle File</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/res/Energy_Shield_Eagel_File.zip">Energy Shield Eagle File</a></li>
 <li><a href="http://www.consonance-elec.com/pdf/datasheet/DSE-CN3065.pdf">CN3065 Datasheet</a></li>
-<li><a href="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/res/ISL97516.pdf">ISL97516 Datasheet</a></li>
-<li><a href="https://raw.githubusercontent.com/SeeedDoc/WikiMigrationSync/master/docs/assets/Energy_Shield/res/LM293D.pdf">LM293D Datasheet</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/res/ISL97516.pdf">ISL97516 Datasheet</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Energy_Shield/res/LM293D.pdf">LM293D Datasheet</a></li>
 </ul>
-<h2 id="help-us-make-it-better">Help us make it better</h2>
-<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/CSVWNHS" width="500"></iframe>
-
-<!-- 
-+++
-oldwikiurl       = "http://www.seeedstudio.com/wiki/Energy_Shield"
-+++
- -->
-
 <!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Energy_Shield -->
+                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Energy_Shield" frameborder="0"></iframe></iframe>
               
             </div>
           </div>
@@ -688,7 +1348,7 @@ oldwikiurl       = "http://www.seeedstudio.com/wiki/Energy_Shield"
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Grove-125KHz_RFID_Reader/" class="btn btn-neutral float-right" title="Grove 125KHz RFID Reader">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Motor_Shield_V2.0/" class="btn btn-neutral float-right" title="Motor Shield V2.0">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../EL_Shield/" class="btn btn-neutral" title="EL Shield"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -720,7 +1380,7 @@ oldwikiurl       = "http://www.seeedstudio.com/wiki/Energy_Shield"
         <span><a href="../EL_Shield/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../Grove-125KHz_RFID_Reader/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../Motor_Shield_V2.0/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

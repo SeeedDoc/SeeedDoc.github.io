@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>BeagleBone Green - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "BeagleBone Green";
+    var mkdocs_page_input_path = "BeagleBone_Green.md";
+    var mkdocs_page_url = "/BeagleBone_Green/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+        
+            
+    <ul class="subnav">
+    <li><span>Arduino</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Energy_Shield/">Energy Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>BeagleBone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">BeagleBone Green</a>
+        
+            <ul>
+            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#specification">Specification</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#application-ideas">Application Ideas</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#pin-map">Pin map</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#step1-plug-in-your-bbg-via-usb">STEP1. Plug in your BBG via USB</a></li>
+                
+                    <li><a class="toctree-l4" href="#step2-install-drivers">STEP2. Install Drivers</a></li>
+                
+                    <li><a class="toctree-l4" href="#step3-browse-to-your-beagle">STEP3. Browse to your Beagle</a></li>
+                
+                    <li><a class="toctree-l4" href="#step4-cloud9-ide">STEP4. Cloud9 IDE</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#update-to-latest-software">Update to latest software</a></li>
+                
+                    <li><a class="toctree-l4" href="#step1-download-the-latest-software-image">STEP1. Download the latest software image</a></li>
+                
+                    <li><a class="toctree-l4" href="#step2-install-compression-utility-and-decompress-the-image">STEP2. Install compression utility and decompress the image</a></li>
+                
+                    <li><a class="toctree-l4" href="#step3-install-sd-card-programming-utility">STEP3. Install SD card programming utility</a></li>
+                
+                    <li><a class="toctree-l4" href="#step4-write-the-image-to-your-sd-card">STEP4. Write the image to your SD card</a></li>
+                
+                    <li><a class="toctree-l4" href="#step5-boot-your-board-off-of-the-sd-card">STEP5. Boot your board off of the SD card</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#grove-for-bbg">Grove for BBG</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#cape-for-bbg">Cape for BBG</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#references-and-resources">References and Resources</a></li>
+                
+                    <li><a class="toctree-l4" href="#references">References</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+            
+            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Raspberry Pi</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>LinkIt</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>mbed</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RePhone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Wio</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link/">Wio Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Node/">Wio Node</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Others</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Platform_Others/">Platform Others</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Grove</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove_System/">Grove System</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sensor</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-RTC/">Grove - RTC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Actuator</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actuator/">Actuator</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Display</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../I2C_LCD/">I2C LCD</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Communication</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communication/">Communication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GPS/">Grove - GPS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC/">Grove - NFC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>IoT</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorial</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../survey_end/">Survey</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>MakerPro</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MakerPro/">Maker Pro</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Platform &raquo;</li>
+        
+      
+        
+          <li>BeagleBone &raquo;</li>
+        
+      
+    
+    <li>BeagleBone Green</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>BeagleBone Green</h1>
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+                <p><img alt="enter image description here" src="https://github.com/SeeedDocument/BeagleBone_Green/blob/master/images/cover.jpg?raw=true" /></p>
+<p>SeeedStudio BeagleBone Green (BBG) is a low cost, open-source, community supported development platform for developers and hobbyists. It is a joint effort by <a href="http://beagleboard.org/">BeagleBoard.org</a> and Seeed Studio. It is based on the classical open-source hardware design of <a href="http://beagleboard.org/black">BeagleBone Black</a> and developed into this differentiated version. The BBG includes two Grove connectors, making it easier to connect to the large family of Grove sensors. The on-board HDMI is removed to make room for these Grove connectors.</p>
+<p>Boot Linux in under 10 seconds and get started on development in less than 5 minutes with just a single USB cable.</p>
+<p><a href="http://www.seeedstudio.com/SeeedStudio-BeagleBone-Green-p-2504.html"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now.png" /></a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
+<hr />
+<ul>
+<li><strong>Fully Compatible with BeagleBone Black</strong></li>
+<li><strong>Processor: AM335x 1GHz ARMR Cortex-A8</strong><ul>
+<li>512MB DDR3 RAM</li>
+<li>4GB 8-bit eMMC on-board flash storage</li>
+<li>3D graphics accelerator</li>
+<li>NEON floating-point accelerator</li>
+<li>2x PRU 32-bit microcontrollers</li>
+</ul>
+</li>
+<li><strong>Connectivity</strong><ul>
+<li>USB client for power &amp; communications</li>
+<li>USB host</li>
+<li>Ethernet</li>
+<li>2x 46 pin headers</li>
+<li>2x Grove connectors (I2C and UART)</li>
+</ul>
+</li>
+<li><strong>Software Compatibility</strong><ul>
+<li>Debian</li>
+<li>Android</li>
+<li>Ubuntu</li>
+<li>Cloud9 IDE on Node.js w/ BoneScript library</li>
+<li>plus much more</li>
+</ul>
+</li>
+</ul>
+<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link"></a></h2>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Processor</td>
+<td>AM335x 1GHz ARMR Cortex-A8</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>512MB DDR3</td>
+</tr>
+<tr>
+<td>on-board Flash Storage</td>
+<td>4GB eMMC</td>
+</tr>
+<tr>
+<td>CPU Supports</td>
+<td>NEON floating-point &amp; 3D graphics accelerator</td>
+</tr>
+<tr>
+<td>Micro USB  Supports</td>
+<td>powering &amp; communications</td>
+</tr>
+<tr>
+<td>USB</td>
+<td>Host  1</td>
+</tr>
+<tr>
+<td>Grove Connectors</td>
+<td>2 (One I2C and One UART)</td>
+</tr>
+<tr>
+<td>GPIO</td>
+<td>2 x 46 pin headers</td>
+</tr>
+<tr>
+<td>Ethernet</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Operating Temperature</td>
+<td>0 ~ 75</td>
+</tr>
+</tbody>
+</table>
+<h2 id="application-ideas">Application Ideas<a class="headerlink" href="#application-ideas" title="Permanent link"></a></h2>
+<ul>
+<li>Internet of Things</li>
+<li>Smart House</li>
+<li>Industrial</li>
+<li>Automation &amp; Process Control</li>
+<li>Human Machine Interface</li>
+<li>Sensor Hub</li>
+<li>Robot</li>
+</ul>
+<p>Here are some funny projects for your reference.</p>
+<table>
+<thead>
+<tr>
+<th>Home Center</th>
+<th>Retro Lamp</th>
+<th>Drive a Motor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/project1.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/project2.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/project3.jpg" /></td>
+</tr>
+<tr>
+<td><a href="http://www.instructables.com/id/Home-Control-Center-Using-BeagleBone-Green-Wireles/">MAKE IT NOW!</a></td>
+<td><a href="http://www.instructables.com/id/DIY-a-Retro-Wooden-Lamp-with-BBG/">MAKE IT NOW!</a></td>
+<td><a href="http://www.instructables.com/id/A-BeagleBone-Tutorial-Getting-Started-With-Motor-B/">MAKE IT NOW!</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>BBG Acrylic Case</th>
+<th>GPIO Control</th>
+<th>Smart Light</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/project4.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/project5.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/project6.png" /></td>
+</tr>
+<tr>
+<td><a href="http://www.instructables.com/id/5-Design-of-Laser-Cut-Cases-for-5-Popular-Platform/">MAKE IT NOW!</a></td>
+<td><a href="http://www.seeed.cc/How-to-use-the-Grove-UART-port-as-a-GPIO-on-BBG-p-365.html">MAKE IT NOW!</a></td>
+<td><a href="http://www.seeed.cc/Smart-Light-Demo-with-BBG-%26amp%3B-BBG-Start-Kit(HA)-p-366.html">MAKE IT NOW!</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h2>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/10201002703.jpg" /></p>
+<ul>
+<li><strong>USB Host</strong> - USB Host</li>
+<li><strong>DC Power and USB Client</strong> - Power the board and act as client</li>
+<li><strong>LEDs</strong><ul>
+<li><strong>D2</strong> is configured at boot to blink in a heartbeat pattern</li>
+<li><strong>D3</strong> is configured at boot to light during microSD card accesses</li>
+<li><strong>D4</strong> is configured at boot to light during CPU activity</li>
+<li><strong>D5</strong> is configured at boot to light during eMMC accesses</li>
+</ul>
+</li>
+<li><strong>Boot button</strong><ul>
+<li>When there&rsquo;s a SD card insert, the system will boot from SD card first, if you want to boot from eMMC, press this button and then power on. </li>
+<li>Use as a normal button after boot, connect to <strong>GPIO_72</strong></li>
+</ul>
+</li>
+<li><strong>I2C Grove Interface</strong> - Connected to <strong>I2C2</strong></li>
+<li><strong>Uart Grove Interface</strong> - Connected to <strong>UART2</strong></li>
+<li><strong>Serial Debug</strong> - Connect to <strong>UART0</strong>, PIN1~PIN6: GND, NC, NC, RX, TX, NC, note that pin1 is near to the USB.</li>
+</ul>
+<h3 id="pin-map">Pin map<a class="headerlink" href="#pin-map" title="Permanent link"></a></h3>
+<p>Each digital I/O pin has 8 different modes that can be selected, including GPIO.</p>
+<h4 id="65-possible-digital-ios">65 Possible Digital I/Os<a class="headerlink" href="#65-possible-digital-ios" title="Permanent link"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In GPIO mode, each digital I/O can produce interrupts.</p>
+</div>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/PINMAP_IO.png" /></p>
+<h4 id="pwms-and-timers">PWMs and Timers<a class="headerlink" href="#pwms-and-timers" title="Permanent link"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Up to 8 digital I/O pins can be configured with pulse-width modulators (PWM) to produce signals to control motors or create pseudo analog voltage levels, without taking up any extra CPU cycles.</p>
+</div>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/PINMAP_TIMER.png" /></p>
+<h4 id="analog-inputs">Analog Inputs<a class="headerlink" href="#analog-inputs" title="Permanent link"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Make sure you don&rsquo;t input more than 1.8V to the analog input pins. This is a single 12-bit analog-to-digital converter with 8 channels, 7 of which are made available on the headers.</p>
+</div>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/PINMAP_ANALOG.png" /></p>
+<h4 id="uart">UART<a class="headerlink" href="#uart" title="Permanent link"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>There is a dedicated header for getting to the UART0 pins and connecting a debug cable. Five additional serial ports are brought to the expansion headers, but one of them only has a single direction brought to the headers.</p>
+</div>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/PINMAP_UART.png" /></p>
+<h4 id="i2c">I2C<a class="headerlink" href="#i2c" title="Permanent link"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The first I2C bus is utilized for reading EEPROMS on cape add-on boards and can&rsquo;t be used for other digital I/O operations without interfering with that function, but you can still use it to add other I2C devices at available addresses. The second I2C bus is available for you to configure and use.</p>
+</div>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/PINMAP_I2C.png" /></p>
+<h4 id="spi">SPI<a class="headerlink" href="#spi" title="Permanent link"></a></h4>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For shifting out data fast, you might consider using one of the SPI ports.</p>
+</div>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/PINMAP_SPI.png" /></p>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This chapter is writing under Win10. The steps are familiar for the other operate systems.</p>
+</div>
+<h3 id="step1-plug-in-your-bbg-via-usb">STEP1. Plug in your BBG via USB<a class="headerlink" href="#step1-plug-in-your-bbg-via-usb" title="Permanent link"></a></h3>
+<p>Use the provided micro USB cable to plug your BBG into your computer. This will both power the board and provide a development interface. BBG will boot Linux from the on-board 2GB or 4GB eMMC. </p>
+<p>BBG will operate as a flash drive providing you with a local copy of the documentation and drivers. Note that this interface may not be used to re-configure the microSD card with a new image, but may be used to update the boot parameters using the uEnv.txt file.</p>
+<p>You&rsquo;ll see the PWR LED lit steadily. Within 10 seconds, you should see the other LEDs blinking in their default configurations.</p>
+<ul>
+<li>D2 is configured at boot to blink in a heartbeat pattern</li>
+<li>D3 is configured at boot to light during microSD card accesses</li>
+<li>D4 is configured at boot to light during CPU activity</li>
+<li>D5 is configured at boot to light during eMMC accesses</li>
+</ul>
+<h3 id="step2-install-drivers">STEP2. Install Drivers<a class="headerlink" href="#step2-install-drivers" title="Permanent link"></a></h3>
+<p>Install the drivers for your operating system to give you network-over-USB access to your Beagle. Additional drivers give you serial access to your board.</p>
+<table>
+<thead>
+<tr>
+<th>Operating System</th>
+<th>USB Drivers</th>
+<th>Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Windows (64-bit)</td>
+<td><a href="http://beagleboard.org/static/Drivers/Windows/BONE_D64.exe">64-bit installer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Windows (32-bit)</td>
+<td><a href="http://beagleboard.org/static/Drivers/Windows/BONE_DRV.exe">32-bit installer</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Mac OS X</td>
+<td><a href="http://beagleboard.org/static/Drivers/MacOSX/RNDIS/HoRNDIS.pkg">Network</a> <a href="http://beagleboard.org/static/Drivers/MacOSX/FTDI/EnergiaFTDIDrivers2.2.18.pkg">Serial</a></td>
+<td>Install both sets of drivers.</td>
+</tr>
+<tr>
+<td>Linux</td>
+<td><a href="http://beagleboard.org/static/Drivers/Linux/FTDI/mkudevrule.sh">mkudevrule.sh</a></td>
+<td>Driver installation isn&rsquo;t required, but you might find a few udev rules helpful.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For window system, please note that:</p>
+<ul>
+<li>Windows Driver Certification warning may pop up two or three times. Click &ldquo;Ignore&rdquo;, &ldquo;Install&rdquo; or &ldquo;Run&rdquo;</li>
+<li>To check if you&rsquo;re running 32 or 64-bit Windows see <a href="https://support.microsoft.com/kb/827218">this</a>.</li>
+<li>On systems without the latest service release, you may get an error (0xc000007b). In that case, please <a href="https://www.microsoft.com/en-us/download/confirmation.aspx?id=13523">install</a> and retry: </li>
+<li>You may need to reboot Windows.</li>
+<li>These drivers have been tested to work up to Windows 10</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional FTDI USB to serial/JTAG information and drivers are available from <a href="https://www.ftdichip.com/Drivers/VCP.htm">https://www.ftdichip.com/Drivers/VCP.htm</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Additional USB to virtual Ethernet information and drivers are available from <a href="https://www.linux-usb.org/gadget/">https://www.linux-usb.org/gadget/</a> and <a href="https://joshuawise.com/horndis">https://joshuawise.com/horndis</a>.</p>
+</div>
+<h3 id="step3-browse-to-your-beagle">STEP3. Browse to your Beagle<a class="headerlink" href="#step3-browse-to-your-beagle" title="Permanent link"></a></h3>
+<p>Using either Chrome or Firefox (Internet Explorer will NOT work), browse to the web server running on your board. It will load a presentation showing you the capabilities of the board. Use the arrow keys on your keyboard to navigate the presentation.</p>
+<p>Click <a href="http://192.168.7.2">http://192.168.7.2</a> to launch to your BBG.
+Older software images require you to EJECT the BEAGLE_BONE drive to start the network. With the latest software image, that step is no longer required.</p>
+<p><a href="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/launch.png"><img alt="Click to view larger image" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/launch.png" /></a></p>
+<h3 id="step4-cloud9-ide">STEP4. Cloud9 IDE<a class="headerlink" href="#step4-cloud9-ide" title="Permanent link"></a></h3>
+<p>To begin editing programs that live on your board, you can use the Cloud9 IDE by click</p>
+<p><a href="http://192.168.7.2:3000/ide.html"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/cloud9.png" /></a></p>
+<h2 id="update-to-latest-software">Update to latest software<a class="headerlink" href="#update-to-latest-software" title="Permanent link"></a></h2>
+<hr />
+<p>You need to update the board to latest software to keep a better performance, here we will show you how to make it step by step. </p>
+<h3 id="step1-download-the-latest-software-image">STEP1. Download the latest software image<a class="headerlink" href="#step1-download-the-latest-software-image" title="Permanent link"></a></h3>
+<p>First of all, you have to download the suitable image here. </p>
+<p><a href="http://beagleboard.org/latest-images"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/down_latest_image.png" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Due to sizing necessities, this download may take about 30 minutes or more. </p>
+</div>
+<p>The file you download will have an <strong>.img.xz</strong> extension. This is a compressed sector-by-sector image of the SD card. </p>
+<h3 id="step2-install-compression-utility-and-decompress-the-image">STEP2. Install compression utility and decompress the image<a class="headerlink" href="#step2-install-compression-utility-and-decompress-the-image" title="Permanent link"></a></h3>
+<p>Download and install <a href="http://www.7-zip.org/download.html">7-zip.</a> </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Choose a version that suitable for your system.</p>
+</div>
+<p>Use 7-zip to decompress the SD card <strong>.img file</strong></p>
+<h3 id="step3-install-sd-card-programming-utility">STEP3. Install SD card programming utility<a class="headerlink" href="#step3-install-sd-card-programming-utility" title="Permanent link"></a></h3>
+<p>Download and install <a href="https://sourceforge.net/projects/win32diskimager/files/latest/download">Image Writer for Windows</a>. Be sure to download the binary distribution.</p>
+<h3 id="step4-write-the-image-to-your-sd-card">STEP4. Write the image to your SD card<a class="headerlink" href="#step4-write-the-image-to-your-sd-card" title="Permanent link"></a></h3>
+<p>You need a SD adapter to connect your microSD card to your computer at the first. Then use the software Image Write for Windows to write the decompressed image to your SD card.</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/win32_disk_image.png" /></p>
+<p>Click on <strong>Write</strong> button, then the process is started. </p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/win32_disk_image_process.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>You may see a warning about damaging your device. This is fine to accept as long as you are pointing to your SD card for writing.</li>
+<li>You should not have your BeagleBone connected to your computer at this time.</li>
+<li>This process may need up to 10 minutes.</li>
+</ul>
+</div>
+<h3 id="step5-boot-your-board-off-of-the-sd-card">STEP5. Boot your board off of the SD card<a class="headerlink" href="#step5-boot-your-board-off-of-the-sd-card" title="Permanent link"></a></h3>
+<p>Insert SD card into your (powered-down first) board. Then the board will boot from the SD card.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don&rsquo;t need to write the image to your on-board eMMC, you don&rsquo;t need to read the last of this chapter.  Otherwise pleas go ahead.</p>
+</div>
+<p>If you desire to write the image to your on-board eMMC, you need to launch to the board, and modify a file. </p>
+<p>In <strong>/boot/uEnv.txt</strong>:</p>
+<pre><code>##enable BBB: eMMC Flasher:
+#cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
+</code></pre>
+<p>Change to:</p>
+<pre><code>##enable BBB: eMMC Flasher:
+cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh
+</code></pre>
+<p>Then you will find the 4 user led light as below</p>
+<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/flashing.gif" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don&rsquo;t find the upper tracing light, please press the RESET button to reset the board. </p>
+</div>
+<p>When the flashing is complete, all 4 USRx LEDs will be <strong>off</strong>. The latest Debian flasher images automatically power down the board upon completion. This can take up to <strong>10 minutes</strong>. Power-down your board, remove the SD card and apply power again to be complete.</p>
+<h2 id="grove-for-bbg">Grove for BBG<a class="headerlink" href="#grove-for-bbg" title="Permanent link"></a></h2>
+<hr />
+<p>Grove is a modular, standardized connecter prototyping system. Grove takes a building block approach to assembling electronics. Compared to the jumper or solder based system, it is easier to connect, experiment and build and simplifies the learning system, but not to the point where it becomes dumbed down.  Some of the other prototype systems out there takes the level down to building blocks.   Good stuff to be learned that way, but the Grove system allows you to build real systems.   It requires some learning and expertise to hook things up.</p>
+<p>Below listed the Grove modules that work well with BBG.</p>
+<table>
+<thead>
+<tr>
+<th>SKU</th>
+<th>Name</th>
+<th>Interface</th>
+<th>link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>101020054</td>
+<td>Grove - 3-Axis Digital Accelerometer(+16g)</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer%28%C2%B116g%29-p-1156.html">link</a></td>
+</tr>
+<tr>
+<td>101020071</td>
+<td>Grove - 3-Axis Digital Accelerometer(+400g)</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-3-Axis-Digital-Accelerometer%28%C2%B1400g%29-p-1897.html">link</a></td>
+</tr>
+<tr>
+<td>101020034</td>
+<td>Grove - 3-Axis Digital Compass</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-3-Axis-Digital-Compass-p-759.html">link</a></td>
+</tr>
+<tr>
+<td>101020050</td>
+<td>Grove - 3-Axis Digital Gyro</td>
+<td>Analog</td>
+<td><a href="http://www.seeedstudio.com/Grove-3-Axis-Digital-Gyro-p-750.html">link</a></td>
+</tr>
+<tr>
+<td>101020081</td>
+<td>Grove - 6-Axis Accelerometer&amp;Compass v2.0</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-6-Axis-Accelerometer&amp;Compass-v2.0-p-2476.html">link</a></td>
+</tr>
+<tr>
+<td>101020072</td>
+<td>Grove - Barometer Sensor(BMP180)</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-Barometer-Sensor-%28BMP180%29-p-1840.html">link</a></td>
+</tr>
+<tr>
+<td>104030010</td>
+<td>Grove - Blue LED</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Blue-LED-p-1139.html">link</a></td>
+</tr>
+<tr>
+<td>101020003</td>
+<td>Grove - Button</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Button-p-766.html">link</a></td>
+</tr>
+<tr>
+<td>111020000</td>
+<td>Grove - Button(P)</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Button%28P%29-p-1243.html">link</a></td>
+</tr>
+<tr>
+<td>107020000</td>
+<td>Grove - Buzzer</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Buzzer-p-768.html">link</a></td>
+</tr>
+<tr>
+<td>104030006</td>
+<td>Grove - Chainable RGB LED</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-Chainable-RGB-LED-p-850.html">link</a></td>
+</tr>
+<tr>
+<td>101020030</td>
+<td>Grove - Digital Light Sensor</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-Digital-Light-Sensor-p-1281.html">link</a></td>
+</tr>
+<tr>
+<td>103020024</td>
+<td>Grove - Finger-clip Heart Rate Sensor</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-Finger-clip-Heart-Rate-Sensor-p-2425.html">link</a></td>
+</tr>
+<tr>
+<td>101020082</td>
+<td>Grove - Finger-clip Heart Rate Sensor with shell</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-Finger-clip-Heart-Rate-Sensor-with-shell-p-2420.html">link</a></td>
+</tr>
+<tr>
+<td>113020003</td>
+<td>Grove - GPS</td>
+<td>UART</td>
+<td><a href="http://www.seeedstudio.com/Grove-GPS-p-959.html">link</a></td>
+</tr>
+<tr>
+<td>104030007</td>
+<td>Grove - Green LED</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Green-LED-p-1144.html">link</a></td>
+</tr>
+<tr>
+<td>103020013</td>
+<td>Grove - I2C ADC</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-Green-LED-p-1144.html">link</a></td>
+</tr>
+<tr>
+<td>103020006</td>
+<td>Grove - I2C Hub</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-I2C-Hub-p-851.html">link</a></td>
+</tr>
+<tr>
+<td>101020079</td>
+<td>Grove - IMU 10DOF</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-IMU-10DOF-p-2386.html">link</a></td>
+</tr>
+<tr>
+<td>101020080</td>
+<td>Grove - IMU 9DOF v2.0</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-IMU-9DOF-v2.0-p-2400.html">link</a></td>
+</tr>
+<tr>
+<td>101020040</td>
+<td>Grove - IR Distance Interrupter</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-IR-Distance-Interrupter-p-1278.html">link</a></td>
+</tr>
+<tr>
+<td>104030011</td>
+<td>Grove - OLED Display 0.96&rsquo;&lsquo;</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-OLED-Display-1.12%22-p-824.html">link</a></td>
+</tr>
+<tr>
+<td>104030008</td>
+<td>Grove - OLED Display 1.12&rsquo;&lsquo;</td>
+<td>I2C</td>
+<td><a href="http://www.seeedstudio.com/Grove-OLED-Display-0.96%22-p-781.html">link</a></td>
+</tr>
+<tr>
+<td>104030005</td>
+<td>Grove - Red LED</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Red-LED-p-1142.html">link</a></td>
+</tr>
+<tr>
+<td>103020005</td>
+<td>Grove - Relay</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Relay-p-769.html">link</a></td>
+</tr>
+<tr>
+<td>316010005</td>
+<td>Grove - Servo</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Servo-p-1241.html">link</a></td>
+</tr>
+<tr>
+<td>101020023</td>
+<td>Grove - Sound Sensor</td>
+<td>Analog</td>
+<td><a href="http://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html">link</a></td>
+</tr>
+<tr>
+<td>101020004</td>
+<td>Grove - Switch(P)</td>
+<td>I/O</td>
+<td><a href="http://www.seeedstudio.com/Grove-Switch%28P%29-p-1252.html">link</a></td>
+</tr>
+<tr>
+<td>101020015</td>
+<td>Grove - Temperature Sensor</td>
+<td>Analog</td>
+<td><a href="http://www.seeedstudio.com/Grove-Temperature-Sensor-p-774.html">link</a></td>
+</tr>
+<tr>
+<td>101020019</td>
+<td>Grove - Temperature&amp;Humidity Sensor Pro</td>
+<td>Analog</td>
+<td><a href="http://www.seeedstudio.com/Grove-Temperature&amp;Humidity-Sensor-Pro-p-838.html">link</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cape-for-bbg">Cape for BBG<a class="headerlink" href="#cape-for-bbg" title="Permanent link"></a></h2>
+<hr />
+<p>You will need some expansion board when you start a project. There&rsquo;re many cape for BBG already, they include LCD display, motor driver as well as HDMI expansion etc. Below is some of them recommend.</p>
+<table>
+<thead>
+<tr>
+<th>Grove Cape</th>
+<th>Motor Bridge Cape</th>
+<th>HDMI Cape</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/product1.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/product2.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/product3.jpg" /></td>
+</tr>
+<tr>
+<td><a href="http://www.seeedstudio.com/Grove-Cape-for-BeagleBone-Series-p-1718.html">GET ONE NOW!</a></td>
+<td><a href="http://www.seeedstudio.com/Motor-Bridge-Cape-p-2569.html">GET ONE NOW!</a></td>
+<td><a href="http://www.seeedstudio.com/SeeedStudio-BeagleBone-Green-HDMI-Cape-p-2570.html">GET ONE NOW!</a></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Grove Cape</th>
+<th>5 Inch LCD</th>
+<th>7 Inch LCD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/product4.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/product5.jpg" /></td>
+<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/BeagleBone_Green/master/images/product6.jpg" /></td>
+</tr>
+<tr>
+<td><a href="http://www.seeedstudio.com/Grove-Base-Cape-for-Beaglebone-v2.0-p-2644.html">GET ONE NOW!</a></td>
+<td><a href="http://www.seeedstudio.com/5-Inch-BeagleBone-Green-LCD-Cape-with-Resistive-Touch-p-2642.html">GET ONE NOW!</a></td>
+<td><a href="http://www.seeedstudio.com/7-Inch-BeagleBone-Green-LCD-Cape-with-Resistive-Touch-p-2643.html">GET ONE NOW!</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references-and-resources">References and Resources<a class="headerlink" href="#references-and-resources" title="Permanent link"></a></h2>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link"></a></h3>
+<p>There&rsquo;re many references to help you to get more information about the board. </p>
+<ul>
+<li><a href="http://beagleboard.org/">BeagleBoard Main Page</a></li>
+<li><a href="http://beagleboard.org/green">BeagleBone Green info at BeagleBoard page</a></li>
+<li><a href="http://beagleboard.org/getting-started">BeagleBoard Getting Started</a></li>
+<li><a href="http://beagleboard.org/getting-started#troubleshooting">Troubleshooting</a></li>
+<li><a href="http://beagleboard.org/getting-started#hardware">Hardware documentation</a></li>
+<li><a href="http://beagleboard.org/project">Projects of BeagleBoard</a></li>
+</ul>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h3>
+<hr />
+<ul>
+<li><a href="https://github.com/SeeedDocument/BeagleBone_Green/raw/master/resources/BBG_SRM_V1a_20151009.pdf">BEAGLEBONE_GREEN SRM(v1a)(pdf)</a></li>
+<li><a href="https://github.com/SeeedDocument/BeagleBone_Green/raw/master/resources/BEAGLEBONE_GREEN_V1.pdf">BEAGLEBONE_GREEN Schematic(pdf)</a></li>
+<li><a href="https://github.com/SeeedDocument/BeagleBone_Green/raw/master/resources/BEAGLEBONE_GREEN_V1_166%28sch%29.rar">BEAGLEBONE_GREEN Schematic(OrCAD)</a></li>
+<li><a href="https://github.com/SeeedDocument/BeagleBone_Green/blob/master/resources/BeagleBone_Green_v1.166%28board%29.rar">BEAGLEBONE_GREEN PCB(OrCAD)</a></li>
+</ul>
+                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/seeed_bbg" frameborder="0"></iframe></iframe>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../BeagleBone_Green_HDMI_Cape/" class="btn btn-neutral float-right" title="BeagleBone Green HDMI Cape">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/" class="btn btn-neutral" title="Beagle Bone Green and Grove IoT Starter Kit Powered by AWS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../BeagleBone_Green_HDMI_Cape/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

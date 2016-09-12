@@ -4,489 +4,137 @@
     
     <url>
      <loc>None/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <lastmod>2016-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
+        
     <url>
-     <loc>None/Arch_BLE/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>None/Arch_GPRS_V2/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>None/Arch_Link/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>None/Arch_Max_v1.1/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>None/Arch_Pro/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
+        
     <url>
-     <loc>None/Arch_V1.1/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None</loc>
+     <lastmod></lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
+    <url>
+     <loc>None/Grove_System/</loc>
+     <lastmod>2016-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>None</loc>
+     <lastmod></lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/Microsoft_IoT_Grove_Kit/</loc>
+     <lastmod>2016-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>None/survey_end/</loc>
+     <lastmod>2016-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     <url>
      <loc>None/Arduino_IDE_for_RePhone_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <lastmod>2016-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>None/How_to_Install_an_Arduino_Library/</loc>
+     <lastmod>2016-09-12</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>None/Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/</loc>
-     <lastmod>2016-08-23</lastmod>
+     <loc>None/MakerPro/</loc>
+     <lastmod>2016-09-12</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>None/Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/BeagleBone_Green_HDMI_Cape/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/EL_Shield/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Energy_Shield/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-125KHz_RFID_Reader/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-2-Coil_Latching_Relay/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-3-Axis_Analog_Accelerometer/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-3-Axis_Compass_V1.0/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-3-Axis_Digital_Accelerometer-1.5g/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-3-Axis_Digital_Accelerometer-400g/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-3-Axis_Digital_Gyro/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-315MHz_RF_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-4-Digit_Display/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-433MHz_Simple_RF_Link_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-6-Axis_AccelerometerAndCompass_V2.0/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Alcohol_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Barometer-High-Accuracy/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Barometer_Sensor-BMP180/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Barometer_Sensor-BMP280/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Barometer_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-EL_Driver/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-EMG_Detector/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-FM_Receiver/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-GSR_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Gas_Sensor-MQ2/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Gas_Sensor-MQ3/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Gas_Sensor-MQ5/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Gas_Sensor-MQ9/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Gas_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Hall_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-High_Temperature_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-I2C_FM_Receiver/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-I2C_Hub/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-I2C_Motor_Driver/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-I2C_Motor_Driver_V1.3/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-I2C_Touch_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-IMU_10DOF/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-NFC_Tag/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Speaker/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Switch-P/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Touch_Sensor/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Grove-Variable_Color_LED/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Linkit_Connect_7681/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/RS232_Shield/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Raspberry_Pi_Breakout_Board_v1.0/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Raspberry_Pi_R232_Board_v1.0/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/UartSBee_v5/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Wio_Link_Bootcamp_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Wio_Link_Environment_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Wio_Link_Event_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>None/Wio_Link_Starter_Kit/</loc>
-     <lastmod>2016-08-23</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
+        
     
 
 </urlset>

@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Motor Shield V2.0 - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Motor Shield V2.0";
+    var mkdocs_page_input_path = "Motor_Shield_V2.0.md";
+    var mkdocs_page_url = "/Motor_Shield_V2.0/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+        
+            
+    <ul class="subnav">
+    <li><span>Arduino</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Energy_Shield/">Energy Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Motor Shield V2.0</a>
+        
+            <ul>
+            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+            
+                <li class="toctree-l3"><a href="#features">Features</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#hardware-overivew">Hardware Overivew</a></li>
+                
+                    <li><a class="toctree-l4" href="#digital-pin-used">Digital Pin Used</a></li>
+                
+                    <li><a class="toctree-l4" href="#analog-pin-used">Analog Pin Used</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#getteing-started">Getteing Started</a></li>
+                
+                    <li><a class="toctree-l4" href="#download-the-library">Download the library</a></li>
+                
+                    <li><a class="toctree-l4" href="#drive-a-dc-motor">Drive a DC Motor</a></li>
+                
+                    <li><a class="toctree-l4" href="#drive-a-stepper">Drive a Stepper</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#library-apis">Library APIs</a></li>
+                
+                    <li><a class="toctree-l4" href="#begin">begin</a></li>
+                
+                    <li><a class="toctree-l4" href="#speed">speed</a></li>
+                
+                    <li><a class="toctree-l4" href="#stepper">Stepper</a></li>
+                
+                    <li><a class="toctree-l4" href="#resources">Resources</a></li>
+                
+            
+            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>BeagleBone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Raspberry Pi</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>LinkIt</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>mbed</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RePhone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Wio</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link/">Wio Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Node/">Wio Node</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Others</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Platform_Others/">Platform Others</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Grove</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove_System/">Grove System</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sensor</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-RTC/">Grove - RTC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Actuator</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actuator/">Actuator</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Display</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../I2C_LCD/">I2C LCD</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Communication</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communication/">Communication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GPS/">Grove - GPS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC/">Grove - NFC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>IoT</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorial</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../survey_end/">Survey</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>MakerPro</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MakerPro/">Maker Pro</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Platform &raquo;</li>
+        
+      
+        
+          <li>Arduino &raquo;</li>
+        
+      
+    
+    <li>Motor Shield V2.0</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Motor Shield V2.0</h1>
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+                <p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Motor_Shield_V2.0/master/image/500px-Motorshield_01.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This document works for Motor Shield V2.0/2.1/2.2.</p>
+</div>
+<p>The Motor Shield is a driver module for motors that allows you to use Arduino to control the working speed and direction of the motor. Based on the Dual Full-Bridge Drive Chip L298, it is able to drive two DC motors or a step motor. The Motor Shield can either be powered directly by Arduino or by an external 6V~15V power supply via the terminal input. This module can be used for the development of micro robots and intelligent vehicles, etc</p>
+<p><a href="https://www.seeedstudio.com/item_detail.html?p_id=1377"><img alt="Get one now" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now.png" /></a></p>
+<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
+<ul>
+<li>Standard Arduino UNO Shield pin out</li>
+<li>Based on L298 full bridge IC</li>
+<li>Drive 2 DC Motor or 1 Stepper</li>
+<li>External power input available</li>
+<li>Led indicator</li>
+<li>Heat sink for better performance</li>
+<li>Arduino library</li>
+</ul>
+<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Spec</th>
+<th align="left">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Operating Voltage</td>
+<td align="left">5V</td>
+</tr>
+<tr>
+<td align="left">External Power</td>
+<td align="left">6-15V</td>
+</tr>
+<tr>
+<td align="left">Output Current</td>
+<td align="left">2.0A Max @ Each Channel</td>
+</tr>
+<tr>
+<td align="left">PWM Range</td>
+<td align="left">0-100%</td>
+</tr>
+<tr>
+<td align="left">Output</td>
+<td align="left">2 Channels, 4 Ports</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hardware-overivew">Hardware Overivew<a class="headerlink" href="#hardware-overivew" title="Permanent link"></a></h2>
+<p><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Motor_Shield_V2.0/master/image/700px-MotorShieldHardware.png" /></p>
+<p><strong>1</strong>.Channel 1 indicator, include 3 leds</p>
+<ul>
+<li>EB - channel 1 enable, high active</li>
+<li>IN3 - status of OUT3</li>
+<li>IN4 - status of OUT4</li>
+</ul>
+<p><strong>2</strong>.Channel 1 Sense - Please connect the left 2 pins together for normal usage.</p>
+<p><strong>Note</strong> that it&rsquo;s a high level application for sense the current, please refer to datasheet and schematic for more information.</p>
+<p><strong>3</strong>.OUTPUT - There&rsquo;re 2 channels, each channel has 2 output</p>
+<ul>
+<li>Channel 0 - OUT1, OUT2</li>
+<li>Channel 1 - OUT3, OUT4</li>
+</ul>
+<p><strong>4</strong>.Channel 0 Sense</p>
+<p><strong>5</strong>.Channel 0 indicator, include 3 leds</p>
+<ul>
+<li>EB - channel 0 enable, high active</li>
+<li>IN1 - status of OUT1</li>
+<li>IN2 - status of OUT2</li>
+</ul>
+<p><strong>6</strong>.External Power Input, range 6-15V</p>
+<p><strong>7</strong>.Reset indicator - turn red when Reset button is pressed</p>
+<p><strong>8</strong>.Reset button - pressed to reset the shield and Arduino</p>
+<p><strong>9</strong>.Power indicator - turn green when power in, either internal or external</p>
+<p><strong>A.</strong>Power switch</p>
+<ul>
+<li>Connect - Get power from Arduino</li>
+<li>Disconnect - Get power from External sources</li>
+</ul>
+<p><strong>B.</strong>Standard Arduino shield pin out</p>
+<h3 id="digital-pin-used">Digital Pin Used<a class="headerlink" href="#digital-pin-used" title="Permanent link"></a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Arduino Pin</th>
+<th align="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">D0</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D1</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D2</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D6</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D7</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D8</td>
+<td align="left"><strong>OUT1</strong></td>
+</tr>
+<tr>
+<td align="left">D9</td>
+<td align="left"><strong>Enable of Channel0</strong></td>
+</tr>
+<tr>
+<td align="left">D10</td>
+<td align="left"><strong>Enable of Chennel1</strong></td>
+</tr>
+<tr>
+<td align="left">D11</td>
+<td align="left"><strong>OUT2</strong></td>
+</tr>
+<tr>
+<td align="left">D12</td>
+<td align="left"><strong>OUT3</strong></td>
+</tr>
+<tr>
+<td align="left">D13</td>
+<td align="left"><strong>OUT4</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>D8~D13 was used by Motor Shield. Please don&rsquo;t use those pins to avoid conflict.</p>
+</div>
+<h3 id="analog-pin-used">Analog Pin Used<a class="headerlink" href="#analog-pin-used" title="Permanent link"></a></h3>
+<table>
+<thead>
+<tr>
+<th align="left">Arduino Pin</th>
+<th align="left">Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">D0</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D1</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D2</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D3</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D4</td>
+<td align="left">Not Used</td>
+</tr>
+<tr>
+<td align="left">D5</td>
+<td align="left">Not Used</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Not Used means you can use those pins freely. </p>
+</div>
+<h2 id="getteing-started">Getteing Started<a class="headerlink" href="#getteing-started" title="Permanent link"></a></h2>
+<p>Here we will show you how to drive a dc motor and a stepper with this shield.</p>
+<p>We need a<a href="http://www.seeedstudio.com/wiki/LinkIt_Smart_7688#Getting_Started"> Seeeduino V4 </a>as the controller, Seeeduino V4 is an Arduino compatible board, and you can use an Arduino as well.</p>
+<p>And you need a dc motor or a stepper for testing.</p>
+<h3 id="download-the-library">Download the library<a class="headerlink" href="#download-the-library" title="Permanent link"></a></h3>
+<p>Click the below button to download the library. If the library you had download include &ldquo;<strong>-master</strong>&rdquo;, please remove it.</p>
+<p><a href="https://github.com/Seeed-Studio/SeeedMotorShieldV2"><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Motor_Shield_V2.0/master/image/400px-Motor_shield_v2_library.png" /></a></p>
+<h3 id="drive-a-dc-motor">Drive a DC Motor<a class="headerlink" href="#drive-a-dc-motor" title="Permanent link"></a></h3>
+<p>You can drive 2 DC motor with this shield. Here I will show you how to drive a DC motor.
+<img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Motor_Shield_V2.0/master/image/400px-Electric_motor_cycle_2.png" /></p>
+<p>You need to do some preparing first:</p>
+<ul>
+<li>Set <strong>SEN_A</strong> and <strong>SEN_B</strong>, connect the left 2 pins together with a jumper.</li>
+<li>Connect <strong>MB_EN</strong> together with a jumper, as we are no going use an external power.</li>
+<li>Connect your DC motor to Chanel 0 (OUT1 and OUT2).</li>
+</ul>
+<p>Then open <strong>motor_dc</strong> example in the library. Upload the code to Seeeduino V4.2.</p>
+<pre><code class="Javascript">//  Demo function:The application method to drive the DC motor.
+//  Author:Loovee (luweicong@seeed.cc)
+//  2016-3-11
+
+#include &quot;MotorDriver.h&quot;
+
+MotorDriver motor;
+
+void setup()
+{
+    // initialize
+    motor.begin();
+}
+
+void loop()
+{
+    motor.speed(0, 100);            // set motor0 to speed 100
+    delay(1000);
+    motor.brake(0);                 // brake
+    delay(1000);
+    motor.speed(0, -100);           // set motor0 to speed -100
+    delay(1000);
+    motor.stop(0);                  // stop
+    delay(1000);
+}
+// END FILE
+</code></pre>
+
+<p>Then you will find your motor move (1s), stop (1s), move back (1s), stop (1s), and loop.</p>
+<p>If there&rsquo;s nothing happen, please make sure:</p>
+<ul>
+<li>You had uploaded the code successfully</li>
+<li>Your motor connect right</li>
+<li>The led indicators blink right</li>
+</ul>
+<h3 id="drive-a-stepper">Drive a Stepper<a class="headerlink" href="#drive-a-stepper" title="Permanent link"></a></h3>
+<p>You can drive a 4-wire stepper with this shield. Here I will show you how to drive a <a href="https://en.wikipedia.org/wiki/Stepper_motor"> stepper </a></p>
+<p><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Motor_Shield_V2.0/master/image/400px-StepperMotor.gif" /></p>
+<p>You need to do some preparing first:
+- Set <strong>SEN_A</strong> and <strong>SEN_B</strong>, connect the left 2 pins together with a jumper.
+- Connect <strong>MB_EN</strong> together with a jumper, as we are no going to use an external power.</p>
+<p>Find the pin definitions of you stepper, and connect it to the OUTPUT of the shield. As below:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Stepper</th>
+<th align="left">Motor Shield</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">A+</td>
+<td align="left">OUT1</td>
+</tr>
+<tr>
+<td align="left">A-</td>
+<td align="left">OUT2</td>
+</tr>
+<tr>
+<td align="left">B+</td>
+<td align="left">OUT3</td>
+</tr>
+<tr>
+<td align="left">B-</td>
+<td align="left">OUT4</td>
+</tr>
+</tbody>
+</table>
+<p>Then open <strong>stepper_test</strong> example in the library, upload it to Seeeduino V4, then you will find your stepper move.</p>
+<pre><code>/*
+ * Stepper test for Seeed Motor Shield V2
+ * loovee @ 15 Mar, 2016
+ */
+
+#include &lt;Stepper.h&gt;
+
+// change this to the number of steps on your motor
+#define STEPS 200
+
+// create an instance of the stepper class, specifying
+// the number of steps of the motor and the pins it's
+// attached to
+Stepper stepper(STEPS, 8, 11, 12, 13);
+
+// the previous reading from the analog input
+int previous = 0;
+
+void step(int steps)
+{
+    digitalWrite(9, HIGH);
+    digitalWrite(10, HIGH);
+    stepper.step(steps);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+}
+
+void setup()
+{
+    // set the speed of the motor to 30 RPMs
+    pinMode(9, OUTPUT);
+    pinMode(10, OUTPUT);
+    digitalWrite(9, LOW);
+    digitalWrite(10, LOW);
+    stepper.setSpeed(30);
+}
+
+void loop()
+{
+    step(1000);
+    step(-1000);
+}
+
+// END FILE
+</code></pre>
+
+<p>If there&rsquo;s nothing happen, please double check if you had connected the wire right.</p>
+<h2 id="library-apis">Library APIs<a class="headerlink" href="#library-apis" title="Permanent link"></a></h2>
+<h3 id="begin">begin<a class="headerlink" href="#begin" title="Permanent link"></a></h3>
+<p><strong>Description</strong></p>
+<pre><code class="Javascript">void begin();
+</code></pre>
+
+<h3 id="speed">speed<a class="headerlink" href="#speed" title="Permanent link"></a></h3>
+<p><strong>Description</strong></p>
+<p>Set speed, control by PWM.</p>
+<pre><code class="Javascript">void move(int motor_id, int speed);
+</code></pre>
+
+<ul>
+<li>motor_id</li>
+<li>0 - Chanel 0</li>
+<li>1 - Chanel 1</li>
+<li>speed: -100~100, the larger the faster, 0 for stop</li>
+</ul>
+<p><strong>stop</strong></p>
+<pre><code class="Javascript">void stop(unsigned char motor_id);
+</code></pre>
+
+<p><strong>brake</strong></p>
+<pre><code class="Javascript">void brake(unsigned char motor_id);
+</code></pre>
+
+<h3 id="stepper">Stepper<a class="headerlink" href="#stepper" title="Permanent link"></a></h3>
+<p><strong>Note</strong> that we use the library provided by Arduino IDE to drive a stepper.</p>
+<p>There&rsquo;s something need to be modified, please refer the examples.</p>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h3>
+<ul>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/Motor_Shield_Eagle_File.zip"> Motor Shield V2.0 Eagle File </a></li>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/Motor_shield_2.1.rar">Motor shield V2.1 Eagle File </a></li>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/Motor_shield_2.0.pdf">Motor Shield 2.0 schematics</a></li>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/Motor_shield_2.1.pdf">Motor Shield 2.1 schematics</a></li>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/Motor_Shield_V2.2.zip">Motor Shield 2.2 schematics</a></li>
+<li><a href="https://github.com/Seeed-Studio/SeeedMotorShieldV2">Motor Shield Library</a></li>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/L298.pdf">L298 Datasheet</a></li>
+<li><a href="https://github.com/SeeedDocument/Motor_Shield_V2.0/raw/master/resource/78M05_datasheet.pdf">78M05 Datasheet</a></li>
+</ul>
+                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.surveymonkey.com/r/MotorShield" frameborder="0"></iframe></iframe>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../RS232_Shield/" class="btn btn-neutral float-right" title="RS232 Shield">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Energy_Shield/" class="btn btn-neutral" title="Energy Shield"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Energy_Shield/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../RS232_Shield/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

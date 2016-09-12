@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <title>Grove - Chainable RGB LED - Seeed Wiki</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Grove - Chainable RGB LED";
+    var mkdocs_page_input_path = "Grove-Chainable_RGB_LED.md";
+    var mkdocs_page_url = "/Grove-Chainable_RGB_LED/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Seeed Wiki</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Home</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Platform</span></li>
+        
+            
+    <ul class="subnav">
+    <li><span>Arduino</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../EL_Shield/">EL Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Energy_Shield/">Energy Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../RS232_Shield/">RS232 Shield</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>BeagleBone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Raspberry Pi</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>LinkIt</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>mbed</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_BLE/">Arch BLE</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Link/">Arch Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_Pro/">Arch Pro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>RePhone</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Wio</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link/">Wio Link</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Wio_Node/">Wio Node</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Others</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Platform_Others/">Platform Others</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Grove</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove_System/">Grove System</a>
+        
+    </li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Sensor</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-RTC/">Grove - RTC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Actuator</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Actuator/">Actuator</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Grove - Chainable RGB LED</a>
+        
+            <ul>
+            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
+            
+                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#usage">Usage</a></li>
+                
+                    <li><a class="toctree-l4" href="#with-arduino">With Arduino</a></li>
+                
+                    <li><a class="toctree-l4" href="#with-raspberry-pi">With Raspberry Pi</a></li>
+                
+                    <li><a class="toctree-l4" href="#with-beaglebone-green">With Beaglebone Green</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#resources">Resources</a></li>
+                
+            
+            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Display</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../I2C_LCD/">I2C LCD</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+            
+    <ul class="subnav">
+    <li><span>Communication</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Communication/">Communication</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-GPS/">Grove - GPS</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC/">Grove - NFC</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>IoT</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Tutorial</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../survey_end/">Survey</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>MakerPro</span></li>
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../MakerPro/">Maker Pro</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Seeed Wiki</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Grove &raquo;</li>
+        
+      
+        
+          <li>Actuator &raquo;</li>
+        
+      
+    
+    <li>Grove - Chainable RGB LED</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1>Grove - Chainable RGB LED</h1>
+                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
+                <p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Chainable_RGB_LED/img/Chanbalelednb1.jpg" /></p>
+<p><strong>Grove - Chainable RGB LED</strong> is based on P9813 chip which is a full-color LED driver. It provides 3 constant-current drivers as well as modulated output of 256 shades of gray. It communicates with a MCU using 2-wire transmission (Data and Clock). This 2-wire transmission can be used to cascade additional <strong>Grove - Chainable RGB LED</strong> modules. The built-in clock regeneration enhances the transmission distance. This Grove module is suitable for any colorful LED based projects.</p>
+<p><a href="https://www.seeedstudio.com/Grove-Chainable-RGB-LED-p-850.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
+<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+<ul>
+<li>Operating Voltage: 5V</li>
+<li>Operating Current: 20mA</li>
+<li>Communication Protocol: Serial</li>
+</ul>
+<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"></a></h2>
+<h3 id="with-arduino">With <a href="../index.php?title=ArduinoAndaction=editAndredlink=1" title="Arduino">Arduino</a><a class="headerlink" href="#with-arduino" title="Permanent link"></a></h3>
+<p>When you get Grove - Chainble RGB LED, you may think how I can light up it. Now we will show you this demo: all colors of RGB cycles in an uniform way.
+The hardware installation like this:
+<a href="../index.php?title=PictureAndaction=editAndredlink=1" title="Picture">Picture</a></p>
+<p>To complete this demo, you can use one or more Grove - Chainable RGB LED. Note that the IN interface of one Grove - Chainable RGB LED should be connect to D7/D8 of <a href="../Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> and its OUT interface connect to IN interface of another Grove - Chainable RGB LED, chainable more LED in this way.</p>
+<ul>
+<li>Download <a href="https://github.com/pjpmarques/ChainableLED">Chainable LED Library</a> and install it to Arduino Library. There is the course about <a href="../How_to_install_Arduino_Library">how to install Arduino Library</a> in wiki page.</li>
+<li>Open the example CycleThroughColors by the path:File-&gt;Examples-&gt;ChainableLED_master and upload it to Seeeduino.</li>
+</ul>
+<pre><code>    /* 
+     * Example of using the ChainableRGB library for controlling a Grove RGB.
+     * This code cycles through all the colors in an uniform way. This is accomplished using a HSB color space. 
+     */
+    #include &lt;ChainableLED.h&gt;
+
+    #define NUM_LEDS  5
+
+    ChainableLED leds(7, 8, NUM_LEDS);
+
+    void setup()
+    {
+    }
+
+    float hue = 0.0;
+    boolean up = true;
+
+    void loop()
+    {
+      for (byte i=0; i&lt;NUM_LEDS; i++)
+        leds.setColorHSB(i, hue, 1.0, 0.5);
+
+      delay(50);
+
+      if (up)
+        hue+= 0.025;
+      else
+        hue-= 0.025;
+
+      if (hue&gt;=1.0 &amp;&amp; up)
+        up = false;
+      else if (hue&lt;=0.0 &amp;&amp; !up)
+        up = true;
+    }
+</code></pre>
+
+<p>You can observe this scene: colors of two LED will gradient consistently.</p>
+<p><strong>Extended application:</strong>
+Based on <a href="https://github.com/pjpmarques/ChainableLED">Chainable LED Library</a>, we have designed this demo: RGB color varies with the temperature measured by Grove - temperature. The RGB color vary from green to red when the temperature is from 25 to 32. The test code is shown below. Do it if you are interested in it.</p>
+<pre><code>    // demo of temperature -&gt; rgbLED
+    // temperature form 25 - 32, rgbLed from green -&gt; red
+    // Grove-temperature plu to A0
+    // LED plug to D7,D8
+
+    #include &lt;Streaming.h&gt;
+    #include &lt;ChainableLED.h&gt;
+
+    #define TEMPUP 32
+    #define TEMPDOWN 25
+
+    ChainableLED leds(7, 8, 1); // connect to pin7 and pin8 , one led
+
+    int getAnalog() // get value from A0
+    {
+        int sum = 0;
+        for(int i=0; i&lt;32; i++)
+        {
+            sum += analogRead(A0);
+        }
+
+        return sum&gt;&gt;5;
+    }
+
+    float getTemp() // get temperature
+    {
+        float temperature = 0.0;
+        float resistance = 0.0;
+        int B = 3975; //B value of the thermistor
+
+        int a = getAnalog();
+
+        resistance = (float)(1023-a)*10000/a; //get the resistance of the sensor;
+        temperature = 1/(log(resistance/10000)/B+1/298.15)-273.15; //convert to temperature via datasheet ;
+        return temperature;
+    }
+
+    void ledLight(int dta) // light led
+    {
+
+        dta = dta/4; // 0 - 255
+
+        int colorR = dta;
+        int colorG = 255-dta;
+        int colorB = 0;
+
+        leds.setColorRGB(0, colorR, colorG, colorB);
+    }
+
+    void setup()
+    {
+        Serial.begin(38400);
+        cout &lt;&lt; &quot;hello world !&quot; &lt;&lt; endl;
+    }
+
+    void loop()
+    {
+        float temp = getTemp();
+        int nTemp = temp*100;
+
+        nTemp = nTemp &gt; TEMPUP*100 ? TEMPUP*100 : (nTemp &lt; TEMPDOWN*100 ? TEMPDOWN*100 : nTemp);
+        nTemp = map(nTemp, TEMPDOWN*100, TEMPUP*100, 0, 1023);
+        ledLight(nTemp);
+        delay(100);
+    }
+</code></pre>
+
+<h3 id="with-raspberry-pi">With <a href="../GrovePiPlus" title="GrovePi+">Raspberry Pi</a><a class="headerlink" href="#with-raspberry-pi" title="Permanent link"></a></h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.</p>
+<p>2.You should have completed configuring the development enviroment, otherwise follow <a href="../GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.</p>
+<p>3.Connection</p>
+<ul>
+<li>Plug the sensor to grovepi socket D7 by using a grove cable.</li>
+</ul>
+<p>4.Navigate to the demos&rsquo; directory:</p>
+<pre><code>    cd yourpath/GrovePi/Software/Python/
+</code></pre>
+
+<ul>
+<li>To see the code</li>
+</ul>
+<pre><code>     nano grove_chainable_rgb_led.py   # &quot;Ctrl+x&quot; to exit #
+</code></pre>
+
+<pre><code>    import time
+    import grovepi
+
+    # Connect first LED in Chainable RGB LED chain to digital port D7
+    # In: CI,DI,VCC,GND
+    # Out: CO,DO,VCC,GND
+    pin = 7
+
+    # I have 10 LEDs connected in series with the first connected to the GrovePi and the last not connected
+    # First LED input socket connected to GrovePi, output socket connected to second LED input and so on
+    numleds = 1  
+
+    grovepi.pinMode(pin,&quot;OUTPUT&quot;)
+    time.sleep(1)
+
+    # Chainable RGB LED methods
+    # grovepi.storeColor(red, green, blue)
+    # grovepi.chainableRgbLed_init(pin, numLeds)
+    # grovepi.chainableRgbLed_test(pin, numLeds, testColor)
+    # grovepi.chainableRgbLed_pattern(pin, pattern, whichLed)
+    # grovepi.chainableRgbLed_modulo(pin, offset, divisor)
+    # grovepi.chainableRgbLed_setLevel(pin, level, reverse)
+
+    # test colors used in grovepi.chainableRgbLed_test()
+    testColorBlack = 0   # 0b000 #000000
+    testColorBlue = 1    # 0b001 #0000FF
+    testColorGreen = 2   # 0b010 #00FF00
+    testColorCyan = 3    # 0b011 #00FFFF
+    testColorRed = 4     # 0b100 #FF0000
+    testColorMagenta = 5 # 0b101 #FF00FF
+    testColorYellow = 6  # 0b110 #FFFF00
+    testColorWhite = 7   # 0b111 #FFFFFF
+
+    # patterns used in grovepi.chainableRgbLed_pattern()
+    thisLedOnly = 0
+    allLedsExceptThis = 1
+    thisLedAndInwards = 2
+    thisLedAndOutwards = 3
+
+    try:
+
+        print &quot;Test 1) Initialise&quot;
+
+        # init chain of leds
+        grovepi.chainableRgbLed_init(pin, numleds)
+        time.sleep(.5)
+
+        # change color to green
+        grovepi.storeColor(0,255,0)
+        time.sleep(.5)
+
+        # set led 1 to green
+        grovepi.chainableRgbLed_pattern(pin, thisLedOnly, 0)
+        time.sleep(.5)
+
+        # change color to red
+        grovepi.storeColor(255,0,0)
+        time.sleep(.5)
+
+        # set led 10 to red
+        grovepi.chainableRgbLed_pattern(pin, thisLedOnly, 9)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 2a) Test Patterns - black&quot;
+
+        # test pattern 0 - black (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(1)
+
+
+        print &quot;Test 2b) Test Patterns - blue&quot;
+
+        # test pattern 1 blue
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlue)
+        time.sleep(1)
+
+
+        print &quot;Test 2c) Test Patterns - green&quot;
+
+        # test pattern 2 green
+        grovepi.chainableRgbLed_test(pin, numleds, testColorGreen)
+        time.sleep(1)
+
+
+        print &quot;Test 2d) Test Patterns - cyan&quot;
+
+        # test pattern 3 cyan
+        grovepi.chainableRgbLed_test(pin, numleds, testColorCyan)
+        time.sleep(1)
+
+
+        print &quot;Test 2e) Test Patterns - red&quot;
+
+        # test pattern 4 red
+        grovepi.chainableRgbLed_test(pin, numleds, testColorRed)
+        time.sleep(1)
+
+
+        print &quot;Test 2f) Test Patterns - magenta&quot;
+
+        # test pattern 5 magenta
+        grovepi.chainableRgbLed_test(pin, numleds, testColorMagenta)
+        time.sleep(1)
+
+
+        print &quot;Test 2g) Test Patterns - yellow&quot;
+
+        # test pattern 6 yellow
+        grovepi.chainableRgbLed_test(pin, numleds, testColorYellow)
+        time.sleep(1)
+
+
+        print &quot;Test 2h) Test Patterns - white&quot;
+
+        # test pattern 7 white
+        grovepi.chainableRgbLed_test(pin, numleds, testColorWhite)
+        time.sleep(1)
+
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 3a) Set using pattern - this led only&quot;
+
+        # change color to red
+        grovepi.storeColor(255,0,0)
+        time.sleep(.5)
+
+        # set led 3 to red
+        grovepi.chainableRgbLed_pattern(pin, thisLedOnly, 2)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 3b) Set using pattern - all leds except this&quot;
+
+        # change color to blue
+        grovepi.storeColor(0,0,255)
+        time.sleep(.5)
+
+        # set all leds except for 3 to blue
+        grovepi.chainableRgbLed_pattern(pin, allLedsExceptThis, 3)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 3c) Set using pattern - this led and inwards&quot;
+
+        # change color to green
+        grovepi.storeColor(0,255,0)
+        time.sleep(.5)
+
+        # set leds 1-3 to green
+        grovepi.chainableRgbLed_pattern(pin, thisLedAndInwards, 2)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 3d) Set using pattern - this led and outwards&quot;
+
+        # change color to green
+        grovepi.storeColor(0,255,0)
+        time.sleep(.5)
+
+        # set leds 7-10 to green
+        grovepi.chainableRgbLed_pattern(pin, thisLedAndOutwards, 6)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 4a) Set using modulo - all leds&quot;
+
+        # change color to black (fully off)
+        grovepi.storeColor(0,0,0)
+        time.sleep(.5)
+
+        # set all leds black
+        # offset 0 means start at first led
+        # divisor 1 means every led
+        grovepi.chainableRgbLed_modulo(pin, 0, 1)
+        time.sleep(.5)
+
+        # change color to white (fully on)
+        grovepi.storeColor(255,255,255)
+        time.sleep(.5)
+
+        # set all leds white
+        grovepi.chainableRgbLed_modulo(pin, 0, 1)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 4b) Set using modulo - every 2&quot;
+
+        # change color to red
+        grovepi.storeColor(255,0,0)
+        time.sleep(.5)
+
+        # set every 2nd led to red
+        grovepi.chainableRgbLed_modulo(pin, 0, 2)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+
+        print &quot;Test 4c) Set using modulo - every 2, offset 1&quot;
+
+        # change color to green
+        grovepi.storeColor(0,255,0)
+        time.sleep(.5)
+
+        # set every 2nd led to green, offset 1
+        grovepi.chainableRgbLed_modulo(pin, 1, 2)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 4d) Set using modulo - every 3, offset 0&quot;
+
+        # change color to red
+        grovepi.storeColor(255,0,0)
+        time.sleep(.5)
+
+        # set every 3nd led to red
+        grovepi.chainableRgbLed_modulo(pin, 0, 3)
+        time.sleep(.5)
+
+        # change color to green
+        grovepi.storeColor(0,255,0)
+        time.sleep(.5)
+
+        # set every 3nd led to green, offset 1
+        grovepi.chainableRgbLed_modulo(pin, 1, 3)
+        time.sleep(.5)
+
+        # change color to blue
+        grovepi.storeColor(0,0,255)
+        time.sleep(.5)
+
+        # set every 3nd led to blue, offset 2
+        grovepi.chainableRgbLed_modulo(pin, 2, 3)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 4e) Set using modulo - every 3, offset 1&quot;
+
+        # change color to yellow
+        grovepi.storeColor(255,255,0)
+        time.sleep(.5)
+
+        # set every 4nd led to yellow
+        grovepi.chainableRgbLed_modulo(pin, 1, 3)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+
+        print &quot;Test 4f) Set using modulo - every 3, offset 2&quot;
+
+        # change color to magenta
+        grovepi.storeColor(255,0,255)
+        time.sleep(.5)
+
+        # set every 4nd led to magenta
+        grovepi.chainableRgbLed_modulo(pin, 2, 3)
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 5a) Set level 6&quot;
+
+        # change color to green
+        grovepi.storeColor(0,255,0)
+        time.sleep(.5)
+
+        # set leds 1-6 to green
+        grovepi.write_i2c_block(0x04,[95,pin,6,0])
+        time.sleep(.5)
+
+        # pause so you can see what happened
+        time.sleep(2)
+
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        time.sleep(.5)
+
+
+        print &quot;Test 5b) Set level 7 - reverse&quot;
+
+        # change color to red
+        grovepi.storeColor(255,0,0)
+        time.sleep(.5)
+
+        # set leds 4-10 to red
+        grovepi.write_i2c_block(0x04,[95,pin,7,1])
+        time.sleep(.5)
+
+
+    except KeyboardInterrupt:
+        # reset (all off)
+        grovepi.chainableRgbLed_test(pin, numleds, testColorBlack)
+        break
+    except IOError:
+        print &quot;Error&quot;
+</code></pre>
+
+<ul>
+<li>Notice that there&rsquo;s something you have to concern of:</li>
+</ul>
+<pre><code>    pin = 7         #setting up the output pin
+    numleds = 1     #how many leds you plug
+</code></pre>
+
+<ul>
+<li>Also all methods you can see in grovepi.py is:</li>
+</ul>
+<pre><code>    storeColor(red, green, blue)
+    chainableRgbLed_init(pin, numLeds)
+    chainableRgbLed_test(pin, numLeds, testColor)
+    chainableRgbLed_pattern(pin, pattern, whichLed)
+    chainableRgbLed_modulo(pin, offset, divisor)
+    chainableRgbLed_setLevel(pin, level, reverse)
+</code></pre>
+
+<p>5.Run the demo.</p>
+<pre><code>    sudo python grove_chainable_rgb_led.py
+</code></pre>
+
+<p>6.This demo may not work if your grovepi dosen&rsquo;t have the newest firmware, update the firmware.</p>
+<pre><code>    cd yourpath/GrovePi/Firmware
+    sudo ./firmware_update.sh
+</code></pre>
+
+<h3 id="with-beaglebone-green">With Beaglebone Green<a class="headerlink" href="#with-beaglebone-green" title="Permanent link"></a></h3>
+<p>To begin editing programs that live on BBG, you can use the Cloud9 IDE.</p>
+<p>As a simple exercise to become familiar with Cloud9 IDE, creating a simple application to blink one of the 4 user programmable LEDs on the BeagleBone is a good start.</p>
+<p>If this is your first time to use Cloud9 IDE, please follow this <a href="../Beaglebone_green#Getting_Started"><strong>link</strong></a>.</p>
+<p><strong>Step1:</strong> Set the Grove - UART socket as a Grove - GPIO Socket, just follow this <a href="http://www.seeedstudio.com/recipe/362-how-to-use-the-grove-uart-port-as-a-gpio-on-bbg.html"><strong>link</strong></a>.</p>
+<p><strong>Step2:</strong> Click the &ldquo;+&rdquo; in the top-right to create a new file.</p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Chainable_RGB_LED/img/C9-create-tab.png" /></p>
+<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Chainable_RGB_LED/img/C9_newfile.jpg" /></p>
+<p><strong>Step3:</strong> Copy and paste the following code into the new tab</p>
+<pre><code>import time
+import Adafruit_BBIO.GPIO as GPIO
+ 
+CLK_PIN = &quot;P9_22&quot;
+DATA_PIN = &quot;P9_21&quot;
+NUMBER_OF_LEDS = 1
+ 
+class ChainableLED():
+    def __init__(self, clk_pin, data_pin, number_of_leds):
+        self.__clk_pin = clk_pin
+        self.__data_pin = data_pin
+        self.__number_of_leds = number_of_leds
+ 
+        GPIO.setup(self.__clk_pin, GPIO.OUT)
+        GPIO.setup(self.__data_pin, GPIO.OUT)
+ 
+        for i in range(self.__number_of_leds):
+            self.setColorRGB(i, 0, 0, 0)
+ 
+    def clk(self):
+        GPIO.output(self.__clk_pin, GPIO.LOW)
+        time.sleep(0.00002)
+        GPIO.output(self.__clk_pin, GPIO.HIGH)
+        time.sleep(0.00002)
+ 
+    def sendByte(self, b):
+        &quot;Send one bit at a time, starting with the MSB&quot;
+        for i in range(8):
+            # If MSB is 1, write one and clock it, else write 0 and clock
+            if (b &amp; 0x80) != 0:
+                GPIO.output(self.__data_pin, GPIO.HIGH)
+            else:
+                GPIO.output(self.__data_pin, GPIO.LOW)
+            self.clk()
+ 
+            # Advance to the next bit to send
+            b = b &lt;&lt; 1
+ 
+    def sendColor(self, red, green, blue):
+        &quot;Start by sending a byte with the format '1 1 /B7 /B6 /G7 /G6 /R7 /R6' &quot;
+        #prefix = B11000000
+        prefix = 0xC0
+        if (blue &amp; 0x80) == 0:     
+            #prefix |= B00100000
+            prefix |= 0x20
+        if (blue &amp; 0x40) == 0:     
+            #prefix |= B00010000
+            prefix |= 0x10
+        if (green &amp; 0x80) == 0:    
+            #prefix |= B00001000
+            prefix |= 0x08
+        if (green &amp; 0x40) == 0:    
+            #prefix |= B00000100
+            prefix |= 0x04
+        if (red &amp; 0x80) == 0:      
+            #prefix |= B00000010
+            prefix |= 0x02
+        if (red &amp; 0x40) == 0:      
+            #prefix |= B00000001
+            prefix |= 0x01
+        self.sendByte(prefix)
+ 
+        # Now must send the 3 colors
+        self.sendByte(blue)
+        self.sendByte(green)
+        self.sendByte(red)
+ 
+    def setColorRGB(self, led, red, green, blue):
+        # Send data frame prefix (32x '0')
+        self.sendByte(0x00)
+        self.sendByte(0x00)
+        self.sendByte(0x00)
+        self.sendByte(0x00)
+ 
+        # Send color data for each one of the leds
+        for i in range(self.__number_of_leds):
+            '''
+            if i == led:
+                _led_state[i*3 + _CL_RED] = red;
+                _led_state[i*3 + _CL_GREEN] = green;
+                _led_state[i*3 + _CL_BLUE] = blue;
+            sendColor(_led_state[i*3 + _CL_RED], 
+                      _led_state[i*3 + _CL_GREEN], 
+                      _led_state[i*3 + _CL_BLUE]);
+            '''
+            self.sendColor(red, green, blue)
+ 
+        # Terminate data frame (32x &quot;0&quot;)
+        self.sendByte(0x00)
+        self.sendByte(0x00)
+        self.sendByte(0x00)
+        self.sendByte(0x00)
+ 
+ 
+# Note: Use P9_22(UART2_RXD) and P9_21(UART2_TXD) as GPIO.
+# Connect the Grove - Chainable RGB LED to UART Grove port of Beaglebone Green.
+if __name__ == &quot;__main__&quot;:
+    rgb_led = ChainableLED(CLK_PIN, DATA_PIN, NUMBER_OF_LEDS)
+ 
+    while True:
+        # The first parameter: NUMBER_OF_LEDS - 1; Other parameters: the RGB values.
+        rgb_led.setColorRGB(0, 255, 0, 0)
+        time.sleep(2)
+        rgb_led.setColorRGB(0, 0, 255, 0)
+        time.sleep(2)
+        rgb_led.setColorRGB(0, 0, 0, 255)
+        time.sleep(2)
+        rgb_led.setColorRGB(0, 0, 255, 255)
+        time.sleep(2)
+        rgb_led.setColorRGB(0, 255, 0, 255)
+        time.sleep(2)
+        rgb_led.setColorRGB(0, 255, 255, 0)
+        time.sleep(2)
+        rgb_led.setColorRGB(0, 255, 255, 255)
+        time.sleep(2)
+</code></pre>
+
+<p><strong>Step4:</strong> Save the file by clicking the disk icon and giving the file a name with the .py extension.</p>
+<p><strong>Step5:</strong> Connect Grove Chainable RGB LED to Grove UART socket on BBG.</p>
+<p><strong>Step6:</strong> Run the code. You&rsquo;ll find the RGB LED is changing color every 2 seconds.</p>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
+<ul>
+<li><a href="http://garden.seeedstudio.com/images/a/a6/Chainable_RGB_LED_eagle_file.zip">Chainable RGB LED eagle file</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Chainable_RGB_LED/res/P9813_datasheet.pdf">P9813 Datasheet</a></li>
+<li><a href="https://github.com/pjpmarques/ChainableLED">Chainable RGB LED Library for the P9813</a></li>
+<li><a href="https://github.com/Seeed-Studio/Grove_Chainable_RGB_LED">Github repository for Chainable RGB LED Library (new)</a></li>
+</ul>
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Chainable_RGB_LED -->
+                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
+                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Grove-Chainable_RGB_LED" frameborder="0"></iframe></iframe>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Grove-Dry-Reed_Relay/" class="btn btn-neutral float-right" title="Grove - Dry-Reed Relay">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Grove-2-Coil_Latching_Relay/" class="btn btn-neutral" title="Grove - 2-Coil Latching Relay"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Grove-2-Coil_Latching_Relay/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Grove-Dry-Reed_Relay/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
