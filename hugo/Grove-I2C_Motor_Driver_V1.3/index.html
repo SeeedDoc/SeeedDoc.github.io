@@ -10,11 +10,11 @@
   <title>Grove - I2C Motor Driver V1.3 </title>
 
   
-  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
-  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
-  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
-  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
-  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/hugo/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/hugo/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/hugo/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/hugo/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/hugo/css/hyde-x.css">
 
   
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
@@ -25,7 +25,7 @@
 
   
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
-  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+  <link href="https://seeeddoc.github.io/hugo/favicon.png" rel="icon">
 
   
   
@@ -66,7 +66,7 @@
 
 <p>The Grove - I2C Motor Driver V1.3 (latest version) can directly control Stepper Motor or DC Motor. Its heart is a dual channel H-bridge driver chip（L298N）that can handle current up to 2A per channel, controlled by an Atmel ATmega8L which handles the I2C communication with for example an Arduino. Both motors can be driven simultaneously while set to a different speed and direction. It can power two brushed DC motors or one 4-wire two-phase stepper motor. It requires a 6V to 15V power supply to power the motor and has an onboard 5V voltage regulator which can power the I2C bus and the Arduino(selectable by jumper). All driver lines are protected by diodes from back-EMF.</p>
 
-<p>Contrast to the <a href="../Grove-I2C_Motor_Driver_V1.2">Grove - I2C motor driver V1.2</a>, the V1.3 enables users to control the stepper more easily. You do not need to control the steppers all the time anymore, simply send a command to I2C motor driver V1.3 to drive a stepper, and it will act as your command, which would save your Arduino resource and simplify your code.</p>
+<p>Contrast to the <a href="/Grove-I2C_Motor_Driver_V1.2">Grove - I2C motor driver V1.2</a>, the V1.3 enables users to control the stepper more easily. You do not need to control the steppers all the time anymore, simply send a command to I2C motor driver V1.3 to drive a stepper, and it will act as your command, which would save your Arduino resource and simplify your code.</p>
 
 <p><a href="http://www.seeedstudio.com/Grove-I2C-Motor-Driver-p-907.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
 
@@ -279,11 +279,11 @@ void loop()  {
 }
 </code></pre>
 
-<p>In this program, Arduino first set the speed of the 2 DC motors with the *MotorSpeedSetAB()*command, and then set the DC motors work directions with <em>MotorDirectionSet()</em> command. please refer to the <a href="../Grove-I2C_Motor_Driver_V1.3#function-reference">Function Reference</a> for details, you can download all the demo code in the <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
+<p>In this program, Arduino first set the speed of the 2 DC motors with the *MotorSpeedSetAB()*command, and then set the DC motors work directions with <em>MotorDirectionSet()</em> command. please refer to the <a href="/Grove-I2C_Motor_Driver_V1.3#function-reference">Function Reference</a> for details, you can download all the demo code in the <a href="/Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
 
 <h3 id="how-to-drive-a-stepper-using-i2c-motor-driver-v1-3">How to drive a stepper using I2C motor driver V1.3</h3>
 
-<p>As the upgraded version of <a href="../Grove-I2C_Motor_Driver_V1.2">I2C motor DriverV1.2</a>, You can drive stepper via 2 methods for I2C motor driver V1.3.</p>
+<p>As the upgraded version of <a href="/Grove-I2C_Motor_Driver_V1.2">I2C motor DriverV1.2</a>, You can drive stepper via 2 methods for I2C motor driver V1.3.</p>
 
 <p><strong>1. Control the stepper directly by Arduino</strong>
 The I2C motor Driver can also be used to drive a 4-wire stepper. Connect your stepper to the output pins of I2C motor driver, and then connect motor driver to your Arduino/Seeeduino with I2C bus. Program your Arduino as below:</p>
@@ -323,7 +323,7 @@ void loop()  {
 }
 </code></pre>
 
-<p>This connected 4-wire stepper will rotate; you can adjust the rotation speed or step number in your Arduino program. You can also use some other stepper libraries to control it. For all the demo code please refer to <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
+<p>This connected 4-wire stepper will rotate; you can adjust the rotation speed or step number in your Arduino program. You can also use some other stepper libraries to control it. For all the demo code please refer to <a href="/Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
 
 <p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/2.gif" alt="" /></p>
 
@@ -336,7 +336,7 @@ void loop()  {
 
 <p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2C_Motor_Driver_Connector.jpg" alt="" /></p>
 
-<p>Download the <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Grove-I2C motor driver V1.3 demo code</a>, and open the <em>StepperControlMode2.ino</em>:</p>
+<p>Download the <a href="/Grove-I2C_Motor_Driver_V1.3#resources">Grove-I2C motor driver V1.3 demo code</a>, and open the <em>StepperControlMode2.ino</em>:</p>
 
 <pre><code class="language-de1">#include &lt;Wire.h&gt;
 #define MotorSpeedSet             0x82
@@ -404,9 +404,9 @@ void loop()  {
 }
 </code></pre>
 
-<p>In this demo code, Arduino sends stepper-control command to I2C motor driver via I2C bus, with SteperStepset() to set the step number, and StepperMotorEnable() to set the direction and speed. Please refer to the <a href="../Grove-I2C_Motor_Driver_V1.3#function-reference">Function Reference</a> for the details.</p>
+<p>In this demo code, Arduino sends stepper-control command to I2C motor driver via I2C bus, with SteperStepset() to set the step number, and StepperMotorEnable() to set the direction and speed. Please refer to the <a href="/Grove-I2C_Motor_Driver_V1.3#function-reference">Function Reference</a> for the details.</p>
 
-<p>Note that if you have I2C motor driver V1.2 and want to use the off-line Stepper control methods, you will need to upgrade your firmware in your V1.2 motor driver with a <a href="http://www.seeedstudio.com/depot/atmel-avrisp-stk500-usb-isp-programmer-p-207.html?cPath=132_135">AVRISP</a> and upload the .hex file to your I2C motor driver. Please download the .hex file and source code and related tips in the <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
+<p>Note that if you have I2C motor driver V1.2 and want to use the off-line Stepper control methods, you will need to upgrade your firmware in your V1.2 motor driver with a <a href="http://www.seeedstudio.com/depot/atmel-avrisp-stk500-usb-isp-programmer-p-207.html?cPath=132_135">AVRISP</a> and upload the .hex file to your I2C motor driver. Please download the .hex file and source code and related tips in the <a href="/Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
 
 <h2 id="function-reference">Function Reference</h2>
 
@@ -510,8 +510,8 @@ oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_I2C_Motor_Driver_V1.
 </div>
 
 
-<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
-<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<link rel="stylesheet" href="https://seeeddoc.github.io/hugo/css/tocbot.css">
+<script src="https://seeeddoc.github.io/hugo/js/tocbot.min.js"></script>
 <script>
       tocbot.init({
         tocSelector: '.toc',
