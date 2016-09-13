@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Grove - Switch(P) </title>
+
+  
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+  <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
+  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body class="theme-base-0b">
+<div class="sidebar">
+    <a href="https://seeeddoc.github.io/hugo/">
+    <h2>Seeed Wiki</h2>
+    </a>
+
+    
+    
+    <div class="toc">
+       
+    </div>
+    
+    </br> 
+    </br>
+     <p>Copyright &copy; 2016 Seeed Development Limited </p>
+</div>
+
+
+<div class="content container">
+  <div class="page">
+    
+
+<h1 id="grove-switch-p">Grove - Switch(P)</h1>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Switch-P/img/SwitchP.jpg" alt="" />
+<img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Switch-P/img/GroveSwitchP_01.jpg" alt="" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This Grove – Switch is a mini SPDT slide, great for “ON/OFF” situations. It is such a reliable switch of great build quality that we adopt it on many of our boards. You should stock some for your Grove prototyping system.</p>
+
+<p>What does “P” mean? “P” is for “panel mount” in this product.</p>
+
+<p><a href="http://www.seeedstudio.com/Grove-Switch(P)-p-1252.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Grove Interface</li>
+<li>Easy to use</li>
+<li>Basic Grove element</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>Below is a simple example showing how to use a switch to turn on/off an LED.The working principle and use just the same as the <a href="../Grove-Button">Grove-Button</a>.</p>
+
+<ol>
+<li>Connect the Grove-LED to the Digital 13 of Grove - Basic Shield and connect the Grove -Switch(P) to the Digital 2 of <a href="../Grove-Base_Shield">Grove-Base Shield</a> with two Grove cables.</li>
+<li>Plug the Grove - Base Shield into Arduino and connect Arduino to PC by using a USB cable.</li>
+<li>Copy and paste code below to a new Arduino sketch. Please click <a href="../Upload_Code">here</a> if you do not know how to upload.</li>
+</ol>
+
+<pre><code>
+    // constants won't change. They're used here to 
+    // set pin numbers:
+    const int switchPin = 2;     // the number of the pushbutton pin
+    const int ledPin =  13;      // the number of the LED pin
+
+    // variables will change:
+    int switchState = 0;         // variable for reading the pushbutton status
+
+    void setup() {
+      // initialize the LED pin as an output:
+      //pinMode(ledPin, OUTPUT);      
+      // initialize the switch pin as an input:
+      Serial.begin(9600);
+      pinMode(switchPin, INPUT);     
+    }
+    void loop(){
+      // read the state of the switch value:
+      switchState = digitalRead(switchPin);
+
+      
+      if (switchState == HIGH) {     
+        // turn LED on:    
+       // digitalWrite(ledPin, HIGH);  
+       Serial.println(&quot;switch high!&quot;);
+      } 
+      else {
+        // turn LED off:
+       // digitalWrite(ledPin, LOW); 
+       Serial.println(&quot;switch low&quot;);
+      }
+    }
+
+</code></pre>
+
+<p>After uploading the code, you can see the led will light up when the switch is at <strong>high</strong> side.</p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Switch-P/res/Grove-Switch-P-Eagle_File.zip">Grove - Switch(P) Eagle File</a></li>
+</ul>
+
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/RH2NM37" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_Switch(P)"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Switch(P) -->
+
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
+<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<script>
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.page',
+        headingSelector: 'h1, h2, h3',
+      });
+</script>
+</body>
+</html>
+

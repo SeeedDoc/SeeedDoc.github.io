@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Grove - Hall Sensor </title>
+
+  
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+  <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
+  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body class="theme-base-0b">
+<div class="sidebar">
+    <a href="https://seeeddoc.github.io/hugo/">
+    <h2>Seeed Wiki</h2>
+    </a>
+
+    
+    
+    <div class="toc">
+       
+    </div>
+    
+    </br> 
+    </br>
+     <p>Copyright &copy; 2016 Seeed Development Limited </p>
+</div>
+
+
+<div class="content container">
+  <div class="page">
+    
+
+<h1 id="grove-hall-sensor">Grove - Hall Sensor</h1>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/img/Grove-Hall_Sensor_New.jpg" alt="" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The Hall sensor is based on Hall Effect, which is the production of a voltage difference across an electrical conductor, transverse to an electric current in the conductor and a magnetic field perpendicular to the current. There is a continuous-time switch on this Grove. The output of these devices switches low (turns on) when a magnetic field (south polarity) perpendicular to the Hall sensor exceeds the operate point threshold BOP, and it switches high (turn off) when the magnetic field disappears. The twig can be used to measure RPM.</p>
+
+<p><a href="http://www.seeedstudio.com/depot/grove-hall-sensor-p-965.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
+
+<h2 id="version-tracker">Version Tracker</h2>
+
+<table>
+<thead>
+<tr>
+<th>Revision</th>
+<th>Descriptions</th>
+<th>Release</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>v0.9b</td>
+<td>Initial public release</td>
+<td>3,Oct,2011</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="features">Features</h2>
+
+<ul>
+<li>Grove Compatible Interface</li>
+<li>400ns transition period for rise and fall.</li>
+<li>Continuous-time hall effect sensor</li>
+<li>Reverse battery protection</li>
+</ul>
+
+<h2 id="specifications">Specifications</h2>
+
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Min</th>
+<th>Typical</th>
+<th>Max</th>
+<th>Unit</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Supply Voltage</td>
+<td>3.8</td>
+<td>5.0</td>
+<td>24</td>
+<td>V</td>
+</tr>
+
+<tr>
+<td>Supply Current</td>
+<td>4.1</td>
+<td>-</td>
+<td>24</td>
+<td>mA</td>
+</tr>
+
+<tr>
+<td>Operating Temperature</td>
+<td>-40</td>
+<td>-</td>
+<td>85</td>
+<td>ºC</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="application-ideas">Application Ideas</h2>
+
+<ul>
+<li>RPM meter.</li>
+<li>Simple dc motor.</li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p>The Hall Sensor is used by utilizing the external interrupts available on the arduino/seeeduino. In this example we are using interrupt 0, found on digital pin 2. For other interrupts, see the <a href="http://www.arduino.cc/en/Reference/AttachInterrupt">attachInterrupt()</a>.</p>
+
+<ul>
+<li>Connect the Hall Sensor to Digital port 2 of the <a href="../Grove-Base_Shield">Grove - Base Shield</a> using a 4 pin cable and connect Grove-LED to Digital Port 4.</li>
+<li>Then connect Arduino to PC by using a USB cable.</li>
+<li>Download the <a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/res/Grove-Hall_Sensor_Demo_Code.zip">Hall Sensor Code</a></li>
+<li>Open one of two code. For example Demo <strong>MagnetControlLED</strong></li>
+</ul>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/img/Hall_Sensor_Demo_Code.jpg" alt="" /></p>
+
+<ul>
+<li>Upload the code, Please click <a href="../Upload_Code">here</a> if you do not know how to upload.</li>
+<li>When a magnet whose south pole is facing up is approaching to the onboard sensor, the LED will be turned on. Otherwise, the LED will be turned off.</li>
+</ul>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/res/Twig_Hall_Sensor_v0.9b.zip">Grove-Hall Sensor Eagle File</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Hall_Sensor/res/Grove-Hall_Sensor_Demo_Code.zip">Hall Sensor Demo Code</a></li>
+<li><a href="http://www.allegromicro.com/en/Products/Part_Numbers/1101/1101.pdf">A1101 datasheet</a></li>
+</ul>
+
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/L2FCSPY" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_Hall_Sensor"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Hall_Sensor -->
+
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
+<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<script>
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.page',
+        headingSelector: 'h1, h2, h3',
+      });
+</script>
+</body>
+</html>
+

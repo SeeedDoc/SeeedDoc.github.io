@@ -1,0 +1,65 @@
+/*
+ * Tweaks and overrides to hyde.css
+ */
+
+.sidebar-about h1 {
+  color: #fff;
+  margin-top: 0;
+  font-family: "Abril Fatface", serif;
+  font-size: 2.5rem;
+}
+
+.sidebar-about h2 {
+  color: #fff;
+  margin-top: 0;
+  font-family: "Abril Fatface", serif;
+  font-size: 1.5rem;
+}
+
+.sidebar-nav {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+table, th, td {
+   border: 1px solid #559C4E;
+}
+
+table img{
+   width:150px;
+   max-width:100%;
+   width:100%;
+
+}
+
+.toc ul { list-style: none; margin: 0; padding: 0 5px; }
+
+/*.toc ul li { display: inline; } */
+
+
+#TableOfContents > ul > li > ul > li > ul li {margin-left: 20px; font-size: 0.8rem }
+#TableOfContents > ul > li > ul > li > a, #TableOfContents > ul > li > a { font-weight: bold; font-size: 1.0rem  }
+#TableOfContents > ul > li > ul > li > a { font-style: bold; }
+#TableOfContents > ul > li > a {margin-left: -5px; font-size: 1.1rem }
+
+#toc {
+	position:fixed;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 10px 50px 10px 20px;
+}
+
+th{
+  background-color: #90a959;
+  font-weight: bold;
+  
+}
+
+tr:nth-child(even) {
+  background-color: rgb(221, 221, 221);
+}
+
+
+tr:nth-child(odd) {
+  background-color: white;
+}

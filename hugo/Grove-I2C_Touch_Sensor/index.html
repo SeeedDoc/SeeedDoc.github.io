@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Grove - I2C Touch Sensor </title>
+
+  
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+  <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
+  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body class="theme-base-0b">
+<div class="sidebar">
+    <a href="https://seeeddoc.github.io/hugo/">
+    <h2>Seeed Wiki</h2>
+    </a>
+
+    
+    
+    <div class="toc">
+       
+    </div>
+    
+    </br> 
+    </br>
+     <p>Copyright &copy; 2016 Seeed Development Limited </p>
+</div>
+
+
+<div class="content container">
+  <div class="page">
+    
+
+<h1 id="grove-i2c-touch-sensor">Grove - I2C Touch Sensor</h1>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/img/Grove-I2C-Touch-Sensor.jpg" alt="" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>The I2C Touch Sensor is based on the Proximity Capacitive Touch Sensor Controller from FreeScale - MPR121. It detects the touch or proximity of human fingers. This sensor includes a Touch Sensor controller and 4 finger feelers. One can insert the connectors of feelers into base of Sensor controller, and start sensing the touch.</p>
+
+<p><a href="http://www.seeedstudio.com/depot/Grove-I2C-Touch-Sensor-p-840.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
+
+<h2 id="specifications">Specifications</h2>
+
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value/Range</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Operating voltage</td>
+<td>3~5.5V</td>
+</tr>
+
+<tr>
+<td>Standby Mode Current</td>
+<td>2μA</td>
+</tr>
+
+<tr>
+<td>Touch Channels</td>
+<td>12 (Including 4 with Touch feelers)</td>
+</tr>
+
+<tr>
+<td>Communicating Protocol</td>
+<td>I2C</td>
+</tr>
+
+<tr>
+<td>I2C Address</td>
+<td>0x5A - 0x5D</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="hardware-overview">Hardware Overview</h2>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/img/DSC_0030.png" alt="" /></p>
+
+<p>There are 12 electrodes CH0-CH11. CH0-CH3 are connected to 4 Touch feelers.</p>
+
+<p>The CH4-CH11 are for customer expanding the function. If you need more, you can make the feelers by yourself.</p>
+
+<p>The wires of feelers are twisted to reduce the impact of environment. The black(ground) wire can be cut off if high sensitivity is needed.</p>
+
+<p>The INT pin has to be led out if customers want to use the interrupt pin of MPR121.</p>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="grove-help"><strong>Grove - Help</strong></h3>
+
+<p>Following documents help in getting the user started with Grove.</p>
+
+<ul>
+<li><a href="http://www.seeedstudio.com/document/pdf/Preface.pdf">Preface - Getting Started</a></li>
+<li><a href="http://www.seeedstudio.com/document/pdf/Introduction%20to%20Grove.pdf">Introduction to Grove</a></li>
+</ul>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+Since each electrode needs to be auto-configured by the MPR121 during power up and there is no power reset on the touch sensor controller, everytime you insert or remove a feeler, you need to reset the power of Seeeduino.
+</div>
+
+<p>The feelers can also feel the human being fingers with something between, that&rsquo;s to say, you do not need to touch the feelers with your fingers indeed.</p>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/img/DSC_0026.jpg" alt="" /></p>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/img/DSC_0027.jpg" alt="" /></p>
+
+<p>With a paperboard about 3 mm thick, the feeler can feel the touch of fingers, makes it a good solution for many applications.</p>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/Seeed-Studio/Grove_I2C_Touch_Sensor">I2C Touch Sensor Library</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/res/I2C_Touch_Sensor_eagle_files-v1.1-.zip">I2C Touch Sensor eagle files(v1.1).zip</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/res/Grove-I2C_Color_sensor_v1.2.pdf">I2C Touch Sensor PDF</a></li>
+<li><a href="../How_to_detect_finger_touch?">How to detect finger touch?</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Touch_Sensor/res/Freescale_Semiconductor;MPR121QR2.pdf">I2C Touch Sensor Datasheet</a></li>
+</ul>
+
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/RDQDY53" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/Grove_-_I2C_Touch_Sensor"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_I2C_Touch_Sensor -->
+
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
+<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<script>
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.page',
+        headingSelector: 'h1, h2, h3',
+      });
+</script>
+</body>
+</html>
+

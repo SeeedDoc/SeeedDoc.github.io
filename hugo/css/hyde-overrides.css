@@ -1,0 +1,78 @@
+/*
+ * Tweaks and overrides to hyde.css
+ */
+
+pre code {
+  font-size: 90%;
+}
+
+.toc {
+  position: relative;
+}
+
+
+.sidebar h2 {
+  color: #efd;
+  margin-top: 0;
+  font-size: 2.0rem;
+}
+
+.sidebar-nav {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 1rem;
+}
+
+table, th, td {
+   border: 0.10rem solid #EFE;
+}
+
+th{
+  background-color: #00936D;
+  font-weight: bold;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(210, 229, 210);
+}
+
+tr:nth-child(odd) {
+  background-color: white;
+}
+
+tbody tr:nth-child(odd) th {
+  background-color: #00936D;
+}
+
+table img{  
+   width: 8.34rem;
+   max-width: 100%;
+   width: 100%;
+}
+
+th:empty {
+  display: none;
+  border-style: none;
+}
+
+img{
+   max-height:38rem;
+}
+
+.toc ul { list-style: none; margin: 0; padding: 0 0.278rem; }
+
+/*.toc ul li { display: inline; } */
+
+a > img { width:17rem }
+
+#TableOfContents > ul > li > ul > li > ul li {margin-left: 20px; font-size: 0.8rem }
+#TableOfContents > ul > li > ul > li > a, #TableOfContents > ul > li > a { font-weight: bold; font-size: 1.0rem  }
+#TableOfContents > ul > li > ul > li > a { font-style: bold; }
+#TableOfContents > ul > li > a {margin-left: 0; font-size: 1.2rem; text-align: justify; }
+
+#toc {
+	position:fixed;
+	background-color: rgba(0, 0, 0, 0.1);
+	padding: 10px 50px 10px 20px;
+}

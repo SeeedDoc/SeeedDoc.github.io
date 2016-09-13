@@ -1,0 +1,2601 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Seeed Wiki</title>
+    <link>https://seeeddoc.github.io/hugo/</link>
+    <description>Recent content on Seeed Wiki</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <atom:link href="https://seeeddoc.github.io/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Arch BLE</title>
+      <link>https://seeeddoc.github.io/hugo/Arch_BLE/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arch_BLE/</guid>
+      <description>
+
+&lt;h1 id=&#34;arch-ble&#34;&gt;Arch BLE&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Arch_BLE.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Arch BLE is an mbed enabled development board based Nordic nRF51822. With Arduino form factor and Grove connectors, it is extremely easy to create a bluetooth low energy device.&lt;/p&gt;
+
+&lt;p&gt;The nRF51822 is a powerful multi-protocol single chip solution for ULP wireless applications. It incorporates Nordic’s latest best-in-class performance radio transceiver, an ARM Cortex M0 MCU and 256kB flash + 16kB RAM memory. The nRF51822 supports Bluetooth® low energy and 2.4 GHz protocol stacks.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.seeedstudio.com/Arch-BLE-p-1998.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mbed enabled
+
+&lt;ul&gt;
+&lt;li&gt;Online IDE&lt;/li&gt;
+&lt;li&gt;Easy to use C/C++ SDK&lt;/li&gt;
+&lt;li&gt;Handy libraries&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CMSIS DAP based on LPC11U35
+
+&lt;ul&gt;
+&lt;li&gt;Drag-n-drop programming&lt;/li&gt;
+&lt;li&gt;Debug using CMSIS DAP standard&lt;/li&gt;
+&lt;li&gt;USB virtual serial for communication&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Arduino form factor with Grove connectors&lt;/li&gt;
+&lt;li&gt;Nordic nRF51822 Multi-protocol Bluetooth® 4.0 low energy/2.4GHz RF SoC
+
+&lt;ul&gt;
+&lt;li&gt;ARM Cortex M0 processor&lt;/li&gt;
+&lt;li&gt;256kB flash/16kB RAM&lt;/li&gt;
+&lt;li&gt;Configurable I/O mapping for digital I/O&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;USB Micro B connector&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Arch_BLE_Pinout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Get_started_with_mbed.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Click &lt;a href=&#34;https://developer.mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeed-Arch-BLE&#34;&gt;this link&lt;/a&gt; to &lt;strong&gt;login or signup to mbed&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Import the mbed_blinky program&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Compile&lt;/strong&gt; icon of the top toolbar to compile the program, then download a compiled hex file.&lt;/li&gt;
+&lt;li&gt;Drag-n-drop the downloaded hex file into the MBED disk&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can open &lt;strong&gt;main.cpp&lt;/strong&gt; to change the program. For example, use the following code to blink the LED every 0.1s&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #include &amp;quot;mbed.h&amp;quot;
+
+    DigitalOut led(p30);           // on-board led is connected to p30
+
+    int main()
+    {
+        while (true) {
+            led = !led;
+            wait(0.1);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+If you are get a compiling error that &#39;device.h&#39; is not found, try to update the mbed library to the latest revision in your program.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Color Pixels, a colorful LED strip, can be controlled by mobile phone.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hardware
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Arch-BLE-p-1998.html?cPath=19_21&#34;&gt;Arch BLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Digital-RGB-LED-FlexiStrip-30-LED-1-Meter-p-1665.html&#34;&gt;Digital RGB LED Strip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Android device with BLE&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Ble_color_pixels_bb.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/img/Color_pixels_app.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Make it run&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&#34;http://tangram.qiniudn.com/BLE_Color_Pixels_ARCH_BLE.hex&#34;&gt;BLE_Color_Pixels_Arch_BLE.hex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy the hex file to the MBED disk of your Arch BLE&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&#34;http://tangram.qiniudn.com/seeed_ble_color_pixels.apk&#34;&gt;the Color Pixels Android app&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to change the program, click &lt;a href=&#34;https://mbed.org/compiler/#import:/teams/Seeed/code/BLE_Color_Pixels/;platform:Seeed-Arch-BLE&#34;&gt;this link&lt;/a&gt; to import the Color Pixels program to mbed online IDE.&lt;/p&gt;
+
+&lt;p&gt;If the BLE device is disconnected frequently, we can improve the stability by changing the BLE parameters - Advertising Duration (main.cpp), Min Interval and Max Interval (nRF51822/projectconfig.h)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#define CFG_GAP_CONNECTION_MIN_INTERVAL_MS           20                     /**&amp;lt; Minimum acceptable connection interval */
+#define CFG_GAP_CONNECTION_MAX_INTERVAL_MS          200                     /**&amp;lt; Maximum acceptable connection interval */
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;update-or-restore-firmware&#34;&gt;Update or Restore Firmware&lt;/h2&gt;
+
+&lt;p&gt;The latest firmware version for the Arch BLE is v0203 built at Oct 08 2014. To check your firmware version and built date, open the MBED.HTM file of your MBED disk in a text editor.&lt;/p&gt;
+
+&lt;p&gt;Change log:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2014-06-26: First version&lt;/li&gt;
+&lt;li&gt;2014-08-25: Support to drag-n-drop hex file generated by gcc toolchain and without softdevice&lt;/li&gt;
+&lt;li&gt;2014-10-08: Use USB EJECT INSET instead of reconnecting USB, increase intel hex data line buffer (from 64 bytes to 128 bytes)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Known issues:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Issues when &lt;em&gt;directly&lt;/em&gt; downloading the hex file into the MBED disk with the Chrome browser. The reason is Chrome creates a temporary file while downloading. If you are using Chrome, please save the hex file to a different location and &lt;em&gt;then&lt;/em&gt; copy it to the MBED disk.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Firmware:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mbed.org/media/uploads/yihui/lpc11u35_nrf51822_if_mbed_v203_20141008.bin&#34;&gt;The firmware v0203 2014-10-08 for Arch BLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.mbed.org/media/uploads/yihui/lpc11u35_nrf51822_if_mbed_v203_20140825.bin&#34;&gt;The firmware v0203 2014-08-25 for Arch BLE&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To flash a new firmware:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hold the Arch BLE&amp;rsquo;s button and power it ON.&lt;/li&gt;
+&lt;li&gt;A CRP DISABLD disk will pop up.
+
+&lt;ul&gt;
+&lt;li&gt;On Windows, replace firmware.bin with the above firmware.&lt;/li&gt;
+&lt;li&gt;On Linux/Mac, use command: &lt;strong&gt;dd if={new_firmware.bin} of={firmware.bin} conv=notrunc&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/res/Arch_BLE_v1.0_pdf.pdf&#34;&gt;Schematic pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/res/Arch_BLE_v1.0_Eagle.zip&#34;&gt;Eagle file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_BLE/res/Lpc11u35_nrf51822_if_mbed.bin.zip&#34;&gt;LPC11U35 Firmware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tangram.qiniudn.com/seeed_ble_color_pixels.apk&#34;&gt;Seeed ble color pixels app for Android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Seeed-Studio/ble_color_pixels&#34;&gt;Sources of ble color pixels app&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/X2N5S8Y&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arch_BLE&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_BLE --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arch GPRS V2</title>
+      <link>https://seeeddoc.github.io/hugo/Arch_GPRS_V2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arch_GPRS_V2/</guid>
+      <description>
+
+&lt;h1 id=&#34;arch-gprs-v2&#34;&gt;Arch GPRS V2&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_GPRS_V2/img/Arch_GPRS_V2.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Arch GPRS V2 is the new and improved version of the &lt;a href=&#34;./Arch_GPRS&#34; title=&#34;Arch GPRS&#34;&gt;Arch GPRS&lt;/a&gt; development board from &lt;a href=&#34;http://www.seeedstudio.com&#34;&gt;Seeed Studio&lt;/a&gt;. Like the original &lt;a href=&#34;./Arch_GPRS&#34; title=&#34;Arch GPRS&#34;&gt;Arch GPRS&lt;/a&gt;, it is also an &lt;a href=&#34;http://mbed.org/handbook/mbed-SDK&#34;&gt;mbed&lt;/a&gt; enabled development board that houses a cellular networking module along with a microcontroller. Arch GPRS V2 uses the LPC11U37 Microcontroller instead of the LPC11U24 used in the &lt;a href=&#34;./Arch_GPRS&#34; title=&#34;Arch GPRS&#34;&gt;Arch GPRS&lt;/a&gt;. You can use the mbed C/C++ SDK, libraries and optimizing online development tools to rapidly build your Arch GPRS V2 based prototype. The cellular networking module on the Arch GPRS is based on the SIM900 Quad-band GSM/GRPS engine from SIMCom. With this, data collection functions can be performed easily using the 2G GSM/GPRS based cellular network.
+Arch GPRS V2 has a standard &lt;a href=&#34;./index.php?title=ArduinoAndaction=editAndredlink=1 &amp;quot;Arduino (page does not exist&#34;&gt;Arduino&lt;/a&gt;&amp;rdquo;) interface as well as &lt;a href=&#34;./Grove&#34; title=&#34;Grove&#34;&gt;Grove&lt;/a&gt; connectors on board. It is convenient to connect existing Shields and &lt;a href=&#34;./Grove&#34; title=&#34;Grove&#34;&gt;Grove&lt;/a&gt; products to Arch GPRS V2. You can even connect a solar panel directly to the board to allow the battery to charge from it. A low-power design guarantees easy charging and long hour operations when outdoors!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.seeedstudio.com/Arch-GPRS-V2-p-2026.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+Arch GPRS V2 does not come with &lt;a class=&#34;external text&#34; href=&#34;https://mbed.org/handbook/mbed-HDK&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;an mbed interface&lt;/a&gt;. To output debug messages, please try &lt;a class=&#34;external text&#34; href=&#34;https://mbed.org/handbook/USBSerial&#34; rel=&#34;nofollow&#34; target=&#34;_blank&#34;&gt;USBSerial&lt;/a&gt;.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;mbed enabled&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Online development tools&lt;/li&gt;
+&lt;li&gt;Easy to use C/C++ SDK&lt;/li&gt;
+&lt;li&gt;Lots of published libraries, projects&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;NXP LPC11U37 Controller&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Low power ARM Cortex-M0 Core&lt;/li&gt;
+&lt;li&gt;On chip 128KB Flash, 12KB SRAM, 4KB EEPROM&lt;/li&gt;
+&lt;li&gt;USB Device, UART, I2C&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;SIM900 Module&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Quad-band (850/900/1800/1900MHz) GSM/GPRS support&lt;/li&gt;
+&lt;li&gt;Supports external SIM card： 1.8V/3V&lt;/li&gt;
+&lt;li&gt;Control with standard AT Commands&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Select automatically USB5V or Solar panel to charge a battery&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;arch-gprs-v2-vs-arch-gprs&#34;&gt;Arch GPRS V2 vs Arch GPRS&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Arch GPRS V2&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Arch GPRS&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MCU&lt;/td&gt;
+&lt;td&gt;LPC11U27&lt;/td&gt;
+&lt;td&gt;LPC11U24&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;GSM/GPRS Module&lt;/td&gt;
+&lt;td&gt;SIM900&lt;/td&gt;
+&lt;td&gt;EG-10&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;MicroSD Card&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;td&gt;No&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_GPRS_V2/img/Arch_GPRS_V2_Pinout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_GPRS_V2/img/Get_started_with_arch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Login into the mbed environment from &lt;a href=&#34;http://www.mbed.org&#34;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Import the &lt;a href=&#34;https://mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeed-Arch-GPRS&#34;&gt;mbed_blinky&lt;/a&gt; program&lt;/li&gt;
+&lt;li&gt;Verify that the code imported in main.cpp in the mbed_blinky folder in the mbed online Compiler environment is as indicated in the figure above under Step 3. Ensure that the platform selected for compiling the code for is the Seeeduino-Arch. Now go ahead and compile the code. When asked to save the resultant binary file (.bin), save it to a designated folder on your PC.&lt;/li&gt;
+&lt;li&gt;Now connect your Arch board to your PC and long press the reset button. A removable USB drive named CRP DISABLD should automatically appear on your PC. Go to the CRP DISABLD drive, delete the existing firmware file that you see in the folder and copy the downloaded binary file to CRP DISABLD. Quick press the reset button to run the new binary.&lt;/li&gt;
+&lt;li&gt;Verify that your code is running successfully by looking at the Arch GPRS V2 board. If the right-most LED from the Pinout shown above is blinking and the other 3 LEDs next to it are all ON, this implies that your code is working.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can change the code to the following and see what happens:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;
+    #include &amp;quot;mbed.h&amp;quot;
+
+    DigitalOut myled1(LED2); //left most LED if board is held as shown in Pinout diagram above
+    DigitalOut myled2(LED3); //2nd from left
+    DigitalOut myled3(LED4); //3rd from left
+    DigitalOut myled4(LED1); //4th from left (right most)
+
+    int main() {
+        while(1) {
+                    
+            myled1 = 1; //left most LED turns ON, rest off
+            myled2 = 0;
+            myled3 = 0;
+            myled4 = 0;
+            
+            wait(1); //1 sec wait time
+            myled1 = 0;
+            myled2 = 1; //2nd from left LED turns ON, rest off
+            myled3 = 0;
+            myled4 = 0;
+
+            wait(1);
+            myled1 = 0;
+            myled2 = 0;
+            myled3 = 1; //3rd from left LED turns ON, rest off
+            myled4 = 0;
+            
+            wait(1);
+            myled1 = 0;
+            myled2 = 0;
+            myled3 = 0;
+            myled4 = 1; //4th from left (right most) LED turns ON, rest off
+            
+            wait(1);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;When you Compile and Run the above code on the Arch GPRS V2 board, you should see that the LEDs now blink in sequence.&lt;/p&gt;
+
+&lt;p&gt;If you get through the above steps successfully, this means that:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Your Arch GPRS V2 is powering up correctly.&lt;/li&gt;
+&lt;li&gt;Your code is being downloaded and run by the Arch GPRS V2 module correctly.&lt;/li&gt;
+&lt;li&gt;You are ready to take on more complex projects now!&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;programming-arch-on-windows-linux-or-mac&#34;&gt;Programming Arch on Windows, Linux or Mac&lt;/h2&gt;
+
+&lt;p&gt;Arch does not have an mbed interface. It uses USB In-System-Programming (ISP) to upgrade the firmware.&lt;/p&gt;
+
+&lt;p&gt;To enter the USB ISP mode, connect the Arch with your computer and long press its button, and then a disk named &amp;ldquo;CRP DISABLD&amp;rdquo; will appear.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;On windows&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;delete firmware.bin in the &amp;ldquo;CRP DISABLD&amp;rdquo; disk.&lt;/li&gt;
+&lt;li&gt;copy a new firmware into the disk.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On linux&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;if the disk is not mounted, mount the disk at &lt;strong&gt;{mnt_dir}&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dd if={new_firmware.bin} of={mnt_dir}/firmware.bin conv=notrunc&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On mac you&amp;rsquo;ll need to use Terminal to run the following script to copy you&amp;rsquo;re .bin file to your Arch&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;dd if={new_firmare.bin} of=/Volumes/CRP\ DISABLD/firmware.bin conv=notrunc&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are so inclined, you can also create an &lt;strong&gt;Automator&lt;/strong&gt; application to support drag-and-drop of the file to your board. Just create a &amp;ldquo;&lt;em&gt;Run Shell Script&lt;/em&gt;&amp;rdquo; with the following command:&lt;/p&gt;
+
+&lt;p&gt;dd if=$* of=/Volumes/CRP\ DISABLD/firmware.bin conv=notrunc&lt;/p&gt;
+
+&lt;p&gt;You will also need to change the &lt;code&gt;&amp;quot;Pass Input&amp;quot;&lt;/code&gt; option from &lt;code&gt;&amp;quot;to stdin&amp;quot;&lt;/code&gt; to &lt;code&gt;&amp;quot;as arguments&amp;quot;&lt;/code&gt;&amp;ndash;without this you will get an error &lt;code&gt;&amp;quot;The action &#39;Run Shell Script&#39; encountered an error&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;dd: no value specified for if (1)&amp;quot;&lt;/code&gt; in the log.&lt;/p&gt;
+
+&lt;p&gt;Also, an improved form of the script is:
+&lt;strong&gt;&lt;code&gt;dd if=&amp;quot;${1}&amp;quot; of=/Volumes/CRP\ DISABLD/firmware.bin conv=notrunc&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Which should handle spaces in the file path and only uses the first file supplied.
+Quick press the button to run the new firmware.&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Schematic&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_GPRS_V2/res/Arch_GPRS_v2.0_sch_pcb.zip&#34;&gt;Eagle file for Arch_GPRS_v2.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_GPRS_V2/res/Arch_GPRS_v2.0_SCH_PDF.pdf&#34;&gt;Arch GPRS_v2.0.PDF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Applications and Library&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://developer.mbed.org/teams/Seeed/code/GPRSInterface/&#34;&gt;GPRS library&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/users/yihui/notebook/debug-seeeduino-arch-using-cmsis-dap/&#34;&gt;Use Seeeduino Arch as a debug adapter to debug another Seeeduino Arch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/users/yihui/notebook/sense-environment/&#34;&gt;Sense environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/cookbook/seeed-grove-RTC&#34;&gt;Play with Grove RTC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/cookbook/Seeed-grove-ultrasonic-ranger&#34;&gt;Play with Grove - Ultrasonic ranger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;See also&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./GPRS_Shield_V2.0&#34;&gt;SIM900 GPRS Module Information&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/X2JHJQD&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arch_GPRS_V2&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_GPRS_V2 --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arch Link</title>
+      <link>https://seeeddoc.github.io/hugo/Arch_Link/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arch_Link/</guid>
+      <description>
+
+&lt;h1 id=&#34;arch-link&#34;&gt;Arch Link&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/1020800061.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Arch Link is an mbed enabled development board based on Nordic nRF51822 and WIZnet W5500 ethernet interface. With Arduino form factor, Grove connectors and micro SD interface, it is extremely easy to create a bluetooth low energy device.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.seeedstudio.com/Arch-Link-p-2511.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mbed enabled
+
+&lt;ul&gt;
+&lt;li&gt;Online IDE&lt;/li&gt;
+&lt;li&gt;Easy to use C/C++ SDK&lt;/li&gt;
+&lt;li&gt;Handy libraries&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;CMSIS DAP based on LPC11U35
+
+&lt;ul&gt;
+&lt;li&gt;Drag-n-drop programming&lt;/li&gt;
+&lt;li&gt;Debug using CMSIS DAP standard&lt;/li&gt;
+&lt;li&gt;USB virtual serial for communication&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Arduino form factor with Grove connectors
+
+&lt;ul&gt;
+&lt;li&gt;I2C and UART connecter on board&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Nordic nRF51822 Multi-protocol Bluetooth® 4.0 low energy/2.4GHz RF SoC
+
+&lt;ul&gt;
+&lt;li&gt;ARM Cortex M0 processor&lt;/li&gt;
+&lt;li&gt;256kB flash/16kB RAM&lt;/li&gt;
+&lt;li&gt;Configurable I/O mapping for digital I/O&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;WIZnet W5500 Ethernet
+
+&lt;ul&gt;
+&lt;li&gt;Supports following Hardwired TCP/IP Protocols : TCP, UDP, ICMP, IPv4, ARP, IGMP, PPPoE&lt;/li&gt;
+&lt;li&gt;Supports Power down mode&lt;/li&gt;
+&lt;li&gt;Supports Wake on LAN over UDP&lt;/li&gt;
+&lt;li&gt;Supports High Speed Serial Peripheral Interface(SPI MODE 0, 3)&lt;/li&gt;
+&lt;li&gt;Internal 32Kbytes Memory for Tx/Rx Buffers&lt;/li&gt;
+&lt;li&gt;10BaseT/100BaseTX Ethernet PHY embedded&lt;/li&gt;
+&lt;li&gt;with RJ45 connector&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;USB Micro B connector&lt;/li&gt;
+&lt;li&gt;Micro SD Card connector&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/Arch_link_pinout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/Get_started_with_mbed.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Click &lt;a href=&#34;https://developer.mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeed-Arch-BLE&#34;&gt;this link&lt;/a&gt; to &lt;strong&gt;login or signup to mbed&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Import the mbed_blinky program&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Compile&lt;/strong&gt; icon of the top toolbar to compile the program, then download a compiled hex file.&lt;/li&gt;
+&lt;li&gt;Drag-n-drop the downloaded hex file into the MBED disk&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can open &lt;strong&gt;main.cpp&lt;/strong&gt; to change the program. For example, use the following code to blink the LED every 0.1s&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #include &amp;quot;mbed.h&amp;quot;
+
+    DigitalOut led(p30);           // on-board led is connected to p30
+
+    int main()
+    {
+        while (true) {
+            led = !led;
+            wait(0.1);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+If you are get a compiling error that &#39;device.h&#39; is not found, try to update the mbed library to the latest revision in your program.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Color Pixels, a colorful LED strip, can be controlled by mobile phone.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hardware
+
+&lt;ul&gt;
+&lt;li&gt;Arch Link&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Digital-RGB-LED-FlexiStrip-30-LED-1-Meter-p-1665.html&#34;&gt;Digital RGB LED Strip&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Android device with BLE&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/Ble_color_pixels_bb.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/Color_pixels_app.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Make it run&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&#34;http://tangram.qiniudn.com/BLE_Color_Pixels_ARCH_BLE.hex&#34;&gt;BLE_Color_Pixels_Arch_BLE.hex&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Copy the hex file to the MBED disk of your Arch BLE&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&#34;http://tangram.qiniudn.com/seeed_ble_color_pixels.apk&#34;&gt;the Color Pixels Android app&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you want to change the program, click &lt;a href=&#34;https://mbed.org/compiler/#import:/teams/Seeed/code/BLE_Color_Pixels/;platform:Seeed-Arch-BLE&#34;&gt;this link&lt;/a&gt; to import the Color Pixels program to mbed online IDE.&lt;/p&gt;
+
+&lt;p&gt;If the BLE device is disconnected frequently, we can improve the stability by changing the BLE parameters - Advertising Duration (main.cpp), Min Interval and Max Interval (nRF51822/projectconfig.h)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#define CFG_GAP_CONNECTION_MIN_INTERVAL_MS           20                     /**&amp;lt; Minimum acceptable connection interval */
+#define CFG_GAP_CONNECTION_MAX_INTERVAL_MS          200                     /**&amp;lt; Maximum acceptable connection interval */
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can use the Arch Link as a web dashboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/Arch_link_application1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can also use the Arch Link as a Mobile APP dashboard.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/img/Arch_link_application2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;update-or-restore-firmware&#34;&gt;Update or Restore Firmware&lt;/h2&gt;
+
+&lt;p&gt;The latest firmware version for the Arch Link is v0203 built at Jun 4 2015. To check your firmware version and built date, open the MBED.HTM or DETAILS.TXT of your MBED disk in a text editor.&lt;/p&gt;
+
+&lt;p&gt;Changelog:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2015-06-4 first version&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Firmware:&lt;/p&gt;
+
+&lt;p&gt;The firmware v0203 2015-06-04 for Arch Link
+To flash a new firmware:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Hold the Arch Link&amp;rsquo;s button and power it ON&lt;/li&gt;
+&lt;li&gt;A CRP DISABLD disk will show up
+
+&lt;ul&gt;
+&lt;li&gt;On Windows, replace firmware.bin with the above firmware&lt;/li&gt;
+&lt;li&gt;On Linux/Mac, use command: dd if={new_firmware.bin} of={firmware.bin} conv=notrunc&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/res/Arch_Link_v1.0_sch.pdf&#34;&gt;Schematic pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/res/Arch_Link_v1.0_Eagle.rar&#34;&gt;Eagle file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Link/res/Lpc11u35_nrf51822_if_mbed.bin.zip&#34;&gt;LPC11U35 Firmware&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://tangram.qiniudn.com/seeed_ble_color_pixels.apk&#34;&gt;Seeed ble color pixels app for android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Seeed-Studio/ble_color_pixels&#34;&gt;Sources of ble color pixels app&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;see-also&#34;&gt;See Also&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./Arch_BLE#Get_Started&#34;&gt;Arch BLE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./W5500_Ethernet_Shield_v1.0&#34;&gt;W5500 Ethernet Shield&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/X2Y7R79&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arch_Link&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_Link --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arch Max v1.1</title>
+      <link>https://seeeddoc.github.io/hugo/Arch_Max_v1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arch_Max_v1.1/</guid>
+      <description>
+
+&lt;h1 id=&#34;arch-max-v1-1&#34;&gt;Arch Max v1.1&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/img/Arch_Max_v1.1_product_view.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;The Arch Max is a mbed enabled development board for rapid prototyping. It is based on an STM32F407VET6 microcontroller with an ARM Cortex-M4F core running at 168MHz. It provides &lt;a href=&#34;https://en.wikipedia.org/wiki/Joint_Test_Action_Group#Serial_Wire_Debug&#34;&gt;Serial Wire Debug&lt;/a&gt;(SWD) debug, drag-and-drop programming and USB serial communication.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Arch-Max-v11-p-2632.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;version-tracker&#34;&gt;Version Tracker&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Version&lt;/th&gt;
+&lt;th&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;./Arch_Max&#34;&gt;Arch Max v1.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;v1.0&lt;/td&gt;
+&lt;td&gt;5V cannot be powered by USB, user should connect to ext-power&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Arch Max v1.1&lt;/td&gt;
+&lt;td&gt;v1.1&lt;/td&gt;
+&lt;td&gt;5V cannot be powered by USB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mbed enabled
+
+&lt;ul&gt;
+&lt;li&gt;Online development tools(include IDE)&lt;/li&gt;
+&lt;li&gt;Complete and straightforward C/C++ SDK&lt;/li&gt;
+&lt;li&gt;Massive examples and tutorials&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;High-performance STM32F407VET6
+
+&lt;ul&gt;
+&lt;li&gt;ARM Cortex-M4 MCU with FPU of 168MHz&lt;/li&gt;
+&lt;li&gt;512 KB Flash memory, 192 KB RAM&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;On-board programming and debug
+
+&lt;ul&gt;
+&lt;li&gt;Drag-and-drop programming&lt;/li&gt;
+&lt;li&gt;USB serial communication&lt;/li&gt;
+&lt;li&gt;SWD debug with GDB+ pyOCD/OpenOCD, Keil or IAR&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Arduino form factor, compatible with lots of shields&lt;/li&gt;
+&lt;li&gt;Built-in Ethernet port, USB and SD card slot for Internet connectivity and data exchange&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter/Item&lt;/th&gt;
+&lt;th&gt;Value&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Work Voltage&lt;/td&gt;
+&lt;td&gt;5V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Microcontroller&lt;/td&gt;
+&lt;td&gt;STM32F407VET6&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Flash Memory&lt;/td&gt;
+&lt;td&gt;512KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RAM&lt;/td&gt;
+&lt;td&gt;192KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UART&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I2C&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SPI&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;CAN&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SDIO&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Camera interface&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Eth&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ADC Channels&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I/O pins&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Digital I/O Max Input Voltage&lt;/td&gt;
+&lt;td&gt;5.0V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Diameter&lt;/td&gt;
+&lt;td&gt;90mm x 44mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/img/Arch_Max_Pinout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/img/Get_started_with_mbed.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Click &lt;a href=&#34;https://developer.mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeed-Arch-MAX&#34;&gt;here&lt;/a&gt; to login or signup to mbed&lt;/li&gt;
+&lt;li&gt;Import the mbed_blinky program&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Compile&lt;/strong&gt; icon of the top toolbar to compile the program, then download a compiled hex file.&lt;/li&gt;
+&lt;li&gt;Drag-n-drop the downloaded bin file into the mbed disk&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can open &lt;strong&gt;main.cpp&lt;/strong&gt; to change the program. For example, use the following code to blink the LED every 0.1 second&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #include &amp;quot;mbed.h&amp;quot;
+
+    DigitalOut led(LED1);          // on-board led is connected to D13
+
+    int main()
+    {
+        while (true) {
+            led = !led;
+            wait(0.1);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;debug&#34;&gt;Debug&lt;/h2&gt;
+
+&lt;p&gt;To enable SWD debug or to get debug message through USB Virtual serial, please install &lt;a href=&#34;https://developer.mbed.org/handbook/Windows-serial-configuration&#34;&gt;a driver from mbed&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;update-or-restore-firmware&#34;&gt;Update or Restore Firmware&lt;/h2&gt;
+
+&lt;p&gt;The latest firmware version for the Arch Max is v0203 built at Oct 8, 2014. To check your firmware version and built date, open the mbed.HTM file of your mbed disk in a text editor.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://developer.mbed.org/media/uploads/yihui/lpc11u35_nrf51822_if_mbed_v203_20141008.bin&#34;&gt;The firmware v0203 2014-10-08 for Arch Max&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Press and hold the Arch Max&amp;rsquo;s button to power it on.&lt;/li&gt;
+&lt;li&gt;A CRP DISABLD disk will show
+
+&lt;ul&gt;
+&lt;li&gt;On Windows, replace firmware.bin with the above firmware&lt;/li&gt;
+&lt;li&gt;On Linux/Mac, enter command: &lt;strong&gt;dd if={new_firmware.bin} of={firmware.bin} conv=notrunc&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/res/ARCH_Max.zip&#34;&gt;Schematics Eagle file for ARCH Max&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/res/Arch_Max.pdf&#34;&gt;Schematics PDF file for ARCH Max&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Max_v1.1/res/STM32F407.pdf&#34;&gt;STM32F407 datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/XY55DPR&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arch_Max_v1.1&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_Max_v1.1 --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arch Pro</title>
+      <link>https://seeeddoc.github.io/hugo/Arch_Pro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arch_Pro/</guid>
+      <description>
+
+&lt;h1 id=&#34;arch-pro&#34;&gt;Arch Pro&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/img/3D_Arch_pro_v1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Arch Pro is an mbed enabled development board for rapid prototyping. It is a variant of mbed LPC1768 with built-in Ethernet, USB Host/Device, Grove connectors and Arduino form factor. With a variety of Shield and Grove modules and lots of software libraries for Arch Pro, you can implement Ethernet, USB Host/Device and NFC applications rapidly and easily.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/Arch-Pro-p-1677.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;mbed enabled&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Online development tools&lt;/li&gt;
+&lt;li&gt;Easy to use C/C++ SDK&lt;/li&gt;
+&lt;li&gt;Handy libraries&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Arduino form factor with two Grove connectors&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Drag-n-drop programming&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Debug using CMSIS-DAP&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;USB virtual serial for communication&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Value/Availability&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;MCU&lt;/td&gt;
+&lt;td&gt;NXP LPC1768 variant (with ARM Cortex-M3 core)&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Clock Speed&lt;/td&gt;
+&lt;td&gt;100 MHz&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Flash&lt;/td&gt;
+&lt;td&gt;512 KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RAM&lt;/td&gt;
+&lt;td&gt;64KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UART&lt;/td&gt;
+&lt;td&gt;4 No.s&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I2C&lt;/td&gt;
+&lt;td&gt;3 No.s&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;SPI&lt;/td&gt;
+&lt;td&gt;2 No.s&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Ethernet&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;USB Host/Device&lt;/td&gt;
+&lt;td&gt;Yes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;platforms-supported&#34;&gt;Platforms Supported&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;mbed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;application-ideas&#34;&gt;Application Ideas&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/handbook/Ethernet-Interface&#34;&gt;Ethernet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/handbook/USBHost&#34;&gt;USB Host&lt;/a&gt; or &lt;a href=&#34;https://mbed.org/handbook/USBDevice&#34;&gt;Device&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/users/yihui/notebook/rapid-prototyping-with-nfc/&#34;&gt;NFC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/handbook/RTOS&#34;&gt;RTOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://mbed.org/users/jsnyder/notebook/elua-preliminary-port/&#34;&gt;Lua&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/img/Arch_pro_v1_pinout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is &lt;a href=&#34;http://seeed-studio.github.io/Artwork/images/arch_pro_v1_pinout_mono.png&#34;&gt;a monochrome version&lt;/a&gt; for you to print.&lt;/p&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+The Arch Pro silkscreen for the Grove connectors is labeled 3V3 on top of the PCB and 5V on the underside. Grove Vcc is by default 3V3, but can be changed to 5V by moving R50 to R51. SPI Vcc pin can be set by populating R52 (3V3) or R53 (5V) with 0R - neither populated by default.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;As the Arch Pro is compatible with mbed LPC1768, one can use the mbed C/C++ SDK, libraries and online development tools to rapidly build a prototype.
+Here we show how to light up an LED. This can be done in less than 10 minutes.&lt;/p&gt;
+
+&lt;p&gt;Step one： Sign up for an mbed account.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Open &lt;a href=&#34;https://developer.mbed.org/&#34;&gt;mbed.org&lt;/a&gt;, click Login or signup. If you have already registered, please click login directly.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Step two： Enter online development tools.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click Compiler， it opens the online mbed IDE. Before programming, it is better to read the mbed Complier &lt;a href=&#34;https://developer.mbed.org/getting-started/&#34;&gt;Getting started&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/img/Open_Compiler.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Step three：Edit code.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click &amp;ldquo;New&amp;rdquo; in the left top corner to create a Program and edit a blink program in main.cpp file.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;#include &amp;quot;mbed.h&amp;quot;
+ 
+DigitalOut  led1(LED1);
+ 
+int main() {
+    while(1) {
+        led1 = !led1; 
+        wait(0.5); 
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Step four： Add a device.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click ”No device selected” in the top right corner, then click ”Add a device” button in the bottom left as seen in the picture below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+If you have already used an mbed device, it will be seen in the top right corner instead of ”No device selected”.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/img/选择设备.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A pop-up page appears with a list of devices as shown below. Select ”mbed LPC1768”.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/img/选择设备1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Enter mbed LPC1768 page and click ”Add to mbed Compiler”. Now you have successfully added Mbed LPU1768. Return to mbed compiler page and click ”No device selected”. After you click &amp;ldquo;LPC1768&amp;rdquo; in the bottom left corner, a screen appears as shown below.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/img/Arch_pro_add_platform.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can see the selected board in mbed online compiler after clicking ”Select Platform”.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Step five： Compile, download.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Click &amp;ldquo;Compile&amp;rdquo;. On successful compilation, the mbed IDE generates a bin file. Save the bin file on your PC.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Step six： Update firmware.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Connect the USB interface (next to &amp;lsquo;BUTTON&amp;rsquo;) of Arch Pro to your PC using a USB Micro B cable; It automatically appears as a USB device named MBED.&lt;/li&gt;
+&lt;li&gt;Copy the generated bin file to MBED device (on your PC). Now the USB device disappears and reappears.&lt;/li&gt;
+&lt;li&gt;Press BUTTON of Arch Pro, you will see an LED flashing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;debug&#34;&gt;Debug&lt;/h2&gt;
+
+&lt;p&gt;To enable SWD debug or to get debug message through USB Virtual serial, please install &lt;a href=&#34;https://developer.mbed.org/handbook/Windows-serial-configuration&#34;&gt;the driver from mbed&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;update-or-restore-firmware&#34;&gt;Update or Restore Firmware&lt;/h2&gt;
+
+&lt;p&gt;The latest firmware version for the Arch Pro is v0221 built on Jan 28 2015. To check your firmware version and build date, open the MBED.HTM or DETAILS.TXT of your MBED disk in a text editor.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;[&lt;a href=&#34;https://developer.mbed.org/media/uploads/yihui/lpc11u35_lpc1768_if_mbed_20150128.bin&#34;&gt;Firmware v221 2015-01-28 for Arch Pro&lt;/a&gt;] Fix Mac OS X 10.10 Yosemite read only file system bug&lt;/li&gt;
+&lt;li&gt;[&lt;a href=&#34;https://github.com/xiongyihui/CMSIS-DAP/raw/arch_pro/interface/mdk/lpc11u35/lpc11u35_lpc1768_if_mbed_bootloader.bin&#34;&gt;Firmware v0203 2014-09-02 for Arch Pro&lt;/a&gt;]&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;To update:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;A Windows or Linux computer is needed.&lt;/li&gt;
+&lt;li&gt;Download the latest firmware.&lt;/li&gt;
+&lt;li&gt;Press and hold the Arch Pro&amp;rsquo;s BUTTON and power it ON.&lt;/li&gt;
+&lt;li&gt;A disk named MBED LOADER will appear.&lt;/li&gt;
+&lt;li&gt;Drag-n-drop the downloaded firmware into the disk.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Notes&lt;/p&gt;
+&lt;p&gt; 1. LocalFileSystem does not work:
+As the Arch Pro does not have external flash to store files, the LocalFileSystem is not available for this board.&lt;/p&gt;
+
+&lt;p&gt; 2. P0\_27 &amp; P0\_28 do not work with DigitalOut:
+P0\_28 &amp; P0\_27 are open-drain digital I/O for compatible with I2C. External pull-up resistors are needed to provide output functionality.&lt;/p&gt;
+
+&lt;p&gt; 3. USB Serial Communication:
+In Windows, install the mbed Windows serial port driver to use USB Serial Communication. Have a look at [Windows Serial Configuration](https://developer.mbed.org/handbook/Windows-serial-configuration)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/res/Arch_Pro_V1.0_Schematic.pdf&#34;&gt;Arch Pro V1.0 Schematic PDF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/res/Arch_Pro_V1.0.zip&#34;&gt;Arch Pro V1.0 Eagle Files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/res/LPC1769_68_67_66_65_64_63.pdf&#34;&gt;LPC1768 datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_Pro/res/LPC17xxUserManual.pdf&#34;&gt;LPC17xx User Manual&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/LRSZW29&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arch_Pro&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_Pro --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arch V1.1</title>
+      <link>https://seeeddoc.github.io/hugo/Arch_V1.1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arch_V1.1/</guid>
+      <description>
+
+&lt;h1 id=&#34;arch-v1-1&#34;&gt;Arch V1.1&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_V1.1/img/Arch.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Arch V1.1 is an mbed enabled development board with Arduino form factor and Grove connectors for rapid prototyping. With a variety of Shield and Grove modules, mbed SDK and lots of software libraries, you can rapidly build a prototype.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/seeeduino-arch-p-1561.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;version-tracker&#34;&gt;Version Tracker&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;25%&#34; /&gt;
+&lt;col width=&#34;50%&#34; /&gt;
+&lt;col width=&#34;25%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Revision&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;th&gt;Release Date&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;a href=&#34;./Seeeduino_Arch&#34; title=&#34;Seeeduino Arch&#34;&gt;Seeeduino Arch V1.0&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;ul&gt;
+&lt;li&gt;Initial public release&lt;/li&gt;
+&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;2013-6-17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;Arch V1.1&lt;/td&gt;
+&lt;td&gt;&lt;ul&gt;
+&lt;li&gt;Change name from Seeeduino Arch to Arch&lt;/li&gt;
+&lt;li&gt;Switch D13 and D11&lt;/li&gt;
+&lt;li&gt;Add one Grove connector&lt;/li&gt;
+&lt;li&gt;Remove dual diode&lt;/li&gt;
+&lt;/ul&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;mbed enabled&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;online development tools&lt;/li&gt;
+&lt;li&gt;easy to use C/C++ SDK&lt;/li&gt;
+&lt;li&gt;lots of published libraries, projects&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Arduino form factor, three Grove connectors&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;available with 3.3V compatible shields&lt;/li&gt;
+&lt;li&gt;a large number of grove modules&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Drag-n-drop programming&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;NXP LPC11U24 MCU&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Low power ARM Cortex-M0 Core&lt;/li&gt;
+&lt;li&gt;48MHz, 32KB Flash, 8KB RAM, 4KB EEPROM&lt;/li&gt;
+&lt;li&gt;USB Device, 2xSPI, UART, I2C&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Item&lt;/th&gt;
+&lt;th&gt;Typical&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Work Voltage&lt;/td&gt;
+&lt;td&gt;7 ~ 12V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Microcontroller&lt;/td&gt;
+&lt;td&gt;LPC11U24&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Flash Memory&lt;/td&gt;
+&lt;td&gt;32KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;EEPROM&lt;/td&gt;
+&lt;td&gt;4KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RAM&lt;/td&gt;
+&lt;td&gt;8KB&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;UART&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I2C&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;ADC Channels&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;I/O pins&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Digital I/O Max input voltage&lt;/td&gt;
+&lt;td&gt;5.0V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_V1.1/img/Arch_V1.1_Pinout.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;There is &lt;a href=&#34;http://seeed-studio.github.io/Artwork/images/arch_v1.1_pinout_mono.png&#34;&gt;a monochrome version&lt;/a&gt; for you to print.&lt;/p&gt;
+
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arch_V1.1/img/Get_started_with_arch.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Click &lt;a href=&#34;https://mbed.org/compiler/#import:/teams/mbed/code/mbed_blinky/;platform:Seeeduino-Arch&#34;&gt;this link&lt;/a&gt; to login or signup to mbed&lt;/li&gt;
+&lt;li&gt;Import the mbed_blinky program&lt;/li&gt;
+&lt;li&gt;Coding! Then you can compile the code and download the output binary.&lt;/li&gt;
+&lt;li&gt;Now connect your Arch board to your pc and long press the reset button, it will automatically appear as a USB driver named CRP DISABLD. Go to the CRP DISABLD, delete the firmware file and copy the download binary file to CRP DISABLD. Quick press the reset button to run the new binary.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;You can change the code as following and try again.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    #include &amp;quot;mbed.h&amp;quot;
+
+    BusOut leds(LED1, LED2, LED3, LED4);
+
+    int main() {
+        uint8_t count = 0;
+        while(1) {
+            leds = count++;
+            wait(1);
+        }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;programming-arch-on-windows-linux-or-mac&#34;&gt;Programming Arch on Windows, Linux or Mac&lt;/h2&gt;
+
+&lt;p&gt;Arch does not have an mbed interface. It uses USB In-System-Programming(ISP) to upgrade the firmware.&lt;/p&gt;
+
+&lt;p&gt;To enter the USB ISP mode, connect the Arch with your computer and long press its button, and then a disk named &amp;ldquo;CRP DISABLD&amp;rdquo; will appear.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;On Windows&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;delete firmware.bin in the &amp;ldquo;CRP DISABLD&amp;rdquo; disk.&lt;/li&gt;
+&lt;li&gt;copy a new firmware into the disk.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On Linux&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;if the disk is not mounted, mount the disk at &lt;strong&gt;{mnt_dir}&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;dd if={new_firmware.bin} of={mnt_dir}/firmware.bin conv=notrunc&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On Mac you will need to use Terminal to run the following script to copy you&amp;rsquo;re .bin file to your Arch&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;dd if={new_firmare.bin} of=/Volumes/CRP\ DISABLD/firmware.bin conv=notrunc&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If you are so inclined, you can also create an &lt;strong&gt;Automator&lt;/strong&gt; application to support drag-and-drop of the file to your board. Just create a &amp;ldquo;&lt;em&gt;Run Shell Script&lt;/em&gt;&amp;rdquo; with the following command:&lt;/p&gt;
+
+&lt;p&gt;dd if=$* of=/Volumes/CRP\ DISABLD/firmware.bin conv=notrunc&lt;/p&gt;
+
+&lt;p&gt;You will also need to change the &lt;code&gt;&amp;quot;Pass Input&amp;quot;&lt;/code&gt; option from &lt;code&gt;&amp;quot;to stdin&amp;quot;&lt;/code&gt; to &lt;code&gt;&amp;quot;as arguments&amp;quot;&lt;/code&gt;&amp;ndash;without this you will get an error &lt;code&gt;&amp;quot;The action &#39;Run Shell Script&#39; encountered an error&amp;quot;&lt;/code&gt; or &lt;code&gt;&amp;quot;dd: no value specified for if (1)&amp;quot;&lt;/code&gt; in the log.&lt;/p&gt;
+
+&lt;p&gt;Also, an improved form of the script is:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;dd if=&amp;quot;${1}&amp;quot; of=/Volumes/CRP\ DISABLD/firmware.bin conv=notrunc&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Which should handle spaces in the file path and only uses the first file supplied.&lt;/p&gt;
+
+&lt;p&gt;Quick press the button to run the new firmware.&lt;/p&gt;
+
+&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/users/yihui/notebook/debug-seeeduino-arch-using-cmsis-dap/&#34;&gt;Use Seeeduino Arch as a debug adapter to debug another Seeeduino Arch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/users/yihui/notebook/sense-environment/&#34;&gt;Sense environment&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/cookbook/seeed-grove-RTC&#34;&gt;Play with Grove RTC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://mbed.org/cookbook/Seeed-grove-ultrasonic-ranger&#34;&gt;Play with Grove - Ultrasonic ranger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://upverter.com/yihui/35f45e266de84e9c/Arch/&#34;&gt;Schematics of Arch V1.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/XYGQPRQ&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arch_V1.1&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arch_V1.1 --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Arduino IDE for RePhone Kit</title>
+      <link>https://seeeddoc.github.io/hugo/Arduino_IDE_for_RePhone_Kit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Arduino_IDE_for_RePhone_Kit/</guid>
+      <description>
+
+&lt;h1 id=&#34;arduino-ide-for-rephone-kit&#34;&gt;Arduino IDE for RePhone Kit&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&#34;./Rephone&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Xadow_GSMPlusBLE_pingguo.JPG&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;RePhone can be a learning tool for you to start interesting projects. Currently, RePhone supports various development environments and development languages, you can build applications either with C/C++ based on Eclipse IDE, Arduino IDE, or with Lua and JavaScript.&lt;/p&gt;
+
+&lt;p&gt;This wiki is a User Guide to help you start your RePhone project with Arduino IDE.&lt;/p&gt;
+
+&lt;h2 id=&#34;download-arduino-ide-for-rephone&#34;&gt;Download Arduino IDE for RePhone&lt;/h2&gt;
+
+&lt;p&gt;Before you download the Arduino IDE for RePhone, make sure you have an operation system as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Windows XP/Vista/7/8/8.1&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We have put the Arduino IDE for RePhone on our GitHub, and you are quite welcome to send us a &amp;lsquo;pull request&amp;rsquo; to help us optimize and improve it.&lt;/p&gt;
+
+&lt;p&gt;If you ever used the Arduino IDE before, then this should be just a piece of cake. If you are not familiar with Arduino, which is fine as well, just follow the instructions, and you will be getting started with Arduino IDE easily and quickly.&lt;/p&gt;
+
+&lt;p&gt;Now click on&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/Seeed-Studio/Arduino_IDE_for_RePhone&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Download_Arduino_IDE_for_RePhone.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;On the Github page, click the &lt;strong&gt;Download ZIP&lt;/strong&gt; to download the file as shown in the image below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Click_to_download_Arduino_IDE_for_RePhone.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;When the download is complete, unzip the file to a proper location.&lt;/p&gt;
+
+&lt;h2 id=&#34;install-the-driver&#34;&gt;Install the Driver&lt;/h2&gt;
+
+&lt;h3 id=&#34;disable-driver-signature-enforcement-under-windows-8-8-1&#34;&gt;Disable Driver Signature Enforcement under Windows 8 / 8.1&lt;/h3&gt;
+
+&lt;p&gt;If you are using the Windows8/8.1, you would need to disable &lt;strong&gt;Driver Signature Enforcement&lt;/strong&gt; first to be able to install the driver.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;You should save the files you are editing before trying to turn off the &amp;lsquo;Driver Signature Enforcement&amp;rsquo; as your system will be shut down during the operation.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now follow the instructions below to disable the &amp;lsquo;Driver Signature Enforcement.&amp;rsquo;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Press “Windows Key” +&amp;ldquo;R&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Enter shutdown.exe /r /o /f /t 00&lt;/li&gt;
+&lt;li&gt;Click the &amp;ldquo;OK&amp;rdquo; button.&lt;/li&gt;
+&lt;li&gt;System will restart to a &amp;ldquo;Choose an option&amp;rdquo; screen&lt;/li&gt;
+&lt;li&gt;Select &amp;ldquo;Troubleshoot&amp;rdquo; from &amp;ldquo;Choose an option&amp;rdquo; screen&lt;/li&gt;
+&lt;li&gt;Select &amp;ldquo;Advanced options&amp;rdquo; from &amp;ldquo;Troubleshoot&amp;rdquo; screen&lt;/li&gt;
+&lt;li&gt;Select &amp;ldquo;Windows Startup Settings&amp;rdquo; from &amp;ldquo;Advanced options&amp;rdquo; screen&lt;/li&gt;
+&lt;li&gt;Click &amp;ldquo;Restart&amp;rdquo; button&lt;/li&gt;
+&lt;li&gt;System will restart to &amp;ldquo;Advanced Boot Options&amp;rdquo; screen&lt;/li&gt;
+&lt;li&gt;Select &amp;ldquo;Disable Driver Signature Enforcement&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Once the system starts, you can install the Arduino drivers as same as Windows&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;normal-driver-installation&#34;&gt;Normal Driver Installation&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;First, power up your RePhone by &lt;strong&gt;plugging in the battery&lt;/strong&gt; or **power it with external power sources (3.3 ~ 4.2V(no SIM)/3.5 ~ 4.2V(with SIM)) **to the battery socket on the Xadow GSM+BLE, &lt;strong&gt;press and hold the power key (PWR) for 2 seconds to&lt;/strong&gt; &lt;strong&gt;turn it ON&lt;/strong&gt; (LED indicator shows &lt;strong&gt;GREEN&lt;/strong&gt;), then connect your RePhone to PC with a Micro USB cable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Connect_Xadow_GSMPlusBLE_to_PC.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;strong&gt;Device Manager&lt;/strong&gt; by clicking the &lt;strong&gt;Start&lt;/strong&gt; button, clicking &lt;strong&gt;Control Panel&lt;/strong&gt;, clicking &lt;strong&gt;System and Security&lt;/strong&gt;, and then, under &lt;strong&gt;System&lt;/strong&gt;, clicking &lt;strong&gt;Device Manager&lt;/strong&gt;. If you&amp;rsquo;re prompted for an administrator password or confirmation, type the password or provide confirmation.
+In the &lt;strong&gt;Device Manager&lt;/strong&gt;, you will be seeing unknown devices as shown below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Unknown_Devices.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Right click on one of the unknown devices, choose &lt;strong&gt;Update Driver Software&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Update_Driver_Software.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Choose &lt;strong&gt;Browse my computer for driver software&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Browse_my_computer_for_driver_software.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;Browse&lt;/strong&gt; and the locate the folder which you&amp;rsquo;ve unzipped the Arduino IDE for RePhone .. \Arduino_IDE_for_RePhone\drivers\mtk . Click &lt;strong&gt;Next&lt;/strong&gt; to start the driver installation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Locate_Driver.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;When the driver software is successfully installed, you will be able to see the following &lt;strong&gt;complete&lt;/strong&gt; page, click &lt;strong&gt;Close&lt;/strong&gt; and &lt;strong&gt;start over from step 1 to 6 to install the driver for another unknown device&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_complete_page.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;install-the-driver-manually&#34;&gt;Install the Driver Manually&lt;/h3&gt;
+
+&lt;p&gt;You can also install the driver manually:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;In &amp;ldquo;&lt;strong&gt;Browse for driver software on your computer&lt;/strong&gt;&amp;rdquo; window, click &lt;strong&gt;&amp;ldquo;Let me pick from a list of device drivers on my computer&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Then click &amp;ldquo;&lt;strong&gt;Ports(COM&amp;amp;LPT)&lt;/strong&gt;&amp;rdquo; and go &amp;ldquo;&lt;strong&gt;next&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Click &amp;ldquo;&lt;strong&gt;Have Disk&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Afterwards,&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;ndash; if you are using &lt;strong&gt;&lt;big&gt;Windows Vista 64bit&lt;/big&gt;&lt;/strong&gt;, locate &amp;ldquo;*&lt;em&gt;Arduino_IDE_for_RePhone-master\drivers\mtk\Vista\usb2ser_Vista64.inf\*&lt;/em&gt;&amp;ldquo;&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash; if you are using &lt;strong&gt;&lt;big&gt;Windows 7 or higher with 64bit&lt;/big&gt;&lt;/strong&gt;, locate &amp;ldquo;&lt;strong&gt;Arduino_IDE_for_RePhone-master\drivers\mtk\Win7\usb2ser_Win764.inf&lt;/strong&gt;&amp;ldquo;&lt;/p&gt;
+
+&lt;h3 id=&#34;install-the-driver-with-linkit-assist-2502-sdk-2-0-46&#34;&gt;Install the Driver with LinkIt Assist 2502 SDK 2.0.46&lt;/h3&gt;
+
+&lt;p&gt;LinkIt Assist 2502 SDK 2.0.46 also provides a driver installation program.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://download.labs.mediatek.com/MediaTek_LinkIt_Assist_2502_SDK_2_0_46.zip&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Linkit_assist_sdk_2.0.46-04.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Then find the driver installer in the path &lt;strong&gt;&amp;ldquo;MediaTek_LinkIt_Assist_2502_SDK_2_0_46\LINKIT_ASSIST_SDK\Driver\InstallMTKUSBCOMPortDriver.exe&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;update-flash-the-firmware&#34;&gt;Update/Flash the Firmware&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+Please note that flashing the firmware will delete all the settings and files(images, musics) stored in the RePhone. Take a data backup before you flash/update the firmware.
+&lt;/div&gt;
+
+&lt;p&gt;To make use of the Arduino IDE for RePhone, you have to update/flash the firmware as well. The process is as simple as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Disconnect your RePhone with PC&lt;/strong&gt;, &lt;strong&gt;press and hold the power key(PWR) for 2 seconds to turn it OFF&lt;/strong&gt; (LED indicator turn &lt;strong&gt;RED&lt;/strong&gt; and then goes out)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open the &lt;strong&gt;FirmwareUpdater.exe&lt;/strong&gt; under the path &lt;strong&gt;&lt;em&gt;&amp;hellip;Arduino_IDE_for_RePhone\hardware\tools\mtk\FirmwareUpdater.exe&lt;/em&gt;&lt;/strong&gt;, be sure your platform on the Firmware Updater is &amp;ldquo;&lt;strong&gt;RePhone&lt;/strong&gt;&amp;rdquo; as showing below, if not, click &amp;ldquo;&lt;strong&gt;Others&lt;/strong&gt;&amp;rdquo; and locate to &lt;strong&gt;&lt;em&gt;&amp;hellip;Arduino_IDE_for_RePhone\hardware\tools\mtk\firmware\LinkIt_Device\RePhone\W15.19.p2-uart\SEEED02A_DEMO_BB.cfg&lt;/em&gt;&lt;/strong&gt;, then click &lt;strong&gt;Download (The Green Button)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now you will be asked to connect your RePhone to PC via USB cable, make sure your RePhone has been turned &lt;strong&gt;OFF&lt;/strong&gt; and meantime a functional battery should be always connected ( Powered Up).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware_pluginrephone.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Wait until the downloading finishes. This might take about 1min, so it may remain stuck at 50% for quite a while, please &lt;strong&gt;be patient&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware_downloading.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the &lt;strong&gt;Complete&lt;/strong&gt; page click &lt;strong&gt;OK&lt;/strong&gt; to finish the firmware update.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware_complete.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;reset-to-default&#34;&gt;Reset to default&lt;/h2&gt;
+
+&lt;div class=&#34;admonition note&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+Please note that resetting your Rephone to default will delete all the settings and files(images, musics) in the RePhone. Take a data backup before you reset it to default.**
+&lt;/div&gt;
+
+&lt;p&gt;To reset your RePhone to &lt;strong&gt;DEFAULT&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Follow the instructions in &amp;ldquo;Update/Flash the Firmware&amp;rdquo; section to flash the firmware&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Download the RePhone_Create_Kit_VXP file&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/WayenWeng/RePhone_Create_Kit_VXP/&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/RePhone_Kit_Create_VXP.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Enter the &lt;a href=&#34;./Xadow_GSMPlusBLE#Mass_Storage_Mode&#34;&gt;RePhone Mass Storage Mode&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy everything under the file named &amp;ldquo;RePhone Create Kit VXP&amp;rdquo; into the RePhone 5MB mass storage.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Restart your RePhone then its done. As reset would have deleted all the files, you would have to put an mp3 file in the mass storage as well for the use of ringtone.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;a-demo-hello-world&#34;&gt;A demo: Hello World&lt;/h2&gt;
+
+&lt;p&gt;Now you have prepared things required, we are ready to rock on with RePhone.&lt;/p&gt;
+
+&lt;p&gt;Let us start with a simple program &lt;strong&gt;Hello World&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Press and hold the power key (PWR) for 2 seconds to turn it ON (LED indicator shows GREEN)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open the &lt;strong&gt;Arduino_IDE_for_RePhone.exe&lt;/strong&gt; in the folder where you unzipped the Arduino IDE for RePhone, the software interface is as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_interface.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Open &lt;strong&gt;Device Manager&lt;/strong&gt; to check for the COM ports. There will be &lt;strong&gt;two COM ports&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MTK USB Debug Port is used for uploading code&lt;/li&gt;
+&lt;li&gt;MTK USB Modem Port is used for logs, like printing messages in the serial monitor with &lt;strong&gt;Serial.println()&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_COM_Ports.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the Arduino IDE window, click &lt;strong&gt;Tool =&amp;gt; Port&lt;/strong&gt;, select &lt;strong&gt;MTK USB Debug Port&lt;/strong&gt;, which is &lt;strong&gt;COM20&lt;/strong&gt; in this case, the COM number might be different in your PC, just make sure it corresponds to the Debug Port.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Debug_Port.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;On the Arduino IDE window, click &lt;strong&gt;Tool =&amp;gt; Board&lt;/strong&gt;, select &lt;strong&gt;RePhone&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Board.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now copy the following code to your Arduino IDE:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// hello world for test RePhone
+// loovee@10-18-2015
+
+void setup() {
+    Serial.begin(115200);
+}
+ 
+void loop() {
+    // put your main code here, to run repeatedly:
+    Serial.println(&amp;quot;Hello World, Hello RePhone!&amp;quot;);
+    delay(100);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now press the &lt;strong&gt;Upload&lt;/strong&gt; button to upload the code to your RePhone. You will see the &lt;strong&gt;Done uploading&lt;/strong&gt; when the code is successfully uploaded.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_upload.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;As RePhone uses different COM ports for uploading software and logs, to read the logs, we need to switch the selected COM Port to &lt;strong&gt;MTK USB Modem Port&lt;/strong&gt;. On the Arduino IDE window, click &lt;strong&gt;Tool =&amp;gt; Port&lt;/strong&gt;, select &lt;strong&gt;MTK USB Modem Port&lt;/strong&gt;, which is &lt;strong&gt;COM48&lt;/strong&gt; in this case.&lt;/p&gt;
+
+&lt;p&gt;Then open the &lt;strong&gt;Serial Monitor&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Serial_Monitor.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now we can see the &lt;strong&gt;Hello World&lt;/strong&gt; we have printed with &lt;strong&gt;Serial.println()&lt;/strong&gt; .&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Helloworld.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;more-example-code&#34;&gt;More Example Code&lt;/h2&gt;
+
+&lt;p&gt;Playing with some example code would be a good start if you are heading into some even more interesting projects.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Simply setup your &lt;strong&gt;sketchbook location&lt;/strong&gt; in the &lt;strong&gt;preference&lt;/strong&gt; as &lt;strong&gt;&lt;em&gt;Arduino_IDE_for_RePhone-master\hardware\arduino\mtk&lt;/em&gt;&lt;/strong&gt; (where you install the Arduino IDE for RePhone)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_Sketchlocation_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;then restart the &lt;strong&gt;&lt;em&gt;Arduino_IDE_for_RePhone.exe&lt;/em&gt;&lt;/strong&gt;, you will be able to see the example codes.
+&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_Sketchlocation_2.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can also find the Arduino example coded manually for all the RePhone modules in the following path:
+&lt;strong&gt;&lt;em&gt;Arduino_IDE_for_RePhone-master\hardware\arduino\mtk\libraries&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Example_code_Arduino_IDE.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;rephone-community&#34;&gt;RePhone Community&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;amp;sid=b70f8138c89becf7701260bb41faf9f4&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/RePhone_Community-2.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;We have been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.&lt;/p&gt;
+
+&lt;p&gt;Now join us in the &lt;a href=&#34;http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;amp;sid=b70f8138c89becf7701260bb41faf9f4&#34;&gt;RePhone Community&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Together we seek answers, make interesting stuff, care about each other, and share our experiences.&lt;/p&gt;
+
+&lt;h2 id=&#34;more&#34;&gt;More&lt;/h2&gt;
+
+&lt;p&gt;You have done a great job so far! RePhone comes with a big family of modules with different features and functionalities. Go to check the wiki for modules for more applications!&lt;/p&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/GTFVKPW&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Arduino_IDE_for_RePhone_Kit&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arduino_IDE_for_RePhone_Kit --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>EL Shield</title>
+      <link>https://seeeddoc.github.io/hugo/EL_Shield/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/EL_Shield/</guid>
+      <description>
+
+&lt;h1 id=&#34;el-shield&#34;&gt;EL Shield&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/img/EL_Shield_02.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This shield is used to control EL devices. It can control 4 EL devices simultaneously. The controlling method is as simple as controlling an LED. Driven by PWM, it can create a colorful and florid effect by controlling each EL wire with a simple program. Combined with our EL Inverter, it can drive an EL wire as long as 15m, which provides infinite possibility for your design. Besides, the Shield is covered by Acrylic board, which enhances user&amp;rsquo;s safety.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/el-shield-p-1287.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Operating Voltage: 5V&lt;/li&gt;
+&lt;li&gt;Invertor interface: JST 2.0&lt;/li&gt;
+&lt;li&gt;Control channel interface: 2P - 2.5SM socket&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/img/EL_Shield_interface.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;demonstration&#34;&gt;Demonstration&lt;/h2&gt;
+
+&lt;p&gt;Here is a simple demo involving EL shield, 4 EL tapes and the custom invertor that accompanies EL shield.
+Hook all things up as in the picture below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/img/EL_Shield_Hardware_Installation.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Upload the code below to your microcontroller.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;// EL test code 
+ 
+void setup(){
+ for(int i = 4; i&amp;lt;8; i++)
+ { 
+  pinMode(i, OUTPUT);
+ }
+}
+ 
+void setEL(int ch) // set a certain EL on
+{ 
+ for(int i = 4; i&amp;lt;8; i++) // all off
+ digitalWrite(i, LOW);
+ digitalWrite(ch+3, HIGH); // ch on
+} 
+ 
+int count = 0; 
+ 
+void loop()
+{ 
+ setEL(count%4 + 1);
+ delay(200);
+ if(count++ == 1000)
+ { 
+  count = 0;
+ } 
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/EL_Shield_Eagle_File.zip&#34;&gt;EL Shield eagle file&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/EL_Shield_Test_code.zip&#34;&gt;EL Shield Source code file for Arduino 1.0&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/BT134W-600D.pdf&#34;&gt;BT134W-600D datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/MOC3063M.pdf&#34;&gt;MOC 3063 datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/3XGX9ZC&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/EL_Shield&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/EL_Shield --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - 3-Axis Digital Gyro</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-3-Axis_Digital_Gyro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-3-Axis_Digital_Gyro/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-3-axis-digital-gyro&#34;&gt;Grove - 3-Axis Digital Gyro&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-3-Axis_Digital_Gyro/img/Grove-3-Axis_Digital_Gyro.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Grove - 3-Axis Digital Gyro module based on ITG 3200. It is the world’s first single-chip, digital-output, 3-axis MEMS motion processing gyro optimised for gaming, 3D mice, and motion-based remote control applications for Internet connected Digital TVs and Set Top Boxes. The ITG-3200 features three 16-bit analog-to-digital converters (ADCs) for digitising the gyro outputs, a user-selectable internal low-pass filter bandwidth, and a Fast-Mode &lt;a href=&#34;./index.php?title=I2CAndaction=editAndredlink=1&#34;&gt;I2C&lt;/a&gt; (400kHz) interface.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/Grove-3-Axis-Digital-Gyro-p-750.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Supply Voltage: 3.3V, 5V&lt;/li&gt;
+&lt;li&gt;Operation Current: 6.5mA&lt;/li&gt;
+&lt;li&gt;Standby current: 5μA&lt;/li&gt;
+&lt;li&gt;Sensitivity: 14 LSBs per °/sec&lt;/li&gt;
+&lt;li&gt;Full scale range: ±2000°/sec&lt;/li&gt;
+&lt;li&gt;Acceleration: 10,000g for 0.3ms&lt;/li&gt;
+&lt;li&gt;I2C Interface&lt;/li&gt;
+&lt;li&gt;±2000°/s full scale range and 14.375 LSBs per °/s sensitivity&lt;/li&gt;
+&lt;li&gt;Three integrated 16-bit ADCs&lt;/li&gt;
+&lt;li&gt;On-chip temperature sensor&lt;/li&gt;
+&lt;li&gt;Integrated amplifiers and low-pass filters&lt;/li&gt;
+&lt;li&gt;Hermetically sealed for temp and humidity resistance&lt;/li&gt;
+&lt;li&gt;RoHS and Green compliant&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;demonstration&#34;&gt;Demonstration&lt;/h2&gt;
+
+&lt;p&gt;This demo will show you how to get data from this digital gyro, the data is in the unit of rad/s.&lt;/p&gt;
+
+&lt;p&gt;Here we need a Grove - 3-Axis Digital Gyro and a Seeeduino V3.0.&lt;/p&gt;
+
+&lt;h3 id=&#34;hardware-installation&#34;&gt;Hardware Installation&lt;/h3&gt;
+
+&lt;p&gt;Hardware installation is very easy, because there&amp;rsquo;s an I2C Grove in Seeeduino,&lt;/p&gt;
+
+&lt;p&gt;So, what we need to do is connect it to I2C Grove via a Grove cable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-3-Axis_Digital_Gyro/img/Grove-3-Axis_Digital_Gyro_Hardware.JPG&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;download-code-and-upload&#34;&gt;Download Code and Upload&lt;/h3&gt;
+
+&lt;p&gt;You can download the library in github, click &lt;a href=&#34;https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro/&#34;&gt;here&lt;/a&gt;, then extract it to libraries folder of Arduino.&lt;/p&gt;
+
+&lt;p&gt;Then open File -&amp;gt; examples -&amp;gt; Grove_3_Digital_Gyro -&amp;gt; ITG3200_gyro, you can open the demo code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-3-Axis_Digital_Gyro/img/ITG3200_gyro_ArduinoIde.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Click Upload to upload the code, if you have any problem about how to start Arduino, please click &lt;a href=&#34;./Getting_Started_with_Seeeduino&#34;&gt;here&lt;/a&gt; for some help.&lt;/p&gt;
+
+&lt;h3 id=&#34;check-the-result&#34;&gt;Check the result&lt;/h3&gt;
+
+&lt;p&gt;Now, you can open the serial monitor to check the result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-3-Axis_Digital_Gyro/img/Grove-3-Axis_Digital_Gyro_SerialDta.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;The diagram below shows the orientations of the 3 axes. You can use it to understand the physical meanings of the result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-3-Axis_Digital_Gyro/img/Gyro_Reference_1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://garden.seeedstudio.com/images/a/a9/ITG-3200.pdf&#34;&gt;Datasheet of ITG-3200.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-3-Axis_Digital_Gyro/res/Grove-3-Axis_Digital_Gyro_Eagle_File.zip&#34;&gt;Grove - 3-Axis Digital Gyro Eagle File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Seeed-Studio/Grove_3_Axis_Digital_Gyro&#34;&gt;Digital Gyro Library&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/GRJ969Z&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_3-Axis_Digital_Gyro&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_3-Axis_Digital_Gyro --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - EL Driver</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-EL_Driver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-EL_Driver/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-el-driver&#34;&gt;Grove - EL Driver&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EL_Driver/img/Grove-EL_Driver.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Grove - EL Driver is designed for driving EL Wires. It integrates a very small inverter to drive the EL Wire, so you can easily light up the EL Wire with just one single Grove cable.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/Grove-EL-Driver-p-2269.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;version-tracker&#34;&gt;Version Tracker&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Revision&lt;/th&gt;
+&lt;th&gt;Descriptions&lt;/th&gt;
+&lt;th&gt;Release&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;v1.0&lt;/td&gt;
+&lt;td&gt;Initial public release&lt;/td&gt;
+&lt;td&gt;Dec 11, 2014&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h4 id=&#34;supported-el-wires&#34;&gt;&lt;strong&gt;Supported EL Wires:&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/EL-WireGreen-3m-p-1102.html&#34;&gt;EL Wire-Green 3m&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/EL-WireRed-3m-p-1129.html&#34;&gt;EL Wire-Red 3m&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/EL-WireBlue-3m-p-1128.html&#34;&gt;EL Wire-Blue 3m&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/EL-WireYellow-3m-p-1127.html&#34;&gt;EL Wire-Yellow 3m&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/EL-WireWhite-3m-p-1130.html&#34;&gt;EL Wire-White 3m&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grove compatible interface&lt;/li&gt;
+&lt;li&gt;3.3V/5V Compatible&lt;/li&gt;
+&lt;li&gt;Integrated Inverter Transformer&lt;/li&gt;
+&lt;li&gt;Input Current: 300mA Max (According to the load)&lt;/li&gt;
+&lt;li&gt;Supported max EL Capacitance: 15nF&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;Here we show how to use Arduino to control the state of the LED.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Connect the Grove - EL Driver to Base Shield&amp;rsquo;s &lt;strong&gt;digital port 2&lt;/strong&gt; with 4pin Grove Cable. Of course you can change to other valid digital ports if it&amp;rsquo;s necessary and the definitions of the port should be changed too. Connect a EL Wire to EL Driver &lt;strong&gt;J1&lt;/strong&gt; port with the given cable in product package.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Plug it onto the Arduino/Seeeduino. Connect the board to PC using USB cable.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Copy the demo code to your sketch, then upload to Arudino or Seeeduino board. Please click &lt;a href=&#34;./Upload_Code&#34;&gt;here&lt;/a&gt; if you do not know how to upload.
+You will see the EL Wire blink every second.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;/*************************   2014 Seeedstudio   **************************
+* File Name          : GroveELDriverDemoCode.ino
+* Author             : Seeedteam
+* Version            : V1.0
+* Date               : 11/12/2014
+* Description        : Demo code for Grove - EL Driver
+*************************************************************************/
+ 
+#define ELPin 2 //connect EL Driver to digital pin2
+void setup() {                
+  // initialize the digital pin2 as an output.
+  pinMode(ELPin, OUTPUT);     
+}
+ 
+void loop() {
+  digitalWrite(ELPin, HIGH);   // set the EL Wire on
+  delay(500);               // for 500ms
+  digitalWrite(ELPin, LOW);   // set the EL Wire off
+  delay(500);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EL_Driver/img/Grove-EL_Driver_usage.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EL_Driver/res/Grove-EL_Driver_v1.0.zip&#34;&gt;sch_pcb_eagle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EL_Driver/res/Grove-EL_Driver_v1.0.pdf&#34;&gt;sch_pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/GLY6YXP&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_EL_Driver&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_EL_Driver --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - EMG Detector</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-EMG_Detector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-EMG_Detector/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-emg-detector&#34;&gt;Grove - EMG Detector&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/img/Emg_product.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;EMG detector is a bridge connects human body and electrical, the sensor gathers small muscle signal then process with 2th amplify and filter, the output signal can be recognized by Arduino. You can add this signal into your control system.&lt;/p&gt;
+
+&lt;div class=&#34;admonition danger&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+The sensor cannot be used for medical purposes.
+&lt;/div&gt;
+
+&lt;p&gt;In standby mode, the output voltage is 1.5V. When detect muscle active, the output signal rise up, the maximum voltage is 3.3V. You can use this sensor in 3.3V or 5V system.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/Grove-EMG-Detector-p-1737.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grove Compatible&lt;/li&gt;
+&lt;li&gt;3.5mm Connector&lt;/li&gt;
+&lt;li&gt;6 Disposable Surface Electrodes&lt;/li&gt;
+&lt;li&gt;Power supply voltage: 3.3V-5V&lt;/li&gt;
+&lt;li&gt;1000mm Cable Leads&lt;/li&gt;
+&lt;li&gt;No additional power supply&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/img/Grove_EMG_detector.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;J2: grove interface, connect to analog I/O;&lt;/li&gt;
+&lt;li&gt;J1: EMG Disposable Surface Electrodes connector.&lt;/li&gt;
+&lt;li&gt;U1: INA331IDGKT, difference amplifier.&lt;/li&gt;
+&lt;li&gt;U2, U3: OPA333, Zero drift amplifier.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;demonstration&#34;&gt;Demonstration&lt;/h2&gt;
+
+&lt;p&gt;This demonstration will show you how to use Grove - LCD RGB Backlight, we need a &lt;a href=&#34;http://www.seeedstudio.com/depot/seeeduino-v30-atmega-328p-p-669.html&#34;&gt;Seeeduino V3.0&lt;/a&gt;, a &lt;a href=&#34;./Grove-LED_Bar&#34;&gt;Grove - LED Bar&lt;/a&gt; and &lt;a href=&#34;./Grove-Base_Shield_V1.2&#34;&gt;Grove - Base Shield&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;hardware-installation&#34;&gt;Hardware Installation&lt;/h3&gt;
+
+&lt;p&gt;Plug Grove - Base Shield to Seeeduino, then connect Grove - LED Bar to D8, connect Grove - EMG Sensor to A0.&lt;/p&gt;
+
+&lt;p&gt;Finally, tack the three electrodes to your muscle, and keep a distance between each electrodes.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/img/Emg_connect.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;download-code-and-upload&#34;&gt;Download Code and Upload&lt;/h3&gt;
+
+&lt;p&gt;You can download the demo code in github, click &lt;a href=&#34;https://github.com/Seeed-Studio/Grove_EMG_detector_demo_code/&#34;&gt;here&lt;/a&gt;, then extract it to anywhere.&lt;/p&gt;
+
+&lt;p&gt;Then upload the code to Seeeduino, if you have any problem about code uploading, please refer to &lt;a href=&#34;./Getting_Started_with_Seeeduino&#34;&gt;Getting Started With Seeeduino&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/img/Emg_ide.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;move&#34;&gt;Move&lt;/h3&gt;
+
+&lt;p&gt;When finish downloading demo code, it&amp;rsquo;ll take about 5s to initialize, you should keep static when initializing.&lt;/p&gt;
+
+&lt;p&gt;You can see that when initializing, the Led Bar will go form level 10 to level 0. When Led Bar All off, you can move now.&lt;/p&gt;
+
+&lt;p&gt;When you are moving, you can find that the level of Led Bar will change.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/img/Grove_emg_demo_2.gif&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/res/Grove-EMG_Sensor_v1.0.zip&#34;&gt;Grove-EMG Sensor v1.0 Eagle File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/res/Grove-EMG_Sensor_v1.1_Eagle.zip&#34;&gt;Grove-EMG Sensor v1.1 Eagle File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-EMG_Detector/res/Grove-EMG_Sensor_v1.1_SCH.pdf&#34;&gt;Grove-EMG Sensor v1.1 schematic PDF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Seeed-Studio/Grove_EMG_detector_demo_code&#34;&gt;Demo Code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/88VQHJ6&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_EMG_Detector&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_EMG_Detector --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - FM Receiver</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-FM_Receiver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-FM_Receiver/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-fm-receiver&#34;&gt;Grove - FM Receiver&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-FM_Receiver/img/Grove_FM_Receiver_Photo.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Grove - FM Receiver is a wideband FM receiver module, this module is base on SX6119, it offers true single-chip voice FM receiver, which is built-in amplifier, VCO, filter and demodulator. The multifunction button provides greater convenience for users to control.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/Grove-FM-Receiver-p-1841.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grove interface&lt;/li&gt;
+&lt;li&gt;FM receiver with a tuning range of 64 MHz to 108 MHz covering Eastern Europe (OIRT), Japan, Europe and US bands&lt;/li&gt;
+&lt;li&gt;Lower power consumption&lt;/li&gt;
+&lt;li&gt;Multifunction button&lt;/li&gt;
+&lt;li&gt;LED Indicator&lt;/li&gt;
+&lt;li&gt;Headsets interface&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-FM_Receiver/img/Grove-FM_v2.0_Top.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;①：Headsets interface:It can drive 16 ohm or 32 ohm earphone or audio。&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;②：Multifunction button ：Change volume and select channel&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Center：Open FM/Close FM（Keeping press 1S）&lt;/li&gt;
+&lt;li&gt;Up：volume add&lt;/li&gt;
+&lt;li&gt;Down：volume sub&lt;/li&gt;
+&lt;li&gt;Left：searching down&lt;/li&gt;
+&lt;li&gt;Right：searching up&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;③：Grove Interface&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;④：LED Indicator&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;FM Close：LED off&lt;/li&gt;
+&lt;li&gt;FM Open：LED light&lt;/li&gt;
+&lt;li&gt;FM Searching：LED flash&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;usage&#34;&gt;Usage&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Part list：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Grove - USB Power&lt;/li&gt;
+&lt;li&gt;Grove - FM Receiver&lt;/li&gt;
+&lt;li&gt;Mini Cable&lt;/li&gt;
+&lt;li&gt;Audio&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-FM_Receiver/img/Grove-FM_Receiver_Photo.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-FM_Receiver/res/Grove-FM_Receiver_v1.0_eagle.zip&#34;&gt;Grove - FM Receiver Eagle File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-FM_Receiver/res/Grove-FM_Receiver_v1.0_sch_pdf.pdf&#34;&gt;Schematic in pdf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-FM_Receiver/res/SX6119_收音IC_datasheet.pdf&#34;&gt;Datasheet of SX6119&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/82YQCDG&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_FM_Receiver&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_FM_Receiver --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - GSR Sensor</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-GSR_Sensor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-GSR_Sensor/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-gsr-sensor&#34;&gt;Grove - GSR Sensor&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/GSR.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;GSR, standing for galvanic skin response, is a method of measuring the electrical conductance of the skin. Strong emotion can cause stimulus to your sympathetic nervous system, resulting more sweat being secreted by the sweat glands. Grove – GSR allows you to spot such strong emotions by simple attaching two electrodes to two fingers on one hand, an interesting gear to create emotion related projects, like sleep quality monitor.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/Grove-GSR-sensor-p-1614.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;specifications&#34;&gt;Specifications&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Input Voltage: 5V/3.3V&lt;/li&gt;
+&lt;li&gt;Sensitivity adjustable via a potentiometer&lt;/li&gt;
+&lt;li&gt;External measuring finger cots&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;demonstration&#34;&gt;Demonstration&lt;/h2&gt;
+
+&lt;p&gt;In the following we are showing you how to use the Grove - GSR.
+Connect Grove - GSR Sensor to the analog port A2 of Grove-Basic Shield and Grove - Buzzer to digital port 3. &lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/GSR_Connecting.JPG&#34; alt=&#34;&#34; /&gt;
+Copy and paste the code below to a new Arduino sketch and upload it to Arduino.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;const int BUZZER=3;
+const int GSR=A2;
+int threshold=0;
+int sensorValue;
+
+void setup(){
+  long sum=0;
+  Serial.begin(9600);
+  pinMode(BUZZER,OUTPUT);
+  digitalWrite(BUZZER,LOW);
+  delay(1000);
+
+  for(int i=0;i&amp;lt;500;i++)
+  {
+  sensorValue=analogRead(GSR);
+  sum += sensorValue;
+  delay(5);
+  }
+  threshold = sum/500;
+   Serial.print(&amp;quot;threshold =&amp;quot;);
+   Serial.println(threshold);
+  }
+
+void loop(){
+  int temp;
+  sensorValue=analogRead(GSR);
+  Serial.print(&amp;quot;sensorValue=&amp;quot;);
+  Serial.println(sensorValue);
+  temp = threshold - sensorValue;
+  if(abs(temp)&amp;gt;50)
+  {
+    sensorValue=analogRead(GSR);
+    temp = threshold - sensorValue;
+    if(abs(temp)&amp;gt;50){
+    digitalWrite(BUZZER,HIGH);
+    Serial.println(&amp;quot;YES!&amp;quot;);
+    delay(3000);
+    digitalWrite(BUZZER,LOW);
+    delay(1000);}
+  }
+  }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Wear the finger sheath and relax, Now open serial monitor, we can see:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/GSR_Result_Data.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then take a deep breath. The buzzer should buzz now. And an obvious change in the output value should be observed.
+The below is a graphs which is created in Excel using the data above. X axis represents time. and Y axis GSR data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/Result_Chart.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
+
+&lt;p&gt;There are several graphs which are created in excel using GSR data.You can open the &lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/res/GSR_sensor_data.xls&#34;&gt;GSR sensor data.xls&lt;/a&gt; to see the detail data.
+&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/Reference_graphs1.png&#34; alt=&#34;&#34; /&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/Reference_graphs3.png&#34; alt=&#34;&#34; /&gt;
+&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/Reference_graphs2.png&#34; alt=&#34;&#34; /&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/img/Reference_graphs4.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/res/Grove-GSR_Eagle_File.zip&#34;&gt;Grove - GSR Eagle File&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/res/Lm324.pdf&#34;&gt;LM324 datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GSR_Sensor/res/GSR_sensor_data.xls&#34; title=&#34;File:GSR sensor data.xls&#34;&gt;GSR sensor data.xls&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/KJP2KGB&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_GSR_Sensor&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_GSR_Sensor --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - Gas Sensor</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-Gas_Sensor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-Gas_Sensor/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-gas-sensor&#34;&gt;Grove - Gas Sensor&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor/img/Twig-Gas_Sensor.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;The Grove - Gas Sensor module is useful for gas leakage detecting(in home and industry). It can detect LPG, i-butane, methane, alcohol, Hydrogen, smoke and so on. Measurements can be taken as soon as possible based on its fast response time. Also the sensitivity can be adjusted by the potentiometer.&lt;/p&gt;
+
+&lt;p&gt;Each Grove - Gas Sensor Kit consists of one gas sensor base and four detectors. You can switch the detector on the base according to specific target gases.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./Grove-Gas_Sensor-MQ2&#34;&gt;Grove - Gas Sensor(MQ2)&lt;/a&gt;：Combustible Gas, Smoke&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./Grove-Gas_Sensor-MQ3&#34;&gt;Grove - Gas Sensor(MQ3)&lt;/a&gt;：Alcohol Vapor&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./Grove-Gas_Sensor-MQ5&#34;&gt;Grove - Gas Sensor(MQ5)&lt;/a&gt;：LPG, Natural Gas, Town Gas&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./Grove-Gas_Sensor-MQ9&#34;&gt;Grove - Gas Sensor(MQ9)&lt;/a&gt;：Carbon Monoxide, Coal Gas, Liquefied Gas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Working Voltage: 4.9-5.1V&lt;/li&gt;
+&lt;li&gt;Heating consumption: 0.5-800mW&lt;/li&gt;
+&lt;li&gt;Load resistance: can adjust&lt;/li&gt;
+&lt;li&gt;Heater resistance: 33Ω&lt;/li&gt;
+&lt;li&gt;Sensing Resistance: 3-30kΩ&lt;/li&gt;
+&lt;li&gt;Working Temperature: -25~70 ℃&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;demonstration&#34;&gt;Demonstration&lt;/h2&gt;
+
+&lt;p&gt;Connect the module with Grove Shield using A0 like following picture and use the program below to gain the voltage. The higher the concentration of the gas is, the bigger the output voltage of the SIG pin gets. Sensitivity can be regulated by rotating the potentiometer. Please note that the best preheat time of the sensor is about 24 hours. For the detailed information about the sensor, please refer to the datasheet.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor/img/Read_Gas_Sensor_data.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor/res/MQ-2.pdf&#34;&gt;MQ-2 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor/res/MQ-3.pdf&#34;&gt;MQ-3 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor/res/MQ-5.pdf&#34;&gt;MQ-5 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor/res/MQ-9.pdf&#34;&gt;MQ-9 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Seeed-Studio/Grove_Gas_Sensor&#34;&gt;Demo code on github&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_Gas_Sensor&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Gas_Sensor --&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Grove - Gas Sensor(MQ2)</title>
+      <link>https://seeeddoc.github.io/hugo/Grove-Gas_Sensor-MQ2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://seeeddoc.github.io/hugo/Grove-Gas_Sensor-MQ2/</guid>
+      <description>
+
+&lt;h1 id=&#34;grove-gas-sensor-mq2&#34;&gt;Grove - Gas Sensor(MQ2)&lt;/h1&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor-MQ2/img/Twig-Gas_Sensor.bmp&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;The Grove - Gas Sensor(MQ2) module is useful for gas leakage detection (in home and industry). It is suitable for detecting &lt;font color=&#34;Blue&#34;&gt;H2, LPG, CH4, CO, Alcohol, Smoke or Propane&lt;/font&gt;. Due to its high sensitivity and fast response time, measurements can be taken as soon as possible. The sensitivity of the sensor can be adjusted by using the potentiometer.&lt;/p&gt;
+
+&lt;div class=&#34;admonition danger&#34;&gt;
+&lt;p class=&#34;admonition-title&#34;&gt;Note&lt;/p&gt;
+The sensor value only reflects the approximated trend of gas concentration in a permissible error range, it DOES NOT represent the exact gas concentration. The detection of certain components in the air usually requires a more precise and costly instrument, which cannot be done with a single gas sensor. If your project is aimed at obtaining the gas concentration at a very precise level, then we do not recommend this gas sensor.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.seeedstudio.com/depot/grove-gas-sensormq2-p-937.html&#34;&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png&#34; alt=&#34;&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Wide detecting scope&lt;/li&gt;
+&lt;li&gt;Stable and long life&lt;/li&gt;
+&lt;li&gt;Fast response and High sensitivity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Item&lt;/th&gt;
+&lt;th&gt;Parameter&lt;/th&gt;
+&lt;th&gt;Min&lt;/th&gt;
+&lt;th&gt;Typical&lt;/th&gt;
+&lt;th&gt;Max&lt;/th&gt;
+&lt;th&gt;Unit&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;VCC&lt;/td&gt;
+&lt;td&gt;Working Voltage&lt;/td&gt;
+&lt;td&gt;4.9&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;5.1&lt;/td&gt;
+&lt;td&gt;V&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;PH&lt;/td&gt;
+&lt;td&gt;Heating consumption&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;800&lt;/td&gt;
+&lt;td&gt;mW&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RL&lt;/td&gt;
+&lt;td&gt;Load resistance&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;adjustable&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;RH&lt;/td&gt;
+&lt;td&gt;Heater resistance&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;33&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;Ω&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Rs&lt;/td&gt;
+&lt;td&gt;Sensing Resistance&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;kΩ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&#34;application-ideas&#34;&gt;Application Ideas&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Gas leakage detection.&lt;/li&gt;
+&lt;li&gt;Toys.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;hardware-overview&#34;&gt;Hardware Overview&lt;/h2&gt;
+
+&lt;p&gt;This is an Analog output sensor. This needs to be connected to any one Analog socket in &lt;a href=&#34;./index.php?title=Base_shield_v2Anduselang=en&#34;&gt;Base Shield&lt;/a&gt;. The examples used in this tutorial makes uses of A0 analog pin. Connect this module to the A0 port of Base Shield.&lt;/p&gt;
+
+&lt;p&gt;It is possible to connect the Grove module to Arduino directly by using jumper wires by using the connection as shown in the table below:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Arduino&lt;/th&gt;
+&lt;th&gt;Gas Sensor&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;5V&lt;/td&gt;
+&lt;td&gt;VCC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;GND&lt;/td&gt;
+&lt;td&gt;GND&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;NC&lt;/td&gt;
+&lt;td&gt;NC&lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+&lt;td&gt;Analog A0&lt;/td&gt;
+&lt;td&gt;SIG&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The output voltage from the Gas sensor increases when the concentration of gas increases. Sensitivity can be adjusted by varying the potentiometer. &lt;font color=&#34;Red&#34;&gt;Please note that the best preheat time for the sensor is above 24 hours&lt;/font&gt;. For detailed information about the MQ-2 sensor, please refer the data-sheet provided in &lt;strong&gt;Resources&lt;/strong&gt; section.&lt;/p&gt;
+
+&lt;h2 id=&#34;getting-started&#34;&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor-MQ2/img/Read_Gas_Sensor_data_MQ2_MQ5.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Connect the Grove - Gas Sensor(MQ2) to A0 port as shown in the picture above.&lt;/p&gt;
+
+&lt;h3 id=&#34;gas-detection-basic-example&#34;&gt;Gas Detection : Basic Example&lt;/h3&gt;
+
+&lt;p&gt;In this example, the sensor is connected to A0 pin. The voltage read from the sensor is displayed. This value can be used as a threshold to detect any increase/decrease in gas concentration.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void setup() {
+  Serial.begin(9600);
+}
+ 
+void loop() {
+  float sensor_volt; 
+  float sensorValue;
+ 
+  sensorValue = analogRead(A0);
+  sensor_volt = sensorValue/1024*5.0;
+ 
+  Serial.print(&amp;quot;sensor_volt = &amp;quot;);
+  Serial.print(sensor_volt);
+  Serial.println(&amp;quot;V&amp;quot;);
+  delay(1000);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;measurement-approximation&#34;&gt;Measurement : Approximation&lt;/h3&gt;
+
+&lt;p&gt;These examples demonstrate ways to know the approximate concentration of Gas. As per the data-sheet of the MQx sensors, these equations are tested for standard conditions and are not calibrated. It may vary based on change in temperature or humidity.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Keep the Gas Sensor in clean air environment. Upload the program below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  float sensor_volt; 
+  float RS_air; //  Get the value of RS via in a clear air
+  float R0;  // Get the value of R0 via in H2
+  float sensorValue;
+
+/*--- Get a average data by testing 100 times ---*/   
+    for(int x = 0 ; x &amp;lt; 100 ; x++)
+  {
+    sensorValue = sensorValue + analogRead(A0);
+  }
+  sensorValue = sensorValue/100.0;
+/*-----------------------------------------------*/
+
+  sensor_volt = sensorValue/1024*5.0;
+  RS_air = (5.0-sensor_volt)/sensor_volt; // omit *RL
+  R0 = RS_air/9.8; // The ratio of RS/R0 is 9.8 in a clear air from Graph (Found using WebPlotDigitizer)
+
+  Serial.print(&amp;quot;sensor_volt = &amp;quot;);
+  Serial.print(sensor_volt);
+  Serial.println(&amp;quot;V&amp;quot;);
+
+  Serial.print(&amp;quot;R0 = &amp;quot;);
+  Serial.println(R0);
+  delay(1000);
+
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Then, open the serial monitor of Arduino IDE. Write down the value of R0 and this needs to be used in the next program. Please node down the R0 after the reading stabilizes.&lt;/p&gt;
+
+&lt;p&gt;&lt;font color=&#34;Red&#34;&gt;Replace the R0 below with value of R0 tested above &lt;/font&gt;. Expose the sensor to any one of the gas listed above.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  float sensor_volt;
+  float RS_gas; // Get value of RS in a GAS
+  float ratio; // Get ratio RS_GAS/RS_air
+  int sensorValue = analogRead(A0);
+  sensor_volt=(float)sensorValue/1024*5.0;
+  RS_gas = (5.0-sensor_volt)/sensor_volt; // omit *RL
+
+  /*-Replace the name &amp;quot;R0&amp;quot; with the value of R0 in the demo of First Test -*/
+  ratio = RS_gas/R0;  // ratio = RS/R0 
+  /*-----------------------------------------------------------------------*/
+
+  Serial.print(&amp;quot;sensor_volt = &amp;quot;);
+  Serial.println(sensor_volt);
+  Serial.print(&amp;quot;RS_ratio = &amp;quot;);
+  Serial.println(RS_gas);
+  Serial.print(&amp;quot;Rs/R0 = &amp;quot;);
+  Serial.println(ratio);
+
+  Serial.print(&amp;quot;\n\n&amp;quot;);
+
+  delay(1000);
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, we can get the concentration of gas from the figure below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor-MQ2/img/Gas_sensor_1.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;According to the graph, we can see that the minimum concentration we can test is 100ppm and the maximum is 10000ppm, in a other word, we can get a concentration of gas between 0.01% and 1%. However, we can&amp;rsquo;t provide a formula because the relation between ratio and concentration is nonlinear.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Suggest Reading / References&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;./Download_Arduino_and_install_Arduino_driver&#34;&gt;Download Arduino and install Arduino driver&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./Getting_Started_with_Seeeduino&#34;&gt;Getting Started with Seeeduino&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;./How_to_choose_A_Gas_Sensor&#34;&gt;How to choose a Gas Sensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://en.wikipedia.org/wiki/Flammability_limit&#34;&gt;What&amp;rsquo;s LEL&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Schematic&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor-MQ2/res/Gas_Sensor_Eagle_files.zip&#34;&gt;Grove Gas Sensor - EAGLE (Schematic and Board) files&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor-MQ2/res/Gas_Sensor_Schematic.pdf&#34;&gt;Grove Gas Sensor - PDF Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Datasheet&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Gas_Sensor-MQ2/res/MQ-2.pdf&#34;&gt;MQ-2 Datasheet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;help-us-make-it-better&#34;&gt;Help us make it better&lt;/h2&gt;
+
+&lt;iframe frameborder=&#34;0&#34; height=&#34;500&#34; src=&#34;https://www.surveymonkey.com/r/3SL2P97&#34; width=&#34;500&#34;&gt;&lt;/iframe&gt;
+
+&lt;!-- 
++++
+oldwikiurl       = &#34;http://www.seeedstudio.com/wiki/Grove_-_Gas_Sensor(MQ2)&#34;
++++
+ --&gt;
+
+&lt;!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Gas_Sensor(MQ2) --&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

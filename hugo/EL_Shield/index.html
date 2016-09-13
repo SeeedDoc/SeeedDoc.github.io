@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>EL Shield </title>
+
+  
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/poole-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-overrides.css">
+  <link rel="stylesheet" href="https://seeeddoc.github.io/css/hyde-x.css">
+
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://yandex.st/highlightjs/8.0/styles/monokai.min.css">
+  <script src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://seeeddoc.github.io/touch-icon-144-precomposed.png">
+  <link href="https://seeeddoc.github.io/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+</head>
+<body class="theme-base-0b">
+<div class="sidebar">
+    <a href="https://seeeddoc.github.io/hugo/">
+    <h2>Seeed Wiki</h2>
+    </a>
+
+    
+    
+    <div class="toc">
+       
+    </div>
+    
+    </br> 
+    </br>
+     <p>Copyright &copy; 2016 Seeed Development Limited </p>
+</div>
+
+
+<div class="content container">
+  <div class="page">
+    
+
+<h1 id="el-shield">EL Shield</h1>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/img/EL_Shield_02.jpg" alt="" /></p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>This shield is used to control EL devices. It can control 4 EL devices simultaneously. The controlling method is as simple as controlling an LED. Driven by PWM, it can create a colorful and florid effect by controlling each EL wire with a simple program. Combined with our EL Inverter, it can drive an EL wire as long as 15m, which provides infinite possibility for your design. Besides, the Shield is covered by Acrylic board, which enhances user&rsquo;s safety.</p>
+
+<p><a href="http://www.seeedstudio.com/el-shield-p-1287.html"><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" alt="" /></a></p>
+
+<h2 id="specifications">Specifications</h2>
+
+<ul>
+<li>Operating Voltage: 5V</li>
+<li>Invertor interface: JST 2.0</li>
+<li>Control channel interface: 2P - 2.5SM socket</li>
+</ul>
+
+<h2 id="hardware-overview">Hardware Overview</h2>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/img/EL_Shield_interface.jpg" alt="" /></p>
+
+<h2 id="demonstration">Demonstration</h2>
+
+<p>Here is a simple demo involving EL shield, 4 EL tapes and the custom invertor that accompanies EL shield.
+Hook all things up as in the picture below.</p>
+
+<p><img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/img/EL_Shield_Hardware_Installation.jpg" alt="" /></p>
+
+<p>Upload the code below to your microcontroller.</p>
+
+<pre><code>// EL test code 
+ 
+void setup(){
+ for(int i = 4; i&lt;8; i++)
+ { 
+  pinMode(i, OUTPUT);
+ }
+}
+ 
+void setEL(int ch) // set a certain EL on
+{ 
+ for(int i = 4; i&lt;8; i++) // all off
+ digitalWrite(i, LOW);
+ digitalWrite(ch+3, HIGH); // ch on
+} 
+ 
+int count = 0; 
+ 
+void loop()
+{ 
+ setEL(count%4 + 1);
+ delay(200);
+ if(count++ == 1000)
+ { 
+  count = 0;
+ } 
+}
+</code></pre>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/EL_Shield_Eagle_File.zip">EL Shield eagle file</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/EL_Shield_Test_code.zip">EL Shield Source code file for Arduino 1.0</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/BT134W-600D.pdf">BT134W-600D datasheet</a></li>
+<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/EL_Shield/res/MOC3063M.pdf">MOC 3063 datasheet</a></li>
+</ul>
+
+<h2 id="help-us-make-it-better">Help us make it better</h2>
+
+<iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/3XGX9ZC" width="500"></iframe>
+
+<!-- 
++++
+oldwikiurl       = "http://www.seeedstudio.com/wiki/EL_Shield"
++++
+ -->
+
+<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/EL_Shield -->
+
+  </div>
+</div>
+
+
+<link rel="stylesheet" href="https://seeeddoc.github.io/css/tocbot.css">
+<script src="https://seeeddoc.github.io/js/tocbot.min.js"></script>
+<script>
+      tocbot.init({
+        tocSelector: '.toc',
+        contentSelector: '.page',
+        headingSelector: 'h1, h2, h3',
+      });
+</script>
+</body>
+</html>
+
