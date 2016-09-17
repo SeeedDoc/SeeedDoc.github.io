@@ -1,0 +1,224 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino Ethernet</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino Ethernet</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Seeeduino_ethernet-2.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+
+<p>Seeeduino Ethernet is a compact and multifunctional development platform, which merges data logging and processing, device control and Ethernet communication together into one. It's armed with a MEGA328P chip and a Wiz5100: the former provides an Arduino controlling style and the latter provides TCP and UDP Ethernet communication ability. Plus integrated SD card module, it's convenient and neat for remote data logging, processing or transferring via network.
+In this version, we lowered the height of RJ45 to balance it with the headers. Besides, with an I2C and a UART Grove port populated,it's convenient to connect corresponding Grove modules to this board.
+</p>
+<h2>  Specification </h2>
+<ul><li>Voltage: 6.2-13V
+</li><li>Current: 140-550mA
+</li><li>Supported Card Type: Micro SD card(<font color="red"><b>must be SanDisk</b></font>), FAT/FAT32 (More than 2G is not guaranteed)
+</li><li>Supported Connection: TCP/UDP
+</li><li>Net Weight: 23±2g 
+</li><li>Ethernet jack: Standard RJ45
+</li></ul>
+<h2>  Demonstration </h2>
+<p>We will test the Seeeduino Ethernet functions of writing or reading information from the SD Card and sending out A/D data to network.
+<img src="img/Seeeduino_ethernet-1.jpg" width="600"/>
+</p>
+<h3>  Step 1: Install the Hardware  </h3>
+<p>Firstly, install the hardware. We have two alternatives to plug in the power.
+</p><p><b>Method 1</b>: You can use one <a href="http://www.seeedstudio.com/depot/passive-poe-cable-set-p-1175.html?cPath=207">Passive PoE Cable Set</a> to provide power and Ethernet connection at the same time like the picture below.
+</p><p><img src="img/Seeeduino_ethernet-3.jpg" width="350"/>
+</p><p><b>Method 2</b>:  Use separate power cable and Ethernet cable.
+</p><p><img src="img/Seeeduino_ethernet-4.jpg" width="350"/>
+</p>
+<h3>  Step 2: Programing  </h3>
+<p>After hardware installation, here we continue to try the test code.
+This program is written to test the functions of writing or reading data from the SD Card and sending out A/D data to network. 
+This demo code can be used as a test program as well as reference if you wanna explore more functions of the board. 
+</p><p><font color="red">NOTICE: </font>
+</p><p>1. All the ".h" file needed have been pre-installed in Arduino IDE(1.0). 
+</p><p>2. Install a Micro SD card. Make sure the Micro SD card is not full and the format is FAT or FAT32.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+  SD card read/write
+ 
+ This example shows how to read and write data to and from an SD card file 	
+ The circuit:
+ * SD card attached to SPI bus as follows:
+ ** MOSI - pin 11
+ ** MISO - pin 12
+ ** CLK - pin 13
+ ** CS - pin 4
+ 
+   Web Server
+ 
+ A simple web server that shows the value of the analog input pins.
+ using an Arduino Wiznet Ethernet shield. 
+ 
+ Circuit:
+ * Ethernet shield attached to pins 10, 11, 12, 13
+ * Analog inputs attached to pins A0 through A5 (optional)
+ 
+ created 18 Dec 2009
+ by David A. Mellis
+ modified 4 Sep 2010
+ by Tom Igoe
+ 
+ */</span>
+ 
+<span class="co2">#include &lt;SD.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;Ethernet.h&gt;</span>
+ 
+<span class="co1">// Enter a MAC address and IP address for your controller below.</span>
+<span class="co1">// The IP address will be dependent on your local network:</span>
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> <span class="nu12">0xDE</span>, <span class="nu12">0xAD</span>, <span class="nu12">0xBE</span>, <span class="nu12">0xEF</span>, <span class="nu12">0xFE</span>, <span class="nu12">0xED</span> <span class="br0">}</span><span class="sy4">;</span>
+IPAddress ip<span class="br0">(</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">1</span>,<span class="nu0">177</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">// Initialize the Ethernet server library</span>
+<span class="co1">// with the IP address and port you want to use </span>
+<span class="co1">// (port 80 is default for HTTP):</span>
+EthernetServer server<span class="br0">(</span><span class="nu0">80</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+File myFile<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Initializing SD card..."</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// On the Ethernet Shield, CS is pin 4. It's set as an output by default.</span>
+  <span class="co1">// Note that even if it's not used as the CS pin, the hardware SS pin </span>
+  <span class="co1">// (10 on most Arduino boards, 53 on the Mega) must be left as an output </span>
+  <span class="co1">// or the SD library functions will not work. </span>
+   <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">10</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// pinMode(4,OUTPUT);</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>SD.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"initialization failed!"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">return</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"initialization done."</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// open the file. note that only one file can be open at a time,</span>
+  <span class="co1">// so you have to close this one before opening another.</span>
+ 
+  myFile <span class="sy1">=</span> SD.<span class="me1">open</span><span class="br0">(</span><span class="st0">"test.txt"</span>,FILE_WRITE<span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// if the file opened or created okay, write to it:</span>
+  <span class="kw1">if</span> <span class="br0">(</span>myFile<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Writing to test.txt..."</span><span class="br0">)</span><span class="sy4">;</span>
+    myFile.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"testing 1, 2, 3."</span><span class="br0">)</span><span class="sy4">;</span>
+	<span class="co1">// close the file:</span>
+    myFile.<span class="me1">close</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"done."</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+    <span class="co1">// if the file didn't open, print an error:</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"error opening test.txt"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// re-open the file for reading:</span>
+  myFile <span class="sy1">=</span> SD.<span class="me1">open</span><span class="br0">(</span><span class="st0">"test.txt"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span>myFile<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"test.txt:"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// read from the file until there's nothing else in it:</span>
+    <span class="kw1">while</span> <span class="br0">(</span>myFile.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    	<span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>myFile.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="co1">// close the file:</span>
+    myFile.<span class="me1">close</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+  	<span class="co1">// if the file didn't open, print an error:</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"error opening test.txt"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+   <span class="co1">// start the Ethernet connection and the server:</span>
+  <span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac, ip<span class="br0">)</span><span class="sy4">;</span>
+  server.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> buff<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  EthernetClient client <span class="sy1">=</span> server.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span>client<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// an http request ends with a blank line</span>
+    <span class="kw4">boolean</span> currentLineIsBlank <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span>client.<span class="kw3">connected</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw4">char</span> c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="co1">// if you've gotten to the end of the line (received a newline</span>
+        <span class="co1">// character) and the line is blank, the http request has ended,</span>
+        <span class="co1">// so you can send a reply</span>
+        <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy1">==</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy3">&amp;&amp;</span> currentLineIsBlank<span class="br0">)</span> <span class="br0">{</span>
+          <span class="co1">// send a standard http response header</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"HTTP/1.1 200 OK"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Content-Type: text/html"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+          <span class="co1">// output the value of each analog input pin</span>
+          <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> analogChannel <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> analogChannel <span class="sy1">&lt;</span> <span class="nu0">6</span><span class="sy4">;</span> analogChannel<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+            client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"analog input "</span><span class="br0">)</span><span class="sy4">;</span>
+            client.<span class="kw3">print</span><span class="br0">(</span>analogChannel<span class="br0">)</span><span class="sy4">;</span>
+            client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" is "</span><span class="br0">)</span><span class="sy4">;</span>
+            client.<span class="kw3">print</span><span class="br0">(</span><span class="kw3">analogRead</span><span class="br0">(</span>analogChannel<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+            client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;br /&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+            buff<span class="br0">[</span>analogChannel<span class="br0">]</span> <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>analogChannel<span class="br0">)</span><span class="sy4">;</span>
+          <span class="br0">}</span>
+           <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy1">==</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="br0">)</span> <span class="br0">{</span>
+          <span class="co1">// you're starting a new line</span>
+          currentLineIsBlank <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+        <span class="br0">}</span> 
+        <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'<span class="es1">\r</span>'</span><span class="br0">)</span> <span class="br0">{</span>
+          <span class="co1">// you've gotten a character on the current line</span>
+          currentLineIsBlank <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+    <span class="co1">// give the web browser time to receive the data</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// close the connection:</span>
+    client.<span class="kw3">stop</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    myFile <span class="sy1">=</span> SD.<span class="me1">open</span><span class="br0">(</span><span class="st0">"test.txt"</span>, FILE_WRITE<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>myFile<span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"test.txt:"</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> analogChannel <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> analogChannel <span class="sy1">&lt;</span> <span class="nu0">6</span><span class="sy4">;</span> analogChannel<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+      myFile.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"analog input "</span><span class="br0">)</span><span class="sy4">;</span>
+      myFile.<span class="kw3">print</span><span class="br0">(</span>analogChannel<span class="br0">)</span><span class="sy4">;</span>
+      myFile.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" is "</span><span class="br0">)</span><span class="sy4">;</span>
+      myFile.<span class="kw3">println</span><span class="br0">(</span><span class="kw3">analogRead</span><span class="br0">(</span>analogChannel<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="br0">}</span>
+      <span class="co1">// read from the file until there's nothing else in it:</span>
+      myFile.<span class="me1">close</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span> <span class="br0">{</span>
+    	<span class="co1">// if the file didn't open, print an error:</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"error opening test.txt"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    myFile <span class="sy1">=</span> SD.<span class="me1">open</span><span class="br0">(</span><span class="st0">"test.txt"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>myFile<span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"test.txt:"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+      <span class="co1">// read from the file until there's nothing else in it:</span>
+      <span class="kw1">while</span> <span class="br0">(</span>myFile.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+      	<span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>myFile.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="br0">}</span>
+      <span class="co1">// close the file:</span>
+      myFile.<span class="me1">close</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span> <span class="br0">{</span>
+    	<span class="co1">// if the file didn't open, print an error:</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"error opening test.txt"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>  
+<span class="br0">}</span></pre></div></div>
+<h3>  Step 3: Download the program  </h3>
+<p>Because there is no USB connector on the board. Seeeduino Ethernet requires a <a href="http://www.seeedstudio.com/depot/uartsbee-v4-p-688.html?cPath=109">UartSBee</a> to download the program.<br/>
+</p><p>Connect the UartSBee to Seeeduino Ethernet as below:
+</p><p><img src="img/Seeeduinoethernet-11.jpg" width="500"/> <img src="img/Seeeduino_ethernet-5.jpg" width="300"/>
+</p>
+<h3>  Step 4: Result testing  </h3>
+<p><font color="red">NOTICE:</font> Make sure the Seeeduino Ethernet and your computer are in the same local area network.
+After the program was downloaded, open the Serial Monitor. You will check the status of the board.
+</p><p><img src="img/Seeeduinoethernet-9.jpg" width="250"/>
+</p><p>Open a web browser and enter the web address:192.168.1.177, then you can check the data sent out by Seeeduino Ethernet:
+</p><p><img src="img/Ethernet_shield2.jpg" width="300"/>
+</p>
+<h2>  Resources </h2>
+<ul><li><a href="res/Seeed_Ethernet_Source_Files.zip">Seeeduino Ethernet Eagle Files</a>
+</li><li><a href="res/Seeeduino_Ethernet_.pdf">Seeeduino Ethernet Schematic.pdf</a>
+</li><li>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a>. Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</li><li>Please reformat SD card to FAT/FTA32 .If it still can't work ,suggest to download the <a href="https://www.sdcard.org/downloads/formatter_3/">SD Formatter</a> and reformat SD card by this software.
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,129 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Wifi Shield V1.1</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Wifi Shield V1.1</h1>
+<h2> Overview</h2>
+<p><br/>
+This Wifi Shield utilizes a RN171 wifi module to provide your Arduino/Seeeduino with serial Ethernet's function. It only takes two pins to hook your device up to 802.11b/g wireless networks with this shield. It features an independent antenna which can cover a wider range and transmit stronger signals. With supports for common TCP, UDP and FTP communication protocols, this Wifi Shield can meet needs of most wireless network projects, like smart home networks, robot controls or personal weather stations,etc. We prepared an easy and convenient command set for this shield so that you can use neat and concise code to run the function.
+<br/>
+</p>
+<h2>  Specification  </h2>
+<ul><li>Voltage：3.3~5.5 V 
+</li><li>Current：25~400mA
+</li><li>Transmit power：0-10 dBm
+</li><li>Frequency：2402~2480 MHz
+</li><li>Channal：0~13 
+</li><li>Network rate：1-11 Mbps for 802.11b/6-54Mbps for 802.11g 
+</li><li>Dimension：60X56X19 mm
+</li><li>Net Weight：24±1 g
+</li><li>Secure WiFi authentication：WEP-128, WPA-PSK (TKIP), WPA2-PSK (AES)
+</li><li>Built-in networking applications：DHCP client, DNS client, ARP, ICMP ping, FTP, TELNET, HTTP, UDP, TCP
+</li></ul>
+<p><img src="img/WIFI_Shield_Interface_Function.jpg" width="959"/>
+</p>
+<ul><li><b>RN-171：</b>WIFLY GSX 802.11 b/g Wireless LAN Module.<br/>
+</li><li><b>Software Serial Port Configuration Area:</b> Choose the digital pins you would like to use as RX and TX of RN171.<br/>
+</li><li><b>Reset button</b>: Reset the Wifi Shield.<br/>
+</li><li><b>Status indicators illustration:</b>
+</li><li>Two LEDs(D1,D5) will blink alternately when no connection exists. 
+</li><li>After connected to router, the Association to AP status Indicator(D1) will blink. 
+</li><li>After connected to router and TCP Sever, the AP status Indicator(D1) will always be on.
+</li></ul>
+<p><br/>
+</p>
+<h2>  Get started </h2>
+<h3>  Demo: Wifly_Test </h3>
+<p>Download the <a href="https://github.com/Seeed-Studio/WiFi_Shield">Wifi Shield Library</a> on github, unzip it into the libraries folder of Arduino. 
+</p>
+<pre>
+#include &lt;Arduino.h&gt;
+#include &lt;SoftwareSerial.h&gt;
+#include "WiFly.h"
+
+#define SSID      "YourAP"
+#define KEY       "password"
+#define AUTH      WIFLY_AUTH_WPA2_PSK     // or WIFLY_AUTH_WPA1, WIFLY_AUTH_WEP, WIFLY_AUTH_OPEN
+
+// Pins' connection
+// Arduino       WiFly
+//  2    &lt;----&gt;    TX
+//  3    &lt;----&gt;    RX
+SoftwareSerial uart(2, 3);
+WiFly wifly(&amp;uart);
+//WiFly wifly(&amp;Serial1);     // for leonardo, use hardware serial - Serial1
+
+void setup() {
+  uart.begin(9600);
+
+  Serial.begin(9600);
+  Serial.println("--------- WIFLY TEST --------");
+  
+  // wait for initilization of wifly
+  delay(3000);
+  
+  uart.begin(9600);     // WiFly UART Baud Rate: 9600
+  
+  wifly.reset();
+  
+  Serial.println("Join " SSID );
+  if (wifly.join(SSID, KEY, AUTH)) {
+    Serial.println("OK");
+  } else {
+    Serial.println("Failed");
+  }
+  
+  // get WiFly params
+  wifly.sendCommand("get everthing\r");
+  char c;
+  while (wifly.receive((uint8_t *)&amp;c, 1, 300) &gt; 0) {
+    Serial.print((char)c);
+  }
+  
+  if (wifly.commandMode()) {
+    Serial.println("Enter command mode. Send \"exit\"(with \\r) to exit command mode");
+  }
+}
+
+void loop() {
+  while (wifly.available()) {
+    Serial.write(wifly.read());
+  }
+  
+  while (Serial.available()) {
+    wifly.write(Serial.read());
+  }
+}
+</pre>
+<p>1. Connect D2(RX) and D3(TX) of software serial port with TX and RX of WiFi shield.
+</p><p><img src="img/WIFI_Shield_UART.jpg" width="500"/>
+</p><p>2. Change the code to update your access point info
+</p>
+<pre>
+#define SSID      "YourAP"
+#define KEY       "password"
+#define AUTH      WIFLY_AUTH_WPA2_PSK     // or WIFLY_AUTH_WPA1, WIFLY_AUTH_WEP, WIFLY_AUTH_OPEN
+</pre>
+<p>3. Download the sketch to Arduino, open Serial Monitor, set baud rate to 9600, set enter key to Carriage return. WiFi Shield will output some messages and enter command mode. In command mode, you can enter some commands to interact:
+</p>
+<dl><dd><dl><dd> <b>get wlan</b> - get wlan info
+</dd><dd> <b>join</b> - join a network
+</dd><dd> <b>ping seeedstudio.com</b> - ping seeed!
+</dd><dd> For more command, please refer to <a href="res/WiFly-RN-UM.pdf">WiFi Module User Manual</a>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><img src="img/Wi-Fi_Info.png" width="419"/>
+</dd></dl>
+</dd></dl>
+<p>4. For further usage, please try other examples of the WiFi shield library.
+<br/>
+</p>
+<h3>  Demo for Others  </h3>
+<p><br/>
+</p>
+<h2> Touble Shooting</h2>
+<p>If the Wifi Shield doesn't response any commands, try to do factory reset following <a href="/Wifly_171_troubleshooting">the guide</a>
+</p>
+<h2> Resource</h2>
+<ul><li> <a href="res/WIFI_Shield_Eagle_Files.zip">WiFi Shield Eagle Files</a>
+</li><li> <a href="res/WiFly-RN-171.pdf">RN-171 Datasheet</a>
+</li><li> <a href="https://github.com/Seeed-Studio/WiFi_Shield">Wifi Shield Library</a>
+</li><li> <a href="res/WiFly-RN-UM.pdf">WiFi Module User Manual</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

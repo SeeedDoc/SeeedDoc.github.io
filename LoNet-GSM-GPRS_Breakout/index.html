@@ -1,0 +1,183 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>LoNet - GSM/GPRS Breakout</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>LoNet - GSM/GPRS Breakout</h1>
+<h2>  Overview  </h2>
+<p>This is not the replacement for the LoNet - Mini GSM/GPRS/GPS Breakout, but a simplified version without GPS function. It is based on SIM800L module, supports quad-band GSM/GPRS network, available for GPRS and SMS message data remote transmission.
+</p><p>The board features compact size and low current consumption. The size is only two times as large as a coin. With power saving technique, the current consumption is as low as 1mA in sleep mode. It communicates with microcontroller via UART port, supports command including 3GPP TS 27.007, 27.005 and SIMCOM enhanced AT Commands. It also has built-in level translation, so it can work with microcontrollor of higher voltage than 2.8V default. Beside, the board also supports A-GPS technique which is called mobile positioning and gets position by mobile network. This features make it can also be a tracker module. 
+</p><p>This board is specially designed for project in a small box and powered by 3.7 li-po battery. If you want a Arduino shield, we are suggesting you pick up the SeeedStduio GPRS Shield.
+</p>
+<h2>  Features </h2>
+<ul><li>Quad-band 850/900/1800/1900MHz
+</li><li>GPRS multi-slot class12 connectivity: max. 85.6kbps(down-load/up-load)
+</li><li>GPRS mobile station class B
+</li><li>Controlled by AT Command (3GPP TS 27.007, 27.005 and SIMCOM enhanced AT Commands)
+</li><li>Supports Real Time Clock
+</li><li>Supply voltage range 3.4V ~ 4.4V
+</li><li>Supports A-GPS
+</li><li>Supports 3.0V to 5.0V logic level
+</li><li>Low power consumption, 1mA in sleep mode
+</li><li>Compact size 23mm x 35mm x 5.6mm
+</li><li>Standard SIM Card
+</li></ul>
+<h2>  Hardware Sketch  </h2>
+<p><img src="img/SIM800L-01.jpg" width="700"/>
+</p>
+<ul><li><b>Power Button</b> - this is the hard power switch for the module. When the module is connected to the battery, you can power on or power off it by pressing the button for 2s.
+</li><li><b>Net Indicator</b> - Red LED, it will tell the what status is about the module linking to network. It can be turned off by LEDs_EN jumper pad.
+</li><li><b>Status Indicator</b> - Green LED, it will tell whether the module is on, light when the module is running. It can be turned off by EN_LEDs jumper pad.
+</li><li><b>GSM Antenna</b> - this is an uFL GSM antenna connector, just connect it to a GSM antenna for receiving GSM signal.
+</li><li><b>SIM - Card Holder</b> - SIM card holder for standard SIM card
+</li><li><b>EN_LEDs</b> - this is the switch for Net and Status indicator. It is by default connected, if you want to save power and disable these LEDs, you can cut off the connection with a knife.
+</li></ul>
+<h3>  Pin Definitions </h3>
+<ul><li><b>PWR</b> - this is soft power switch for the module, you can pull it to high level for at least 2s to power up or power down the module.
+</li><li><b>RI</b> - this pin will tell you whether the module is on and is there any calls and messages received. It will be pulled to high level when the module is on. And it will change to low for 120ms when a call or message is received.
+</li><li><b>RXD / TXD</b> - Serial port, the module uses it to send and receive commands and data. TXD is output, and RXD is input. They can be connected to the 3.3V and 5V level.
+</li><li><b>VIO</b> - this is the reference logic level for serial port of the module, the input voltage depends on the logical level of the microcontroller you use. If you use a 5V miccontroller like Arduino, you should have it be 5V, and a 3V logic microcontroller you should set it to 3V.
+</li><li><b>BAT</b> - this is the main power supply for the module, of input voltage from 3.4V to 4.4V. It is for connecting to Li-po battery. Without voltage regulator and smoothing circuit, please do not directly connect it to Arduino 5V.
+</li><li><b>DTR</b> - this is wake up pin for module in sleep mode. By default it has a high pull-up, and you can set the module into sleep mode by AT command “AT+CSCLK=1”. In the meantime, the serial port will be disabled. To wake up the module and enable serial port, you can pull this pin to low level.
+</li></ul>
+<h3>  LED Status </h3>
+<table border="1">
+<tr>
+<th scope="col"> <b>LED</b>
+</th>
+<th scope="col"> <b>Status</b>
+</th>
+<th scope="col"> <b>Function</b>
+</th></tr>
+<tr>
+<th scope="row"> Status Indicator (Green)
+</th>
+<td> Off
+</td>
+<td> Power of LoNet is off
+</td></tr>
+<tr>
+<td>
+</td>
+<td> On
+</td>
+<td> Power of LoNet is on
+</td></tr>
+<tr>
+<th scope="row"> Net Indicator (Red)
+</th>
+<td> Off
+</td>
+<td> Power of LoNet is off
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 64ms on/800ms off
+</td>
+<td>  LoNet can't find the network
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 64ms On/3000ms Off
+</td>
+<td> LoNet has connected to network
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 64ms ON/3000ms Off
+</td>
+<td> GPRS communication
+</td></tr></table>
+<h2>  Usage Example </h2>
+<p>This is a example for testing AT command with Arduino Uno. If you use an USB to serial tools, you can use <a href="/AT_Command_Tester_Application">AT Command Tester</a> or <a href="res/Sscom32E.zip">SSCOM32</a> to test AT commands.
+</p>
+<h4>  Hardware Connections</h4>
+<p><img src="img/SIM800L-2.jpg" width="700"/>
+</p>
+<h4> Programming</h4>
+<pre>
+// this sketch is used for testing LoNet with Arduino 
+
+// Connect VIO to +5V
+// Connect GND to Ground
+// Connect RX (data into SIM800L) to Digital 11
+// Connect TX (data out from SIM800L) to Digital 10
+
+#include &lt;SoftwareSerial.h&gt;
+
+SoftwareSerial mySerial(10, 11); // RX, TX
+
+void setup()  
+{
+  // Open serial communications and wait for port to open:
+  Serial.begin(9600);
+  mySerial.begin(9600);
+
+}
+
+void loop() // run over and over
+{
+  if (mySerial.available())
+    Serial.write(mySerial.read());
+    
+  if (Serial.available())
+  { 
+    while(Serial.available())
+    {
+      mySerial.write(Serial.read());
+    }
+    mySerial.println();
+  }
+}
+</pre>
+<h4>  Set Baud </h4>
+<p>It is recommended to execute this process when first time to use the module. In the Serial Monitor columns of following tables, input of AT commands are in back, module returns values are in orange.
+</p>
+<table cellpadding="0">
+<tr>
+<th scope="col" width="50"> Serial Monitor
+</th>
+<th scope="col" width="100"> Description
+</th></tr>
+<tr>
+<td> AT <br/><span style="color: rgb(242,133,0)">OK</span> </td>
+<td> Send command “AT” to synchronize baud rate. Serial port of module is by default set at auto-baud mode, and in this mode, it will not output any indications when the module is on.
+</td></tr>
+<tr>
+<td> AT+IPR=9600<br/><span style="color: rgb(242,133,0)">OK</span></td>
+<td> Set baud rate at 9600bps, supports baud rate from 1200bps to 115200bps.
+</td></tr>
+<tr>
+<td> AT&amp;W<br/><span style="color: rgb(242,133,0)">OK</span></td>
+<td> Save parameter setting.
+</td></tr>
+<tr>
+<td> AT+CPOWD=1<br/><span style="color: rgb(242,133,0)">NORMAL POWER DOWN</span></td>
+<td>Power down the module.
+</td></tr>
+<tr>
+<td> <span style="color: rgb(242,133,0)">RDY<br/>+CFUN: 1<br/>GPS Ready<br/>+CPIN: READY<br/>Call Ready<br/>SMS Ready</span></td>
+<td>Turn on the module again by the power button, it will response status about GPS and GSM.
+</td></tr>
+<tr>
+<td> AT+CBC<br/><span style="color: rgb(242,133,0)"> +CBC: 1,96,4175 <br/> OK</span></td>
+<td>Inquire charging status and remaining battery capacity.
+</td></tr>
+<tr>
+<td> AT+CSQ <br/><span style="color: rgb(242,133,0)"> +CSQ: 14,0 <br/> OK</span></td>
+<td>Inquire GSM signal quality.
+</td></tr>
+</table>
+<h2>  Resource  </h2>
+<ul><li> <a href="res/SIM800L_Schematic.pdf">Design_Schematic</a>
+</li><li> <a href="res/SIM800_ATCommand_Manual_V1.02.pdf">SIM800_ATCommand_Manual</a>
+</li><li> <a href="res/SIM800L_Hardware_Design_V1.00.pdf">SIM800L_HardwareDesign_Manual</a>
+</li><li> <a href="https://github.com/Seeed-Studio/GPRS_Shield_Suli">GPRS_Shield library on gitHub</a><br/>
+</li><li><a href="https://github.com/adafruit/Adafruit_FONA_Library/">Adafruit_FONA_Library</a>
+</li></ul>
+<h2>  Support </h2>
+<p>Any tech support, please contact <a href="mailto:deray@deegou.com"><i>deray@deegou.com</i></a>
+</p>
+<h2>  Service </h2>
+<p>We do also provide PCB services ( Electronics design, prototype assembly and batch manufacturing )
+If you have any requirements, please contact <a href="http://www.deegou.com"><i>info@deegou.com</i></a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

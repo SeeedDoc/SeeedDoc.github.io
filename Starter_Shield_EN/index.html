@@ -1,0 +1,325 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Starter Shield EN</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Starter Shield EN</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Tickshield_02.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+</p>
+
+<p>Starter Shield is a perfect start for beginners of Arduino world. You can learn basic soldering tricks and practice programming principles when learning this kit. Have prepared a detailed soldering guide and a fully supported library of programming examples from easy to difficult. , so electronic could be fun even if you have bare technical knowledge, Hope you have fun and gain some knowledge with this kit!   <br/>
+This is a example <a href="http://www.instructables.com/id/How-to-Make-Your-Tiny-Tiger-Machine/">How to make tiny tiger Machine</a> used by Starter Shield.<br/>
+Starter Shield contains some basic electronic resources, like buttons, sensors, buzzer and display. There is a great way to learn how to solder.  Starter Shield is a through-hole soldering kit for beginners. After assembling the kit, you’ll have mastered the basics of through-hole soldering and you’ll have a geek style alarm clock that works with your Arduino.
+</p>
+<pre><br/>
+</pre>
+<p>Model: <a href="http://www.seeedstudio.com/depot/tick-tock-shield-p-1371.html?cPath=6_7">SLD90400P</a><br/>
+</p>
+<h2> Parts list</h2>
+<ul><li>1x Buzzer ;
+</li><li>1x CAP Aluminum 100uF-16V;
+</li><li>1x Temperature Sensor-10k;
+</li><li>1x RES Photoresistor 10K;
+</li><li>4x RES 10K-5%-1/4W;
+</li><li>4x RES 220R-5%-1/4W；
+</li><li>3x RES 4.7K-5%-1/4W;
+</li><li>2x Blue Male Header VERT;
+</li><li>2x Blue Male Header VERT;
+</li><li>1x Blue Female Header VERT;
+</li><li>1x Lithium-ion Battery 3V-40mAh;
+</li><li>1x SMD Battery Cell Holder Plastic;
+</li><li>1x IC Driver;
+</li><li>1x RTC Clock/Timing;
+</li><li>2x IC Socket;
+</li><li>3x Button Top;
+</li><li>2x Black Round Female Header VERT;
+</li><li>1x LED Green-Green;
+</li><li>1x LED Blue-Blue;
+</li><li>2x LED Red-Red;
+</li><li>1x LED 7-SEG-Red;
+</li><li>1x Crystal 32.768KHz-12.5pF-20ppm-30K;
+</li><li>2x CAP Ceramic Disc 1nF-50V-20%;
+</li><li>1x CAP Ceramic Disc 100nF-25V;
+</li><li>1x Starter Shield Soldering Guide
+</li><li>1x Starter Shield PCB;
+</li></ul>
+<h2>  Specification  </h2>
+<p><br/><img src="img/Tick_Shield_Interface_Function.jpg" width="844"/><br/>
+</p><p><b>Hardware Resources</b>
+</p>
+<ul><li>Coin Cell Holder: provides power to RTC IC when external power is off; 
+</li></ul>
+<ul><li>Buzzer: create audio effect; 
+</li></ul>
+<ul><li>Light Sensor: detect ambient light intensity; 
+</li></ul>
+<ul><li>Temperature Sensor: detect ambient temperature; 
+</li></ul>
+<ul><li>K1...K3: temporary buttons; 
+</li></ul>
+<ul><li>D1...D4: LEDs in blue, green, red and red; 
+</li></ul>
+<ul><li>U3: VS1307, Real Time Clock IC; 
+</li></ul>
+<ul><li>U5: TM1636, 7-seg display driver IC. 
+</li></ul>
+<p><b>Pins Used On Arduino</b>
+</p>
+<ul><li>D2: Control LED1;
+</li><li>D3: Control LED2;
+</li><li>D4: Control LED3;
+</li><li>D5: Control LED4;
+</li><li>D6: Control Buzzer;
+</li><li>D7: VS1636 SCLK pin;
+</li><li>D8: VS1636 DIO pin;
+</li><li>D9: Control K1; 
+</li><li>D10: Control K2; 
+</li><li>D11: Control K3;
+</li><li>A0(D14): Poll readings from temperature sensor;
+</li><li>A1(D15): Poll readings from light sensor;
+</li><li>A4(D18): DS1307 SDA pin 
+</li><li>A5(D19): DS1307 SCK pin
+</li></ul>
+<p><br/>
+</p>
+<h2>  Demonstration  </h2>
+<p>You are supposed to finish the soldering of your Tick Tock Shield before moving on to following demos. If you didn't, click <a href="http://www.seeedstudio.com/document/pdf/Tick%20Tock%20Shield%20Soldering%20Guide.pdf">here</a> to download the soldering guide. <br/>
+Here we start to present you 7 demos from easy to difficult. They involve usage of all hardware resources on Tick Tock Shield: <br/>
+</p>
+<ul><li>Demo 1: Sweep The LEDs 
+</li><li>Demo 2: Control LEDs By Keys 
+</li><li>Demo 3: Change The Pitch Of Buzzer By Keys 
+</li><li>Demo 4: Display Temperature 
+</li><li>Demo 5: Make A Light Sensor Controlled LED 
+</li><li>Demo 6: Display Numerical Characters 
+</li><li>Demo 7: Real Time Clock
+</li></ul>
+<p>Each demo caontains detailed comments in the .ino file. To figure out how every line affects the turnout, you have to study the sketch and comments carefully.
+</p><p>OK, let's check out what the Tick Tock Shield is capable of.<br/><img src="img/Complete_Tick_Shield.JPG" width="400"/> <br/>
+</p>
+<h3>  Preparation: Install the Hardware and Software  </h3>
+<p>1. Plug Tick Tock Shield onto Arduino board. Connect Arduino to PC via USB cable as show below.
+<br/><img src="img/Connect_Tick_Shield.jpg" width="500"/> <br/>
+2. Download <a href="https://github.com/Seeed-Studio/Starter_Shield_Libraries">Starter Shield Library</a> <br/>
+3. Unzip and put them in the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries.
+</p><p><b> Note:</b>
+</p>
+<dl><dd>1) Libraries MsTimer2 and Timerone are packed in Tick Tock Shield Library we prvide above. We download them from Arduino website. If you already have them in your libraries file, them no need to add them once again.<br/>
+</dd><dd>2) Through all 7 demos in Tick Tock Shield library, we define: <br/>
+<dl><dd><dl><dd>K3 - menu key 
+</dd><dd>K2 - increase key 
+</dd><dd>K1 - decrease key 
+</dd><dd>D4 - LED_CLOCK_ADJUST<br/>
+</dd><dd>D3 - LED_ALARM_ADJUST<br/>
+</dd><dd>D2 - LED_ALARM_ENABLE<br/>
+</dd><dd>D1 - LED_BRIGHT_ADJUST<br/>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<h3>  Getting Started: Fun With Tick Tock Shield  </h3>
+<p>From easy to difficult, we prepared a series of demos for you to explore what your Tick Tock Shield is capable of. Follow me to have fun with it. 
+</p><p><br/><b>Demo 1: Sweep The LEDs</b> <br/>
+</p>
+<dl><dd>1. This demo only involves the usage of the most basic actuator - LEDs. <br/>
+</dd><dd>2. Restart the Arduino IDE. Open the example "RunLED" via the path: File --&gt; Examples --&gt; TickTockShield--&gt; RunLED.<br/><img src="img/Open_RunLED_Code.jpg" width="496"/> <br/>
+</dd><dd>3. This demo can sweep 4 LEDs with a settable speed. You can change the sweep speed by changing the parameter of the function "runLED(speed)". Find further illutration of the funtion in its comment. <br/>
+</dd><dd>4. Click the upload button to upload the program to the Arduino. <br/>
+</dd><dd>5. You can see four LED lights turn on and off from left to right at a given speed after the program is uploaded. <br/>
+</dd></dl>
+<p><br/><b>Demo 2: Control LEDs By Keys</b>
+</p><p>This demo show you how to control LEDs with the most basic input - buttons. 
+</p>
+<dl><dd>1. Open the example "ControlLED" in the same way as open the “RunLED” above. <br/>
+</dd><dd>2. This demo can turn on or off four LEDs by keys. We set two flags to store the status of this test, TEST_START and TEST_END. Every time the “menu” key gets pressed, the status toggles between TEST_START and TEST_END. In the status of TEST_START, "increase" key can turn on one more LED from right to left every time it gets pressed. The "decrease" key has an inverse effect as the "increase" key.<br/>
+</dd></dl>
+<p><br/>
+</p><p><b>Demo 3: Change The Pitch Of Buzzer By Keys<br/></b>This demo involves how to make a sound with buzzer, and because you have already known how to use buttons, in this demo, we use buttons to increase or decrease the pitch of buzzer.<br/>
+</p>
+<dl><dd>1. Open the example "changeThePitch". <br/>
+</dd><dd>2. Every time the “increase” key gets pressed, the pitch of the buzzer will rise up. And when the “decrease” key gets pressed, the pitch will fall down.<br/>
+</dd></dl>
+<p><br/><b>Demo 4: Display Temperature</b>
+</p><p>Get started with sensors. First we have here is the temperature sensor. Try to read its value and display it on the 7 segment display. <br/>
+</p>
+<dl><dd>1. Open the example “MeasureTemprature”. 
+</dd><dd>2. The 7-segment Display will display current temperature read from temperature sensor as shown below. 
+</dd><dd>3. If you find in the picture below, the contrast is not strong enough, try a lower view angle. This principle also apply to following demos which contain usage of 7-segment display.<br/><img src="img/Measure_Temperature.jpg" width="500"/><br/>
+</dd></dl>
+<p><br/><b>Demo 5: Make A Light Sensor Controlled LED </b>
+</p><p>Is it convenient if the brightness of display can auto adjust itself according to the ambient light? This demo shows you how to do this by using a light sensor. <br/>
+</p>
+<dl><dd>1. Open the example “SensorControlBrightness” in the same way.<br/>
+</dd><dd>2. This example can change the brightness of BRIGHT_ADJUST Indicator according to the ambient light intensity. The darker the environment is, the lighter the LED turns. Picture on the right is the turnout.<br/>
+</dd></dl>
+<p><img src="img/Connect_Tick_Shield.jpg" width="400"/> <br/>
+<img src="img/Control_Light.jpg" width="400"/> <br/>
+</p><p><br/>
+<br/><b>Demo 6: Display Numerical Characters</b>
+</p><p>This demo shows you how to control the content of 7 segment display. <br/>
+</p>
+<dl><dd>1. Open the example “CharacterFlow”. <br/>
+</dd><dd>2. This example can run numeric characters 0, 1, 2, 3, 4, 5, 6, 7, 8 ,9, A, b, C, d, E, F from right to left. <br/><img src="img/Flow_Character.jpg" width="500"/>
+</dd></dl>
+<p><br/><b>Demo 7: Real Time Clock</b>
+</p><p>This is a final demo that involves all hardware resources we mentioned above and performs all functions of a real life alarm clock, like time display, making a buzz to get you out of your bed and so on. What's more, because a light sensor and a temperature sensor are added, Tick Tock Shield does more than a normal alarm clock. It can sense the ambient light and auto-adjust the brightness of 7-segment display. Also it can show you the current temperature at a given time interval. <br/>
+</p>
+<dl><dd>1. Open the example "RealTimeClock" and upload the example into Arduino.<br/>
+</dd><dd>2. The 7-segment Display will alternately display current time and temperature. <br/><img src="img/Display_RTC_.jpg" width="500"/> <br/>
+</dd><dd>3. Method to adjust the time and set the alarm clock:<br/>
+</dd></dl>
+<dl><dd><dl><dd>1) Because there is a RTC chip on board, so you don't need to reset the time every time you turn it on, of course, the condition is the coin battery for RTC chip is alive. But if this is your first time to start up the Tick Tock Shield, time setting is required. <br/>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd>2) Three buttons are used to adjust the time. They are "menu"(K3), "increase"(K2) and "decrease"(K1). Press "memu" to cycle between the next setting modes:<br/>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd><dl><dd>a) set the hour part of normal time display <br/>
+</dd><dd>b) set the minute part of normal time display <br/>
+</dd><dd>c) set the hour part of alarm clock <br/>
+</dd><dd>d) set the minute part of alarm clock <br/>
+</dd><dd>e) set the default brightness of 7 segment display <br/>
+</dd><dd>f) turn on or off the alarm function <br/>
+</dd><dd>g) quit time setting modes<br/>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd>3) If you want to quit before processing all 7 steps above. There are two interruption ways. One, press K3 no matter on which step for 3s. In this way,Tick Tock Shield will confirm all settings you have made and quit. Two, leave the Tick Tock Shield alone for 5s. In this way. No setting will be stored and you quit time setting mode also.
+</dd></dl>
+</dd></dl>
+<dl><dd><dl><dd>4) K2 is assigned to set the status of alarm clock. You can know the status of alarm clock via ALARM_ENABLE Indicator.
+</dd></dl>
+</dd></dl>
+<p><br/>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2>  Resources  </h2>
+<p><a href="https://github.com/Seeed-Studio/Starter_Shield">Starter Shield library</a><br/>
+<a href="res/Starter_Shield_v1.1.zip">Starter Shield eagle file</a><br/>
+<a href="res/Starter_Shield_v1.1.pdf">Starter Shield pdf Schematic</a><br/>
+<a href="res/Tm1636.pdf">TM1636 datasheet</a><br/>
+<a href="res/Vs1307.pdf">VS1307 datasheet</a>
+</p><p><br/>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2>  Reference </h2>
+<h3>  EEPROM Class  </h3>
+<p><b>Class Function:</b> Read and write EEPROM of AVR chip. The EEPROM size of ATmega328P Chip is 1K Bytes for Seeeduino V3.0. The contents of the EEPROM you have wrote will not be lost when power off. It is used for saving alarm time and alarm enable flag in the RealTimeClock Demo, You don't need to reset the alarm clock.<br/>
+</p><p><b>Function Description:</b><br/> <u>1. EEPROM.read(int address);</u><br/> This function is used to read data from a specified address of EEPROM.<br/>
+</p>
+<ul><li>address: the address of the targetted unit.
+</li></ul>
+<p>Example： 
+</p>
+<pre>temp_data[i] = EEPROM.read(i);</pre>
+<p><u>2. EEPROM.write(int address, uint8_t value);</u><br/> The function is used to write data to a specified address of EEPROM.<br/>
+</p>
+<ul><li>address: the address of the tergetted unit  
+</li><li>uint8_t value: data to be written to the targetted unit.
+</li></ul>
+<p>Example:<br/>
+</p>
+<pre>if(temp_data[i] != mark[i])
+    {
+      EEPROM.write(0,mark[0]);
+      EEPROM.write(1,mark[1]);
+      EEPROM.write(2,mark[2]);
+      EEPROM.write(3,mark[3]);
+      EEPROM.write(4,mark[4]);
+      return true;
+    }</pre>
+<h3>  TM1636 class  </h3>
+<p><b>Class Function：</b>this class contains all funtions to control four 7-segment displays. <br/> <b>Function Description:</b><br/> <u>1. tm1636.point(boolean PointFlag);</u><br/> The function is used to turn on or off the clock point (:). This function will come into effect every time the display content changes. <br/>
+</p>
+<ul><li>PointFlag: can be 0(off) or 1(on).
+</li></ul>
+<p>Example:<br/>
+</p>
+<pre>if(flag_clockpoint)
+      {
+        tm1636.point(POINT_ON);
+      }
+      else tm1636.point(POINT_OFF); </pre>
+<p><u>2. Tm1636.display(int8_t DispData[]);</u><br/>Create a character flow with the content of DispData[].<br/>
+</p>
+<ul><li>DispData[]: an array in int8_t type, including 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, A, b, C, d, E and F.
+</li></ul>
+<p>Example:<br/>
+</p>
+<pre>tm1636.display(disp);</pre>
+<h3>  TickTockShield Class  </h3>
+<p><b>Class Function：</b>operate all components on the Tick Tock Shield.<br/><b>Function Description:</b><br/><u>1. ticktockshield.init();</u><br/>The Initialization of Tick Tock Shield.<br/><u>2. ticktockshield.runLED(byte speed, byte direction);</u>
+</p><p>This function sweep 4 LEDs in the direction you choose.<br/>
+</p>
+<ul><li>speed: the the LED flow rate from 1(slowest) to 10(fastest). 
+</li><li>direction: LED flow direction, can be LEFT_TO_RIGHT or RIGHT_TO_LEFT.
+</li></ul>
+<p>Example:<br/>
+</p>
+<pre>/*Run the 4 LEDs from left to right*/
+ticktockshield.runLED(1,LEFT_TO_RIGHT);</pre>
+<p><u>3. ticktockshield. turnOnLED();</u><br/>Turn on all 4 LEDs.<br/><u>4. ticktockshield. turnOffLED();</u><br/>Turn off all 4 LEDs. <br/><u>5. setLed(unsigned char led_status, int pinLED);</u><br/>The Function is used to turn on or off an individual LED. <br/>
+</p>
+<ul><li>led_status: can be LED_ON or LED_OFF. 
+</li><li>pinLED: can be one of LED_CLOCK_ADJUST，LED_ALARM_ADJUST，LED_BRIGHT_ADJUST，LED_ALARM_ENABLE.
+</li></ul>
+<p>Example:<br/>
+</p>
+<pre>void TickTockShield::turnOffLED()
+{
+	setLed(LOW,LED_CLOCK_ADJUST);
+	setLed(LOW,LED_ALARM_ADJUST);
+	setLed(LOW,LED_BRIGHT_ADJUST);
+	setLed(LOW,LED_ALARM_ENABLE);
+}</pre>
+<p><u>6. ticktockshield.alarming();</u><br/>Let the buzzer buzz.<br/>Example:<br/>
+</p>
+<pre>/*It will sound alarm for a minute untill the "MENU" key is pressed*/
+    if(ticktockshield.isAlarmEnable())
+    {
+      ticktockshield.alarming();
+    }</pre>
+<p><u>7. ticktockshield.turnOffAlarm();</u><br/>Turn off the alarm when the buzzer is buzzing. <br/><u>8. ticktockshield.setAlarm(uint8_t hour,uint8_t minute,uint8_t flag_enabl);</u><br/>Set the alarm time. 
+</p>
+<ul><li>hour: hour 
+</li><li>minute: minute 
+</li><li>flag_enabl: flag that restores the status of alarm, can be 0(unenabled) or 1(enabled)
+</li></ul>
+<p>Example: 
+</p>
+<pre>ticktockshield.setAlarm(12,0);//Yes,the alarm clock is initialized to 12:00 and the data in the EEPROM.</pre>
+<p><u>9. ticktockshield.getAlarm();</u><br/>Read the preset alarm value from EEPROM and store them into given variables, including the enable flag of the alarm. <br/>Example:<br/>
+</p>
+<pre>if(isFirstLoad())//if it is the first time to load the firmware?
+	{
+		ticktockshield.setAlarm(12,0);
+ 	}
+	else ticktockshield.getAlarm();//No,read the alarm clock stored in EEPROM</pre>
+<p><u>10. ticktockshield.getTemperature();</u><br/>Get the reading from temperature sensor.<br/>Example:<br/>
+</p>
+<pre>/*Read the ambient temperature and display on the digital tube.*/
+	ticktockshield.displayTemperature(ticktockshield.getTemperature());
+</pre>
+<p><u>11. ticktockshield.displayTemperature(int8_t temperature);</u><br/>Display temperature value(negative value supported) on the 7 segment display. The character C represents celsius degrees.<br/>Example:　 
+</p>
+<pre> ticktockshield.displayTemperature(ticktockshield.getTemperature());</pre>
+<p><u>12. ticktockshield.scanKey();</u><br/>Find out which key gets pressed. Return the pin number of the key pressed. And return "-1" if no keys is pressed.<br/>
+</p>
+<pre>if((flag_scan_again)&amp;&amp;(KEY_MENU == ticktockshield.scanKey()))
+      {
+        ticktockshield.writeToAdjustArea();
+        ticktockshield.processKey();
+        system_states = SYSTEM_ADJUSTING;
+      }
+</pre>
+<p><u>13. ticktockshield.processKey();</u><br/>Process the command you enter through keys. If it's a normal press. This function will make a buzz corresponding to the press. If you press the "menu" key longer than 3s, then this function will make Tick Tock Shield enter time setting mode. If no other key gets pressed after the "menu" key, then this function will make Tick Tock Shield quit the time setting mode.<br/>
+</p><p><u>14. ticktockshield.processSystemStatus();</u><br/>Execute different tasks according to the system status when it's called. The system status can be "adjust clock time" 、 "alarm time", "adjust 7 segment display brightness" and "enable alarm". 
+</p><p><u>15. ticktockshield.writeToAdjustArea();</u><br/>Deliver the latest time information from normal time display mode to time setting mode so that they can be used under time setting mode. <br/><u>16. ticktockshield.writeToNormalArea();</u><br/>Deliver the time information set in time setting mode to normal time display mode.<br/><u>17. ticktockshield.writeTime();</u><br/>Write time information into RTC chip.<br/><u>18. ticktockshield.getTime();</u><br/>Read the current time information from RTC. <br/><u>19. ticktockshield.displayTime();</u><br/>Display time on 7 segment Display. <br/>
+</p><p>Example: 
+</p>
+<pre> if(ticktockshield.isAlarmEnable())
+      {
+        tm1636.point(POINT_ON);
+        ticktockshield.displayTime();
+        system_states = SYSTEM_ALARMING;
+        return;
+      }</pre>
+<p><u>20. ticktockshield.display(int8_t DispData []);</u><br/>Display alpha-numeric information 7 segment Display.<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

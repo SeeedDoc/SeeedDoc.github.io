@@ -1,0 +1,515 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Rainbowduino v3.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Rainbowduino v3.0</h1><p>The Rainbowduino board is an Arduino compatible controller board with professional multiplexed LED driver. It can drive an <b>8x8 RGB Led Matrix</b> or a <b>4x4x4 RGB LED Cube</b> in common Anode mode. Rainbowduino v3.0 uses two <b>MY9221</b> chips which is a <b>12-channels</b> (R/G/B x 4) constant current Adaptive Pulse Density Modulation<b>(APDM)</b>. Rainbowduino v3.0 has provisions for cascading more such boards with I2C interface.
+</p><p><strong class="selflink">Rainbowduino v3.0</strong> is flashed with Arduino boot-loader and this makes it easy to program sketches using Arduino IDE. Unlike other LED drivers, this comes with a USB to UART (FT232RL) inbuilt for programming the sketches.
+</p><p><a href="http://www.seeedstudio.com/depot/Rainbowduino-LED-driver-platform-Atmega-328-p-371.html"><b>Model: [102010006]</b></a>
+</p><p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbowduino_V3.0.jpg" width="300"/> <div class="thumbcaption"><b>Rainbowduino v3.0</b></div></div></div> <div class="thumb tnone"><div class="thumbinner" style="width:252px;"><img src="img/Rainbowduino_V3.0b_board_bottom.png" width="250"/> <div class="thumbcaption"><b>Rainbowduino v3.0</b> bottom</div></div></div>
+<p><br clear="all"/>
+</p>
+<p><br/>
+</p>
+<h2>  Features  </h2>
+<table>
+<tr>
+<th> Paramater </th>
+<th> Value
+</th></tr>
+<tr>
+<td> Constant current output </td>
+<td> 20.8mA
+</td></tr>
+<tr>
+<td> Pin headers </td>
+<td> 2 x 16 for connecting multiplexed LEDs
+</td></tr>
+<tr>
+<td> Maximum LEDs driving capability </td>
+<td> 192 (i.e 8x8x3)
+</td></tr>
+<tr>
+<td> Supported LED displays </td>
+<td> 4x4x4 RGB Cube &amp; 8x8 RGB LED Matrix
+</td></tr>
+<tr>
+<td> USB to UART </td>
+<td> FT232RL
+</td></tr>
+<tr>
+<td> DC Supply </td>
+<td> USB powered or External 6V~12V DC
+</td></tr>
+<tr>
+<td> Inbuilt Voltage regulator </td>
+<td> 5V / 1A
+</td></tr></table>
+<h2>  Application Ideas  </h2>
+<ul><li>General Purpose LED driver
+<ul><li>Connect 4x4x4 RGB Cube 
+</li><li>Connect 8x8 RGB Matrix
+</li></ul>
+</li><li>Create LED sign boards by chaining more than one <strong class="selflink">Rainbowduino v3.0</strong>
+</li></ul>
+<h2>  Usage  </h2>
+<h3>  Hardware Setup  </h3>
+<p><b>Note</b>: Always set the slide switch to <b>USB</b> position for programming the Rainbowduino v3.0. Setting the slide switch to <b>HOST</b> position makes the onboard FT232 act as UartSBee (This feature is not required for Rainbowduino v3.0 normal operation)
+</p><p>Connecting to LED matrix is very straight forward. 
+</p>
+<ul><li><dl><dt>Connecting RGB LED Matrix </dt><dd> Connect RGB Matrix 2x16 male pin header to Rainbowduino as shown below (See the back of RGB matrix, the 16 male pin header closer to "2088RGB" text marking should be connected to DRIVE - GREEN- DRIVE pin header of Rainbowduino)
+</dd></dl>
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbowduino_v3.0_with_LED_Matrix.jpg" width="300"/> <div class="thumbcaption"><b>Rainbowduino v3.0 connected to 8x8 RGB LED Matrix</b></div></div></div>
+<p><br clear="all"/>  (or)
+</p>
+<ul><li><dl><dt>Connecting RGB LED Cube </dt><dd> Connect Rainbow Cube Kit 2x16 male pin header to Rainbowduino as shown below 
+</dd></dl>
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbow_Cube_Installation_1.jpg" width="300"/> <div class="thumbcaption"><b>2x16 pin header</b> positioning</div></div></div>
+<p><br clear="all"/>
+<br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbow_Cube_Installation_2.jpg" width="300"/> <div class="thumbcaption">A <b>Rainbowduino</b> properly connected to <b>Rainbow Cube kit</b></div></div></div>
+<p><br clear="all"/>
+</p>
+<ul><li>Attach a USB cable to Rainbowduino for programming
+</li></ul>
+<h3>  Software Setup  </h3>
+<ul><li>In Arduino IDE --&gt; Tools --&gt; Board menu, select "Duemilanove or Diecimila"
+</li><li>Download and install Rainbouduino 3.0 library from the resources section.
+</li></ul>
+<h3>  Programming  </h3>
+<h4>  Using with RGB LED Cube </h4>
+<hr/>
+<p><br clear="all"/>
+<a href="http://www.seeedstudio.com/depot/images/cubeani.gif">http://www.seeedstudio.com/depot/images/cubeani.gif</a>
+<br clear="all"/>
+Let us get started with a simple example with RGB LED Cube:
+</p>
+<ul><li>Download Rainbowduino v3.0 Library from resources.
+</li><li>Open Cube1.ino sketch (a copy of it is reproduced below):
+</li><li>Compile and upload the sketch. The copy of which is reproduced below: 
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ Rainbowduino v3.0 Library examples:  Cube1
+ 
+ Sets pixels on 3D plane (4x4x4 cube)
+*/</span>
+ 
+<span class="co2">#include &lt;Rainbowduino.h&gt;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Rb.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//initialize Rainbowduino driver</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="co1">//Set (Z,X,Y):(0,0,0) pixel BLUE</span>
+  Rb.<span class="me1">setPixelZXY</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu12">0x0000FF</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses 24bit RGB color Code</span>
+ 
+  <span class="co1">//Set (Z,X,Y):(0,3,0) pixel RED</span>
+  Rb.<span class="me1">setPixelZXY</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">3</span>,<span class="nu0">0</span>,<span class="nu12">0xFF</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses R, G and B color bytes</span>
+ 
+  <span class="co1">//Set (Z,X,Y):(3,0,3) pixel GREEN</span>
+  Rb.<span class="me1">setPixelZXY</span><span class="br0">(</span><span class="nu0">3</span>,<span class="nu0">0</span>,<span class="nu0">3</span>,<span class="nu12">0x00FF00</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses 24bit RGB color Code</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dt>Output
+</dt><dd><br clear="all"/>
+</dd></dl>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbow_Cube1.jpg" width="300"/> <div class="thumbcaption">Cube1.pde Demo</div></div></div>
+<p><br clear="all"/>
+</p><p>Rainbowduino v3.0 library provides many APIs for using RGB LED cube. The following section lists and describes them :
+</p>
+<table>
+<tr>
+<th> API </th>
+<th> Description
+</th></tr>
+<tr>
+<td><b>Rb.init(void)</b> </td>
+<td> Initialize Rainbowduino driver, this should be placed inside setup()
+</td></tr>
+<tr>
+<td> <b>Rb.setPixelZXY(unsigned char z, unsigned char x, unsigned char y, unsigned char colorR, unsigned char colorG, unsigned char colorB)</b> </td>
+<td> This sets the pixel(z,x,y)by specifying each channel(color) with 8bit number.
+</td></tr>
+<tr>
+<td> <b>Rb.setPixelZXY(unsigned char z, unsigned char x, unsigned char y, unit32_t colorRGB) </b> </td>
+<td> This sets the pixel(z,x,y)by specifying a 24bit RGB color code.
+</td></tr>
+<tr>
+<td> <b>Rb.blankDisplay(void)</b> </td>
+<td> This function is used to blank all the LEDs.
+</td></tr></table>
+<p><b>setPixelZXY() Demo</b>
+</p>
+<ul><li>To understand the (Z,X,Y) pixel addressing let us see another example. In this demo, the Layer 0 (i.e Z-0) is painted Green and Layer 3 is painted Blue.
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ Rainbowduino v3.0 Library examples:  Cube2
+ 
+ Sets pixels on 3D plane (4x4x4 cube)
+*/</span>
+ 
+<span class="co2">#include &lt;Rainbowduino.h&gt;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Rb.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//initialize Rainbowduino driver</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">int</span> z,x,y<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">for</span><span class="br0">(</span>x<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>x<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>x<span class="sy2">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span>y<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>y<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>y<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+     <span class="co1">//Paint layer 0 Green</span>
+     Rb.<span class="me1">setPixelZXY</span><span class="br0">(</span><span class="nu0">0</span>,x,y,<span class="nu12">0x00FF00</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses 24bit RGB color Code</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>  
+ 
+  <span class="kw1">for</span><span class="br0">(</span>x<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>x<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>x<span class="sy2">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span>y<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>y<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>y<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+     <span class="co1">//Paint layer 3 Blue</span>
+     Rb.<span class="me1">setPixelZXY</span><span class="br0">(</span><span class="nu0">3</span>,x,y,<span class="nu12">0x0000FF</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses 24bit RGB color Code</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dt>Output
+</dt></dl>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbow_Cube2.jpg" width="300"/> <div class="thumbcaption">Cube2.pde Demo</div></div></div>
+<p><br clear="all"/>
+</p><p><b>setPixelZXY() Random Colors Demo</b>
+</p>
+<ul><li>In this demo, all LEDs are painted with some random color. After five seconds of delay, the whole cube is repainted with random colors.
+</li></ul>
+<pre>
+/*
+ Rainbowduino v3.0 Library examples:  Cube3
+
+ Sets pixels on 3D plane (4x4x4 cube)
+*/
+
+#include &lt;Rainbowduino.h&gt;
+
+void setup()
+{
+  Rb.init(); //initialize Rainbowduino driver
+}
+
+unsigned int z,x,y;
+
+void loop()
+{
+ for(z=0;z&lt;4;z++)
+ { 
+  for(x=0;x&lt;4;x++)
+  {
+    for(y=0;y&lt;4;y++)
+    {
+     //Paint random colors
+     Rb.setPixelZXY(z,x,y,random(0xFF),random(0xFF),random(0xFF)); //uses R, G and B color bytes
+    }
+  }
+ }
+delay(5000);
+Rb.blankDisplay(); //Clear the LEDs (make all blank)
+}
+</pre>
+<dl><dt>Output
+</dt></dl>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Rainbow_Cube3.jpg" width="300"/> <div class="thumbcaption">Cube3.pde Demo</div></div></div>
+<p><br clear="all"/>
+</p><p><b>Night Lamp / Mood Lamp Demo</b>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ 
+ Rainbowduino v3.0 Library examples : Mood Lamp 
+ 
+*/</span>
+ 
+<span class="co2">#include &lt;Rainbowduino.h&gt;</span>
+ 
+ 
+<span class="co1">// HSV to RGB array </span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> RED<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">238</span>,<span class="nu0">221</span>,<span class="nu0">204</span>,<span class="nu0">188</span>,<span class="nu0">171</span>,<span class="nu0">154</span>,<span class="nu0">137</span>,<span class="nu0">119</span>,<span class="nu0">102</span>,<span class="nu0">85</span>,
+<span class="nu0">68</span>,<span class="nu0">51</span>,<span class="nu0">34</span>,<span class="nu0">17</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">17</span>,<span class="nu0">35</span>,<span class="nu0">52</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> GREEN<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span>,<span class="nu0">17</span>,<span class="nu0">34</span>,<span class="nu0">51</span>,<span class="nu0">68</span>,<span class="nu0">85</span>,<span class="nu0">102</span>,<span class="nu0">119</span>,<span class="nu0">136</span>,<span class="nu0">153</span>,<span class="nu0">170</span>,<span class="nu0">187</span>,<span class="nu0">204</span>,<span class="nu0">221</span>,<span class="nu0">238</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,
+<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">238</span>,<span class="nu0">221</span>,<span class="nu0">204</span>,<span class="nu0">188</span>,<span class="nu0">170</span>,<span class="nu0">154</span>,<span class="nu0">136</span>,<span class="nu0">120</span>,<span class="nu0">102</span>,<span class="nu0">86</span>,<span class="nu0">68</span>,<span class="nu0">52</span>,<span class="nu0">34</span>,<span class="nu0">18</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> BLUE<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">18</span>,<span class="nu0">34</span>,<span class="nu0">52</span>,<span class="nu0">68</span>,<span class="nu0">86</span>,<span class="nu0">102</span>,<span class="nu0">120</span>,<span class="nu0">136</span>,<span class="nu0">154</span>,<span class="nu0">170</span>,<span class="nu0">188</span>,
+<span class="nu0">204</span>,<span class="nu0">221</span>,<span class="nu0">238</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Rb.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//initialize Rainbowduino driver</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">int</span> z,x,y<span class="sy4">;</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ 
+<span class="kw1">for</span><span class="br0">(</span>z<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> z<span class="sy1">&lt;</span><span class="nu0">64</span> <span class="sy4">;</span>z<span class="sy2">++</span><span class="br0">)</span>
+<span class="br0">{</span>
+ <span class="kw1">for</span><span class="br0">(</span>x<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>x<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy4">;</span>x<span class="sy2">++</span><span class="br0">)</span>
+ <span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span>y<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>y<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy4">;</span>y<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+     <span class="co1">//Paint random colors</span>
+     <span class="co1">//Rb.setPixelZXY(z,x,y,RED[i],GREEN[i],BLUE[i]); //uses R, G and B color bytes</span>
+     Rb.<span class="me1">setPixelXY</span><span class="br0">(</span>x,y,RED<span class="br0">[</span>z<span class="br0">]</span>,GREEN<span class="br0">[</span>z<span class="br0">]</span>,BLUE<span class="br0">[</span>z<span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses R, G and B color bytes</span>
+    <span class="br0">}</span>
+ <span class="br0">}</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">for</span><span class="br0">(</span>z<span class="sy1">=</span><span class="nu0">63</span><span class="sy4">;</span> z <span class="sy1">&gt;</span> <span class="nu0">0</span> <span class="sy4">;</span>z<span class="sy2">--</span><span class="br0">)</span>
+<span class="br0">{</span>
+ <span class="kw1">for</span><span class="br0">(</span>x<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>x<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy4">;</span>x<span class="sy2">++</span><span class="br0">)</span>
+ <span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span>y<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>y<span class="sy1">&lt;</span><span class="nu0">8</span><span class="sy4">;</span>y<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+     <span class="co1">//Paint random colors</span>
+     <span class="co1">//Rb.setPixelZXY(z,x,y,RED[i],GREEN[i],BLUE[i]); //uses R, G and B color bytes</span>
+     Rb.<span class="me1">setPixelXY</span><span class="br0">(</span>x,y,RED<span class="br0">[</span>z<span class="br0">]</span>,GREEN<span class="br0">[</span>z<span class="br0">]</span>,BLUE<span class="br0">[</span>z<span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses R, G and B color bytes</span>
+    <span class="br0">}</span>
+ <span class="br0">}</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p><b>Plasma Cube</b>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ 
+ Rainbowduino v3.0 Library examples : 3D Plasma
+ 
+*/</span>
+ 
+<span class="co2">#include &lt;Rainbowduino.h&gt;</span>
+ 
+<span class="co1">// HSV to RGB array</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> RED<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">238</span>,<span class="nu0">221</span>,<span class="nu0">204</span>,<span class="nu0">188</span>,<span class="nu0">171</span>,<span class="nu0">154</span>,<span class="nu0">137</span>,<span class="nu0">119</span>,<span class="nu0">102</span>,<span class="nu0">85</span>,
+<span class="nu0">68</span>,<span class="nu0">51</span>,<span class="nu0">34</span>,<span class="nu0">17</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">17</span>,<span class="nu0">35</span>,<span class="nu0">52</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> GREEN<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span>,<span class="nu0">17</span>,<span class="nu0">34</span>,<span class="nu0">51</span>,<span class="nu0">68</span>,<span class="nu0">85</span>,<span class="nu0">102</span>,<span class="nu0">119</span>,<span class="nu0">136</span>,<span class="nu0">153</span>,<span class="nu0">170</span>,<span class="nu0">187</span>,<span class="nu0">204</span>,<span class="nu0">221</span>,<span class="nu0">238</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,
+<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">238</span>,<span class="nu0">221</span>,<span class="nu0">204</span>,<span class="nu0">188</span>,<span class="nu0">170</span>,<span class="nu0">154</span>,<span class="nu0">136</span>,<span class="nu0">120</span>,<span class="nu0">102</span>,<span class="nu0">86</span>,<span class="nu0">68</span>,<span class="nu0">52</span>,<span class="nu0">34</span>,<span class="nu0">18</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> BLUE<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">18</span>,<span class="nu0">34</span>,<span class="nu0">52</span>,<span class="nu0">68</span>,<span class="nu0">86</span>,<span class="nu0">102</span>,<span class="nu0">120</span>,<span class="nu0">136</span>,<span class="nu0">154</span>,<span class="nu0">170</span>,<span class="nu0">188</span>,
+<span class="nu0">204</span>,<span class="nu0">221</span>,<span class="nu0">238</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> plasma<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Rb.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//initialize Rainbowduino driver</span>
+ 
+  <span class="kw1">for</span><span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> x <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> x <span class="sy1">&lt;</span> <span class="nu0">4</span><span class="sy4">;</span> x<span class="sy2">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> y <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> y <span class="sy1">&lt;</span> <span class="nu0">4</span><span class="sy4">;</span> y<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw1">for</span><span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> z <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> z <span class="sy1">&lt;</span> <span class="nu0">4</span><span class="sy4">;</span> z<span class="sy2">++</span><span class="br0">)</span>
+       <span class="br0">{</span>
+        <span class="kw4">int</span> color <span class="sy1">=</span> <span class="kw4">int</span><span class="br0">(</span><span class="nu16">32.0</span> <span class="sy2">+</span> <span class="br0">(</span><span class="nu16">32.0</span> <span class="sy2">*</span> <span class="kw3">sin</span><span class="br0">(</span>x <span class="sy2">/</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="br0">)</span><span class="sy2">+</span> <span class="nu16">32.0</span> <span class="sy2">+</span> <span class="br0">(</span><span class="nu16">32.0</span> <span class="sy2">*</span> <span class="kw3">sin</span><span class="br0">(</span>y <span class="sy2">/</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu16">32.0</span> <span class="sy2">+</span> <span class="br0">(</span><span class="nu16">32.0</span> <span class="sy2">*</span> <span class="kw3">sin</span><span class="br0">(</span>z <span class="sy2">/</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="sy2">/</span> <span class="nu0">3</span><span class="sy4">;</span>
+        plasma<span class="br0">[</span>x<span class="br0">]</span><span class="br0">[</span>y<span class="br0">]</span><span class="br0">[</span>z<span class="br0">]</span> <span class="sy1">=</span> color<span class="sy4">;</span>      
+       <span class="br0">}</span>   
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> x,y,z,colorshift<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+<span class="kw1">for</span><span class="br0">(</span>x<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>x<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>x<span class="sy2">++</span><span class="br0">)</span>  
+<span class="br0">{</span>
+ <span class="kw1">for</span><span class="br0">(</span>y<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>y<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>y<span class="sy2">++</span><span class="br0">)</span>  
+ <span class="br0">{</span>
+  <span class="kw1">for</span><span class="br0">(</span>z<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>z<span class="sy1">&lt;</span><span class="nu0">4</span><span class="sy4">;</span>z<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span>
+     Rb.<span class="me1">setPixelZXY</span><span class="br0">(</span>z,x,y,<span class="br0">(</span>RED<span class="br0">[</span>plasma<span class="br0">[</span>x<span class="br0">]</span><span class="br0">[</span>y<span class="br0">]</span><span class="br0">[</span>z<span class="br0">]</span> <span class="sy2">+</span> colorshift<span class="br0">]</span><span class="br0">)</span> <span class="sy2">%</span> <span class="nu0">256</span>,<span class="br0">(</span>GREEN<span class="br0">[</span>plasma<span class="br0">[</span>x<span class="br0">]</span><span class="br0">[</span>y<span class="br0">]</span><span class="br0">[</span>z<span class="br0">]</span> <span class="sy2">+</span> colorshift<span class="br0">]</span><span class="br0">)</span> <span class="sy2">%</span> <span class="nu0">256</span>,<span class="br0">(</span>BLUE<span class="br0">[</span>plasma<span class="br0">[</span>x<span class="br0">]</span><span class="br0">[</span>y<span class="br0">]</span><span class="br0">[</span>z<span class="br0">]</span> <span class="sy2">+</span> colorshift<span class="br0">]</span><span class="br0">)</span> <span class="sy2">%</span> <span class="nu0">256</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//uses R, G and B color bytes</span>
+    <span class="br0">}</span>
+ <span class="br0">}</span>
+<span class="br0">}</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+ colorshift<span class="sy1">=</span>  colorshift <span class="sy2">+</span> <span class="nu0">1</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dt>Output
+</dt></dl>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:334px;"><img src="img/Rainbow_Cube_Plasma_demo.jpg" width="332"/> <div class="thumbcaption">PlasmaCube.pde Demo</div></div></div>
+<p><br clear="all"/>
+</p>
+<h4>  Using with RGB LED Matrix   </h4>
+<p>Rainbowduino v3.0 library provides many APIs for using RGB LED matrix. The following section lists and describes them :
+</p>
+<table>
+<tr>
+<th> API </th>
+<th> Description
+</th></tr>
+<tr>
+<td> <b>Rb.init(void)</b> </td>
+<td> Initialize Rainbowduino driver, this should be placed inside setup()
+</td></tr>
+<tr>
+<td> <b>Rb.setPixelXY(unsigned char x, unsigned char y, unsigned char colorR, unsigned char colorG, unsigned char colorB)</b> </td>
+<td>This sets the pixel(x,y)by specifying each channel(color) with 8bit number.
+</td></tr>
+<tr>
+<td><b>Rb.setPixelXY(unsigned char x, unsigned char y, unit32_t colorRGB) </b></td>
+<td>This sets the pixel(x,y)by specifying a 24bit RGB color code.
+</td></tr>
+<tr>
+<td><b>Rb.blankDisplay(void)</b> </td>
+<td> This function is used to blank all the LEDs.
+</td></tr>
+<tr>
+<td><b>Rb.drawChar(unsigned char ascii, unsigned int poX, unsigned int poY,  uint32_t colorRGB)</b> </td>
+<td>Draw an ASCII character of uint32_t color at (poX,poY).
+</td></tr>
+<tr>
+<td><b>Rb.drawCircle(int poX, int poY, int r, uint32_t color)</b> </td>
+<td> Draw a uint32_t color circle of radius r at (poX,poY).
+</td></tr>
+<tr>
+<td><b>Rb.fillCircle(int poX, int poY, int r, uint32_t color)</b> </td>
+<td> Draw a fill uint32_t color circle of radius r at (poX,poY).
+</td></tr>
+<tr>
+<td><b>Rb.drawLine(unsigned int x0,unsigned int y0,unsigned int x1,unsigned int y1, uint32_t color)</b> </td>
+<td> Draw a line from (x0,y0) to (x1,y1).
+</td></tr>
+<tr>
+<td> <b>Rb.drawVerticalLine(unsigned int poX, unsigned int poY,unsigned int length, uint32_t color)</b> </td>
+<td>Draw a horizontal line from (poX,poY) of length pixels.
+</td></tr>
+<tr>
+<td><b>Rb.drawRectangle(unsigned int poX, unsigned int poY, unsigned int length,unsigned int width, uint32_t color)</b></td>
+<td> Draw a rectangle line from (poX,poY) of length and width pixels.
+</td></tr>
+<tr>
+<td><b>Rb.fillRectangle(unsigned int poX, unsigned int poY, unsigned int length, unsigned int width, uint32_t color)</b></td>
+<td>Draw a filled rectangle line from (poX,poY) of length and width pixels.
+</td></tr></table>
+<p><b>shapes Demo</b>
+</p>
+<pre>/*
+ Rainbowduino v3.0 Library examples:
+
+ Print Shapes on 2D plane (8x8 matrix)
+
+*/
+
+#include &lt;Rainbowduino.h&gt;
+
+void setup()
+{
+  Rb.init();
+}
+
+unsigned char x,y,z;
+
+void loop()
+{
+
+     Rb.drawCircle(3, 4, 3, 0xFF0000); // draw a red circle of radius 3 at (3,4).
+     delay(1000);
+     Rb.blankDisplay();
+  
+     Rb.fillCircle(3, 4, 2, 0x0000FF); // draw a filled blue circle of radius 2 at (3,4).
+     delay(1000);
+     Rb.blankDisplay();
+
+     Rb.drawLine(0, 0, 7, 7, 0x00FF00); // draw a line from (0,0) to (7,7).
+     delay(1000);
+     Rb.blankDisplay();
+
+     Rb.drawVerticalLine(0, 0, 7, random(0xFFFFFF)); // draw a vertical line from (0,0) of length 7 pixels
+     delay(1000);
+     Rb.blankDisplay();
+
+     Rb.drawHorizontalLine(0, 0, 7, random(0xFFFFFF)); // draw a horizontal line from (0,0) of length 7 pixels
+     delay(1000);
+     Rb.blankDisplay();
+
+     Rb.drawRectangle(0, 0, 4, 6, random(0xFFFFFF)); // draw a rectangle line from (0,0) of length 4 and width 6 pixels
+     delay(1000);
+     Rb.blankDisplay();
+
+     Rb.fillRectangle(0, 0, 7, 7, random(0xFFFFFF)); // draw a filled rectangle line from (0,0) of length and width 7 pixels
+     delay(1000);
+     Rb.blankDisplay();
+  
+}</pre>
+<dl><dt>Output
+</dt><dd><br clear="all"/>
+</dd></dl>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Shapes.jpg" width="300"/> <div class="thumbcaption">Shapes</div></div></div>
+<p><br clear="all"/>
+</p><p><b>drawChar Demo</b><br/>
+</p>
+<pre>/*
+ Rainbowduino v3.0 Library examples:
+
+ Print Chars on 2D plane (8x8 matrix)
+
+*/
+
+#include &lt;Rainbowduino.h&gt;
+
+void setup()
+{
+  Rb.init();
+}
+
+unsigned char x,y,z;
+
+void loop()
+{
+
+  for(int i= 0x20; i&lt;=0x7E; i++) //generates ASCII value of all printable characters
+  {
+     Rb.drawChar(i,0,1,random(0xFFFFFF)); 
+     delay(500);
+     Rb.blankDisplay();
+  }
+  
+}
+</pre>
+<dl><dt>Output
+</dt><dd><br clear="all"/>
+</dd></dl>
+<p><img src="img/CharE.jpg" width="300"/>
+<br clear="all"/>
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="res/Rainbowduino_for_Arduino1.0.zip">Rainbowduino V3.0 Library for Arduino IDE 1.0 &amp; above</a>
+</li><li><a href="res/SnakeGame20120601.zip">Rainbowduino3.0 SnakeGame Library for Arduino 1.0</a>
+</li><li><a href="http://seeedstudio.com/wiki/images/d/dd/Rainbowduino_v3.0b_EagleCADFiles.zip">Rainbowduino V3.0 Schematic and Layout in Eagle format</a>
+</li><li><a href="http://seeedstudio.com/wiki/images/0/05/Rainbowduino_V3.0b.pdf">Rainbowduino V3.0 Schematic in PDF </a>
+</li><li><a href="res/MY9221_DS_1.0.pdf">MY9221 LED driver Datasheet</a>
+</li></ul>
+<p><b>Other related products,resources and projects:</b>
+</p>
+<ul><li><a href="http://www.seeedstudio.com/depot/rainbow-cube-kit-assembled-p-998.html?cPath=138">Rainbow Cube Kit (Assembled)</a>
+</li><li><a href="http://www.seeedstudio.com/depot/rainbow-cube-kit-rgb-4x4x4-rainbowduino-compatible-p-596.html?cPath=138">Rainbow Cube kit- RGB 4X4X4</a>
+</li><li><a href="http://www.seeedstudio.com/depot/60mm-square-88-led-matrix-super-bright-rgb-p-113.html?cPath=163_165">60mm square 8*8 LED Matrix - super bright RGB</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

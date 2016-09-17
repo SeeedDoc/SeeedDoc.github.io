@@ -1,0 +1,44 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>4A Motor Shield</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>4A Motor Shield</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/4A_Motor_Shield_top.jpg" width="400"/> <div class="thumbcaption">Motor Shield.jpg</div></div></div><br/>
+
+<p>The 4A Motor Shield is based on the Freescale MC33932 dual H-Bridge Power IC , which can control inductive loads with currents up to 5.0A peak per single bridge. It lets you drive two DC motors with your Arduino/Seeeduino board, controlling the speed and direction of each one independently. You can also measure the motor current absorption of each motor, among other features. <br/>
+The on board DC/DC converter suport a very wide range of input voltage, and can provide a 5V power supply for the microcontroller board with 100mA maximun current.So, you just need one power supply to drive the motors and power up the logic circuit.<br/>
+</p>
+<h2>  Specifications </h2>
+<p>Operating Voltage: 6V ~ 28V <br/> 
+DC/DC output: 5V 100mA  @ "5V" pin<br/>
+Output Current(For Each Channel ): 2A (continuous operation) / 5A(peak)<br/>
+Output Duty Range: 0%~100% <br/>
+Output short-circuit protection (short to VPWR or GND)<br/>
+Over-current limiting (regulation) via internal constant-off-time PWM <br/>
+Temperature dependant current limit threshold reduction<br/>
+</p>
+<h2>  Interface  </h2>
+<br/><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/4a_motor_shield_top_view.jpeg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p><b>①：J1:</b>DC Input connector.<br/>
+<b>②：J2:</b>Motor Driver output connector.<br/>
+<b>③：EN,FT:</b>Jumpers for EN control and Fault flag detection.If short circuit the EN jumper, the EN signal was mapped to the D4 pin ,you can control the H-Bridge disable output or reset the Fault flag  by D4 pin. If short circuit the FT jumper, the fault flag signal was mapped to D3 pin ,you can read the fault flag from the D3 pin ether.<br/>
+<b>④:  IO:</b>Logic Voltage level Select Jumper. You can choose the control logic voltage level from this jumper.<br/>
+<b>⑤：IA,IB:</b>Current sensor jumper. If you need to detect the motor current, you have to short circuit these jumpers.The motor current will be converted into voltage signal and can be read from A0,A1 pin.<br/>
+</p><p><b>Power Supply:</b>  You have to power up the shield from the J1(DC input connector).The input voltage range can be set up to 6Vdc ~ 28Vdc.The on board DC/DC converter can convert the DC input voltage to 5Vdc output voltage to supply the logic circuit.The DC/DC converter can also power up the microcontroller board(Arduino/Seeeduino) form "5V" pin for maximun 100mA current.<br/>
+<b>Motor Interface：</b>Out 1 and Out 2(Out 3 and Out 4) connect Motor A(B) for DC Motor.<br/>
+</p>
+<h2>  Caution  </h2>
+<p><span style="color: red">Do not touch the H-bridge IC or PCB board during working. Its temperature can reach up to 100 degrees in the case of full load operating.</span>
+</p>
+<h2>  Demonstration </h2>
+<h3>  Demo 1:Drive DC Motor </h3>
+<p>Connect DC motor to the motor shield Output Pins OUT1&amp; OUT2(OUT3&amp; OUT4). And connect the drive voltage to the power supply terminals. Motor driver board can generate 5V supply voltage to seeeduino.
+</p><p><br/><img src="img/Drive_DC_Motor.png" width="500"/><br/>
+</p><p><br/>
+Install the library we provide in the Resources section into Arduino libraries file and find the example “DCMotorDemo” by the path: File-&gt;Example-&gt;MotorDrive-&gt;DCMotorDemo. <br/>
+</p><p>This demo enables the motor rotate in one direction for 2 sec, take a break for 1 sec and rotate in the reverse direction for 2 sec.
+</p><p><br/><img src="img/DC_Motor_Code.jpg" width="492"/><br/>
+</p>
+<h3>  Demo 2:Drive a Stepper Motor </h3>
+<h2>  Resources  </h2>
+<p><a href="res/4A_MOTOR_Shield_v1.0.pdf">Schematic pdf</a><br/>
+<a href="res/4A_MOTOR_Shield_v1.0.zip">Eagle File</a><br/>
+<a href="res/MotorDriver20121210.zip">Motor Shield Library</a><br/>
+<a href="res/MC33932.pdf">MC33932 Datasheet</a><br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

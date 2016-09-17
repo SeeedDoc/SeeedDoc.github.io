@@ -1,0 +1,235 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow Duino</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow Duino</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Xadow_Duino.JPG" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>The Xadow Duino is specially designed for building up awesome Lighting Devices using the most popular RGB LED WS2812B. Based on the MCU ATmega32u4 and the built-in micro USB, Xadow Duino allows you to either control the RGB LEDs directly from the software in RePhone Kit Create or program the board with Arduino IDE to make it work dependently.
+Unlike any other add-on modules, this board also has its own battery socket (JST1.0 type), so you can power it in many ways:
+</p>
+<ul><li> Via 5V USB (if the battery is connected, it would also charge the battery simultaneously )
+</li><li> Via 3.7V Lipo battery
+</li><li> Via breakout pins 
+</li><li> Via Xadow GSM+BLE
+</li></ul>
+<p><br/>
+<a href="http://www.seeedstudio.com/depot/Xadow-Duino-p-2556.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li> Able to work like an Arduino
+</li><li> Plug-and-play if connected with RePhone Kit Create
+</li><li> Open source and modular design
+</li><li> Slim and small
+</li><li> Specially designed for WS2812B
+</li><li> Built-in 11PIN Xadow Connectors for fully flexible connection with other Xadow Modules
+</li><li> Stackable, chain-able and sew-able with other Xadow Modules
+</li><li> Perfect choice for LED lovers
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification</h2>
+<table>
+<tr>
+<td> Microcontroller </td>
+<td> ATmega32u4
+</td></tr>
+<tr>
+<td> Power Supply </td>
+<td> 5V via USB, current draw is 1.5A at Max
+<p>3.3 ~ 4.2V via battery socket, current draw is 1.5A at Max
+</p><p>3.3 ~ 6V via breakout pins, current draw is 500 mA at Max
+</p><p>3.3 ~ 4.2 V via Xadow GSM+BLE, current draw is 500 mA at Max
+</p>
+</td></tr>
+<tr>
+<td> Charging Current </td>
+<td> 500 mA
+</td></tr>
+<tr>
+<td> Flash Memory </td>
+<td> 32 KB (ATmega32u4) of which 4 KB used by bootloader
+</td></tr>
+<tr>
+<td> SRAM </td>
+<td> 2.5 KB (ATmega32u4)
+</td></tr>
+<tr>
+<td> EEPROM </td>
+<td> 1 KB (ATmega32u4)
+</td></tr>
+<tr>
+<td> Clock Speed </td>
+<td> 16 MHz
+</td></tr>
+<tr>
+<td> Connector </td>
+<td> 2 × 11 PIN Xadow Connector
+<p>Bonding pads for RGB LED WS2812b
+</p>
+</td></tr>
+<tr>
+<td> Interfaces </td>
+<td> Interface with Xadow GSM+BLE through
+<p>I2C (7-bit address 0x23)
+</p>
+</td></tr>
+<tr>
+<td> Dimensions </td>
+<td> 25.37mm × 20.30mm / 1”× 0.8”
+</td></tr></table>
+<p><br/>
+</p>
+<h2> Hardware Overview</h2>
+<div class="center"><div class="floatnone"><img src="img/Xadow_Duino.png" width="800"/></div></div>
+<p><br/>
+<br/>
+</p><p>The image below illustrates the Pin Definitions of 11 Pin Xadow Connector, Solder-able Breakout Pins on the Xadow Duino.<br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/Xadow_Duino_Pin_definitions.png" width="450"/></div></div>
+<p><br/>
+<br/>
+</p>
+<h2> Light Things Up</h2>
+<h4>  Control the WS2812B with your 'RePhone Kit Create </h4>
+<p>The easiest way to control the WS2812B is to use the built-in software in 'RePhone Kit Create', which provides an 'Actuator Control' application that allows you to light up the WS2812B in three different ways: 1. Monochrome, 2 Marquee, 3. Rainbow
+</p>
+<div class="center"><div class="floatnone"><img src="img/Xadow_Duino_WS2812B.png" width="400"/></div></div>
+<p><br/>
+</p>
+<h4>  Set If This Then That </h4>
+<p>In the ‘If This Then That’ you can set different conditions to trigger the Xadow Duino to light up the WS2812B in a specified mode.
+</p>
+<h4>  Program it with Arduino IDE </h4>
+<p>You can also do some coding with the Arduino IDE to customize your light sources. 
+</p><p><br/>
+</p>
+<h2> Use Xadow Duino with Arduino IDE</h2>
+<p>To use Xadow Duino with Arduino IDE, there are few simple steps you would need to follow:<br/>
+1. Download the <b><a href="https://github.com/Seeed-Studio/Signed_USB_Serial_Driver">driver files</a></b><br/>
+2. Please refer to the <b><a href="/index.php-title=Download_Arduino_and_install_Arduino_driverAnduselang=en">Download Arduino and install Arduino driver</a></b> page to install the driver correctly<br/>
+<br/>After you correctly installed the driver, 
+Open <b>Device Manager</b> by clicking the <b>Start</b> button, clicking <b>Control Panel</b>, clicking <b>System and Security</b>, and then, under <b>System</b>, clicking <b>Device Manager</b>. If you're prompted for an administrator password or confirmation, type the password or provide confirmation. Now you should be able to see the <b>COM ports</b> on your ‘<b>Device Manager</b>’ as：<br/>
+</p>
+<ul><li> <b>Xadow Clip(COM20)</b>  (The COM number might be different on your PC.)<br/><br/>
+</li></ul>
+<p><img src="img/Xadow_Com_PORT.png" width="598"/><br/><br/>
+</p><p>3. Now download the <b><a href="https://github.com/freespace/Files_For_Seeed_Main_Board">Xadow File Names</a></b><br/>, unzip it and locate to <i><b>...\Files_For_Seeed_Main_Board-master.7z\Files_For_Seeed_Main_Board-master\v1.6.3\seeeduino\</b></i>, copy the folder named <b>seeeduino</b> into the  <i><b>...\arduino-1.6.6\hardware\</b></i> where you've installed your Arduino IDE. The version of Arduino IDE might be different, here I used Arudino IDE 1.6.6<br/>
+</p><p>4. Now lets try to light up some LEDs, connect your Xadow Duino to computer with a micro USB, open Arduino IDE, select <b>Tools ==&gt; Board ==&gt; Seeeduino Xadow</b>:<br/><br/>
+</p><p><img src="img/Xadow_Duino_Board.jpg" width="587"/><br/><br/>
+</p><p>then select the <b>Port</b> as <b>COM20(Seeeduino Xadow)</b> :<br/><br/>
+</p><p><img src="img/Xadow_Duino_Port.jpg" width="540"/><br/><br/>
+</p><p>5. Copy the following code, if you don't have the WS2812b libraries, download it <a href="http://www.seeedstudio.com/document/rar/WS2812%20Example%20Code.zip">here</a>:<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Adafruit_NeoPixel.h&gt;</span>
+ 
+<span class="co2">#define PIN 5   //the Xadow Duino used DIN/D5/PC6 to control the WS2812b</span>
+ 
+<span class="co1">// Parameter 1 = number of pixels in strip</span>
+<span class="co1">// Parameter 2 = pin number (most are valid)</span>
+<span class="co1">// Parameter 3 = pixel type flags, add together as needed:</span>
+<span class="co1">//   NEO_RGB     Pixels are wired for RGB bitstream</span>
+<span class="co1">//   NEO_GRB     Pixels are wired for GRB bitstream</span>
+<span class="co1">//   NEO_KHZ400  400 KHz bitstream (e.g. FLORA pixels)</span>
+<span class="co1">//   NEO_KHZ800  800 KHz bitstream (e.g. High Density LED strip)</span>
+Adafruit_NeoPixel strip <span class="sy1">=</span> Adafruit_NeoPixel<span class="br0">(</span><span class="nu0">60</span>, PIN, NEO_GRB <span class="sy2">+</span> NEO_KHZ800<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  strip.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  strip.<span class="me1">show</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Initialize all pixels to 'off'</span>
+ 
+  <span class="co1">// it is very important to set D13 as OUTPUT &amp; HIGH as we want it to act as 'GND'</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">13</span>,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>     
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">13</span>,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+<span class="co1">// Some example procedures showing how to display to the pixels:</span>
+  colorWipe<span class="br0">(</span>strip.<span class="me1">Color</span><span class="br0">(</span><span class="nu0">255</span>, <span class="nu0">0</span>, <span class="nu0">0</span><span class="br0">)</span>, <span class="nu0">50</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Red</span>
+  colorWipe<span class="br0">(</span>strip.<span class="me1">Color</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">255</span>, <span class="nu0">0</span><span class="br0">)</span>, <span class="nu0">50</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Green</span>
+  colorWipe<span class="br0">(</span>strip.<span class="me1">Color</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">0</span>, <span class="nu0">255</span><span class="br0">)</span>, <span class="nu0">50</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Blue</span>
+  rainbow<span class="br0">(</span><span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span>
+  rainbowCycle<span class="br0">(</span><span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// Fill the dots one after the other with a color</span>
+<span class="kw4">void</span> colorWipe<span class="br0">(</span>uint32_t c, uint8_t wait<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">for</span><span class="br0">(</span>uint16_t i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>strip.<span class="me1">numPixels</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+      strip.<span class="me1">setPixelColor</span><span class="br0">(</span>i, c<span class="br0">)</span><span class="sy4">;</span>
+      strip.<span class="me1">show</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw3">delay</span><span class="br0">(</span>wait<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> rainbow<span class="br0">(</span>uint8_t wait<span class="br0">)</span> <span class="br0">{</span>
+  uint16_t i, j<span class="sy4">;</span>
+ 
+  <span class="kw1">for</span><span class="br0">(</span>j<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> j<span class="sy1">&lt;</span><span class="nu0">256</span><span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>strip.<span class="me1">numPixels</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+      strip.<span class="me1">setPixelColor</span><span class="br0">(</span>i, Wheel<span class="br0">(</span><span class="br0">(</span>i<span class="sy2">+</span>j<span class="br0">)</span> <span class="sy3">&amp;</span> <span class="nu0">255</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    strip.<span class="me1">show</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span>wait<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// Slightly different, this makes the rainbow equally distributed throughout</span>
+<span class="kw4">void</span> rainbowCycle<span class="br0">(</span>uint8_t wait<span class="br0">)</span> <span class="br0">{</span>
+  uint16_t i, j<span class="sy4">;</span>
+ 
+  <span class="kw1">for</span><span class="br0">(</span>j<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> j<span class="sy1">&lt;</span><span class="nu0">256</span><span class="sy2">*</span><span class="nu0">5</span><span class="sy4">;</span> j<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span> <span class="co1">// 5 cycles of all colors on wheel</span>
+    <span class="kw1">for</span><span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span> strip.<span class="me1">numPixels</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+      strip.<span class="me1">setPixelColor</span><span class="br0">(</span>i, Wheel<span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>i <span class="sy2">*</span> <span class="nu0">256</span> <span class="sy2">/</span> strip.<span class="me1">numPixels</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="sy2">+</span> j<span class="br0">)</span> <span class="sy3">&amp;</span> <span class="nu0">255</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    strip.<span class="me1">show</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span>wait<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// Input a value 0 to 255 to get a color value.</span>
+<span class="co1">// The colours are a transition r - g - b - back to r.</span>
+uint32_t Wheel<span class="br0">(</span>byte WheelPos<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">if</span><span class="br0">(</span>WheelPos <span class="sy1">&lt;</span> <span class="nu0">85</span><span class="br0">)</span> <span class="br0">{</span>
+   <span class="kw1">return</span> strip.<span class="me1">Color</span><span class="br0">(</span>WheelPos <span class="sy2">*</span> <span class="nu0">3</span>, <span class="nu0">255</span> <span class="sy2">-</span> WheelPos <span class="sy2">*</span> <span class="nu0">3</span>, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>WheelPos <span class="sy1">&lt;</span> <span class="nu0">170</span><span class="br0">)</span> <span class="br0">{</span>
+   WheelPos <span class="sy2">-</span><span class="sy1">=</span> <span class="nu0">85</span><span class="sy4">;</span>
+   <span class="kw1">return</span> strip.<span class="me1">Color</span><span class="br0">(</span><span class="nu0">255</span> <span class="sy2">-</span> WheelPos <span class="sy2">*</span> <span class="nu0">3</span>, <span class="nu0">0</span>, WheelPos <span class="sy2">*</span> <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+   WheelPos <span class="sy2">-</span><span class="sy1">=</span> <span class="nu0">170</span><span class="sy4">;</span>
+   <span class="kw1">return</span> strip.<span class="me1">Color</span><span class="br0">(</span><span class="nu0">0</span>, WheelPos <span class="sy2">*</span> <span class="nu0">3</span>, <span class="nu0">255</span> <span class="sy2">-</span> WheelPos <span class="sy2">*</span> <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h2> LEDs Projects</h2>
+<p>There are many good projects on the internet, wondering how other people DIY cool lighting stuff?<br/><br/>
+<b>Check it out</b>: <br/>
+</p><p><a href="http://www.seeedstudio.com/recipe/index.php?query=LED"><img src="img/Recipe_LEDs2.png" width="450"/></a><br/>
+</p><p><br/>
+<br/>
+</p>
+<h2> RePhone Community</h2>
+<p><a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4"><img src="img/RePhone_Community-2.png" width="300"/></a>
+</p><p>We’ve been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.
+</p><p>Now join us in the <a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4">RePhone Community</a>! Together we seek answers, make interesting stuff, care about each other, and share our experiences.
+</p><p><br/>
+</p>
+<h3> <b><span style="font-size:1.1em;">Frequently Asked Questions</span></b></h3>
+<p>Some frequently asked questions in RePhone Community are collected and answered to the topic <b><a href="http://www.seeedstudio.com/forum/viewtopic.php?f=71&amp;t=6664&amp;p=23753#p23753">"Frequently Asked Questions of RePhone (FAQ)"</a></b> , the topic will be kept updating whenever a new FAQ comes out. 
+<br/>
+<br/>
+</p>
+<h2> Resources</h2>
+<p>We will be keep updating the source code on our github page:
+<br/>
+</p>
+<ul><li> <a href="https://github.com/WayenWeng/Xadow_Duino/">Source Code for Xadow Duino</a>
+</li></ul>
+<p><br/>
+The schematic diagram of Xadow Duino is provided in the following link:
+</p>
+<ul><li> <a href="res/Xadow_Duino.rar"><i>Xadow Duino Schematic Files</i></a>
+</li></ul>
+<p><br/>
+Check more info about the fascinating RGB LED <b>WS2812B</b>: 
+</p>
+<ul><li> <a href="http://www.seeedstudio.com/document/pdf/WS2812B%20Datasheet.pdf"><i>WS2812B</i></a><br/>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

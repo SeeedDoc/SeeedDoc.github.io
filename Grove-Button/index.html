@@ -1,0 +1,130 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Button</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Button</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Button.jpg" width="300"/> <div class="thumbcaption">Momentary ON/OFF Button</div></div></div><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Grove-ButtonP.jpg" width="300"/> <div class="thumbcaption">Momentary ON/OFF Button (Panel Mount)</div></div></div>
+
+<p>The <strong class="selflink">Grove - Button</strong> is a momentary push button. It contains one independent "momentary on/off" button. “Momentary” means that the button rebounds on its own after it is released. The button outputs a HIGH signal when pressed, and LOW when released. The button signals the SIG Pin of the Grove Interface while NC is not used at all. There are two versions of this button available as shown in the pictures. The only difference between them is the direction of the Grove socket.
+</p>
+<h2> Features</h2>
+<ul><li> Easy to use momentary ON/OFF button
+</li><li> Uses Standard 4-pin <a href="/GROVE_System#Grove_Cables" title="GROVE System">Grove Cables</a> to connect to other Grove modules such as <a href="/GROVE_System#Power" title="GROVE System">Grove Power Modules</a> and <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>
+</li></ul>
+<h2> Usage</h2>
+<h3> Standalone</h3>
+<p>Follow these steps to build a sample circuit using this module but without using any microcontroller:
+</p>
+<ol><li> Connect the button module to the input side of your circuit (to the left of the power module). On the output side of the circuit, you may use a range of <a href="/GROVE_System#User_Interface" title="GROVE System">User Interface</a> modules (<a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a>, <a href="/Grove-LED_String_Light" title="Grove - LED String Light">Grove - LED String Light</a>, <a href="/Grove-Mini_Fan" title="Grove - Mini Fan">Grove - Mini Fan</a>, <a href="/Grove-Buzzer" title="Grove - Buzzer">Grove - Buzzer</a>, <a href="/Grove-Recorder" title="Grove - Recorder">Grove - Recorder</a> etc.) 
+</li><li> Power up the circuit when complete.
+</li><li> The button module can now be used to trigger an output. For example:
+</li></ol>
+<dl><dd><dl><dd><dl><dd><ul><li> When used in conjunction with a <a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a> output module, observe that the LED turns ON when you press the button and turns OFF when you stop pressing it. 
+</li></ul>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<div class="center"><div class="floatnone"><img src="img/Grove-momentarySwitch-RedLED.jpg" width="400"/></div></div>
+<p>In terms of power modules, use either the <a href="/Grove-Mixer_Pack#2._USB_Power" title="Grove - Mixer Pack">Grove - USB Power</a> module or the <a href="/Grove-DC_Jack_Power" title="Grove - DC Jack Power">Grove - DC Jack Power</a> module for the Grove circuit.
+</p>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Follow these simple steps to build a Grove circuit using the momentary ON/OFF button:<br/>
+</p>
+<ol><li> When using the module in conjunction with an <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a> or a <a href="/Seeeduino" title="Seeeduino">Seeeduino</a>, use the <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> and connect the Grove - Button module to the shield using a designated Grove Interface. Also attach an output module such as a <a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a> which will get triggered based on input received from the button.
+</li><li> Upload the following sample sketch to make the LED turn ON and OFF based on input from <strong class="selflink">Grove - Button</strong>:<br/>
+</li></ol>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Turns on and off a light emitting diode(LED) connected to digital pin 13, when pressing a pushbutton attached to pin 2.</span>
+ 
+<span class="coMULTI">/*
+ The circuit:
+ * LED attached from pin 13 to ground
+ * pushbutton attached to pin 2 from +5V
+ * 10K resistor attached to pin 2 from ground
+ 
+ * Note: on most Arduinos there is already an LED on the board
+ attached to pin 13.
+ 
+ 
+ This example code is in the public domain.
+ 
+ http://www.arduino.cc/en/Tutorial/Button
+ */</span>
+ 
+<span class="co1">// constants won't change. They're used here to</span>
+<span class="co1">// set pin numbers:</span>
+<span class="kw4">const</span> <span class="kw4">int</span> buttonPin <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>     <span class="co1">// the number of the pushbutton pin</span>
+<span class="kw4">const</span> <span class="kw4">int</span> ledPin <span class="sy1">=</span>  <span class="nu0">13</span><span class="sy4">;</span>      <span class="co1">// the number of the LED pin</span>
+ 
+<span class="co1">// variables will change:</span>
+<span class="kw4">int</span> buttonState <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>         <span class="co1">// variable for reading the pushbutton status</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// initialize the LED pin as an output:</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>ledPin, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// initialize the pushbutton pin as an input:</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>buttonPin, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="co1">// read the state of the pushbutton value:</span>
+    buttonState <span class="sy1">=</span> <span class="kw3">digitalRead</span><span class="br0">(</span>buttonPin<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// check if the pushbutton is pressed.</span>
+    <span class="co1">// if it is, the buttonState is HIGH:</span>
+    <span class="kw1">if</span> <span class="br0">(</span>buttonState <span class="sy1">==</span> <span class="kw2">HIGH</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="co1">// turn LED on:</span>
+        <span class="kw3">digitalWrite</span><span class="br0">(</span>ledPin, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span> <span class="br0">{</span>
+        <span class="co1">// turn LED off:</span>
+        <span class="kw3">digitalWrite</span><span class="br0">(</span>ledPin, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>This is a simple example of Raspberry Pi.Run Program and press button,it will print 1 on the terminal ,else print 0. Such as the picture below.
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovePiPlus_grove_button.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovepiPlus_grove_button_terminal.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<pre>
+# http://www.seeedstudio.com/wiki/Grove_-_Button
+
+import time
+import grovepi
+
+# Connect the Grove Button to digital port D3
+# SIG,NC,VCC,GND
+button = 3
+
+grovepi.pinMode(button,"INPUT")
+
+while True:
+    try:
+        print grovepi.digitalRead(button)
+        time.sleep(.5)
+
+    except IOError:
+        print "Error"
+</pre>
+<p><br/>
+</p>
+<h4>  Run The Program </h4>
+<ul><li> Find the path to the file(According to your own path)
+</li></ul>
+<pre>  cd GrovePi/Software/Python/
+</pre>
+<ul><li> Run Progrom
+</li></ul>
+<pre>  sudo python grove_button.py
+</pre>
+<h2>  Availability </h2>
+<p>The standard <strong class="selflink">Grove - Button</strong> module is available as part of the following <a href="/GROVE_System#GROVE_Kit_Series" title="GROVE System">Grove Kit Series</a>:
+</p>
+<ul><li> <a href="/Grove-Mixer_Pack_V2" title="Grove - Mixer Pack V2">Grove - Mixer Pack V2</a>
+</li><li> <a href="/Grove-Mixer_Pack" title="Grove - Mixer Pack">Grove - Mixer Pack</a>
+</li><li> <a href="/Grove-Starter_Kit_V1.1b" title="Grove - Starter Kit V1.1b">Grove - Starter Kit V1.1b</a>
+</li></ul>
+<p>Alternatively, it can be bought stand-alone <a href="http://www.seeedstudio.com/depot/Grove-Button-p-766.html">here</a> at the <a href="http://www.seeedstudio.com/depot/Grove-Button-p-766.html">Seeed Studio Bazaar</a>.
+To buy the Panel Mount version of the module, go <a href="http://www.seeedstudio.com/depot/Grove-ButtonP-p-1243.html">here</a>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="res/Grove-Button_v1.0_Source_File.zip">Grove-Button (Eagle Files)</a> for the version included in <a href="/GROVE_MIXER_PACK_V2" title="GROVE MIXER PACK V2">Grove Mixer Pack V2</a>
+</li><li><a href="/Upload_Code">how to upload code</a>
+</li></ul>
+<ul><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

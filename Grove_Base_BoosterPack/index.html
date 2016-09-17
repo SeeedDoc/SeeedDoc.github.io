@@ -1,0 +1,184 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove Base BoosterPack</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove Base BoosterPack</h1>
+
+<p><br/> 
+What is Grove Base BoosterPack？<br/>
+</p>
+<dl><dd>BoosterPacks are plug-in modules that can stack on top of the various LaunchPad kits to add additional functionality, such as sensors, displays, wireless modules &amp; more. The Grove Base BoosterPack is a welcome addition to the LaunchPad/BoosterPack ecosystem, enabling any LaunchPad to interface with the growing offering of Grove modules from Seeed Studio. The Grove Base BoosterPack offers a convenient and easy way for rapid prototypers to use more than one hundred Grove modules with standardized connectors, including sensors, actuators, displays, lights, motors and more.
+</dd></dl>
+<p><br/>
+<img src="img/Grove_Web_idea.jpg" width="600"/>
+<br/> 
+What is Grove？<br/>
+</p>
+<dl><dd>    Grove is a modular, ready-to-use tool set that takes a building block approach to assembling electronics. The Grove system consists of a base shield and a large selection of modules that feature standardized connectors. The base shield allows for easy connection of any microcontroller to interface with the various Grove modules. Each Grove module addresses a unique function &amp; the overall collection of modules expand a wide range of functionality - from a simple push-button to a complex heart rate sensor. Each one comes with clear documentation and demo code to help you get started quickly.
+</dd></dl>
+<p><br/>
+<img src="img/IMG_GROVE.JPG" width="600"/>
+<br/>  
+What is LaunchPad？<br/>
+</p>
+<dl><dd>    The LaunchPad is a set of Evaluation Kits from Texas Instruments. To introduce new functionality to the LaunchPad evaluation kits, we present the BoosterPack which acts as a plug-in board that fit on top of the LaunchPad baseboards. It offers a convenient and easy way for you to use more than one hundred Grove modules with standardized connectors, including sensors, actuators, displays, lights, motors and so on.
+</dd></dl>
+<p><br/>
+</p>
+<h2>  Features </h2>
+<p><br/>
+</p>
+<ul><li>    Seeedstudio presents the newly launched Grove Base BoosterPack allowing Texas Instruments Launchpad to be connected closed with our Groves Family,further enabling rapid prototype and combinations with a range of Sensors, actuators,displays,lights,motors and etc.
+</li><li>    The Grove Base BoosterPack has thirteen Groves 4-pin standard interfaces ,including five analog, five digital and three serial port, acting as a plug-n-play expansion module on Launchpad based on MSP430 launchpad.It also provides various of tutorials on how to connect with TI MSP430, there are 11 different kinds of projects for reference prototype ,which offers a convenient way to guide your creativity.
+</li><li>    There is a RED LED on the Grove BoosterPack. It will indicate the power supply.
+</li></ul>
+<p><br/>
+</p><p><img src="img/BoosterpackpinMapping.jpg" width="800"/>
+</p><p><br/>
+</p>
+<h2>  Using the Grove Base BoosterPack </h2>
+<h3>  Using a 40-pin LaunchPad </h3>
+<p>i.e. MSP-EXP430F5529LP, EK-TM4C123GXL, etc
+</p><p>The BoosterPack was designed in a way to leverage pins in the “inner 20 pins” [21-40]. The pins are connected as shown below in the table:
+</p><p>Using the table below, developers should be able to read an analog value from a Grove module (i.e. potentiometer/turn knob) that is connected to Grove connector ‘J6’ by using the analogRead(24) API call with Energia.
+</p>
+<table>
+<tr>
+<th> Connector Type </th>
+<th> Grove connector Label </th>
+<th>   GND   </th>
+<th>   VCC   </th>
+<th> SIG1 (connection to the BoosterPack pin) </th>
+<th> SIG0 (connection to the BoosterPack pin) *
+</th></tr>
+<tr>
+<td> Analog</td>
+<td> J5 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 23 (analog capable pin) </td>
+<td> 22 (analog capable pin)
+</td></tr>
+<tr>
+<td> Analog</td>
+<td> J6 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 25 (analog capable pin) </td>
+<td> 24 (analog capable pin)
+</td></tr>
+<tr>
+<td> Analog</td>
+<td> J7 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 26 (analog capable pin) </td>
+<td> 25 (analog capable pin)
+</td></tr>
+<tr>
+<td> Analog</td>
+<td> J8 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 27 (analog capable pin) </td>
+<td> 26 (analog capable pin)
+</td></tr>
+<tr>
+<td> Analog</td>
+<td> J9 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 28 (analog capable pin) </td>
+<td> 27 (analog capable pin)
+</td></tr>
+<tr>
+<td> I2C </td>
+<td> J10 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 10 (I2C SDA) </td>
+<td> 9 (I2C SCL)
+</td></tr>
+<tr>
+<td> UART </td>
+<td> J11 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 4 (UART to MCU) </td>
+<td> 3 (UART from MCU)
+</td></tr>
+<tr>
+<td> SPI </td>
+<td> J12 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 14 (SPI MISO) </td>
+<td> 7 (SPI CLK)
+</td></tr>
+<tr>
+<td> Digital </td>
+<td> J13 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 39 (Digital/PWM pin) </td>
+<td> 40 (Digital/PWM pin)
+</td></tr>
+<tr>
+<td> Digital</td>
+<td> J14 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 38 (Digital/PWM pin) </td>
+<td> 39 (Digital/PWM pin)
+</td></tr>
+<tr>
+<td> Digital</td>
+<td> J15 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 37 (Digital/PWM pin) </td>
+<td> 38 (Digital/PWM pin)
+</td></tr>
+<tr>
+<td> Digital</td>
+<td> J16 </td>
+<td> GND </td>
+<td> 3.3V </td>
+<td> 36 (Digital/PWM pin) </td>
+<td> 37 (Digital/PWM pin)
+</td></tr>
+<tr>
+<td> Digital</td>
+<td> J17 </td>
+<td> GND </td>
+<td> 3.3V  </td>
+<td> 35 (Digital/PWM pin) </td>
+<td> 36 (Digital/PWM pin)
+</td></tr></table>
+<h3>  Using a 20-pin LaunchPad </h3>
+<p>If you are using a 20-pin LaunchPad, you can use jumpers or jumper wire to make the appropriate connections between a Grove connector &amp; the BoosterPack connector.
+</p><p>Using your specific LaunchPad’s pin out diagram, you can physically/electrically connect the Grove module to the appropriate pin. Pinout diagrams for each LaunchPad are available here:
+<a href="http://energia.nu/pin-maps/">http://energia.nu/pin-maps/</a>
+</p><p>With the help of these pin diagrams, you know which pin has the function you need. If you want to use Grove connector J5 for an analog Grove module (i.e. potentiometer knob), you can use the Energia pin maps to identify an analog-capable pin of the BoosterPack connector. Using a jumper of wire, you can connect pin number 22 with the analog-capable pin that is available. For example, if you are using an MSP-EXP430G2 LaunchPad, you can use a jumper or a cable to connect pin 22 with pin 2.
+</p><p><br/>
+</p>
+<h2>  Supported Products </h2>
+<h3>  Grove List </h3>
+<ul><li> <a href="/Grove-Buzzer#With_TI_LaunchPad">1. Buzzer</a>
+</li><li> <a href="/Grove-Relay#With_TI_LaunchPad">2. Relay</a>
+</li><li> <a href="/Grove-4-Digit_Display#With_TI_LaunchPad">3. 4-Digital Display </a>
+</li><li> <a href="/Grove-Rotary_Angle_Sensor#With_TI_LaunchPad">4. Rotary Angle Sensor </a>
+</li><li> <a href="/Grove-Light_Sensor#With_TI_LaunchPad">5. Light Sensor</a>
+</li><li> <a href="/Grove-Sound_Sensor#With_TI_LaunchPad">6. Sound Sensor </a>
+</li><li> <a href="/Grove-PIR_Motion_Sensor#With_TI_LaunchPad">7. PIR Motion Sensor </a>
+</li><li> <a href="/Grove-Moisture_Sensor#With_TI_LaunchPad">8. Moisture Sensor</a>
+</li><li> <a href="/Grove-Ultrasonic_Ranger#With_TI_LaunchPad">9. Ultrasonic Ranger Sensor</a>
+</li><li> <a href="/Grove-Temperature_and_Humidity_Sensor#With_TI_LaunchPad">10. Temperature Humidity Sensor </a>
+</li></ul>
+<h3>  Find the Google doc here </h3>
+<dl><dd>---- <a href="https://docs.google.com/document/d/1vD3C1WrGj6_sldslygKBayrhjV9vyxVxkiVRCs8r2jQ/edit?usp=sharing">https://docs.google.com/document/d/1vD3C1WrGj6_sldslygKBayrhjV9vyxVxkiVRCs8r2jQ/edit?usp=sharing</a>
+</dd></dl>
+<h2>  Resources </h2>
+<p><br/>
+<a href="res/Grove_Base_BoosterPack_v1.0.zip">Hardware eagle files</a>
+<br/>
+<a href="https://docs.google.com/document/d/1vD3C1WrGj6_sldslygKBayrhjV9vyxVxkiVRCs8r2jQ/edit?usp=sharing">Grove Starter Kit For LaunchPad User's Manual</a>
+<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,311 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow - Multichannel Gas Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow - Multichannel Gas Sensor</h1><div class="thumb tright"><div class="thumbinner" style="width:602px;"><img src="img/Xadow-Multichannel_Gas_Sensor_photo.jpg" width="600"/> <div class="thumbcaption"></div></div></div>
+
+<p>Xadow – Multichannel Gas sensor is a very small sensor board with a compact MOS sensor, MiCS-6814.<br/>
+The MiCS-6814 is a robust MEMS sensor for the detection of pollution from automobile exhausts and for<br/>
+agricultural/industrial odors. This sensor board has two standard Xadow interfaces. It is very easy to <br/>
+use with <a href="/Xadow-Main_Board" title="Xadow - Main Board">Xadow - Main Board</a>.
+</p>
+<h2> Feature</h2>
+<ul><li> Three fully independent sensing elements on one package
+</li><li> Built with ATmega168PA
+</li><li> I2C interface with programmable address
+</li><li> Heating power can be shut down for low power
+</li><li> Standard Xadow outline
+</li></ul>
+<h2>  Block Diagram </h2>
+<p><img src="img/Xadow-Multichannel_Gas_Sensor_block_diagram.jpg" width="600"/><br/>
+</p>
+<h2>  Electrical Characteristics </h2>
+<table>
+<tr>
+<th> Item </th>
+<th> Condition </th>
+<th> Min. </th>
+<th> Typ. </th>
+<th> Max. </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Voltage </td>
+<td> - </td>
+<td> 3.1 </td>
+<td> 3.3 </td>
+<td> 3.5 </td>
+<td> V
+</td></tr>
+<tr>
+<td> Ripple </td>
+<td> @Max Power </td>
+<td> - </td>
+<td> 80 </td>
+<td> 100 </td>
+<td> mV
+</td></tr>
+<tr>
+<td> Heating Power </td>
+<td> - </td>
+<td> - </td>
+<td> - </td>
+<td> 88 </td>
+<td> mW
+</td></tr>
+<tr>
+<td> Max Power </td>
+<td> - </td>
+<td> - </td>
+<td> - </td>
+<td> 150 </td>
+<td> mW
+</td></tr>
+<tr>
+<td> ADC Precision </td>
+<td> - </td>
+<td> - </td>
+<td> 10 </td>
+<td> - </td>
+<td> Bits
+</td></tr>
+<tr>
+<td> ADC Voltage </td>
+<td> - </td>
+<td> 0 </td>
+<td> -</td>
+<td> 3.3 </td>
+<td> V
+</td></tr>
+<tr>
+<td> I2C Rate </td>
+<td> - </td>
+<td> - </td>
+<td> 100 </td>
+<td> 400 </td>
+<td> kHz
+</td></tr>
+<tr>
+<td> VIL </td>
+<td> @I2C </td>
+<td> -0.5 </td>
+<td> - </td>
+<td> 0.99 </td>
+<td> V
+</td></tr>
+<tr>
+<td> VIH </td>
+<td> @I2C </td>
+<td> 2.31 </td>
+<td> - </td>
+<td> 3.8 </td>
+<td> V
+</td></tr></table>
+<h3>  Performance RED sensor </h3>
+<table>
+<tr>
+<th> Characteristic RED sensor </th>
+<th> Symbol </th>
+<th> Typ </th>
+<th> Min </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Sensing resistance in air </td>
+<td> R0 </td>
+<td> - </td>
+<td> 100 </td>
+<td> 1500 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td> Typical CO detection range </td>
+<td> FS </td>
+<td> - </td>
+<td> 1 </td>
+<td> 1000 </td>
+<td> ppm
+</td></tr>
+<tr>
+<td> Sensitivity factor </td>
+<td> SR </td>
+<td> - </td>
+<td> 1.2 </td>
+<td> 50 </td>
+<td> -
+</td></tr></table>
+<p><img src="img/Red_sensor.jpg" width="600"/><br/><br/>
+</p>
+<h3>  Performance OX sensor </h3>
+<table>
+<tr>
+<th> Characteristic OX sensor </th>
+<th> Symbol </th>
+<th> Typ </th>
+<th> Min </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Sensing resistance in air </td>
+<td> R0 </td>
+<td> - </td>
+<td> 0.8 </td>
+<td> 20 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td> Typical NO2 detection range </td>
+<td> FS </td>
+<td> - </td>
+<td> 0.05 </td>
+<td> 10 </td>
+<td> ppm
+</td></tr>
+<tr>
+<td> Sensitivity factor </td>
+<td> SR </td>
+<td> - </td>
+<td> 2 </td>
+<td> - </td>
+<td> -
+</td></tr></table>
+<p><img src="img/OX_sensor.jpg" width="600"/><br/><br/>
+</p>
+<h3>  Performance NH3 sensor </h3>
+<table>
+<tr>
+<th> Characteristic NH3 sensor </th>
+<th> Symbol </th>
+<th> Typ </th>
+<th> Min </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Sensing resistance in air </td>
+<td> R0 </td>
+<td> - </td>
+<td> 10 </td>
+<td> 1500 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td> Typical NH3 detection range </td>
+<td> FS </td>
+<td> - </td>
+<td> 1 </td>
+<td> 300 </td>
+<td> ppm
+</td></tr>
+<tr>
+<td> Sensitivity factor </td>
+<td> SR </td>
+<td> - </td>
+<td> 1.5 </td>
+<td> 15</td>
+<td> -
+</td></tr></table>
+<p><img src="img/NH3_sensor.jpg" width="600"/><br/><br/>
+</p>
+<h2>  Pin Definition </h2>
+<p><img src="img/Xadow_Pins.jpg" width="600"/><br/>
+</p>
+<h2> Demonstration </h2>
+<p>You can get start with <a href="/Xadow-Main_Board" title="Xadow - Main Board">Xadow - Main Board</a><br/>
+</p><p><b>Hardware Installation:</b> <br/>
+</p>
+<ul><li> 1) Connect <strong class="selflink">Xadow - Multichannel Gas Sensor</strong> to <a href="/Xadow-Main_Board" title="Xadow - Main Board">Xadow - Main Board</a>. Do not forget to install Xadow 
+</li></ul>
+<p>Driver. 
+Note: when connect <strong class="selflink">Xadow - Multichannel Gas Sensor</strong> to <a href="/Xadow-Main_Board" title="Xadow - Main Board">Xadow - Main Board</a>, you should concern about 
+</p><p>the connection direction. The connection method is that the unfilled corner of one xadow module 
+</p><p>need to connect to the right angle of another module(see four corners of each xadow module).<br/>
+<img src="img/Xadow-Mutichannel_Gas_Sensor_connect_to_Xadow.JPG" width="600"/><br/>
+<b>Upload Code:</b>
+</p>
+<ul><li> 2) Download <a href="https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor">Arduino Library &amp; Grove/Xadow firmware</a> and install it to Arduino Library.<br/>
+</li><li> 3) Open the code directly by the path:File -&gt; Example -&gt;Mutichannel_Gas_Sensor-&gt;ReadSensorValue_Xadow. 
+</li></ul>
+<p>The content of ReadSensorValue_Xadow.ino please refer to below.<br/>
+</p>
+<pre>/*
+    This is a demo to test MutichannelGasSensor library
+    This code is running on Xadow-mainboard, and the I2C slave is Xadow-MutichannelGasSensor
+    There is a ATmega168PA on Xadow-MutichannelGasSensor, it get sensors output and feed back to master.
+    the data is raw ADC value, algorithm should be realized on master.
+    
+    please feel free to write email to me if there is any question 
+    
+    Jacky Zhang, Embedded Software Engineer
+    qi.zhang@seeed.cc
+    17,mar,2015
+*/
+
+#include "xadow.h"
+#include &lt;Wire.h&gt;
+#include "MutichannelGasSensor.h"
+
+void setup()
+{
+    Xadow.init();
+
+    Serial.begin(9600);  // start serial for output
+    Serial.println("power on!");
+
+    mutichannelGasSensor.begin(0x04);//the default I2C address of the slave is 0x04
+    //mutichannelGasSensor.changeI2cAddr(0x10);
+    //mutichannelGasSensor.doCalibrate();
+    //delay(8000);
+    while(mutichannelGasSensor.readR0() &lt; 0)
+    {
+        Serial.println("sensors init error!!");
+        delay(1000);
+    }
+    Serial.print("Res0[0]: ");
+    Serial.println(mutichannelGasSensor.res0[0]);
+    Serial.print("Res0[1]: ");
+    Serial.println(mutichannelGasSensor.res0[1]);
+    Serial.print("Res0[2]: ");
+    Serial.println(mutichannelGasSensor.res0[2]);
+    mutichannelGasSensor.powerOn();
+}
+
+void loop()
+{
+    mutichannelGasSensor.readR();
+    Serial.print("Res[0]: ");
+    Serial.println(mutichannelGasSensor.res[0]);
+    Serial.print("Res[1]: ");
+    Serial.println(mutichannelGasSensor.res[1]);
+    Serial.print("Res[2]: ");
+    Serial.println(mutichannelGasSensor.res[2]);
+    
+    mutichannelGasSensor.calcGas();
+    Serial.print("NH3: ");
+    Serial.print(mutichannelGasSensor.density_nh3);
+    Serial.println("ppm");
+    Serial.print("CO: ");
+    Serial.print(mutichannelGasSensor.density_co);
+    Serial.println("ppm");
+    Serial.print("NO2: ");
+    Serial.print(mutichannelGasSensor.density_no2);
+    Serial.println("ppm");
+    
+    Xadow.greenLed(LEDON);
+    delay(500);
+    Xadow.greenLed(LEDOFF);
+    delay(500);
+    Serial.println("...");
+}</pre>
+<ul><li> 4) Upload the code. Remeber to select Seeeduino Xadow from the Tools | Board menu of the 
+</li></ul>
+<p>Arduino environment, and select the correct serial port <a href="/Xadow-Main_Board" title="Xadow - Main Board">Xadow - Main Board</a> is using. Or you could 
+select Arduino Leonardo to instead of it.<br/>
+By opening  the serial monitor, you can see the raw data read from sensor.<br/>
+<img src="img/Mutichannel_Gas_Sensor_XadowPrint.jpg" width="465"/>
+</p>
+<h2> Resources</h2>
+<ul><li> <a href="res/Xadow-Multichannel_Gas_Sensor_v1.0_sch.pdf">Xadow - Multichannel Gas Sensor v1.0 sch</a>
+</li><li> <a href="res/Xadow-Multichannel_Gas_Sensor_eagle_files.zip">Xadow - Multichannel Gas Sensor eagle files</a>
+</li><li> <a href="res/MiCS-6814_Datasheet.pdf">MiCS-6814 Datasheet</a>
+</li><li> <a href="https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor">Arduino Library &amp; Grove/Xadow firmware</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

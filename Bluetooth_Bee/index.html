@@ -1,0 +1,945 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Bluetooth Bee</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Bluetooth Bee</h1>
+
+<p><b>Bluetooth Bee</b> is an easy to use <b>Bluetooth Serial Port Profile(SPP)</b> module compatible with existing <b>Xbee</b> sockets, designed for transparent wireless serial connection setup. 
+Serial port Bluetooth module is fully qualified Bluetooth V2.0+EDR(Enhanced Data Rate) 3Mbps Modulation with complete 2.4GHz radio transceiver and baseband. It uses <b>CSR Bluecore 04</b>-External single chip Bluetooth system with CMOS technology and with AFH(Adaptive Frequency Hopping Feature). It has the smallest footprint of <b>12.7mm x 27mm</b>. Hope it will simplify your overall design/development cycle for <a href="http://finbay.ru/dollarovyj-schet-brokery.html">форекс брокеры</a>. 
+</p><p><b>Model:<a href="http://www.seeedstudio.com/depot/bluetooth-bee-p-598.html?cPath=139_142">WLS125E1P</a></b>
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/bbee_LRG.jpg">http://www.seeedstudio.com/depot/images/product/bbee_LRG.jpg</a>
+</p>
+<h2>  Features  </h2>
+<h3>  Hardware Features  </h3>
+<ul><li>Typical -80dBm sensitivity. 
+</li><li>Up to +4dBm RF transmit power. 
+</li><li>Fully Qualified Bluetooth V2.0+EDR 3Mbps Modulation. 
+</li><li>Low Power 1.8V Operation, 1.8 to 3.6V I/O. 
+</li><li><a href="http://fxlot.ru/">торговые сигналы FxLot</a>
+</li><li>PIO control. 
+</li><li>UART interface with programmable baud rate.
+</li><li>Integrated PCB antenna.
+</li><li>xBee compatible headers.
+</li></ul>
+<h3>  Software Features  </h3>
+<ul><li>Default Baud rate: <b>38400</b>, Data bits:8, Stop bit:1,Parity:No parity, Data control: has. 
+</li><li>Supported baud rate: 9600,19200,38400,57600,115200,230400,460800.
+</li></ul>
+<ul><li>Use CTS and RTS to control the data stream. 
+</li><li>When a rising pulse is detected in PIO0, device will be disconnected. 
+</li><li>Status instruction port PIO1: low-disconnected, high-connected; 
+</li><li>PIO10 is connected to <span style="color:red">red</span> led, PIO11 is connected to <span style="color:green">green</span> led. When master and slave are paired, <span style="color:red">red</span> and <span style="color:green">green</span> led blinks 1time / 2s in interval, while disconnected only <span style="color:green">green</span> led blinks 2 times/ s. 
+</li><li>Auto-connect the last device on power as default. 
+</li><li>Permit matched device connect by default. 
+</li><li>Default PINCODE:”0000”. 
+</li><li>Auto-reconnect in 30 min when disconnected as a result of beyond the range of connection.
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>As a Wireless Serial Port for Arduino / <a href="/Seeeduino_V2.2" title="Seeeduino V2.2"> Seeeduino</a> and other MCUs 
+</li><li>As a Bluetooth Serial Port for PC when connected with <a href="/UartSBee" title="UartSBee">UartSBee</a>
+</li></ul>
+<h2>  Cautions  </h2>
+<p><font color="red"> <strong>
+</strong></font></p>
+<ul><li> While using with Seeeduino / Arduino, set the operation voltage to 3.3V. Else use a proper logic level converter.
+</li><li> While using with UartSBee, set the operation voltage to 3.3V
+</li><li> Command to change baud rate is persistent even after reset. Hence remember the baud rate for next use.
+</li><li> When using SoftwareSerial, do not set the baud rate above 38400
+</li></ul>
+<p>
+</p>
+<h2>  Schematic  </h2>
+<p><a href="http://garden.seeedstudio.com/images/f/f6/Bluetooth_Bee_Schematic_Board.zip">Bluetooth Bee Schematic and Board Files in Eagle Format</a>
+<a href="http://aps-solver.com/services/transportation/refrigerated-cargo/">refrigerated transport services</a> from APS freight company
+</p>
+<h2>  Pin definition and Rating  </h2>
+<p>Bottom-view:<br/>
+<img src="img/Bluetooth-pin.jpg" width="460"/>
+</p>
+<table border="1">
+<tr>
+<th> Pin
+</th>
+<th> #
+</th>
+<th> Pad Type
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td width="100px"> PIO9
+</td>
+<td width="100px"> 29
+</td>
+<td width="350px"> Bi-Direction
+</td>
+<td width="450px"> Programmable input/output line
+</td></tr>
+<tr>
+<td> PIO8
+</td>
+<td> 28
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> PIO7
+</td>
+<td> 27
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> PIO6
+</td>
+<td> 26
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> RTS
+</td>
+<td> 25
+</td>
+<td> CMOS output, tri-stable with weak internal pull -up
+</td>
+<td> UART request to send, active low
+</td></tr>
+<tr>
+<td> PIO5
+</td>
+<td> 24
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> PIO4
+</td>
+<td> 23
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> PCMSY
+</td>
+<td> 22
+</td>
+<td> Bi-Direction
+</td>
+<td> Synchronous PCM data strobe
+</td></tr>
+<tr>
+<td> CTS
+</td>
+<td> 21
+</td>
+<td> CMOS output, tri-stable with weak internal pull -up
+</td>
+<td> UART clear to send, active low
+</td></tr>
+<tr>
+<td> PIO3
+</td>
+<td> 20
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> PIO2
+</td>
+<td> 19
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> USBDP
+</td>
+<td> 18
+</td>
+<td> Bi-Direction
+</td>
+<td>
+</td></tr>
+<tr>
+<td> USBDN
+</td>
+<td> 17
+</td>
+<td> Bi-Direction
+</td>
+<td>
+</td></tr>
+<tr>
+<td> CLK
+</td>
+<td> 16
+</td>
+<td> CMOS output, tri-stable with weak internal pull -up
+</td>
+<td> SPI(Serial peripheral interface) clock
+</td></tr>
+<tr>
+<td> MI
+</td>
+<td> 15
+</td>
+<td> CMOS output, tri-stable with weak internal pull -up
+</td>
+<td> SPI data output
+</td></tr>
+<tr>
+<td> MO
+</td>
+<td> 14
+</td>
+<td> CMOS output, tri-stable with weak internal pull -up
+</td>
+<td> SPI data output
+</td></tr>
+<tr>
+<td> CS
+</td>
+<td> 13
+</td>
+<td> CMOS output, tri-stable with weak internal pull -up
+</td>
+<td> Chip select for serial peripheral interface, active low
+</td></tr>
+<tr>
+<td> AIO1
+</td>
+<td> 12
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> AIO0
+</td>
+<td> 11
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> GND
+</td>
+<td> 10
+</td>
+<td> VSS
+</td>
+<td> Ground port
+</td></tr>
+<tr>
+<td> PCMIN
+</td>
+<td> 9
+</td>
+<td> CMOS input
+</td>
+<td> Synchronous PCM data input
+</td></tr>
+<tr>
+<td> PCMOT
+</td>
+<td> 8
+</td>
+<td> CMOS output
+</td>
+<td> Synchronous PCM data output
+</td></tr>
+<tr>
+<td> PCMCK
+</td>
+<td> 7
+</td>
+<td> Bi-Direction
+</td>
+<td> Synchronous PCM data clock
+</td></tr>
+<tr>
+<td> PIO1
+</td>
+<td> 6
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> !RST
+</td>
+<td> 5
+</td>
+<td> CMOS input with weak internal pull-up
+</td>
+<td> Reset if low,input must be low for &gt;5ms to cause a reset
+</td></tr>
+<tr>
+<td> PIO0
+</td>
+<td> 4
+</td>
+<td> Bi-Direction
+</td>
+<td> Programmable input/output line
+</td></tr>
+<tr>
+<td> RX
+</td>
+<td> 3
+</td>
+<td> CMOS input with weak internal pull-up
+</td>
+<td> UART Data input
+</td></tr>
+<tr>
+<td> TX
+</td>
+<td> 2
+</td>
+<td> CMOS output,tri-stable with weak internal pull-up
+</td>
+<td> UART Data output
+</td></tr>
+<tr>
+<td> 3V3
+</td>
+<td> 1
+</td>
+<td> 3.3V
+</td>
+<td> Integrated 3.3V(+)supply with on-chip linear regulator output within 3.15-3.3V
+</td></tr></table>
+<h2>  Mechanic Dimensions  </h2>
+<p>Bluetooth Bee board is of <b>12.7mm x 27mm</b> size.
+</p>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<h4>  Connecting to Arduino with XBee Shield </h4>
+<p>Use a <a href="/XBee-Shield" title="XBee® Shield">XBee® Shield</a> to connect <strong class="selflink">Bluetooth Bee</strong> to Seeeduino / Arduino. Refer the <a href="/XBee-Shield" title="XBee® Shield">XBee® Shield</a> documentation on how to set the toggle switches to correct positions.
+</p><p><img src="img/Seeeduino_BluetoothBee_Xbee_Shield.JPG" width="450"/>
+</p>
+<h4>  Connecting to PC with UartSbee </h4>
+<p>Use an <a href="/UartSBee" title="UartSBee">UartSBee</a> to connect <strong class="selflink">Bluetooth Bee</strong> to PC. Set the power selection toggle switch to 3.3V before connecting BlueTooth Bee.
+</p><p><img src="img/BluetoothBee_with_UartSBee.JPG" width="450"/>
+</p>
+<h3>  Software Instruction  </h3>
+<h4>  Working Sketch Map  </h4>
+<p>The following sketch presents an overview of <strong class="selflink">Bluetooth Bee</strong> operation in master and slave mode.
+</p><p><img src="img/Bluetooth-1.jpg" width="744"/>
+</p>
+<h4>  Flowchat  </h4>
+<p>The following flowchart gives a quick start guide to <strong class="selflink">Bluetooth Bee</strong> programming.
+</p><p><img src="img/Bluetooth-2.jpg" width="524"/>
+</p>
+<h4>  Commands to change default configuration</h4>
+<p><b>1. Set working MODE</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+STWMOD=0\r\n
+</td>
+<td width="400px"> Set device working mode as client (slave). Save and Rest.
+</td></tr>
+<tr>
+<td> \r\n+STWMOD=1\r\n
+</td>
+<td> Set device working mode as server (master). Save and Rest.
+</td></tr></table>
+<p><b>Note:</b> <b>\r\n</b> is necessary for operation and the value of are <b>0x0D 0x0A</b> in Hex. <b>\r</b> and <b>\n</b> represent <b>carriage-return</b> and <b>line-feed</b>(or next line), 
+</p><p><b>2.Set BAUDRATE</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+STBD=115200\r\n
+</td>
+<td width="400px"> Set baudrate 115200. Save and Rest.
+</td></tr>
+<tr>
+<td colspan="2"> Supported baudrate: 9600, 19200,38400,57600,115200,230400,460800.
+</td></tr></table>
+<p><b>3. Set Device NAME</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+STNA=abcdefg\r\n
+</td>
+<td width="400px"> Set device name as “abcdefg”. Save and Rest.
+</td></tr></table>
+<p><b>4. Auto-connect the last paired device on power</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+STAUTO=0\r\n
+</td>
+<td width="400px"> Auto-connect forbidden. Save and Rest.
+</td></tr>
+<tr>
+<td width="200px"> \r\n+STAUTO=1\r\n
+</td>
+<td width="400px"> Permit Auto-connect. Save and Rest.
+</td></tr></table>
+<p><b>5. Permit Paired device to connect me</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+STOAUT=0\r\n
+</td>
+<td width="400px"> Forbidden. Save and Rest.
+</td></tr>
+<tr>
+<td width="200px"> \r\n+STOAUT=1\r\n
+</td>
+<td width="400px"> Permit. Save and Rest.
+</td></tr></table>
+<p><b>6. Set PINCODE</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n +STPIN=2222\r\n
+</td>
+<td width="400px"> Set pincode “2222”, Save and Rest.
+</td></tr></table>
+<p><b>7. Delete PINCODE(input PINCODE by MCU)</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+DLPIN\r\n
+</td>
+<td width="400px"> Delete pincode. Save and Rest.
+</td></tr></table>
+<p><b>8. Read local ADDRESS CODE</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+RTADDR\r\n
+</td>
+<td width="400px"> Return address of the device.
+</td></tr></table>
+<p><b>9. Auto-reconnecting when master device is beyond the valid range (slave device will auto-reconnect in 30 min when it is beyond the valid range)</b>
+</p>
+<table>
+<tr>
+<td width="200px"> \r\n+LOSSRECONN=0\r\n
+</td>
+<td width="400px"> Forbid auto-reconnecting.
+</td></tr>
+<tr>
+<td width="200px"> \r\n+LOSSRECONN=1\r\n
+</td>
+<td width="400px"> Permit auto-reconnecting.
+</td></tr></table>
+<h4>  Commands for Normal Operation:  </h4>
+<p><b>1. Inquire</b>
+</p>
+<table>
+<tr>
+<td colspan="2" width="600px"> <b>a) Master</b>
+</td></tr>
+<tr>
+<td width="200px"> \r\n+INQ=0\r\n
+</td>
+<td width="400px"> Stop Inquiring
+</td></tr>
+<tr>
+<td> \r\n+INQ=1\r\n
+</td>
+<td> Begin/Restart Inquiring
+</td></tr>
+<tr>
+<td colspan="2" width="600px"> <b>b) Slave</b>
+</td></tr>
+<tr>
+<td> \r\n+INQ=0\r\n
+</td>
+<td> Disable been inquired
+</td></tr>
+<tr>
+<td> \r\n+INQ=1\r\n
+</td>
+<td> Enable been inquired
+</td></tr></table>
+<p>When <b>+INQ=1</b> command is successful, the <span style="color:red"> red </span> and <span style="color:green">green</span> LEDS blink alternatively. 
+</p><p><b>2. Bluetooth module returns inquiring result</b>
+</p>
+<table>
+<tr>
+<td width="250px"> \r\n+RTINQ=aa,bb,cc,dd,ee,ff;name\r\n
+</td>
+<td width="500px">Serial Bluetooth device with the address “aa,bb,cc,dd,ee,ff” and the name “name” is inquired
+</td></tr></table>
+<p><b>3. Connect device</b>
+</p>
+<table>
+<tr>
+<td width="250px">\r\n+CONN=aa,bb,cc,dd,ee,ff\r\n
+</td>
+<td width="500px">Connect to a device with address of "aa,bb,cc,dd,ee,ff”
+</td></tr></table>
+<p><b>4. Bluetooth module requests inputting PINCODE</b>
+</p><p>\r\n+INPIN\r\n 
+</p><p><b>5. Input PINCODE</b>
+</p>
+<table>
+<tr>
+<td colspan="2"> \r\n+RTPIN=code\r\n
+</td></tr>
+<tr>
+<td> Example: RTPIN=0000
+</td>
+<td> Input PINCODE which is four zero
+</td></tr></table>
+<p><b>6. Disconnect device</b> Pulling PIO0 high will disconnect current working Bluetooth device. 
+</p><p><b>7. Return status</b> \r\n+BTSTA:<b>xx</b>\r\n <br/> <b>xx</b> status: 
+</p>
+<ul><li>0 - Initializing 
+</li><li>1 - Ready 
+</li><li>2 - Inquiring 
+</li><li>3 - Connecting 
+</li><li>4 - Connected
+</li></ul>
+<p>(<b>Note:</b> This is not a command, but the information returned from the module after every command)
+</p>
+<h3>  Programming  </h3>
+<h4>  Flow Control Based Implementation </h4>
+<p>The following sketch configures <strong class="selflink">Bluetooth Bee</strong> for <a href="http://aps-solver.de/leistungen/">Transportunternehmen</a> as <b>Slave Device</b> and waits for connection request from PC or other master device.
+Bluetooth Bee is  connected to Seeeduino via XBee Shield as shown above. Bluetooth Bee is connected to digital Pins 11 and 12 of Arduino / Seeduino. We use NewSoftSerial library for supporting serial communication on these pins. The hardware serial port of Arduino is available for uploading sketch or debugging. This sketch uses a flow control mechanism using CheckOK(). It avoids using arbitrary delay between each command. If CheckOK() is not required, use a delay of at least 3 seconds between commands.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+BluetoothBee Demo Code - Flowcontrol Based Implementation
+2010,2011 Copyright (c) Seeed Technology Inc.  All right reserved.
+ 
+Author: Visweswara R
+ 
+This demo code is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+ 
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+ 
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+For more details about the product please check http://www.seeedstudio.com/depot/
+ 
+*/</span>
+ 
+ 
+<span class="coMULTI">/* Upload this sketch to Seeeduino and press reset*/</span>
+ 
+<span class="co2">#include &lt;SoftwareSerial.h&gt;   //Software Serial Port</span>
+<span class="co2">#define RxD 11</span>
+<span class="co2">#define TxD 12</span>
+ 
+<span class="co2">#define DEBUG_ENABLED  1</span>
+ 
+<span class="kw2">SoftwareSerial</span> blueToothSerial<span class="br0">(</span>RxD,TxD<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+    <span class="kw3">pinMode</span><span class="br0">(</span>RxD, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>TxD, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    setupBlueToothConnection<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span> 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+  <span class="co1">//Typical Bluetoth command - response simulation:</span>
+ 
+  <span class="co1">//Type 'a' from PC Bluetooth Serial Terminal</span>
+  <span class="co1">//See Bluetooth Bee - Wiki for instructions</span>
+ 
+  <span class="kw1">if</span><span class="br0">(</span>blueToothSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">==</span> <span class="st0">'a'</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    blueToothSerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"You are connected"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">//You can write you BT communication logic here</span>
+  <span class="br0">}</span>
+ 
+<span class="br0">}</span> 
+ 
+ 
+<span class="kw4">void</span> setupBlueToothConnection<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    blueToothSerial.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">38400</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Set BluetoothBee BaudRate to default baud rate 38400</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STWMOD=0<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STNA=SeeeduinoBluetooth<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STAUTO=0<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STOAUT=1<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span> +STPIN=0000<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// This delay is required.</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+INQ=1<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// This delay is required.</span>
+<span class="br0">}</span>
+ 
+<span class="co1">//Checks if the response "OK" is received</span>
+<span class="kw4">void</span> CheckOK<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw4">char</span> a,b<span class="sy4">;</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>blueToothSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="br0">{</span>
+    a <span class="sy1">=</span> blueToothSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span><span class="st0">'O'</span> <span class="sy1">==</span> a<span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="co1">// Wait for next character K. available() is required in some cases, as K is not immediately available.</span>
+      <span class="kw1">while</span><span class="br0">(</span>blueToothSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> 
+      <span class="br0">{</span>
+         b <span class="sy1">=</span> blueToothSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+         <span class="kw1">break</span><span class="sy4">;</span>
+      <span class="br0">}</span>
+      <span class="kw1">if</span><span class="br0">(</span><span class="st0">'K'</span> <span class="sy1">==</span> b<span class="br0">)</span>
+      <span class="br0">{</span>
+        <span class="kw1">break</span><span class="sy4">;</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+   <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">while</span><span class="br0">(</span> <span class="br0">(</span>a <span class="sy1">=</span> blueToothSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="co1">//Wait until all other response chars are received</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> sendBlueToothCommand<span class="br0">(</span><span class="kw4">char</span> command<span class="br0">[</span><span class="br0">]</span><span class="br0">)</span>
+<span class="br0">{</span>
+    blueToothSerial.<span class="kw3">print</span><span class="br0">(</span>command<span class="br0">)</span><span class="sy4">;</span>
+    CheckOK<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   
+<span class="br0">}</span></pre></div></div>
+<h4>  Delay Based Implementation </h4>
+<p>The following sketch is a modification of above program using delay() instead of CheckOK(). In this case the hardware serial port is used for debugging purpose. Open serial monitor with setting 9600 baud. The complete communication between MCU and Bluetooth Bee will be visible in serial monitor.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+BluetoothBee Demo Code - Delay Based Implementaion
+2011 Copyright (c) Seeed Technology Inc.  All right reserved.
+ 
+Author: Visweswara R
+ 
+This demo code is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+ 
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+ 
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+For more details about the product please check http://www.seeedstudio.com/depot/
+ 
+*/</span>
+ 
+<span class="coMULTI">/* Upload this sketch into Seeeduino and press reset*/</span>
+ 
+<span class="co2">#include &lt;SoftwareSerial.h&gt;   //Software Serial Port</span>
+<span class="co2">#define RxD 11</span>
+<span class="co2">#define TxD 12</span>
+ 
+<span class="kw2">SoftwareSerial</span> blueToothSerial<span class="br0">(</span>RxD,TxD<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>          <span class="co1">//Serial port for debugging, Comment this line if not required  </span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>RxD, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>TxD, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    setupBlueToothConnection<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span> 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+ 
+  <span class="kw1">if</span><span class="br0">(</span>blueToothSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">==</span> <span class="st0">'a'</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    blueToothSerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"You are connected to Bluetooth Bee"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">//You can write you BT communication logic here</span>
+  <span class="br0">}</span>
+<span class="br0">}</span> 
+ 
+<span class="kw4">void</span> setupBlueToothConnection<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Setting up Bluetooth link"</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">//For debugging, Comment this line if not required    </span>
+    blueToothSerial.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">38400</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Set BluetoothBee BaudRate to default baud rate 38400</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STWMOD=0<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STNA=modem<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STAUTO=0<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STOAUT=1<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    sendBlueToothCommand<span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+STPIN=0000<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// This delay is required.</span>
+    blueToothSerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"<span class="es1">\r</span><span class="es1">\n</span>+INQ=1<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// This delay is required.</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Setup complete"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> sendBlueToothCommand<span class="br0">(</span><span class="kw4">char</span> command<span class="br0">[</span><span class="br0">]</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">char</span> a<span class="sy4">;</span>
+    blueToothSerial.<span class="kw3">print</span><span class="br0">(</span>command<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>command<span class="br0">)</span><span class="sy4">;</span>                          <span class="co1">//For debugging, Comment this line if not required    </span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw1">while</span><span class="br0">(</span>blueToothSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>              <span class="co1">//For debugging, Comment this line if not required  </span>
+    <span class="br0">{</span>                                               <span class="co1">//For debugging, Comment this line if not required   </span>
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="kw4">char</span><span class="br0">(</span>blueToothSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//For debugging, Comment this line if not required  </span>
+    <span class="br0">}</span>                                               <span class="co1">//For debugging, Comment this line if not required   </span>
+<span class="br0">}</span></pre></div></div>
+<h4>  Connecting Bluetooth Bee to PC (via Bluetooth Dongle) under GNU/Linux </h4>
+<p>This procedure demonstrates how <strong class="selflink">Bluetooth Bee</strong> can be connected to PC under GNU/Linux OS. An USB Bluetooth Dongle is used at PC side to communicate with <strong class="selflink">Bluetooth Bee</strong>. The flow control implementation sketch is uploaded to Seeeduino.
+</p>
+<ul><li>Install gnome-bluetooth
+</li></ul>
+<p><code>
+sudo apt-get install gnome-bluetooth
+</code>
+</p>
+<ul><li>Open <b>bluetooth-properties</b> application from shell
+</li></ul>
+<p><img src="img/Bluetooth_linux_config0.png" width="400"/>
+</p>
+<ul><li>Click <b>Set up new device</b>
+</li></ul>
+<p><img src="img/Bluetooth_linux_config1.png" width="400"/>
+</p><p>and click <b>Forward</b>
+</p><p><img src="img/Bluetooth_linux_config2.png" width="400"/>
+</p>
+<ul><li>Open <b>PIN options...</b>
+</li></ul>
+<p><img src="img/Bluetooth_linux_config2.1.png" width="400"/>
+</p>
+<ul><li>Set Fixed PIN <b>0000</b>. 0000 is the default pin used in the above sketch.
+</li></ul>
+<p><img src="img/Bluetooth_linux_config3.png" width="250"/>
+</p>
+<ul><li>Device <b>Setup Window</b> opens
+</li></ul>
+<p><img src="img/Bluetooth_linux_config4.png" width="300"/>
+</p><p>and
+</p><p><b>Setup Completed</b> dialog opens. Click <b>Close</b>. 
+</p><p><img src="img/Bluetooth_linux_config5.png" width="300"/>
+</p>
+<ul><li>The address of the <strong class="selflink">Bluetooth Bee</strong> <b>00:13:EF:00:00:24</b> is displayed in shell.
+</li></ul>
+<p><img src="img/Bluetooth_linux_config6.png" width="350"/>
+</p>
+<ul><li>Bind the <strong class="selflink">Bluetooth Bee</strong> to rfcomm port. Here the address of <strong class="selflink">Bluetooth Bee</strong> is bound to a serial port device <b>/dev/rfcomm0</b>
+</li></ul>
+<p><code>
+user@user-desktop:~$ sudo rfcomm bind 0 00:13:EF:00:00:24 1
+</code></p><p>user@user-desktop:~$ ls /dev/rfcomm*
+</p><p>/dev/rfcomm0
+</p><p>
+</p>
+<ul><li>This <b>/dev/rfcomm0</b> serial port can be accessed by any serial port terminal like <b>cutecom</b>.
+<ul><li>Open <b>/dev/rfcomm0</b> with baud rate:<b>38400</b>, Databits: <b>8</b>, Stopbits: <b>1</b> and <b>No Flow Control</b>
+</li><li>Send character 'a'
+</li><li>Seeeduino + Bluetooth Bee will reply with "<b>You are connected to Bluetooth Bee</b>"
+</li></ul>
+</li></ul>
+<p><img src="img/Bluetooth_linux_config8.png" width="450"/>
+</p>
+<h4>  Connecting Bluetooth Bee to PC (via Bluetooth Dongle) under Windows </h4>
+<ul><li>Install the Microsoft Bluetooth default drivers. Open <b>Control Panel</b> -&gt; <b>Bluetooth Devices</b>
+</li></ul>
+<p><img src="img/Bluetooth_windows0.jpg" width="500"/>
+</p>
+<ul><li>Click <b>Add</b> button.
+</li></ul>
+<p><img src="img/Bluetooth_windows1.jpg" width="300"/>
+</p>
+<ul><li>Check <b>My devices is set up  and ready to be found</b> and click <b>Next</b> button
+</li></ul>
+<p><img src="img/Bluetooth_windows2.jpg" width="400"/>
+</p>
+<ul><li>Select the "<b>SeeedBlueToothBee</b>" device and click <b>Next</b>.
+</li></ul>
+<p><img src="img/Bluetooth_windows3.jpg" width="400"/>
+</p>
+<ul><li>Select <b>Use the passkey found in the documentation</b> and enter <b>0000</b>
+</li></ul>
+<p><img src="img/Bluetooth_windows4.jpg" width="400"/>
+</p>
+<ul><li>Passkeys are exchanged and an outgoing serial port <b>COM5</b> is assigned for our communication.
+</li></ul>
+<p><img src="img/Bluetooth_windows5.jpg" width="400"/>
+</p>
+<ul><li><ul><li> A task-bar balloon shows that a new Bluetooth Serial Port link is added.
+</li></ul>
+</li></ul>
+<p><img src="img/Bluetooth_windows6.jpg" width="200"/>
+</p>
+<ul><li><ul><li> <b>COM5</b> is assigned for communication. This port should be used to communicate PC with Bluetooth Bee.
+</li></ul>
+</li></ul>
+<p><img src="img/Bluetooth_windows7.jpg" width="400"/>
+</p>
+<ul><li>This <b>COM5 </b> serial port can be accessed by any Serial Port terminal.
+<ul><li>Open <b>COM5 </b> with baud rate:<b>38400</b>, Databits: <b>8</b>, Stopbits: <b>1</b> and <b>No Flow Control</b>
+</li><li>Send character 'a'
+</li><li>Seeeduino + Bluetooth Bee will reply with "<b>You are connected to Bluetooth Bee</b>"
+</li></ul>
+</li></ul>
+<p><img src="img/Bluetooth_windows8.jpg" width="550"/>
+</p>
+<h4>  Connecting Bluetooth Bee to PC using <a href="/UartSBee" title="UartSBee">UartSBee</a> in Master Mode </h4>
+<p>This demo uses hardware arrangement described in <a href="http://garden.seeedstudio.com/index.php?title=Bluetooth_Bee#Connecting_to_PC_with_UartSbee">Hardware Installation - UartSBee</a>. Connect UartSbee to PC using a mini USB cable. 
+</p>
+<ul><li>Open a serial terminal and connect to <a href="/UartSBee" title="UartSBee">UartSBee</a> serial port device like <b>COM1</b> in Windows or <b>/dev/ttyUSB0</b> in GNU/Linux with baud rate:<b>38400</b>, Databits: <b>8</b>, Stopbits: <b>1</b> and <b>No Flow Control</b>
+</li></ul>
+<ul><li>Send <b>\r\n+STWMOD=1\r\n</b> command. This configures the <strong class="selflink">Bluetooth Bee</strong> in master mode.
+</li></ul>
+<p><img src="img/BTBee_Master1.png" width="400"/>
+</p>
+<ul><li>Send <b>\r\n+INQ=1\r\n</b> command. <strong class="selflink">Bluetooth Bee</strong> searches available Bluetooth devices in neighborhood and list the address of the devices. In this case with <b>+RTINQ=0,19,86,0,19,1E;desktop</b>, where <b>desktop</b> is a PC with Bluetooth interface. While inquiring the red and green led blinks alternatively.
+</li></ul>
+<p><img src="img/BTBee_Master2.png" width="400"/>
+</p>
+<ul><li>Send <b>\r\n+CONN=0,19,86,0,19,1E\r\n</b> where <b>0,19,86,0,19,1E</b> is the address of desktop.
+</li></ul>
+<p><img src="img/BTBee_Master3.png" width="400"/>
+</p>
+<ul><li>Enter the pin 0000 at PC side and complete the connection.
+</li></ul>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<ul><li> <a href="/w/index.php?title=Bluetooth_Bee_bare_PCB&amp;action=edit&amp;redlink=1" title="Bluetooth Bee bare PCB (page does not exist)">Bluetooth Bee bare PCB</a>
+</li><li> <a href="/Serial_port_bluetooth_module-Master-Slave" title="Serial port bluetooth module (Master/Slave)">Serial_port_bluetooth_module_(Master/Slave)</a>
+</li></ul>
+<h2>  FAQ  </h2>
+<p>Please list your questions here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss. 
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="200px"> v1.0
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="300px"> Dec 14, 2009
+</td></tr>
+<tr>
+<td> v1.1
+</td>
+<td> Modify Inquire command and add some notes
+</td>
+<td>Mar 15, 2010
+</td></tr>
+<tr>
+<td> v1.2
+</td>
+<td> Modify Hardware and Software features
+</td>
+<td>Apr 04, 2010
+</td></tr>
+<tr>
+<td> v1.3
+</td>
+<td> Update the profile, add the return status, delete ECHO command.
+</td>
+<td> Apr 21, 2010
+</td></tr>
+<tr>
+<td> v2.0
+</td>
+<td> Update the module as HM－01（The same with the newest Bluetooth shield）. The AT command can not compatible with before.
+</td>
+<td> Dec 4, 2014
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<ul><li> Implement a wireless PS/2 Keyboard / Mouse.
+</li><li> Wireless control a toy robot from PC.
+</li></ul>
+<h2>  Resources  </h2>
+<ul><li> <a href="http://garden.seeedstudio.com/images/f/f6/Bluetooth_Bee_Schematic_Board.zip">Bluetooth Bee Schematic and Board Files</a>
+</li></ul>
+<ul><li> <a href="http://arduiniana.org/NewSoftSerial/NewSoftSerial10c.zip">NewSoftLibrary</a>
+</li></ul>
+<ul><li> <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=4&amp;t=687">Information</a> on how to setup connections between Bluetooth Bees is available in Seeedstudio Forum.
+</li></ul>
+<ul><li> <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=18&amp;t=1436&amp;p=5637#p5637">Information</a> on PC connecting Bluetooth Bee in Seeedstudio Forum
+</li></ul>
+<ul><li><a href="res/Bluetooth_Bee_datasheet.pdf" title="File:Bluetooth Bee datasheet.pdf">File:Bluetooth Bee datasheet.pdf</a>
+</li></ul>
+<ul><li><a href="http://images/0/06/Bluetooth_Bee_v2.0_SCH_PCB.zip">Bluetooth_Bee_v2.0_SCH_PCB.zip</a>
+</li></ul>
+<ul><li><a href="res/HM－01_Datasheet.pdf">HM－01_Datasheet.pdf</a>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy:<a href="http://www.seeedstudio.com/depot/bluetooth-bee-p-598.html?cPath=139_142">http://www.seeedstudio.com/depot/bluetooth-bee-p-598.html?cPath=139_142</a>. 
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">Bee series</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+<h2> Related Projects</h2>
+<p>If you want to make some awesome projects by Bluetooth Bee, here's some projects for reference.
+</p>
+<h3> Seeed Pet</h3>
+<p><img src="img/Seeed_pet.jpg" width="420"/>
+</p><p>This is an interesting demo made by seeduino and <a href="/Grove_System" title="Grove System">Grove</a>.
+SEEED PET is kind of an electronic pet in our studio. It is a platform for the newbie engineers to be familiar with our company’s products and practice. Every newbie engineer will be added some new ideas or elements on the SEEED PET.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/recipe/16-seeed-pet.html"><font color="#FF0000"><b>I want to make it.</b></font></a>
+</p><p><br/>
+</p>
+<h3>  Share Your Awesome Projects with Us </h3>
+<p>Born with the spirit of making and sharing, that is what we believe makes a maker. 
+</p><p>And only because of this , the open source community can be as prosperous as it is today.
+</p><p>It does not matter what you are and what you have made, hacker, maker, artist and engineers, 
+</p><p>as long as you start sharing your works with others, 
+</p><p>you are being part of the open source community and you are making your contributions .
+</p><p>Now share you awesome projects on with us on <a href="http://www.seeedstudio.com/recipe/">Recipe</a>, and win a chance to become the Core User of Seeed.
+</p>
+<ul><li> Core Users, are those who showing high interests and significant contributions in Seeed products. 
+</li><li> We cooperate with our Core Users in the development of our new product, this, in another word, the Core Users will have the chance to experience any new products of Seeed before its official launch, and in return we expect valuable feedback from them to help us improving the product performance and user experience. And for most of cases if our Core Users have any good ideas for making things, we'll offer hardware pieces, PCBA services as well as technical support. Besides, further commercial cooperation with the Core Users is highly possible.
+</li></ul>
+<p><br/>
+<font color="#FF0000">Get more information about Core User please email to: recipe@seeed.cc</font>
+</p><p><br/>
+<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,602 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>GPRS Shield V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>GPRS Shield V1.0</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="http://www.seeedstudio.com/depot/gprs-shield-p-779.html"><img src="img/GPRS_shield_v1.4.jpg" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p>The GPRS Shield provides you a way to use the GSM cell phone network to receive data from a remote location. The shield allows you to achieve this via any of the three methods:<br/>
+</p>
+<ul><li> Short Message Service
+</li><li> Audio
+</li><li> GPRS Service
+</li></ul>
+<p>The GPRS Shield is compatible with all boards which have the same form factor (and pinout) as a standard Arduino Board. The GPRS Shield is configured and controlled via its UART using simple AT commands. Based on the SIM900 module from SIMCOM, the GPRS Shield is like a cell phone. Besides the communications features, the GPRS Shield has 12 GPIOs, 2 PWMs and an ADC.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/gprs-shield-p-779.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li>Based on <a href="http://wm.sim.com">SIMCom</a>'s SIM900 Module
+</li><li>Quad-Band 850 / 900/ 1800 / 1900 MHz - would work on GSM networks in all countries across the world.
+</li><li>Control via AT commands - Standard Commands: GSM 07.07 &amp; 07.05 | Enhanced Commands: SIMCOM AT Commands.
+</li><li>Short Message Service - so that you can send small amounts of data over the network (ASCII or raw hexadecimal).
+</li><li>Embedded TCP/UDP stack - allows you to upload data to a web server.
+</li><li>Speaker and Headphone jacks - so that you can send DTMF signals or play recording like an answering machine.
+</li><li>SIM Card holder and GSM Antenna - present onboard.
+</li><li>12 GPIOs, 2 PWMs and an ADC (all 2.8 volt logic) - to augment your Arduino.
+</li><li>Low power consumption - 1.5mA(sleep mode)
+</li><li>Industrial Temperature Range - -40°C to +85 °C
+</li></ul>
+<p><b>Source(s):</b>  [  GPRS Shield V1.0 Features support]
+</p>
+<h2> Application Ideas</h2>
+<ul><li>M2M (Machine 2 Machine) Applications - To transfer control data using SMS or GPRS between two machines located at two different factories. 
+</li><li>Remote control of appliances - Send SMS while you are at your office to turn on or off your washing machine at home. 
+</li><li>Remote Weather station or a Wireless Sensor Network - Mate it with <a href="/Seeeduino_Stalker_v2.0" title="Seeeduino Stalker v2.0">Seeeduino Stalker</a> and create a sensor node capable of transferring sensor data (like from a weather station - temperature, humidity etc.) to a web server (like <a href="http://www.pachube.com">pachube.com</a>). 
+</li><li>Interactive Voice Response System - Couple the GPRS Shield with an MP3 Decoder and DTMF Decoder (besides an Arduino) to create an <a href="http://en.wikipedia.org/wiki/Interactive_voice_response">Interactive Vocice Response System (IVRS)</a>. 
+</li><li>Vehicle Tracking System - Couple the GPRS Shield with an Arduino and GPS module and install it in your car and publish your location live on the internet. Can be used as a automotive burglar alarm.
+</li></ul>
+<h2> Cautions</h2>
+<ul><li> Make sure your SIM card is unlocked.
+</li><li> The product is provided as is without an insulating enclosure. Please observe ESD precautions specially in dry (low humidity) weather.
+</li><li> The factory default setting for the GPRS Shield UART is 19200 bps 8-N-1. (Can be changed using AT commands).
+</li><li> When using GPRS Shield with <a href="/Seeeduino_Stalker_v2.0" title="Seeeduino Stalker v2.0">Seeeduino Stalker v2.0</a> please remember to dismount the <b>OK_READ</b> Jumper (i.e. open it). This will disconnect the Battery Charger IC's OK pin from the microcontrollers Digital Pin 7 and hence allow unhindered communication with GPRS Shield using NewSoftSerial Library.
+</li></ul>
+<h2> Specifications</h2>
+<p>For SIM900's Specifications, please refer this PDF file: <a href="http://garden.seeedstudio.com/images/0/0b/SIM900_SPEC.pdf">SIM900_SPEC.pdf</a>
+</p>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th><th scope="col"> Min
+</th><th scope="col"> Typical
+</th><th scope="col"> Max
+</th><th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th><td>4.8
+</td><td>5.0
+</td><td>5.2
+</td><td>VDC
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th><td>/
+</td><td>50
+</td><td>450
+</td><td>mA
+</td></tr>
+<tr>
+<th scope="row"> Dimension(with antenna)
+</th><td colspan="3"> 110x58x19
+</td><td>mm
+</td></tr>
+<tr>
+<th scope="row"> Net Weight
+</th><td colspan="3"> 76±2
+</td><td>g
+</td></tr></table>
+<h2> Interface Function</h2>
+<p><img src="img/GPRS_Shield_interface.png" width="900"/><br/>
+<b>Power select</b> - select the power supply for GPRS shield(external power or 5v of arduino)<br/>
+<b>Power jack</b> - connected to external 4.8~5VDC power supply<br/>
+<b>Antenna interface</b> - connected to external antenna<br/>
+<b>Serial port select</b> - select either software serial port or hareware serial port to be connected to GPRS Shield<br/>
+<b>Hardware Serial</b> - D0/D1 of Arduino/Seeeduino<br/>
+<b>Software serial</b> - D7/D8 of Arduino/Seeeduino only<br/>
+<b>Status LED</b> - tell whether the power of SIM900 is on<br/>
+<b>Net light</b> - tell the status about SIM900 linking to the net<br/>
+<b>UART of SIM900</b> - UART pins breakout of SIM900<br/>
+<b>Microphone</b> - to answer the phone call<br/>
+<b>Speaker</b> - to answer the phone call<br/>
+<b>GPIO,PWM and ADC of SIM900</b> - GPIO,PWM and ADC pins breakout of SIM900<br/>
+<b>Power key</b> - power up and down for SIM900
+</p>
+<h3>  Pins usage on Arduino </h3>
+<p><b>D0</b> - Unused if you select software serial port to communicate with GPRS Shield<br/>
+<b>D1</b> - Unused if you select software serial port to communicate with GPRS Shield<br/>
+<b>D7</b> - Used if you select software serial port to communicate with GPRS Shield<br/>
+<b>D8</b> - Used if you select software serial port to communicate with GPRS Shield<br/>
+<b>D9</b> - Used for software control the power up or down of the SIM900<br/>
+</p><p><b>Note:</b> A4 and A5 are connected to the I2C pins on the SIM900. The SIM900 however cannot be accessed via the I2C .
+</p>
+<h2> Getting Started</h2>
+<h3> Light Status</h3>
+<table>
+<tr>
+<th> LED
+</th>
+<th> State
+</th>
+<th> Function
+</th></tr>
+<tr>
+<td width="300px"> Status
+</td>
+<td width="300px"> Off
+</td>
+<td width="400px"> Power Off
+</td></tr>
+<tr>
+<td width="300px">
+</td>
+<td width="300px"> On
+</td>
+<td width="400px"> Power On
+</td></tr>
+<tr>
+<td width="300px"> Netlight
+</td>
+<td width="300px"> Off
+</td>
+<td width="400px"> SIM900 is not working
+</td></tr>
+<tr>
+<td width="300px">
+</td>
+<td width="300px"> 64ms On/800ms Off
+</td>
+<td width="400px"> SIM900 does not find the network
+</td></tr>
+<tr>
+<td width="300px">
+</td>
+<td width="300px"> 64ms On/3000ms Off
+</td>
+<td width="400px"> SIM900 find the network
+</td></tr>
+<tr>
+<td width="300px">
+</td>
+<td width="300px"> 64ms On/300ms Off
+</td>
+<td width="400px"> GPRS communication
+</td></tr></table>
+<h3>  Hardware installation </h3>
+<ul><li> <b>Insert an unlocked SIM card to</b> <b>SIM Card Holder</b> - 6 Pin Holder for SIM Cards. Both 1.8 volts and 3.0 volts SIM Cards are supported by SIM900 - the SIM card voltage type is automatically detected.
+</li></ul>
+<table align="center">
+<tr>
+<td> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/Insert_an_unlock_SIM_card.jpg" width="400"/> <div class="thumbcaption">Inserting the SIM Card into the holder</div></div></div></div>
+</td>
+<td> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/SIM_card_inserted.jpg" width="400"/> <div class="thumbcaption">Locking the SIM Card Holder</div></div></div></div>
+</td></tr></table>
+<p><br clear="all"/>
+</p>
+<ul><li> <b>Make sure the antenna pad buckled properly</b> - A miniature coaxial RF connector is present on the GPRS Shield board to connect with a GSM Antenna. The connector present on the GPRS Shield is called a <a href="http://en.wikipedia.org/wiki/Hirose_U.FL">U.FL connecto</a>]. The GSM Antenna supplied with the GPRS Shield has an <a href="http://en.wikipedia.org/wiki/SMA_connector">SMA connector</a> (and not an RP-SMA connector) on it. A patch cord is also supplied with the GPRS Shield to interface the antenna to the board. The connection topology is shown in the diagram below:<br/>
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/The_antenna_pad.jpg" width="400"/> <div class="thumbcaption">Antenna pad properly buckled</div></div></div></div>
+<p><br/>
+</p>
+<ul><li> <b>Assemble the GSM antenna</b><br/>
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/Assemble_GSM_antenna.jpg" width="400"/> <div class="thumbcaption">Assemble the GSM antenna</div></div></div></div><br/>
+<ul><li> <b>Power supply for GPRS shield</b> - Select power source with the switch on board, you can select the 5V power supply from arduino or exteral power.Select the 5V source from Arduino as the following picture:<br/>
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GPRS_select_5v_of_arduino.jpg" width="400"/> <div class="thumbcaption">select 5v of arduino</div></div></div></div><br/>
+<ul><li> <b>Communication port configure.</b>- The GPRS shield can be controlled via Hardware serial port of Arduino or Software serial port, Select the Software serial port with the jumpers:.
+</li></ul>
+<table align="center">
+<tr>
+<td> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GPRS_communicate_with_arduino_with_software_serial.jpg" width="400"/> <div class="thumbcaption">GPRS communicate with arduino by software serial</div></div></div></div>
+</td>
+<td> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GPRS_communicate_with_arduino_with_hardware_serial.jpg" width="400"/> <div class="thumbcaption">GPRS communicate with arduino by hardware serial</div></div></div></div>
+</td></tr></table>
+<ul><li> <b>Plug to Arduino UNO R3</b> - The GPRS Shield, like any other well designed shield, is stackable as shown in the photo below.
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/Plug_GPRS_to_arduino.jpg" width="400"/> <div class="thumbcaption">GPRS Shield + Arduino UNO R3</div></div></div></div>
+<h3>  Power up and power down  </h3>
+<ul><li><b>Hardware trigger</b>
+</li></ul>
+Press the power key for about 2 seconds to power up or power down. <br/> <div class="center"><div class="floatnone"><img src="img/Button_to_power_up_and_down.jpg" width="300"/></div></div> <br/>
+<ul><li><b>Software trigger</b>
+</li></ul>
+You can power up/down the shield with Software, Control D9 of Arduino to add software triggering in your firmware. * Note that JP for pin 9 on the shield must be soldered in order to use software power up/down.<br/> <div class="center"><div class="floatnone"><img src="img/Shixu.jpg" width="678"/></div></div> As the timing of turn on/off , a &gt;1s pulse was need to trigger the turning, and a &gt;3.2s delay was need to get the timing stable. Add the following code in your firmware to turn on / off the shield without pressing the button: 
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> powerUpOrDown<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3>  Getting Started - Fun with AT Commands </h3>
+<p>The GPRS Shield comes with all the accessories that you need to get started with sending data over the GSM network except an Arduino board and a GSM SIM Card. If you want to make voice calls, you would also require a headset with microphone. 
+</p>
+<ul><li><b>Step 1: Creating a test setup for the GPRS Shield</b> <br/>
+</li></ul>
+<p>As you received your GPRS Shield, what would be the first thing you want to do with it? Send out a text (SMS)? or call up someone (headset required)? You can do all of this by talking to the GPRS Shield using AT Commands - which is a special language that it understands. AT Commands are simple textual commands sent to the GPRS modem over its serial interface (UART), so you can use any serial terminal software to communicate with it.<br/> <b>Note:</b> Almost all the AT commands should be sent followed by <b>carriage return</b> and you need to select the "+CR"option in the serial port terminal.<br/> To experiment with AT commands, you would require a way to power up and communicate with your GPRS Shield. The best way to do this using an Arduino Duemilanove board described below. The same steps are applicable for <a href="/Seeeduino_V2.2" title="Seeeduino V2.2">Seeeduino</a> or <a href="/Seeeduino_Stalker_v2.0" title="Seeeduino Stalker v2.0">Seeeduino Stalker</a>. <br/>
+</p>
+<ul><li>Follow the previously described hardware installation steps to set up the hardware system; 
+</li><li>Make sure the GPRS_TX &amp; GPRS_RX jumpers on the GPRS Shield are mounted in SWSerial position - that is we want GPRS_TX to be connected to D7(RX) and GPRS_RX to D8(TX). 
+</li><li>Connect the Arduino Duemilanove (or Seeeduino) to your computer using a USB cable. 
+</li><li>The ATmega328P microcontroller on Duemilanove board has only one UART which is used for communicating with the PC. What we need is an Arduino Sketch running inside the ATmega328P that would emulate a second serial port (UART) using software on the digital pins D8 and D7 and patch through all the communication between this second software serial port and the actual hardware serial port. By doing this, all the data coming from the computer (connected to the actual hardware UART) would be routed to the GPRS Shield (connected to software UART) then, we would be able to issue AT commands to control the GPRS Shield. The block diagram outlining this scheme is shown below. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:936px;"><img src="img/GPRS_aurduino_uart.jpg" width="934"/> <div class="thumbcaption">GPRS aurduino uart.jpg</div></div></div></div> For developing such a program, we require to use the SoftwareSerial library included in the libraries of Arduino 1.0 already and the demo code below. 
+</li></ul>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Serial Relay - Arduino will patch a </span>
+<span class="co1">//serial link between the computer and the GPRS Shield</span>
+<span class="co1">//at 19200 bps 8-N-1</span>
+<span class="co1">//Computer is connected to Hardware UART</span>
+<span class="co1">//GPRS Shield is connected to the Software UART </span>
+ 
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+<span class="kw2">SoftwareSerial</span> GPRS<span class="br0">(</span><span class="nu0">7</span>, <span class="nu0">8</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> buffer<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// buffer array for data recieve over serial port</span>
+<span class="kw4">int</span> count<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>     <span class="co1">// counter for buffer array </span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  GPRS.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">19200</span><span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// the GPRS baud rate   </span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">19200</span><span class="br0">)</span><span class="sy4">;</span>             <span class="co1">// the Serial port of Arduino baud rate.</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">if</span> <span class="br0">(</span>GPRS.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>              <span class="co1">// if date is comming from softwareserial port ==&gt; data is comming from gprs shield</span>
+  <span class="br0">{</span>
+    <span class="kw1">while</span><span class="br0">(</span>GPRS.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>          <span class="co1">// reading data into char array </span>
+    <span class="br0">{</span>
+      buffer<span class="br0">[</span>count<span class="sy2">++</span><span class="br0">]</span><span class="sy1">=</span>GPRS.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// writing data into array</span>
+      <span class="kw1">if</span><span class="br0">(</span>count <span class="sy1">==</span> <span class="nu0">64</span><span class="br0">)</span><span class="kw1">break</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>buffer,count<span class="br0">)</span><span class="sy4">;</span>            <span class="co1">// if no data transmission ends, write buffer to hardware serial port</span>
+    clearBufferArray<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// call clearBufferArray function to clear the storaged data from the array</span>
+    count <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>                       <span class="co1">// set counter of while loop to zero</span>
+ 
+ 
+  <span class="br0">}</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>            <span class="co1">// if data is available on hardwareserial port ==&gt; data is comming from PC or notebook</span>
+    GPRS.<span class="kw3">write</span><span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// write it to the GPRS shield</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> clearBufferArray<span class="br0">(</span><span class="br0">)</span>              <span class="co1">// function to clear buffer array</span>
+<span class="br0">{</span>
+  <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>count<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span> buffer<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span><span class="kw2">NULL</span><span class="sy4">;</span><span class="br0">}</span>                  <span class="co1">// clear all index of array with command NULL</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+<br/>
+</p>
+<ul><li>Upload the sketch to the Arduino board. 
+</li><li>Download and fire up <a href="res/Sscom32E.zip">serial tool</a> if you don't have one. Choose the correct COM port for Arduino, and set it to operate at <b>19200</b> 8-N-1 and then click "Open Com". 
+</li><li>You can power on or off the the SIM900 by pressing the button about 2 second. After power on, the red LED will be on, and the green one beside it will blink and the shield has found the net if it blinks every 3 seconds.<br/> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/Power_on_and_off_for_SIM900.jpg" width="400"/> <div class="thumbcaption"></div></div></div></div><br/> Also, in the serial monitor you should see messages from the shield such as<br/> <code>RDY</code> <code>+CFUN: 1</code> <code>+CPIN: READY</code> <code>Call Ready </code><br/> If you can not see the messages in the serial monitor, you should click the "send new" option that will add carriage return at the end of AT command and then send AT command "AT+IPR=19200" to set the baud rate of the SIM900. <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/GPRS_set_baud_rate.jpg" width="500"/> <div class="thumbcaption"></div></div></div></div><br/> Note that the baud rate of GPRS shield and the Arduino's serial port which is connected to GPRS shield should be the same before you set the GPRS shield's baud rate.<br/>
+</li><li>Now, click "send new" option and then type and send "AT" (without the quotes) to the Arduino board. The GPRS Shield should respond by sending back an "OK". This would mean that you have been able to successfully setup your GPRS Shield can can now play around with various AT Commands. (If you are using the readily available Serial Monitor in the Arduino IDE, you should set the line ending to "Carriage return" along with a baud rate of 19200).
+</li></ul>
+<p><br/> *<b>Step 2: Sending a text message (SMS)</b><br/>
+</p>
+<pre>Now that our test setup is ready, let's play around with some AT Commands manually before moving on to programming the Arduino to do this. Let's try sending an SMS to start. 
+</pre>
+<ul><li>Create the setup as described in Step 1 above. 
+</li><li>Through your serial terminal software, send <b>AT+CMGF=1</b> and press the Enter key. The GPRS Shield can send SMSes in two modes: Text mode and PDU (or binary) mode. Since we want to send out a human readable message, we will select the text mode. The GPRS Shield will respond with an <b>OK</b>. 
+</li><li>Click "send new" option and send <b>AT+CMGS="+918446043032"</b>. This will instruct the GPRS Shield to start accepting text for a new message meant for the phone number specified (replace the number with the phone number of the target phone). The GPRS Shield will send a '<i><b>&gt;'</b></i> to remind you typing the message. Please note that phone numbers specified as parameters in any AT Command must be in <a href="http://en.wikipedia.org/wiki/E.123">E.123 format</a>.<br/> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:561px;"><img src="img/GPRS_send_a_message.jpg" width="559"/> <div class="thumbcaption">GPRS send a message.jpg</div></div></div></div>
+</li><li>Start typing your message and when you are done, and click "send hex" option and then send a hex: <b>1A</b>. The modem will accept the message and respond with an <b>OK</b>. A few moments later, the message should be received on the handset whose number you had specified.You can refer to the picture below.<br/> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:561px;"><img src="img/Gprssendsms1.jpg" width="559"/> <div class="thumbcaption">Gprssendsms1.jpg</div></div></div></div> <br/><br/> <b>NOTE:</b> If, in spite of following the steps as specified above, you aren't able to receive the message on the target handset, then it might be that you need to set the SMS Message Center number. Send the command <b>AT+CSCA="+919032055002"</b> and press the Enter Key. Send this command in between the AT+CMGF and AT+CMGS commands. Replace the phone number specified in the command above with the SMS Center number of your GSM Service Provider. The message center number is specific to each service provider (for example +919032055002 is the message center number for <i>Tata DoCoMo, Pune, India</i>). You can get the message center number by calling up the customer care center of the GSM Service Provider and asking them for it. 
+</li></ul>
+<p><br/>
+<br/>*<b>Step 3: Exploring further</b><br/>
+Now that you have gotten a taste of how the AT Commands work, you can try out some more of them before moving on to developing sketches for Arduino to use the GPRS Shield. This involves creating a sketch for sending out these same sequence of AT Commands (on your behalf) out the serial port to the GPRS Shield to perform the same task of sending and SMS, making a call or sending data over a GPRS connection. You can go through the <a href="http://garden.seeedstudio.com/images/a/a0/SIM900_ATC_V1_00.pdf">AT Commands reference manual</a> to figure out the sequence of commands required to do a particular task. If while developing an Arduino sketch, you find that the GPRS Shield isn't what you expected it to do, then you will need to check your AT Commands and their sequence. To do this, reload the serial relay sketch attached above in the getting started section into ATmega328P and type out the AT Commands manually and check the output. The responses sent by the GPRS Shield will help you debug the AT Command sequence. <small>NOTE: A C program to perfom the same task as the serial relay sketch present above has also been developed and attached: <a href="res/Softuart_relay_atmega328p.zip" title="File:Softuart relay atmega328p.zip">File:Softuart relay atmega328p.zip</a>. The program was developed on a Windows PC. <a href="http://www.atmel.com/dyn/products/tools_card.asp?tool_id=2725">AVRStudio4</a> was used as the IDE and <a href="http://winavr.sourceforge.net/">WinAVR</a> was used as the compiler. The ZIP file contains an AVRStudio4 Project. The C compiler (WinAVR) will generate an Intel Hex (.hex). To upload this .hex file into an Arduino board outside of Arduino IDE would require a program which is able to communicate with the Arduino boards bootloader. <a href="http://xloader.russemotto.com/">XLoader</a> is such a program which runs on Windows can upload .hex files generated by various compiler into an Arduino Board.</small>
+</p>
+<h3>  SoftwareSerial library Notes </h3>
+<p>With Arduino 1.0 you should be able to use the SoftwareSerial library included with the distribution (instead of NewSoftSerial). However, you must be aware that the buffer reserved for incoming messages are hardcoded to 64 bytes in the library header, "SoftwareSerial.h":
+<code>
+</code></p>
+<ol><li>define _SS_MAX_RX_BUFF 64 // RX buffer size
+</li></ol>
+<p>
+</p><p>This means that if the GPRS module responds with more data than that, you are likely to loose it with a buffer overflow! For instance, reading out an SMS from the module with "AT+CMGR=xx" (xx is the message index), you might not even see the message part because the preceding header information (like telephone number and time) takes up a lot of space. The fix seems to be to manually change _SS_MAX_RX_BUFF to a higher value (but reasonable so you don't use all you precious memory!)
+</p><p>The Softwareserial library has the following limitations (taken from arduino page) If using multiple software serial ports, only one can receive data at a time. 
+<a href="http://arduino.cc/hu/Reference/SoftwareSerial">http://arduino.cc/hu/Reference/SoftwareSerial</a>
+This means that if you try to add another serial device ie grove serial LCD you may get communication errors unless you craft your code carefully.
+</p>
+<h2> A Simple Source Code Examples </h2>
+<p>The demo code below is for the Xduino to send SMS message/dial a voice call/submit a http request to a website and upload datas to the pachube. It has been tested on Arduino Duemilanove but will work on any compatible variant, plesse note that this sketch uses the sorfware UART of ATmega328P. please follow the following steps for running this sketch.
+</p>
+<ol><li> With the GPRS Shield removed, download this sketch into your Arduino.
+</li><li> Disconnect the Xduino from USB port to remove power source.
+</li><li> Set the Serial Port jumpers on the GPRS Shield in SWserial position, to use the Soft Serial port of Arduino.
+</li><li> Connect the antenna to the GPRS Shield and insert the SIM Card.
+</li><li> Mount the GPRS Shield on Arduino.
+</li><li> Connect the Arduino to the computer by USB, and fire up your favorite serial terminal software on computer, choose the COM port for Arduino, set it to operate at 19200 8-N-1.
+</li><li> Type command in the terminal to execute different function, threr are 4 functions in the demo:
+<ol><li>If you input 't', the demo will send a SMS message to another cellphone which you set(you need set the number in the code);
+</li><li> If you input 'd', the program  will dial a call to the other cellphone that you set(it is also need you set in the code );
+</li><li> If you input 'h', it will submit a http request to a web that you want to access(it need you set the web adress in the code), it will return a string from the website if it goes correctly;
+</li><li> If you input 's', it will upload the datas to the pachube(for detail you can refer to the explanation in the code). I strongly recommend you input 'h' before input 's', because uploading datas to the pachube need do some setting, after execute the function of submit a http request, the setting will be set.
+</li></ol>
+</li><li> If the program returns error in the terminal after you typed the command, don't worry, just try input the command again.
+</li></ol>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*Note: this code is a demo for how to using gprs shield to send sms message, dial a voice call and 
+  send a http request to the website, upload data to pachube.com by TCP connection,
+ 
+  The microcontrollers Digital Pin 7 and hence allow unhindered
+  communication with GPRS Shield using SoftSerial Library. 
+  IDE: Arduino 1.0 or later
+  Replace the following items in the code:
+  1.Phone number, don't forget add the country code
+  2.Replace the Access Point Name
+  3. Replace the Pachube API Key with your personal ones assigned
+  to your account at cosm.com
+  */</span>
+ 
+ 
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+<span class="co2">#include &lt;String.h&gt;</span>
+ 
+<span class="kw2">SoftwareSerial</span> mySerial<span class="br0">(</span><span class="nu0">7</span>, <span class="nu0">8</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  mySerial.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">19200</span><span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// the GPRS baud rate   </span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">19200</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// the GPRS baud rate </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="co1">//after start up the program, you can using terminal to connect the serial of gprs shield,</span>
+  <span class="co1">//if you input 't' in the terminal, the program will execute SendTextMessage(), it will show how to send a sms message,</span>
+  <span class="co1">//if input 'd' in the terminal, it will execute DialVoiceCall(), etc.</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="kw1">switch</span><span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+   <span class="br0">{</span>
+     <span class="kw1">case</span> <span class="st0">'t'</span><span class="sy4">:</span>
+       SendTextMessage<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw1">break</span><span class="sy4">;</span>
+     <span class="kw1">case</span> <span class="st0">'d'</span><span class="sy4">:</span>
+       DialVoiceCall<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw1">break</span><span class="sy4">;</span>
+     <span class="kw1">case</span> <span class="st0">'h'</span><span class="sy4">:</span>
+       SubmitHttpRequest<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw1">break</span><span class="sy4">;</span>
+     <span class="kw1">case</span> <span class="st0">'s'</span><span class="sy4">:</span>
+       Send2Pachube<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw1">break</span><span class="sy4">;</span>
+   <span class="br0">}</span> 
+  <span class="kw1">if</span> <span class="br0">(</span>mySerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>mySerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">///SendTextMessage()</span>
+<span class="co1">///this function is to send a sms message</span>
+<span class="kw4">void</span> SendTextMessage<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"AT+CMGF=1<span class="es1">\r</span>"</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">//Because we want to send the SMS in text mode</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT + CMGS = <span class="es1">\"</span>+86138xxxxx615<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//send sms message, be careful need to add a country code before the cellphone number</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"A test message!"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//the content of the message</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span><span class="nu0">26</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//the ASCII code of the ctrl+z is 26</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">///DialVoiceCall</span>
+<span class="co1">///this function is to dial a voice call</span>
+<span class="kw4">void</span> DialVoiceCall<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"ATD + +86138xxxxx615;"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//dial the number</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">///SubmitHttpRequest()</span>
+<span class="co1">///this function is submit a http request</span>
+<span class="co1">///attention:the time of delay is very important, it must be set enough </span>
+<span class="kw4">void</span> SubmitHttpRequest<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CSQ"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// this code is to show the data from gprs shield, in order to easily see the process of how the gprs shield submit a http request, and the following is for this purpose too.</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CGATT?"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+SAPBR=3,1,<span class="es1">\"</span>CONTYPE<span class="es1">\"</span>,<span class="es1">\"</span>GPRS<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//setting the SAPBR, the connection type is using gprs</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+SAPBR=3,1,<span class="es1">\"</span>APN<span class="es1">\"</span>,<span class="es1">\"</span>CMNET<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//setting the APN, the second need you fill in your local apn server</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+SAPBR=1,1"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//setting the SAPBR, for detail you can refer to the AT command mamual</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+HTTPINIT"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//init the HTTP request</span>
+ 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span> 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+HTTPPARA=<span class="es1">\"</span>URL<span class="es1">\"</span>,<span class="es1">\"</span>www.google.com.hk<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// setting the httppara, the second parameter is the website you want to access</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+HTTPACTION=0"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//submit the request </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10000</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//the delay is very important, the delay time is base on the return from the website, if the return datas are very large, the time required longer.</span>
+  <span class="co1">//while(!mySerial.available());</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+HTTPREAD"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// read the data from the website you access</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">300</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">""</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">///send2Pachube()///</span>
+<span class="co1">///this function is to send the sensor data to the pachube, you can see the new value in the pachube after execute this function///</span>
+<span class="kw4">void</span> Send2Pachube<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CGATT?"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CSTT=<span class="es1">\"</span>CMNET<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//start task and setting the APN,</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CIICR"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//bring up wireless connection</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CIFSR"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//get local IP adress</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CIPSPRT=0"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CIPSTART=<span class="es1">\"</span>tcp<span class="es1">\"</span>,<span class="es1">\"</span>api.cosm.com<span class="es1">\"</span>,<span class="es1">\"</span>8081<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//start up the connection</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CIPSEND"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//begin send data to remote server</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4000</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  String humidity <span class="sy1">=</span> <span class="st0">"1031"</span><span class="sy4">;</span><span class="co1">//these 4 line code are imitate the real sensor data, because the demo did't add other sensor, so using 4 string variable to replace.</span>
+  String moisture <span class="sy1">=</span> <span class="st0">"1242"</span><span class="sy4">;</span><span class="co1">//you can replace these four variable to the real sensor data in your project</span>
+  String temperature <span class="sy1">=</span> <span class="st0">"30"</span><span class="sy4">;</span><span class="co1">//</span>
+  String barometer <span class="sy1">=</span> <span class="st0">"60.56"</span><span class="sy4">;</span><span class="co1">//</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"{<span class="es1">\"</span>method<span class="es1">\"</span>: <span class="es1">\"</span>put<span class="es1">\"</span>,<span class="es1">\"</span>resource<span class="es1">\"</span>: <span class="es1">\"</span>/feeds/42742/<span class="es1">\"</span>,<span class="es1">\"</span>params<span class="es1">\"</span>"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//here is the feed you apply from pachube</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">": {},<span class="es1">\"</span>headers<span class="es1">\"</span>: {<span class="es1">\"</span>X-PachubeApiKey<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//in here, you should replace your pachubeapikey</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" <span class="es1">\"</span>_cXwr5LE8qW4a296O-cDwOUvfddFer5pGmaRigPsiO0"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//pachubeapikey</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"jEB9OjK-W6vej56j9ItaSlIac-hgbQjxExuveD95yc8BttXc"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//pachubeapikey</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Z7_seZqLVjeCOmNbEXUva45t6FL8AxOcuNSsQS<span class="es1">\"</span>},<span class="es1">\"</span>body<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" {<span class="es1">\"</span>version<span class="es1">\"</span>: <span class="es1">\"</span>1.0.0<span class="es1">\"</span>,<span class="es1">\"</span>datastreams<span class="es1">\"</span>: "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"[{<span class="es1">\"</span>id<span class="es1">\"</span>: <span class="es1">\"</span>01<span class="es1">\"</span>,<span class="es1">\"</span>current_value<span class="es1">\"</span>: <span class="es1">\"</span>"</span> <span class="sy2">+</span> barometer <span class="sy2">+</span> <span class="st0">"<span class="es1">\"</span>},"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"{<span class="es1">\"</span>id<span class="es1">\"</span>: <span class="es1">\"</span>02<span class="es1">\"</span>,<span class="es1">\"</span>current_value<span class="es1">\"</span>: <span class="es1">\"</span>"</span> <span class="sy2">+</span> humidity <span class="sy2">+</span> <span class="st0">"<span class="es1">\"</span>},"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"{<span class="es1">\"</span>id<span class="es1">\"</span>: <span class="es1">\"</span>03<span class="es1">\"</span>,<span class="es1">\"</span>current_value<span class="es1">\"</span>: <span class="es1">\"</span>"</span> <span class="sy2">+</span> moisture <span class="sy2">+</span> <span class="st0">"<span class="es1">\"</span>},"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"{<span class="es1">\"</span>id<span class="es1">\"</span>: <span class="es1">\"</span>04<span class="es1">\"</span>,<span class="es1">\"</span>current_value<span class="es1">\"</span>: <span class="es1">\"</span>"</span> <span class="sy2">+</span> temperature <span class="sy2">+</span> <span class="st0">"<span class="es1">\"</span>}]},<span class="es1">\"</span>token<span class="es1">\"</span>: <span class="es1">\"</span>lee<span class="es1">\"</span>}"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+ 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span><span class="nu0">26</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//sending</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//waitting for reply, important! the time is base on the condition of internet </span>
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  mySerial.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"AT+CIPCLOSE"</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//close the connection</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  ShowSerialData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> ShowSerialData<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw1">while</span><span class="br0">(</span>mySerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span><span class="br0">)</span>
+    <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>mySerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br clear="all"/>
+</p><p> 
+</p>
+<h2> FAQ </h2>
+<p>Here is the GPRS Shield FAQ that list the frequently problems ,please read it before use : 
+</p>
+<ul><li>Why does GPRS Shield can not work with Stalker v2.1/2.0 via software serial port(D7/D8) ?
+</li></ul>
+<p><font color="grey">     Stalker v2.1/2.0 has used the Digital Pin(D7/D8) , ou need to connected GPRS_TX/GPRS_RX to other Digital Pin as software serial port .And this problem had solved at Stalker 2.2 version.  </font>
+</p>
+<ul><li>Why does the I2C can't be used when I assembled the GPRS Shield to Stalker or other Arduino boards ?
+</li></ul>
+<p><font color="grey">     Because GPRS Shield conflict with other module via I2C . GPRS Shield doesn't use I2C port, you can disconnect the connection from SIM900 I2C port to A4/A5 .   </font>
+</p><p><br/>
+</p>
+<h2> Version Tracker </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.9b
+</td>
+<td width="500px"> Initial public release (beta)
+</td>
+<td width="200px"> Mar 3, 2011
+</td></tr>
+<tr>
+<td width="300px"> v1.2
+</td>
+<td width="500px"> Added software port to power on/off of SIM90
+</td>
+<td width="200px"> Dec 2, 2011
+</td></tr>
+<tr>
+<td width="300px"> v1.4
+</td>
+<td width="500px"> Re-design the power source circuit, re-lay the PCB layout
+</td>
+<td width="200px"> Aug 30, 2012
+</td></tr></table>
+<h2> Related Projects </h2>
+<p><img src="img/Recipe-arduinophone.png" width="180"/>
+</p><p>This is a demo make by GPRS Shield V2.0.
+</p><p>With this demo, we make a mobile phone named Arduino Phone by combining Arduino, GPRS Shield shield and other modules.
+</p><p><a href="http://www.instructables.com/id/ArduinoPhone/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p>
+<h2> Resources </h2>
+<p><a href="res/GPRSshield_Schematic.pdf">GPRS Shield v1.4 Schematic</a>
+<br/>
+<a href="res/GPRS_shield_v1.4.zip">GPRS Shield v1.4 eagle file</a>
+<br/>
+<a href="http://garden.seeedstudio.com/images/a/a0/SIM900_ATC_V1_00.pdf">AT Commands v1.00</a> &amp; <a href="http://garden.seeedstudio.com/images/a/a8/SIM900_AT_Command_Manual_V1.03.pdf">AT Commands v1.03</a> &amp; 
+<a href="res/AT_Commands_v1.11.pdf">AT Commands v1.11</a> &amp;
+<a href="http://garden.seeedstudio.com/images/e/e3/SIM900_HD_V1.05.pdf">Hardware Design</a> - SIM900 Documentation
+</p><p><a href="http://www.vishay.com/docs/70415/si5902bd.pdf">Si5902BDC</a> - Dual N-Channel 30 V (D-S) MOSFETs (used for 2.8V &lt;&gt; 5.0V translation for Serial Interface)
+</p><p><a href="http://garden.seeedstudio.com/images/8/87/SIM900_firmware_and_tool.zip">SIM900 firmware and tool(firmware:1137B08SIM900M64_ST)</a> for firmware upgrade
+</p><p><a href="http://garden.seeedstudio.com/images/f/f9/1137B09SIM900M64_ST.zip">firmware:1137B09SIM900M64_ST</a>
+</p><p><a href="res/1137B13SIM900M64_ST.zip">SIM900 Firmware 1137B13SIM900M64_ST.zip</a>
+</p><p><a href="http://www.seeedstudio.com/document/SIM900datasheeet.zip">SIM900datasheeet</a>
+</p><p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/3WL8DGX" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

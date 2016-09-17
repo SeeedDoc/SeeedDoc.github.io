@@ -1,0 +1,723 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow IO pin mapping</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow IO pin mapping</h1>
+<h1>  Xadow IO pin mapping </h1>
+<p>Single reference page for all pin information including:-
+</p>
+<ul><li> How to use each pin in your Arduino code
+</li><li> Xadow FFC to Atmega32u4 pin mapping
+</li><li> pins that have interrupts and timers
+</li><li> the 2 serial ports, IIc and ISP 
+</li><li> additional on board IO, that might be hacked
+</li></ul>
+<p>The tables provide different views of the data and are especially useful when you are planning which modules to use and which IO pins for direct use!
+</p>
+<h2> Xadow FFC IO bus and matching Arduino and Atmega information and example Arduino code.</h2>
+<table>
+<tr>
+<td colspan="4"> <b>Xadow FFC pins</b>
+</td>
+<td colspan="2"> <b>Arduino</b>
+</td>
+<td colspan="2"> <b>Atmega32u4 pins</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <b>Name</b>
+</td>
+<td> <b>IO function</b>
+</td>
+<td> <b>Alternate use</b>
+</td>
+<td> <b>#</b>
+</td>
+<td> <b>IO Pin</b>
+</td>
+<td> <b>code example(s)</b>
+</td>
+<td> <b>Name (</b>interrupts in red<b>)</b>
+</td>
+<td> <b>#</b>
+</td>
+<td> <b>Notes</b>
+</td></tr>
+<tr>
+<td> P1
+</td>
+<td> Digital Pin
+</td>
+<td> ISP SCK
+</td>
+<td> 1
+</td>
+<td> <b>15</b>
+</td>
+<td> PinMode(15, OUTPUT); digitalWrite(15, HIGH);
+</td>
+<td> PB1<b>(PCINT1</b>/SCLK)
+</td>
+<td> 9
+</td>
+<td> ISP SMD header pads also on rear of Xado Main board
+</td></tr>
+<tr>
+<td> P2
+</td>
+<td> Digital Pin
+</td>
+<td> ISP MOSI
+</td>
+<td> 2
+</td>
+<td> <b>16</b>
+</td>
+<td> PinMode(16, OUTPUT); digitalWrite(16, HIGH);
+</td>
+<td> PB2(PDI/<b>PCINT2</b>/MOSI)
+</td>
+<td> 10
+</td></tr>
+<tr>
+<td> P3
+</td>
+<td> Digital Pin
+</td>
+<td> ISP MISO
+</td>
+<td> 3
+</td>
+<td> <b>14</b>
+</td>
+<td> PinMode(14, OUTPUT); digitalWrite(14, HIGH);
+</td>
+<td> PB3(PDO/<b>PCINT3</b>/MISO)
+</td>
+<td> 11
+</td></tr>
+<tr>
+<td> P4
+</td>
+<td> Analogue Pin
+</td>
+<td> Digital pin!
+</td>
+<td> 4
+</td>
+<td> <b>A5</b>
+</td>
+<td> analogWrite(A5, 128); pinMode(A5, OUTPUT); digitalWrite(A5, HIGH);
+</td>
+<td> PF0(ADC0)
+</td>
+<td> 41
+</td>
+<td> Arduino analogue pins can also be used as digital pins!
+</td></tr>
+<tr>
+<td> P5
+</td>
+<td> Digital Pin
+</td>
+<td> IIC SCL
+</td>
+<td> 9
+</td>
+<td> <b>3</b>
+</td>
+<td> PinMode(3, OUTPUT); digitalWrite(3, HIGH);
+</td>
+<td> PD0(OC0B/SCL/<b>INT0</b>)
+</td>
+<td> 18
+</td>
+<td>
+</td></tr>
+<tr>
+<td> P6
+</td>
+<td> Digital Pin
+</td>
+<td> IIC SDA
+</td>
+<td> 10
+</td>
+<td> <b>2</b>
+</td>
+<td> PinMode(2, OUTPUT); digitalWrite(2, HIGH);
+</td>
+<td> PD1 (SDA/<b>INT1</b>)
+</td>
+<td> 19
+</td>
+<td>
+</td></tr>
+<tr>
+<td> P7
+</td>
+<td> Digital Pin
+</td>
+<td> Serial Rxd
+</td>
+<td> 11
+</td>
+<td> <b>0</b>
+</td>
+<td> PinMode(0, OUTPUT); digitalWrite(0, HIGH);
+</td>
+<td> PD2(RXD/<b>INT2</b>)
+</td>
+<td> 20
+</td>
+<td> See Xadow BLE/GPS examples for these serial pin usage info.
+<p>NOT same serial port uploading code–see Red/Green LED below.
+</p>
+</td></tr>
+<tr>
+<td> P8
+</td>
+<td> Digital Pin
+</td>
+<td> Serial Txd
+</td>
+<td> 12
+</td>
+<td> <b>1</b>
+</td>
+<td> PinMode(1, OUTPUT); digitalWrite(1, HIGH);
+</td>
+<td> PD3(TXD/<b>INT3</b>)
+</td>
+<td> 21
+</td></tr></table>
+<h2> Some MORE Xadow IO pins - only on the Main module, NOT on the FFC bus!</h2>
+<table>
+<tr>
+<td colspan="4"> <b>Xadow pins</b>
+</td>
+<td colspan="2"> <b>Arduino</b>
+</td>
+<td colspan="2"> <b>Atmega32u4 pins</b>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <b>Name</b>
+</td>
+<td> <b>IO function</b>
+</td>
+<td> <b>Alternate use</b>
+</td>
+<td> <b>#</b>
+</td>
+<td> <b>IO Pin</b>
+</td>
+<td> <b>code example(s)</b>
+</td>
+<td> <b>Name (</b>interrupts in red<b>)</b>
+</td>
+<td> <b>#</b>
+</td>
+<td> <b>Notes</b>
+</td></tr>
+<tr>
+<td> Red LED
+</td>
+<td> Rx
+</td>
+<td>
+</td>
+<td> -
+</td>
+<td> <b>17</b>
+</td>
+<td> PinMode(17, OUTPUT); digitalWrite(17, HIGH);
+</td>
+<td> PB0(SS/<b>PCINT0</b>)
+</td>
+<td> 8
+</td>
+<td> Serial port uploading code
+</td></tr>
+<tr>
+<td> Green LED
+</td>
+<td> Tx
+</td>
+<td>
+</td>
+<td> -
+</td>
+<td> <b>11</b>
+</td>
+<td> PinMode(11, OUTPUT); digitalWrite(11, HIGH);
+</td>
+<td> PB7(<b>PCINT7</b>/OC0A/OC1C/!RTS)
+</td>
+<td> 12
+</td></tr>
+<tr>
+<td> Wake
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> -
+</td>
+<td> <b>10</b>
+</td>
+<td> Have not yet connected and validated this!
+</td>
+<td> PB^/A10/D10
+</td>
+<td> 30
+</td>
+<td> On board switch – you need super soldering skills to access this!
+</td></tr></table>
+<p>Note: Reset switch is connected to Atmega32u4 Reset pin 13 via a diode – so no access to the 32u4 IO pin AT THE RESET SWITCH!
+</p><p><br/>
+</p>
+<h2> The BIG Table of Xadow modules and the IO bus pin use for each module.</h2>
+<p>Why such a big complicated table? Well it brings together all of the IO information in one place, but more importantly it lets you see which IO pins are still available once you have selected several Xadow modules! Also the schematic has different FFC pin numbers to the rest of the wiki documentation!
+</p><p>Notes:-
+</p><p>1. Remember that IIC devices are daisy chained – that is they can connect in parallel, so you can have more than one IIC device connected to the same pins!
+</p><p>2. Need more IO pins? You may be able to use ONE pin for several different uses, the same way the vibration motor and buzzer are sharing one pin, or in some situations you can use the same pin for different purposes at DIFFERENT TIMES. For example you might set a pin as output to trigger an ultrasonic sensor, then change the pin to input to detect when the signal is received!
+</p><p>3. Most IIC modules {except the Main Board module, LED, RTC}, ALSO have IIC breakout pins.
+</p><p>So items in purple in the IIC SCL &amp; IIC SDA columns do NOT also have breakout pins!
+</p><p>4. ** Additional details highlighted in yellow in center of table document the <b>ADDITIONAL</b> breakout pins on each Xadow module!
+</p><p>5. ? = Don't know, or not yet verified!
+</p>
+<table>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td> <center>SCK</center>
+</td>
+<td> <center>MOSI</center>
+</td>
+<td> <center>MISO</center>
+</td>
+<td> <center>A5</center>
+</td>
+<td> <center>3</center>
+</td>
+<td> <center>2</center>
+</td>
+<td> <center>1</center>
+</td>
+<td> <center>0</center>
+</td>
+<td> <b>Arduino Pin name</b>
+</td></tr>
+<tr>
+<td>
+</td>
+<td> <b>Interrupts in red--------&gt;</b>
+</td>
+<td> PB1<b>(PCINT1</b>/SCLK)
+</td>
+<td> PB2(PDI/<b>PCINT2</b>/MOSI)
+</td>
+<td> PB3(PDO/<b>PCINT3</b>/MISO)
+</td>
+<td> PF0(ADC0)
+</td>
+<td> PD0(OC0B/SCL/INT0)
+</td>
+<td> PD1(SDA/<b>INT1</b>)
+</td>
+<td> PD2(RXD/<b>INT2</b>)
+</td>
+<td> PD3(TXD/<b>INT3</b>)
+</td>
+<td> Atmega32u4 pin Name
+</td></tr>
+<tr>
+<td> <center><b>IIC = I2C</b></center>
+</td>
+<td>
+</td>
+<td> 9
+</td>
+<td> 10
+</td>
+<td> 11
+</td>
+<td> 41
+</td>
+<td> 18
+</td>
+<td> 19
+</td>
+<td> 20
+</td>
+<td> 21
+</td>
+<td> Atmega32u4 pin#
+</td></tr>
+<tr>
+<td>
+</td>
+<td>
+</td>
+<td> P1, 1
+</td>
+<td> P2, 2
+</td>
+<td> P3, 3
+</td>
+<td> P4, 4
+</td>
+<td> P5, 9
+</td>
+<td> P6, 10
+</td>
+<td> P7, 11
+</td>
+<td> P8,12
+</td>
+<td> FFC pin Name, #
+</td></tr>
+<tr>
+<td> <b>Xadow Modules </b>
+</td>
+<td> <b>Module Control Mode &amp; Address</b>
+</td>
+<td> <center>Digital Pin </center>
+</td>
+<td> <center>Digital Pin </center>
+</td>
+<td> <center>Digital Pin </center>
+</td>
+<td> <center><b>Analog or </b>Digital Pin </center>
+</td>
+<td> <center><b>IIC SCL</b></center>
+</td>
+<td> <center><b>IIC SDA</b></center>
+</td>
+<td> <center><b>Serial Rxd</b></center>
+</td>
+<td> <center><b>Serial Txd</b></center>
+</td>
+<td> <b>Xadow Pin function</b>
+</td></tr>
+<tr>
+<td> <center>3-Axis Accelerometer </center>
+</td>
+<td> <center>IIC 0x53</center>
+</td>
+<td> SCK
+</td>
+<td> MOSI
+</td>
+<td> MISO
+</td>
+<td> <center>A5</center>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td> Rxd
+</td>
+<td> TxD
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>BaroMeter </center>
+</td>
+<td> <center>IIC 0x77</center>
+</td>
+<td> SCK
+</td>
+<td> MOSI
+</td>
+<td> MISO
+</td>
+<td> <center>A5</center>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td> Rxd
+</td>
+<td> TxD
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>BLE Slave </center>
+</td>
+<td> <center>Serial </center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td colspan="2"> <center>RX/TX </center>
+</td>
+<td> Plus pads specific to BLE on rear
+</td></tr>
+<tr>
+<td> <center>Breakout </center>
+</td>
+<td> <center>None!</center>
+</td>
+<td> SCK
+</td>
+<td> MOSI
+</td>
+<td> MISO
+</td>
+<td> <center>A5</center>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td> Rxd
+</td>
+<td> TxD
+</td>
+<td> + Grove I2C &amp; Serial sockets
+</td></tr>
+<tr>
+<td> <center>LED Controller </center>
+</td>
+<td> <center>IIC 0x04</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>OLED </center>
+</td>
+<td> <center>IIC 0x3C</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>Vibration Motor </center>
+</td>
+<td> <center>Digital Signal </center>
+</td>
+<td>
+</td>
+<td> <center>H </center>
+</td>
+<td>
+</td>
+<td> <center>H </center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> <i><b>Disconnect module BEFORE using ISP</b></i>
+</td></tr>
+<tr>
+<td> <center>RTC </center>
+</td>
+<td> <center>IIC 0x68</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> rear pad connect INTB – Int0???
+</td></tr>
+<tr>
+<td> <center>Buzzer </center>
+</td>
+<td> <center>Digital Signal </center>
+</td>
+<td> <center>H </center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>H </center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <i><b>Disconnect module BEFORE using ISP</b></i>
+</td></tr>
+<tr>
+<td> <center>Digital Compass </center>
+</td>
+<td> <center>IIC 0x1E</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>Motor </center>
+</td>
+<td> <center>TBD </center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>GPS </center>
+</td>
+<td> <center>Serial </center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td colspan="2"> <center>RX/TX </center>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center>Storage </center>
+</td>
+<td> <center>IIC 0x50 &amp; 0x51</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td> <center>?</center>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> <center><b>Main Board</b></center>
+</td>
+<td> <center>?IIC master =0x00?</center>
+</td>
+<td> ISP – SCK
+</td>
+<td> ISP MOSI
+</td>
+<td> ISP MISO
+</td>
+<td>
+</td>
+<td> <center>SCL</center>
+</td>
+<td> <center>SDA</center>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> All via SMD pads on rear.
+</td></tr></table>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

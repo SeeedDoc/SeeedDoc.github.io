@@ -1,0 +1,464 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - 3-axis Compass v0.9b</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - 3-axis Compass v0.9b</h1>
+
+<p>3-Axis Compass module, a member of Grove family uses I²C based Honeywell HMC5883 digital compass. This ASIC is equipped with high resolution HMC118X magneto-resistive sensors and a 12-bit ADC. It provides compass heading accuracy up to 1° to 2°. Signal conditioning like amplification, automatic degaussing strap drivers and offset cancellation are inbuilt. This Grove module also includes a MIC5205-2.5 for power supply requirement. Hence user can connect any 3.3V to 6V DC power supply. 
+</p><p><b>Model:<a href="http://www.seeedstudio.com/depot/grove-3axis-compass-p-759.html?cPath=144_145">SEN12753P</a></b>
+</p><p><img src="img/3_axis_compass.jpg" width="400"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>Grove compatible interface 
+</li><li>3-Axis Magneto-resistive type sensors 
+</li><li>I²C serial interface 
+</li><li>2.0cm x 2.0cm Grove module 
+</li><li>1° to 2° Degree Heading Accuracy 
+</li><li>Up to 116 Hz Maximum Output Rate 
+</li><li>Built-In Self Test
+</li></ul>
+<h2>  Applications Ideas  </h2>
+<ul><li>Low cost compassing 
+</li><li>Magnetometry 
+</li><li>Pedestrian Navigation 
+</li><li>Hobby Auto Navigation 
+</li><li>Compassing support for mobile devices and portable computers (i.e connected via Blue-tooth or UART)
+</li></ul>
+<h2>  Cautions  </h2>
+<h2>  Schematic  </h2>
+<p><img src="img/Compass_picture1.png" width="639"/><br/>
+</p>
+<h2>  Specifications  </h2>
+<h3>  Key Specification  </h3>
+<table border="1">
+<tr>
+<td width="400"> <b>Items</b>
+</td>
+<td width="400"> <b>Min</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> PCB Size
+</td>
+<td> 2.0cm*2.0cm
+</td></tr>
+<tr style="font-size: 90%">
+<td> Interface
+</td>
+<td> 2.0mm pitch pin header
+</td></tr>
+<tr style="font-size: 90%">
+<td> IO Structure
+</td>
+<td> SCL,SDA,VCC,GND
+</td></tr>
+<tr style="font-size: 90%">
+<td> ROHS
+</td>
+<td> YES
+</td></tr></table>
+<h3>  Electronic Characterstics  </h3>
+<table border="1">
+<tr>
+<td width="300"> <b>Items</b>
+</td>
+<td width="300"> <b>Conditions</b>
+</td>
+<td width="100"> <b>Min</b>
+</td>
+<td width="100"> <b>Norm</b>
+</td>
+<td width="100"> <b>Max</b>
+</td>
+<td width="100"> <b>Unit</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> VCC
+</td>
+<td> -
+</td>
+<td> 3.3
+</td>
+<td> 5.0
+</td>
+<td> 6.0
+</td>
+<td> Volts
+</td></tr>
+<tr style="font-size: 90%">
+<td rowspan="3"> Current Draw
+</td>
+<td> Sleep Mode
+</td>
+<td> -
+</td>
+<td> 2.5
+</td>
+<td> -
+</td>
+<td> μA
+</td></tr>
+<tr style="font-size: 90%">
+<td> Idle Mode
+</td>
+<td> -
+</td>
+<td> 240
+</td>
+<td> -
+</td>
+<td> μA
+</td></tr>
+<tr style="font-size: 90%">
+<td> Measurement Mode (8Hz averaged)
+</td>
+<td> -
+</td>
+<td> 640
+</td>
+<td> -
+</td>
+<td> μA
+</td></tr>
+<tr style="font-size: 90%">
+<td> Resolution
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> 10
+</td>
+<td> -
+</td>
+<td> milli-gauss
+</td></tr>
+<tr style="font-size: 90%">
+<td> Linearity
+</td>
+<td> ±2.0 gauss input range
+</td>
+<td> -
+</td>
+<td> 0.1
+</td>
+<td> -
+</td>
+<td> ±% FS
+</td></tr>
+<tr style="font-size: 90%">
+<td> Output Rate
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> 15
+</td>
+<td> 116
+</td>
+<td> HZ
+</td></tr>
+<tr style="font-size: 90%">
+<td> Measurement Period
+</td>
+<td> From receiving command to data ready
+</td>
+<td> -
+</td>
+<td> 8.3
+</td>
+<td> -
+</td>
+<td> msec
+</td></tr>
+<tr style="font-size: 90%">
+<td> Operating Temperature
+</td>
+<td> Ambient
+</td>
+<td> -30
+</td>
+<td> 85
+</td>
+<td> °C
+</td>
+<td> milli-gauss
+</td></tr>
+<tr style="font-size: 90%">
+<td> Storage Temperature
+</td>
+<td> Ambient, unbiased
+</td>
+<td> -40
+</td>
+<td> -
+</td>
+<td> 125
+</td>
+<td> °C
+</td></tr></table>
+<p><br/>
+</p>
+<h2>  Usage  </h2>
+<p>Connect the 3-Axis Compass to Seeeduino through the Grove – Basic Shield using the I²C interface. The Grove Base board provides the 5V DC (3.3V DC – 6V DC allowed). 
+</p><p><b>Device Operating Modes:</b>
+</p><p>HMC5883 has five modes of operation –- Continuous- Measurement Mode, Single-Measurement Mode, Idle Mode, Sleep Mode and Off Mode. These modes provide various levels of power management. Operation mode should be selected based on whether the system is continuously supplied or battery operated. 
+</p><p><b>Registers:</b>
+</p><p>There are 13 registers provided by HMC5883. Out of these, three registers - Configuration register A, Configuration Register B and Mode Register decides the working of the device. The remaining registers are read only Data Output register, Status Register and Identification registers.<br/>
+</p>
+<center>
+<pre> <img src="img/Compass_picture4.png" width="726"/>
+ Table: HMC5883 Registers
+</pre>
+</center>
+<p>For normal operation Configuration Registers A and B need not be changed. The Mode Register should be configured to an appropriate value (eg: Continuous measurement mode). Data Output registers X, Y and Z are read by accessing the address location 03 through 08. 
+</p><p>Please refer the data sheet for complete information on the above mentioned modes and registers.<br/>
+</p>
+<h3>  Hardware Installation </h3>
+<h3>  Programming  </h3>
+<p>The following sketch demonstrates a simple application of reading the angle between X axis and South direction. To use / test this application, please keep the compass on a leveled surface. 
+</p><p>Algorithm: 
+</p>
+<ul><li>I²C connection is established with HMC5883 
+</li><li>Mode resister of HMC5883 is set to Continuous Measurement Mode. 
+</li><li>The values from Data Output registers are read. 
+</li><li>The angle between X axis and South direction is calculated mathematically.
+</li></ul>
+<p>Demo Sketch: 
+</p><p>Please read the comments in the below demo program. All necessary operations and logic involved with HMC5883 are explained in detail. 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+<span class="coMULTI">/*
+3-Axis Compass Module (HMC5883) Demo code.
+2010 Copyright (c) Seeed Technology Inc.  All right reserved.
+ 
+Original Author: Leo
+Contribution: Visweswara R ( Code Redesign and Comments)
+ 
+This demo code is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+ 
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+ 
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+For more details about the product please check http://www.seeedstudio.com/depot/
+*/</span>
+ 
+<span class="co2">#include &lt;Wire.h&gt;</span>
+<span class="co2">#include &lt;math.h&gt;</span>
+ 
+<span class="co1">// Shift the device's documented slave address (0x3C) for write operation</span>
+<span class="co1">// 1 bit right.This compensates for how the TWI library only wants the</span>
+<span class="co1">// 7 most significant bits (with the high bit padded with 0)</span>
+ 
+<span class="co2">#define HMC5883_WriteAddress 0x1E //  i.e 0x3C &gt;&gt; 1</span>
+<span class="co2">#define HMC5883_ModeRegisterAddress 0x02</span>
+<span class="co2">#define HMC5883_ContinuousModeCommand 0x00</span>
+<span class="co2">#define HMC5883_DataOutputXMSBAddress  0x03</span>
+ 
+<span class="kw4">int</span> regb<span class="sy1">=</span><span class="nu12">0x01</span><span class="sy4">;</span>
+<span class="kw4">int</span> regbdata<span class="sy1">=</span><span class="nu12">0x40</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> outputData<span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>  
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Wire</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">//Initiate the Wire library and join the I2C bus as a master</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="kw4">int</span> i,x,y,z<span class="sy4">;</span>
+    <span class="kw4">double</span> angle<span class="sy4">;</span>
+ 
+    <span class="kw2">Wire</span>.<span class="kw3">beginTransmission</span><span class="br0">(</span>HMC5883_WriteAddress<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Wire</span>.<span class="kw3">send</span><span class="br0">(</span>regb<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Wire</span>.<span class="kw3">send</span><span class="br0">(</span>regbdata<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Wire</span>.<span class="kw3">endTransmission</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Wire</span>.<span class="kw3">beginTransmission</span><span class="br0">(</span>HMC5883_WriteAddress<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Initiate a transmission with HMC5883 (Write address).</span>
+    <span class="kw2">Wire</span>.<span class="kw3">send</span><span class="br0">(</span>HMC5883_ModeRegisterAddress<span class="br0">)</span><span class="sy4">;</span>       <span class="co1">//Place the Mode Register Address in send-buffer.</span>
+    <span class="kw2">Wire</span>.<span class="kw3">send</span><span class="br0">(</span>HMC5883_ContinuousModeCommand<span class="br0">)</span><span class="sy4">;</span>     <span class="co1">//Place the command for Continuous operation Mode in send-buffer.</span>
+    <span class="kw2">Wire</span>.<span class="kw3">endTransmission</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                       <span class="co1">//Send the send-buffer to HMC5883 and end the I2C transmission.</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+ 
+    <span class="kw2">Wire</span>.<span class="kw3">beginTransmission</span><span class="br0">(</span>HMC5883_WriteAddress<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//Initiate a transmission with HMC5883 (Write address).</span>
+    <span class="kw2">Wire</span>.<span class="kw3">requestFrom</span><span class="br0">(</span>HMC5883_WriteAddress,<span class="nu0">6</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">//Request 6 bytes of data from the address specified.</span>
+ 
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+ 
+    <span class="co1">//Read the value of magnetic components X,Y and Z</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span><span class="nu0">6</span> <span class="sy1">&lt;=</span> <span class="kw2">Wire</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="co1">// If the number of bytes available for reading be &lt;=6.</span>
+    <span class="br0">{</span>
+        <span class="kw1">for</span><span class="br0">(</span>i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="nu0">6</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+        <span class="br0">{</span>
+            outputData<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span><span class="kw2">Wire</span>.<span class="kw3">receive</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//Store the data in outputData buffer</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+ 
+    x<span class="sy1">=</span>outputData<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">8</span> <span class="sy3">|</span> outputData<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">//Combine MSB and LSB of X Data output register</span>
+    z<span class="sy1">=</span>outputData<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">8</span> <span class="sy3">|</span> outputData<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">//Combine MSB and LSB of Z Data output register</span>
+    y<span class="sy1">=</span>outputData<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="nu0">8</span> <span class="sy3">|</span> outputData<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">//Combine MSB and LSB of Y Data output register</span>
+ 
+ 
+    angle<span class="sy1">=</span> <span class="kw3">atan2</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span>y,<span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span>x<span class="br0">)</span> <span class="sy2">*</span> <span class="br0">(</span><span class="nu0">180</span> <span class="sy2">/</span> <span class="nu16">3.14159265</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">180</span><span class="sy4">;</span> <span class="co1">// angle in degrees</span>
+ 
+    <span class="coMULTI">/*
+ 
+  Refer the following application note for heading calculation.
+  http://www.ssec.honeywell.com/magnetic/datasheets/lowcost.pdf  
+  ----------------------------------------------------------------------------------------
+  atan2(y, x) is the angle in radians between the positive x-axis of a plane and the point
+  given by the coordinates (x, y) on it. 
+  ----------------------------------------------------------------------------------------
+ 
+  This sketch does not utilize the magnetic component Z as tilt compensation can not be done without an Accelerometer
+ 
+  -----------------&gt;y
+  |
+  |
+  |
+  |
+  |
+  |
+ \/
+  x 
+ 
+ 
+ 
+     N 
+ NW  |  NE
+     |  
+W----------E
+     |
+ SW  |  SE
+     S
+ 
+ */</span> 
+ 
+ 
+    <span class="co1">//Print the approximate direction</span>
+ 
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"You are heading "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">22.5</span><span class="br0">)</span> <span class="sy3">||</span> <span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">337.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"South"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">22.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">67.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"South-West"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">67.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">112.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"West"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">112.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">157.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"North-West"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">157.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">202.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"North"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">202.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">247.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"NorthEast"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">247.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">292.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"East"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span>angle <span class="sy1">&gt;</span> <span class="nu16">292.5</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu16">337.5</span> <span class="br0">)</span><span class="br0">)</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"SouthEast"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">": Angle between X-axis and the South direction "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span><span class="nu0">0</span> <span class="sy1">&lt;</span> angle<span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>angle <span class="sy1">&lt;</span> <span class="nu0">180</span><span class="br0">)</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+        angle<span class="sy1">=</span>angle<span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span>
+    <span class="br0">{</span>
+        angle<span class="sy1">=</span><span class="nu0">360</span><span class="sy2">-</span>angle<span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>angle,<span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">" Deg"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+<img src="img/Compass_picture2.png" width="639"/><br/><img src="img/Compass_picture3.png" width="639"/><br/>Fig: Serial Monitor Outputs
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<h2>  FAQ  </h2>
+<p>Please list your questions here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss. 
+</p><p><br/>
+</p>
+<h2>  Version Tracker  </h2>
+<table border="1">
+<tr>
+<td width="300"> <b>Revision</b>
+</td>
+<td width="500"> <b>Descriptions</b>
+</td>
+<td width="200"> <b>Release Date</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> <a href="/2-axis_compass_Module" title="2-axis compass Module">2-axis compass Module</a> v0.9b
+</td>
+<td> Initial public release
+</td>
+<td> Jun 08, 2009
+</td></tr>
+<tr style="font-size: 90%">
+<td> <a href="/w/index.php?title=Grove_-_3-axis_Compass&amp;action=edit&amp;redlink=1" title="Grove - 3-axis Compass (page does not exist)">Grove - 3-axis Compass</a> v0.9b
+</td>
+<td> Revision to Grove series(NPI)
+</td>
+<td> Dec 7, 2010
+</td></tr>
+<tr style="font-size: 90%">
+<td> <a href="/w/index.php?title=Grove_-_3-axis_Compass&amp;action=edit&amp;redlink=1" title="Grove - 3-axis Compass (page does not exist)">Grove - 3-axis Compass</a> v0.9b
+</td>
+<td> Revision to Grove series(REV)
+</td>
+<td> May 20, 2011
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources </h2>
+<p>The resources need to be downloaded, like Eagle file, Demo code, project or other datasheet.
+</p>
+<ul><li><a href="res/Compass.zip" title="File:Compass.zip">File:Compass.zip</a><br/>
+</li><li><a href="res/HMC5883.pdf" title="File:HMC5883.pdf">File:HMC5883.pdf</a><br/>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy: <a href="http://www.seeedstudio.com/depot/grove-3axis-compass-p-759.html?cPath=144_145">http://www.seeedstudio.com/depot/grove-3axis-compass-p-759.html?cPath=144_145</a>.
+</p><p>You can buy the old version <a href="/2-axis_compass_Module" title="2-axis compass Module">2-axis compass Module</a> at: <a href="http://www.seeedstudio.com/depot/2axis-compass-module-p-235.html?cPath=84_89&amp;zenid=7ea361aeff3addc10919614da3399d85">http://www.seeedstudio.com/depot/2axis-compass-module-p-235.html?cPath=84_89&amp;zenid=7ea361aeff3addc10919614da3399d85</a> <br/>
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/GROVE_System" title="GROVE System">GROVE - Starter Bundle</a>
+</li><li><a href="/2-axis_compass_Module" title="2-axis compass Module">2-axis compass Module</a>
+</li><li> <a href="/Grove-I2C_3-axis_Accelerometer" title="Grove - I2C 3-axis Accelerometer">Grove - I2C 3-axis Accelerometer</a>
+</li><li> <a href="/Grove-3-axis_Gyro" title="Grove - 3-axis Gyro">Grove - 3-axis Gyro</a>
+</li><li> <a href="/Grove-Water_Sensor" title="Grove - Water Sensor">Grove - Water Sensor</a>
+</li><li> <a href="/Grove-Light_Sensor" title="Grove - Light Sensor">Grove - Light Sensor</a>
+</li><li> <a href="/Grove-Touch_Sensor" title="Grove - Touch Sensor">Grove - Touch Sensor</a>
+</li><li> <a href="/w/index.php?title=Grove_-_Temp%26Humi_Sensor&amp;action=edit&amp;redlink=1" title="Grove - Temp&amp;Humi Sensor (page does not exist)">Grove - Temp&amp;Humi Sensor</a>
+</li><li> <a href="/Grove-Magnetic_Switch" title="Grove - Magnetic Switch">Grove - Magnetic Switch</a>
+</li><li> <a href="/Grove-Alcohol_Sensor" title="Grove - Alcohol Sensor">Grove - Alcohol Sensor</a>
+</li><li> <a href="/w/index.php?title=Grove_-_OLED_128*64_reversion&amp;action=edit&amp;redlink=1" title="Grove - OLED 128*64 reversion (page does not exist)">Grove - OLED 128*64 reversion</a>
+</li><li> <a href="/Grove-Serial_LCD" title="Grove - Serial LCD">Grove - Serial LCD</a>
+</li><li> <a href="/Grove-RTC" title="Grove - RTC">Grove - RTC</a>
+</li><li> <a href="/Grove-Electricity_Sensor" title="Grove - Electricity Sensor">Grove - Electricity Sensor</a>
+</li><li> <a href="/Grove-Sound_Sensor" title="Grove - Sound Sensor">Grove - Sound Sensor </a>
+</li><li> <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

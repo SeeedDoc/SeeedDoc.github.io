@@ -1,0 +1,193 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Light Sensor v1.2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Light Sensor v1.2</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Grove-Light_Sensor_v1.2_product_view_700_.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+The Grove - Light Sensor v1.2 is updated version of  Grove - Light Sensor 1.0 which is aimed at measuring light levels in daily life. It is an analog module and output various electrical signals which can be converted to different ranges(that depends on the Analog-to-Digital-Converter on your controller board. For example, it will output 0-255 for an 8-bit ADC). It integrates a high-sensitive and reliable phototriode, and is interfaced with <a href="/Grove_System">Grove</a> port which will save you a lot of work in the wiring.
+</p>
+<h3> Version Tracker</h3>
+<table>
+<tr>
+<td>Product reversion </td>
+<td> Release date</td>
+<td> Support status </td>
+<td> Notes
+</td></tr>
+<tr>
+<td> <a href="/Grove-Light_Sensor">Grove - Light Sensor 1.0</a> </td>
+<td> April 28 2013‎ </td>
+<td> Supported </td>
+<td>
+</td></tr>
+<tr>
+<td> Version 1.2(current version) </td>
+<td> Dec 2015 </td>
+<td> Supported </td>
+<td>
+</td></tr></table>
+<p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-Light-Sensor-p-746.html?cPath=25_27"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li>Easy to use, because it is interfaced with Grove port.
+</li><li>High reliability and sensibility
+</li><li>Small footprint
+</li><li>Recognize wider spectrum
+</li></ul>
+<h2> Specifications</h2>
+<table>
+<tr>
+<td> Operating voltage(V) </td>
+<td> 3 volts-5 volts
+</td></tr>
+<tr>
+<td> Operating current(mA) </td>
+<td> 0.5 mA-3 mA
+</td></tr>
+<tr>
+<td> Response time </td>
+<td> 20-30 milliseconds
+</td></tr>
+<tr>
+<td> Peak Wavelength </td>
+<td> 540 nm
+</td></tr>
+<tr>
+<td> Phototriode </td>
+<td> LS06-MΦ5(<a href="res/LS06-MΦ5_datasheet.pdf">datasheet</a>)
+</td></tr>
+<tr>
+<td> Weight </td>
+<td> 4 g
+</td></tr></table>
+<p><b>Note</b> you can get more Information about light level(illumination) in daily life <a href="http://www.engineeringtoolbox.com/light-level-rooms-d_708.html">here</a>.
+</p>
+<h2> Hardware Overview</h2>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove-Light_Sensor_v1.2_components_view_1200_.jpg" width="600"/></div></div>
+<dl><dt>①<b>Grove interface</b>
+</dt><dd> Connect main control board such as <a href="/Seeeduino_v4.2">Seeeduino</a> board with driver board.
+</dd><dt>②<b>Sensor to light</b>
+</dt></dl>
+<h2> Get Started</h2>
+<p>This part will show you some basic examples as a hint for applications on different development board families.
+</p><p><br/>
+</p>
+<h3> With Arduino</h3>
+<h4> Material required</h4>
+<ul><li><a href="http://www.seeedstudio.com/depot/Seeeduino-V42-p-2517.html?cPath=6_7">Seeeduino V4.2</a>
+</li><li><a href="/Base_shield_v2">Base shield V2.0</a>
+</li><li>USB cable (type A to micro type B)
+</li></ul>
+<h4> Connections</h4>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Light_Sensor_Connector.jpg.jpg" width="600"/></div></div>
+<h3> Flash example code</h3>
+<dl><dd> 1. Copy code below to Arduino IDE editor.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/* Grove - Light Sensor demo v1.2
+* 
+* signal wire to A0.
+* By: http://www.seeedstudio.com
+*/</span>
+<span class="co2">#include &lt;math.h&gt;</span>
+<span class="kw4">const</span> <span class="kw4">int</span> ledPin<span class="sy1">=</span><span class="nu0">9</span><span class="sy4">;</span>                 <span class="co1">//Connect the LED Grove module to Pin12, Digital 12</span>
+<span class="kw4">const</span> <span class="kw4">int</span> thresholdvalue<span class="sy1">=</span><span class="nu0">10</span><span class="sy4">;</span>         <span class="co1">//The threshold for which the LED should turn on. </span>
+<span class="kw4">float</span> Rsensor<span class="sy4">;</span> <span class="co1">//Resistance of sensor in K</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>                <span class="co1">//Start the Serial connection</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>ledPin,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>            <span class="co1">//Set the LED on Digital 12 as an OUTPUT</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw4">int</span> sensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> 
+  Rsensor<span class="sy1">=</span><span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="br0">(</span><span class="nu0">1023</span><span class="sy2">-</span>sensorValue<span class="br0">)</span><span class="sy2">*</span><span class="nu0">10</span><span class="sy2">/</span>sensorValue<span class="sy4">;</span>
+  <span class="kw1">if</span><span class="br0">(</span>Rsensor<span class="sy1">&gt;</span>thresholdvalue<span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>ledPin,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw1">else</span>
+  <span class="br0">{</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>ledPin,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"the analog read data is "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>sensorValue<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"the sensor resistance is "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>Rsensor,<span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//show the light intensity on the serial monitor;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dd> 2. You will see readings.
+</dd></dl>
+<h3> With RasberryPi</h3>
+<h4> Material required</h4>
+<ul><li>Raspberry Pi+  × 1
+</li><li>GrovePi+  × 1
+</li><li>Grove - Green LED × 1
+</li><li>USB cable (type A to micro type B)
+</li></ul>
+<h4> Connections</h4>
+<h4> Flash example code</h4>
+<dl><dd> 1. Create a file <i>example</i>.py Copy code below
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2"># GrovePi+ &amp; Grove Light Sensor &amp; LED</span>
+ 
+import <span class="kw3">time</span>
+import grovepi
+ 
+<span class="co2"># Connect the Grove Light Sensor to analog port A0</span>
+<span class="co2"># SIG,NC,VCC,GND</span>
+light_sensor <span class="sy1">=</span> <span class="nu0">0</span>
+ 
+<span class="co2"># Connect the LED to digital port D4</span>
+<span class="co2"># SIG,NC,VCC,GND</span>
+led <span class="sy1">=</span> <span class="nu0">4</span>
+ 
+<span class="co2"># Turn on LED once sensor exceeds threshold resistance</span>
+threshold <span class="sy1">=</span> <span class="nu0">10</span>
+ 
+grovepi.<span class="kw3">pinMode</span><span class="br0">(</span>light_sensor,<span class="st0">"INPUT"</span><span class="br0">)</span>
+grovepi.<span class="kw3">pinMode</span><span class="br0">(</span>led,<span class="st0">"OUTPUT"</span><span class="br0">)</span>
+ 
+<span class="kw1">while</span> True<span class="sy4">:</span>
+    <span class="kw2">try</span><span class="sy4">:</span>
+        <span class="co2"># Get sensor value</span>
+        sensor_value <span class="sy1">=</span> grovepi.<span class="kw3">analogRead</span><span class="br0">(</span>light_sensor<span class="br0">)</span>
+ 
+        <span class="co2"># Calculate resistance of sensor in K</span>
+        resistance <span class="sy1">=</span> <span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="br0">(</span><span class="nu0">1023</span> <span class="sy2">-</span> sensor_value<span class="br0">)</span> <span class="sy2">*</span> <span class="nu0">10</span> <span class="sy2">/</span> sensor_value
+ 
+        <span class="kw1">if</span> resistance <span class="sy1">&gt;</span> threshold<span class="sy4">:</span>
+            <span class="co2"># Send HIGH to switch on LED</span>
+            grovepi.<span class="kw3">digitalWrite</span><span class="br0">(</span>led,<span class="nu0">1</span><span class="br0">)</span>
+        <span class="kw1">else</span><span class="sy4">:</span>
+            <span class="co2"># Send LOW to switch off LED</span>
+            grovepi.<span class="kw3">digitalWrite</span><span class="br0">(</span>led,<span class="nu0">0</span><span class="br0">)</span>
+ 
+        <span class="kw3">print</span> <span class="st0">"sensor_value ="</span>, sensor_value, <span class="st0">" resistance ="</span>, resistance
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu18">.5</span><span class="br0">)</span>
+ 
+    except IOError<span class="sy4">:</span>
+        <span class="kw3">print</span> <span class="st0">"Error"</span></pre></div></div>
+<h4>  Run the program </h4>
+<dl><dd> 2. Find the path to the file(According to your own path)
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">   cd GrovePi<span class="sy2">/</span>Software<span class="sy2">/</span>Python<span class="sy2">/</span></pre></div></div>
+<dl><dd> 3. Run Program
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">sudo python grove_light_sensor.<span class="me1">py</span></pre></div></div>
+<h3> More applications</h3>
+<ul><li><a href="http://www.seeedstudio.com/recipe/77-linkit-one-iot-demo.html">LinkIt ONE IoT</a>
+</li></ul>
+<ul><li><a href="http://www.seeedstudio.com/recipe/221-halloween-pumpkin.html">Halloween Pumpkin</a>
+</li></ul>
+<ul><li><a href="http://www.seeedstudio.com/recipe/233-light-pouring-cup.html">Light Pouring Cup</a>
+</li></ul>
+<ul><li><a href="http://www.seeedstudio.com/recipe/235-night-clothing-collection-balcony.html">Night Clothing Collection Balcony</a>
+</li></ul>
+<ul><li><a href="http://www.seeedstudio.com/recipe/133-fan-control-by-light-sensor.html">Fan control by light sensor Fan control by light sensor</a>
+</li></ul>
+<h2> Resources</h2>
+<ul><li><a href="res/Grove-Light_Sensor_v1.2_schematic_file.zip">Schematic file</a>
+</li><li><a href="res/LS06-MΦ5_datasheet.pdf">LS06-MΦ5 Reference Information</a>
+</li><li><a href="http://garden.seeedstudio.com/images/d/d2/LM358.pdf">LM358 Datasheet</a>
+</li><li><a href="https://github.com/Seeed-Grove-System/Light_Sensor">Light Sensor Library</a>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_Light_Sensor">github repository for Light Sensor</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

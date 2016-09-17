@@ -1,0 +1,217 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>DSJTAG</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>DSJTAG</h1>
+
+<p>DSJTAG is a <b>2in1 USB JTAG cable</b> for Xilinx or Altera FPGA/CPLD. 
+</p><p>The function of DSJTAG can be toggled by a switch. 
+</p><p>When switch down, DSJTAG act as a Xilinx FPGA JTAG, and compatible with <b>Xilinx Platform Cable USB I</b>. (Support all devices and feature) 
+</p><p>when switch up, DSJTAG act as a Altera FPGA JTAG, and compatible with <b>Altera USB Blaster</b>. (Support all devices and feature) 
+</p><p>DSJTAG will become your friend when you work with FPGA. 
+</p><p>DSJTAG will let you never worry about which FPGA should be selected. 
+</p><p>You can use DSJTAG with <b>ISE or Quartus</b>, whatever you want. 
+</p><p><img src="img/DSJTAG.jpg" width="1000"/>
+</p>
+<h2>  Features  </h2>
+<p>Function1: Xilinx Platform USB Cable I 
+</p><p>1. Compatible with Xilinx Platform USB Cable I, support iMPACT/ISE/Chipscope/EDK   
+</p><p>2. The firmware can be updated by iMPACT, and upgraded to the new version  
+</p><p>3. Atuo detect and adapt the voltage of the target board 
+</p><p>4. Support all the xilinx device, include FPGA/CPLD with 5V, 3.3V, 2.5V, 1.8V and 1.5V interface voltage level 
+</p><p>5. Support hot-plug at both USB and target side, high impedance when power lose to avoid to damage your target board 
+</p><p>6. Tri-color status LED 
+</p><p>7. Support programming of SPI FLASH 
+</p><p><br/>
+</p><p>Function2: Altera USB Blaster 
+</p><p>1. Compatible with Altera USB Blaster, support Quartus II/SignalTap II 
+</p><p>2. Support all the altera device, include Cyclone III and Stratix II, .etc 
+</p><p>3. Support AS/PS/JTAG mode 
+</p><p>4. Support communication with Nios II and in-systme debug
+</p><p>5. Bi-color status LED
+</p>
+<h2>  Application Ideas  </h2>
+<h2>  Cautions  </h2>
+<p>The warnings and wrong operations possible cause dangerous. 
+</p>
+<h2>  Schematic  </h2>
+<p><img src="img/DSJTAG_PCB.jpg" width="1000"/>
+</p>
+<h2>  Specification  </h2>
+<p>May include key specification and other specifications. 
+</p>
+<h2>  Pin definition and Rating  </h2>
+<h2>  Mechanic Dimensions  </h2>
+<h2>  Usage  </h2>
+<h3>  Function as Xilinx Platform USB Cable I  </h3>
+<h4>  Found New Hardware Wizard (for Windows only)  </h4>
+<h4>  Firmware Updates  </h4>
+<p>1. Install Latest IMPACT Software<br/> 2. Toggle the switch down, and connect The DSJTAG To The USB Port Of The PC. <br/> 3. Open DOS Window And Set The Following Environment Variable To True By Typing The Command On The DOS Prompt: <br/> SET XIL_IMPACT_ENV_USB2_FORCE_CPLD_UPDATE=TRUE<br/> 4. Type, IMPACT On DOS Prompts To Invoke IMPACT Software. <br/> 5. When IMPACT Will Open Please Cancel The Project Load Windows And Double Click On The “Boundary Scan” Icon In Flow Window. <br/> 6. Select The Source Of The "Platform Cable USB" Cable By Selecting Menu -&gt; “Output” -&gt; Cable Setup -&gt; -&gt; Communication Mode -&gt; Xilinx USB Cable -&gt; And Press OK. <br/> 7. IMPACT Software Will Show You The Warning Message “WARNING: IMPACT - Platform Cable USB Firmware Must Be Updated. This Operation May Take Up To 10 Seconds. Please Do Not Stop The Process Or Disconnect The Cable Prior To Completion. The Cable STATUS LED Will Be RED For The Duration Of The Update Process.” Press OK And Wait For The Update To Be Completed. <br/> 8. Once The Update Completed, Please “Exit” IMPACT <br/> 9. Go To DOS Prompt Windows Which Is Already Open And SET The Environment Variable To False: SET XIL_IMPACT_ENV_USB2_FORCE_CPLD_UPDATE=FALSE <br/> 10. Exit The DOS Window By Typing Exit On The Dos Prompt (This Is Very Important). <br/> 11. That’s It !! The USB Firmware Is Updated. 
+</p><p><br/>
+</p>
+<h3> <br/>Function as Altera USB Blaster </h3>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<table border="1" cellpadding="1" cellspacing="1" width="200">
+<tr>
+<td> J3
+</td>
+<td> JUMP
+</td></tr>
+<tr>
+<td> J13
+</td>
+<td> CONN2X7
+</td></tr>
+<tr>
+<td> J30
+</td>
+<td> CONN1X6
+</td></tr>
+<tr>
+<td> J35
+</td>
+<td> SPDT
+</td></tr>
+<tr>
+<td> Q1,Q2
+</td>
+<td> 2N7002/SOT
+</td></tr>
+<tr>
+<td> RN1
+</td>
+<td> 33
+</td></tr>
+<tr>
+<td> R2
+</td>
+<td> 100K
+</td></tr>
+<tr>
+<td> R3,R4,R5,R6,R7,R8,R9,R10,R14,R16,R19,R20,R21,R22, R23,R24,R26,R27,R29,R30, R31,R35,R36,R37,R39,R41, R42,R45,R46,R47,R48,R50, R51,R72,R73
+</td>
+<td> 10K
+</td></tr>
+<tr>
+<td> R17,R62,R67,R70,R71
+</td>
+<td> 1K
+</td></tr>
+<tr>
+<td> R18
+</td>
+<td> 2K
+</td></tr>
+<tr>
+<td> R28,R33,R34,R58,R59,R64,R68,R69
+</td>
+<td> 33
+</td></tr>
+<tr>
+<td> R38,R74
+</td>
+<td> 0
+</td></tr>
+<tr>
+<td> R40
+</td>
+<td> 18
+</td></tr>
+<tr>
+<td> R43,R44
+</td>
+<td> 30K
+</td></tr>
+<tr>
+<td> U1
+</td>
+<td> CY7C68013A-100AXC
+</td></tr>
+<tr>
+<td> U2
+</td>
+<td> XC2C256-7VQ100C
+</td></tr>
+<tr>
+<td> U10
+</td>
+<td> 24LC128-I/SN
+</td></tr>
+<tr>
+<td> U11
+</td>
+<td> LM1117-3.3
+</td></tr>
+<tr>
+<td> U12
+</td>
+<td> LM1117-1.8
+</td></tr>
+<tr>
+<td> U13
+</td>
+<td> SN74LVC2G07DCK
+</td></tr>
+<tr>
+<td> U15
+</td>
+<td> LM393D
+</td></tr>
+<tr>
+<td> U18
+</td>
+<td> DS2411R
+</td></tr>
+<tr>
+<td> U22,U23,U24,U26
+</td>
+<td> BAT54A
+</td></tr>
+<tr>
+<td> U29
+</td>
+<td> SN74LVC1G126
+</td></tr>
+<tr>
+<td> U35
+</td>
+<td> SRV05-4
+</td></tr>
+<tr>
+<td> U36
+</td>
+<td> 74LVC244APW
+</td></tr>
+<tr>
+<td> Y1
+</td>
+<td> 24 MHz
+</td></tr>
+<tr>
+<td>
+</td>
+<td> <br/>
+</td></tr></table>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<h2>  How to buy  </h2>
+<p>Click here to buy: 
+</p>
+<h2>  See Also  </h2>
+<p>Other related products and resources.
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

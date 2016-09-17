@@ -1,0 +1,197 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Mixer Pack</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Mixer Pack</h1><p><br/>
+</p><p><br/>
+</p>
+
+<p>The original <a href="http://www.seeedstudio.com/depot/Grove-Mixer-Pack-p-1590.html">Grove - Mixer Pack</a> is a stand-alone, Lego-like electronics kit that consists of 20 select Grove modules from the <a href="/GROVE_System" title="GROVE System"> Grove System</a> developed by <a href="http://www.seeedstudio.com/depot/">Seeed Studio</a>. These mini-modules can be used as building blocks to create electronic circuits and prototypes quite rapidly without necessarily using a Microcontroller board such as a <a href="/Seeeduino" title="Seeeduino">Seeeduino</a> or an <a href="/Main_Page#Arduino" title="Main Page"> Arduino</a>.<br/>
+The 20 Grove modules included are a combination of sensor modules, actuators, logic and power modules that are extremely easy to use and fun to work with. Within minutes, you can design new circuits and assemble functional prototypes. <br/>
+By connecting different input and output modules, a variety of projects can be made. For example, a sound or a light sensor can be used as input to trigger an output such as lighting up of an LED or activating a small DC motor circuit. Logic gate modules can add more flexibility into the logic through which inputs will trigger outputs.<br/>
+These modules are small and colorful bits of electronics, and so much fun to play with for both children and adults alike.<br/>
+With the <a href="http://www.seeedstudio.com/depot/Grove-Mixer-Pack-p-1590.html">Grove - Mixer Pack</a>, you can easily learn the basic concepts of electronics, and also improve your practical ability to apply these concepts. This is the perfect way to let yourself into the wonderful world of electronics by working on your very own interactive projects. <br/><br/>
+<a href="/Grove-Mixer_Pack" title="Grove - Mixer Pack"><img src="img/Mixer_pack.jpg" width="400"/></a><br/>
+</p>
+<h2> Features </h2>
+<ul><li>Flexibility 
+</li><li>Grove Interface
+</li><li>Use widely
+</li></ul>
+<h2> Modules</h2>
+<h3> <b>Power Supply</b></h3>
+<p>There are three power supply modules in Mixer. They are <a href="/Grove-DC_Jack_Power" title="Grove - DC Jack Power">DC Jack Power</a>, USB Power and Coin Battery Power. All of them output 5V. 
+</p>
+<h4> 1. DC Jack Power</h4>
+<div class="center"><div class="floatnone"><img src="img/DC_Jack.jpg" width="500"/></div></div><br/>
+<p><i>DC Jack Power Schematic</i>
+</p>
+<div class="center"><div class="floatnone"><img src="img/DC_Jack_Power_Schematic.jpg" width="1057"/></div></div>
+<ul><li>DC Jack Power: Input Voltage range is 3.6V-20V. Power sources can be 9V battery or wall adapters.
+</li></ul>
+<h4> 2. USB Power</h4>
+<div class="center"><div class="floatnone"><img src="img/Grove-USB_Power.jpg" width="500"/></div></div><br/>
+<p><i>USB Power Schematic</i>
+</p>
+<div class="center"><div class="floatnone"><img src="img/USB_Power_Schematic.jpg" width="424"/></div></div>
+<ul><li>USB Power: Input Voltage is about 5v. Power sources can be computer via USB cable or power bank.
+</li></ul>
+<h4> 3. Coin Battery Power</h4>
+<div class="center"><div class="floatnone"><img src="img/Clio_Battery.jpg" width="500"/></div></div><br/>
+<p><i>Coin Battery Power Schematic</i>
+</p>
+<div class="center"><div class="floatnone"><img src="img/Clio_Battery_Power.jpg" width="790"/></div></div>
+<ul><li>Coin Battery Power: Input voltage is 3V or 3.3V of Lithium Battery.
+</li></ul>
+<p>You can select one of three to apply to your mixer system. Remember that power-supply module is indispensable, without it, your mixer system will not work.
+</p>
+<h3> <b>Logic</b></h3>
+<p>Grove – Mixer Pack need not to program, own to logic modules which can achieve functions instead of code. Logic Modules include Grove – AND、 Grove – OR、 Grove – NOT.
+</p>
+<h4> 1. AND</h4>
+<div class="center"><div class="floatnone"><img src="img/AND.jpg" width="500"/></div></div><br/>
+<p><i>AND Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/AND_Schematic.jpg" width="548"/></div></div><br/>
+<p>AND has three Grove sockets. On the left are two input sockets for you to add sensors. On the right is the output socket for actuator. The logical relationship between them is: <font color="red">Vout=1/2(Vin1+Vin2)</font>. <br/>
+AND outputs the average value of two inputs.
+</p>
+<h4> 2. NOT</h4>
+<div class="center"><div class="floatnone"><img src="img/NOT.jpg" width="500"/></div></div><br/>
+<p><i>NOT Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/NOT_Schematic.jpg" width="599"/></div></div><br/>
+<p>NOT has one input on the left and one output. The logical relationship of them is: <font color="red">Vout =~ Vin</font>.
+It outputs a HIGH signal when it gets a LOW signal on the input end, and vice versa.
+</p>
+<h4> 3. OR</h4>
+<div class="center"><div class="floatnone"><img src="img/OR.jpg" width="500"/></div></div><br/>
+<p><i>OR Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/OR_Schematic.jpg" width="600"/></div></div><br/>
+<p>OR has two input sockets and one output socket. The logical relationship of them is: <font color="red">Vout= (Vin1) || (Vin2)</font>. 
+It outputs HIGH as long as one of its input signals is HIGH.
+</p>
+<h4> 4. SUB</h4>
+<div class="center"><div class="floatnone"><img src="img/SUB.jpg" width="500"/></div></div><br/>
+<p><i>SUB Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/SUB_Schematic.jpg" width="600"/></div></div><br/>
+<p>SUB has two different inputs and one output. The logical relationship of them is: <font color="red">Vout = (Vin1-Vin2)</font>.<br/>
+It only outputs positive voltage when Vin1 is bigger than Vin2. Otherwise, the output will be LOW.
+</p>
+<h3> <b>Others</b></h3>
+<h4> 1. Branch</h4>
+<div class="center"><div class="floatnone"><img src="img/Branch.jpg" width="500"/></div></div><br/>
+<p><i>Branch Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/Branch_Schematic.jpg" width="486"/></div></div><br/>
+<p>Branch has one input and two outputs. The logical relationship of them is: <font color="red"> Vout1=Vin;  Vout2=Vin</font>.<br/>
+The output signals are just the same as the input.
+</p>
+<h4> 2. Amplifier</h4>
+<div class="center"><div class="floatnone"><img src="img/Mixer_Amplifier.jpg" width="500"/></div></div><br/>
+<p><i>Amplifie Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/Amplifier_Schematic.jpg" width="590"/></div></div><br/>
+<p>Amplifier is a gain adjustable module that gives you larger output. The logical relationship of its input and output is: <font color="red"> Vout= Vin (1+R2)</font>. R2 (0~1k) refers to the pot on the board. This module can give you a comparable output signal to drive the actuator when input signal is weak.<br/>
+</p>
+<h4> 3. Pulse</h4>
+<div class="center"><div class="floatnone"><img src="img/Pulse.jpg" width="500"/></div></div><br/>
+<p><i>Pluse Schematic</i>
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/Pulse_Schematic.jpg" width="650"/></div></div><br/>
+<p>The duty ratio of the output wave signal is positively proportional to the input signal. That means the larger the input signal, the larger the duty ratio.
+</p>
+<h3> <b>Sensors</b></h3>
+<p>Sensors in Mixer are commonly used and easy to understand ones. They are:<br/>
+<b>Grove – Light Sensor, Grove - Slide Potentiometer, Grove – Button and Grove – Sound Sensor</b>
+</p>
+<ul><li>Grove – Light Sensor: detect light intensity. It outputs analog signal.
+</li><li>Grove - Slide Potentiometer: a linear variable resistor with a total resistance of 10k, it outputs analog signal.
+</li><li>Grove – Button: it normally outputs LOW and outputs HIGH when pressed.
+</li><li>Grove – Sound Sensor: detect the sound strength of the environment. It outputs analog signal.
+</li></ul>
+<p><br/>
+</p>
+<table align="left">
+<tr>
+<td> <div class="center"><div class="floatnone"><img src="img/Twig-Light.jpg" width="200"/></div></div><br/>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Sliding1.JPG" width="200"/></div></div>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Bgpushb1.jpg" width="200"/></div></div>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Sound_Sensor.jpg" width="200"/></div></div><br/>
+</td></tr>
+<tr>
+<td width="200px"><div style="text-align: center"><a href="/Grove-Light_Sensor" title="Grove - Light Sensor">Grove - Light Sensor</a></div>
+</td>
+<td width="200px"><div style="text-align: center"><a href="/Grove-Slide_Potentiometer" title="Grove - Slide Potentiometer">Grove - Slide Potentiometer</a></div>
+</td>
+<td width="200px"><div style="text-align: center"><a href="/Grove-Button" title="Grove - Button">Grove - Button</a></div>
+</td>
+<td width="200px"><div style="text-align: center"><a href="/Grove-Sound_Sensor" title="Grove - Sound Sensor">Grove - Sound Sensor</a></div>
+</td></tr></table>
+<p><br clear="all"/>
+</p>
+<h3> <b>Actuators</b></h3>
+<p>Actuators in Mixer are all basic but essential ones. They are:<br/>
+</p>
+<b>Grove – LED, Grove – Vibration Motor, and Grove – Buzzer are actuators</b> <center>
+<table align="left">
+<tr>
+<td> <div class="center"><div class="floatnone"><img src="img/Grove-LED.jpg" width="200"/></div></div>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Gvib.jpg" width="200"/></div></div>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Grovebuzzer.jpg" width="200"/></div></div>
+</td></tr>
+<tr>
+<td width="200px"><div style="text-align: center"><a href="/Grove-LED_Socket_Kit" title="Grove - LED Socket Kit">Grove - LED Socket Kit</a></div>
+</td>
+<td width="200px"><div style="text-align: center"><a href="/Grove-Vibration_Motor" title="Grove - Vibration Motor">Grove - Vibration Motor</a></div>
+</td>
+<td width="200px"><div style="text-align: center"><a href="/Grove-Buzzer" title="Grove - Buzzer">Grove - Buzzer</a></div>
+</td></tr></table>
+<br clear="all"/></center>
+<h2> Usage</h2>
+<p>Next we are going to show you some examples about how we construct a circuit. We will start at the simplest circuit and step by step enlarge it.
+</p>
+<h3> Hello World!</h3>
+<p>A meaningful circuit should include modules of three parts: sensor, power and actuator, as shown below.  
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/InputandOutput.png" width="500"/></div></div><br/>
+<p>As a first circuit, we turn on/off an LED.<br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/BasicConnecting.jpg" width="500"/></div></div><br/>
+<p>The LED will come on when the button gets pressed. The following diagram explains how signal travels through the circuit.
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/Signal_transmission.png" width="550"/></div></div><br/>
+<h3> Add Some Logic &amp; Make It More Vivid</h3>
+<p>Now let's move on to add some logic to our circuit. In the circuit below, the LED will come on when either of the button gets pressed.
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/Using_Or.png" width="500"/></div></div><br/>
+<p>Try other sensors and actuators to see what happens. 
+</p>
+<div class="center"><div class="floatnone"><img src="img/UseOR.jpg" width="500"/></div></div><br/>
+<p><font color="red">Note:</font>
+</p>
+<dl><dd>1) Logic module can be connected between input modules and power module, or between output modules and power module. The above image is one of connecting ways for reference.
+</dd><dd>2) All modules are direction sensitive, read through the screen printed pattern on each one before connection.
+</dd></dl>
+<p>If you want to control an led and a buzzer simultaneously, Grove – Branch can help. Based on the last circuit, add Grove – Branch and Grove - Buzzer to the circuit following the next diagram.
+</p>
+<div class="center"><div class="floatnone"><img src="img/Using_OR_AND_Branch.png" width="550"/></div></div><br/>
+<p>In this way, two actuators will work when the button gets pressed. How to make more actuators work? Add more branches!
+</p>
+<div class="center"><div class="floatnone"><img src="img/ORandBranch.jpg" width="500"/></div></div><br/>
+<p>Grove - Pulse is an interesting module that gives your buzzer some groove. Just add it in front of the buzzer then you get BBBBBB...
+</p>
+<div class="center"><div class="floatnone"><img src="img/Pluse.png" width="600"/></div></div><br/>
+<p>Not content with the endless beep, we can use Grove – Slide to give it some rise and fall. With an analog input, you can change the frequency of the sound or light.
+</p>
+<br/><div class="center"><div class="floatnone"><img src="img/PulseandORandBranch.jpg" width="500"/></div></div><br/>
+<h2> Resources</h2>
+<p><a href="res/Grove-Mixer_Eagle_File.zip">File:Grove - Mixer Pack Eagle File</a>
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

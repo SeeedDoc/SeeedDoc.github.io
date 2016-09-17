@@ -1,1673 +1,367 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Grove - Multichannel Gas Sensor - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Grove - Multichannel Gas Sensor";
-    var mkdocs_page_input_path = "Grove-Multichannel_Gas_Sensor.md";
-    var mkdocs_page_url = "/Grove-Multichannel_Gas_Sensor/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Multichannel Gas Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Multichannel Gas Sensor</h1><center> <img src="img/Multi_sensor1.png" width="500"/> <img src="img/Multi_sensor2.png" width="500"/> </center>
+<h2>  What is it? </h2>
+<p>Grove – Multichannel Gas sensor is a environment detecting sensor with a built in MiCS-6814 which can detect many unhealthful gases, and three gases can be measured simultaneously due to its multi channels, so it can help you to monitor the concentration which more than one gas.
+<br/><br/>
+This sensor is belong to <a href="/Grove_System">Grove system</a>, and you can plug it onto the <a href="/Base_shield_v2">Base shield</a> and work with Arduino directly without any jumper wires. The interface of it is I2C, so plug it onto the I2C port of Base shield, then you can start to work it.
+</p><p><span style="color: red">Note that The sensor value only reflects the approximated trend of gas concentration in a permissible error range, it DOES NOT represent the exact gas concentration. The detection of certain components in the air usually requires a more precise and costly instrument, which cannot be done with a single gas sensor. If your project is aimed at obtaining the gas concentration at a very precise level, then we do not recommend this gas sensor.</span>
+</p>
+<h2>  Before usage </h2>
+<h3>  Related Reading </h3>
+<p>We suggest you to read those knowledge before using the Gas sensor, it'll help you to learn more about Arduino and our products, and also it'll let you to use open souse hardware more easier.
+</p>
+<ul><li> <a href="/Getting_Started_with_Seeeduino">Getting Started with Arduino</a>
+</li><li> <a href="/Grove_System">What is Grove system</a>
+</li><li> <a href="/Base_shield_v2">Why i need a Base shield?</a>
+</li></ul>
+<p>After reading that you will know how to use Base shield with Grove products to work well with Arduino. Let's start it !
+</p>
+<h3>  To be prepared </h3>
+<p>This tutorial will include some necessary products: 
+</p>
+<ul><li> <a href="http://www.seeedstudio.com/depot/Arduino-Uno-Rev3-p-694.html">Arduino UNO R3</a> or <a href="http://www.seeedstudio.com/depot/Seeeduino-V4-p-669.html">Seeeduino v4</a>
+</li><li> <a href="http://www.seeedstudio.com/depot/Base-Shield-V2-p-1378.html">Base Shield</a>
+</li><li> Grove - Multichannel Gas Sensor
+</li></ul>
+<p><br/>
+</p>
+<h3>  Hardware Overview </h3>
+<center><img src="img/Multi_sensor1.png" width="700"/></center>
+<p><br/>
+</p>
+<center> Four pins are pointed out and following is the figure <br/>
+<table border="1">
+<tr>
+<th> Pin Label
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td width="150px"> GND
+</td>
+<td width="250px"> Connect to ground
+</td></tr>
+<tr>
+<td> VCC
+</td>
+<td> Power supply: 3.3v - 5v
+</td></tr>
+<tr>
+<td> SDA
+</td>
+<td> I2C data
+</td></tr>
+<tr>
+<td> SCL
+</td>
+<td> I2C clock
+</td></tr></table>
+</center>
+<p>The power supply is between 3.3v and 5v, so this sensor can be compatible with a micro-controller whose output voltage is 3.3v.
+</p>
+<h2> Feature</h2>
+<ul><li> Three fully independent sensing elements on one package
+</li><li> Built with ATmega168PA
+</li><li> I2C interface with programmable address
+</li><li> Heating power can be shut down for low power
+</li><li> Detectable gases
+<ul><li> Carbon monoxide    CO        1 – 1000ppm
+</li><li> Nitrogen dioxide   NO2       0.05 – 10ppm
+</li><li> Ethanol            C2H6OH    10 – 500ppm
+</li><li> Hydrogen           H2        1 – 1000ppm
+</li><li> Ammonia            NH3       1 – 500ppm
+</li><li> Methane            CH4       &gt;1000ppm
+</li><li> Propane            C3H8      &gt;1000ppm
+</li><li> Iso-butane         C4H10     &gt;1000ppm
+</li></ul>
+</li></ul>
+<h2>  Block Diagram </h2>
+<p><img src="img/Grove-Multichannel_Gas_Sensor_block_diagram.jpg" width="600"/><br/><br/>
+</p>
+<h2>  Electrical Characteristics </h2>
+<table>
+<tr>
+<th> Item </th>
+<th> Condition </th>
+<th> Min. </th>
+<th> Typ. </th>
+<th> Max. </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Voltage </td>
+<td> - </td>
+<td> 3.1 </td>
+<td> 3.3 </td>
+<td> 5.25 </td>
+<td> V
+</td></tr>
+<tr>
+<td> Ripple </td>
+<td> @Max Power </td>
+<td> - </td>
+<td> 80 </td>
+<td> 100 </td>
+<td> mV
+</td></tr>
+<tr>
+<td> Heating Power </td>
+<td> - </td>
+<td> - </td>
+<td> - </td>
+<td> 88 </td>
+<td> mW
+</td></tr>
+<tr>
+<td> Max Power </td>
+<td> - </td>
+<td> - </td>
+<td> - </td>
+<td> 150 </td>
+<td> mW
+</td></tr>
+<tr>
+<td> ADC Precision </td>
+<td> - </td>
+<td> - </td>
+<td> 10 </td>
+<td> - </td>
+<td> Bits
+</td></tr>
+<tr>
+<td> I2C Rate </td>
+<td> - </td>
+<td> - </td>
+<td> 100 </td>
+<td> 400 </td>
+<td> kHz
+</td></tr>
+<tr>
+<td> VIL </td>
+<td> @I2C </td>
+<td> -0.5 </td>
+<td> - </td>
+<td> 0.99 </td>
+<td> V
+</td></tr>
+<tr>
+<td> VIH </td>
+<td> @I2C </td>
+<td> 2.31 </td>
+<td> - </td>
+<td> 5.25 </td>
+<td> V
+</td></tr></table>
+<h3>  Performance RED sensor </h3>
+<table>
+<tr>
+<th> Characteristic RED sensor </th>
+<th> Symbol </th>
+<th> Typ </th>
+<th> Min </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Sensing resistance in air </td>
+<td> R0 </td>
+<td> - </td>
+<td> 100 </td>
+<td> 1500 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td> Typical CO detection range </td>
+<td> FS </td>
+<td> - </td>
+<td> 1 </td>
+<td> 1000 </td>
+<td> ppm
+</td></tr>
+<tr>
+<td> Sensitivity factor </td>
+<td> SR </td>
+<td> - </td>
+<td> 1.2 </td>
+<td> 50 </td>
+<td> -
+</td></tr></table>
+<p><img src="img/Red_sensor.jpg" width="600"/><br/><br/>
+</p>
+<h3>  Performance OX sensor </h3>
+<table>
+<tr>
+<th> Characteristic OX sensor </th>
+<th> Symbol </th>
+<th> Typ </th>
+<th> Min </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Sensing resistance in air </td>
+<td> R0 </td>
+<td> - </td>
+<td> 0.8 </td>
+<td> 20 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td> Typical NO2 detection range </td>
+<td> FS </td>
+<td> - </td>
+<td> 0.05 </td>
+<td> 10 </td>
+<td> ppm
+</td></tr>
+<tr>
+<td> Sensitivity factor </td>
+<td> SR </td>
+<td> - </td>
+<td> 2 </td>
+<td> - </td>
+<td> -
+</td></tr></table>
+<p><img src="img/OX_sensor.jpg" width="600"/><br/><br/>
+</p>
+<h3>  Performance NH3 sensor </h3>
+<table>
+<tr>
+<th> Characteristic NH3 sensor </th>
+<th> Symbol </th>
+<th> Typ </th>
+<th> Min </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Sensing resistance in air </td>
+<td> R0 </td>
+<td> - </td>
+<td> 10 </td>
+<td> 1500 </td>
+<td> kΩ
+</td></tr>
+<tr>
+<td> Typical NH3 detection range </td>
+<td> FS </td>
+<td> - </td>
+<td> 1 </td>
+<td> 300 </td>
+<td> ppm
+</td></tr>
+<tr>
+<td> Sensitivity factor </td>
+<td> SR </td>
+<td> - </td>
+<td> 1.5 </td>
+<td> 15</td>
+<td> -
+</td></tr></table>
+<p><img src="img/NH3_sensor.jpg" width="600"/><br/><br/>
+</p>
+<h2>  Firmware and library </h2>
+<h3>  Firmware </h3>
+<p>This grove module has an ATMega168 MCU which is flashed with a factory firmware. The firmware does the following works:
+</p>
+<ol><li> controls the power on and off for heating circuit and indicator LED
+</li><li> listens on the command that make the module do the calibration - the calibration will sample the resistance of the MEMS core of this sensor which will be used as the reference, so please perform calibration in a fresh air condition 
+</li><li> listens on commands that get resistance value of one of the three sensor core which will be used to calculate the concentration of a specific gas
+</li><li> listens on the command that changing the I2C address of this module - at most time, you don't need to do this except that the I2C address of this module (0x04) conflicts with another slave module.
+</li></ol>
+<p>Note: the calibration has been done before the modules leave the factory. If you want to recalibrate, please do make sure that the air condition is fresh. 
+</p>
+<h3>  Library </h3>
+<p>The library reads resistance values from the module and calculate the concentration of gas. One thing must be noticed is, the readings of this sensor are not supposed to be used to distinguish the type of gases, but to measure the concentration of a specific gas which is known to be that kind of gas.
+</p><p>The cores of this sensor are more sensitive to CO, NO2 and NH3, the precision of measurement for other gases would be worse.
+</p><p>Note: doCalibrate() function will take 8 seconds before it returns, as said above, at most time you don't need to recalibrate the sensor.
+</p>
+<h2> Demonstration </h2>
+<p><b>Hardware Installation:</b> <br/>
+</p>
+<ul><li> 1) Connect Grove - Multichannel Gas Sensor to Seeeduino.<br/>
+</li></ul>
+<p><img src="img/Grove-MultiChannelGasSensor.jpg" width="480"/><br/>
+</p><p><b>Upload Code:</b>
+</p>
+<ul><li> 2) Download <a href="https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor">Arduino Library &amp; Grove/Xadow firmware</a> and install it to Arduino Library.<br/>
+</li><li> 3) Open the code directly by the path:File -&gt; Example -&gt;Mutichannel_Gas_Sensor-&gt;ReadSensorValue_Grove. 
+</li></ul>
+<p>The content of ReadSensorValue_Grove.ino please refer to below.<br/>
+</p>
+<pre>/*
+    This is a demo to test MutichannelGasSensor library
+    This code is running on Xadow-mainboard, and the I2C slave is Xadow-MutichannelGasSensor
+    There is a ATmega168PA on Xadow-MutichannelGasSensor, it get sensors output and feed back to master.
+    the data is raw ADC value, algorithm should be realized on master.
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Grove - Multichannel Gas Sensor</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#before-usage">Before usage</a></li>
-                
-                    <li><a class="toctree-l4" href="#related-reading">Related Reading</a></li>
-                
-                    <li><a class="toctree-l4" href="#to-be-prepared">To be prepared</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#block-diagram">Block Diagram</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#electrical-characteristics">Electrical Characteristics</a></li>
-                
-                    <li><a class="toctree-l4" href="#performance-red-sensor">Performance RED sensor</a></li>
-                
-                    <li><a class="toctree-l4" href="#performance-ox-sensor">Performance OX sensor</a></li>
-                
-                    <li><a class="toctree-l4" href="#performance-nh3-sensor">Performance NH3 sensor</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#firmware-and-library">Firmware and library</a></li>
-                
-                    <li><a class="toctree-l4" href="#firmware">Firmware</a></li>
-                
-                    <li><a class="toctree-l4" href="#library">Library</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#demonstration">Demonstration</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#help-us-make-it-better">Help us make it better</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    please feel free to write email to me if there is any question 
     
-      
-        
-          <li>Grove &raquo;</li>
-        
-      
-        
-          <li>Sensor &raquo;</li>
-        
-      
-    
-    <li>Grove - Multichannel Gas Sensor</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Grove - Multichannel Gas Sensor</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <table>
-    <tr>
-        <td>
-            <img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Multi_sensor1.png">
-        </td>
-        <td>
-            <img src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Multi_sensor2.png">
-        </td>
-    </tr>
-</table>
-
-<p>Grove – Multichannel Gas sensor is a environment detecting sensor with a built in MiCS-6814 which can detect many unhealthful gases, and three gases can be measured simultaneously due to its multi channels, so it can help you to monitor the concentration which more than one gas.</p>
-<p>This sensor belongs to <strong>Grove system</strong>, and you can plug it onto the <strong>Base shield</strong> and work with Arduino directly without any jumper wires. The interface of it is I2C, so plug it onto the I2C port of Base shield, then you can start to work it.</p>
-<div class="admonition caution">
-<p class="admonition-title">Caution</p>
-The sensor value only reflects the approximated trend of gas concentration in a permissible error range, it DOES NOT represent the exact gas concentration. The detection of certain components in the air usually requires a more precise and costly instrument, which cannot be done with a single gas sensor. If your project is aimed at obtaining the gas concentration at a very precise level, then we do not recommend this gas sensor.
-</div>
-
-<p><a href="http://www.seeedstudio.com/Grove-Multichannel-Gas-Sensor-p-2502.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
-<h2 id="before-usage">Before usage<a class="headerlink" href="#before-usage" title="Permanent link"></a></h2>
-<h3 id="related-reading">Related Reading<a class="headerlink" href="#related-reading" title="Permanent link"></a></h3>
-<p>We suggest you to read those knowledge before using the Gas sensor, it&rsquo;ll help you to learn more about Arduino and our products, and also it&rsquo;ll let you to use open souse hardware more easier.</p>
-<ul>
-<li><a href="../Getting_Started_with_Seeeduino">Getting Started with Arduino</a></li>
-<li><a href="../Grove_System">What is Grove system</a></li>
-<li><a href="../Base_shield_v2">Why i need a Base shield?</a></li>
-</ul>
-<p>After reading that you will know how to use Base shield with Grove products to work well with Arduino. Let&rsquo;s start it !</p>
-<h3 id="to-be-prepared">To be prepared<a class="headerlink" href="#to-be-prepared" title="Permanent link"></a></h3>
-<p>This tutorial will include some necessary products:</p>
-<ul>
-<li><a href="http://www.seeedstudio.com/depot/Arduino-Uno-Rev3-p-694.html">Arduino UNO R3</a> or <a href="http://www.seeedstudio.com/depot/Seeeduino-V4-p-669.html">Seeeduino v4</a></li>
-<li><a href="http://www.seeedstudio.com/depot/Base-Shield-V2-p-1378.html">Base Shield</a></li>
-<li>Grove - Multichannel Gas Sensor</li>
-</ul>
-<h2 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h2>
-<p><center>
-<img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Multi_sensor1.png" />
-</center></p>
-<p>Four pins are pointed out from the figure above</p>
-<table>
-<thead>
-<tr>
-<th>Pin Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>GND</td>
-<td>Connect to ground</td>
-</tr>
-<tr>
-<td>VCC</td>
-<td>Power supply: 3.3V - 5V</td>
-</tr>
-<tr>
-<td>SDA</td>
-<td>I2C data</td>
-</tr>
-<tr>
-<td>SCL</td>
-<td>I2C clock</td>
-</tr>
-</tbody>
-</table>
-<p>The power supply is between 3.3V and 5V, so this sensor can be compatible with a micro-controller whose output voltage is 3.3V.</p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
-<ul>
-<li>Three fully independent sensing elements on one package</li>
-<li>Built with ATmega168PA</li>
-<li>I2C interface with programmable address</li>
-<li>Heating power can be shut down for low power</li>
-<li>Detectable gases<ul>
-<li>Carbon monoxide CO 1 – 1000ppm</li>
-<li>Nitrogen dioxide NO2 0.05 – 10ppm</li>
-<li>Ethanol C2H6OH 10 – 500ppm</li>
-<li>Hydrogen H2 1 – 1000ppm</li>
-<li>Ammonia NH3 1 – 500ppm</li>
-<li>Methane CH4 &gt;1000ppm</li>
-<li>Propane C3H8 &gt;1000ppm</li>
-<li>Iso-butane C4H10 &gt;1000ppm</li>
-</ul>
-</li>
-</ul>
-<h2 id="block-diagram">Block Diagram<a class="headerlink" href="#block-diagram" title="Permanent link"></a></h2>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Grove-Multichannel_Gas_Sensor_block_diagram.jpg" /></p>
-<h2 id="electrical-characteristics">Electrical Characteristics<a class="headerlink" href="#electrical-characteristics" title="Permanent link"></a></h2>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Condition</th>
-<th>Min.</th>
-<th>Typ.</th>
-<th>Max.</th>
-<th>Unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Voltage</td>
-<td>-</td>
-<td>3.1</td>
-<td>3.3</td>
-<td>5.25</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Ripple</td>
-<td>@Max Power</td>
-<td>-</td>
-<td>80</td>
-<td>100</td>
-<td>mV</td>
-</tr>
-<tr>
-<td>Heating Power</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>88</td>
-<td>mW</td>
-</tr>
-<tr>
-<td>Max Power</td>
-<td>-</td>
-<td>-</td>
-<td>-</td>
-<td>150</td>
-<td>mW</td>
-</tr>
-<tr>
-<td>ADC Precision</td>
-<td>-</td>
-<td>-</td>
-<td>10</td>
-<td>-</td>
-<td>Bits</td>
-</tr>
-<tr>
-<td>I2C Rate</td>
-<td>-</td>
-<td>-</td>
-<td>100</td>
-<td>400</td>
-<td>kHz</td>
-</tr>
-<tr>
-<td>VIL</td>
-<td>@I2C</td>
-<td>-0.5</td>
-<td>-</td>
-<td>0.99</td>
-<td>V</td>
-</tr>
-<tr>
-<td>VIH</td>
-<td>@I2C</td>
-<td>2.31</td>
-<td>-</td>
-<td>5.25</td>
-<td>V</td>
-</tr>
-</tbody>
-</table>
-<h3 id="performance-red-sensor">Performance RED sensor<a class="headerlink" href="#performance-red-sensor" title="Permanent link"></a></h3>
-<table>
-<thead>
-<tr>
-<th>Characteristic RED sensor</th>
-<th>Symbol</th>
-<th>Typ</th>
-<th>Min</th>
-<th>Max</th>
-<th>Unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sensing resistance in air</td>
-<td>R0</td>
-<td>-</td>
-<td>100</td>
-<td>1500</td>
-<td>kΩ</td>
-</tr>
-<tr>
-<td>Typical CO detection range</td>
-<td>FS</td>
-<td>-</td>
-<td>1</td>
-<td>1000</td>
-<td>ppm</td>
-</tr>
-<tr>
-<td>Sensitivity factor</td>
-<td>SR</td>
-<td>-</td>
-<td>1.2</td>
-<td>50</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Red_sensor.jpg" /></p>
-<h3 id="performance-ox-sensor">Performance OX sensor<a class="headerlink" href="#performance-ox-sensor" title="Permanent link"></a></h3>
-<table>
-<thead>
-<tr>
-<th>Characteristic OX sensor</th>
-<th>Symbol</th>
-<th>Typ</th>
-<th>Min</th>
-<th>Max</th>
-<th>Unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sensing resistance in air</td>
-<td>R0</td>
-<td>-</td>
-<td>0.8</td>
-<td>20</td>
-<td>kΩ</td>
-</tr>
-<tr>
-<td>Typical NO2 detection range</td>
-<td>FS</td>
-<td>-</td>
-<td>0.05</td>
-<td>10</td>
-<td>ppm</td>
-</tr>
-<tr>
-<td>Sensitivity factor</td>
-<td>SR</td>
-<td>-</td>
-<td>2</td>
-<td>-</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/OX_sensor.jpg" /></p>
-<h3 id="performance-nh3-sensor">Performance NH3 sensor<a class="headerlink" href="#performance-nh3-sensor" title="Permanent link"></a></h3>
-<table>
-<thead>
-<tr>
-<th>Characteristic NH3 sensor</th>
-<th>Symbol</th>
-<th>Typ</th>
-<th>Min</th>
-<th>Max</th>
-<th>Unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Sensing resistance in air</td>
-<td>R0</td>
-<td>-</td>
-<td>10</td>
-<td>1500</td>
-<td>kΩ</td>
-</tr>
-<tr>
-<td>Typical NH3 detection range</td>
-<td>FS</td>
-<td>-</td>
-<td>1</td>
-<td>300</td>
-<td>ppm</td>
-</tr>
-<tr>
-<td>Sensitivity factor</td>
-<td>SR</td>
-<td>-</td>
-<td>1.5</td>
-<td>15</td>
-<td>-</td>
-</tr>
-</tbody>
-</table>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/NH3_sensor.jpg" /></p>
-<h2 id="firmware-and-library">Firmware and library<a class="headerlink" href="#firmware-and-library" title="Permanent link"></a></h2>
-<h3 id="firmware">Firmware<a class="headerlink" href="#firmware" title="Permanent link"></a></h3>
-<p>This grove module has an ATmega168 MCU which is flashed with a factory firmware. The firmware does the following:</p>
-<ol>
-<li>Controls the power on and off for heating circuit and indicator LED</li>
-<li>Listens to the command that make the module do the calibration - the calibration will sample the resistance of the MEMS core of this sensor which will be used as the reference, so please perform calibration in a fresh air condition</li>
-<li>Listens to commands that get resistance value of one of the three sensor core which will be used to calculate the concentration of a specific gas</li>
-<li>Listens to the command that changing the I2C address of this module - at most time, you do not need to do this except that the I2C address of this module (0x04) conflicts with another slave module.</li>
-</ol>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-The calibration has been done before the modules leave the factory. If you want to recalibrate, please do make sure that the air condition is fresh.
-</div>
-
-<h3 id="library">Library<a class="headerlink" href="#library" title="Permanent link"></a></h3>
-<p>The library reads resistance values from the module and calculate the concentration of gas. One thing must be noticed is, the readings of this sensor are not supposed to be used to distinguish the type of gases, but to measure the concentration of a specific gas which is known to be that kind of gas.</p>
-<p>The cores of this sensor are more sensitive to CO, NO2 and NH3, the precision of measurement for other gases would be worse.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-The doCalibrate() function will take 8 seconds before it returns, as said above, at most time you don't need to recalibrate the sensor.
-</div>
-
-<h2 id="demonstration">Demonstration<a class="headerlink" href="#demonstration" title="Permanent link"></a></h2>
-<p><strong>Hardware Installation:</strong></p>
-<p>1.Connect Grove - Multichannel Gas Sensor to Seeeduino.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Grove-MultiChannelGasSensor.jpg" /></p>
-<p><strong>Upload Code:</strong></p>
-<p>2.Download <a href="https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor">Arduino Library &amp; Grove/Xadow firmware</a> and install it to Arduino Library.</p>
-<p>3.Open the code directly by the path:File -&gt; Example -&gt; Mutichannel_Gas_Sensor-&gt; ReadSensorValue_Grove.</p>
-<p>The code of ReadSensorValue_Grove is given below.</p>
-<pre><code>    /*
-        This is a demo to test MutichannelGasSensor library
-        This code is running on Xadow-mainboard, and the I2C slave is Xadow-MutichannelGasSensor
-        There is a ATmega168PA on Xadow-MutichannelGasSensor, it get sensors output and feed back to master.
-        the data is raw ADC value, algorithm should be realized on master.
-
-        please feel free to write email to me if there is any question 
-
-        Jacky Zhang, Embedded Software Engineer
-        qi.zhang@seeed.cc
-        17,mar,2015
-    */
+    Jacky Zhang, Embedded Software Engineer
+    qi.zhang@seeed.cc
+    17,mar,2015
+*/
 
 
-    #include &lt;Wire.h&gt;
-    #include &quot;MutichannelGasSensor.h&quot;
+#include &lt;Wire.h&gt;
+#include "MutichannelGasSensor.h"
 
-    void setup()
+void setup()
+{
+    Serial.begin(9600);  // start serial for output
+    Serial.println("power on!");
+
+    mutichannelGasSensor.begin(0x04);//the default I2C address of the slave is 0x04
+    //mutichannelGasSensor.changeI2cAddr(0x10);
+    //mutichannelGasSensor.doCalibrate();
+    //delay(8000);
+    while(mutichannelGasSensor.readR0() &lt; 0)
     {
-        Serial.begin(9600);  // start serial for output
-        Serial.println(&quot;power on!&quot;);
-
-        mutichannelGasSensor.begin(0x04);//the default I2C address of the slave is 0x04
-        //mutichannelGasSensor.changeI2cAddr(0x10);
-        //mutichannelGasSensor.doCalibrate();
-        //delay(8000);
-        while(mutichannelGasSensor.readR0() &lt; 0)
-        {
-            Serial.println(&quot;sensors init error!!&quot;);
-            delay(1000);
-        }
-        Serial.print(&quot;Res0[0]: &quot;);
-        Serial.println(mutichannelGasSensor.res0[0]);
-        Serial.print(&quot;Res0[1]: &quot;);
-        Serial.println(mutichannelGasSensor.res0[1]);
-        Serial.print(&quot;Res0[2]: &quot;);
-        Serial.println(mutichannelGasSensor.res0[2]);
-        mutichannelGasSensor.powerOn();
-    }
-
-    void loop()
-    {
-        mutichannelGasSensor.readR();
-        Serial.print(&quot;Res[0]: &quot;);
-        Serial.println(mutichannelGasSensor.res[0]);
-        Serial.print(&quot;Res[1]: &quot;);
-        Serial.println(mutichannelGasSensor.res[1]);
-        Serial.print(&quot;Res[2]: &quot;);
-        Serial.println(mutichannelGasSensor.res[2]);
-
-        mutichannelGasSensor.calcGas();
-        Serial.print(&quot;NH3: &quot;);
-        Serial.print(mutichannelGasSensor.density_nh3);
-        Serial.println(&quot;ppm&quot;);
-        Serial.print(&quot;CO: &quot;);
-        Serial.print(mutichannelGasSensor.density_co);
-        Serial.println(&quot;ppm&quot;);
-        Serial.print(&quot;NO2: &quot;);
-        Serial.print(mutichannelGasSensor.density_no2);
-        Serial.println(&quot;ppm&quot;);
-
+        Serial.println("sensors init error!!");
         delay(1000);
-        Serial.println(&quot;...&quot;);
     }
-</code></pre>
+    Serial.print("Res0[0]: ");
+    Serial.println(mutichannelGasSensor.res0[0]);
+    Serial.print("Res0[1]: ");
+    Serial.println(mutichannelGasSensor.res0[1]);
+    Serial.print("Res0[2]: ");
+    Serial.println(mutichannelGasSensor.res0[2]);
+    mutichannelGasSensor.powerOn();
+}
 
-<p>4.Upload the code. Remember to select Seeeduino Uno from the Tools | Board menu of the Arduino environment, and select the correct serial port Arduino is using.</p>
-<p>By opening the serial monitor, you can see the raw data read from sensor.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/img/Mutichannel_Gas_Sensor_Grove_Print.jpg" /></p>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/res/Grove-Multichannel_Gas_Sensor_v1.0_sch.pdf">Grove - Multichannel Gas Sensor v1.0 sch</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/res/Grove-Multichannel_Gas_Sensor_v1.0_eagle_files.zip">Grove - Multichannel Gas Sensor eagle files</a></li>
-<li><a href="https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor">Arduino Library &amp; Grove/Xadow firmware</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Multichannel_Gas_Sensor/res/MiCS-6814_Datasheet.pdf">MiCS-6814 Datasheet</a></li>
-</ul>
-<h2 id="help-us-make-it-better">Help us make it better<a class="headerlink" href="#help-us-make-it-better" title="Permanent link"></a></h2>
-<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Multichannel_Gas_Sensor -->
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Grove-Multichannel_Gas_Sensor" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Grove-Piezo_Vibration_Sensor/" class="btn btn-neutral float-right" title="Grove - Piezo Vibration Sensor">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Grove-Mouse_Encoder/" class="btn btn-neutral" title="Grove - Mouse Encoder"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
+void loop()
+{
+    mutichannelGasSensor.readR();
+    Serial.print("Res[0]: ");
+    Serial.println(mutichannelGasSensor.res[0]);
+    Serial.print("Res[1]: ");
+    Serial.println(mutichannelGasSensor.res[1]);
+    Serial.print("Res[2]: ");
+    Serial.println(mutichannelGasSensor.res[2]);
     
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Grove-Mouse_Encoder/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Grove-Piezo_Vibration_Sensor/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+    mutichannelGasSensor.calcGas();
+    Serial.print("NH3: ");
+    Serial.print(mutichannelGasSensor.density_nh3);
+    Serial.println("ppm");
+    Serial.print("CO: ");
+    Serial.print(mutichannelGasSensor.density_co);
+    Serial.println("ppm");
+    Serial.print("NO2: ");
+    Serial.print(mutichannelGasSensor.density_no2);
+    Serial.println("ppm");
+    
+    delay(1000);
+    Serial.println("...");
+}</pre>
+<ul><li> 4) Upload the code. Remeber to select Seeeduino Uno from the Tools | Board menu of the 
+</li></ul>
+<p>Arduino environment, and select the correct serial port Arduino is using.<br/>
+By opening the serial monitor, you can see the raw data read from sensor.<br/>
+<img src="img/Mutichannel_Gas_Sensor_Grove_Print.jpg" width="465"/>
+</p>
+<h2> Resources</h2>
+<ul><li> <a href="res/Grove-Multichannel_Gas_Sensor_v1.0_sch.pdf">Grove - Multichannel Gas Sensor v1.0 sch</a>
+</li><li> <a href="res/Grove-Multichannel_Gas_Sensor_v1.0_eagle_files.zip">Grove - Multichannel Gas Sensor eagle files</a>
+</li><li> <a href="https://github.com/Seeed-Studio/Mutichannel_Gas_Sensor">Arduino Library &amp; Grove/Xadow firmware</a>
+</li><li> <a href="res/MiCS-6814_Datasheet.pdf">MiCS-6814 Datasheet</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

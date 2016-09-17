@@ -1,0 +1,665 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino Cloud</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino Cloud</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/SeeeduinoCloud_MainPic.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>Seeeduino Cloud is a microcontroller board based on Dragino WiFi IoT module <a href="http://www.dragino.com/products/linux-module/item/87-he.html">HE</a> and ATmega32u4. <b>HE</b> is a high performance, low cost 150M, 2.4G WiFi module which with an Open Source OpenWrt system inside. <b>HE</b> means “core” in Chinese. Seeeduino Cloud is also an Arduino compatible board, 100% compatible with Grove, Shield and IDE(Arduino IDE 1.5.3 and later). Apart from normal interface of Arduino, Seeeduino Cloud has built-in Ethernet and WiFi support. A USB-A port makes it very suitable for those prototype designs that need network connection and mass storage. It is also a good idea to use Seeeduino Cloud as an IoT gateway.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Seeeduino-Cloud-Arduino-Yun-compatible-openWRT-controller-p-2123.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li>Compatible with Arduino Yun
+</li><li>Based on Dragino WiFi IoT module HE 
+</li><li>Open Source OpenWrt system inside
+</li><li>Support 2.4Ghz WiFi, 802.11 b/g/n
+</li><li>Support Ethernet
+</li><li>Support USB 2.0
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification</h2>
+<p><b>1. HE Module</b>
+</p>
+<table>
+<tr>
+<th> Parameter
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td width="200"> CPU
+</td>
+<td width="350">ATHEROS AR9331
+</td></tr>
+<tr>
+<td> Clock Speed
+</td>
+<td> 400MHz
+</td></tr>
+<tr>
+<td> RAM
+</td>
+<td> 64MB
+</td></tr>
+<tr>
+<td> Flash
+</td>
+<td> 16MB
+</td></tr>
+<tr>
+<td>OS
+</td>
+<td>Open Source OpenWrt
+</td></tr>
+<tr>
+<td>Interfaces
+</td>
+<td>2 x RJ45, 1 x USB Host, 1 x UART,  14 multiplex GPIOs
+</td></tr>
+<tr>
+<td>Power
+</td>
+<td>3.3V power input
+</td></tr>
+<tr>
+<td>WiFi
+</td>
+<td> Support 150M 2.4Ghz WiFi, 802.11 b/g/n
+</td></tr>
+<br/>
+</table>
+<p><br/>
+<b>2. AVR Arduino Microcontroller</b>
+</p>
+<table>
+<tr>
+<th> Parameter
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td width="200"> Microcontroller
+</td>
+<td width="350">ATmega32u4
+</td></tr>
+<tr>
+<td>Flash Memory
+</td>
+<td>32KB
+</td></tr>
+<tr>
+<td>SRAM
+</td>
+<td>2.5kB
+</td></tr>
+<tr>
+<td>EEPROM
+</td>
+<td>1kB
+</td></tr>
+<tr>
+<td>Clock Speed
+</td>
+<td>16MHz
+</td></tr>
+<tr>
+<td>Digital I/O Pins
+</td>
+<td>20
+</td></tr>
+<tr>
+<td>PWM Channels
+</td>
+<td>7
+</td></tr>
+<tr>
+<td>Analog Input Channels
+</td>
+<td>12
+</td></tr>
+<br/>
+</table>
+<h2> Hardware Overview</h2>
+<p><img src="img/SeeeduinoCloud_System_Structure.jpg" width="600"/>
+<br/><br/>
+<img src="img/SeeeduinoCloud_SystemArchitecture_v2.png" width="600"/>
+<br/><br/>
+<b>POWER</b> —— The <b>Dragino HE</b> is the core module of Seeeduino Cloud and it requires around 200mA current when in full load. It is recommended to power the board via the micro-USB connection with 5V DC. If you are powering the board though the <b>Vin</b> pin, you must supply a regulated 5V DC. 
+<br/>
+<b>NOTE:</b> There is no on-board voltage regulator for connecting higher DC voltages. Applying more than 5V will damage the board.<br/>
+<b>Memory</b> —— The ATmega32u4 has 32 KB (with 4 KB used for the bootloader). It also has 2.5 kB of SRAM and 1 kB of EEPROM (which can be read and written with the EEPROM library).
+The Dragino HE has 64 MB of DDR2 RAM and 16 MB of flash memory.<br/>
+<b>LEDs</b> —— Seeeduino Cloud has 7 Leds, as shown in the picture below.
+</p>
+<ul><li><b>L</b>:  digital 13 pin
+</li><li><b>RX</b>: Serial Receiver
+</li><li><b>TX</b>: Serial Transmit
+</li><li><b>USB</b>: USB Indicator
+</li><li><b>LAN</b>: Ethernet Indicator
+</li><li><b>WLAN</b>: WiFi Indicator
+</li><li><b>SYS</b>: Linux System Indicator<br/><br/>
+</li></ul>
+<p><img src="img/SeeeduinoCloud_LEDS.jpg" width="600"/>
+<br/><br/>
+<b>Reset Button</b> —— Seeeduino Cloud has 3 Reset buttons, as shown in the picture above.
+</p>
+<ul><li><b>32U4 Reset</b>: Pressing the 32U4 Reset button will reset the ATmega32U4 MCU. Usually, it is used for re-starting your sketch.
+</li><li><b>Cloud Reset</b>: The Cloud Reset button only supports long press. When pressed and released after 5 seconds, it will reset the WiFi settings. Other settings will be retained. If the button is pressed and released after 30 seconds, it will reset ALL the settings to factory default.
+</li><li><b>System Reset</b>: Pressing the System Reset button will reboot the Linux system.
+</li></ul>
+<p><br/>
+</p>
+<h2> Getting Started</h2>
+<p>Seeeduino Cloud is compatible with <a href="http://arduino.cc/en/Main/ArduinoBoardYun?from=Products.ArduinoYUN">Arduino Yun</a>. Hence, you can get started with  <a href="http://arduino.cc/en/Guide/ArduinoYun">Arduino Yun Guide</a>. Here, we provide some basic operations to know more about Seeeduino Cloud.  At last, you need a notebook to get started.
+</p>
+<h3> Configure Network </h3>
+<p>The Seeeduino Cloud has a WiFi interface and a LAN port. Either of them has IP address that can be used for internet connection and device management.<br/>
+</p>
+<h4>  WiFi AP Mode </h4>
+<p>When you power ON the Seeeduino Cloud for the first time, there will be an unsecure WiFi network called SeeeduinoCloud-AXXXX shown in wifi connections.<br/>
+You can connect your computer to this network as shown below. Your computer will get an ip of this network <b>192.168.240.xxx</b>. The Seeeduino Cloud has a default ip address of <b>192.168.240.1</b>.<br/><br/>
+<img src="img/SeeeduinoCloud_WiFi.png" width="500"/><br/>
+</p><p><br/>
+</p>
+<h4>  Fallback access </h4>
+<dl><dd> 1. After connect <i><b>SeeeduinoCloud-AXXXX</b></i>, disable you Ethernet adapter.
+</dd><dd> 2. Type 172.31.255.254(a default fallback IP to access this Seeeduino Cloud) in browser search box and you will connect to Seeeduino Cloud with web UI.
+</dd></dl>
+<h3>  Access Linux </h3>
+<p>The Seeeduino Cloud runs an Open Source Linux system. If user has a computer in the same network as Seeeduino Cloud, user can access its system via either <b>Web Interface</b> or <b>Secure Shell(SSH)</b>.
+</p>
+<h4> Access via web</h4>
+<p>Once you have obtained an IP address, open a web browser, and enter 192.168.240.1 into the browser, you can see the Seeeduino Cloud WEB GUI web page.<br/><br/>
+<img src="img/Seeeduino_LoginIn.png" width="500"/><br/><br/>
+The default password is <b>seeeduino</b>, enter the password and click <b>LOG IN</b>.<br/>
+</p>
+<h4> Access via SSH </h4>
+<p>Via SSH access, user can access the Linux system directly and customize the system to support more features and applications. To access, you need to <br/>
+</p>
+<dl><dd> 1. Download a SSH client such as <b><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">putty</a></b>
+</dd><dd> 2. Use IP 192.168.240.1. Or you can use fall back IP address.<br/>
+</dd></dl>
+<p><b>Note</b> that always disable your Ethernet adapter before use fallback IP address to access Linux OS inside. Although you can keep connected after enabling Ethernet adapter later.
+</p>
+<dl><dd> 3. Run putty to access Seeeduino Cloud, select <b>SSH</b>, fill <b>Port</b> with <i><b>22</b></i> The default user name and password are as follows:<br/>
+</dd></dl>
+<pre> username: root
+ password: seeeduino
+</pre>
+<p>Once logged in, you can see the welcome page as follows.<br/><br/>
+<img src="img/SeeeduinoCloud_SSH_Welcome.png" width="500"/>
+<br/>
+</p>
+<h3> Web GUI Configure</h3>
+<p>After logging in via Web, the GUI will show you the WiFi/ Eth interface status. At the top-right corner, you can see the following three option settings:
+<br/>
+</p>
+<ul><li><b>SYSTEM</b>—— Global system configuration
+</li><li><b>SENSORS</b>—— IoT Server configuration
+</li><li><b>UPGRADE</b>—— Upgrade the firmware<br/><br/>
+</li></ul>
+<p><img src="img/SeeeduinoCloud_homepage.png" width="500"/><br/><br/>
+</p>
+<h4> Connect to WLAN access point</h4>
+<p>1. Click the SYSTEM on Seeeduino Cloud homepage and enter the system configuration page.<br/>
+2. In <b>WIRELESS PARAMETERS</b> field, you can select a wifi network that you wish to connect to.<br/>
+3. Select the security type and then enter the password.<br/>
+4. Press the CONFIGURE &amp; RESTART button, the Seeeduino Cloud will reset the network configuration and join the specified network.<br/><br/>
+<img src="img/SeeeduinoCloud_ConnectToNetwork.png" width="500"/><br/>
+Now, you can join the network that you assigned to the Seeeduino Cloud.<br/><br/>
+<b>Note</b> that now you can not connect Seeeduino Cloud with fallback IP <i>172.31.255.254</i> or <i>192.168.240.1</i> over SSH.
+</p>
+<h4> IoT Server Configuration</h4>
+<p>The IoT Server page allows you to upload data to IoT websites such as Xively while you only need to write sensor data to serial port.<br/> <br/>
+<img src="img/SeeeduinoCloud_IoTServer.png" width="500"/> <br/><br/>
+and the sketch is shown below.
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+  Simulate UART TX Data 
+ 
+ This sketch simulate Temperature and Humidity data to UART. 
+ 
+ To test the pass through feature for different IoT service 
+ 
+ created 25 Apr 2014
+ by Dragino Technology Co., Limited
+ 
+ Reference:
+ http://wiki.dragino.com/index.php?title=Xively#Upload_data_to_Xively_use_Pass_Through_Mode
+ 
+ */</span>
+String dataString <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial1</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  dataString <span class="sy1">=</span> <span class="st0">"temp:"</span><span class="sy4">;</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="kw3">random</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">20</span><span class="sy4">;</span>
+  <span class="kw2">Serial1</span>.<span class="kw3">println</span><span class="br0">(</span>dataString<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// upload Temperature data</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">20000</span><span class="br0">)</span><span class="sy4">;</span>
+  dataString <span class="sy1">=</span> <span class="st0">"humidity:"</span><span class="sy4">;</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="kw3">random</span><span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">70</span><span class="sy4">;</span>  <span class="co1">// upload humidity data</span>
+  <span class="kw2">Serial1</span>.<span class="kw3">println</span><span class="br0">(</span>dataString<span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">20000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>For more information, please visit the <a href="http://wiki.dragino.com/index.php?title=Xively">wiki</a> for Dragino.
+</p>
+<h2> Upgrade Firmware</h2>
+<p>Seeeduino Cloud can be upgraded via the GUI or SSH for bug fixes/system improvement or new features.<br/><br/>
+</p>
+<h3>  Upgrade via GUI </h3>
+<p>Go to GUI-&gt;Upgrade page and select the correct firmware to upgrade. The firmware used for web upgrade should be a sysupgrade type firmware, you can choose to keep settings or not after upgrade.<br/>
+<img src="img/SeeeduinoCloud_UploadFirmware.png" width="500"/><br/><br/>
+Normally it takes a few minutes to flash the new firmware. Then all the LEDs will blink together which indicates that the system reboot with the new firmware. <br/>
+The firmware version info can be checked from <a href="res/Seeed-build--v1.3.4--20140815-1100.zip">here</a>.<br/>
+</p>
+<h3>  Upgrade via SSH </h3>
+<p>To upgrade via SSH, follow the steps below:
+</p>
+<ul><li>1. Log in to linux via SSH.
+</li><li>2. Download the upgrade firmware and copy it to a USB flash disk.
+</li><li>3. Insert the USB flash disk to the USB host interface of Seeeduino Cloud and then mount it to /mnt/sda1.
+</li></ul>
+<pre> root@Seeed:/# mount -t vfat /dev/sda1 /mnt/sda1
+</pre>
+<ul><li>4. Run the command /usr/bin/run-sysupgrade as shown below.
+</li></ul>
+<pre> root@Seeed:/usr/bin# run-sysupgade /mnt/sda1/seeed-v1.3.4-squashfs-sysupgrade.bin
+</pre>
+<h3> Upgrade via U-Boot </h3>
+<p>There are some cases in which the Seeeduino Cloud fails to boot, for example if upgraded with an improper firmware or due to power failure during upgrade. 
+User is still able to recover the Seeeduino Cloud system by using the Failsafe U-Boot of Seeeduino Cloud.
+Follow the instructions (in Windows) given below:<b><br/></b>
+</p>
+<ul><li>1. Set up TFTP server
+</li></ul>
+<p>Download the tftp server (recommend tftp32d.exe). And download the latest SeeeduinoCloud firmware . The firmware we need is the kernel and rootfs-squashfs files. Put these firmware files and tftp32d in the same directory. Start the tftp server. 
+</p>
+<ul><li>2. Download Hercules utility
+</li></ul>
+<p>Download Hercules, the tool to transfer commands to Seeeduino Cloud in Failsafe mode. Run Hercules and input correct parameters as shown below:<br/><br/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:446px;"><img src="img/SeeeduinoCloud_upgrade_Hercules.png" width="444"/> <div class="thumbcaption">Hercules Window</div></div></div><br/>
+<p><b>Protocol</b>: UDP
+</p><p><b>Module IP</b>: 192.168.255.1
+</p><p><b>Port</b>: 6666
+</p><p><b>Local port</b>: 6666
+</p>
+<ul><li>3. Connect your PC to Seeeduino Cloud.
+</li></ul>
+<p>Connect the PC and Seeeduino Cloud via an Ethernet cable. Set up PC with below LAN IP <b>192.168.255.2</b> and netmask <b>255.255.255.0</b> . Disable PC’s firewall.
+</p>
+<ul><li>4. Power up Seeeduino Cloud to Failsafe mode.
+</li></ul>
+<p>Press the Failsafe button (press the Cloud Rest and System Rest button at the same time for at least 3s) and power up Seeeduino Cloud; User will see all the LEDs blink together, release the button after 10 seconds and there are some messages that pop up in the Hercules panel, which means the Seeeduino Cloud has been in Failsafe Netconsole mode and ready to access commands. <br/>
+User can type the commands in Hercules to transfer and upgrade Yun Shield to the latest firmware with factory settings. <br/>
+The update commands are as follows, replace the xxx with the actual version.<br/>
+<b>Note:</b> While typing the command in Hercules, the user must add <b>&lt;CR&gt;</b> at the end of each command; $ is a special char in Hercules, user should double it (key two $$) while typing. 
+</p><p><b>Upgrade Kernel</b>
+</p>
+<pre>tftpboot <span class="bluetext">0x81000000</span> ms14-arduino-yun-kernel<span class="bluemiddle">-xxx</span>.bin
+erase <span class="bluetext">0x9fea0000 +0x140000</span> 
+cp.b <span class="bluetext">0x81000000 0x9fea0000</span> $filesize
+</pre>
+<p><b>Upgrade rootfs</b>
+</p>
+<pre>tftpboot <span class="bluetext">0x81000000</span> ms14-arduino-yun--rootfs-squashfs<span class="bluemiddle">-xxx</span>.bin
+erase <span class="bluetext">0x9f050000 +0xe50000</span>    
+cp.b <span class="bluetext">0x81000000 0x9f050000</span> $filesize
+</pre>
+<p><b>Reset to the new firmware</b>
+</p>
+<pre>reset
+</pre>
+<p><span class="redwarning">Warning</span>: User should use the exact address shown in the erase and cp.b. Wrong address number may destroy the boot-loader of Yun Shield and the device won’t boot anymore, or destroy the radio data of Yun Shield which may lead to a poor wifi performance or incorrect MAC addresses. 
+</p><p><b>Recovery in Linux is similar to Windows</b>, the main difference is that the tool used in Linux is <b>nc</b> and the command is  with <b>nc -kul 6666</b>. It shows if the Yun Shield has been in Failsafe Netconsole mode and detected by nc. <br/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:464px;"><img src="img/SeeeduinoCloud_Yun_Shield.png" width="462"/> <div class="thumbcaption">Linux Screenshot</div></div></div>
+<p><br/>
+<br/>
+</p>
+<h2> Upload Sketch</h2>
+<p>Seeeduino Cloud allows you to upload sketch via common COM port or network. If you choose the latter, your computer and Seeeduino Cloud should be in the same network. The Seeeduino Cloud will broadcast data in the network and Arduino IDE will receive the data and show the Seeeduino Cloud in Tools-&gt;Port.<br/><br/>
+<img src="img/SeeeduinoCloud_SerialPort.png" width="500"/><br/><br/>
+</p>
+<ul><li>1) In Tools-&gt;Board, choose the Arduino Yun as the board type.
+</li><li>2) In Tools-&gt;Port, choose the Seeeduino Cloud port with an ip address if you want to update via network.
+</li><li>3) Compile the sketch and upload it to the Arduino Board. During upload, the Seeeduino Cloud will ask you to key in the password, by default, the password is <b>seeeduino</b>.<br/><br/>
+</li></ul>
+<p><img src="img/SeeeduinoCloud_upload_password.png" width="500"/><br/><br/>
+</p>
+<h2> Bridge Library</h2>
+<p>The Bridge Library simplifies the communication between the Arduino Board and Dragino HE. Bridge commands from the AVR (Arduino Board) are interpreted by Python on the HE. 
+<br/>Its role is to 
+<br/> - execute programs on the GNU/Linux side when asked by Arduino,
+<br/> - provide a shared storage space for sharing data like sensor readings between the Arduino and the Internet
+<br/> - receive commands from the Internet and pass them directly to the Arduino.
+<br/> There are detailed explanations and lots of examples to show how to use Bridge on the <a href="http://arduino.cc/en/Reference/YunBridgeLibrary">Arduino Official Website</a>.
+Following are some examples that use Bridge Library.<br/>
+</p>
+<h3> Example 1: Say hello to Linux</h3>
+<p><b>Introduction:</b><br/>
+This example is a hello test between the Arduino and Seeeduino Cloud. The example can be found on 
+the Arduino IDE--&gt; File --&gt; Examples --&gt; Bridge --&gt; ConsoleRead. A tutorial of this example can be 
+found <a href="http://arduino.cc/en/Tutorial/ConsoleRead">here</a>. You can see the code below with some additional details 
+to understand it with the Seeeduino Cloud:<br/>
+<b>Code:</b><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Console.h&gt;</span>
+ 
+String name<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// Initialize Console and wait for port to open:</span>
+  Bridge.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  Console.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Wait for Console port to connect</span>
+  <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span>Console<span class="br0">)</span><span class="sy4">;</span>
+ 
+  Console.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Hi, what's your name?"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">if</span> <span class="br0">(</span>Console.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">char</span> c <span class="sy1">=</span> Console.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// read the next char received</span>
+    <span class="co1">// look for the newline character, this is the last character in the string</span>
+    <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy1">==</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="co1">//print text with the name received</span>
+      Console.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Hi "</span><span class="br0">)</span><span class="sy4">;</span>
+      Console.<span class="kw3">print</span><span class="br0">(</span>name<span class="br0">)</span><span class="sy4">;</span>
+      Console.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"! Nice to meet you!"</span><span class="br0">)</span><span class="sy4">;</span>
+      Console.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="co1">// Ask again for name and clear the old name</span>
+      Console.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Hi, what's your name?"</span><span class="br0">)</span><span class="sy4">;</span>
+      name <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>  <span class="co1">// clear the name string</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span> <span class="br0">{</span>  	 <span class="co1">// if the buffer is empty Cosole.read() returns -1</span>
+      name <span class="sy2">+</span><span class="sy1">=</span> c<span class="sy4">;</span> <span class="co1">// append the read char from Console to the name string</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3> Example 2: Upload data to IoT Server</h3>
+<p><b>Introduction:</b><br/>
+This example shows how to log data to the public IoT server “Xively”. The example is a modified 
+version (change Serial to Console to fit for different Arduino Board and debug over WiFi) from 
+Arduino IDE--&gt; File --&gt; Examples --&gt; Bridge --&gt; XivelyClient. Tutorial of this example can be referred <a href="http://arduino.cc/en/Tutorial/YunXivelyClient">here</a>. 
+<br/>
+Before uploading the sketch, make sure:<br/>
+-   The Seeeduino Cloud already has internet access. <br/>
+-   Input your FEED ID and API KEY according to the Tutorial. Note, The FEED ID should be 
+within double quotation marks “” .<br/>
+<b>Code:</b><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+  Xively sensor client with Strings
+ 
+ This sketch connects an analog sensor to Xively,
+ using an Arduino Yún.
+ 
+ created 15 March 2010
+ updated 27 May 2013
+ by Tom Igoe
+ 
+ http://arduino.cc/en/Tutorial/YunXivelyClient
+ 
+ */</span>
+ 
+ 
+<span class="co1">// include all Libraries needed:</span>
+<span class="co2">#include &lt;Process.h&gt;</span>
+<span class="co2">#include "passwords.h"      // contains my passwords, see below</span>
+ 
+<span class="coMULTI">/*
+  NOTE: passwords.h is not included with this repo because it contains my passwords.
+ You need to create it for your own version of this application.  To do so, make
+ a new tab in Arduino, call it passwords.h, and include the following variables and constants:
+ 
+ #define APIKEY        "foo"                  // replace your pachube api key here
+ #define FEEDID        0000                   // replace your feed ID
+ #define USERAGENT     "my-project"           // user agent is the project name
+ */</span>
+ 
+ 
+<span class="co1">// set up net client info:</span>
+<span class="kw4">const</span> <span class="kw4">unsigned</span> <span class="kw4">long</span> postingInterval <span class="sy1">=</span> <span class="nu0">60000</span><span class="sy4">;</span>  <span class="co1">//delay between updates to xively.com</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> lastRequest <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>      <span class="co1">// when you last made a request</span>
+String dataString <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// start serial port:</span>
+  Bridge.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span><span class="kw2">Serial</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// wait for Network Serial to open</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Xively client"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Do a first update immediately</span>
+  updateData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  sendData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  lastRequest <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// get a timestamp so you can calculate reading and sending intervals:</span>
+  <span class="kw4">long</span> now <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// if the sending interval has passed since your</span>
+  <span class="co1">// last connection, then connect again and send data:</span>
+  <span class="kw1">if</span> <span class="br0">(</span>now <span class="sy2">-</span> lastRequest <span class="sy1">&gt;=</span> postingInterval<span class="br0">)</span> <span class="br0">{</span>
+    updateData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    sendData<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    lastRequest <span class="sy1">=</span> now<span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> updateData<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// convert the readings to a String to send it:</span>
+  dataString <span class="sy1">=</span> <span class="st0">"Temperature,"</span><span class="sy4">;</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="kw3">random</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">20</span><span class="sy4">;</span>
+  <span class="co1">// add pressure:</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">"<span class="es1">\n</span>Pressure,"</span><span class="sy4">;</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="kw3">random</span><span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span> <span class="sy2">+</span> <span class="nu0">100</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// this method makes a HTTP connection to the server:</span>
+<span class="kw4">void</span> sendData<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// form the string for the API header parameter:</span>
+  String apiString <span class="sy1">=</span> <span class="st0">"X-ApiKey: "</span><span class="sy4">;</span>
+  apiString <span class="sy2">+</span><span class="sy1">=</span> APIKEY<span class="sy4">;</span>
+ 
+  <span class="co1">// form the string for the URL parameter:</span>
+  String url <span class="sy1">=</span> <span class="st0">"https://api.xively.com/v2/feeds/"</span><span class="sy4">;</span>
+  url <span class="sy2">+</span><span class="sy1">=</span> FEEDID<span class="sy4">;</span>
+  url <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">".csv"</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Send the HTTP PUT request</span>
+ 
+  <span class="co1">// Is better to declare the Process here, so when the</span>
+  <span class="co1">// sendData function finishes the resources are immediately</span>
+  <span class="co1">// released. Declaring it global works too, BTW.</span>
+  Process xively<span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span><span class="es1">\n</span>Sending data... "</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="kw3">begin</span><span class="br0">(</span><span class="st0">"curl"</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span><span class="st0">"-k"</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span><span class="st0">"--request"</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span><span class="st0">"PUT"</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span><span class="st0">"--data"</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span>dataString<span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span><span class="st0">"--header"</span><span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span>apiString<span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">addParameter</span><span class="br0">(</span>url<span class="br0">)</span><span class="sy4">;</span>
+  xively.<span class="me1">run</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"done!"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// If there's incoming data from the net connection,</span>
+  <span class="co1">// send it out the Serial:</span>
+  <span class="kw1">while</span> <span class="br0">(</span>xively.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">char</span> c <span class="sy1">=</span> xively.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+<img src="img/SeeeduinoCloud_Sketch_xively.png" width="500"/>
+<br/><br/>
+</p>
+<h3> Example 3. Log Data to USB flash</h3>
+<p><b>Introduction:</b><br/>
+This example shows how to log data to a USB flash. The sketch used in this example is same as 
+<a href="http://wiki.dragino.com/index.php?title=Arduino_Yun_examples#Log_sensor_data_to_USB_flash">here</a>. And the source code can be found there.<br/>
+The Seeeduino Cloud will auto mount the USB flash to directory /mnt/sda1. And the sketch will append 
+the sensor data to the file /mnt/sda1/data/datalog.csv. So make sure there is such a file in the USB 
+flash before running the sketch.<br/><br/>
+<b>Code:</b><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;FileIO.h&gt;     //FileIO class allow user to operate Linux file system</span>
+<span class="co2">#include &lt;Console.h&gt;    //Console class provide the interactive between IDE and Yun Shield</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// Initialize the Console</span>
+  Bridge.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  Console.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  FileSystem.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="sy3">!</span>Console<span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// wait for Serial port to connect.</span>
+  Console.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Filesystem datalogger<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span> <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// make a string that start with a timestamp for assembling the data to log:</span>
+  String dataString<span class="sy4">;</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> getTimeStamp<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">" , "</span><span class="sy4">;</span>
+  <span class="co1">// read three sensors and append to the string:</span>
+  <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> analogPin <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> analogPin <span class="sy1">&lt;</span> <span class="nu0">3</span><span class="sy4">;</span> analogPin<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">int</span> sensor <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>analogPin<span class="br0">)</span><span class="sy4">;</span>
+    dataString <span class="sy2">+</span><span class="sy1">=</span> String<span class="br0">(</span>sensor<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>analogPin <span class="sy1">&lt;</span> <span class="nu0">2</span><span class="br0">)</span> <span class="br0">{</span>
+      dataString <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">","</span><span class="sy4">;</span>    <span class="co1">// separate the values with a comma</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+  <span class="co1">// open the file. note that only one file can be open at a time,</span>
+  <span class="co1">// so you have to close this one before opening another.</span>
+  <span class="co1">// The USB flash card is mounted at "/mnt/sda1" by default</span>
+  File dataFile <span class="sy1">=</span> FileSystem.<span class="me1">open</span><span class="br0">(</span><span class="st0">"/mnt/sda1/data/datalog.csv"</span>, FILE_APPEND<span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// if the file is available, write to it:</span>
+  <span class="kw1">if</span> <span class="br0">(</span>dataFile<span class="br0">)</span> <span class="br0">{</span>
+    dataFile.<span class="kw3">println</span><span class="br0">(</span>dataString<span class="br0">)</span><span class="sy4">;</span>
+    dataFile.<span class="me1">close</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// print to the serial port too:</span>
+    Console.<span class="kw3">println</span><span class="br0">(</span>dataString<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>  
+  <span class="co1">// if the file isn't open, pop up an error:</span>
+  <span class="kw1">else</span> <span class="br0">{</span> 
+    Console.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"error opening datalog.csv"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">15000</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//Write every 15 seconds</span>
+<span class="br0">}</span>
+<span class="co1">// getTimeStamp function return a string with the time stamp</span>
+<span class="co1">// Yun Shield will call the Linux "date" command and get the time stamp</span>
+String getTimeStamp<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  String result<span class="sy4">;</span>
+  Process <span class="kw3">time</span><span class="sy4">;</span>
+  <span class="co1">// date is a command line utility to get the date and the time </span>
+  <span class="co1">// in different formats depending on the additional parameter </span>
+  <span class="kw3">time</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="st0">"date"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">time</span>.<span class="me1">addParameter</span><span class="br0">(</span><span class="st0">"+%D-%T"</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// parameters: D for the complete date mm/dd/yy</span>
+  <span class="co1">//              T for the time hh:mm:ss</span>
+  <span class="kw3">time</span>.<span class="me1">run</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// run the command</span>
+  <span class="co1">// read the output of the command</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="kw3">time</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">char</span> c <span class="sy1">=</span> <span class="kw3">time</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span>c <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="br0">)</span>
+      result <span class="sy2">+</span><span class="sy1">=</span> c<span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw1">return</span> result<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+<img src="img/SeeeduinoCloud_Sketch_USB.png" width="500"/>
+<br/><br/>
+</p>
+<h2> Advanced Usage of Seeeduino Cloud</h2>
+<h3> Flash bootloader</h3>
+<p>If the bootloader of Seeeduino Cloud has broken, you can re-burn the bootloader like this:
+</p>
+<ul><li>1. Login into the Linux via SSH.
+</li><li>2. Run the command /usr/bin/run-avrdude as follows:
+</li></ul>
+<pre>root@Seeed:~# /usr/bin/run-avrdude Caterina-Yun.hex
+</pre>
+<p>and you will see the following message that shows bootloader has been burned successfully.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="text source-text"><pre class="de1">root@Seeed:~# /usr/bin/run-avrdude Caterina-Yun.hex
+ 
+avrdude: AVR device initialized and ready to accept instructions
+ 
+Reading | ################################################## | 100% 0.01s
+ 
+avrdude: Device signature = 0x1e9587
+avrdude: NOTE: "flash" memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "0xFF"
+avrdude: writing lfuse (1 bytes):
+ 
+Writing | ################################################## | 100% 0.00s
+ 
+avrdude: 1 bytes of lfuse written
+avrdude: verifying lfuse memory against 0xFF:
+avrdude: load data lfuse data from input file 0xFF:
+avrdude: input file 0xFF contains 1 bytes
+avrdude: reading on-chip lfuse data:
+ 
+Reading | ################################################## | 100% 0.00s
+ 
+avrdude: verifying ...
+avrdude: 1 bytes of lfuse verified
+avrdude: reading input file "0xD8"
+avrdude: writing hfuse (1 bytes):
+ 
+Writing | ################################################## | 100% 0.00s
+ 
+avrdude: 1 bytes of hfuse written
+avrdude: verifying hfuse memory against 0xD8:
+avrdude: load data hfuse data from input file 0xD8:
+avrdude: input file 0xD8 contains 1 bytes
+avrdude: reading on-chip hfuse data:
+ 
+Reading | ################################################## | 100% 0.00s
+ 
+avrdude: verifying ...
+avrdude: 1 bytes of hfuse verified
+avrdude: reading input file "0xCB"
+avrdude: writing efuse (1 bytes):
+ 
+Writing | ################################################## | 100% 0.00s
+ 
+avrdude: 1 bytes of efuse written
+avrdude: verifying efuse memory against 0xCB:
+avrdude: load data efuse data from input file 0xCB:
+avrdude: input file 0xCB contains 1 bytes
+avrdude: reading on-chip efuse data:
+ 
+Reading | ################################################## | 100% 0.00s
+ 
+avrdude: verifying ...
+avrdude: 1 bytes of efuse verified
+avrdude: reading input file "Caterina-Yun.hex"
+avrdude: can't open input file Caterina-Yun.hex: No such file or directory
+avrdude: read from file 'Caterina-Yun.hex' failed
+ 
+avrdude: safemode: Fuses OK
+ 
+avrdude done.  Thank you.</pre></div></div>
+<h3> Customize Your Own OpenWrt</h3>
+<p>Seeeduino Cloud has a linux system based on OpenWrt, you can view all the source code from <a href="https://github.com/Seeed-Studio/linino">here</a>. To customize your own OpenWrt, you can follow this URL.
+</p>
+<h2> Resources</h2>
+<ul><li><a href="res/Seeeduino_Cloud_v1.0.zip" title="File:Seeeduino Cloud v1.0.zip">File:Seeeduino Cloud v1.0.zip</a><br/>
+</li><li><a href="res/Seeed-build--v1.3.4--20140815-1100.zip">Firmware</a>
+</li><li><a href="res/Seeeduino_Cloud_PDF.pdf">Seeeduino Cloud.PDF</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

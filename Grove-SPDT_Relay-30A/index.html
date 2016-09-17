@@ -1,0 +1,144 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - SPDT Relay(30A)</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - SPDT Relay(30A)</h1>
+
+<p>The SPDT Relay(30A) is a high quality Single Pole Double Throw Relay(SPDT).The Relay consists of a coil, 1 common terminal, 1 normally closed terminal, and one normally open terminal. When the coil of the relay is at rest (not energized), the common terminal and the normally closed terminal have continuity. When the coil is energized, the common terminal and the normally open terminal have continuity. This relay's coil is rated up to 5V and the contact is rated up to 30A (@250VAC, 30VDC).You can use it to control high current devices.<br/>
+Model:<a href="http://www.seeedstudio.com/depot/grove-spdt-relay30a-p-1473.html">ACT05161P</a><br/>
+<img src="img/SPDT_Relay_01.jpg" width="700"/>
+</p>
+<h2> Feature</h2>
+<ul><li>High Switching Current
+</li><li>SPDT Relay
+</li><li>Normally closed relay
+</li></ul>
+<h2> Specification</h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row">working Voltage
+</th>
+<td> 4.75
+</td>
+<td> 5.0
+</td>
+<td> 5.25
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td colspan="3"> 185
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> Pull-In Voltage(Max)
+</th>
+<td colspan="3"> 3.75
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Operation Time(Max)
+</th>
+<td colspan="3"> 15
+</td>
+<td> ms
+</td></tr>
+<tr>
+<th scope="row"> Release Time(Max)
+</th>
+<td colspan="3"> 10
+</td>
+<td> ms
+</td></tr>
+<tr>
+<th scope="row">Operating Ambient Temperature
+</th>
+<td> -25
+</td>
+<td> -
+</td>
+<td> 70
+</td>
+<td> °C
+</td></tr></table>
+<h2> Usage</h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Why do we want to use a relay and do we really need to? Anytime you want to switch on/off a device which draws more current or works with a high voltage, you'll need to use a relay. That is to say, the relay is "a high voltage or current switch controlled by low voltage". The coil of an SPDT relay that we most commonly use draws very little current (the <a href="/Grove-Relay">Grove - Relay</a> supports 10A). Now, with this 30A relay, you can control much more high-current switch devices such as headlights, parking lights, horns, etc.<br/>
+</p><p>The SPDT Relay internal structure:<br/>
+<img src="img/Relay_Struction.jpg" width="600"/><br/>
+You may see that the common terminal and the normally closed terminal have continuity When the coil of the relay is at rest. 
+</p><p>But when the coil is energized, the common terminal and the normally open terminal will have continuity.
+</p><p>Hardware Installation can refer to the following picture:
+</p><p><br/><img src="img/SPDT_Relay.jpg" width="353"/><br/>
+</p><p>The coding to control this relay is the same as the <a href="/Grove-Relay">Grove - Relay</a>.<br/>Good luck to you for controlling your air-condition or washing machine, with Arduino and the Grove - SPDT Relay(30A).
+</p>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.<br/>
+2.You should have completed configuring the development enviroment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+<br/>
+3.Connection
+<br/>
+</p>
+<ul><li> Plug the sensor to grovepi socket D4 by using a grove cable.<br/>
+</li></ul>
+<p>4.Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_spdt_relay.py   # "Ctrl+x" to exit #
+</pre>
+<pre>
+import time
+import grovepi
+
+# Connect the Grove SPDT Relay to digital port D4
+# SIG,NC,VCC,GND
+relay = 4
+
+grovepi.pinMode(relay,"OUTPUT")
+
+while True:
+    try:
+        # switch on for 5 seconds
+        grovepi.digitalWrite(relay,1)
+        print "on"
+        time.sleep(5)
+
+        # switch off for 5 seconds
+        grovepi.digitalWrite(relay,0)
+        print "off"
+        time.sleep(5)
+
+    except KeyboardInterrupt:
+        grovepi.digitalWrite(relay,0)
+        break
+    except IOError:
+        print "Error"
+
+</pre>
+<p>5.Run the demo.<br/>
+</p>
+<pre>   sudo python grove_spdt_relay.py
+</pre>
+<h2> Resource</h2>
+<p><a href="res/Grove-SPDT_Relay-30A-Eagle_File.zip">Grove - SPDT Relay(30A) Eagle File</a>
+</p><p><a href="res/SLA-05VDC-SL-C_Datasheet.pdf">SLA-05VDC-SL-C Datasheet</a>
+</p><p>
+</p>
+<h2> Support</h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,509 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino Stalker v2.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino Stalker v2.0</h1><p><font color="red">
+<b>This is not the latest version of Seeeduino Stalker and has been discontinued.<br/>The latest version can be found here: <a href="/Seeeduino_Stalker_v2.1" title="Seeeduino Stalker v2.1">Seeeduino Stalker v2.1</a><br/>Look <a href="/Seeeduino_Stalker#Comparison_between_various_versions_of_Seeeduino_Stalker" title="Seeeduino Stalker"> here</a> for comparison between v1.0, v2.0 and v2.1.</b>
+</font>
+<br/><br/>
+</p><p>Link to product page for this device (follow this link to buy):<br/>
+<b>Seeeduino Stalker Atmega 328P v2.0</b>
+<b>: <a href="http://www.seeedstudio.com/depot/seeeduino-stalker-v2b-p-727.html">ARD104D2P</a></b>
+</p>
+
+<p>Seeeduino Stalker is a feature rich Arduino compatible Wireless Sensor Network node. It's modular structure and onboard peripherals makes it convenient to log time stamp sensor data on a periodic basis. The Seeeduino Stalker is a good candidate for all your tracking, monitoring and control projects.
+&lt;/br&gt;
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/Stalkerv21.jpg" width="500"/> <div class="thumbcaption">Seeeduino Stalker v2.0</div></div></div></div>
+<p>&lt;/br&gt;
+</p>
+<h2>  Features </h2>
+<ul><li> Compatible with Seeeduino.
+</li><li> Mechanically compatible with Arduino(I/O ports are only at 3.3V)
+</li><li> Onboard microcontroller: ATmega328P
+</li><li> Onboard Real Time Clock chip with a supercap as a backup power source
+</li><li> Serial interface with DTR for auto reset during programming when operating in standalone mode. (For programming, <a href="/UartSBee" title="UartSBee">UartSBee</a> must be bought separately)
+</li><li> microSD card socket 
+</li><li> I2C Pin header (operation voltage is selectable: 5.0V or 3.3V)
+</li><li> User defined switch and LED 
+</li><li> <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">Bee series socket</a> - 2*10 pin 2.0mm pitch (which will mate with - one at a time - any of the wireless modules: <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a>, <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a>, <a href="/w/index.php?title=GPS_Bee_kit_(with_Mini_Embedded_Antenna)&amp;action=edit&amp;redlink=1" title="GPS Bee kit (with Mini Embedded Antenna) (page does not exist)">GPSBee</a> or <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a>.)
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:858px;"><img src="img/Stalker_v2.0b_Section_Diagram.jpg" width="856"/> <div class="thumbcaption">Seeeduino Stalker v2.0 - Various sections are marked</div></div></div></div>
+<h2>  Application Ideas  </h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><img src="img/Stalkerandgpsbee.jpg" width="180"/> <div class="thumbcaption">Seeeduino Stalker v2.0 with the GPSBee inserted.</div></div></div>
+<ul><li> Wireless Sensor Network (using <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a> - bought seperately)
+</li><li> GPS Logging (using <a href="/w/index.php?title=GPS_Bee_kit_(with_Mini_Embedded_Antenna)&amp;action=edit&amp;redlink=1" title="GPS Bee kit (with Mini Embedded Antenna) (page does not exist)">GPSBee</a> - bought seperately)
+</li><li> Data Acquisition System capable of communicating with an App running on iPhone/Android Phone/Nokia Phone (using <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a> - bought seperately)
+</li><li> RF Remote Control (using <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a> - bought seperately)
+</li><li> As a simple standalone Arduino compatible physical computing platform (<a href="/UartSBee" title="UartSBee">UartSBee</a> must be bought seperately for programming)
+</li></ul>
+<p><br clear="all"/>
+<br clear="all"/>
+&lt;imagemap&gt;
+Image:Stalker_v2.0b_and_the_Bees.jpg|frame|center|alt=Photo of a Seeeduino Stalker v2.0 PCB and the various Bee modules that are compatible with.|The various Bee modules that can be used with Seeeduino Stalker v2.0 <i>(Click on the modules to visit their Wiki pages)</i>
+</p><p>poly 441 45 508 17 567 79 505 120 <a href="/UartSBee" title="UartSBee">UartSBee</a>
+poly 75 0 353 0 353 102 75 99 <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">WiFiBee (Coming Soon!)</a>
+poly 18 105 294 107 295 203 18 203 <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a>
+poly 2 212 274 212 275 327 2 326 <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a>
+poly 18 337 303 338 303 448 15 447 <a href="/w/index.php?title=GPS_Bee_kit_(with_Mini_Embedded_Antenna)&amp;action=edit&amp;redlink=1" title="GPS Bee kit (with Mini Embedded Antenna) (page does not exist)">GPSBee</a>
+poly 38 459 379 459 379 570 37 571 <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a>
+poly 400 55 477 106 424 147 354 97 <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">WiFiBee (Coming Soon!)</a>
+poly 307 143 336 136 398 140 392 189 333 187 318 174 302 176 <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a>
+poly 290 238 308 221 394 214 396 271 306 283 290 265 <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a>
+poly 321 353 333 330 395 306 427 364 359 393 335 380 <a href="/w/index.php?title=GPS_Bee_kit_(with_Mini_Embedded_Antenna)&amp;action=edit&amp;redlink=1" title="GPS Bee kit (with Mini Embedded Antenna) (page does not exist)">GPSBee</a>
+poly 409 464 417 432 488 389 537 445 463 498 426 491 <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a>
+poly 455 280 454 215 490 186 683 184 724 211 740 297 706 331 494 333 489 278 <a href="/Seeeduino_Stalker_v2.0b" title="Seeeduino Stalker v2.0b">Seeeduino Stalker v2.0b</a>
+poly 570 132 573 13 802 16 803 131 <a href="/UartSBee" title="UartSBee">UartSBee</a>
+</p><p>&lt;/imagemap&gt;
+</p><p><b>NOTE: Please note that <a href="/UartSBee" title="UartSBee">UartSBee</a> cannot be inserted into the Bee Series socket present on Seeeduino Stalker. The <a href="/UartSBee" title="UartSBee">UartSBee</a> is intended for interfacing the other Bee modules (shown in the photo above) to a computer and cannot itself be be inserted into the socket meant for these other Bee modules. There is a separate 5 way pinheader present on UartSBee as well as Seeeduino Stalker for interfacing them to each other. This pinheader is composed of: VCC (to supply power to Stalker), TXD, RXD, DTR (for controlling Stalker's Reset signal) &amp; GND.</b>
+</p><p><font color="Red">
+<strong>
+</strong></font></p>
+<h2>  Cautions  </h2>
+<ul><li> The product is provided as is without an insulating enclosure. Please observe ESD precautions specially in dry (low humidity) weather.
+</li><li> Please disable bluetooth serial ports when using a Windows based development machine to prevent the Arduino IDE from freezing.
+</li></ul>
+<p>
+</p>
+<h2>  Schematics  </h2>
+<div class="center"><div class="floatnone"><img src="img/Stalker_v2.0_Schematics.png" width="800"/></div></div>
+<div align="center"><a href="http://garden.seeedstudio.com/images/4/40/Stalker_v2.0_Schematics.pdf">Download v2.0 schematics only (PDF)</a></div>
+<div align="center"><a href="http://garden.seeedstudio.com/images/7/7f/Seeeduino_Stalker_v2.0b.zip">Download v2.0b design files (Cadsoft Eagle)</a></div>
+<div align="center"><small>NOTE: The Eagle schematics and PCB layout correspond to v2.0b (beta version). There was no<br/>change in schematic from v2.0b to v2.0 - only minor improvements were made in the bottom silk screen of the PCB layout.</small></div>
+<h2>  Specifications </h2>
+<h3>  Key Technical Specifications </h3>
+<table border="0" cellpadding="3" cellspacing="0">
+<tr>
+<td width="200"><b>Microprocessor:</b>
+</td>
+<td width="400">ATmega328P
+</td></tr>
+<tr>
+<td><b>PCB size:</b>
+</td>
+<td>9.27cm x 6.09cm x 0.16cm
+</td></tr>
+<tr>
+<td><b>Indicators:</b>
+</td>
+<td>Reset, Power, LED on PB0 (Arduino Pin 8)
+</td></tr>
+<tr>
+<td><b>Power supply:</b>
+</td>
+<td>4.2v Lipo Battery, 5V for charge battery
+</td></tr>
+<tr>
+<td><b>Power Connector:</b>
+</td>
+<td>2 pin JST/ USB
+</td></tr>
+<tr>
+<td><b>I/O counts:</b>
+</td>
+<td>20
+</td></tr>
+<tr>
+<td><b>ADC input:</b>
+</td>
+<td>Dedicated 4 channel (ADC0~ADC3, 10 bit resolution)
+</td></tr>
+<tr>
+<td><b>Connectivity:</b>
+</td>
+<td>I<sup>2</sup>C, UART, SPI
+</td></tr>
+<tr>
+<td><b>RoHS:</b>
+</td>
+<td>Yes
+</td></tr></table>
+<h3>  Electrical Characterstics </h3>
+<table border="1">
+<tr>
+<th>Specifications
+</th>
+<th>Min
+</th>
+<th>Norm
+</th>
+<th>Max
+</th>
+<th>Units
+</th></tr>
+<tr style="font-size: 90%">
+<td width="200"> Battery JST Input voltage
+</td>
+<td width="150">  3.5
+</td>
+<td width="150">  4.2
+</td>
+<td width="150">  4.2
+</td>
+<td width="150">  Volts (DC)
+</td></tr>
+<tr style="font-size: 90%">
+<td width="200"> Solar JST Input voltage
+</td>
+<td width="150">  4.6
+</td>
+<td width="150">  5
+</td>
+<td width="150">  6
+</td>
+<td width="150">  Volts (DC)
+</td></tr>
+<tr style="font-size: 90%">
+<td> Global Current Consumption
+</td>
+<td>  -
+</td>
+<td>  300
+</td>
+<td>  1000
+</td>
+<td>  mA
+</td></tr>
+<tr style="font-size: 90%">
+<td> 3.3V I<sup>2</sup>C voltage
+</td>
+<td>  3.2
+</td>
+<td>  3.3
+</td>
+<td> 3.5
+</td>
+<td>  Volts (DC)
+</td></tr>
+<tr style="font-size: 90%">
+<td> 5.0V I<sup>2</sup>C voltage
+</td>
+<td>  4.6
+</td>
+<td>  4.7
+</td>
+<td>  5
+</td>
+<td>  Volts (DC)
+</td></tr>
+<tr style="font-size: 90%">
+<td> UART Baud Rate<br/>(while programming)
+</td>
+<td>  -
+</td>
+<td>  -
+</td>
+<td>  115200
+</td>
+<td>  bps
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3>  Getting Started </h3>
+<p>If you are new to the "Physical Computing" world and if Seeduino Stalker is the first physical computing platform you want to begin with, then the following steps will help you assemble the hardware and software resources to get you started.<br/><br/>
+</p>
+<h4>  Step 1: Acquiring the Hardware </h4>
+<p>Other than a Microsoft Windows based computer, you will<br/>require the following hardware for running your first program.
+</p>
+<table cellpadding="2">
+<tr valign="top">
+<td height="300pt" width="300pt"> <div class="center"><div class="floatnone"><img src="img/Stalkerv21.jpg" width="200"/></div></div><br/><div style="text-align: center;"><b>Seeeduino Stalker v2.0</b><br/><a href="http://www.seeedstudio.com/depot/seeeduino-stalker-v2b-p-727.html">Buy Here</a></div>
+</td>
+<td height="300pt" width="300pt"> <div class="center"><div class="floatnone"><img src="img/Uartsb31.jpg" width="200"/></div></div><br/><div style="text-align: center;"><b>UartsBee v3.1</b><br/>Required for programming<br/>the Seeeduino Stalker.<br/><a href="http://www.seeedstudio.com/depot/uartsbee-v31-p-688.html">Buy Here</a></div>
+</td></tr>
+<tr valign="top">
+<td height="300pt" width="300pt"> <div class="center"><div class="floatnone"><img src="img/Miniusb.jpg" width="200"/></div></div><br/><div style="text-align: center;"><b>Mini USB Cable</b><br/>You would probably have this one lying around,<br/>or if not, buy one <a href="http://www.seeedstudio.com/depot/mini-usb-cable-110cm-p-252.html">here</a>. We would use this<br/>to connect the UartsBee to one of the<br/>USB ports on your computer.</div>
+</td>
+<td height="300pt" width="300pt"> <div class="center"><div class="floatnone"><img src="img/Plainfrc.jpg" width="200"/></div></div><br/><div style="text-align: center;"><b>10 Pin Flat Ribbon Cable (FRC)</b><br/>Required for connecting the UartsBee to Seeeduino Stalker. Eventhough we require only a 5 way connection, we use this 10 way FRC because its easily available - infact you might already have one lying around your workspace. If not, you can buy a colourful one <a href="http://www.seeedstudio.com/depot/electronic-brick-10-pin-colorful-ribbon-cable-with-25-idc-connector-p-484.html">here</a>.</div>
+</td></tr></table>
+<p><br clear="all"/>
+</p>
+<h4>  Step 2: Downloading and installing the software </h4>
+<p>After you have acquired all of the above hardware, you will need to download and install the software:
+</p>
+<ol><li> Visit <a href="http://www.arduino.cc">www.arduino.cc</a> and go to the download page. There you will find the links to download the latest versions of the arduino software for various operating systems. Download the one for windows - a file named "arduino-xxxx.zip" where xxxx are four digits of  version number. So the file would be named something like arduino-0022.zip
+</li><li> After you're done downloading it, extract the folder within this zip archive to the root directory of your C: drive.
+</li><li> Then just browse over to C:\arduino-0022 using windows explorer and double click on arduino.exe to start it. You can right click on arduino.exe and send a shortcut to it to your desktop for your convenience. (NOTE: If your computer has bluetooth connectivity, make sure to disable any bluetooth serial ports before you start arduino to prevent it from freezing. You can do this by opening the "Device Manager" and uninstalling all the Bluetooth COM ports.)
+</li><li> Before you plug-in the hardware to your computer, close arduino.<br/><br/>
+</li></ol>
+<h4>  Step 3: Installing the drivers and plugging in the hardware </h4>
+<ol><li> UartSBee is like the multi-purpose Swiss Army knife of the Physical Computing world. In our case it will perform three functions:
+<ul><li> Allow us to program the Seeeduino Stalker.
+</li><li> Allow us to communicate with Seeeduino Stalker.
+</li><li> Provide power (from USB power of your computer) to Seeeduino Stalker (including any peripherals connected to it).
+</li></ul>
+</li><li> The first two functions of UartSBee (programming and communication) are achieved through an Integrated Circuit called FT232RL which is present on it. Before FT232RL can be used for these purposes, its drivers (certain freely available programs from FT232RL's manufacturer) must be installed on your windows/ubuntu based PC. So before proceeding further, download the driver setup file <a href="http://www.ftdichip.com/Drivers/CDM/CDM20802_Setup.exe">from here</a> and install it on your Windows PC.
+</li><li> UartSBee has an onboard voltage regulator and a switch to allow you to select what voltage (5.0V or 3.3V) you would like to supply to the target circuit board. In our case the target circuit board is Seeeduino Stalker and so you would need to set this slide switch to 5.0 volts
+</li><li> The wiring connection scheme of our hardware is <b>"<font color="Navy">Computer</font><font color="Grey"> →(Mini USB Cable)→</font><font color="Navy"> UartSBee </font><font color="Grey">→(Flat Ribbon Cable)→</font><font color="Navy"> Seeeduino Stalker</font>"</b>. The Flat Ribbon Cable (FRC) must be connected between UartSBee and Seeeduino Stalker before connecting the UartSBee to the Computer. You can use a single row (only 5 Pins out of the 10 on the cable) of the 10 way FRC to connect the 5 pins on the UartSBee to the 5 pins on the Seeeduino Stalker. Refer the photos below and make sure the signals line up as shown in the table (<b>Note: The TXD and RXD pins must be cross connected as shown in the table</b>).
+</li><li> Next connect the Mini USB cable from UartSBee to your computer. If you are using a Windows based PC, the "Found New Hardware" balloon will popup and within a few moments the drivers for FT232RL (i.e. UartSBee) will be installed.<br/><br/>
+</li></ol>
+<table cellpadding="2">
+<tr valign="top">
+<td height="300pt" width="300pt"> <div class="center"><div class="floatnone"><img src="img/Stalkverv2.0con1.jpg" width="200"/></div></div><br/><div style="text-align: center;">Connect the Flat Ribbon Cable to Stalker's UART Programming header.</div>
+</td>
+<td height="300pt" width="300pt"> <div class="center"><div class="floatnone"><img src="img/Uartsbeecon2.jpg" width="200"/></div></div><br/><div style="text-align: center;">Connect the other end of the Flat Ribbon Cable to the header on UartSBee</div>
+</td></tr>
+<tr valign="top">
+<td colspan="2" height="300pt" width="600pt"> <div class="center"><div class="floatnone"><img src="img/IMG_5180.jpg" width="400"/></div></div><br/><div style="text-align: center;">Complete the setup by plugging in the UartSBee to a USB port on your computer using the Mini USB cable. Make sure the voltage select switch on UartSBee is set to 5.0V and not 3.3V.</div>
+</td></tr></table>
+<table border="1">
+<caption> Flat Ribbon Cable Connection table
+</caption>
+<tr>
+<th>Seeeduino Stalker
+</th>
+<th>      
+</th>
+<th>UartSBee
+</th></tr>
+<tr>
+<td> USB5V
+</td>
+<td>   ↔  
+</td>
+<td> VCC
+</td></tr>
+<tr>
+<td> <font color="Red"> RXD </font>
+</td>
+<td>   ↔  
+</td>
+<td> <font color="Green"> TXD </font>
+</td></tr>
+<tr>
+<td> <font color="Green"> TXD </font>
+</td>
+<td>   ↔  
+</td>
+<td> <font color="Red"> RXD </font>
+</td></tr>
+<tr>
+<td> GND
+</td>
+<td>   ↔  
+</td>
+<td> GND
+</td></tr>
+<tr>
+<td> DTR
+</td>
+<td>   ↔  
+</td>
+<td> DTR
+</td></tr></table>
+<h4>  Step 4: Creating a new sketch for blinking the LED and downloading it to the board </h4>
+<ol><li> Before proceeding further, we need to find out what COM port number has been assigned to the UartSBee. To do this go to the "Device Managger" (Press Windows key and the R key on your keyboard simultaneously, then when the Run dialog shows up, type "devmgmt.msc" into it and press enter) and look under the category "Ports (COM &amp; LPT)". You will find an entry "USB Serial Port" as shown in the screenshot below. Note the COM port number next to it - for example in the screenshot below its its COM20.<div class="center"><div class="floatnone"><img src="img/DeviceManagerUSBSerial.jpg" width="600"/></div></div><br/>
+</li><li> Next, start Arduino by double-clicking the shortcut you created for it on your desktop in step 1 above. A blank sketch with the today's date as its name will be created for you. Into this sketch type the code for blinking the User LED on Seeeduino Stalker v2.0 as shown below:
+</li></ol>
+<table align="center">
+<tr>
+<td> <div class="center"><div class="floatnone"><img src="img/ArduinoBlinky.jpg" width="400"/></div></div>
+</td>
+<td> <div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="c source-c"><pre class="de1"><span class="coMULTI">/*
+  Blink
+  Turns on an LED on for one second, then off for one second, repeatedly.
+ 
+  This example code is in the public domain.
+ */</span>
+ 
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>                
+  <span class="co1">// initialize the digital pin as an output.</span>
+  <span class="co1">// Pin 8 has an LED connected on Seeeduino Stalker</span>
+  pinMode<span class="br0">(</span><span class="nu0">8</span><span class="sy0">,</span> OUTPUT<span class="br0">)</span><span class="sy0">;</span>     
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  digitalWrite<span class="br0">(</span><span class="nu0">8</span><span class="sy0">,</span> HIGH<span class="br0">)</span><span class="sy0">;</span>    <span class="co1">// set the LED on</span>
+  delay<span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy0">;</span>              <span class="co1">// wait for a second</span>
+  digitalWrite<span class="br0">(</span><span class="nu0">8</span><span class="sy0">,</span> LOW<span class="br0">)</span><span class="sy0">;</span>     <span class="co1">// set the LED off</span>
+  delay<span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy0">;</span>              <span class="co1">// wait for a second</span>
+<span class="br0">}</span></pre></div></div>
+</td></tr></table>
+<ol><li> Before we can program the Seeeduino Stalker, we need to tell Arduino the Serial Port number of our UartSBee/Stalker. We can do this by going to <b>Tools&gt;Serial Port</b> and selecting COM port that we had obtained in the previous step. <div class="center"><div class="floatnone"><img src="img/ArduinoBlinkyCOM.jpg" width="400"/></div></div><br/>
+</li><li> Arduino also needs to know what kind of microcontroller and circuit board we are using. Since Seeeduino Stalker v2.0 is based on the Duemilanove board and has an ATmega328P, select the corresponding option from the <b>Tools&gt;Board</b> menu and select "<b>Arduino Pro or Pro Mini (3.3V, 8 MHz) w/ ATmega328</b>". <i>(Please note that even though UartSBee is supplying 5.0V to the Seeeduino Stalker board, the microcontroller (ATmega328P) itself is operating at 3.3V. Voltage regulator on board the Seeeduino Stalker converts 5.0 volts power supply to 3.3 volts.)</i>
+</li></ol>
+<div class="center"><div class="floatnone"><img src="img/ArduinoBlinkyBoard.jpg" width="400"/></div></div><br/>
+<ol><li> Now we are ready to upload the program into our Seeeduino Stalker. To do this click on the "Upload" button as shown below and within a few moments, the LED on Seeeduino Stalker will start blinking. The RX and TX LEDs on UartSBee will flicker while the programming is being carried out.
+</li></ol>
+<table align="center">
+<tr>
+<td> <div class="center"><div class="floatnone"><img src="img/ArduinoBlinkyBoardUpload.jpg" width="400"/></div></div><br/>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/StalkerBlinky.gif" width="303"/></div></div><br/>
+</td></tr></table><br clear="all"/>
+<p>Since all the required software is now already installed on your computer, the next time you want to create and upload a new sketch into Seeeduino Stalker, you just need to connect it to the Computer via UartSBee and repeat Step 4.
+</p>
+<h3>  Connection Notes </h3>
+<ul><li><b> Bee series socket</b> - 2*10 pin 2.0mm pitch (which will mate with - one at a time - any of the <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">wireless modules</a>: <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a>, <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a>, <a href="/w/index.php?title=GPS_Bee_kit_(with_Mini_Embedded_Antenna)&amp;action=edit&amp;redlink=1" title="GPS Bee kit (with Mini Embedded Antenna) (page does not exist)">GPSBee</a> or <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a>.) Communication with these modules are done through UART.
+</li><li><b>Serial interface</b> – To save space and lower costs, USB&lt;-&gt;Serial connectivity is not provided by default. You may use the FT232 based <a href="/UartSBee" title="UartSBee">UartSBee</a> or other USB to serial adapter boards to do the programming or communicate with the PC.
+</li><li><b>User LED</b> – An LED has been provided onboard for use in your application as desired.
+</li><li><b>I<sup>2</sup>C Interface</b>: Onboard I<sup>2</sup>C level shifter IC provides voltage translation between 3.3V and 5V devices. This allows you to connect 5.0 Volt I<sup>2</sup> ICs to you microcontroller when its operating on 3.3 Volts.
+</li></ul>
+<h3>  Jumpers </h3>
+<h4>  Battery Related </h4>
+<ul><li> <b>BAT_READ</b> <i>(Jumper type: <font color="grey">2 pin</font>, Location: <font color="red">Top</font>, Factory state: <font color="violet">mounted</font>)</i><br/>If a jumper is placed on BAT_READ, the Lithium Battery voltage can be read via the analog pin 7 (ADC7) of ATmega328P. This pin is only available on the ATmega328P SMD package which is present on Seeeduino Stalker. (The Dual-Inline Package (DIP) only has analog pins from 0 thru 5.)
+</li></ul>
+<ul><li> <b>CH_READ</b> <i>(Jumper type: <font color="grey">2 pin</font>, Location: <font color="red">Top</font>, Factory state: <font color="violet">mounted</font>)</i><br/>If a jumper is placed on CH_READ, the Lithium Battery charger IC's (CN3083 or CN3063) CHRG (or CH) signal will be connected to digital pin 6 (PD6) of ATmega328P. It is an open drain signal which will be pulled low "while" the battery is charging.  It will be left in high impedance state if there is a charging error.  A Red SMD LED is also connected to this signal. This signal is not affected by the make or break of the CH_STATUS jumper.
+</li></ul>
+<ul><li> <b>OK_READ</b> <i>(Jumper type: <font color="grey">2 pin</font>, Location: <font color="red">Top</font>, Factory state: <font color="violet">mounted</font>)</i><br/>If a jumper is placed on OK_READ, the Lithium Battery charger IC's (CN3083 or CN3063) DONE (or OK) signal will be connected to digital pin 7 (PD7) of ATmega328P. It is an open drain signal which will be pulled low "after" the battery has been fully charged.  It will be left in high impedance state while the charging cycle is incomplete or when charging is not taking place.  A Green SMD LED is also connected to this signal. This signal is not affected by the make or break of the CH_STATUS jumper.
+</li></ul>
+<ul><li> <b>CH_STATUS</b> <i>(Jumper type: <font color="orange">Solder bridge</font>, Location: <font color="red">Top</font>, Factory state: <font color="navy">connected by a thin track</font>)</i><br/>Two LEDs present on board Seeeduino Stalker indicate the charging status of the LiPo Battery. The Red SMD LED is connected to the CHRG (or CH) pin of the Lithium Battery charger IC (CN3083 or CN3063) which when glowing, indicates that the charging cycle of the battery is active. The Green SMD LED is connected to the DONE (or OK) pin of the Lithium Battery charger IC (CN3083 or CN3063) which when glowing, indicates that the battery is now fully charged. When  operating Seeeduino Stalker out in the field, you can cut the track connecting the CH_STATUS pads to disconnect these LEDs from C_VIN and hence conserve power which would have otherwise been consumed in lighting these LEDs.
+</li></ul>
+<h4>  Real Time Clock (RTC) Related </h4>
+<ul><li> <b><span style="text-decoration: overline">INTA</span>_RTC</b> <i>(Jumper type: <font color="orange">Solder bridge</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="green"> NOT connected by a thin track</font>)</i><br/>Close this jumper to allow the Real Time Clock (RTC) to wake the ATmega328P at a specified time. This jumper will connect <span style="text-decoration: overline">INTA</span> of the RTC Chip (RX8025) to PD2 (INT0) of ATmega328P.
+</li></ul>
+<h4>  microSD Card (TransFlash Card) Related </h4>
+<ul><li> <b>CS_TF</b> <i>(Jumper type: <font color="orange">Solder bridge - 2 way</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="green"> SS and PB2 connected by a thin track</font>)</i><br/>This jumper is a two way jumper made up of three pads: PB1, SS and PB2. SS is the Chip Select signal of the the microSD card. By default SS is connected by a thin track to PB2 -  Digital Pin 10 (PB2) of the microcontroller. If instead you want to connect the Chip Select signal from the microSD card to Digital pin 9 (PB1), just cut the track between PB2 and SS and put a solder blob between SS and PB1.
+</li></ul>
+<ul><li> <b>TF_STATUS</b> <i>(Jumper type: <font color="orange">Solder bridge</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="green"> NOT connected by a thin track</font>)</i><br/>If you close this solder jumper, Digital Pin 3 (PD3) of the microcontroller will go low when there is a card inserted in the microSD card socket. This can be used for card detection. 
+</li></ul>
+<ul><li> <b>POWER_TF</b> <i>(Jumper type: <font color="orange">Solder bridge - 2 way</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="green"> EN and VCC connected by a thin track</font>)</i><br/>This jumper is a two way jumper made up of three pads: VCC, EN and CTL_D4. EN is the TF power regulator Enable pin. By default EN is connected by a thin track to VCC to always enable TF power. If instead you want to Control the TF Card power With Digital Pin 4 (PD4) of the microcontroller, just cut the track between EN and VCC and put a solder blob between EN and CTL_D4. you can control TF Card Power by Digital Pin 4 (PD4), you would be able to completely turn off the microSD card to conserve power when operating out in the field.
+</li></ul>
+<h4>  Bee Module Related </h4>
+<ul><li> <b>POWER_BEE</b> <i>(Jumper type: <font color="orange">Solder bridge - 2 way</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="green"> EN and VCC connected by a thin track</font>)</i><br/>This jumper is a two way jumper made up of three pads: VCC, EN and CTL_D5. EN is the XBee power Enable pin. By default EN is connected by a thin track to VCC to aways enable XBee Power. If instead you want to Control XBee Power by Digital Pin 5 (PD5) of the microcontroller, just cut the track between EN and VCC and put a solder blob between EN and CTL_D5. You can control XBee Power by Digital Pin 5 (PD5), you would be able to completely turn off the Bee module to conserve power when operating out in the field.
+</li></ul>
+<h4>  Bee Module Related - Only XBee related </h4>
+<ul><li> <b>WIRELESS_PROGRAMMING</b> <i>(Jumper type: <font color="orange">Solder bridge</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="navy"> Connected by a thin track</font>)</i><br/>You can use Digi's XBee modules to wirelessly program the ATmega328P on your Seeeduino Stalker. An XBee module must be configured and installed on your Seeeduino Stalker and another XBee module must be connected to your Laptop via a UartSBee. The pin DIO3 on the Seeeduino Stalker will be used to control the Reset Pin of ATmega328P. This jumper allows you to enable or disable (default: enabled) the control of the Reset Pin of ATmega328P by the DIO3 pin of the XBee module. You can cut the track between the pads of this jumper if you don't want the DIO3 pin to control the Reset pin of ATmega328P. Lady Ada has a nice <a href="http://www.ladyada.net/make/xbee/arduino.html">tutorial</a> on how to remotely program your Arduino based product using XBee. (NOTE: Both the XBee - the one on Stalker and the one connected to the PC must be pre-configured once using the X-CTU software before use.)
+</li></ul>
+<ul><li> <b>RSSI_STATUS</b> <i>(Jumper type: <font color="orange">Solder bridge</font>, Location: <font color="red">Top</font>, Factory state: <font color="navy">connected by a thin track</font>)</i><br/>A red LED present on the top side of the PCB is connected to the RSSI (Received Signal Strength Indicator) pin of the XBee module. XBee outputs a PWM signal on this pin which is directly proportional to the quality of the RF link when the last packet was received by it. This PWM signal when applied to the LED would vary its brightness as per the quality of the RF link - better the link, brighter the LED. Since this LED would consume power, you can cut the track between the pads of this jumper to conserve battery power out in the field. RSSI value is also available over the UART using the DB command (measured in -dBm). (NOTE: The DB value only indicates the received signal strength of the last hop.  If a transmission spans multiple hops, the DB value provides no indication of the overall transmission path, or the quality of the worst link – it only indicates the quality of the last link and should be used sparingly.)
+</li></ul>
+<h4>  User LED Related </h4>
+<ul><li> <b>D8_LED</b> <i>(Jumper type: <font color="orange">Solder bridge</font>, Location: <font color="blue">Bottom</font>, Factory state: <font color="navy"> connected by a thin track</font>)</i><br/>A red LED present on the top side of the PCB is connected to the Digital Pin 8 (PB0) of the microcontroller. The LED is free for use by you in your program for any purpose you desire. Since this LED would consume power, you can cut the track between the pads of this jumper to conserve battery power out in the field and use Digital Pin 8 for other purposes like controlling a shield.
+</li></ul>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:823px;"><img src="img/Stalkerv20bottom.jpg" width="821"/> <div class="thumbcaption">The bottom side of Seeeduino Stalker v2.0 showing. Note the location of various jumpers.</div></div></div></div>
+<h3>  External Crystal </h3>
+<ul><li> The Seeeduino Stalker is supplied with ATmega328P's internal fuse bits programmed for operation at 8 MHz using the internal RC oscillator (a bit inaccurate but conserves power). Alternatively, if you would like to use an external crystal (more accurate), then there is a footprint provided for mounting it on the PCB between the XTAL1 and XTAL2 pins of the microcontroller. Two 22pF capacitor (corresponding to the value required for an 8MHz crystal) have already been mounted. After mounting the crystal, you will need to reconfigure the fuse bits using an In-System Programmer to get the microcontroller to operate using this external crystal.
+</li></ul>
+<h2>  Datasheets of Components </h2>
+<ul><li><a href="http://www.atmel.com/dyn/resources/prod_documents/doc8271.pdf">ATmega328P</a> - 8-bit AVR Microcontroller present onboard Seeeduino Stalker.
+</li><li><a href="http://www.consonance-elec.com/pdf/%E6%8A%80%E6%9C%AF%E8%AF%B4%E6%98%8E%E4%B9%A6/DSE-CN3063.pdf">CN3063</a> - Charger controller for Lithium batteries (charging using solar panel)
+</li><li><a href="http://www.specteclogistics.com/docs/71065/71065.pdf">Si5904DC</a> - Dual N-Channel 2.5 V (G-S) MOSFETs (used for 3.3V &lt;&gt; 5.0V translation for I<sup>2</sup>C, refer NXP's <a href="http://ics.nxp.com/support/documents/interface/pdf/an97055.pdf">AN97055</a>).
+</li><li><a href="http://www.vishay.com/docs/70833/70833.pdf">Si2305DS</a> - P-Channel 1.25-W, 1.8-V (G-S) MOSFET.
+</li><li><a href="http://focus.ti.com/lit/ds/symlink/tmp102.pdf">TMP102</a> - Low power digital temperature sensor with I<sup>2</sup>C interface.
+</li><li><a href="http://www.spezial.com/commercio/dateien/produktbeitraege/RX-8025SA_NB.pdf">RX-8025</a> - Precision Real Time Clock (RTC) Module with I<sup>2</sup>C interface. (An application manual from Epson Toyocom is <a href="http://garden.seeedstudio.com/images/2/28/ETM10E_02_R8025SANB.pdf">here</a>).
+</li></ul>
+<h2>  Source Code Examples </h2>
+<p>A sketch demonstrating the use of various peripherals present onboard Seeeduino Stalker is attached below. It logs the date/time from the RX8025, temperature from TMP102 and battery voltage into a text file which is stored on the microSD card. It also sends this data to the serial port. You can copy various parts of this code to kickstart the coding for your own project. 
+</p><p>Please note that the demonstration sketch presented below makes use of the fat16lib Arduino Library. Please visit <a href="http://code.google.com/p/fat16lib/">fat16lib's project page</a> to obtain the latest version of the library. The library source files will be within a zip file named something like "fat16lib20101009.zip". Within this zip file you will find - amongst other things - a folder named Fat16. Extract this folder and place it as it is into your Arduino installations library folder - i.e. if you followed the <a href="/Seeeduino_Stalker_v2.0#Getting_Started" title="Seeeduino Stalker v2.0">Getting Started</a> guide above, you will need to place the Fat16 folder in "C:\arduino-0022\libraries". A copy of this Fat16 folder can also be found on our own server here: <a href="res/Stalker_code_Fat16.zip" title="File:Stalker code Fat16.zip">File:Stalker code Fat16.zip</a>. Please do install the fat16lib before opening the demonstration sketch.
+</p><p>Few notes about the demonstration sketch:<br/>
+</p>
+<ul><li> The data is sent to the serial port at 38400 bps 8-N-1. The data is also logged to the microSD card in a named "DATA.LOG".
+</li><li> DATA.LOG is a text file and can be opened using the notepad application on Windows. To do this you need to remove the microSD card from Seeeduino Stalker and insert it into a <a href="/w/index.php?title=SD_card_reading_mini-USB_cable,_in_a_capsule&amp;action=edit&amp;redlink=1" title="SD card reading mini-USB cable, in a capsule (page does not exist)">card reader</a> and connect it to the USB port of the computer. The card will show up as a removable drive withing Windows Explorer and you will be able to access the DATA.LOG file.
+</li><li> The microSD must be a standard SD card and not a SDHC card. fat16lib does not support SDHC cards.
+</li><li> The microSD card must be pre-formatted with FAT16 file system. You can use a windows PC to do this.
+</li><li> To view the data sent live to the UART, you will need a <a href="/UartSBee" title="UartSBee">UartSBee</a> setup as explained in the <a href="/Seeeduino_Stalker_v2.0#Getting_Started" title="Seeeduino Stalker v2.0">Getting Started</a> guide above. You can use the "Serial Monitor" which is a part of the Arduino IDE to view this data.
+</li></ul>
+<p>Seeeduino Stalker demonstration sketch: <a href="res/Stlker_logger_AM06_Serial.zip" title="File:Stlker logger AM06 Serial.zip">File:Stlker logger AM06 Serial.zip</a><br/>
+</p><p>(This archive file contains a folder named "Stlker logger AM06 Serial". Extract and place this folder in your Arduino sketch folder which is usually the folder named "Arduino" present in your My Documents. Start Arduino IDE and open the "Stlker logger AM06 Serial.pde" sketch.) (zencuke: There is a bug in RX8025.cpp in this archive that makes it unreliable. getRtcTime requests 8 bytes then loads it into a 7 byte array. It should be requesting 7 bytes.)
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:953px;"><img src="img/Stalkv20demo.jpg" width="951"/> <div class="thumbcaption">Using the Arduino IDE's "Serial Monitor" to view the data sent out its UART by a Seeeduino Stalker running the demonstration sketch</div></div></div></div>
+<h2>  Accessories </h2>
+<p>Besides the <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">various Bee Series modules</a>, the following accessories are available for use with Seeeduino Stalker v2.0:
+</p>
+<table align="left">
+<tr>
+<td> <div class="center"><div class="floatnone"><a href="/Seeeduino_Stalker_v2_enclosure" title="Seeeduino Stalker v2 enclosure"><img src="img/StalkerEnclosure600.jpg" width="200"/></a></div></div><br/><div style="text-align: center;">Water-proof Enclosure<br/> for Seeeduino Stalker v2.0</div>
+</td>
+<td> <div class="center"><div class="floatnone"><a href="/SanDisk_microSDTM_Card_2GB" title="SanDisk microSDTM Card 2GB"><img src="img/Microsdcard2gb.jpg" width="200"/></a></div></div><br/><div style="text-align: center;">SanDisk 2GB<br/>microSD Card</div>
+</td>
+<td> <div class="center"><div class="floatnone"><a href="/SD_card_reading_mini-USB_cable-in_a_capsule" title="SD card reading mini-USB cable, in a capsule"><img src="img/Smartcable_04_LRG.jpg" width="200"/></a></div></div><br/><div style="text-align: center;">microSD Card Reader<br/>(in a capsule)</div>
+</td></tr>
+<tr>
+<td> <div class="center"><div class="floatnone"><img src="img/Miniusbcable.jpg" width="500"/></div></div><br/><div style="text-align: center;">Mini USB cable for use with<br/>UartSBee while programming</div>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Ribbon101.jpg" width="500"/></div></div><br/><div style="text-align: center;">10 pin Flat Ribbon Cable for use with<br/>UartSBee while programming</div>
+</td></tr>
+<tr>
+<td> <div class="center"><div class="floatnone"><a href="/Lithium_lon_polymer_Batteries-2A" title="Lithium lon polymer Batteries - 2A"><img src="img/Lithium-lon-polymer-batteries2A.jpg" width="200"/></a></div></div><br/><div style="text-align: center;">Lithium Polymer (LiPo)<br/>Battery</div>
+</td>
+<td> <div class="center"><div class="floatnone"><a href="/0.5w_Solar_Panel_55x70" title="0.5w Solar Panel 55*70"><img src="img/Solar-panel55.jpg" width="200"/></a></div></div><br/><div style="text-align: center;">Solar Panel for <br/>charging LiPo Battery via Stalker</div>
+</td></tr></table>
+<p><br clear="all"/>
+Note: If you buy the "microSD Card Reader (in a capsule)", you would not need the "Mini USB cable" since the former also doubles up as a Mini USB cable. Check out microSD Card Reader (in a capsule)'s <a href="/w/index.php?title=SD_card_reading_mini-USB_cable,_in_a_capsule&amp;action=edit&amp;redlink=1" title="SD card reading mini-USB cable, in a capsule (page does not exist)">Wiki page</a> for clarification.
+</p>
+<h2>  FAQ  </h2>
+<p>Here is the Seeeduino Stalker FAQ, users can list the Frequently Asked Questions here, example as below: <br/>
+</p>
+<ol><li> There is no coin-cell battery present on the version 2.0 of Seeeduino Stalker, instead there is a super capacitor. Have you evaluated/calculated the amount of time the RTC can run after power has been removed?
+<dl><dd> <font color="grey">During our tests, we found out that it will keep the RTC ticking for at least 3 days. Super capacitors are better than coin cells in the sense that there is no memory effect and there is no hassle of replacing or recharging the coin cell.</font>
+</dd></dl>
+</li><li> Has the user defined switch been removed on version 2.0 of Seeeduino Stalker?
+<dl><dd> <font color="grey">Yes, we have removed the user button on the version 2.0</font>
+</dd></dl>
+</li><li> In version 1.0 of Seeeduino Stalker the microcontroller could be woken up from sleep mode via interrupt from the Bee module. Is this same feature also available on version 2.0?
+<dl><dd> <font color="grey">In the previous version (i.e. 1.0), the microcontroller could be woken on RF data packet reception by the Bee module via its pin 15 which was connected to INT0 (PD2) of the microcontroller. In the newer version, the INT0 (PD2) pin of the microcontroller is connected by a jumper (<a href="/Seeeduino_Stalker_v2.0#Real_Time_Clock_.28RTC.29_Related" title="Seeeduino Stalker v2.0"><span style="text-decoration: overline">INTA</span>_RTC</a>) to the <span style="text-decoration: overline">INTA</span> pin of the RTC chip which can wake it up at a pre-configured time (or periodically). Since Seeeduino Stalker is meant for use as a wireless sensor network node, this modification would be useful in cases where the microcontroller must wake up periodically to transmit sensor readings and go to sleep again.</font>
+</dd></dl>
+</li><li> The I<sup>2</sup>C pin headers on Version 1.0 of Seeeduino Stalker allowed easy connection to external 3.3V as well as 5.0V devices. Is the same feature available on the version 2.0?
+<dl><dd> <font color="grey">Yes, in fact we have improved it - previously PCA9306 was used for level translation on I2C bus. But now we use N channel MOSFETs for translation - this technique has many advantages (refer NXP's Application Note <a href="http://ics.nxp.com/support/documents/interface/pdf/an97055.pdf">AN97055</a>.</font>
+</dd></dl>
+</li><li> There is no English datasheet for the CN3083, what do I do?
+<dl><dd> <font color="grey">We had used CN3083 on the beta revision of version 2.0 of  Seeeduino Stalker (v2.0b). The final v2.0 version will have CN3063 on it. The datasheet for CN3083 is only available in the Chinese language. On the other hand, CN3063 has an English language datasheet and is attached above. Both parts: CN3063 as well as CN3083 are very much similar in operation.</font>
+</dd></dl>
+</li><li> I find the explanation of the battery related jumpers given above a bit confusing, I need a simpler explanation.
+<dl><dd> <font color="grey"><b>BAT_READ</b> - Allows you to read the battery voltage via Analog Pin 7 of the microcontroller using its builtin Analog to Digital Convertor.
+</font></dd><dd> <b>CH_READ</b> - Digital Pin 6 of the microcontroller will remain low (logic 0) while the battery <i>is being</i> charged. Unmount this jumper to use Digital Pin 6 for other purposes.
+</dd><dd> <b>OK_READ</b> - Digital Pin 7 of the microcontroller go low (logic 0) after the battery <i>has been</i> charged. Unmount this jumper to use Digital Pin 7 for other purposes.
+</dd><dd> <b>CH_STATUS</b> - The above two signals (CH_READ and OK_READ) also have LEDs connected to them. CH_STATUS jumper allows you to disable these LEDs and decrease power consumption.
+</dd></dl>
+</li></ol>
+<p>
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss. 
+</p><p><br/>
+</p>
+<h2>  Revision History  </h2>
+<table border="1">
+<tr>
+<th>Revision
+</th>
+<th>Descriptions
+</th>
+<th>Release Date
+</th></tr>
+<tr style="font-size: 90%">
+<td width="300"> <a href="/Seeeduino_Stalker_v1.0" title="Seeeduino Stalker v1.0">Seeeduino Stalker v1.0</a>
+</td>
+<td width="500"> Initial public release
+</td>
+<td width="200"> Dec 23, 2009
+</td></tr>
+<tr style="font-size: 90%">
+<td> <a href="/Seeeduino_Stalker_v2.0b" title="Seeeduino Stalker v2.0b">Seeeduino Stalker v2.0b</a>
+</td>
+<td> Beta of New and improved version with more features
+</td>
+<td> Dec 17, 2010
+</td></tr>
+<tr style="font-size: 90%">
+<td> <strong class="selflink">Seeeduino Stalker v2.0</strong>
+</td>
+<td> Final non-beta (minor improvements on bottom silkscreen)
+</td>
+<td> Mar 14, 2011
+</td></tr></table>
+<h2>  Issue Tracker  </h2>
+<p>Issue Tracker is the place you can publish any suggestions for improvement or any bugs you think you might have found during use. Please write down what you have to say, your suggestions will help us improve our products.
+</p>
+<ol>
+<li><b>UartSBee Female header </b>(Issue Type: Improvement)<br/>
+The next version of Seeeduino Stalker may incorporate the following improvement. Alternatively, the users who own Seeeduino Stalker v2.0 can perform this modification themselves. It greatly simplifies the process of connecting a UartSBee to Seeeduino Stalker v2.0. <i>This modification is especially useful when using Seeeduino Stalker with an Arduino compatible shield - there won't be any space between the two stacked boards to install a connector over the 5 way pin header meant for programming and communication via UartSBee.</i>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:967px;"><img src="img/Stalker_mod_uartsbee.jpg" width="965"/> <div class="thumbcaption">Modifying Seeeduino Stalker v2.0 by adding a 5 pin female header to allow UartSBee to connect to it easily without the use of any cable.</div></div></div></div></li>
+</ol>
+<h2>  Additional Ideas  </h2>
+<p>The Additional Ideas is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="res/Seeeduino_Stalker_v2.0b.zip">Cadsoft Eagle format schematic and board files</a>
+</li><li><a href="http://seeedstudio.com/wiki/images/c/cb/Seeeduino_Stalker_V2.0_R8025_and_TMP102_library.zip">R8025 RTC, TMP102 libraries and power-saver demo codes</a> :  <font color="red">And you need to solder a bridge on INA_PD2 solder-jumper</font>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Seeeduino Stalker v2.0 can be ordered through the Bazaar. Its product page is located <a href="http://www.seeedstudio.com/depot/seeeduino-stalker-v2b-p-727.html?cPath=80">here</a>.
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/Seeeduino_Stalker_v1.0" title="Seeeduino Stalker v1.0">Seeeduino Stalker v1.0</a>
+</li><li><a href="/Seeeduino_Stalker#Comparison_between_various_versions_of_Seeeduino_Stalker" title="Seeeduino Stalker"> Comparison between various versions of Seeeduino Stalker</a>
+</li><li><a href="/Seeeduino_Stalker_v2_enclosure" title="Seeeduino Stalker v2 enclosure"> Seeeduino Stalker v2.0 Enclosure</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

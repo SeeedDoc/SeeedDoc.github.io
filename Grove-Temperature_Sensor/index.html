@@ -1,0 +1,215 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Temperature Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Temperature Sensor</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Temperature1.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+The Grove - Temperature Sensor uses a <a href="http://www.legacydistribution.co.uk/downloads/NTC-thermistors/TTC03.pdf">Thermistor</a> to detect the ambient temperature. The resistance of a thermistor will increase when the ambient temperature decreases. It's this characteristic that we use to calculate the ambient temperature. The detectable range of this sensor is -40 - 125ºC, and the accuracy is ±1.5ºC
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-Temperature-Sensor-p-774.html?cPath=25_125"><i>I need a Grove - Temperature Sensor</i></a>
+</p><p><i>Note: This page is for Grove - Temperature Sensor v1.0 only, V1.1/1.2 please refer to <a href="/Grove-Temperature_Sensor_V1.2">Grove - Temperature Sensor V1.2</a></i>
+</p>
+<p><br/>
+</p>
+<h2> Specifications</h2>
+<ul><li>Voltage: 3.3 ~ 5V
+</li><li>Max power rating at 25℃: 300mW
+</li><li>Zero power resistance: 10 KΩ
+</li><li>Operating temperature range: -40 ~ +125 ℃
+</li></ul>
+<p><br/>
+<br/>
+</p>
+<h2> Demonstration</h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Here is an example to show you how to read temperature information from the sensor.
+</p><p>1. Connect the module to the Analog port 0 of Grove - Basic Shield using the 4-pin grove cable.
+</p><p>2. Plug the Grove - Basic Shield into Arduino.<br/> 3. Connect Arduino to PC by using a USB cable. 
+</p><p><img src="img/Tempreture_Sensor_Connector.jpg" width="655"/>
+</p><p>4. Upload Code below. Please click <a href="/Upload_Code">here</a> if you do not know how to upload.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+/* Grove - Temperature Sensor demo v1.0
+*  This sensor detects the environment temperature,
+*  Connect the signal of this sensor to A0, use the 
+*  Serial monitor to get the result.
+*  By: http://www.seeedstudio.com
+*/</span>
+<span class="co2">#include &amp;lt;math.h&amp;gt;</span>
+<span class="kw4">int</span> a<span class="sy4">;</span>
+<span class="kw4">float</span> temperature<span class="sy4">;</span>
+<span class="kw4">int</span> B<span class="sy1">=</span><span class="nu0">3975</span><span class="sy4">;</span>                  <span class="co1">//B value of the thermistor</span>
+<span class="kw4">float</span> resistance<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>  
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  a<span class="sy1">=</span><span class="kw3">analogRead</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+  resistance<span class="sy1">=</span><span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="br0">(</span><span class="nu0">1023</span><span class="sy2">-</span>a<span class="br0">)</span><span class="sy2">*</span><span class="nu0">10000</span><span class="sy2">/</span>a<span class="sy4">;</span> <span class="co1">//get the resistance of the sensor;</span>
+  temperature<span class="sy1">=</span><span class="nu0">1</span><span class="sy2">/</span><span class="br0">(</span><span class="kw3">log</span><span class="br0">(</span>resistance<span class="sy2">/</span><span class="nu0">10000</span><span class="br0">)</span><span class="sy2">/</span>B<span class="sy2">+</span><span class="nu0">1</span><span class="sy2">/</span><span class="nu16">298.15</span><span class="br0">)</span><span class="sy2">-</span><span class="nu16">273.15</span><span class="sy4">;</span><span class="co1">//convert to temperature via datasheet&amp;nbsp;;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Current temperature is "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>temperature<span class="br0">)</span><span class="sy4">;</span>
+ <span class="br0">}</span></pre></div></div>
+<p>5. You can check the readings via the Serial Monitor. The default unit is Celsius degree.
+</p><p><br/>
+<img src="img/Temperature_Sensor_Score.jpg" width="317"/>
+</p><p>As a reference, the following is the resistance curve of TTC3A103*39H, the thermistor we used on this sensor. The higher the temperature goes, the smaller the resistance becomes.
+</p><p><img src="img/Twig-Temperature-Sensor-value.jpg" width="400"/>
+</p>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.
+</p><p>2.You should have completed configuring the development enviroment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+</p><p><br/>
+3.Connection
+</p>
+<ul><li> Plug the sensor to grovepi socket D3 by using a grove cable.
+</li></ul>
+<p>4.Navigate to the demos' directory:
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_temperature_sensor.py   # "Ctrl+x" to exit #
+</pre>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">import</span> grovepi
+ 
+<span class="co1"># Connect the Grove Temperature Sensor to analog port A0</span>
+<span class="co1"># SIG,NC,VCC,GND</span>
+sensor <span class="sy0">=</span> <span class="nu0">0</span>
+ 
+<span class="kw1">while</span> <span class="kw2">True</span>:
+    <span class="kw1">try</span>:
+        temp <span class="sy0">=</span> grovepi.<span class="me1">temp</span><span class="br0">(</span>sensor<span class="sy0">,</span><span class="st0">'1.1'</span><span class="br0">)</span>
+        <span class="kw1">print</span> <span class="st0">"temp ="</span><span class="sy0">,</span> temp
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">.5</span><span class="br0">)</span>
+ 
+    <span class="kw1">except</span> <span class="kw2">KeyboardInterrupt</span>:
+        <span class="kw1">break</span>
+    <span class="kw1">except</span> <span class="kw2">IOError</span>:
+        <span class="kw1">print</span> <span class="st0">"Error"</span></pre></div></div>
+<p>5.Run the demo.<br/>
+</p>
+<pre>   sudo python grove_temperature_sensor.py
+</pre>
+<p><br/>
+<br/>
+</p>
+<h3>  With Beaglebone Green</h3>
+<p>To begin editing programs that live on BBG, you can use the Cloud9 IDE.<br/>
+As a simple exercise to become familiar with Cloud9 IDE, creating a simple application to blink one of the 4 user programmable LEDs on the BeagleBone is a good start.
+</p><p>If this is your first time to use Cloud9 IDE, please follow this <a href="/Beaglebone_green#Getting_Started"><b>link</b></a>.
+<br/>
+</p><p><br/>
+<b>Step1:</b> Click the "+" in the top-right to create a new file.
+</p><p><img src="img/C9-create-tab.png" width="168"/>
+</p><p><img src="img/C9_newfile.jpg" width="440"/>
+</p><p><b>Step2:</b> Copy and paste the following code into the new tab
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">from</span> Adafruit_I2C <span class="kw1">import</span> Adafruit_I2C
+<span class="kw1">import</span> <span class="kw3">time</span>
+ 
+ADDR_ADC121 <span class="sy0">=</span> <span class="nu0">0x50</span>
+ 
+REG_ADDR_RESULT <span class="sy0">=</span> <span class="nu0">0x00</span>
+REG_ADDR_ALERT <span class="sy0">=</span> <span class="nu0">0x01</span>
+REG_ADDR_CONFIG <span class="sy0">=</span> <span class="nu0">0x02</span>
+REG_ADDR_LIMITL <span class="sy0">=</span> <span class="nu0">0x03</span>
+REG_ADDR_LIMITH <span class="sy0">=</span> <span class="nu0">0x04</span>
+REG_ADDR_HYST <span class="sy0">=</span> <span class="nu0">0x05</span>
+REG_ADDR_CONVL <span class="sy0">=</span> <span class="nu0">0x06</span>
+REG_ADDR_CONVH <span class="sy0">=</span> <span class="nu0">0x07</span>
+ 
+i2c <span class="sy0">=</span> Adafruit_I2C<span class="br0">(</span>ADDR_ADC121<span class="br0">)</span>           
+ 
+<span class="kw1">class</span> I2cAdc:
+    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+        i2c.<span class="me1">write8</span><span class="br0">(</span>REG_ADDR_CONFIG<span class="sy0">,</span> <span class="nu0">0x20</span><span class="br0">)</span>
+ 
+    <span class="kw1">def</span> read_adc<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+        <span class="st0">"Read ADC data 0-4095."</span>
+        data_list <span class="sy0">=</span> i2c.<span class="me1">readList</span><span class="br0">(</span>REG_ADDR_RESULT<span class="sy0">,</span> <span class="nu0">2</span><span class="br0">)</span>
+        <span class="co1">#print 'data list', data_list</span>
+        data <span class="sy0">=</span> <span class="br0">(</span><span class="br0">(</span>data_list<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> &amp; <span class="nu0">0x0f</span><span class="br0">)</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">8</span> | data_list<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span> &amp; <span class="nu0">0xfff</span>
+        <span class="kw1">return</span> data
+ 
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">'__main__'</span>:
+    <span class="co1"># Connect the Grove - I2C ADC to I2C Grove port of Beaglebone Green.</span>
+    adc <span class="sy0">=</span> I2cAdc<span class="br0">(</span><span class="br0">)</span>
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        <span class="kw1">print</span> <span class="st0">'sensor value '</span><span class="sy0">,</span> adc.<span class="me1">read_adc</span><span class="br0">(</span><span class="br0">)</span>
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">.2</span><span class="br0">)</span></pre></div></div>
+<p><b>Step3:</b> Save the file by clicking the disk icon with a name "grove_i2c_adc.py".
+</p><p><b>Step4:</b> Create a new file Copy the following code into the new tab and save it with the .py extension.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">import</span> <span class="kw3">math</span>
+<span class="kw1">import</span> grove_i2c_adc
+<span class="kw1">import</span> Adafruit_BBIO.<span class="me1">GPIO</span> <span class="kw1">as</span> GPIO
+ 
+BUZZER <span class="sy0">=</span> <span class="st0">"P9_22"</span>            <span class="co1"># GPIO P9_22</span>
+GPIO.<span class="me1">setup</span><span class="br0">(</span>BUZZER<span class="sy0">,</span> GPIO.<span class="me1">OUT</span><span class="br0">)</span>
+ 
+<span class="co1"># The threshold to turn the buzzer on 28 Celsius</span>
+THRESHOLD_TEMPERATURE <span class="sy0">=</span> <span class="nu0">28</span>
+ 
+adc <span class="sy0">=</span> grove_i2c_adc.<span class="me1">I2cAdc</span><span class="br0">(</span><span class="br0">)</span>
+ 
+<span class="co1">#   The argument in the read_temperature() method defines which Grove board(Grove Temperature Sensor) version you have connected.</span>
+<span class="co1">#   Defaults to 'v1.2'. eg.</span>
+<span class="co1">#       temp = read_temperature('v1.0')          # B value = 3975</span>
+<span class="co1">#       temp = read_temperature('v1.1')          # B value = 4250</span>
+<span class="co1">#       temp = read_temperature('v1.2')          # B value = 4250</span>
+<span class="kw1">def</span> read_temperature<span class="br0">(</span>model <span class="sy0">=</span> <span class="st0">'v1.2'</span><span class="br0">)</span>:
+    <span class="st0">"Read temperature values in Celsius from Grove Temperature Sensor"</span>
+    <span class="co1"># each of the sensor revisions use different thermistors, each with their own B value constant</span>
+    <span class="kw1">if</span> model <span class="sy0">==</span> <span class="st0">'v1.2'</span>:
+        bValue <span class="sy0">=</span> <span class="nu0">4250</span>  <span class="co1"># sensor v1.2 uses thermistor ??? (assuming NCP18WF104F03RC until SeeedStudio clarifies)</span>
+    <span class="kw1">elif</span> model <span class="sy0">==</span> <span class="st0">'v1.1'</span>:
+        bValue <span class="sy0">=</span> <span class="nu0">4250</span>  <span class="co1"># sensor v1.1 uses thermistor NCP18WF104F03RC</span>
+    <span class="kw1">else</span>:
+        bValue <span class="sy0">=</span> <span class="nu0">3975</span>  <span class="co1"># sensor v1.0 uses thermistor TTC3A103*39H</span>
+ 
+    total_value <span class="sy0">=</span> <span class="nu0">0</span>
+    <span class="kw1">for</span> index <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="nu0">20</span><span class="br0">)</span>:
+        sensor_value <span class="sy0">=</span> adc.<span class="me1">read_adc</span><span class="br0">(</span><span class="br0">)</span>
+        total_value +<span class="sy0">=</span> sensor_value
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">0.05</span><span class="br0">)</span>
+    average_value <span class="sy0">=</span> <span class="kw2">float</span><span class="br0">(</span>total_value / <span class="nu0">20</span><span class="br0">)</span>
+ 
+    <span class="co1"># Transform the ADC data into the data of Arduino platform.</span>
+    sensor_value_tmp <span class="sy0">=</span> <span class="br0">(</span><span class="kw2">float</span><span class="br0">)</span><span class="br0">(</span>average_value / <span class="nu0">4095</span> * <span class="nu0">2.95</span> * <span class="nu0">2</span> / <span class="nu0">3.3</span> * <span class="nu0">1023</span><span class="br0">)</span>
+    resistance <span class="sy0">=</span> <span class="br0">(</span><span class="kw2">float</span><span class="br0">)</span><span class="br0">(</span><span class="nu0">1023</span> - sensor_value_tmp<span class="br0">)</span> * <span class="nu0">10000</span> / sensor_value_tmp
+    temperature <span class="sy0">=</span> <span class="kw2">round</span><span class="br0">(</span><span class="br0">(</span><span class="kw2">float</span><span class="br0">)</span><span class="br0">(</span><span class="nu0">1</span> / <span class="br0">(</span><span class="kw3">math</span>.<span class="me1">log</span><span class="br0">(</span>resistance / <span class="nu0">10000</span><span class="br0">)</span> / bValue + <span class="nu0">1</span> / <span class="nu0">298.15</span><span class="br0">)</span> - <span class="nu0">273.15</span><span class="br0">)</span><span class="sy0">,</span> <span class="nu0">2</span><span class="br0">)</span>
+    <span class="kw1">return</span> temperature
+ 
+<span class="co1"># Function: If the temperature sensor senses the temperature that is up to the threshold you set in the code, the buzzer is ringing for 1s.</span>
+<span class="co1"># Hardware: Grove - I2C ADC, Grove - Temperature Sensor, Grove - Buzzer</span>
+<span class="co1"># Note: Use P9_22(UART2_RXD) as GPIO.</span>
+<span class="co1"># Connect the Grove Buzzer to UART Grove port of Beaglebone Green.</span>
+<span class="co1"># Connect the Grove - I2C ADC to I2C Grove port of Beaglebone Green, and then connect the Grove - Temperature Sensor to Grove - I2C ADC.</span>
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">'__main__'</span>:
+ 
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        <span class="kw1">try</span>:
+            <span class="co1"># Read temperature values in Celsius from Grove Temperature Sensor</span>
+            temperature <span class="sy0">=</span> read_temperature<span class="br0">(</span><span class="st0">'v1.2'</span><span class="br0">)</span>
+ 
+            <span class="co1"># When the temperature reached predetermined value, buzzer is ringing.</span>
+ 
+            <span class="kw1">print</span> <span class="st0">"temperature = "</span><span class="sy0">,</span> temperature
+ 
+        <span class="kw1">except</span> <span class="kw2">IOError</span>:
+            <span class="kw1">print</span> <span class="st0">"Error"</span></pre></div></div>
+<p><b>Step5:</b> Connect Grove Temperature to Grove I2C ADC which is connected to Grove I2C socket on BBG.
+</p><p><b>Step6:</b> Run the code.
+You'll find that the terminal outputs Temperature value every 2 seconds.
+</p>
+<h2> Resource</h2>
+<ul><li><a href="res/Grove-Temperature_Sensor-Analog-v1.0_Source_File.zip">Grove - Temperature Sensor v1.0 Eagle File</a>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_Temperature_Sensor">Demo code on github</a>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

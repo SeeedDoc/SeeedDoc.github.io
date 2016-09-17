@@ -1,0 +1,127 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove Base Cape for BeagleBone v2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove Base Cape for BeagleBone v2</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Grove_Base_Cape_for_BeagleBone_v2_product_view_1200.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p><b>Grove Base Cape for BeagleBone</b> v2 is a <a href="/Grove_System">Grove system</a> expansion board for BeagleBone platform. This cape makes it convenient to connect many transducers (sensors and actuators) available as Grove modules with BeagleBone platform. The boards also includes a 256kb Serial EEPROM. It will save a lot effort for you in product development process with soldering-free design and compact plug-and-play ports. 
+</p><p>The cape provides 12 easy-to-use Grove connectors to do plug-and-play with the big family of Grove modules. The connectors include 2x UART, 2x ADC, 4x Digital I/O and 4x I2C that interface to the pins on your Beaglebone board, offering almost everything you need. There are two switches used to reset the I2C address in case of address conflicts. The board also integrates a switch for voltage transition - from a normal 5V to 3.3V and vice versa.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-Base-Cape-for-Beaglebone-v20-p-2644.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li>Easier connection between your BeagleBone and Grove Modules.
+</li><li>Soldering-free
+</li><li>Saves your time and money
+</li></ul>
+<h2> Specifications</h2>
+<table>
+<tr>
+<td> Output voltage </td>
+<td> 3.3 V or 5 V(switchable)
+</td></tr>
+<tr>
+<td>  Maximum output current </td>
+<td> 500 mA at 3.3V, 500 mA at 5V
+</td></tr>
+<tr>
+<td> Digital Grove Ports </td>
+<td> 6 , share same pins with UART1(labeled) and UART4(labeled)
+</td></tr>
+<tr>
+<td> Analog Grove Ports </td>
+<td> 2
+</td></tr>
+<tr>
+<td> I<sup>2</sup>C Grove Ports </td>
+<td> 4
+</td></tr>
+<tr>
+<td> UART Grove Ports </td>
+<td> 2 (UART1, UART4)
+</td></tr>
+<tr>
+<td> EEPROM </td>
+<td> 256kb (Model: CAT24C256WI)
+</td></tr>
+<tr>
+<td> Dimensions </td>
+<td> 70 mm(Length) × 50 mm(width)
+</td></tr></table>
+<h3>  Parts list</h3>
+<table>
+<tr>
+<th>Parts name   </th>
+<th> Quantity
+</th></tr>
+<tr>
+<td>Grove Base Cape for BeagleBone v2 </td>
+<td> 1 PCS
+</td></tr></table>
+<h2> Hardware overview</h2>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove_Base_Cape_for_BeagleBone_v2_hardware_overview_1200.jpg" width="600"/></div></div>
+<p><b>Output voltage switch</b>, is a switch to control output voltage to Grove ports.
+</p><p><b>USER button</b>, is a button that can be used as BeagleBone USER button.
+</p><p><b>Cape address switch</b>, is a switch to choose cape address (only useful when multiple capes are attached) to avoid I2C address collision. For details about using more capes, please visit <a href="http://beagleboard.org/Support/bone101/#capes">http://beagleboard.org/Support/bone101/#capes</a> and <a href="http://elinux.org/BeagleBone_Community#Capes">http://elinux.org/BeagleBone_Community#Capes</a>. You can use this switch to choose address from <b>00</b>(binary, pulled down for factory setttings) to <b>11</b>(binary, on Grove Base Cape for BeagleBone v2) which correspond to 0x54 to 0x57 for all capes. 
+</p><p><b>Write protection pin</b>, is used to disable write protection of EEPROM of a cape if those pins are connected. By default, it is not connected. 
+</p><p><b>LMV324 operational amplifier </b>, is a low-voltage rail-to-rail output operational amplifiers to control analog voltage. <a href="http://www.ti.com/lit/ds/symlink/lmv324.pdf">Read more</a>
+</p><p><b>TXB0108PW</b>, is an 8-bit bidirectional voltage-level translator. <a href="http://www.electroensaimada.com/uploads/9/0/8/9/9089783/txb0108.pdf">Read more</a>.
+</p><p><b>Note</b> you can find two notch(round corner with holes) on one end of Grove Base Cape for BeagleBone v2.0. This end corresponds to the end with same notch on BeagleBone Green. You can use this notches to ensure proper orientation.
+</p>
+<h2> Get started</h2>
+<p>In this section, we will show you a basic example to use this board. You can find more demos at <a href="http://www.seeedstudio.com/recipe/index.php?query=beaglebone">BeagleBone Recipes</a> page. Just append Grove Base Cape for BeagleBone v2 to those projects to make wire connection convenient.
+</p>
+<h3> Suggested reading</h3>
+<ul><li><a href="/BeagleBone_Green">BeagleBone Green</a>
+</li><li><a href="http://beagleboard.org/">BeagleBone community</a>
+</li><li><a href="http://beagleboard.org/support/bone101">BeagleBone 101</a>
+</li><li><a href="http://beagleboard.org/support/bonescript">BoneScript</a>
+</li></ul>
+<h3> Materials required</h3>
+<ul><li>Grove Base Cape for BeagleBone v2 × 1
+</li><li><a href="https://www.seeedstudio.com/item_detail.html?p_id=766">Grove - Button</a> × 1
+</li><li><a href="https://www.seeedstudio.com/item_detail.html?p_id=2504">BeagleBone Green</a> (fully compatible with BeagleBone Black without HDMI output)
+</li><li>USB cable (type A to type B, for Arduino) × 1 or USB cable (Type-A to micro Type-B, for Seeeduino) × 1
+</li><li><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> × 1
+</li></ul>
+<h3> Coding work</h3>
+<dl><dd> 1. Connect BeagleBone Green to Your PC or MAC by USB cable. Click <a href="http://192.168.7.2:3000/ide.html">http://192.168.7.2:3000/ide.html</a> to Open Cloud9 IDE.
+</dd></dl>
+<dl><dd> 2. Connect Grove - Button(P) to Grove Base Cape for BeagleBone v2 with Grove cable. Plug Grove cable to GPIO pin 51.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove_Base_Cape_for_BeagleBone_v2_wiki_demo_1200.jpg" width="600"/></div></div>
+</dd></dl>
+<dl><dd> 3. Copy following code to Cloud9, save it to a <b>.js</b> file.  
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="javascript source-javascript"><pre class="de1"><span class="kw1">var</span> b <span class="sy0">=</span> require<span class="br0">(</span><span class="st0">'bonescript'</span><span class="br0">)</span><span class="sy0">;</span>
+b.<span class="me1">pinMode</span><span class="br0">(</span><span class="st0">'P9_16'</span><span class="sy0">,</span> b.<span class="me1">INPUT</span><span class="br0">)</span><span class="sy0">;</span><span class="co1">//GPIO 51 correspond to P9_16. More details at http://beagleboard.org/Support/bone101/#headers</span>
+ 
+setInterval<span class="br0">(</span>check<span class="sy0">,</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+<span class="kw1">function</span> check<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+    b.<span class="me1">digitalRead</span><span class="br0">(</span><span class="st0">'P9_16'</span><span class="sy0">,</span> checkButton<span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">function</span> checkButton<span class="br0">(</span>x<span class="br0">)</span> <span class="br0">{</span>
+    console.<span class="me1">log</span><span class="br0">(</span>x.<span class="me1">value</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">if</span><span class="br0">(</span>x.<span class="me1">value</span> <span class="sy0">==</span> <span class="nu0">1</span><span class="br0">)</span><span class="br0">{</span>
+            console.<span class="me1">log</span><span class="br0">(</span><span class="st0">"you are pressing Grove button"</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span><span class="br0">{</span>
+        console.<span class="me1">log</span><span class="br0">(</span><span class="st0">"you are not pressing Grove button"</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dd> 4. Click <b>Run</b> in Cloud9 IDE to run the program on BeagleBone Green.
+</dd></dl>
+<dl><dd>5. Wait for about 10 seconds to view the output at the bottom of Cloud9 IDE. The output probably looks like the following screen-shot:
+</dd></dl>
+ : <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove_Base_Cape_for_BeagleBone_v2_wiki_demo_result_600_s.png" width="600"/></div></div>
+<h2> Resources</h2>
+<ul><li><a href="res/Grove_Base_Cape_for_BeagleBone_v2.0_Schematics.zip">EAGLE Schematic &amp; PCB files and PDF format Schematic</a>
+</li><li><a href="/BeagleBone_Green">BeagleBone Green</a>
+</li><li><a href="http://beagleboard.org/">BeagleBone community</a>
+</li><li><a href="http://beagleboard.org/support/bone101">BeagleBone 101</a>
+</li><li><a href="http://beagleboard.org/support/bonescript">BoneScript</a>
+</li><li><a href="https://c9.io/">Cloud9</a>
+</li><li><a href="http://www.electroensaimada.com/uploads/9/0/8/9/9089783/txb0108.pdf">TXB0108PW datasheet</a>
+</li><li><a href="http://www.ti.com/lit/ds/symlink/lmv324.pdf">LMV324 datasheet</a>
+</li><li>More demos at <a href="http://www.seeedstudio.com/recipe/index.php?query=beaglebone">http://www.seeedstudio.com/recipe/index.php?query=beaglebone</a> and <a href="http://www.seeedstudio.com/recipe/index.php?query=beaglebone">http://www.seeedstudio.com/recipe/index.php?query=beaglebone</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

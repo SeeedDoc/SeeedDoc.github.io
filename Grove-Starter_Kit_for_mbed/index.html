@@ -1,0 +1,82 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Starter Kit for mbed</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Starter Kit for mbed</h1>
+<h3>  About mbed and Grove </h3>
+<p>mbed is an open source development platform for rapid prototyping with microcontrollers. It provides free software libraries, hardware designs and development tools to build projects very easily and fast.
+</p><p>Grove is a modular electronics platform for quick prototyping that does not involve soldering or bread boarding.
+</p>
+<h3>  About this kit </h3>
+<p>This kit is designed for you to get started with mbed as soon as possible. It contains many plug-n-play Grove modules to start exploring the mbed world. One goal is to have fun and build confidence with hardware and software in the journey.
+</p>
+<h2>  Get Started </h2>
+<p>All the things to get started are:
+</p>
+<ul><li> This kit
+</li><li> <a href="http://www.seeedstudio.com/depot/Arch-p-1561.html">An Arch</a>
+</li><li> <a href="http://www.seeedstudio.com/depot/Micro-USB-Cable-48cm-p-1475.html">A USB Micro B cable</a>
+</li><li> A computer with Internet
+</li></ul>
+<h3>  Hello, world </h3>
+<ol><li> Click <a href="https://mbed.org/compiler/#import:https://mbed.org/users/viswesr/code/Arch_GPIO_Ex1;platform:Seeeduino-Arch">this link</a> to <b>signup or login mbed</b>, then you will get the mbed online compiler.
+</li><li> Import the program and open main.cpp, you will see the code.  <br/> <img src="img/Import_arch_gpio_ex1.png" width="401"/>
+</li><li> On mbed online IDE, click "Compile" of the top toolbar (or use CTRL + D) to compile the code and the binary file - Arch_GPIO_Ex1_LPC11U24.bin. <br/> <img src="img/Compile_mbed_program.png" width="545"/>
+</li><li> Connect the Arch board to the computer and <b>long press</b> the button, a USB drive named CRP DISABLD will pop up.
+</li><li> Delete firmware.bin and copy Arch_GPIO_Ex1_LPC11U24.bin to the USB drive.
+</li><li> <b>Quick press</b> the button, the program will be running, an LED will be blinking.
+</li></ol>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include "mbed.h"</span>
+ 
+<span class="coMULTI">/* Configure a GPIO pin as output for controlling a LED. 'led' is user assigned name and
+ 'LED1' is a internal name given to a port pin P1_8 in this Arch platform. */</span>
+DigitalOut led<span class="br0">(</span>LED1<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+        led <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>    <span class="co1">// Switch ON the LED.</span>
+        wait<span class="br0">(</span><span class="nu16">0.5</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// Wait for 0.5 Seconds.</span>
+        led <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>    <span class="co1">// Switch OFF the LED.</span>
+        wait<span class="br0">(</span><span class="nu16">0.5</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// Wait for 0.5 Seconds.</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>The above program uses <b>DigitalOut</b> class and <b>wait()</b> function of mbed C/C++ SDK. LED1 is an pseudonym of I/O pin <b>P1_8</b> and
+is labelled D1 in the Arch board. The state of LED1 is changed by writing either 0 or 1 to <b>led</b>. The <b>wait()</b> function produces
+a delay in seconds. The state of the <b>led</b> is continuous toggled every 0.5 seconds inside the endless <b>while()</b> loop.
+</p><p>More details of <b>DigitalOut</b> can be find in <a href="http://mbed.org/handbook/DigitalOut">DigitalOut page of mbed handbook</a>. Similarly the <b>wait()</b> function is documented in <a href="http://mbed.org/handbook/Wait">wait page</a>.
+</p>
+<hr/>
+<h3>  Fruit Piano </h3>
+<p>A piano built with a basket of fruit, a microcontroller and a computer.
+</p><p>The idea is from <a href="http://makeymakey.com/">Makey Makey</a>, but uses different hardware and software. An mbed enabled microcontroller with USB is used.
+</p><p><img src="img/Piano.png" width="450"/>
+</p><p><img src="img/Fruit_Piano_Hardware.jpg" width="450"/>
+</p>
+<h4>  Hardware </h4>
+<ul><li> An Arch board
+</li><li> A basket of fruit
+</li><li> A computer with AC power
+</li><li> Some wires
+</li></ul>
+<h5>  Software </h5>
+<ol><li>Click <a href="https://mbed.org/compiler/#import:http://mbed.org/teams/Seeed/code/Fruit_Piano;platform:Seeeduino-Arch">this link</a> to import the program to mbed online compiler.
+</li><li>Compile the code and download the binary file - Fruit_Piano_LPC11U24.bin.
+</li><li>Connect the Arch board to the computer and long press the button, a USB drive named CRP DISABLD will pop up.
+</li><li>Delete firmware.bin and copy Arch_GPIO_Ex1_LPC11U24.bin to the USB drive.
+</li><li>Quick press the button to run the program
+</li><li>Wire some apples or bananas to A0 - A5 (P0_11 - P0_14, P0_16, P0_22) pins of the Arch board
+</li><li>Open <a href="http://xiongyihui.github.io/piano/">Fruit Piano</a> and play
+</li></ol>
+<hr/>
+<h3>  More, Step By Step </h3>
+<ol><li> <a href="http://mbed.org/teams/Seeed/wiki/Button">Digital Input - Button: use a button to control an LED</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Potentiometer">Analog Input - Potentiometer: use a potentiometer to control the blinking of an LED</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Analog-Temperature-Sensor">Temperature Sensing: use a analog temperature sensor to make a thermometer</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Grove-Buzzer">PWM Ouput - Buzzer: use a buzzer to play a melody</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Grove-4-Digit-Display">Display: make a digital clock</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Thermometer">A thermometer</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Infrared-keybaord">Infrared keyboard</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Grove-Chainable-RGB-LED">Colorful light</a>
+</li><li> <a href="http://mbed.org/teams/Seeed/wiki/Temperature-Color">Temperature controls color</a>
+</li></ol>
+<h2> Resources</h2>
+<ul><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

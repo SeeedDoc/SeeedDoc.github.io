@@ -1,0 +1,496 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Arduino Sidekick Basic Kit</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Arduino Sidekick Basic Kit</h1>
+
+<p>The Arduino Sidekick Basic Kit is designed to be used with your Arduino / Seeeduino / Seeeduino ADK / Maple Lilypad or any MCU board. It contains everything needed for a first-time user to connect his/her computer to an Arduino. It includes many of the most popular accessories for DIY projects : like Breadboard, Jumper wires, Color LEDs, Resistors, Buzzer, etc.
+All of these coming with its own handy box are easy transport and minimal clutter.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/arduino-sidekick-basic-kit-p-775.html?cPath=138">KIT22434P</a></b><br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/BasicKit.jpg" width="500"/></div></div><br/>
+<h2>  Kit Contents  </h2>
+<p><img src="img/Arduino_Sidekick_Contents_Illustrated.jpg" width="600"/>
+</p>
+<ol><li>Breadboard x 1 <br/>
+</li><li>Breadboard jumper wire x 50（10 x long, 40 x short） <br/>
+</li><li>Red Led x 10 <br/>
+</li><li>Green Led x 10 <br/>
+</li><li>RGB led x 1 <br/>
+</li><li>Ceramic Capacitor (10nF x 10, 100nF x 10) <br/>
+</li><li>Electrolytic Capacitor (100uF x 5) <br/>
+</li><li>Resistor (330 x 10, 1k x 10, 10k x 10) <br/>
+</li><li>Tilt switch x 1 <br/>
+</li><li>Thermistor x 1 <br/>
+</li><li>Photo resistor x 1 <br/>
+</li><li>Diode x 1 <br/>
+</li><li>Buzzer x 1 <br/>
+</li><li>Button x 5 <br/>
+</li><li>Switch x 5 <br/>
+</li><li>Mini Servo x 1 <br/>
+</li><li>Potienmeter with knob x 1 <br/>
+</li><li>Resistor Instructor card x 1 <br/>
+</li><li>Box x 1 <br/>
+</li></ol>
+<h2>  Basic Electronics Refresher </h2>
+<h3>  Current and Voltage</h3>
+<p>Current is the rate of flowing electric charge in a conductor. Voltage is the potential difference (electric driving force) applied between two points to conduct current. Current is expressed in terms of Amperes (A) and Voltage is in terms of Volts (V). 
+</p>
+<h3>  Resistor </h3>
+<p>Resistors are obstacles of the flowing current in a conductor. They are used to limit the flow of current to an electronic device like lamp. The resistance to the flowing current is expressed in Ohms (Ω).They are divided into<i><b> Fixed resistor</b></i> and  <i><b>variable resistor (POT) </b></i>.
+</p>
+<h4> Connecting Resistors</h4>
+<p>Resistors can be connected in two different types: In parallel or in series with each other.
+</p>
+<h5> Resistors in series</h5>
+<p>When the resistors are connected in series, the total equivalent resistance will be equal to the sum of all the values of resistors in series.
+</p>
+<h5> Resistors in parallel</h5>
+<p>In parallel, the reciprocal of the total equivalent resistance is equal to the sum of each resistor's reciprocal. 
+</p>
+<h3>  Ohm's Law </h3>
+<p>The relations among Current, Voltage and Resistance are governed by Ohm's Law - which states that "The current through a conductor (I Amperes) between two points is directly proportional to the potential difference or voltage across the two points (V Volts), and inversely proportional to the resistance between them (R Ohms)"
+i.e I = V / R. Hence V = IR or R = V / I. The following Ohm's Law triangle can be used to remember the relationship between V, I and R. The vertical line indicates multiplication operation and horizontal line indicates division operation.
+</p><p><br/>
+<img src="img/Ohm-s_law_triange.jpg" width="200"/>
+</p><p>eg: Hence to know current I, we divide V by R.
+</p>
+<h3>  Breadboard </h3>
+<p><img src="img/Breadboard_.jpg" width="200"/>
+</p><p><b>Breadboard</b> is a prototyping device for electronic circuits. It is very useful to connect electronic components and to make a circuit without soldering. Breadboard consists of rows and columns of holes with metal contacts to insert components. The breadboard supplied with <strong class="selflink">Arduino Sidekick Basic Kit</strong> is arranged of <b>2 X 30 five-hole</b> columns and <b>4 X twenty five-hole</b> rows. These holes are connected internally in a manner as illustrated below.
+</p><p><img src="img/Arduino_Sidekick_Breadboard_Internal_Connections.jpg" width="300"/>
+</p>
+<h3>  Fixed Resistors </h3>
+<p>The resistors supplied with Basic Kit are made of carbon and have fixed value type. The value of resistance is marked by the colored bands. You can get the value from the resistor color code sheet.
+</p>
+<ul><li>The <i>first band</i> indicates the <b>first digit</b> of the resistance value.
+</li><li>The <i>second band</i> indicates the <b> second digit</b>.
+</li><li>The <i>third band</i> indicates the <b>multiplier</b> value of the resistor.
+</li><li>The <i>fourth band</i> denotes the <b>Tolerance value</b>.
+</li></ul>
+<h3>  Potentiometer (POT) </h3>
+<p>POT is a variable resistor whose resistance can be changed by rotating the knob. It has three terminals - the terminals on the ambilateral sides of the resistor are connected to ends of conductor which is made of resistive material. The middle terminal is connected to a slider which moves over the resistive material. The value of resistance changes proportionally to the position of the knob.
+</p><p><img src="img/Sidekick_POT.png" width="200"/>
+</p>
+<h3>  Thermistors </h3>
+<p>Thermistors are special resistors whose resistance will be changed with the temperature around it. They provide very useful and convenient way to sense the temperature difference.
+</p><p><img src="img/Sidekick_Thermistor.JPG" width="200"/>
+</p>
+<h3>  Light Dependent Resistors (LDR) </h3>
+<p>LDR will change the resistance when the intensity of light falling on them changes. They are also called photocell. It offers maximum resistance when there is no light falling on it and gives minimum resistance when exposed to bright light. It is made up of photo sensitive material like Cadmium Sulphide and can be connected to the circuit. It can be used as a light sensing element.
+</p><p><img src="img/Sidekick_LDR.JPG" width="200"/>
+</p>
+<h3>  Light Emitting Diodes </h3>
+<p>LEDs emit will light up when it is forward biased. They are encapsulated in a transparent casing and come in various colors like red, green and blue. LEDs are made of gallium arsenide phosphide, and by altering the proportions of arsenic and phosphorus, different colors can be obtained. Monocolor LEDs have two leads Anode( +ve ) and Cathode (-ve).  Tricolor LEDs have 4 Leads - one anode and 3 cathodes for each color.The LEDs can be used in display boards. 
+</p><p><img src="img/Sidekick_RGB_LED_.JPG" width="200"/>
+</p>
+<h3>  Switch </h3>
+<p>The switches are used to close or open the circuit. The switches supplied with Basic kit have two types - Push button switch and Slide Switch.
+</p>
+<h4>  Push Button Switch </h4>
+<p>The circuit will be closed as long as you press the push button switch.
+</p><p><img src="img/Sidekick_Push_Button_Switch_.JPG" width="200"/>
+</p>
+<h4>  Slide Switch </h4>
+<p>Slide switch is a simple two positions switch. It can be used to open or close a circuit by setting it to appropriate position.
+</p><p><img src="img/Sidekick_Slide_Switch_.JPG" width="200"/>
+</p>
+<h4>  Tilt Switch </h4>
+<p>Tilt switch contains two terminals which are connected to the circuit , it <i>closes</i>the circuit when it is <i>tilted horizontally</i> while  <i>opens</i>the circuit when <i>tilted vertically</i>.
+</p>
+<h3>  Capacitors </h3>
+<p>Capacitors are used to store electric charge. They are classified into two different types: Electrolytic and Ceramic disc Capacitor. Capacitors are expressed in terms of micro Farads (uF).
+</p><p><img src="img/Sidekick_Capacitor.JPG" width="200"/>
+</p>
+<h4> Connecting the Capacitor</h4>
+<p>Capacitors can be connected in two types of arrangement in a circuit as shown below.
+</p>
+<h5> Capacitors in Series</h5>
+<p>The total equivalent capacitance, when two or more capacitors are connected in series with each other, is equal to the sum of the reciprocal of individual capacitance value.
+</p>
+<h5> Capacitors in Parallel</h5>
+<p>The total equivalent capacitance, when two or more capacitors connected in parallel, is equal to the sum of the individual capacitance.
+</p>
+<h4>  Electrolytic Capacitors </h4>
+<p>Electrolytic Capacitors normally have small volume and large volume of capacitance. They are classified into polarized and non-polarized electrolytic capacitors.
+Metals like aluminum, tantalum , vanadium and bismuth are used to form anode and cathode foils.
+</p>
+<h4>  Ceramic Disc Capacitors </h4>
+<p>The Ceramic Capacitors use ceramic dielectric with thin metal films as electrodes bonded to the ceramic. In the Disc type, capacitor silver is fixed on to both sides of ceramic to form conductor plates. The disc capacitors are used only for small value of capacitance.
+</p>
+<h3>  Buzzer  </h3>
+<p>A buzzer is an audio signaling device, which may be mechanical, electromechanical, or Piezoelectric. It produces various audio signal based on the oscillation of the material used in it. They are commonly used in alarms and timers. 
+</p><p><img src="img/Sidekick_Buzzer.png" width="200"/>
+</p><p>Connect the long pin to the positive voltage, and the short pin to ground. 
+</p><p>The buzzer can be connected to digital outputs, and will emit a tone when the output is high. Alternatively, it can be connected to an analog pulse-width modulation output to generate various tones and effects. 
+</p><p>See <a href="/index.php-title=GROVE-Starter_Kit_v1.1b#Grove-Buzzer">buzzer information</a> at the Grove Starter Kit for a sample.
+</p>
+<h3>  Diode </h3>
+<p>A diode is a semi conducting material that conducts current only in one direction. It starts conducting only after the supply voltage is greater than the <i>barrier potential</i>. It acts like a closed switch in forward biased condition and acts like an open switch when it is reverse biased. The diodes are classified based on the semiconducting material and can be used to fabricate,such as PN Junction diode,zener diode,light emitting diode etc.
+</p>
+<h4> Biasing a Diode</h4>
+<p>Applying voltage to a diode is called biasing a diode.The diode gets <i><b>forward biased</b></i> when a <b>positive supply</b> voltage is applied across the terminals and starts conducting above <i>0.7v for a silicon diode</i> and <i>0.3v for a germanium diode</i>.When a <b>negative voltage</b> is applied across the terminals of a diode, it is said to be<b> <i>reverse biased</i></b>. The diode gets damaged when the reverse biasing voltage exceeds breakdown voltage<i>.</i>
+</p><p><img src="img/Sidekick_Diode.JPG" width="200"/>
+</p>
+<h3>  Mini Servo </h3>
+<p>Servos are DC motors with gearing and feedback system.They are used in driving mechanism of robots.
+</p><p><img src="img/GroveServo.jpg" width="200"/>
+</p>
+<h2>  Lessons </h2>
+<h3>  Hello World! : The Blinking LED </h3>
+<h4>  Circuit </h4>
+<ul><li> Connect an LED to Digital Pin 8 as shown below. The 330 Ohm resistor limits the current flowing to the LED. 
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_1LED_Blink.jpg" width="400"/></div></div>
+<h4>  Program </h4>
+<p>Compile and upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Blink a LED connected to Digital Pin 8 via a 330 Ohm resitors.</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>   <span class="br0">{</span>                
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// Initialize Arduino Digital Pin 8 as output</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>                     
+<span class="br0">{</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// Switch On LED </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// Wait for half a second</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// Switch Off LED </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// Wait for half a second</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Running LED display </h3>
+<h4>  Circuit </h4>
+<ul><li> Connect 3 LEDs to Digital Pins 9, 10 and 11 via a 330 Ohms resistor each.
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_3LEDs_Display.jpg" width="400"/></div></div>
+<h4>  Program </h4>
+<p>Compile and upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Running LED display: Three LEDs connected to Digital Pin 9, 10 and 11.</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>   
+<span class="br0">{</span>                
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>        <span class="co1">// Initialize Arduino Digital Pins 9 as output</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">10</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// Initialize Arduino Digital Pins 10 as output</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">11</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// Initialize Arduino Digital Pins 11 as output</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>                     
+<span class="br0">{</span>
+ 
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>   
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">10</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">11</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">250</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// Wait for quarter of a second</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>    
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">10</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">11</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">250</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// Wait for quarter of a second</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>    
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">10</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">11</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">250</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// Wait for quarter of a second</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h3>  Talk to Arduino : Connecting a Pushbutton Switch </h3>
+<h4>  Circuit </h4>
+<ul><li> Connect an LED to Digital Pin 8 as shown below. The 330 Ohm resistor limits the current flowing to the LED.
+</li><li> Connect one of Push button switch to Digital Pin 12, and another to GND via a 10K resistor.
+</li><li> Connect other end of Push button to +5V.
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_Pushbutton_LED.jpg" width="400"/></div></div>
+<p><br/>
+</p>
+<h4>  Program </h4>
+<p>Compile and upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Pushbutton switch demo: LED is connected to digital pin 8 and Pushbutton is connected to digital pin 12. </span>
+<span class="co1">//The LED glows when the button is pressed.</span>
+ 
+<span class="kw4">char</span> inputButtonState<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>   
+<span class="br0">{</span>                
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>        <span class="co1">// Initialize Arduino Digital Pins 8 as output for connecting LED</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">12</span>,<span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>         <span class="co1">// Initialize Arduino Digital Pins 12 as input for connecting Pushbutton</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>                     
+<span class="br0">{</span>
+  inputButtonState <span class="sy1">=</span> <span class="kw3">digitalRead</span><span class="br0">(</span><span class="nu0">12</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Read the Pushbutton state.</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>inputButtonState <span class="sy1">==</span> <span class="kw2">HIGH</span><span class="br0">)</span> 
+  <span class="br0">{</span>     
+    <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//Switch on LED</span>
+  <span class="br0">}</span> 
+  <span class="kw1">else</span> 
+  <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">//Switch off LED</span>
+  <span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+The above does demonstrate how to send a signal to the Arduino. In fact, you can  achieve the same goal without the Arduino. Just press the button to close the circuit, then, let's flip the HIGH/LOW values as follows:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>                     
+<span class="br0">{</span>
+  inputButtonState <span class="sy1">=</span> <span class="kw3">digitalRead</span><span class="br0">(</span><span class="nu0">12</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Read the Pushbutton state.</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>inputButtonState <span class="sy1">==</span> <span class="kw2">HIGH</span><span class="br0">)</span> 
+  <span class="br0">{</span>     
+    <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//Switch on LED</span>
+  <span class="br0">}</span> 
+  <span class="kw1">else</span> 
+  <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">//Switch off LED</span>
+  <span class="br0">}</span></pre></div></div>
+<p>The LED now lights with the circuit open and switches off with the circuit closed.
+</p>
+<h3>  3 Analog: POT </h3>
+<h4> Circuit</h4>
+<ul><li> Connect anode of LED to <b>PWM</b> Pins  via a 220 Ohms resistor .
+</li><li> Connect cathode of LED to GND Pin.
+</li><li> Mount the Pot in the bread board.
+</li><li> Connect the  right leg of the Pot to +5v.
+</li><li> Connect the middle leg of the Pot to any of the Analog input pins(0-5).
+</li><li> Connect left leg of the Pot to  the Ground Terminal.
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_potled1.jpg" width="400"/></div></div>
+<h4> Program</h4>
+<p>Connect LED annode to digital pin 5 (instead of 5V).
+Compile and Upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Varying the brightness of the LED using a Pot</span>
+<span class="kw4">int</span> value<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">int</span> mval<span class="sy4">;</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">5</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span> 
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  value<span class="sy1">=</span><span class="kw3">analogRead</span><span class="br0">(</span>A1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//read analog value from input A1 </span>
+  <span class="co1">// PWM output given to the LED</span>
+  mval <span class="sy1">=</span> <span class="kw3">map</span><span class="br0">(</span>value, <span class="nu0">0</span>, <span class="nu0">1023</span>, <span class="nu0">0</span>, <span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">analogWrite</span><span class="br0">(</span><span class="nu0">5</span>,mval<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h3>  4 Rainbow On Desk: Tricolor LED  </h3>
+<h4>  Circuit </h4>
+<p>RGB LED supplied with the basic kit is common anode type. The longest lead is anode. Other three leads are cathodes for Red, Green and Blue  respectively.
+</p>
+<ul><li> Connect RGB cathodes LEDs to Digital Pins 9, 10 and 11 via a 330 Ohms resistor each.
+</li><li> Connect Anode to +5v
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_RGB_LED_Display.jpg" width="400"/></div></div>
+<h4>  Program </h4>
+<p>Compile and upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span> 
+ 
+<span class="br0">}</span> 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+ 
+ 
+  <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> b <span class="sy1">=</span> <span class="nu0">0</span> <span class="sy4">;</span> b <span class="sy1">&lt;=</span> <span class="nu0">255</span><span class="sy4">;</span> b<span class="sy1">=</span>b<span class="sy2">+</span><span class="nu0">5</span><span class="br0">)</span> 
+  <span class="br0">{</span> 
+      <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> g <span class="sy1">=</span> <span class="nu0">0</span> <span class="sy4">;</span> g <span class="sy1">&lt;=</span> <span class="nu0">255</span><span class="sy4">;</span> g<span class="sy1">=</span>g<span class="sy2">+</span><span class="nu0">5</span><span class="br0">)</span> 
+    <span class="br0">{</span> 
+      <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> r<span class="sy1">=</span> <span class="nu0">0</span> <span class="sy4">;</span> r <span class="sy1">&lt;=</span> <span class="nu0">255</span><span class="sy4">;</span> r<span class="sy1">=</span>r<span class="sy2">+</span><span class="nu0">5</span><span class="br0">)</span> 
+       <span class="br0">{</span> 
+        <span class="kw3">analogWrite</span><span class="br0">(</span><span class="nu0">9</span>, b<span class="br0">)</span><span class="sy4">;</span>         
+        <span class="kw3">analogWrite</span><span class="br0">(</span><span class="nu0">10</span>, g<span class="br0">)</span><span class="sy4">;</span>         
+        <span class="kw3">analogWrite</span><span class="br0">(</span><span class="nu0">11</span>, r<span class="br0">)</span><span class="sy4">;</span>    
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+      <span class="br0">}</span> 
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h3>  5 Music:  </h3>
+<h4>  Circuit </h4>
+<ul><li> Connect buzzer anode to Digital Pins 11.
+</li><li> Connect buzzer negative to GND
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_Music.jpg" width="400"/></div></div>
+<h4>  Program </h4>
+<p>Compile and upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define NOTE_D0 98</span>
+<span class="co2">#define NOTE_D1 294</span>
+<span class="co2">#define NOTE_D2 330</span>
+<span class="co2">#define NOTE_D3 350</span>
+<span class="co2">#define NOTE_D4 393</span>
+<span class="co2">#define NOTE_D5 441</span>
+<span class="co2">#define NOTE_D6 495</span>
+<span class="co2">#define NOTE_D7 556</span>
+<span class="co2">#define NOTE_DL1 147</span>
+<span class="co2">#define NOTE_DL2 165</span>
+<span class="co2">#define NOTE_DL3 175</span>
+<span class="co2">#define NOTE_DL4 196</span>
+<span class="co2">#define NOTE_DL5 221</span>
+<span class="co2">#define NOTE_DL6 248</span>
+<span class="co2">#define NOTE_DL7 278</span>
+<span class="co2">#define NOTE_DH1 589</span>
+<span class="co2">#define NOTE_DH2 661</span>
+<span class="co2">#define NOTE_DH3 700</span>
+<span class="co2">#define NOTE_DH4 786</span>
+<span class="co2">#define NOTE_DH5 882</span>
+<span class="co2">#define NOTE_DH6 990</span>
+<span class="co2">#define NOTE_DH7 112</span>
+ 
+<span class="co2">#define WHOLE 1</span>
+<span class="co2">#define HALF 0.5</span>
+<span class="co2">#define QUARTER 0.25</span>
+<span class="co2">#define EIGHTH 0.125</span>
+<span class="co2">#define SIXTEENTH 0.625</span>
+ 
+<span class="co1">// notes in the melody:</span>
+<span class="kw4">int</span> tune<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span>
+<span class="br0">{</span>
+    NOTE_D0,NOTE_D1,NOTE_D2,NOTE_D3,NOTE_D4,NOTE_D5,NOTE_D6,NOTE_D7,
+    NOTE_DL1,NOTE_DL2,NOTE_DL3,NOTE_DL4,NOTE_DL5,NOTE_DL6,NOTE_DL7,
+    NOTE_DH1,NOTE_DH2,NOTE_DH3,NOTE_DH4,NOTE_DH5,NOTE_DH6,NOTE_DH7,
+<span class="br0">}</span><span class="sy4">;</span>                                    
+<span class="coMULTI">/* note durations: 1 = one note*/</span>
+ 
+<span class="kw4">float</span> duration<span class="br0">[</span><span class="br0">]</span><span class="sy1">=</span>
+<span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>, <span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="nu0">1</span>,<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> length<span class="sy4">;</span>   
+<span class="kw4">int</span> tonePin<span class="sy1">=</span><span class="nu0">11</span><span class="sy4">;</span>                <span class="co1">// buzzer pin</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span> <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>tonePin,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">//  initialize the digital pin as an output</span>
+    length <span class="sy1">=</span> <span class="kw3">sizeof</span><span class="br0">(</span>tune<span class="br0">)</span><span class="sy2">/</span><span class="kw3">sizeof</span><span class="br0">(</span>tune<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> x<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>x<span class="sy1">&lt;</span>length<span class="sy4">;</span>x<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span><span class="kw3">tone</span><span class="br0">(</span>tonePin,tune<span class="br0">[</span>x<span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">400</span><span class="sy2">*</span>duration<span class="br0">[</span><span class="br0">(</span>x<span class="sy2">%</span><span class="nu19">100</span><span class="br0">)</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// to distinguish the notes, set a minimum time between them.</span>
+ 
+        <span class="kw3">noTone</span><span class="br0">(</span>tonePin<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// stop the tone playing:</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  6 Mini Servo:  </h3>
+<h4> Circuit</h4>
+<ul><li>Connect the Red colored wire of the servo motor to +5v supply. 
+</li><li>Connect the black colored wire of the servo to ground.
+</li><li>Connect the yellow wire of the servo to any of the PWM pin in the Arduino.
+</li><li>Connect the right leg of the Pot to +5v.
+</li><li>Connect the middle leg of the Pot to any of the Analog input pins(0-5).
+</li><li>Connect the left leg of the Pot to the Ground Terminal.<br/>
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Arduino_Sidekick_Mini_Servo.jpg" width="400"/></div></div>
+<h4> Program</h4>
+<p>Compile and Upload the following sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// Controlling a servo position using a potentiometer (variable resistor) </span>
+<span class="co1">// by Michal Rinott &lt;http://people.interaction-ivrea.it/m.rinott&gt; </span>
+ 
+<span class="co2">#include &lt;Servo.h&gt; </span>
+ 
+<span class="kw2">Servo</span> myservo<span class="sy4">;</span>  <span class="co1">// create servo object to control a servo </span>
+ 
+<span class="kw4">int</span> potpin <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>  <span class="co1">// analog pin used to connect the potentiometer</span>
+<span class="kw4">int</span> val<span class="sy4">;</span>    <span class="co1">// variable to read the value from the analog pin </span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+  myservo.<span class="kw3">attach</span><span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// attaches the servo on pin 5 to the servo object </span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">19200</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// some servos doesn't work without Serial</span>
+<span class="br0">}</span> 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span> 
+  val <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>potpin<span class="br0">)</span><span class="sy4">;</span>            <span class="co1">// reads the value of the potentiometer (value between 0 and 1023) </span>
+  val <span class="sy1">=</span> <span class="kw3">map</span><span class="br0">(</span>val, <span class="nu0">0</span>, <span class="nu0">1023</span>, <span class="nu0">0</span>, <span class="nu0">179</span><span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// scale it to use it with the servo (value between 0 and 180) </span>
+  myservo.<span class="kw3">write</span><span class="br0">(</span>val<span class="br0">)</span><span class="sy4">;</span>                  <span class="co1">// sets the servo position according to the scaled value </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">15</span><span class="br0">)</span><span class="sy4">;</span>                           <span class="co1">// waits for the servo to get there </span>
+<span class="br0">}</span></pre></div></div>
+<h2>  Usage  </h2>
+<ul><li>There is a solderless breadboard, therefore, there is no need to purchase a soldering iron or to learn how to solder.
+</li><li>There are plenty of jumper wires which are long and flexible with rigid tips. These jumper wires are much better than the fixed length solid wire jumpers of the past.
+</li><li>There are plenty of LEDs and resistors for your first project, including a RGB LED which is a single LED package with three primary colored LEDs inside. By adjusting the intensity of the different primary colored LEDs, the colors will mix together and produce all the colors of the rainbow.  
+</li><li>There is even an educational how-to card to read the resistor values.  
+</li><li>The tilt switch is a very simple device with a small metal ball inside. If the device is tilted to one side the metal ball will touch electrical contacts.  This sensor is useful for a variety of projects like a DIY burglar alarm.  
+</li><li>The thermistor is useful for projects when you want to detect the temperature.  
+</li><li>The photo resistor can detect light,and it works with light bulbs and sunlight. Photo resistors are commonly used for detecting when it's dark and turning lights on at night. 
+</li><li>The buzzer in the kit works especially well for playing the Mario Brothers theme song.  
+</li><li>There is a Mini Servo motor. You can use it to open and close a deadbolt, lightswitch or valve. You could even use it to make a mini catapult. 
+</li><li>The potentiometer is a great input device. You can use it to control the angle of the Servo arm or the intensity of LEDs.
+</li></ul>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v1.0
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> Feb 23, 2011
+</td></tr></table>
+<h2>  How to buy  </h2>
+<p>Click here to buy Arduino Sidekick Basic Kit: <a href="http://www.seeedstudio.com/depot/arduino-sidekick-basic-kit-p-775.html?cPath=138">http://www.seeedstudio.com/depot/arduino-sidekick-basic-kit-p-775.html?cPath=138</a>.
+</p><p><br/>
+</p>
+<h2>  Related Projects </h2>
+<p>It's a pity that we don't have any demo about Arduino Sidekick Basic Kit in the <a href="http://www.seeedstudio.com/recipe/">Recipe</a> yet. 
+</p><p>Post your awesome project about Arduino Sidekick Basic Kit to <font color="#FF0000">win $100 Coupon!</font> Please feel free to contact us: <a href="mailto:recipe@seeed.cc">recipe@seeed.cc</a>
+</p><p><br/>
+Here we introduce one project about Arduino. It tells us how to choose the only Arduino for yourself.
+</p><p><br/>
+</p>
+<h3> The Best Arduino</h3>
+<p><img src="img/756b813afd2b1816b29db4f25e0d8d72.image.530x397.jpg" width="530"/>
+</p><p>With this document, we can know that:
+</p>
+<ul><li> Many factors, like finance, application, and technical skills, should be considered when you choose your own Arduino.
+</li></ul>
+<ul><li> The author gave his/her suggestion and cause for others to make a choice.
+</li></ul>
+<ul><li> Here, the author listed six different kinds of Arduino and compared their advantages and disadvantages.
+</li></ul>
+<p><br/>
+<a href="http://www.seeedstudio.com/depot/Seeeduino-V30-Atmega-328P-p-669.html"><b>Seeeduino</b></a> is also one of your choices.
+<br/>
+<a href="http://www.seeedstudio.com/recipe/23-the-best-arduino.html"><b>I want to know about it.</b></a>
+<br/>
+<a href="http://www.seeedstudio.com/recipe/index.php?query=Seeeduino"><b>More Awesome Projects by Seeeduino</b></a>
+<br/>
+<br/>
+</p>
+<h3>  Share Your Awesome Projects with Us </h3>
+<p>Born with the spirit of making and sharing, that is what we believe makes a maker. 
+</p><p>And only because of this, the open source community can be as prosperous as it is today.
+</p><p>It does not matter what you are and what you have made, hacker, maker, artist or engineers.
+</p><p>As long as you start sharing your works with others, you are being part of the open source community and you are making your contributions.
+</p><p>Now share your awesome projects with us on <a href="http://www.seeedstudio.com/recipe/">Recipe</a>, and win a chance to become the Core User of Seeed.
+</p>
+<ul><li> Core Users, are those who show high interests in Seeed products and make significant contributions on Recipe. 
+</li><li> We cooperate with our Core Users in the development of our new product, this, in another word, the Core Users will have the chance to experience any new products of Seeed before its official launch, and in return we expect valuable feedback from them to help us improve the product performance and user experience. And in most cases when our Core Users have some good ideas of making things, we'll offer hardware pieces, PCBA services as well as technical support. Besides, further commercial cooperation with the Core Users is highly possible.
+</li></ul>
+<p><font color="#FF0000">Get more information about Core User please email to:</font> <a href="mailto:recipe@seeed.cc">recipe@seeed.cc</a>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/Seeeduino" title="Seeeduino">Seeeduino</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p><a href="http://www.youtube.com/playlist?list=PLA567CE235D39FA84">Arduino Video tutorial series by Jeremy Blum</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

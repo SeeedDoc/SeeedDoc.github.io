@@ -1,0 +1,153 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow - Motor Driver</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow - Motor Driver</h1>
+
+<p>Xadow Motor can be used to control DC Motors. Its heart is a low-saturation two-channel bidirectional motor drive chip LB1836M, controlled by ATmega168 which handles the I2C communication with Xadow Main Board. Xadow Motor features a changeable I2C address.  And it needs a separate low power to drive motors.
+</p>
+<h2> Specification</h2>
+<ul><li> Motor Driver: LB1836M
+</li><li> Battery Voltage: 2.5V ~ 9V 
+</li><li> Output Current per channel(Max): 300mA 
+</li><li>Communication Mode: I2C
+</li><li>I2C Address is changeable
+</li><li> Dimensions: 25.43mm x 20.35mm
+</li></ul>
+<h2> Product View</h2>
+<center><img src="img/Xadow_Motor_Black_View.png" width="674"/></center>
+<ul><li> ①: LB1836 IC,  a low-saturation two-channel bidirectional motor driver. <br/>
+</li><li> ②： Motors Power Supply Connection.<br/>
+</li><li> ③,④: DC Motors Connection.<br/>
+</li><li> ⑤,⑥: used to set the IIC address. A0 and A1  are shipped connected to H. You can change them  to "L" by a little modification on the board. Find details in the Reference.<br/>
+</li><li> ⑦: SPI Interface, used to upload firmware for Atmega168.<br/>
+</li><li> ⑧: Microcontroller Atmega168.  
+</li><li> ⑨: used to select power supply for Atmega168 IC. In default mode, DVCC is connected to VOUT which means the power comes from Motor power supply. When DVCC is connected to 3.3V, Xadow Main Board supplies power for Atmega168.
+</li></ul>
+<h2> Demonstration</h2>
+<p>Xadow Motor can drive two DC motors simultaneously. Based on our available library, it is more easily to make motors run.  Now let's get started.<br/>
+<font color="red">Note: the library is not available for controlling stepper motor.</font><br/>
+<b>Hardware Installation:</b> <br/>
+</p>
+<ul><li> 1) Connect DC Motors to J5,J6 interface. You can use the solder iron for soldering to make sure the connection are fixed. We configure a 3.7V lithium battery for you. So you cannot drive  high - power motors using the battery.
+</li><li> 2) Connect battery to Battery Interface of Xadow Motor. Without battery, Motors would not rotate.
+</li><li> 3) Connect Xadow Motor to Xadow Main Board. Do not forget to install Xadow Driver. 
+</li></ul>
+<p>Note: when connect Xadow 3-Axis Accelerometer to Xadow Main Board, you should concern about the connection direction. The connection method is that the unfilled corner of one xadow module need to connect to the right angle of another module(see four corners of each xadow module).<br/>
+<b>Upload Code:</b>
+</p>
+<ul><li> 4) Download <a href="https://github.com/Seeed-Studio/Xadow_Motor_Driver">Xadow Motor Library</a> and install it to Arduino Library.
+</li><li> 5) Open the code directly by the path:File -&gt; Example -&gt;xadow_motor-&gt;motorCtrl.
+</li></ul>
+<pre>/*
+there are four motor state you can use:
+
+-MSTOP                -&gt; stop
+-MFOR                        -&gt; go forward
+-MREV                        -&gt; go reverse
+-MHOLD                -&gt; hold the recent state
+**NOTE:
+there are four addresses you can choose, it's up to the hardware,
+for more information, refer to www.seeedstudio.com
+-MOTORADDRESS0 0x40 // A0 LOW, A1 LOW
+-MOTORADDRESS1 0x41 // A0 HIGH, A1 LOW
+-MOTORADDRESS2 0x42 // A0 LOW, A1 HIGH
+-MOTORADDRESS3 0x43 // A0 HIGH, A1 HIGH
+use this function: setMotorRun(unsigned char sMotorA, unsigned char sMotorB);
+you can contrl the both motor.
+*/
+
+#include &lt;Wire.h&gt;
+
+#include "XadowMotor.h"
+
+void setup()
+{
+    Serial.begin(38400);
+    xadowMotor.begin(MOTORADDRESS3);
+}
+
+void loop()
+{
+
+    Serial.print("bat vol :");
+    Serial.println(xadowMotor.getBatVol());
+    
+    xadowMotor.setMotorRun(MFOR, MFOR);
+
+    delay(2000);
+
+    xadowMotor.setMotorRun(MSTOP, MSTOP);
+
+    delay(500);
+
+    xadowMotor.setMotorRun(MREV, MREV);
+
+    delay(2000);
+
+    xadowMotor.setPwrDown();
+    delay(1000);
+    xadowMotor.setWakeUp();
+
+}</pre>
+<p>In this code, the function xadowMotor.begin(MOTORADDRESS3) is used to set Xadow Motor I2C Address. You need to change the parameter"MOTORADDRESS3" when you change the connection of A0 pin and A1 pin. Find details in the Reference.
+</p>
+<ul><li> 6) Upload the Code. Remeber to select Seeeduino Xadow from the Tools | Board menu of the Arduino environment, and select the correct serial port Xadow Main Board is using.<br/>
+</li></ul>
+<p>Now you can see your motors will run forward or backward at regular intervals. By opening  the serial monitor, you can observe your battery voltage.<br/>
+</p>
+<h2> Reference</h2>
+<p>The Xadow Motor has four I2C address which is decided by A0 pin and A1 pin. A0 and A1 are connected to H inside the board as default. But you can change it. For example, use a solder iron to break the connection between H and A0, then solder up ADR0 and L, so you make the value of A0 as L. You can find the relationship of hardware I2C address and the values of A0 and A1 in the following table.
+</p>
+<table border="1" cellspacing="0" width="50%">
+<tr>
+<th rowspan="2" scope="col">  I2C Address
+</th>
+<th colspan="2" scope="col"> A0 and A1 inputs state
+</th>
+<th rowspan="2" scope="col"> the corresponding parameter in code
+</th></tr>
+<tr>
+<td scope="col"> A1
+</td>
+<td scope="col"> A0
+</td></tr>
+<tr>
+<td scope="row"> 0x40
+</td>
+<td> L
+</td>
+<td> L
+</td>
+<td> MOTORADDRESS0
+</td></tr>
+<tr>
+<td scope="row"> 0x41
+</td>
+<td> L
+</td>
+<td> H
+</td>
+<td> MOTORADDRESS1
+</td></tr>
+<tr>
+<td scope="row"> 0x42
+</td>
+<td> H
+</td>
+<td> L
+</td>
+<td> MOTORADDRESS2
+</td></tr>
+<tr>
+<td scope="row"> 0x43
+</td>
+<td> H
+</td>
+<td> H
+</td>
+<td> MOTORADDRESS3
+</td></tr></table>
+<h2> Resources</h2>
+<p><a href="res/Xadow_Motor_Eagle_File.zip">Xadow Motor Eagle File</a> <br/>
+<a href="res/Xadow_Motor_Schematic_in_PDF.pdf">Xadow Motor Schematic in PDF</a><br/>
+<a href="https://github.com/Seeed-Studio/Xadow_Motor_Driver">Xadow Motor library</a><br/>
+<a href="res/LB1836M.PDF">LB1836 datasheet</a><br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

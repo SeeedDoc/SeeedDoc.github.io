@@ -1,0 +1,381 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>XBee® Shield</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>XBee® Shield</h1>
+
+<p>A <b>Xbee shield</b> allows an <a href="/w/index.php?title=Official_Arduino_Boards&amp;action=edit&amp;redlink=1" title="Official Arduino Boards (page does not exist)">Arduino</a> or <a href="/Seeeduino_V2.2" title="Seeeduino V2.2">Seeeduino</a> board to communicate wirelessly using <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">Bee compatible modules</a> (like Zigbee or BlueTooth Bee). It is designed to be used with <a href="http://www.maxstream.net/products/xbee/xbee-oem-rf-module-zigbee.php">Xbee module from MaxStream</a>. It can be used as a <b>Serial Port</b> / <b>USB replacement. </b> It is used to connect two <b>Seeeduinos</b> using <b>Zigbee</b> / <b>Bluetooth Bee</b> or connect a <b>Seeeduino</b> with PC Wirelessly. Two toggle switches decides how <b>Rxd</b> and <b>Txd</b> pins of Bee modules be connected to <b>Seeeduino</b> pins. These two switches provides options to connect <b>RxD</b> and <b>TxD</b> lines of Bee Modules to <b>Seeduino Hardware Serial Port</b> or <b>Digital pins</b> <b>11</b> and <b>12</b> or <b>FTDI</b> <b>RxD</b> and <b>Txd</b> Pins. 
+</p><p><br/> <b>Model:<a href="http://www.seeedstudio.com/depot/xbee%C3%82%C2%AE-shield-v11-by-seeedstudio-p-419.html?cPath=104_109">WLS114A0P</a></b> <br/> <img src="img/Xbshieldn2.jpg" width="500"/> <img src="img/Xbshield_bottom.jpg" width="364"/>
+</p><p>Seeed Studio's <strong class="selflink">XBee®_Shield</strong> is derived from <a href="http://www.arduino.cc/en/Main/ArduinoXbeeShield">Arduino Xbee shield</a>, with following features: 
+</p>
+<ul><li>Smaller form 
+</li><li>SMT package for most of the components 
+</li><li>Low cost
+</li></ul>
+<p>To use X-CTU with <a href="/Seeeduino_V2.2" title="Seeeduino V2.2">Seeeduino</a>, please upload following sketch 
+</p>
+<pre>void setup()
+{
+  DDRB=0;
+  DDRC=0;
+  DDRD=0;
+}
+
+void loop()
+{ 
+
+}  
+</pre>
+<h2>  Features  </h2>
+<ol><li>31mm X 41mm board. 
+</li><li>Communicate with Arduino/Seeeduino 
+<ul><li>Via pin 11, 12 Software Serial Port or 
+</li><li>Via hardware Serial Port 
+</li></ul>
+</li><li>Xbee modules can be configured by X-CTU via USB 
+</li><li>Breakout of all pins
+</li></ol>
+<h2>  Application Ideas  </h2>
+<ul><li>Communicate two Seeeduinos / Arduinos Wirelessly using Bee Modules (<a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">Xbee</a>,<a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a>,<a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a>) 
+</li><li>Communicate Seeeduino / Arduino to PC Wirelessly using Bee Modules. 
+</li><li>Connecting <a href="/w/index.php?title=GPS_Bee_kit_(with_Mini_Embedded_Antenna)&amp;action=edit&amp;redlink=1" title="GPS Bee kit (with Mini Embedded Antenna) (page does not exist)">GPS Bee</a> to Arduino / Seeeduino
+</li></ul>
+<h2>  Cautions  </h2>
+<p><font color="red">
+</font></p>
+<ul><li>Set the toggle switches to correct position before connecting to Bee Modules or Arduinos.
+</li></ul>
+<p>
+</p>
+<h2>  Schematic  </h2>
+<p><img src="img/Xbee_Shield_Schematic.jpg" width="800"/>
+</p>
+<h2>  Specification  </h2>
+<p>See <a href="http://garden.seeedstudio.com/index.php?title=XBee%C2%AE_Shield#Features">features</a> above. 
+</p>
+<h2>  Mechanic Dimensions  </h2>
+<p>XBee® Shield is of 3.1cm X 4.1cm size. 
+</p>
+<h2>  Usage  </h2>
+<p>A <b>Bee module</b> is connected to Arduino / Seeeduino via the XBee Shield. In case of a Seeeduino, set the operating voltage switch to 3.3V position. Normally the Bee modules are connected via Software Serial Port by setting the toggle switches (<b>TOG_1</b> and <b>TOG_2</b>)positions to <b>left-side</b>. Please refer the below tables for different configuration. 
+</p>
+<h3>  Hardware Installation  </h3>
+<p><img src="img/Seeeduino_XBeeShield_XBeePro.jpg" width="381"/> <img src="img/Seeeduino_BluetoothBee_Xbee_Shield.JPG" width="370"/> <br/>
+</p>
+<h4>  Xbee Shield Outline and Toggle Switch Position  </h4>
+<p><img src="img/XBee_Shield_Outline.jpg" width="392"/>
+</p>
+<table>
+<caption> Arduino
+</caption>
+<tr>
+<th> TOG_1
+</th>
+<th> TOG_2
+</th>
+<th> Xbee Tx Connected to
+</th>
+<th> Xbee Rx Connected to
+</th></tr>
+<tr>
+<td width="200"> Left
+</td>
+<td width="200"> Left
+</td>
+<td width="300"> Digital pin 11
+</td>
+<td width="300"> Digital pin 12
+</td></tr>
+<tr>
+<td> Left
+</td>
+<td> Right
+</td>
+<td> FT232 RxD
+</td>
+<td> FT232 TxD
+</td></tr>
+<tr>
+<td> Right
+</td>
+<td> Left
+</td>
+<td> Digital pin 11
+</td>
+<td> Digital pin 12
+</td></tr>
+<tr>
+<td> Right
+</td>
+<td> Right
+</td>
+<td> Atmege RxD
+</td>
+<td> Atmege TxD
+</td></tr></table>
+<table>
+<caption> Arduino Mega
+</caption>
+<tr>
+<th> TOG_1
+</th>
+<th> TOG_2
+</th>
+<th> Xbee Tx Connected to
+</th>
+<th> Xbee Rx Connected to
+</th></tr>
+<tr>
+<td width="200"> Left
+</td>
+<td width="200"> Left
+</td>
+<td width="300"> Digital pin 51
+</td>
+<td width="300"> Digital pin 50
+</td></tr>
+<tr>
+<td> Left
+</td>
+<td> Right
+</td>
+<td> FT232 RxD
+</td>
+<td> FT232 TxD
+</td></tr>
+<tr>
+<td> Right
+</td>
+<td> Left
+</td>
+<td> Digital pin 51
+</td>
+<td> Digital pin 50
+</td></tr>
+<tr>
+<td> Right
+</td>
+<td> Right
+</td>
+<td> Atmege RxD0
+</td>
+<td> Atmege TxD0
+</td></tr></table>
+<h3>  Testing AT commands on Bees  </h3>
+<p>Create a new sketch with the following code and download it into your Arduino board.   
+</p>
+<pre>//Serial Relay - Arduino will patch a
+//serial link between the computer and the Bee Shield
+//at 9600 bps 8-N-1
+//Computer is connected to Hardware UART
+//Bee Shield is connected to the Software UART
+
+#include &lt;NewSoftSerial.h&gt;
+#define RxD 11
+#define TxD 12
+
+NewSoftSerial mySerial(RxD,TxD);
+
+void setup()
+{
+    pinMode(RxD, INPUT);
+    pinMode(TxD, OUTPUT);
+    mySerial.begin(9600);               // the Bee baud rate  
+    Serial.begin(9600);                 // the terminal baud rate  
+}
+
+void loop()
+{
+    if(Serial.available())
+    {
+       mySerial.print((unsigned char)Serial.read());
+     } 
+    else  if(mySerial.available())
+    {
+       Serial.print((unsigned char)mySerial.read());
+     }  
+
+}</pre>
+<p><br/> After this fire up your favorite serial terminal software, choose the COM port for Arduino, set it to operate at default baud rate of your Bee (XBee default is 9600 8-N-1), connect and send the commands. Try sending "+++" (without the quotes) for XBee module, to the Arduino board. The XBee should respond by sending back an "OK". 
+</p><p><br/>
+</p>
+<h3>  Send AT Updated Version for V 1.0  </h3>
+<p>The code above may have worked on earlier versions but the SoftwareSerial library is now part of the core.  The following code is taken almost directly from the <a href="http://arduino.cc/en/Reference/SoftwareSerial">Aruino SoftwareSerial manual.</a>
+</p>
+<pre>
+/*
+Example from Arduino SoftwareSerial tutorial
+ */
+#include &lt;SoftwareSerial.h&gt;
+
+SoftwareSerial mySerial(11, 12); // RX, TX
+
+void setup()  
+{
+  // Open serial communications and wait for port to open:
+  Serial.begin(9600);
+  mySerial.begin(9600);
+}
+
+void loop() // run over and over
+{
+  if (mySerial.available())
+    Serial.write(mySerial.read());
+  if (Serial.available())
+    mySerial.write(Serial.read());
+}
+</pre>
+<p><br/>
+Upload this code to the Arudino hosting the Xbee Shield, startup the Serial Monitor and at that point the Arduino serial port will be connected via radio to any other xbee radios currently operating--anything you type in the serial monitor will be sent to the other radios and vise versa.
+</p>
+<h3>  Programming  </h3>
+<p>The following sketch configures <a href="/Bluetooth_Bee" title="Bluetooth Bee">Bluetooth Bee</a> as <b>Slave Device</b> and waits for connection request from PC or other master device. Bluetooth Bee is connected to Seeeduino via <strong class="selflink">XBee®_Shield</strong> as shown above. 
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left;"><div class="arduino source-arduino"></div><div class="arduino source-arduino"><pre>/*
+BluetoothBee Demo Code - Flowcontrol Based Implementation
+2010,2011 Copyright (c) Seeed Technology Inc.  All right reserved.
+
+Author: Visweswara R
+
+This demo code is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+For more details about the product please check http://www.seeedstudio.com/depot/
+
+Upload this sketch to Seeeduino and press reset*/
+
+#include &lt;NewSoftSerial.h&gt;   //Software Serial Port
+#define RxD 11
+#define TxD 12
+#define DEBUG_ENABLED  1
+
+NewSoftSerial blueToothSerial(RxD,TxD);
+
+void setup()
+{
+pinMode(RxD, INPUT);
+pinMode(TxD, OUTPUT);
+setupBlueToothConnection();  
+}
+
+void loop()
+{
+//Typical Bluetoth command - response simulation:  
+//Type 'a' from PC Bluetooth Serial Terminal
+//See Wiki for instructions  
+
+  if(blueToothSerial.read() == st0"&gt;'a')
+  {
+    blueToothSerial.println(st0"&gt;"You are connected"); //You can     write you BT communication logic here
+  }  
+}
+
+void setupBlueToothConnection()
+{
+  blueToothSerial.begin(38400); //Set BluetoothBee BaudRate to default baud rate 38400
+  delay(1000);
+  sendBlueToothCommand(\r\n+STWMOD=0\r\n");
+  sendBlueToothCommand(\r\n+STNA=SeeeduinoBluetooth\r\n");
+  sendBlueToothCommand(\r\n+STAUTO=0\r\n");
+  sendBlueToothCommand(\r\n+STOAUT=1\r\n");
+  sendBlueToothCommand(\r\n +STPIN=0000\r\n");
+  delay(2000); // This delay is required.
+  sendBlueToothCommand(\r\n+INQ=1\r\n");
+  delay(2000); // This delay is required.
+}  
+
+
+//Checks if the response "OK" is received
+void CheckOK()
+{
+  char a,b;
+
+  while(1)
+  {
+    if(blueToothSerial.available()) { a = blueToothSerial.read();   if(st0"&gt;'O' == a)
+    {
+
+      // Wait for next character K. available() is required in some cases, as K is not immediately available.
+      while(blueToothSerial.available())
+      {
+         b = blueToothSerial.read();
+         break;
+      }
+     
+      if('K' == b)
+      {
+        break;
+      }
+    }
+  }
+}  
+
+  while( (a = blueToothSerial.read()) sy3"&gt;!= sy2"&gt;-1)
+  { 
+     //Wait until all other response chars are received
+  }
+}
+
+
+void sendBlueToothCommand(char command[])
+{
+   blueToothSerial.print(command);
+   CheckOK();
+}
+</pre></div><div class="arduino source-arduino"></div><div class="arduino source-arduino">  See <a href="/index.php-title=Bluetooth_Bee#Programming">Bluetooth Bee Programming</a> for further information.</div></div>
+<h2>  FAQ  </h2>
+<p>Please list your question here(if any). 
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss. 
+</p>
+<h2>  Version Tracker  </h2>
+<table border="1">
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release Date
+</th></tr>
+<tr style="font-size: 90%;">
+<td width="300"> XBee® Shield V1.1
+</td>
+<td width="500"> new version by Seeedstudio
+</td>
+<td width="200"> Jul 06, 2009
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place where you can sumbit any bugs you think you might have found during use. Please write down what you want to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  How to buy  </h2>
+<p>Click here to buy : <a href="http://www.seeedstudio.com/depot/xbee%C3%82%C2%AE-shield-v11-by-seeedstudio-p-419.html?cPath=104_109">http://www.seeedstudio.com/depot/xbee%C3%82%C2%AE-shield-v11-by-seeedstudio-p-419.html?cPath=104_109</a> <br/>
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details. 
+</p>
+<h2>  See also  </h2>
+<ul><li><a href="http://garden.seeedstudio.com/index.php?title=Bluetooth_Bee">Bluetooth Bee documentation</a> demostrating use of <strong class="selflink">XBee®_Shield</strong>
+</li><li><a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">Bee series</a>
+</li></ul>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries. 
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="http://www.maxstream.net/products/xbee/manual_xb_oem-rf-modules_802.15.4.pdf">Product Manual</a> - Details on configing the Xbee module. 
+</li><li><a href="http://www.seeedstudio.com/depot/images/product/XBee_shield_v1.11.pdf">Outline drawing</a>
+</li><li><a href="http://www.arduino.cc/en/Main/ArduinoXbeeShield">Arduino Xbee Shield Page</a>
+</li><li><a href="res/Eagle_XBee_Shield_v1.0.zip">eagle for Xbee_Shield_v1.0</a>
+</li><li><a href="res/Elage_xbee_shield_v1.1.zip">eagle for Xbee_Shield_v1.1</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

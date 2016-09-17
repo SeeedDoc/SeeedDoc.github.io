@@ -1,1511 +1,237 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Grove - GPS - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Grove - GPS";
-    var mkdocs_page_input_path = "Grove-GPS.md";
-    var mkdocs_page_url = "/Grove-GPS/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Grove - GPS</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#platforms-supported">Platforms Supported</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#demos">Demos</a></li>
-                
-                    <li><a class="toctree-l4" href="#with-arduino">With Arduino</a></li>
-                
-                    <li><a class="toctree-l4" href="#with-raspberry-pi">With Raspberry Pi</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#sim28-module-note">SIM28 module Note:</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Grove &raquo;</li>
-        
-      
-        
-          <li>Communication &raquo;</li>
-        
-      
-    
-    <li>Grove - GPS</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Grove - GPS</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/img/Grove-GPS.jpg" /></p>
-<p>This Grove - GPS module is a cost-efficient and field-programmable gadget armed with a SIM28 (u-blox 6 is the old version) and serial communication configuration. It features 22 tracking / 66 acquisition channel GPS receiver. The sensitivity of tracking and acquisition both reach up to -160dBm, making it a great choice for personal navigation projects and location services, as well as an outstanding one among products of the same price class.</p>
-<p><a href="http://www.seeedstudio.com/depot/grove-gps-p-959.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
-<ul>
-<li>Supports NMEA and u-blox 6 protocols. ( Till Jan,10 2014, after that SIM28 instead)</li>
-<li>Low power consumption</li>
-<li>Baud rates configurable</li>
-<li>Grove compatible interface</li>
-</ul>
-<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - GPS</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - GPS</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Grove-GPS.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p>This Grove - GPS module is a cost-efficient and field-programmable gadget armed with a SIM28 (u-blox 6 is the old version) and serial communication configuration. It features 22 tracking / 66 acquisition channel GPS receiver. The sensitivity of tracking and acquisition both reach up to -160dBm, making it a great choice for personal navigation projects and location services, as well as an outstanding one among products of the same price class.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/grove-gps-p-959.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+<br/>
+</p><p><br/>
+</p>
+<h2> Features </h2>
+<ul><li>Supports NMEA and u-blox 6 protocols. ( Till Jan,10 2014, after that SIM28 instead)
+</li><li>Low power consumption  
+</li><li>Baud rates configurable
+</li><li>Grove compatible interface 
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification </h2>
+<h3> Specification</h3>
 <table>
-<thead>
 <tr>
-<th><strong>Parameter</strong></th>
-<th><strong>Range/Value</strong></th>
-</tr>
-</thead>
-<tbody>
+<th> Parameter
+</th>
+<th> Range/Value
+</th></tr>
 <tr>
-<td>Input Voltage</td>
-<td>3.3/5V</td>
-</tr>
+<td width="200"> Input Voltage
+</td>
+<td width="200"> 3.3/5V
+</td></tr>
 <tr>
-<td>BaudRate</td>
-<td>4800 - 57600(u-blox version)</td>
-</tr>
+<td> BaudRate
+</td>
+<td> 4800 - 57600(u-blox version)
+</td></tr>
 <tr>
-<td>BaudRate</td>
-<td>9600 - 115200(SIM28 version)</td>
-</tr>
+<td> BaudRate
+</td>
+<td> 9600 - 115200(SIM28 version)
+</td></tr>
 <tr>
-<td>Default BaudRate</td>
-<td>9600</td>
-</tr>
-</tbody>
+<td> Default BaudRate
+</td>
+<td> 9600
+</td></tr>
+<br/>
 </table>
-<h2 id="platforms-supported">Platforms Supported<a class="headerlink" href="#platforms-supported" title="Permanent link"></a></h2>
-<table>
-<thead>
-<tr>
-<th><strong>Arduino</strong></th>
-<th><strong>Raspberry Pi</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Arduino_logo.jpg" /></td>
-<td><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Raspberry_Pi_logo.jpg" /></td>
-</tr>
-</tbody>
-</table>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
-<p>Following documents help in getting the user started with Grove.</p>
-<ul>
-<li><a href="../Grove_System">to Grove system</a></li>
-</ul>
-<h2 id="demos">Demos<a class="headerlink" href="#demos" title="Permanent link"></a></h2>
-<h3 id="with-arduino">With <a href="../index.php?title=ArduinoAndaction=editAndredlink=1" title="Arduino">Arduino</a><a class="headerlink" href="#with-arduino" title="Permanent link"></a></h3>
-<p><em>This sample simply reads from the GPS using software serial and sends it back out on the serial port.</em></p>
-<ol>
-<li>
-<p>Connect the Grove-GPS to Digital I/O 2 on the <a href="../Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> using a Grove Universal 4 pin cable.</p>
-</li>
-<li>
-<p>Upload the code below. Please click <a href="../Upload_Code">here</a> if you do not know how to upload.</p>
-</li>
-</ol>
-<pre><code>// link between the computer and the SoftSerial Shield
-//at 9600 bps 8-N-1
-//Computer is connected to Hardware UART
-//SoftSerial Shield is connected to the Software UART:D2&amp;D3
+<h3> Platforms Supported</h3>
+<ul><li> Arduino
+</li><li> Raspberry Pi
+</li></ul>
+<p><br/>
+</p>
+<h2> Getting Started </h2>
+<p>Following documents help in getting the user started with Grove. 
+</p>
+<ul><li> <a href="/Grove_System">Introduction to Grove system</a>
+</li></ul>
+<p><br/>
+</p>
+<h2> Demos </h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p><i>This sample simply reads from the GPS using software serial and sends it back out on the serial port.</i>
+</p><p>1. Connect the Grove-GPS to Digital I/O 2 on the <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> using a Grove Universal 4 pin cable.
+</p><p>2. Upload the code below. Please click <a href="/Upload_Code">here</a> if you do not know how to upload.<br/>
+</p><p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// link between the computer and the SoftSerial Shield</span>
+<span class="co1">//at 9600 bps 8-N-1</span>
+<span class="co1">//Computer is connected to Hardware UART</span>
+<span class="co1">//SoftSerial Shield is connected to the Software UART:D2&amp;D3</span>
  
-#include &lt;SoftwareSerial.h&gt;
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
  
-SoftwareSerial SoftSerial(2, 3);
-unsigned char buffer[64];                   // buffer array for data receive over serial port
-int count=0;                                // counter for buffer array
+<span class="kw2">SoftwareSerial</span> SoftSerial<span class="br0">(</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> buffer<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span><span class="sy4">;</span>                   <span class="co1">// buffer array for data receive over serial port</span>
+<span class="kw4">int</span> count<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>                                <span class="co1">// counter for buffer array</span>
  
-void setup()
-{
-    SoftSerial.begin(9600);                 // the SoftSerial baud rate
-    Serial.begin(9600);                     // the Serial port of Arduino baud rate.
-}
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    SoftSerial.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>                 <span class="co1">// the SoftSerial baud rate</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>                     <span class="co1">// the Serial port of Arduino baud rate.</span>
+<span class="br0">}</span>
  
-void loop()
-{
-    if (SoftSerial.available())                     // if date is coming from software serial port ==&gt; data is coming from SoftSerial shield
-    {
-        while(SoftSerial.available())               // reading data into char array
-        {
-            buffer[count++]=SoftSerial.read();      // writing data into array
-            if(count == 64)break;
-        }
-        Serial.write(buffer,count);                 // if no data transmission ends, write buffer to hardware serial port
-        clearBufferArray();                         // call clearBufferArray function to clear the stored data from the array
-        count = 0;                                  // set counter of while loop to zero
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">if</span> <span class="br0">(</span>SoftSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>                     <span class="co1">// if date is coming from software serial port ==&gt; data is coming from SoftSerial shield</span>
+    <span class="br0">{</span>
+        <span class="kw1">while</span><span class="br0">(</span>SoftSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>               <span class="co1">// reading data into char array</span>
+        <span class="br0">{</span>
+            buffer<span class="br0">[</span>count<span class="sy2">++</span><span class="br0">]</span><span class="sy1">=</span>SoftSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// writing data into array</span>
+            <span class="kw1">if</span><span class="br0">(</span>count <span class="sy1">==</span> <span class="nu0">64</span><span class="br0">)</span><span class="kw1">break</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>buffer,count<span class="br0">)</span><span class="sy4">;</span>                 <span class="co1">// if no data transmission ends, write buffer to hardware serial port</span>
+        clearBufferArray<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                         <span class="co1">// call clearBufferArray function to clear the stored data from the array</span>
+        count <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>                                  <span class="co1">// set counter of while loop to zero</span>
  
  
-    }
-    if (Serial.available())                 // if data is available on hardware serial port ==&gt; data is coming from PC or notebook
-    SoftSerial.write(Serial.read());        // write it to the SoftSerial shield
-}
+    <span class="br0">}</span>
+    <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>                 <span class="co1">// if data is available on hardware serial port ==&gt; data is coming from PC or notebook</span>
+    SoftSerial.<span class="kw3">write</span><span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>        <span class="co1">// write it to the SoftSerial shield</span>
+<span class="br0">}</span>
  
-void clearBufferArray()                     // function to clear buffer array
-{
-    for (int i=0; i&lt;count;i++)
-    { buffer[i]=NULL;}                      // clear all index of array with command NULL
-}
-</code></pre>
-
-<ul>
-<li>
-<p>Install <a href="http://www.u-blox.com/images/Support/Support_Products/EvaluationSoftware/u-centersetup-6.2.0.0.zip">u-center</a>. Upload the code below to your Arduino/Seeeduino and then open u-center.</p>
-<ol>
-<li>Click Receiver -&gt; Port and select the COM port that the Arduino is using.</li>
-<li>Click Receiver -&gt; Baudrate and make sure 9600 is selected.</li>
-<li>Click View -&gt; Text Console and you should get a window that will stream NMEA data.</li>
-<li>Open the serial monitor,You can see as show below:</li>
-</ol>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/img/GPS_result.jpg" /></p>
-</li>
-<li>
-<p><em>To View data in Google Earth:</em></p>
-<ol>
-<li>Click File -&gt; Database Export -&gt; Google Earth KML</li>
-<li>This should launch Google Earth with the history that was captured by u-center.</li>
-<li>Alternatively, data can be recorded by pressing the red circle on the toolbar which will then ask you where you want to save the record.</li>
-<li>When you have captured enough data, click the black square to stop recording.</li>
-<li>You can then convert the .ubx file generated to KML by using uploading the ubx file to <a href="http://www.gpsvisualizer.com/">GPSVisualizer</a>.</li>
-</ol>
-</li>
-</ul>
-<h3 id="with-raspberry-pi">With <a href="../GrovePiPlus" title="GrovePi+">Raspberry Pi</a><a class="headerlink" href="#with-raspberry-pi" title="Permanent link"></a></h3>
-<p>1.You need a Raspberry Pi and a GrovePi or GrovePi+.</p>
-<p>2.You should have completed configuring the development environment, otherwise follow <a href="../GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.</p>
-<p>3.Connection</p>
-<ul>
-<li>Plug Grove GPS into grovepi socket RPISER.</li>
-</ul>
-<p>4.Navigate to the demos&rsquo; directory:</p>
-<pre><code>    cd yourpath/GrovePi/Software/Python/
-</code></pre>
-
-<ul>
-<li>To see the code</li>
-</ul>
-<pre><code>    nano grove_gps.py   # &quot;Ctrl+x&quot; to exit #
-</code></pre>
-
-<pre><code>import serial, time
-import smbus
-import math
-import RPi.GPIO as GPIO
-import struct
-import sys
+<span class="kw4">void</span> clearBufferArray<span class="br0">(</span><span class="br0">)</span>                     <span class="co1">// function to clear buffer array</span>
+<span class="br0">{</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>count<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span> buffer<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span><span class="kw2">NULL</span><span class="sy4">;</span><span class="br0">}</span>                      <span class="co1">// clear all index of array with command NULL</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li>Install <a href="http://www.u-blox.com/images/Support/Support_Products/EvaluationSoftware/u-centersetup-6.2.0.0.zip">u-center</a>. Upload the code below to your Arduino/Seeeduino and then open u-center.
+</li></ul>
+<dl><dd>1) Click Receiver -&gt; Port and select the COM port that the Arduino is using.
+</dd><dd>2) Click Receiver -&gt; Baudrate and make sure 9600 is selected. 
+</dd><dd>3) Click View -&gt; Text Console and you should get a window that will stream NMEA data.
+</dd></dl>
+<dl><dd>4) Open the serial monitor,You can see as show below:
+</dd><dd><img src="img/GPS_result.jpg" width="500"/>
+</dd></dl>
+<ul><li><i>To View data in Google Earth:</i>
+</li></ul>
+<dl><dd>1) Click File -&gt; Database Export -&gt; Google Earth KML 
+</dd><dd>2) This Should launch Google Earth with the history that was captured by u-center.
+</dd></dl>
+<dl><dd>3) Alternatively, data can be recorded by pressing the red circle on the toolbar which will then ask you where you want to save the record. 
+</dd><dd>4) When you have captured enough data, click the black square to stop recording. 
+</dd><dd>5) You can then convert the .ubx file generated to KML by using uploading the ubx file to <a href="http://www.gpsvisualizer.com/">GPSVisualizer</a>
+</dd></dl>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1. You need a Raspberry Pi and a GrovePi or GrovePi+.<br/>
+2. You should have completed configuring the development environment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+<br/>
+3. Connection
+<br/>
+</p>
+<ul><li> Plug Grove GPS into grovepi socket RPISER.<br/>
+</li></ul>
+<p>4. Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_gps.py   # "Ctrl+x" to exit #
+</pre>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> serial<span class="sy0">,</span> <span class="kw3">time</span>
+<span class="kw1">import</span> smbus
+<span class="kw1">import</span> <span class="kw3">math</span>
+<span class="kw1">import</span> RPi.<span class="me1">GPIO</span> <span class="kw1">as</span> GPIO
+<span class="kw1">import</span> <span class="kw3">struct</span>
+<span class="kw1">import</span> <span class="kw3">sys</span>
  
-ser = serial.Serial('/dev/ttyAMA0',  9600, timeout = 0)   #Open the serial port at 9600 baud
-ser.flush()
+ser <span class="sy0">=</span> serial.<span class="me1">Serial</span><span class="br0">(</span><span class="st0">'/dev/ttyAMA0'</span><span class="sy0">,</span>  <span class="nu0">9600</span><span class="sy0">,</span> timeout <span class="sy0">=</span> <span class="nu0">0</span><span class="br0">)</span>	<span class="co1">#Open the serial port at 9600 baud</span>
+ser.<span class="me1">flush</span><span class="br0">(</span><span class="br0">)</span>
  
-class GPS:
-    #The GPS module used is a Grove GPS module http://www.seeedstudio.com/depot/Grove-GPS-p-959.html
-    inp=[]
-    # Refer to SIM28 NMEA spec file http://www.seeedstudio.com/wiki/images/a/a0/SIM28_DATA_File.zip
-    GGA=[]
+<span class="kw1">class</span> GPS:
+	<span class="co1">#The GPS module used is a Grove GPS module http://www.seeedstudio.com/depot/Grove-GPS-p-959.html</span>
+	inp<span class="sy0">=</span><span class="br0">[</span><span class="br0">]</span>
+	<span class="co1"># Refer to SIM28 NMEA spec file http://www.seeedstudio.com/wiki/images/a/a0/SIM28_DATA_File.zip</span>
+	GGA<span class="sy0">=</span><span class="br0">[</span><span class="br0">]</span>
  
-    #Read data from the GPS
-    def read(self): 
-        while True:
-            GPS.inp=ser.readline()
-            if GPS.inp[:6] =='$GPGGA': # GGA data , packet 1, has all the data we need
-                break
-            time.sleep(0.1)
-        try:
-            ind=GPS.inp.index('$GPGGA',5,len(GPS.inp)) #Sometimes multiple GPS data packets come into the stream. Take the data only after the last '$GPGGA' is seen
-            GPS.inp=GPS.inp[ind:]
-        except ValueError:
-            print &quot;&quot;
-        GPS.GGA=GPS.inp.split(&quot;,&quot;)   #Split the stream into individual parts
-        return [GPS.GGA]
+	<span class="co1">#Read data from the GPS</span>
+	<span class="kw1">def</span> read<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:	
+		<span class="kw1">while</span> <span class="kw2">True</span>:
+			GPS.<span class="me1">inp</span><span class="sy0">=</span>ser.<span class="kw3">readline</span><span class="br0">(</span><span class="br0">)</span>
+			<span class="kw1">if</span> GPS.<span class="me1">inp</span><span class="br0">[</span>:<span class="nu0">6</span><span class="br0">]</span> <span class="sy0">==</span><span class="st0">'$GPGGA'</span>: <span class="co1"># GGA data , packet 1, has all the data we need</span>
+				<span class="kw1">break</span>
+			<span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">0.1</span><span class="br0">)</span>
+		<span class="kw1">try</span>:
+			ind<span class="sy0">=</span>GPS.<span class="me1">inp</span>.<span class="me1">index</span><span class="br0">(</span><span class="st0">'$GPGGA'</span><span class="sy0">,</span><span class="nu0">5</span><span class="sy0">,</span><span class="kw2">len</span><span class="br0">(</span>GPS.<span class="me1">inp</span><span class="br0">)</span><span class="br0">)</span>	<span class="co1">#Sometimes multiple GPS data packets come into the stream. Take the data only after the last '$GPGGA' is seen</span>
+			GPS.<span class="me1">inp</span><span class="sy0">=</span>GPS.<span class="me1">inp</span><span class="br0">[</span>ind:<span class="br0">]</span>
+		<span class="kw1">except</span> <span class="kw2">ValueError</span>:
+			<span class="kw1">print</span> <span class="st0">""</span>
+		GPS.<span class="me1">GGA</span><span class="sy0">=</span>GPS.<span class="me1">inp</span>.<span class="me1">split</span><span class="br0">(</span><span class="st0">","</span><span class="br0">)</span>	<span class="co1">#Split the stream into individual parts</span>
+		<span class="kw1">return</span> <span class="br0">[</span>GPS.<span class="me1">GGA</span><span class="br0">]</span>
  
-    #Split the data into individual elements
-    def vals(self):
-        time=GPS.GGA[1]
-        lat=GPS.GGA[2]
-        lat_ns=GPS.GGA[3]
-        long=GPS.GGA[4]
-        long_ew=GPS.GGA[5]
-        fix=GPS.GGA[6]
-        sats=GPS.GGA[7]
-        alt=GPS.GGA[9]
-        return [time,fix,sats,alt,lat,lat_ns,long,long_ew]
+	<span class="co1">#Split the data into individual elements</span>
+	<span class="kw1">def</span> vals<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+		<span class="kw3">time</span><span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span>
+		lat<span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span>
+		lat_ns<span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span>
+		<span class="kw2">long</span><span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span>
+		long_ew<span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span>
+		fix<span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">6</span><span class="br0">]</span>
+		sats<span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">7</span><span class="br0">]</span>
+		alt<span class="sy0">=</span>GPS.<span class="me1">GGA</span><span class="br0">[</span><span class="nu0">9</span><span class="br0">]</span>
+		<span class="kw1">return</span> <span class="br0">[</span><span class="kw3">time</span><span class="sy0">,</span>fix<span class="sy0">,</span>sats<span class="sy0">,</span>alt<span class="sy0">,</span>lat<span class="sy0">,</span>lat_ns<span class="sy0">,</span><span class="kw2">long</span><span class="sy0">,</span>long_ew<span class="br0">]</span>
  
-g=GPS()
-f=open(&quot;gps_data.csv&quot;,'w')   #Open file to log the data
-f.write(&quot;name,latitude,longitude\n&quot;)   #Write the header to the top of the file
-ind=0
-while True:
-    try:
-        x=g.read()  #Read from GPS
-        [t,fix,sats,alt,lat,lat_ns,long,long_ew]=g.vals() #Get the individial values
-        print &quot;Time:&quot;,t,&quot;Fix status:&quot;,fix,&quot;Sats in view:&quot;,sats,&quot;Altitude&quot;,alt,&quot;Lat:&quot;,lat,lat_ns,&quot;Long:&quot;,long,long_ew
-        s=str(t)+&quot;,&quot;+str(float(lat)/100)+&quot;,&quot;+str(float(long)/100)+&quot;\n&quot;   
-        f.write(s)   #Save to file
-        time.sleep(2)
-    except IndexError:
-        print &quot;Unable to read&quot;
-    except KeyboardInterrupt:
-        f.close()
-        print &quot;Exiting&quot;
-        sys.exit(0)
-</code></pre>
-
-<p>5.Run the demo.</p>
-<pre><code>    sudo python grove_gps.py
-</code></pre>
-
-<p>6.Result</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/img/Grovepi_gps_00.jpg" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-GPS is better used outdoors. It is recommended to put your raspberry pi outside the window or any place outdoors.
-</div>
-
-<h2 id="sim28-module-note">SIM28 module Note:<a class="headerlink" href="#sim28-module-note" title="Permanent link"></a></h2>
-<ol>
-<li>GPS Bee has change the module as SIM28 which the same footprint as origin version.</li>
-<li>You should use <a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/SIMCom_GPS_DEMO_V1.07.zip">&ldquo;SIMCom GPS DEMO&rdquo;</a> tools to receive SIM28 module data.</li>
-<li>
-<p>Open SIMCom_GPS_DEMO tools, go to Module-&gt;properties-&gt;module-&gt;select SIM28.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/img/SIM28_module_select.jpg" /></p>
-</li>
-<li>
-<p>Open SIMCom_GPS_DEMO tools, go to Module-&gt;connect. Select the serial port which the GPS module used.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/img/SIM28_module_tools_pannel.jpg" /></p>
-</li>
-</ol>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/GPS.zip">GPS Eagle File</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/GPS.pdf">GPS Schematic(PDF)</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/E-1612-UB_Datasheets_Sheet.pdf">E-1612-UB Datasheet</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/U-blox-6-Receiver-Description-Including-Protocol-Specification.zip">U-Blox6 Receiver Description Protocol Spec</a></li>
-<li><a href="https://www.u-blox.com/en/product/u-center-windows">U-Blox u-center GPS evaluation software</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/SIM28_DATA_File.zip">SIM28_DATA_File</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-GPS/res/SIMCom_GPS_DEMO_V1.07.zip">SIMCom_GPS_DEMO_V1.07</a></li>
-</ul>
-<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_GPS -->
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Grove-GPS" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Grove-I2C_ADC/" class="btn btn-neutral float-right" title="Grove - I2C ADC">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Grove-BLE-dual_model-v1.0/" class="btn btn-neutral" title="Grove - BLE (dual model) v1.0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Grove-BLE-dual_model-v1.0/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Grove-I2C_ADC/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+g<span class="sy0">=</span>GPS<span class="br0">(</span><span class="br0">)</span>
+f<span class="sy0">=</span><span class="kw2">open</span><span class="br0">(</span><span class="st0">"gps_data.csv"</span><span class="sy0">,</span><span class="st0">'w'</span><span class="br0">)</span>	<span class="co1">#Open file to log the data</span>
+f.<span class="me1">write</span><span class="br0">(</span><span class="st0">"name,latitude,longitude<span class="es0">\n</span>"</span><span class="br0">)</span>	<span class="co1">#Write the header to the top of the file</span>
+ind<span class="sy0">=</span><span class="nu0">0</span>
+<span class="kw1">while</span> <span class="kw2">True</span>:
+	<span class="kw1">try</span>:
+		x<span class="sy0">=</span>g.<span class="me1">read</span><span class="br0">(</span><span class="br0">)</span>	<span class="co1">#Read from GPS</span>
+		<span class="br0">[</span>t<span class="sy0">,</span>fix<span class="sy0">,</span>sats<span class="sy0">,</span>alt<span class="sy0">,</span>lat<span class="sy0">,</span>lat_ns<span class="sy0">,</span><span class="kw2">long</span><span class="sy0">,</span>long_ew<span class="br0">]</span><span class="sy0">=</span>g.<span class="me1">vals</span><span class="br0">(</span><span class="br0">)</span>	<span class="co1">#Get the individial values</span>
+		<span class="kw1">print</span> <span class="st0">"Time:"</span><span class="sy0">,</span>t<span class="sy0">,</span><span class="st0">"Fix status:"</span><span class="sy0">,</span>fix<span class="sy0">,</span><span class="st0">"Sats in view:"</span><span class="sy0">,</span>sats<span class="sy0">,</span><span class="st0">"Altitude"</span><span class="sy0">,</span>alt<span class="sy0">,</span><span class="st0">"Lat:"</span><span class="sy0">,</span>lat<span class="sy0">,</span>lat_ns<span class="sy0">,</span><span class="st0">"Long:"</span><span class="sy0">,</span><span class="kw2">long</span><span class="sy0">,</span>long_ew
+		s<span class="sy0">=</span><span class="kw2">str</span><span class="br0">(</span>t<span class="br0">)</span>+<span class="st0">","</span>+<span class="kw2">str</span><span class="br0">(</span><span class="kw2">float</span><span class="br0">(</span>lat<span class="br0">)</span>/<span class="nu0">100</span><span class="br0">)</span>+<span class="st0">","</span>+<span class="kw2">str</span><span class="br0">(</span><span class="kw2">float</span><span class="br0">(</span><span class="kw2">long</span><span class="br0">)</span>/<span class="nu0">100</span><span class="br0">)</span>+<span class="st0">"<span class="es0">\n</span>"</span>	
+		f.<span class="me1">write</span><span class="br0">(</span>s<span class="br0">)</span>	<span class="co1">#Save to file</span>
+		<span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>
+	<span class="kw1">except</span> <span class="kw2">IndexError</span>:
+		<span class="kw1">print</span> <span class="st0">"Unable to read"</span>
+	<span class="kw1">except</span> <span class="kw2">KeyboardInterrupt</span>:
+		f.<span class="me1">close</span><span class="br0">(</span><span class="br0">)</span>
+		<span class="kw1">print</span> <span class="st0">"Exiting"</span>
+		<span class="kw3">sys</span>.<span class="me1">exit</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span></pre></div></div>
+<p>5. Run the demo.<br/>
+</p>
+<pre>   sudo python grove_gps.py
+</pre>
+<p>6. Result<br/>
+</p>
+<ul><li> Note: GPS is better outdoor using, recommand you to put your raspberry pi to the window or any place outdoor.
+</li></ul>
+<p><img src="img/Grovepi_gps_00.jpg" width="600"/><br/>
+</p>
+<h2>  SIM28 module Note:</h2>
+<p>1. GPS Bee has change the module as SIM28 which the same footprint as origin version.<br/>
+2. You should use <a href="res/SIMCom_GPS_DEMO_V1.07.zip">"SIMCom GPS DEMO"</a> tools to receive SIM28 module data.<br/>
+3. Open SIMCom_GPS_DEMO tools, go to Module-&gt;properties-&gt;module-&gt;select SIM28.<br/>
+<img src="img/SIM28_module_select.jpg" width="487"/><br/>
+<br/>
+4. Open SIMCom_GPS_DEMO tools, go to Module-&gt;connect. Select the serial port which the GPS module used.<br/>
+<br/>
+<img src="img/SIM28_module_tools_pannel.jpg" width="1059"/><br/>
+</p>
+<h2> Resources </h2>
+<ul><li><a href="res/GPS.zip">GPS Eagle File</a>
+</li><li><a href="res/GPS.pdf">GPS Schematic(PDF)</a><br/>
+</li><li><a href="res/E-1612-UB_Datasheets_Sheet.pdf">E-1612-UB Datasheet</a>
+</li><li><a href="res/U-blox-6-Receiver-Description-Including-Protocol-Specification.zip">U-Blox6 Receiver Description Protocol Spec</a>
+</li><li><a href="https://www.u-blox.com/en/product/u-center-windows">U-Blox u-center GPS evaluation software</a>
+</li><li><a href="res/SIM28_DATA_File.zip">SIM28_DATA_File</a>
+</li><li><a href="res/SIMCom_GPS_DEMO_V1.07.zip">SIMCom_GPS_DEMO_V1.07</a><br/>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

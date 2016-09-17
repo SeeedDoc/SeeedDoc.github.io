@@ -1,1625 +1,331 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Grove - I2C Motor Driver V1.3 - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Grove - I2C Motor Driver V1.3";
-    var mkdocs_page_input_path = "Grove-I2C_Motor_Driver_V1.3.md";
-    var mkdocs_page_url = "/Grove-I2C_Motor_Driver_V1.3/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Grove - I2C Motor Driver V1.3</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#version-tracker">Version Tracker</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#application-ideas">Application Ideas</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#usage">Usage</a></li>
-                
-                    <li><a class="toctree-l4" href="#set-the-address-of-the-i2c-motor-driver">Set the address of the I2C Motor Driver</a></li>
-                
-                    <li><a class="toctree-l4" href="#how-to-drive-2-dc-motors">How to drive 2 DC motors</a></li>
-                
-                    <li><a class="toctree-l4" href="#how-to-drive-a-stepper-using-i2c-motor-driver-v13">How to drive a stepper using I2C motor driver V1.3</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#function-reference">Function Reference</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Grove &raquo;</li>
-        
-      
-        
-          <li>Actuator &raquo;</li>
-        
-      
-    
-    <li>Grove - I2C Motor Driver V1.3</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Grove - I2C Motor Driver V1.3</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2CMotorDriver_New.jpg" /></p>
-<p>The Grove - I2C Motor Driver V1.3 (latest version) can directly control Stepper Motor or DC Motor. Its heart is a dual channel H-bridge driver chip（L298N）that can handle current up to 2A per channel, controlled by an Atmel ATmega8L which handles the I2C communication with for example an Arduino. Both motors can be driven simultaneously while set to a different speed and direction. It can power two brushed DC motors or one 4-wire two-phase stepper motor. It requires a 6V to 15V power supply to power the motor and has an onboard 5V voltage regulator which can power the I2C bus and the Arduino(selectable by jumper). All driver lines are protected by diodes from back-EMF.</p>
-<p>Contrast to the <a href="../Grove-I2C_Motor_Driver_V1.2">Grove - I2C motor driver V1.2</a>, the V1.3 enables users to control the stepper more easily. You do not need to control the steppers all the time anymore, simply send a command to I2C motor driver V1.3 to drive a stepper, and it will act as your command, which would save your Arduino resource and simplify your code.</p>
-<p><a href="http://www.seeedstudio.com/Grove-I2C-Motor-Driver-p-907.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
-<h2 id="version-tracker">Version Tracker<a class="headerlink" href="#version-tracker" title="Permanent link"></a></h2>
-<table>
-<thead>
-<tr>
-<th>Revision</th>
-<th>Descriptions</th>
-<th>Release</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>v1.0</td>
-<td>Initial public release</td>
-<td>May 17th, 2012</td>
-</tr>
-<tr>
-<td>v1.2</td>
-<td>Modify the I2C address set by hardware</td>
-<td>July 2nd, 2012</td>
-</tr>
-<tr>
-<td>v1.3</td>
-<td>Modify the firmware to support off-line Stepper</td>
-<td>Feb 18th, 2013</td>
-</tr>
-</tbody>
-</table>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
-<ul>
-<li>Grove Compatible</li>
-<li>I2C Interface</li>
-<li>Adjustable motor speed and rotation direction</li>
-<li>Changeable slave address by hardware</li>
-</ul>
-<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - I2C Motor Driver V1.3</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - I2C Motor Driver V1.3</h1>
+
+<p>The Grove - I2C Motor Driver V1.3 (latest version) can directly control Stepper Motor or DC Motor. Its heart is a dual channel H-bridge driver chip（L298N）that can handle current up to 2A per channel, controlled by an Atmel ATmega8L which handles the I2C communication with for example an Arduino. Both motors can be driven simultaneously while set to a different speed and direction. It can power two brushed DC motors or one 4-wire two-phase stepper motor. It requires a 6V to 15V power supply to power the motor and has an onboard 5V voltage regulator which can power the I2C bus and the Arduino(selectable by jumper). All driver lines are protected by diodes from back-EMF.
+</p><p>Contrast to the <a href="/Grove-I2C_Motor_Driver_V1.2">Grove - I2C motor driver V1.2</a>, the V1.3 enables users to control the stepper more easily. You do not need to control the steppers all the time anymore, simply send a command to I2C motor driver V1.3 to drive a stepper, and it will act as your command, which would save your Arduino resource and simplify your code.
+</p><p><br/>
+<b>Model: <a href="http://www.seeedstudio.com/depot/twig-i2c-motor-driver-p-907.html">ROB72212P</a></b>
+</p><p><img src="img/I2CMotorDriver-2.jpg" width="500"/>
+</p>
+<h2>  Features </h2>
+<ul><li>Grove Compatible
+</li><li>I2C Interface
+</li><li>Adjustable motor speed and rotation direction
+</li><li>Changeable slave address by hardware
+</li></ul>
+<h2>  Specifications </h2>
 <table border="1" cellspacing="0" width="80%">
 <tr>
-<th scope="col">
-Item
+<th scope="col"> Item
 </th>
-<th scope="col">
-Min
+<th scope="col"> Min
 </th>
-<th scope="col">
-Typical
+<th scope="col"> Typical
 </th>
-<th scope="col">
-Max
+<th scope="col"> Max
 </th>
-<th scope="col">
-Unit
-</th>
-</tr>
+<th scope="col"> Unit
+</th></tr>
 <tr>
-<th scope="row">
-Working Voltage
+<th scope="row"> Working Voltage
 </th>
-<td>
-6
+<td> 6
 </td>
-<td align="center" >
--
+<td> -
 </td>
-<td>
-15
+<td> 15
 </td>
-<td>
-VDC
-</td>
-</tr>
+<td> VDC
+</td></tr>
 <tr>
-<th scope="row">
-Max Output Current per channel
+<th scope="row"> Max Output Current per channel
 </th>
-<td colspan="3" align="center">
-0.5
+<td colspan="3"> 0.5
 </td>
-<td>
-A
-</td>
-</tr>
+<td> A
+</td></tr>
 <tr>
-<th scope="row">
-Maximum Total current
+<th scope="row"> Maximum Total current
 </th>
-<td colspan="3" align="center" >
-1.0
+<td colspan="3"> 1.0
 </td>
-<td>
-A
-</td>
-</tr>
+<td> A
+</td></tr>
 <tr>
-<th scope="row">
-Input/output voltage on I2C bus
+<th scope="row"> Input/output voltage on I2C bus
 </th>
-<td colspan="3" align="center" >
-5
+<td colspan="3"> 5
 </td>
-<td>
-V
-</td>
-</tr>
+<td> V
+</td></tr>
 <tr>
-<th scope="row">
-Communication protocol
+<th scope="row"> Communication protocol
 </th>
-<td colspan="3" align="center" >
-I2C
+<td colspan="3"> I2C
 </td>
-<td>
-/
-</td>
-</tr>
-</table>
-
-<h2 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h2>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2CMotorDriver-1.jpg" />
-<strong>78M05 IC:</strong> 5V voltage regulator</p>
-<p><strong>L298 IC:</strong> Dual full bridge driver</p>
-<p><strong>ATmega8 IC:</strong> Control Motor Rotate.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-Input voltage on screw terminals is regulated to 5V and connected to I2C +5V via a jumper (J4). Remove jumper if both external power via the screw terminals and power via the I2C header are used. Use jumper if 5V should be supplied to the I2C bus.
-</div>
-
-<h2 id="application-ideas">Application Ideas<a class="headerlink" href="#application-ideas" title="Permanent link"></a></h2>
-<ul>
-<li>Robots</li>
-<li>Homebuilt RC cars</li>
-<li>Case fans</li>
-<li>High power LED illumination</li>
-</ul>
-<div class="admonition danger">
-<p class="admonition-title">Caution</p>
-The board will be very hot while operating over 1Amp. Do keep your hands off!
-</div>
-
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"></a></h2>
-<p>The I2C Motor Driver can control motor which is based on the chip L298. The L298 isn’t just a dual motor driver, it is a dual H-bridge. An h-bridge is basically a specific setup of transistors that allow you to switch direction of current. Hooking up to a motor means you can have it spin in both directions; and with PWM input, you can use your Arduino to make them spin at any speed. Because the L298 has 2 H-bridges, you can make a robot turn around by spinning each wheel in different directions, and of course go forwards and backwards.</p>
-<p>Now, let us use the I2C Motor Driver to control two DC motors or a stepper rotating clockwise and anticlockwise.</p>
-<h3 id="set-the-address-of-the-i2c-motor-driver">Set the address of the I2C Motor Driver<a class="headerlink" href="#set-the-address-of-the-i2c-motor-driver" title="Permanent link"></a></h3>
-<ul>
-<li>Set the address by dial switch is a new function added to the new I2C Motor Driver.</li>
-</ul>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2CMotorDriver-9.jpg" /></p>
-<ul>
-<li>Then keep the address setup in the program the same as the address setup on the I2C motor driver. The default address setup in the program is 0x0f.</li>
-</ul>
-<!-- -->
-
-<pre><code>#define I2CMotorDriverAdd         0x0f   // Set the address of the I2CMotorDriver
-</code></pre>
-<h3 id="how-to-drive-2-dc-motors">How to drive 2 DC motors<a class="headerlink" href="#how-to-drive-2-dc-motors" title="Permanent link"></a></h3>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2CMotorDriver-4.jpg" /></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-The first thing to notice however, is that you need an external power source for your DC motors. The 5V pin on the Arduino cannot provide enough power to drive 2 motors, you may damage your Arduino if you do so.
-</div>
-
-<p>And then program your Arduino as below:</p>
-<pre><code>#include &lt;Wire.h&gt;
+<td> /
+</td></tr></table>
+<h2>  Interface Function </h2>
+<p><img src="img/I2CMotorDriver-1.jpg" width="800"/><br/> <b>78M05 IC:</b> 5v voltage regulator<br/> <b>L298 IC:</b> dual full bridge driver<br/> <b>Atmega8 IC:</b> Control Motor Rotate. <br/> <b>NOTE:</b> Input voltage on screw terminals is regulated to 5v and connected to I2C +5v via a jumper (J4). Remove jumper if both external power via the screw terminals and power via the I2C header are used. Use jumper if 5v should be supplied to the I2C bus.
+</p>
+<h2>  Application Ideas </h2>
+<ul><li>Robots
+</li><li>Homebuilt RC cars
+</li><li>Case fans
+</li><li>High power LED illumination
+</li></ul>
+<p><br/>
+</p>
+<h2> Cautions </h2>
+<ul><li>The board will be very hot while operating over 1Amps. Do keep off your hands!
+</li></ul>
+<h2>  Usage </h2>
+<p>The I2C Motor Driver can control motor which is based on the chip L298. The L298 isn’t just a dual motor driver, it is a dual H-bridge. An h-bridge is basically a specific setup of transistors that allow you to switch direction of current. Hooking up to a motor means you can have it spin in both directions; and with PWM input, you can use your Arduino to make them spin at any speed. Because the L298 has 2 H-bridges, you can make a robot turn around by spinning each wheel in different directions, and of course go forwards and backwards.<br/>
+</p><p>Now, let's use the I2C Motor Driver to control two DC motors or a stepper rotating clockwise and anticlockwise.
+</p>
+<h3> Set the address of the I2C Motor Driver</h3>
+<ul><li>Set the address by dial switch is a new function added to the new I2C Motor Driver.
+</li></ul>
+<p><img src="img/I2CMotorDriver-9.jpg" width="400"/><br/>
+</p>
+<ul><li>Then keep the address setup in the program the same as the address setup on the I2C motor driver. The default address setup in the program is 0x0f.
+</li></ul>
+<pre>#define I2CMotorDriverAdd         0x0f   // Set the address of the I2CMotorDriver
+</pre>
+<h3> How to drive 2 DC motors  </h3>
+<p><img src="img/I2CMotorDriver-4.jpg" width="400"/><br/>
+<span style="color:red"><b>Note:</b> <br/>
+</span></p>
+<dl><dd>The first thing to notice however, is that you need an external power source for your DC motors. The 5v pin on the Arduino cannot provide enough power to drive 2 motors, you may damage your Arduino if you do so.<br/>
+</dd></dl>
+<p>And then program your Arduino as below:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Wire.h&gt;</span>
      .......
      .......
-    &lt; Driver functions &gt;
+    <span class="sy1">&lt;</span> Driver functions <span class="sy1">&gt;</span>
      .......
      .......
-void setup()  {
-  Wire.begin(); // join i2c bus (address optional for master)
-  delayMicroseconds(10000); //wait for motor driver to initialization
-}
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+  <span class="kw2">Wire</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// join i2c bus (address optional for master)</span>
+  <span class="kw3">delayMicroseconds</span><span class="br0">(</span><span class="nu0">10000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//wait for motor driver to initialization</span>
+<span class="br0">}</span>
  
-void loop()  {
-  while(1)  {
-    MotorSpeedSetAB(100,20);
-    delay(10); //this delay needed
-    MotorDirectionSet(0b1010);  //0b1010  Rotating in the positive direction 
-    delay(1000); 
-    MotorDirectionSet(0b0101);  //0b0101  Rotating in the opposite direction
-    delay(500);
-  }
-}
-</code></pre>
-
-<p>In this program, Arduino first set the speed of the 2 DC motors with the <em>MotorSpeedSetAB()</em>command, and then set the DC motors work directions with <em>MotorDirectionSet()</em> command. please refer to the <a href="../Grove-I2C_Motor_Driver_V1.3#function-reference">Function Reference</a> for details, you can download all the demo code in the <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
-<h3 id="how-to-drive-a-stepper-using-i2c-motor-driver-v13">How to drive a stepper using I2C motor driver V1.3<a class="headerlink" href="#how-to-drive-a-stepper-using-i2c-motor-driver-v13" title="Permanent link"></a></h3>
-<p>As the upgraded version of <a href="../Grove-I2C_Motor_Driver_V1.2">I2C motor DriverV1.2</a>, You can drive stepper via 2 methods for I2C motor driver V1.3.</p>
-<p><strong>1. Control the stepper directly by Arduino</strong>
-The I2C motor Driver can also be used to drive a 4-wire stepper. Connect your stepper to the output pins of I2C motor driver, and then connect motor driver to your Arduino/Seeeduino with I2C bus. Program your Arduino as below:</p>
-<pre><code>#include &lt;Wire.h&gt;
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>  <span class="br0">{</span>
+    MotorSpeedSetAB<span class="br0">(</span><span class="nu0">100</span>,<span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//this delay needed</span>
+    MotorDirectionSet<span class="br0">(</span><span class="nu6">0b1010</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//0b1010  Rotating in the positive direction </span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span> 
+    MotorDirectionSet<span class="br0">(</span><span class="nu6">0b0101</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//0b0101  Rotating in the opposite direction</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>In this program, Arduino first set the speed of the 2 DC motors with the <i>MotorSpeedSetAB()</i>command, and then set the DC motors work directions with <i>MotorDirectionSet()</i> command. please refer to the <a href="/Grove-I2C_Motor_Driver_V1.2#Function_Reference">Function Reference</a> for details, you can download all the demo code in the <a href="/Grove-I2C_Motor_Driver_V1.2#Resources">Resource</a>.
+</p>
+<h3> How to driver a stepper using I2C motor driver V1.3</h3>
+<p>As the upgraded version of <a href="/Grove-I2C_Motor_Driver_V1.2">I2C motor DriverV1.2</a>, You can drive stepper via 2 methods for I2C motor driver V1.3.<br/>
+</p><p><b>1. Control the stepper directly by Arduino</b><br/>
+The I2C motor Driver can also be used to drive a 4-wire stepper. Connect your stepper to the output pins of I2C motor driver, and then connect motor driver to your Arduino/Seeeduino with I2C bus. Program your Arduino as below:<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Wire.h&gt;</span>
      .......
      .......
-    &lt; Driver functions &gt;
+    <span class="sy1">&lt;</span> Driver functions <span class="sy1">&gt;</span>
      .......
      .......
-void setup()  {
-  Wire.begin(); // join i2c bus (address optional for master)
-  delayMicroseconds(10000); //wait for motor driver to initialization
-}
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+  <span class="kw2">Wire</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// join i2c bus (address optional for master)</span>
+  <span class="kw3">delayMicroseconds</span><span class="br0">(</span><span class="nu0">10000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//wait for motor driver to initialization</span>
+<span class="br0">}</span>
  
-void loop()  {
- while(1)  {
-    MotorSpeedSetAB(100,100);//when driving a stepper, the speed should be set to 100;
-    delay(10);
-    MotorDirectionSet(0b0001);
-    delay(4);
-      MotorDirectionSet(0b0011);
-    delay(4);  
-    MotorDirectionSet(0b0010);
-    delay(4);
-      MotorDirectionSet(0b0110);
-    delay(4);  
-    MotorDirectionSet(0b0100);
-    delay(4);  
-    MotorDirectionSet(0b1100);
-    delay(4);
-      MotorDirectionSet(0b1000);
-    delay(4);
-      MotorDirectionSet(0b1001);
-    delay(4);
-  }
-}
-</code></pre>
-
-<p>This connected 4-wire stepper will rotate; you can adjust the rotation speed or step number in your Arduino program. You can also use some other stepper libraries to control it. For all the demo code please refer to <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/2.gif" /></p>
-<p><strong>2. Control the Stepper using the I2C motor Driver V1.3 on-chip ATmega8L.
-</strong> Take <a href="http://www.seeedstudio.com/depot/high-quality-stepper-motor-12v-p-335.html?cPath=170_171">24BYJ48</a> as an example, The hardware installation as shown below:</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2C_Motor_Driver_control_a_Stepper_Motor.jpg" /></p>
-<p>The connection between 24BYJ48 Stepper Motor and I2C Motor Driver is as shown below:</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/img/I2C_Motor_Driver_Connector.jpg" /></p>
-<p>Download the <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Grove-I2C motor driver V1.3 demo code</a>, and open the <em>StepperControlMode2.ino</em>:</p>
-<pre><code class="de1">#include &lt;Wire.h&gt;
-#define MotorSpeedSet             0x82
-#define PWMFrequenceSet           0x84
-#define DirectionSet              0xaa
-#define MotorSetA                 0xa1
-#define MotorSetB                 0xa5
-#define Nothing                   0x01
-#define EnableStepper             0x1a
-#define UnenableStepper           0x1b
-#define Stepernu                  0x1c
-#define I2CMotorDriverAdd         0x0f   // Set the address of the I2CMotorDriver
-// set the steps you want, if 255, the stepper will rotate continuously;
-void SteperStepset(unsigned char stepnu)
-{
-  Wire.beginTransmission(I2CMotorDriverAdd); // transmit to device I2CMotorDriverAdd
-  Wire.write(Stepernu);          // Send the stepernu command 
-  Wire.write(stepnu);            // send the steps
-  Wire.write(Nothing);           // send nothing   
-  Wire.endTransmission();        // stop transmitting 
-}
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+ <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>  <span class="br0">{</span>
+    MotorSpeedSetAB<span class="br0">(</span><span class="nu0">100</span>,<span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//when driving a stepper, the speed should be set to 100;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+    MotorDirectionSet<span class="br0">(</span><span class="nu6">0b0001</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+      MotorDirectionSet<span class="br0">(</span><span class="nu6">0b0011</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>  
+    MotorDirectionSet<span class="br0">(</span><span class="nu6">0b0010</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+      MotorDirectionSet<span class="br0">(</span><span class="nu6">0b0110</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>  
+    MotorDirectionSet<span class="br0">(</span><span class="nu6">0b0100</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>  
+    MotorDirectionSet<span class="br0">(</span><span class="nu6">0b1100</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+      MotorDirectionSet<span class="br0">(</span><span class="nu6">0b1000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+      MotorDirectionSet<span class="br0">(</span><span class="nu6">0b1001</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>This connected 4-wire stepper will rotate; you can adjust the rotation speed or step number in your Arduino program. You can also use some other stepper libraries to control it. For all the demo code please refer to <a href="/Grove-I2C_Motor_Driver_V1.2#Resources">Resource</a>.<br/>
+<img src="img/2.gif" width="192"/>
+</p><p><b>2.Control the Stepper using the I2C motor Driver V1.3 on-chip Atmega8L.<br/></b>
+Take <a href="http://www.seeedstudio.com/depot/high-quality-stepper-motor-12v-p-335.html?cPath=170_171">24BYJ48</a> as an example, The hardware installation as show below:<br/>
+<img src="img/I2C_Motor_Driver_control_a_Stepper_Motor.jpg" width="500"/><br/>
+<span style="color:red"><b>Note:</b> </span><br/>
+The connection between 24BYJ48 Stepper Motor and I2C Motor Driver is shown as blow:    
+<br/>
+<img src="img/I2C_Motor_Driver_Connector.jpg" width="400"/><br/>
+Download the <a href="/Grove-I2C_Motor_Driver_V1.3#Resources">Grove-I2C motor driver V1.3 demo code</a>, and open the <i>StepperControlMode2.ino</i>:<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Wire.h&gt;</span>
+<span class="co2">#define MotorSpeedSet             0x82</span>
+<span class="co2">#define PWMFrequenceSet           0x84</span>
+<span class="co2">#define DirectionSet              0xaa</span>
+<span class="co2">#define MotorSetA                 0xa1</span>
+<span class="co2">#define MotorSetB                 0xa5</span>
+<span class="co2">#define Nothing                   0x01</span>
+<span class="co2">#define EnableStepper             0x1a</span>
+<span class="co2">#define UnenableStepper           0x1b</span>
+<span class="co2">#define Stepernu                  0x1c</span>
+<span class="co2">#define I2CMotorDriverAdd         0x0f   // Set the address of the I2CMotorDriver</span>
+<span class="co1">// set the steps you want, if 255, the stepper will rotate continuously;</span>
+<span class="kw4">void</span> SteperStepset<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> stepnu<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">Wire</span>.<span class="kw3">beginTransmission</span><span class="br0">(</span>I2CMotorDriverAdd<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// transmit to device I2CMotorDriverAdd</span>
+  <span class="kw2">Wire</span>.<span class="kw3">write</span><span class="br0">(</span>Stepernu<span class="br0">)</span><span class="sy4">;</span>          <span class="co1">// Send the stepernu command </span>
+  <span class="kw2">Wire</span>.<span class="kw3">write</span><span class="br0">(</span>stepnu<span class="br0">)</span><span class="sy4">;</span>            <span class="co1">// send the steps</span>
+  <span class="kw2">Wire</span>.<span class="kw3">write</span><span class="br0">(</span>Nothing<span class="br0">)</span><span class="sy4">;</span>           <span class="co1">// send nothing   </span>
+  <span class="kw2">Wire</span>.<span class="kw3">endTransmission</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>        <span class="co1">// stop transmitting </span>
+<span class="br0">}</span>
      .......
      .......
      .......
      .......
-void stepperrun()
-{
- Serial.println(&quot;sent command to + direction, very fast&quot;);
- SteperStepset(255);
- StepperMotorEnable(1, 1);// ennable the i2c motor driver a stepper. 
-  delay(5000);
-  Serial.println(&quot;sent command to - direction, slow&quot;);
-  SteperStepset(255);
-  StepperMotorEnable(0, 20);
-  delay(5000);
-   Serial.println(&quot;sent command to - direction, fast&quot;);
-  StepperMotorEnable(0, 2);// ennable the i2c motor driver a stepper. 
-  delay(5000);
- Serial.println(&quot;sent command to + direction,100 steps, fast&quot;);
- SteperStepset(100);
-  StepperMotorEnable(1,5);
- delay(3000);
+<span class="kw4">void</span> stepperrun<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to + direction, very fast"</span><span class="br0">)</span><span class="sy4">;</span>
+ SteperStepset<span class="br0">(</span><span class="nu0">255</span><span class="br0">)</span><span class="sy4">;</span>
+ StepperMotorEnable<span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// ennable the i2c motor driver a stepper. </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to - direction, slow"</span><span class="br0">)</span><span class="sy4">;</span>
+  SteperStepset<span class="br0">(</span><span class="nu0">255</span><span class="br0">)</span><span class="sy4">;</span>
+  StepperMotorEnable<span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy4">;</span>
+   <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to - direction, fast"</span><span class="br0">)</span><span class="sy4">;</span>
+  StepperMotorEnable<span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// ennable the i2c motor driver a stepper. </span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to + direction,100 steps, fast"</span><span class="br0">)</span><span class="sy4">;</span>
+ SteperStepset<span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+  StepperMotorEnable<span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">5</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3000</span><span class="br0">)</span><span class="sy4">;</span>
  
- Serial.println(&quot;sent command to shut down the stepper&quot;);
- StepperMotorUnenable();
- delay(1000);
+ <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to shut down the stepper"</span><span class="br0">)</span><span class="sy4">;</span>
+ StepperMotorUnenable<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
  
-  Serial.println(&quot;sent command to - direction, slow, and 10 steps then stop&quot;);
- SteperStepset(10);
- StepperMotorEnable(0,40);
- delay(5000);
- Serial.println(&quot;sent command to shut down the stepper&quot;);
- StepperMotorUnenable();
- delay(5000);
-}
-void setup()  {
-  Wire.begin(); // join i2c bus (address optional for master)
-  delayMicroseconds(10000);
-  Serial.begin(9600);
-  Serial.println(&quot;setup begin&quot;);
-  stepperrun();
-}
-void loop()  {
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to - direction, slow, and 10 steps then stop"</span><span class="br0">)</span><span class="sy4">;</span>
+ SteperStepset<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+ StepperMotorEnable<span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">40</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"sent command to shut down the stepper"</span><span class="br0">)</span><span class="sy4">;</span>
+ StepperMotorUnenable<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">5000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+  <span class="kw2">Wire</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// join i2c bus (address optional for master)</span>
+  <span class="kw3">delayMicroseconds</span><span class="br0">(</span><span class="nu0">10000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"setup begin"</span><span class="br0">)</span><span class="sy4">;</span>
+  stepperrun<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
  
-}
-</code></pre>
-
-<p>In this demo code, Arduino sends stepper-control command to I2C motor driver via I2C bus, with SteperStepset() to set the step number, and StepperMotorEnable() to set the direction and speed. Please refer to the <a href="../Grove-I2C_Motor_Driver_V1.3#function-reference">Function Reference</a> for the details.</p>
-<p>Note that if you have I2C motor driver V1.2 and want to use the off-line Stepper control methods, you will need to upgrade your firmware in your V1.2 motor driver with a <a href="http://www.seeedstudio.com/depot/atmel-avrisp-stk500-usb-isp-programmer-p-207.html?cPath=132_135">AVRISP</a> and upload the .hex file to your I2C motor driver. Please download the .hex file and source code and related tips in the <a href="../Grove-I2C_Motor_Driver_V1.3#resources">Resources</a>. </p>
-<h2 id="function-reference">Function Reference<a class="headerlink" href="#function-reference" title="Permanent link"></a></h2>
-<p><strong>1. void SteperStepset(unsigned char stepnu)</strong></p>
-<p><em>Description: Set the steps you want.</em></p>
-<p><em>stepnu: the Parameter can be 1~255. if 255, the stepper will rotate continuously;</em></p>
-<p>Usage:</p>
-<pre><code>Serial.println("sent command to + direction,100 steps, fast");
+<span class="br0">}</span></pre></div></div>
+<p>In this demo code, Arduino sends stepper-control command to I2C motor driver via I2C bus, with SteperStepset() to set the step number, and StepperMotorEnable() to set the direction and speed. Please refer to the <a href="/Grove-I2C_Motor_Driver_V1.3#Function_Reference">Function Refrence</a> for the details.
+<br/>Note that if you have I2C motor driver V1.2 and want to use the off-line Stepper control methods, you will need to upgrade your firmware in your V1.2 motor driver with a <a href="http://www.seeedstudio.com/depot/atmel-avrisp-stk500-usb-isp-programmer-p-207.html?cPath=132_135">AVRISP and upload the .hex file to your I2C motor driver. Please download the .hex file and source code and related tips in the [http://www.seeedstudio.com/wiki/Grove_-_I2C_Motor_Driver_V1.3#Resources Resource </a>
+</p>
+<h2> Function Reference  </h2>
+<p><b>1. void SteperStepset(unsigned char stepnu)</b><br/>
+</p><p><i>Description: Set the steps you want.</i>
+</p><p><i>stepnu: the Parameter can be 1~255. if 255, the stepper will rotate continuously;</i>
+</p><p>Usage: 
+</p>
+<pre>
+Serial.println("sent command to + direction,100 steps, fast");
 SteperStepset(100);
-</code></pre>
-<p><strong>2. void StepperMotorEnable(unsigned char Direction, unsigned char motorspeed)</strong></p>
-<p><em>Description: Enable the IIC motor driver to drive a 4-wire stepper.</em></p>
-<p><em>Direction: Stepper direction 1/0</em></p>
-<p><em>motorspeed: defines the time interval the i2C motor driver, Change it output to drive the stepper. The actual interval time is : motorspeed * 4ms. That is , When motor speed is 10, the interval time would be 40 ms.</em></p>
-<p>Usage:</p>
-<pre><code>StepperMotorEnable(1, 1);// enable the i2c motor driver a stepper.
-</code></pre>
-<p><strong>3. void StepperMotorUnenable()</strong></p>
-<p><em>Description: Uneanble IIC motor drive to drive the stepper.</em></p>
-<p>Usage:</p>
-<pre><code>StepperMotorUnenable();
-</code></pre>
-<p><strong>4. void MotorSpeedSetAB(unsigned char MotorSpeedA , unsigned char MotorSpeedB)</strong></p>
-<p><em>Description: defines the speed of motor 1 and motor 2</em></p>
-<p><em>MotorSpeedA: the DC motor A speed, should be 0~100;</em></p>
-<p><em>MotorSpeedB: the DC motor B speed, should be 0~100;</em></p>
-<p>Usage:</p>
-<pre><code>Serial.println("sent DC speed 100");
+</pre>
+<p><b>2. void StepperMotorEnable(unsigned char Direction, unsigned char motorspeed)</b><br/>
+</p><p><i>Description: Enable the IIC motor driver to drive a 4-wire stepper.</i>
+</p><p><i>Direction: Stepper direction 1/0</i>
+</p><p><i>motorspeed: defines the time interval the i2C motor driver, Change it output to drive the stepper. The actual interval time is : motorspeed * 4ms. That is , When motor speed is 10, the interval time would be 40 ms.</i><br/>
+</p><p>Usage: 
+</p>
+<pre>StepperMotorEnable(1, 1);// enable the i2c motor driver a stepper.</pre>
+<p><b>3. void StepperMotorUnenable()</b><br/>
+</p><p><i>Description: Uneanble IIC motor drive to drive the stepper.</i><br/>Usage: 
+</p>
+<pre>StepperMotorUnenable();</pre>
+<p><b>4. void MotorSpeedSetAB(unsigned char MotorSpeedA , unsigned char MotorSpeedB) </b><br/> <i>Description: defines the speed of motor 1 and motor 2</i>
+</p>
+<dl><dd><i>MotorSpeedA: the DC motor A speed, should be 0~100;</i>
+</dd><dd><i>MotorSpeedB: the DC motor B speed, should be 0~100;</i>
+</dd></dl>
+<p>Usage: 
+</p>
+<pre> 
+Serial.println("sent DC speed 100");
 MotorSpeedSetAB(100,100);//defines the speed of motor 1 and motor 2;
-delay(10); //this delay needed
-</code></pre>
-<p><strong>5. void MotorPWMFrequenceSet(unsigned char Frequence)</strong></p>
-<p><em>Description:set the prescale frequency of PWM, 0x03 default</em></p>
-<p><em>Frequency: the prescale frequency of PWM</em></p>
-<p><strong>6. void MotorDirectionSet(unsigned char Direction)</strong></p>
-<p><em>Description: Adjust the direction of the motors</em></p>
-<p><em>Direction:can be Forward/Reverse rotating.</em></p>
-<p>Usage:</p>
-<pre><code>MotorDirectionSet(0b1010);  //"0b1010" defines the output polarity, "10" means the M+ is "positive" while the M- is "negative"
+delay(10); //this delay needed 
+</pre>
+<p><b>5. void MotorPWMFrequenceSet(unsigned char Frequence)</b><br/>
+</p><p><i>Description:set the prescale frequency of PWM, 0x03 default<br/></i>
+</p><p><i>Frequence: the prescale frequency of PWM </i>
+</p><p><b>6. void MotorDirectionSet(unsigned char Direction)</b><br/>
+</p><p><i>Description: Adjust the direction of the motors<br/>  Direction:can be Forward/Reverse rotating.</i> <br/>Usage: 
+</p>
+<pre>
+MotorDirectionSet(0b1010);  //"0b1010" defines the output polarity, "10" means the M+ is "positive" while the M- is "negative"
                          // make sure M+ and M- is different polarity when driving DC motors.
 delay(1000); 
 MotorDirectionSet(0b0101);  //0b0101  Rotating in the opposite direction
 delay(500);
-</code></pre>
-<p><strong>7. void MotorDriectionAndSpeedSet(unsigned char Direction,unsigned char MotorSpeedA,unsigned char MotorSpeedB)</strong></p>
-<p><em>Description: Adjust the direction and speed altogether.</em></p>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/res/Grove-I2C_Motor_Driver_v1.3_Eagle_File.zip">Grove - I2C Motor Driver V1.3 Eagle File</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/res/I2CMotorDriverDemoCodeV13.zip">I2C Motor DriverV13 Demo Code</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/res/L298datasheet.pdf">L298 Datasheet</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/res/ST_78M05DataSheet.pdf">78M05 Datasheet</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-I2C_Motor_Driver_V1.3/res/On-Chipfirmware_for_Motor_driver.zip">On-Chip Firmware for I2C motor driver</a></li>
-</ul>
-<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_I2C_Motor_Driver_V1.3 -->
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Grove-I2C_Motor_Driver_V1.3" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Grove-Infrared_Emitter/" class="btn btn-neutral float-right" title="Grove - Infrared Emitter">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Grove-I2C_Motor_Driver/" class="btn btn-neutral" title="Grove - I2C Motor Driver"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Grove-I2C_Motor_Driver/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Grove-Infrared_Emitter/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+</pre>
+<p><b>7. void MotorDriectionAndSpeedSet(unsigned char Direction,unsigned char MotorSpeedA,unsigned char MotorSpeedB)</b><br/>
+</p><p><i>Description: Adjust the direction and speed altogether.</i>
+</p>
+<h2>  Version Tracker  </h2>
+<table width="494">
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td> v1.0
+</td>
+<td> Initial public release
+</td>
+<td> May 17th, 2012
+</td></tr>
+<tr>
+<td> v1.2
+</td>
+<td> modify the I2C address set by hardware
+</td>
+<td> July 2nd, 2012
+</td></tr>
+<tr>
+<td> v1.3
+</td>
+<td>  modify the firmware to support off-line Stepper
+</td>
+<td> Feb 18th, 2013
+</td></tr></table>
+<h2>  Resources  </h2>
+<ul><li><a href="res/Grove-I2C_Motor_Driver_v1.3_Eagle_File.zip">Grove - I2C Motor Driver V1.3 Eagle File</a>
+</li><li><a href="res/I2CMotorDriverDemoCodeV13.zip">I2C Motor DriverV13 Demo Code</a>
+</li><li><a href="res/L298datasheet.pdf">L298 Datasheet </a>
+</li><li><a href="res/ST_78M05DataSheet.pdf">78M05 Datssheet </a>
+</li><li><a href="res/On-Chipfirmware_for_Motor_driver.zip">On-Chip Firmware for I2C motor driver</a>
+</li><li>
+</li></ul>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

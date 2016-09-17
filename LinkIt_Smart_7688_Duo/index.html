@@ -1,0 +1,556 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>LinkIt Smart 7688 Duo</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>LinkIt Smart 7688 Duo</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Linkit_7688_DUO_Product_view.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>LinkIt<sup>TM</sup> Smart 7688 Duo(a compact controller board) is an open development board based on MT7688(<a href="res/MT7688_datasheet.pdf">datasheet</a>) and ATmega32u4. The board is
+compatible with Arduino Yún sketches and is based on the OpenWrt Linux distribution. The board is designed especially to enable prototyping of Rich Application IoT devices for smart home or office<sup>[1]</sup>. As it is compatible well with Arduino, you can use different features from Arduino Yún and LinkIt Smart 7688 Duo<sup>[2]</sup>. This will help you build rich applications based on various, robust and compiled Arduino Yún sketches. The board offers you the memory and packet storage to enable robust video processing. The platform also offers options to create device applications in Python, Node.js and C programming languages. 
+</p><p><sup>[1]</sup>This board is only a part of MediaTek LinkIt<sup>TM</sup> Smart 7688 platform which includes other development boards.
+</p><p><sup>[2]</sup>Only one controller can be the main controller of the board at a time.
+</p><p><b>Note:</b> This page only guides you to get started with this development board. For a complete guide, please refer to <a href="/LinkIt_Smart_7688_Duo#Resources">Resources</a>.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/LinkIt-Smart-7688-Duo-p-2574.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li>580 MHz MIPS CPU
+</li><li>Single input single output(1T1R) Wi-Fi 802.11 b/g/n (2.4G)
+</li><li>Pin-out for GPIO, I2C, I2S, SPI, SPIS, UART, PWM and Ethernet Port
+</li><li>32MB Flash and 128MB DDR2 RAM
+</li><li>USB host
+</li><li>Micro SD slot
+</li><li>Support for Arduino API (ATmega32U4)
+</li></ul>
+<h2> Application ideas</h2>
+<ul><li>IoT/Gateway Device 
+</li><li>Robotics
+</li><li>Teaching and learning.
+</li></ul>
+<h2> Specification</h2>
+<table>
+<tr>
+<th>Category
+</th>
+<th> Feature
+</th>
+<th>Specification
+</th></tr>
+<tr>
+<td rowspan="4"> MPU </td>
+<td> Chipset </td>
+<td> MT7688AN
+</td></tr>
+<tr>
+<td> Core </td>
+<td> MIPS24KEc
+</td></tr>
+<tr>
+<td> Clock speed</td>
+<td> 580MHz
+</td></tr>
+<tr>
+<td> Working voltage </td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td rowspan="4"> MCU </td>
+<td> Chipset </td>
+<td> ATmega32U4
+</td></tr>
+<tr>
+<td> Core</td>
+<td> Atmel AVR
+</td></tr>
+<tr>
+<td> Clock speed </td>
+<td> 8MHz
+</td></tr>
+<tr>
+<td> Working voltage </td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td> PCB Size </td>
+<td> Dimensions </td>
+<td> 60.8 x 26 mm
+</td></tr>
+<tr>
+<td rowspan="2"> Memory   </td>
+<td> Flash </td>
+<td> 32MB
+</td></tr>
+<tr>
+<td>  RAM</td>
+<td> 128MB DDR2
+</td></tr>
+<tr>
+<td rowspan="2"> Power Source  </td>
+<td> USB Power </td>
+<td> 5V (USB micro-B)
+</td></tr>
+<tr>
+<td>  VCC </td>
+<td> 3.3V (Pin Breakout)
+</td></tr>
+<tr>
+<td rowspan="2"> GPIO  </td>
+<td> Pin Count </td>
+<td> 3 (MT7688AN)
+<p>24 (ATmega32U4)
+</p>
+</td></tr>
+<tr>
+<td>  Voltage </td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td rowspan="6"> PWM  </td>
+<td> Pin Count</td>
+<td> 8 (ATmega32U4)
+</td></tr>
+<tr>
+<td>  Voltage </td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td>  Max. Resolution </td>
+<td> 16 bits (customizable)
+</td></tr>
+<tr>
+<td rowspan="3">Maximum Frequency@Resolution </td>
+<td> 31.25kHz@8-bit, Timer 0 (4 sets)
+</td></tr>
+<tr>
+<td>2MHz@2-bit,122Hz@16-bit, Timer 1 &amp; 3 (4 sets)
+</td></tr>
+<tr>
+<td> 187.5kHz@8-bit, 46.875kHz@10-bit, Timer 4 (6 sets)
+</td></tr>
+<tr>
+<td rowspan="2"> ADC</td>
+<td> Pin Count </td>
+<td> 12 (ATmega32U4)
+</td></tr>
+<tr>
+<td> Voltage </td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td> External Interrupts </td>
+<td> Pin Count </td>
+<td> 8 (ATmega32U4)
+</td></tr>
+<tr>
+<td rowspan="3"> SPI/SPIS </td>
+<td> Set count </td>
+<td> 1 (ATmega32U4)
+</td></tr>
+<tr>
+<td>  Pin numbers </td>
+<td> S0, S1, S2, S3
+</td></tr>
+<tr>
+<td>  Max. Speed </td>
+<td> 4 MHz
+</td></tr>
+<tr>
+<td rowspan="3"> I<sup>2</sup>C </td>
+<td> Set count </td>
+<td> 1
+</td></tr>
+<tr>
+<td>  Pin numbers </td>
+<td> D2, D3
+</td></tr>
+<tr>
+<td>  Speed </td>
+<td> 400K
+</td></tr>
+<tr>
+<td rowspan="6"> UART Lite </td>
+<td rowspan="2"> Set Count </td>
+<td> 1 (ATmega32U4)
+</td></tr>
+<tr>
+<td> 1 (MT7688AN)
+</td></tr>
+<tr>
+<td rowspan="2"> Pin numbers </td>
+<td> P8, P9 (MT7688AN)
+</td></tr>
+<tr>
+<td> D0, D1 (ATmega32U4)
+</td></tr>
+<tr>
+<td rowspan="2"> Max. Speed </td>
+<td> 0.5 Mbps (MT7688AN)
+</td></tr>
+<tr>
+<td> 0.5 Mbps (ATmega32U4)
+</td></tr>
+<tr>
+<td rowspan="3"> USB Host </td>
+<td> Set count </td>
+<td> 1 (MT7688AN)
+</td></tr>
+<tr>
+<td>  Pin numbers </td>
+<td> P6, P7
+</td></tr>
+<tr>
+<td> Connector type</td>
+<td> Micro-AB
+</td></tr>
+<tr>
+<td rowspan="3"> Communication </td>
+<td> Wi-Fi </td>
+<td> 1T1R 802.11 b/g/n (2.4G)
+</td></tr>
+<tr>
+<td> Ethernet </td>
+<td> 1-port 10/100 FE PHY
+</td></tr>
+<tr>
+<td> Pin numbers</td>
+<td> P2, P3, P4, P5
+</td></tr>
+<tr>
+<td> User Storage </td>
+<td> SD Card </td>
+<td> Micro SD
+<p>SDXC
+</p>
+</td></tr></table>
+<h2> Hardware Overview </h2>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Front_component_view_with_text_1200_s.jpg" width="600"/></div></div>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/7688_duo_backview_with_text_1200.jpg" width="600"/></div></div>
+<h3> <b>Parts list</b> </h3>
+<table>
+<tr>
+<th>Parts name   </th>
+<th> Quantity
+</th></tr>
+<tr>
+<td> LinkIt<sup>TM</sup> Smart 7688  </td>
+<td> 1PC
+</td></tr>
+<tr>
+<td> Manual </td>
+<td> 1PC
+</td></tr></table>
+<p><br/>
+</p>
+<h2> Getting started </h2>
+<h3> Connecting to the embedded operating system</h3>
+<p><b>Note:</b> There are two ways described in the manual. In this case, we only show an advanced method (using USB to Serial adapter) which might seem a little harder. But, you will benefit a lot from it in the long run.
+</p>
+<h4> Materials required</h4>
+<ul><li>LinkIt Smart 7688 × 1 
+</li><li>USB cable (type A to micro type-B) × 1 
+</li><li>USB to Serial adapter × 1
+</li><li>Jumper wires × 3 
+</li></ul>
+<h4> On Windows</h4>
+<dl><dd> 1. Install PuTTy. PuTTY provides a system console environment using SSH (Secure Socket Shell) to access development board's operating system.
+</dd><dd> 2. Install <a href="https://support.apple.com/kb/DL999?viewlocale=en_US&amp;locale=en_US">Bonjour</a> Print Service (For Windows 7, Windows 8, Windows 10).
+</dd><dd> 3. Install driver. If you are using a USB cable based on FTDI chip please download and install its driver from <a href="http://www.ftdichip.com/Drivers/VCP.htm">here</a>. If you are having problems with the latest driver, try installing an <a href="http://www.ftdichip.com/Support/Documents/InstallGuides.htm">older version</a>.
+</dd><dd> 4. Next, you will need to connect the Serial to USB cable to LinkIt Smart 7688's UART pins as shown in the following table:
+</dd></dl>
+<table>
+<tr>
+<th> Pin on USB adapter
+</th>
+<th> Corresponding Pin to be connected on LinkIt Smart 7688
+</th></tr>
+<tr>
+<td> Pin RX </td>
+<td> Pin 8
+</td></tr>
+<tr>
+<td> Pin TX </td>
+<td> Pin 9
+</td></tr>
+<tr>
+<td> Pin GND </td>
+<td> Pin GND
+</td></tr></table>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/7688_duo_demo_view_1200_s.jpg" width="600"/></div></div>
+<dl><dd> 5. After connecting the Serial to USB cable, open the device manager and notice the COM port number as shown in Figure 22. This number may vary on different computers.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/COM_port.jpg" width="600"/></div></div>
+<dl><dd> 6. Launch the PuTTY terminal and enter the COM port number of the USB device found in the device manager, click on the Serial radio button, type 57600 in Speed box and click Open, as shown in Figure 23.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Putty_configuration.jpg" width="600"/></div></div>
+<dl><dd> 7.To exit the system console, click the <b>close icon</b> on top right of the PuTTY windows.
+</dd></dl>
+<h4> On Mac</h4>
+<dl><dd> 1. Install the driver if needed. Check the cable manufacturer’s website for driver requirements on Mac and installation instructions.
+</dd><dd> 2. Plug-in the cable to PC/Laptop and connect the cable to LinkIt Smart 7688.
+</dd><dd> 3. Open a Terminal session.
+</dd><dd> 4. Type <i><b>ls /dev/cu*</b></i> in the Terminal. You should see a list of devices. Look for something like cu.usbserial-XXXXXXXX where XXXXXXXX is usually a random identifier. This is the serial device used to access the system console. For example:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">  $ls <span class="sy2">/</span>dev<span class="sy2">/</span>cu<span class="sy2">*</span>
+ 
+<span class="sy2">/</span>dev<span class="sy2">/</span>cu.<span class="me1">Bluetooth</span><span class="sy2">-</span>Incoming<span class="sy2">-</span>Port
+ 
+<span class="sy2">/</span>dev<span class="sy2">/</span>cu.<span class="me1">Bluetooth</span><span class="sy2">-</span>Modem
+ 
+<span class="sy2">/</span>dev<span class="sy2">/</span>cu.<span class="me1">pablop</span><span class="sy2">-</span>WirelessiAP
+ 
+<span class="sy2">/</span>dev<span class="sy2">/</span>cu.<span class="me1">usbserial</span><span class="sy2">-</span>A6YMCQBR</pre></div></div>
+<dl><dd> 5.Use the <b>screen</b> utility to connect to the serial port and set the baudrate to <b>57600</b>. This is because the baudrate of the system console is 57600 by default. For example:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">$screen <span class="sy2">/</span>dev<span class="sy2">/</span>cu.<span class="me1">usbserial</span><span class="sy2">-</span>XXXXXXXX <span class="nu0">57600</span></pre></div></div>
+<dl><dd> 6. Now you should be connected to the system console. Press ENTER in the Terminal to bring up the prompt. You will notice that the prompt has become different from your OS X Terminal application, it is the LinkIt Smart 7688 prompt and it looks like the following:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">  root@myLinkIt<span class="sy4">:</span><span class="sy2">/</span><span class="co2">#</span></pre></div></div>
+<dl><dd> 7. You are ready to make changes to the LinkIt Smart 7688 system through this console.
+</dd></dl>
+<h4> On Linux</h4>
+<dl><dd> 1. Install the driver if needed. Check the cable manufacturer's website for driver requirements on Linux and installation instructions.
+</dd><dd> 2. Plug-in the cable and connect the cable to LinkIt Smart 7688 Duo.
+</dd><dd> 3. Open a Terminal session.
+</dd><dd> 4. Type <i><b>ls /dev/ttyUSB*</b></i> in the Terminal. You should see a list of devices. Look for something like cu.usbserial-XXXXXXXX where XXXXXXXX is usually a random identifier. This is the serial device used to access the system console. For example:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">$ls <span class="sy2">/</span>dev<span class="sy2">/</span>ttyUSB<span class="sy2">*</span>
+<span class="sy2">/</span>dev<span class="sy2">/</span>ttyUSB0</pre></div></div>
+<dl><dd> 5.Use the <b>screen</b> utility to connect to the serial port and set the baudrate to <b>57600</b>. This is because the baudrate of the system console is 57600 by default. For example:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">$sudo screen <span class="sy2">/</span>dev<span class="sy2">/</span>ttyUSB0 <span class="nu0">57600</span></pre></div></div>
+<dl><dd> 6.Now you should be connected to the system console. Press ENTER in the Terminal to bring up the prompt. You will notice that the prompt has become a different regular application, it is the LinkIt Smart 7688 prompt and it looks like the following:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">  root@myLinkIt<span class="sy4">:</span><span class="sy2">/</span><span class="co2">#</span></pre></div></div>
+<dl><dd> 7.You are ready to make changes to the LinkIt Smart 7688 system through this console.
+</dd></dl>
+<h3> Running the Blink example</h3>
+<h4> Materials required</h4>
+<ul><li>LinkIt Smart 7688 × 1 
+</li><li>USB cable (type A to micro type-B) × 1 
+</li><li>USB to Serial adapter × 1
+</li><li>Jumper wires × 3 
+</li></ul>
+<h4> Get Blink run</h4>
+<dl><dd> 1. Power up your board with a micro-USB cable (only connect the USB Power interface, rather than the USB Host interface).
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Connect_to_computer.jpg" width="600"/></div></div>
+<dl><dd> 2. Launch PuTTy and connect to system with USB to Serial adapter as shown in previous sections.
+</dd><dd> 3. Type <i><b>python /IoT/examples/blink-gpio44.py</b></i> and press <b>Enter</b> to run the Blink example.
+</dd><dd> 4. After around 2 seconds, you will notice that the Wi-Fi LED blinks steadily.
+</dd><dd> 5. In the system console, type CTRL + C, this will terminate the example.
+</dd></dl>
+<h3> Connect to the Internet (Switch to Station mode)</h3>
+<p>There are two Wi-Fi modes, i.e. AP mode and Station mode. Refer <a href="https://answers.yahoo.com/question/index?qid=20061207225409AANCN17">this</a> for the differences between them.
+</p>
+<dl><dd> 1. Power up the board with a micro-USB cable.
+</dd><dd> 2. Open the Wi-Fi connection utility on your computer and connect to the access point named LinkIt_Smart_7688_XXXXXX. <b>XXXXXX</b> is a kind of hardware identifier which varies from board to board.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Connect_wifi.jpg" width="600"/></div></div>
+<dl><dd> 3. Open a browser with URL <b>mylinkit.local/</b> or <b>192.168.100.1</b>, set the password for root and sign in. Click <b>Network</b> on the upper right.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Network_conf.jpg" width="600"/></div></div>
+<dl><dd> 4. Select the <b>Station mode </b>and click <b>Refresh</b> or downward arrow on the right to find the AP to connect to. After you have selected the AP, enter password if required. Click Configure &amp; Restart to finish as shown below. Then wait for around 30 seconds to switch mode.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Station_mode.jpg" width="600"/></div></div>
+<dl><dd> 5. Launch PuTTy and connect to the system with USB to Serial adapter as shown in the previous section.
+</dd><dd> 6. Type <b>ifconfig</b> and find the IP address of <b>inet addr</b> as shown below:
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/IFCONFIG.jpg" width="600"/></div></div>
+<p><b>Note:</b> It will still enter the Station mode after rebooting the system. Press wi-fi button at least 5 seconds to switch back to AP mode.
+<b>Note:</b> It will be needed to reboot the embeded OS by using <b>reboot</b> command.
+</p>
+<dl><dd> 7. Type the IP in a new Tab of browser and you can login to Web user interface to configure the system.
+</dd><dd> 8. Now both the host computer and LinkIt Smart 7688 are connected to internet. Type <i><b>ping www.mediatek.com</b></i> in console and you will get:
+</dd></dl>
+<div style="margin: 0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Ping_result.jpg" width="600"/></div></div>
+<dl><dd> 9. Now you can use internet to configure your system on development board.
+</dd></dl>
+<h3> Installing Arduino programming environment</h3>
+<p>This development board has features that are compatible with Arduino. So you can transfer your Arduino code to 7688 platforms which makes prototyping process quicker. In this section, we will show you how to build an Arduino programming environment.
+</p>
+<h4> Download and install Arduino IDE</h4>
+<p>You can <a href="https://www.arduino.cc/en/Main/Software">install</a> Arduino IDE 1.6.5 on your computer.
+</p>
+<h4> Configure Arduino IDE for LinkIt Smart 7688 Platform</h4>
+<h5> Installing developed board support package</h5>
+<p>Arduino IDE 1.6.5 supports third party board integration using the <b>Board Manager</b> tool. LinkIt Smart 7688 development board is a plug-in to Arduino IDE and you will need to install the board package so that Arduino supports LinkIt board. Please follow the steps below:
+</p>
+<ol><li>In Arduino IDE, on the <b>File</b> menu click <b>Preferences</b> then insert <b>http://download.labs.mediatek.com/package_mtk_linkit_smart_7688_test_index.json</b> to the <b>Additional Boards Manager URLs</b> field:
+</li></ol>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Install_package.jpg" width="600"/></div></div>
+<dl><dd> 2. Make sure your computer is connected to the internet. <a href="res/LinkIt.zip">Download</a> <b>LinkIt</b>, decompress it and copy the files into the folder <b>packages</b> which gets same location with file <b>Preferences.txt</b>. Click following red rectangle marked section to open file location of <b>Preferences.txt</b>.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/7688_duo_demo_preferences.txt_location_s.jpg" width="600"/></div></div>
+<dl><dd> 3. In the Arduino <b>Tools</b> menu point to <b>Board</b>.
+</dd><dd> 4. There should now be a LinkIt Smart 7688 item appearing in the boards list on the Boards Manager and choose port with <b>COMxx (LinkIt Smart 7688 Duo)</b>.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Install_SDK.jpg" width="600"/></div></div>
+<dl><dd> 5. The installation is completed.
+</dd></dl>
+<h5> Installing LinkIt Smart 7688 Duo COM Port Driver</h5>
+<p>After installing the board package, connect LinkIt Smart 7688 Duo to your computer and you should see a USB serial COM port in the device manager with the following port ID:
+</p>
+<ul><li>Boot loader COM port: VID=0x0E8D, PID=0xAB00
+</li><li>Arduino Sketch COM port: VID=0x0E8D, PID=0xAB01
+</li></ul>
+<p>Next, you will need to install drivers depending on your operating system. The steps are:
+</p>
+<ul><li>For Windows 10, there is no need to install a driver. However, extra steps are needed to ensure Windows 10 recognizes the board. Connect LinkIt Smart 7688 Duo to your Windows 10 machine, then quickly press the MCU reset button twice within 700 milliseconds. The system should now recognize LinkIt Smart 7688 Duo as a USB Serial Device (COM5). The number 5 may be different on different machines. You only need to do this the first time the board is connected to your Windows machine.
+</li><li>For Windows 8, the system may block the driver installation. Follow this <a href="https://learn.sparkfun.com/tutorials/disabling-driver-signature-on-windows-8/disabling-signed-driver-enforcement-on-windows-8">link</a> to know how to disable driver signature enforcement on Windows 8. After the signature enforcement is disabled, follow the steps in Windows 7 below to install the driver.
+</li><li>For Windows 7, find the Serial COM port INF driver in the following path. You can also install it from <a href="http://download.labs.mediatek.com/mediatek_linkit_smart_7688_duo-windows-com-port-driver.zip">here</a>.
+</li></ul>
+<p>{ARDUINO_IDE_PREFERENCE_LOCATION}Arduino15/packages/LinkIt/hardware/avr/0.1.5/driver/linkit_smart_7688.inf
+</p><p>You will find the Arduino preference location at <b>File</b> -&gt; <b>Preferences</b>, see the <b>preference.txt</b> path.
+</p>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Preference_location.jpg" width="600"/></div></div>
+<p>Right click on the linkit_smart_7688.inf and select install, a security windows appears and <b>click Install this driver software anyway</b>. This completes the driver installation.
+</p>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Driver_inst_alert.jpg" width="600"/></div></div>
+<ul><li>For Ubuntu Linux, it should work without installing a driver. LinkIt Smart 7688 should be in /dev folder and mounted as ttyUSB0. The number 0 may be different on each Ubuntu machine.
+</li><li>For OS X, it is also not required to install a driver, LinkIt Smart 7688 Duo is mounted as a serial device under/dev/tty.usbmodem1413. The number 1413 may be different on each OS X machine.
+</li></ul>
+<h2> Demo: A Hello world example </h2>
+<p><b>Note:</b> To avoid running out of memory during native application developments, you should setup the native application development environment in a more powerful host environment that enables you to cross-compile the executable format of the LinkIt Smart 7688 target instead. The following table shows an overview of the LinkIt Smart 7688 programming languages and the related development environments on host computer.
+</p>
+<table>
+<tr>
+<th>Programming language
+</th>
+<th>Tools and libraries
+</th>
+<th>Applications
+</th>
+<th>Host platforms suspported
+</th></tr>
+<tr>
+<td> C/C++</td>
+<td> Cross compilation toolchain </td>
+<td> System programming </td>
+<td> OS X
+<p>Linux
+</p>
+</td></tr>
+<tr>
+<td> Python</td>
+<td> Python runtime on LinkIt Smart 7688</td>
+<td> Prototyping
+<p>Network  
+Arduino bridge library 
+</p>
+</td>
+<td> OS X
+<p>Linux
+Windows
+</p>
+</td></tr>
+<tr>
+<td> Node.js</td>
+<td> Node.js runtime on LinkIt Smart 7688 </td>
+<td> Prototyping
+<p>Network 
+</p>
+</td>
+<td> OS X
+<p>Linux
+Windows
+</p>
+</td></tr></table>
+<h3> A Hello world example in Python</h3>
+<dl><dd> 1. Use FileZilla and refer to this <a href="https://wiki.filezilla-project.org/FileZilla_Client_Tutorial_(en)">tutorial</a>, the server IP(replace <b>host name</b>) address is the <b>inet addr</b> found in previous <a href="/LinkIt_Smart_7688_Duo#Switch_to_Station_mode">Switch to Station mode</a> section, the username is <b>root</b> and password is password you set in that section.
+</dd><dd> 2. Open a text editor, copy and paste the below example code and save it as <i><b>helloworld.py</b></i>.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">    <span class="kw3">print</span> <span class="st0">"Hello World!"</span></pre></div></div>
+<dl><dd> 3. Copy the file <i><b>helloworld.py</b></i> into system on target development environment (LinkIt Smart 7688) with FileZilla, place it under the folder <b>root.</b>
+</dd><dd> 4. Launch PuTTy and connect to system with USB to Serial adapter.
+</dd><dd> 5. Set working directory to <b>/root</b> and enter <i><b>python helloworld.py</b></i> to execute.
+</dd><dd> 6. Now  you can see <b>Hello World!</b> printed in console.
+</dd></dl>
+<h3> A Blink example on Arduino</h3>
+<h4> On host computer(Arduino side)</h4>
+<p>The MCU side is written as an Arduino sketch. In this example, the sketch simply listens to the command sent from the MPU (Linux) side and switches the on-board LED accordingly.
+</p>
+<dl><dd> 1. First, connect the LinkIt Smart 7688 Duo to your PC, then open Arduino IDE and paste the following sketch code into the IDE:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="c source-c"><pre class="de1"><span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// open serial connection to USB Serial port (connected to your computer)</span>
+    Serial1.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">57600</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// open internal serial connection to MT7688</span>
+    <span class="co1">// in MT7688, this maps to device</span>
+    pinMode<span class="br0">(</span><span class="nu0">13</span><span class="sy0">,</span> OUTPUT<span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">int</span> c <span class="sy0">=</span> Serial1.<span class="me1">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">// read from MT7688</span>
+    <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy0">!=</span> <span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">switch</span><span class="br0">(</span>c<span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">case</span> <span class="st0">'0'</span><span class="sy0">:</span> <span class="co1">// turn off D13 when receiving "0"</span>
+            digitalWrite<span class="br0">(</span><span class="nu0">13</span><span class="sy0">,</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="kw2">break</span><span class="sy0">;</span>
+        <span class="kw1">case</span> <span class="st0">'1'</span><span class="sy0">:</span> <span class="co1">// turn off D13 when receiving "1"</span>
+            digitalWrite<span class="br0">(</span><span class="nu0">13</span><span class="sy0">,</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+            <span class="kw2">break</span><span class="sy0">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dd> 2. Then choose the correct COM port from the IDE (check your device manager) by clicking <b>Tools </b>-&gt; <b>Port</b>.
+</dd><dd> 3. Upload the sketch to the board. Note the board is not blinking yet – you will need to write a program in the Linux side to make it blink, which is the next step.
+</dd></dl>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Blink_in_arduino.jpg" width="600"/></div></div>
+<h4> On development board(Linux side)</h4>
+<dl><dd> 1. Use a text editor of your choice and create a new file(a <b>Python</b> file), then copy the following code and save it.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="c source-c"><pre class="de1">import serial
+import <span class="kw3">time</span>
+s <span class="sy0">=</span> None
+def setup<span class="br0">(</span><span class="br0">)</span><span class="sy0">:</span>
+global s
+<span class="co2"># open serial COM port to /dev/ttyS0, which maps to UART0(D0/D1)</span>
+<span class="co2"># the baudrate is set to 57600 and should be the same as the one</span>
+<span class="co2"># specified in the Arduino sketch uploaded to ATmega32U4.</span>
+s <span class="sy0">=</span> serial.<span class="me1">Serial</span><span class="br0">(</span><span class="st0">"/dev/ttyS0"</span><span class="sy0">,</span> <span class="nu0">57600</span><span class="br0">)</span>
+def loop<span class="br0">(</span><span class="br0">)</span><span class="sy0">:</span>
+<span class="co2"># send "1" to the Arduino sketch on ATmega32U4.</span>
+<span class="co2"># the sketch will turn on the LED attached to D13 on the board</span>
+s.<span class="me1">write</span><span class="br0">(</span><span class="st0">"1"</span><span class="br0">)</span>
+<span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>
+<span class="co2"># send "0" to the sketch to turn off the LED</span>
+s.<span class="me1">write</span><span class="br0">(</span><span class="st0">"0"</span><span class="br0">)</span>
+<span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">'__main__'</span><span class="sy0">:</span>
+setup<span class="br0">(</span><span class="br0">)</span>
+<span class="kw1">while</span> True<span class="sy0">:</span>
+loop<span class="br0">(</span><span class="br0">)</span></pre></div></div>
+<dl><dd> 2. Execute this Python program in the system console – this program basically writes string of <b>1</b> and <b>0</b> to the /dev/ttyS0 port which maps to Serial1 interface in Arduino. The Arduino sketch that was uploaded in the previous section will receive the string and then blink the on-board LED accordingly.
+</dd></dl>
+<p>You can now extend the Arduino sketch to drive other devices such as PWM, I2C devices and synchronize the states by extending the command messages between Arduino and the Linux side. If more peripheral types need to be included, you can use some external libraries to implement the communication protocol. One such protocol – Firmata is described in the following section.
+</p>
+<h2> Related Projects</h2>
+<p>If you want to make some awesome projects by LinkIt Smart 7688 Duo, here's some <a href="http://www.instructables.com/id/LinkIt-Smart-7688/">projects</a> for reference.
+</p>
+<h3> Smart router with WiFi Connection Visualization</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.instructables.com/id/ReRouter-Make-an-Extensible-IoT-Router/"><img src="img/Smart_router_2.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>This router has the below functions:
+</p>
+<ul><li> Let you know how many devices had connected to your router
+</li><li> Show you the real-time net speed by different color of the leds
+</li><li> Printer to display some message
+</li></ul>
+<p>If you like this router, please follow the below steps.
+</p><p><a href="http://www.instructables.com/id/ReRouter-Make-an-Extensible-IoT-Router/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h3> Facebook Like Monitor</h3>
+<p>It really feel good when you get a like from Facebook, this monitor will blink and vibrate when you got a new like. And there’s a 320x240 LCD Display to show you how many likes you ever got.
+</p><p>This instructable is not very complex, but may a little hard for the newbie. If you had ever use Arduino or others board like that, It may cost you 3-5 hours to make one.
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.instructables.com/id/Facebook-Like-Monitor/"><img src="img/Facebook_like_monitor.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>Introduction of the demo2.
+</p><p><a href="http://www.instructables.com/id/Facebook-Like-Monitor/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h2> Resources </h2>
+<ul><li>Hardware <a href="res/Hardware_Schematics.zip">Schematic files</a>
+</li><li><a href="res/Manual.zip">Manual</a>
+</li><li><a href="http://wiki.openwrt.org/doc/howto/user.beginner">OpenWrt</a>
+</li><li><a href="http://labs.mediatek.com/site/global/developer_tools/mediatek_linkit_smart_7688/hdk_intro/index.gsp">MediaTek LinkIt™ Smart 7688 Resources</a>: Firmware, Bootloader, Datasheets, HDK (Reference design with CAD source)
+</li><li><a href="res/Linkit_Smart_7688_DUO_Firmware.pdf">How to flash the firmware via a USB drive</a>
+</li><li><a href="res/LinkIt_Smart_7688_Duo-Certificate.zip">Certificates</a>
+</li></ul>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/2987SF7" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

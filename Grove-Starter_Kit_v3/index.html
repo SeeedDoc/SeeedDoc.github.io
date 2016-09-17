@@ -1,0 +1,366 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Starter Kit v3</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Starter Kit v3</h1>
+
+<p>Grove is a modular electronics platform for quick prototyping that does not involve soldering or bread boarding. Simply plug the Grove modules into the Grove shield and leverage the example code provided for each Grove module. The Grove Starter Kit contains a multitude of sensors and actuators, so you can start messing around with projects.
+</p>
+<br/><center>
+<img src="img/Grove-Starter_Kit_v2_Photo.jpg" width="700"/></center>
+<h2> Preface</h2>
+<h3> About Grove</h3>
+<p>Grove is a modulated, ready-to-use tool set. Much like Lego, it takes a building block approach to assembling electronics. Compared with the traditional, complicated learning method of using a breadboard and various electronic components to assemble a project, Grove simplifies and condenses the learning process significantly. The Grove system consists of a base shield and various modules with standardized connectors. The base shield allows for easy connection of any microprocessor input or output from the Grove modules, and every Grove module addresses a single function, such as a simple button or a more complex heart rate sensor. Each one comes with clear documentation and demo code to help you get started quickly.
+</p><p><br/>
+</p>
+<h3> Get to know Arduino</h3>
+<p>If this is your first time to use an Arduino, you need to complete the following steps:
+</p>
+<ul><li><a href="/Download_Arduino_and_install_Arduino_driver">Download Arduino IDE and Install Arduino Driver</a>
+</li><li><a href="/Getting_Started_with_Seeeduino">Install your microcontroller</a>
+</li><li><a href="/How_To_Use_Sketchbook">Download and import the Grove - Starter Kit Sketchbook</a>
+</li></ul>
+<p>The download address of the Grove - Starter Kit Sketchbook is <a href="https://github.com/Seeed-Studio/Sketchbook_Starter_Kit_V2.0">here</a>. <br/>
+</p><p>Now you have got yourself ready for the Grove exploration.<br/>
+</p>
+
+<h3> Parts list</h3>
+<ul><li> 1*Base Shield
+</li><li> 1*Grove - LCD RGB Backlight 
+</li><li> 1*Grove - Smart Relay
+</li><li> 1*Grove - Buzzer 
+</li><li> 1*Grove - Sound Sensor
+</li><li> 1*Grove - Touch Sensor
+</li><li> 1*Grove - Rotary Angle Sensor 
+</li><li> 1*Grove - Temperature Sensor
+</li><li> 1*Grove - LED
+</li><li> 1*Grove - Light Sensor
+</li><li> 1*Grove – Button
+</li><li> 1*DIP LED Blue-Blue
+</li><li> 1*DIP LED Green-Green
+</li><li> 1*DIP LED Red-Red
+</li><li> 1*Mini Servo
+</li><li> 10*Grove Cables
+</li><li> 1*9V to Barrel Jack Adapter
+</li><li> 1*Grove starter kit  Manual 
+</li><li> 1*Green Plastic Box
+</li></ul>
+<h3> Modules Detail </h3>
+<h4>  Grove - Base Shield</h4>
+<p>First we start with the Grove base shield board. Grove - Base Shield is the new version of Electronic Brick Shield.The Basic Shield is compatible with Seeeduino v3.0 (168p and 328p), and Arduino UNO and Duemilanove. The are 16 Grove ports on the base shield, which can be divided into three different functional areas: digital ports(8),analog ports(4),I2C(4).
+</p><p><img src="img/Base_Shield_IO.jpg" width="500"/>
+<br/>
+</p>
+<ul><li>Digital Ports
+</li></ul>
+<p>As photo shows there are have 8 digital ports, what are equivalent to digital pins 0 to through 9 on the Arduino Uno. Normally, they are used when reading a digital sensor that only outputs 0 or 1,or turning on or off an actuator.  <br/>
+</p>
+<ul><li>Analog Ports
+</li></ul>
+<p>On the left-hand side are four Grove ports for taking analog reading. Analog sensors can return readings ranging from 0 to 1023.Compared with digital sensors that only return 0 or 1, analog readings are more detailed and precise.  <br/>
+</p>
+<ul><li>I2C Ports
+</li></ul>
+<p>Below the digital ports are four I2C Grove ports. I2C is a low-speed bus protocol that transfers data via two wire : SCL and SDA . SCL is the clock line that synchronizes data transfer over the I2C bus, and SDA is data line.  <br/>
+</p><p>For a detailed information on how to use your Grove – Base Shield ,you can go to <a href="/Base_shield_v2">Base Shield v2</a>
+</p>
+<h4>  Grove - LCD RGB Backlight </h4>
+<p><img src="img/Serial_LEC_RGB_Backlight_Lcd.jpg" width="400"/><br/>
+This Grove enables you to set the color to whatever you like via the simple and concise Grove interface. It takes I2C as communication method with your microcontroller. So number of pins required for data exchange and backlight control shrinks from ~10 to 2, relieving IOs for other challenging tasks. Besides, Grove - LCD RGB Backlight supports user-defined characters.  
+<br/><br/>
+<b>Example</b><br/>
+The example shows you how to print text on the screen and change the color of backlight. Find it via the path:<br/>
+File -&gt; Sketchbook -&gt; Grove_RGB_Backlight_LCD -&gt; HelloWorld<br/>
+<img src="img/RGBbacklight.jpg" width="400"/><br/>
+<b>Tips</b><br/>
+This is a 16x2 LCD screen. It is capable of displaying two rows of sixteen-character texts, supporting languages including English and Japanese. Aside from the built-in languages, you can have custom characters. You can build unique characters by defining their display patterns. You can find an example of making a custom character here:<br/>
+<a href="https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight/archive/master.zip">https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight/archive/master.zip</a><br/>
+</p>
+<h4>  Grove – Relay </h4>
+<p><img src="img/Twig-Relay.jpg" width="400"/>
+<br/>
+Relay is a useful tool to magnify your Arduino’s control ability! Feed the control signal through the Grove interface, and relay will control the open/close of the external circuit that connected to the screw terminals. The voltage of the external circuit can run up to 220V! So grab this relay and start some really tough projects!
+<br/>
+<b>Example</b><br/>
+The example shows you how to control relay by a button : File -&gt; Sketchbook -&gt; Grove_Realy.<br/>
+<img src="img/Grove-Relay_Ex.jpg" width="500"/>
+<br/>
+<b>Tips</b><br/>
+Relay is an electronically controlled mechanical switch. The size of one varies according to its capability of carrying current. The bigger a relay (essentially just the plastic box part) is, the larger the current it can carry.
+<br/><br/>
+<font color="red">
+Please exercise great care when working with mains voltages – if in doubt contact a professional such as a licensed electrician for help.
+</font>
+<br/><br/>
+For a detailed information on how to use your Grove – Relay ,you can go to <a href="/Grove-Relay">Grove – Relay page</a>
+</p>
+<h4>  Grove – Buzzer </h4>
+<p><img src="img/Buzzer1.jpg" width="400"/><br/>
+This is a simple yet enjoyable Grove to use. The piezo can be connected to digital outputs, and will emit a tone when the output is high. Alternatively it can be connected to an analog pulse-width modulation output to generate various tones and effects.<br/>
+<b>Example</b><br/>
+You can use the code for Grove – Button to make the buzzerbeep when you press the button. However ,Grove – Buzzer can be much more fun – it can play songs!This is a brief example from Oomlout.com, playing you a household nursery rhyme – “Twinkle Twinkle Little Star”<br/>
+Find the example via the path below:File -&gt; Sketchbook -&gt; Grove_Buzzer <br/>
+<br/><img src="img/Grove-Buzzer_Ex.jpg" width="500"/><br/>
+This is a brief example from Oomlout.com, playing you a household nursery rhyme – “Twinkle Twinkle Little Star” <br/>
+<b> Tips</b><br/>
+How Piezo buzzer works? Usually there are two ceramic wafers in each Piezo buzzer. When voltages are given to them, they attract or reject each other. The air vibration caused by the shake of these wafers emits sound. When the shaking frequency changes the sound frequency will change alongside.
+<br/><br/>
+For a detailed information on how to use your Grove - Buzzer ,you can go to <a href="/Grove-Buzzer">Grove - Buzzer page</a>
+<br/>
+</p>
+<h4>  Grove - Sound Sensor </h4>
+<p>The Sound sensor module is a simple microphone. Based on the amplifier LM358 and the electret microphone, it can be used to detect the sound strength of the environment.  <br/>
+<b>Example</b><br/>
+The code for the Grove – Sound Sensor can be used to control an LED light whose brightness reflects the intensity of ambient sound.<br/>
+File -&gt; Sketchbook -&gt; Grove_Sound_Sensor
+<br/>
+<br/><img src="img/Grove-Sound_Sensor_Ex.jpg" width="500"/><br/>
+</p><p><b> Tips</b><br/>
+The electric microphone collects sound intensity for all frequencies. And the potentiometer acts as the doorman. When you rotate it completely clockwise, it lets everything go through, and when you rotate it completely counterclockwise, none of it can go through.
+<br/><br/>
+</p><p>For a detailed information on how to use your Grove - Sound Sensor ,you can go to <a href="/Grove-Sound_Sensor">Grove - Sound Sensor page</a>
+</p>
+<h4>  Grove - Touch Sensor </h4>
+<p><img src="img/Grove-touch_sensor_Photo.jpg" width="400"/>
+<br/>
+<br/>
+Grove - Touch Sensor enables you to replace press with touch. It can detect the change in capacitance when a finger is near by. That means no matter your finger directly touches the pad or just stays close to the pad, Grove - Touch Sensor would outputs HIGH. <br/>
+<b>Example</b><br/>
+The code of Grove – Button works with this module. Find the example via the path below :File -&gt; Sketchbook -&gt; Grove_Buzzer <br/>
+<img src="img/Grove-Touch_Sensor_Ex.jpg" width="500"/> <br/>
+<b>Tips</b><br/>
+This is an alternative to the momentary button .Grove – Touch Sensor detects the change in capacitance in the circular region; the closer you finger is to the region, the larger the change in capacitance. Even if there is paper between your finger and the sensor, it will still function reliable.
+<br/>
+For a detailed information on how to use your Grove - Touch Sensor ,you can go to <a href="/Grove-Touch_Sensor">Grove - Touch Sensor page</a>
+<br/><br/>
+</p>
+<h4>  Grove - Rotary Angle Sensor </h4>
+<p><img src="img/Potentiometer1.jpg" width="400"/>
+<br/>
+The potentiometer Grove produces analog output between 0 and VCC. The angular range is 300 degrees with a linear change in value. The resistance value is 10k ohms, perfect for Arduino use. This may also be known as a “rotary angle sensor”.
+<br/>
+<b>Example</b><br/>
+The example shows you how to read the value of a rotary angle sensor:<br/>
+File -&gt; Sketchbook -&gt; Grove_Rotary_Angle_Sensor  <br/>
+<br/>
+<img src="img/Grove-Rotary_Angle_Sensor_Ex.jpg" width="500"/>
+<br/>
+<b>Tips</b><br/>
+A rotary potentiometer looks very similar to a rotary encoder, but they are not the same. A Rotary potentiometer is essentially a slide potentiometer .It reflects the potion in an analog way just like a slide potentiometer does. 
+<br/>
+For a detailed information on how to use your Grove - Rotary Angle Sensor,you can go to <a href="/Grove-Rotary_Angle_Sensor">Grove - Rotary Angle Sensor page</a>
+</p>
+<h4>  Grove – Temperature Sensor </h4>
+<p><a href="/w/index.php?title=%E7%BC%BA%E5%9B%BE&amp;action=edit&amp;redlink=1" title="缺图 (page does not exist)">400px</a>
+<br/>
+Grove - Temperature Sensor uses a thermistor which returns the ambient temperature. Our board then converts this voltage value measured by an analog input pin to a temperature. The operating range is -40 to 125 degrees Celsius.<br/>
+<b>Example</b><br/>
+The example shows you how to convert the raw output of the sensor onto temperatures .You can see data in Celsius in the serial monitor.<br/>
+File -&gt; Sketchbook -&gt; Grove_Temperature_Sensor.   <br/>
+<img src="img/Grove-Temperature_Sensor_Ex.jpg" width="500"/> <br/>
+<br/>
+<b>Tips</b><br/>
+Grove – Temperature Sensor is used to detect environment temperature. <br/>
+For a detailed information on how to use your Grove - Temperature Sensor,you can go to <a href="/Grove-Temperature_Sensor">Grove - Temperature Sensor</a> <br/>
+<br/><br/>
+</p>
+<h4>  Grove - LED </h4>
+<p><img src="img/Grove-LED_Photo.jpg" width="400"/>
+<br/>
+Grove - LED is designed for the beginners of Arduino/Seeeduino to monitor controls from digital ports. It can be mounted to the surface of your box or desk easily and used as pilot lamp for power or signal.  <br/>
+<b>Example</b> <br/>
+This example we make an LED light with breathing effects: <br/>
+File -&gt; Sketchbook -&gt; Grove_LED <br/>
+<img src="img/Grove-LED_Ex.jpg" width="500"/> <br/>
+</p><p><b>Tips</b>
+<br/>
+We prepare three colors of LED bulbs for you, you can get the color you want by changing the LED on the tiny Grove – LED Socket .LEDs have an cathode on the flat side of the bulb, and a anode on the round side of the bulb. The anode needs to be installed corresponding to the ‘+’ sign on the seat for the LED to work properly.
+<br/>
+For a detailed information on how to use your Grove - LED,you can go to <a href="/Grove-LED">Grove - LED page</a>
+<br/><br/>
+</p>
+<h4>  Grove - Light Sensor </h4>
+<p><img src="img/Grove-Light_Sensor_photo.jpg" width="400"/>
+<br/><br/>
+The light sensor, also known as the light dependent resistor (LDR). Typically, the resistance of the light sensor will decrease when the ambient light intensity increases.  <br/>
+<b>Example</b> <br/>
+This example will turn on an LED when the light intensity falls below the preset threshold:<br/>
+File -&gt; Sketchbook -&gt; Grove_Light_Sensor <br/>
+<img src="img/Grove-Light_Sensor_Ex.jpg" width="500"/> <br/>
+<b>Tips</b> <br/>
+The output of the analog light sensor ranges from 0 to 1023, but the output is not linear with respect to the ambient light intensity.<br/>
+<br/>
+For a detailed information on how to use your Grove - Light Sensor,you can go to <a href="/Grove-Light_Sensor">Grove - Light Sensor</a>
+</p>
+<h4>  Grove – Button </h4>
+<p><img src="img/Button1.jpg" width="400"/>
+<br/>
+This new version of button Grove module contains one independent button, which are configured with pull-down resistor – ready for use with our microcontrollers as digital input.  The button signals the SIG wire,NC is not used on this Grove module.
+<b>Example</b> <br/>
+This example shows you how to turn on or off an LED by this button. <br/>
+File -&gt; Sketchbook -&gt; Grove_Button   <br/>
+<img src="img/Grove-Button_Ex.jpg" width="500"/> <br/>
+<b>Tips</b> <br/>
+“Momentary” means the button rebounds after pressed .This button output HIGH when pressed, and LOW when released.  <br/>
+</p>
+<h4> Grove -  Servo </h4>
+<p><img src="img/Grove-Servo_Photo.jpg" width="400"/> <br/>
+This is an actuator whose position can be precisely controlled. <br/>
+<b>Example</b><br/>
+We prepared an example of how we use a potentiometer to control the position of the servo: <br/>
+File --&gt; Sktechbook --&gt; Servo <br/>
+<img src="img/Grove-Starter_Kit_Servo.jpg" width="600"/> <br/>
+<b>Tips</b> <br/>
+Grove – Servo has mounting hardware options for different purposes: you can use them to drive a small fan, lift an object, or mimic a clock hand. <br/>
+</p>
+<h2> Demo projects </h2>
+<h3>  1. A Cup Of Flowers </h3>
+<p><br/><img src="img/A_Cup_of_Flower.jpg" width="500"/><br/>
+<b>Description</b><br/>
+Would you like a cup of flowers to ease your exhausted heart? This project is made up of Grove – LED and one Grove – Touch Sensor. With the sensor being touched, those lovely LEDs will shine you a warm and comfortable light effect.<br/>
+<b>Materials List</b><br/>
+</p>
+<dl><dd>1. Arduino x 1;
+</dd><dd>2. Grove – Base Shield x 1;
+</dd><dd>3. Grove – LED x 6;
+</dd><dd>4. Grove – Touch Sensor x 1;
+</dd><dd>5. 6 x 6cm Color paper x 6;
+</dd><dd>6. 9V battery &amp; 9V battery clip x 1.
+</dd></dl>
+<p><b>Note:</b> The number of LEDs is arbitrary. There are three of them contained in the basic kit. But you can increase or decrease it depending on the volume of your cup. I have a big cup here, so I added three more from our website.<br/>
+<b>Steps</b><br/>
+1. Fold The Buds <br/>
+<br/><img src="img/Fold_the_buds.jpg" width="500"/><br/>
+Choose one flower pattern you like and follow its steps to create some of them. One Google search may help a lot in finding one. There are so many origami hobbyists and artists over the Internet who’d like to share their handcrafts.<br/> 
+I chose tulip here, but sunflower, rose and lily also sound great!<br/>
+When folding the bud, you need to leave a small hole on its button for the Grove cable to go through.<br/>
+2. Set Up<br/>
+</p>
+<pre><br/><img src="img/Set_up.jpg" width="500"/><br/>
+</pre>
+<p>Connect the buds and the touch sensor onto the Grove – Base Shield with the 10cm Grove cable. And then upload the code to your controller.
+</p>
+<pre>void setup()
+{
+  pinMode(2, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(13, OUTPUT);
+  pinMode(9, INPUT); //pin of touch sensor
+}
+
+void loop()
+{
+  int switchState = digitalRead(9);
+  if(switchState == HIGH)
+  {
+    digitalWrite(2, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(6, HIGH);
+    digitalWrite(7, HIGH);
+    digitalWrite(11, HIGH);
+    digitalWrite(13, HIGH);
+  }
+  else
+  {
+    digitalWrite(2, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(6, LOW);
+    digitalWrite(7, LOW);
+    digitalWrite(11, LOW);
+    digitalWrite(13, LOW);
+  }
+  delay(100);
+}</pre>
+<p>3. Power Up &amp; Settle Down<br/>
+</p>
+<pre><br/><img src="img/Battery.jpg" width="500"/><br/>
+</pre>
+<p>Use a portable 9V battery to provide power to the flowers and settle it down in the cup. Finished! Enjoy your cup of flowers!
+</p>
+<h3>  2. How You Doing! </h3>
+<pre><br/><img src="img/How_you_doing.jpg" width="500"/><br/> 
+</pre>
+<p>(downloaded form think.bigchief.it)<br/>
+<b>Description</b><br/>
+How do you say hello to a friend? Big Chief would say “what’s better than a shake?” When one of these Big Chief paper toys lean his back against the others, they will shake to say hi!
+<b>Materials List</b>
+</p>
+<dl><dd>1. Arduini x 1;
+</dd><dd>2. Grove – Base Shield x 1;
+</dd><dd>3. Grove – Magnetic Switch x 1;
+</dd><dd>4. Grove – Vibrator x 1;
+</dd><dd>5. Paper toys x 2;
+</dd><dd>6. Magnet x 1;
+</dd><dd>7. 9V battery &amp; 9V battery clip x 1.
+</dd></dl>
+<p><b>Note:</b> The number of LEDs is arbitrary. There are three of them contained in the basic kit. But you can increase or decrease it depending on the volume of your cup. I have a big cup here, so I added three more from our website.<br/>
+<b>Steps</b><br/>
+1. Print It Out! 
+</p>
+<pre><br/><img src="img/Print_it_out.jpg" width="500"/><br/> 
+</pre>
+<p>Choose one pattern you like over the Internet. Make sure there is enough room for a magnet or a magnetic switch plus a vibrator. Same as the origami flower above, you can find tons of them on the Internet.<br/>
+2. Fill The Organs In <br/>
+Focus when cutting the paper toys. Only in that way you can get a neat one. After that, time to fill some organs to them.
+I pasted a magnet on the back of Big Cihef A(let’s call it this name!). I stuck it there with double-sided adhesive tape.
+</p>
+<pre> <br/><img src="img/Stuck1.jpg" width="500"/><br/> 
+</pre>
+<p>And for Big Chief B, I pasted a magnetic switch on his back, the same position as A, and a vibrator on his foots.
+</p>
+<pre> <br/><img src="img/Stuck2.jpg" width="500"/><br/> 
+</pre>
+<p>3. Glue Them Up 
+</p>
+<pre> <br/><img src="img/Stuck3.jpg" width="500"/><br/> 
+</pre>
+<p>Carefully follow the instruction on the printed sheet. Plug the Grove cables into two Grove Modules we used in Big Chief B. Then you will get two cute paper toys like above.<br/>
+4. Upload Program 
+</p>
+<pre><br/><img src="img/Stuck4.jpg" width="500"/><br/> 
+</pre>
+<p>Upload the code below to your Arduino. By doing this, you bring life to them.
+</p>
+<pre>void setup()
+{
+  pinMode(11, INPUT);
+  pinMode(9, OUTPUT);
+}
+
+void loop()
+{
+  int sensorState = digitalRead(11);
+  if (sensorState == 1) digitalWrite(9, HIGH);
+  else digitalWrite(9, LOW);
+  delay(100);
+}
+</pre>
+<h2>  Features  </h2>
+<ul><li><b>Standardized</b> – scalable Jigsaw shape, unified 4 pin connector, screw hole grid, edge solder pad, reduce duplicate developing, reuse in different projects to reduce environment impact
+</li></ul>
+<ul><li><b>Compact</b> – size from 2cm*2 cm, seamless combination, surface mounting components, 2.0mm pitch cable
+</li></ul>
+<ul><li><b>Friendly</b> – easy buckled connection, dumb proof, various extension modes, open for DIY, libraries and demo codes
+</li></ul>
+<ul><li><b>Plentiful</b>- large selection of common circuits from basic (button, LED) to professional sensor (Gyro, Compass), keep adding per demand, 3rd party contributions, reusable
+</li></ul>
+<ul><li><b>Community based</b> – satisfying needs through voting, democratized design, project and recipe sharing, profit sharing business pattern, Renting and Reuse
+</li></ul>
+<p><br/>
+</p>
+<h2>  Resources </h2>
+<ul><li><a href="res/Grove-Starter_Kit_v3_sch_pdf.zip">Sch pdf</a>
+</li><li><a href="res/Grove-Starter_Kit_Eagle.zip">Sch Eagle</a>
+</li><li><a href="res/Grove-Button_v1.0_Source_File.zip">Grove - Button Source File</a>
+</li><li><a href="res/Grove-LED_v1.0_Source_File.zip">Grove - LED Source File</a>
+</li><li><a href="res/Grove-Buzzer_v1.0_Source_File.zip">Grove - Buzzer Source File</a>
+</li><li><a href="res/Grove-Rotary_Angle_Sensor_v1.2.zip">Grove - Rotary Angle Sensor Source File</a>
+</li><li><a href="res/Grove-Relay_v1.2_Eagle.zip">Grove -  Relay Source File</a>
+</li><li><a href="res/Base_Shield_v2.zip">Base Shield Source File</a>
+</li><li><a href="res/Grove-Sound_Sensor_v1.3_eagle.zip">Grove - Sound Sensor Source File</a>
+</li><li><a href="res/Grove-Buzzer_V1.1_eagle.zip">Grove - Buzzer Source File</a>
+</li><li>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

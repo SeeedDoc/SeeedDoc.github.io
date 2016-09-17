@@ -1,0 +1,250 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Raspberry Pi Relay Board v1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Raspberry Pi Relay Board v1.0</h1><div class="floatright"><img src="img/Raspberry_Pi_Relay_Board_v1.0_p4.jpg" width="400"/></div>
+
+<p>The Relay Shield utilizes four high quality relays and provides NO/NC interfaces that control the load of high current. Which means it could be a nice solution for controlling devices that couldn’t be directly controlled by IIC bus. Standardized shield form factor enables smoothly connection with the Raspberry Pi . The shield also has four dynamic indicators show the on/off state of each relay. 
+</p>
+<h2>  Features </h2>
+<ul><li> Raspberry Pi compatible
+</li><li> Interface:IIC , Three hardware SW1 (1, 2, 3) select the fixed I2C-bus address
+</li><li> Relay screw terminals
+</li><li> Standardized shield shape and design
+</li><li> LED working status indicators for each relay
+</li><li> COM, NO (Normally Open), and NC (Normally Closed) relay pins for each relay
+</li><li> High quality relays
+</li><li> Working status indicators for each relay
+</li></ul>
+<h2>  Specification </h2>
+<table border="1" cellspacing="0" width="800">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Supply Voltage
+</th>
+<td> 4.75
+</td>
+<td> 5
+</td>
+<td> 5.5
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Working Current
+</th>
+<td> 10
+</td>
+<td> /
+</td>
+<td> 360
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> Switching Voltage
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 30/250
+</td>
+<td> VDC/VAC
+</td></tr>
+<tr>
+<th scope="row"> Switching Current
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 15
+</td>
+<td> A
+</td></tr>
+<tr>
+<th scope="row"> Frequency
+</th>
+<td> /
+</td>
+<td> 1
+</td>
+<td> /
+</td>
+<td> HZ
+</td></tr>
+<tr>
+<th scope="row"> Switching Power
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td>2770VA/240
+</td>
+<td> W
+</td></tr>
+<tr>
+<th scope="row"> Relay Life
+</th>
+<td> 100,000
+</td>
+<td> /
+</td>
+<td> /
+</td>
+<td> Cycle
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 91.20 * 56.15*32
+</td>
+<td> mm
+</td></tr></table>
+<h2>  Caution </h2>
+<p><font color="red"> <strong>
+Place 2 layers of electrical tape on the top of the Arduino's usb connector. This will prevent the relay shield from making contact. Do not operate voltage more than 35V DC.
+</strong></font>
+</p>
+<h2>  Interface Function </h2>
+<p><img src="img/Raspberry_Pi_Relay_Board_v1.0_p3.jpg" width="800"/>
+</p>
+<h2>  Usage </h2>
+<p>Here we can use  serial console to Change the state of each the relay or all relays.
+</p>
+<h3> Hardware Installation</h3>
+<ul><li>1）	Raspberry Pi B &amp; Raspberry Pi Motor Driver Board v1.0
+</li><li>2）	Hardware connection as shown<br/>
+</li></ul>
+<p>We can select the fixed I2C-bus address by <b>SW1</b>
+</p>
+<div class="center"><div class="floatnone"><img src="img/Raspberry_Pi_Relay_Board_v1.0_p4.jpg" width="600"/></div></div>
+<h3> Software Part</h3>
+<ul><li>1) Copy these code as follows;
+</li></ul>
+<pre>
+import time
+import smbus
+import signal
+import sys
+
+bus = smbus.SMBus(1)    # 0 = /dev/i2c-0 (port I2C0), 1 = /dev/i2c-1 (port I2C1)
+
+
+class Relay():	
+    global bus
+    def __init__(self):
+	self.DEVICE_ADDRESS = 0x20      #7 bit address (will be left shifted to add the read write bit)
+	self.DEVICE_REG_MODE1 = 0x06
+	self.DEVICE_REG_DATA = 0xff
+	bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+             
+    def ON_1(self):
+	    print 'ON_1...'
+	    self.DEVICE_REG_DATA &amp;= ~(0x1&lt;&lt;0)  
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    def ON_2(self):
+	    print 'ON_2...'
+	    self.DEVICE_REG_DATA &amp;= ~(0x1&lt;&lt;1)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    def ON_3(self):
+	    print 'ON_3...'
+	    self.DEVICE_REG_DATA &amp;= ~(0x1&lt;&lt;2)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    def ON_4(self):
+	    print 'ON_4...'
+	    self.DEVICE_REG_DATA &amp;= ~(0x1&lt;&lt;3)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    
+    def OFF_1(self):
+	    print 'OFF_1...'
+	    self.DEVICE_REG_DATA |= (0x1&lt;&lt;0)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    
+    def OFF_2(self):
+	    print 'OFF_2...'
+	    self.DEVICE_REG_DATA |= (0x1&lt;&lt;1)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+
+    def OFF_3(self):
+	    print 'OFF_3...'
+	    self.DEVICE_REG_DATA |= (0x1&lt;&lt;2)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    
+    def OFF_4(self):
+	    print 'OFF_4...'
+	    self.DEVICE_REG_DATA |= (0x1&lt;&lt;3)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    
+    def ALLON(self):
+	    print 'ALLON...'
+	    self.DEVICE_REG_DATA &amp;= ~(0xf&lt;&lt;0)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+    
+    def ALLOFF(self):
+	    print 'ALLOFF...'
+	    self.DEVICE_REG_DATA |= (0xf&lt;&lt;0)
+	    bus.write_byte_data(self.DEVICE_ADDRESS, self.DEVICE_REG_MODE1, self.DEVICE_REG_DATA)
+
+
+if __name__=="__main__":
+    relay = Relay()
+    # Called on process interruption. Set all pins to "Input" default mode.
+    def endProcess(signalnum = None, handler = None): 
+        relay.ALLOFF()
+        sys.exit()
+
+    signal.signal(signal.SIGINT, endProcess)
+
+    while True:
+        ct = raw_input("input: ")
+        if ct == '1on':
+            relay.ON_1()
+        elif ct == '2on':
+            relay.ON_2()
+        elif ct == '3on':
+            relay.ON_3()
+        elif ct == '4on':
+            relay.ON_4()
+        elif ct == '1off':
+            relay.OFF_1()
+        elif ct == '2off':
+            relay.OFF_2()
+        elif ct == '3off':
+            relay.OFF_3()
+        elif ct == '4off':
+            relay.OFF_4()
+        elif ct == 'allon':
+            relay.ALLON()
+        elif ct == 'alloff':
+            relay.ALLOFF()
+
+</pre>
+<ul><li>2) Saved in the Raspberry Pi, According to your own path.
+</li><li>3) Run this program<br/>
+</li></ul>
+<p>The terminal will print "input:",then you can change the state of each the relay or all relays.you should input like <b>"1on"</b>,<b>"2on"</b>,<b>"3on"</b> or <b>"1off"</b>,<b>"allon"</b>,<b>"alloff"</b>
+</p>
+<ul><li>4) Note that you should select set the correct I2C-bus address.
+</li></ul>
+<p>You can see :<br/>
+</p><p><b>terminal:</b><br/>
+<img src="img/Raspberry_Pi_Relay_Board_v1.0_p5.jpg" width="600"/><br/>
+<b>Raspberry Pi Relay Board v1.0:</b><br/>
+Which relay is turn on ,the corresponding LED will also turn on.<br/>
+<img src="img/Raspberry_Pi_Relay_Board_v1.0_p6.jpg" width="600"/><br/>
+</p>
+<h2>  Resource </h2>
+<p><a href="res/Raspberry_Pi_Relay_Board_v1.0_sch_pcb.zip">Raspberry_Pi_Relay_Board_v1.0_sch_pcb</a><br/>
+<a href="res/HLS8L.pdf">HLS8L</a><br/>
+<a href="res/PCAL9535A.pdf">PCAL9535A</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

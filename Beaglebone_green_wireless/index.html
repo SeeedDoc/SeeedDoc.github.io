@@ -1,0 +1,630 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Beaglebone green wireless</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Beaglebone green wireless</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/BBGW.png" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>SeeedStudio BeagleBone Green Wireless is the first board in Beaglebone community with wireless connection and <a href="https://en.wikipedia.org/wiki/Bluetooth_low_energy">BLE</a> enabled. SeeedStudio BeagleBone Green Wireless (BBG Wireless) is a joint effort by BeagleBoard.org and Seeed. The wireless and other on-board components make this board become a tiny laptop computer with router functions. The wireless components support MIMO (only dual input in dual out implemented) which makes data transmission quicker. You can also configure the <a href="https://en.wikipedia.org/wiki/Wireless_access_point">AP</a> mode of this development board to set it as a mobile router. We also provide highly adapted <a href="http://iotdk.intel.com/docs/master/upm/index.html">UPM</a> libraries to make programming work easy and universal. Combined with rich <a href="/Grove_System">Grove</a> sensor, you can build more powerful and interesting IoT projects.
+</p><p>SeeedStudio BeagleBone Green Wireless is integrated with AM3358 1GHz ARM® Cortex-A8 processor, 512MB DDR3 RAM, 3D graphics accelerator, NEON floating-point accelerator, 2x PRU 32-bit microcontrollers, Wi-Fi 802.11 b/g/n 2.4GHz and Bluetooth 4.1 LE technology, four USB 2.0(host) ports, and two Grove sockets. It Supports AP and Station mode of communication.
+This board also complies with Bluetooth Advanced Audio Distribution Profile (A2DP). You can also use <a href="http://iotdk.intel.com/docs/master/mraa/">MRAA</a> library to develop applications with this board.
+</p><p>Using this board is easy. For a beginner, we provided recoded and specialized UPM library for our dozens of sensors (We will add more of this kind APIs). With Grove modules, you can build your prototypes just by connect a module to BBG Wireless with Grove cables and call those highly abstracted APIs to execute intended behaviors. You can still use pin-connections and MRAA library, <a href="http://beagleboard.org/support/bonescript">Bonescript</a> and other capes (expansion functional boards in BeagleBone community). We also provide a <a href="http://www.seeedstudio.com/depot/Grove-Base-Cape-for-Beaglebone-v20-p-2644.html?cPath=122_113">Grove Base Cape</a> for the situations of an amount of Grove modules to be connected.
+</p><p><br/>
+</p>
+<h3> Version Tracker</h3>
+<table>
+<tr>
+<td>Product version </td>
+<td> Release date</td>
+<td> Support status </td>
+<td> Notes
+</td></tr>
+<tr>
+<td> SeeedStudio BeagleBone Green Wireless(v1.0, latest version) </td>
+<td> May 2016 </td>
+<td> Supported </td>
+<td> None
+</td></tr></table>
+<p><br/>
+<a href="http://www.seeedstudio.com/depot/SeeedStudio-BeagleBone-Green-Wireless-p-2650.html?cPath=122_113"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li>The first Wi-Fi + Bluetooth Low Energy (BLE) board among BeagleBone community
+</li><li>Built-in 2.4 GHz TI WLinkTM8 Module with two antenna
+</li><li>Onboard chip antenna
+</li><li>IEEE 802.11b/g/n compliant(Wi-Fi)
+</li><li>FCC, IC, ETSI/CE, and TELEC certified
+</li><li>Supports AP+STA mode of communication
+</li><li>Comply with Bluetooth Advanced Audio Distribution Profile (A2DP)
+</li><li>Supports MRAA library and UPM library
+</li></ul>
+<h2> Specifications</h2>
+<table>
+<tr>
+<td> Processor </td>
+<td>  Sitara AM3358BZCZ100 1GHz, 2000 MIPS
+</td></tr>
+<tr>
+<td> Power Source </td>
+<td> Micro type B USB Jack, 5 volts DC
+</td></tr>
+<tr>
+<td> Graphics Engine </td>
+<td> SGX530 3D, 20M Polygons/S
+</td></tr>
+<tr>
+<td> SDRAM Memory  </td>
+<td>  512MB DDR3L 933 MHz
+</td></tr>
+<tr>
+<td> On-board Flash </td>
+<td> 4GB, 8-bit Embedded MMC
+</td></tr>
+<tr>
+<td> LED Indicators </td>
+<td> one for power, one for USB, one for WiFi, one for Bluetooth and four User Controllable LEDs
+</td></tr>
+<tr>
+<td> HS USB 2.0 Client Port </td>
+<td> Access to USB0, Client mode via Micro Type-B USB
+</td></tr>
+<tr>
+<td> HS USB 2.0 Host Port </td>
+<td> Access to USB1, Type A Socket, Total 1500mA LS/FS/HS, 4-Port hub
+</td></tr>
+<tr>
+<td>Serial Port </td>
+<td> UART0 access via 6 pin 3.3V TTL Header
+</td></tr>
+<tr>
+<td> WLAN/Bluetooth </td>
+<td> 2 MIMO Wi-Fi<sup>®</sup>, Bluetooth<sup>®</sup>, and Bluetooth Low Energy (LE)
+</td></tr>
+<tr>
+<td> SD/MMC Connector </td>
+<td>  microSD , 3.3V
+</td></tr>
+<tr>
+<td> Grove sockets </td>
+<td> one UART, one I2C sockets
+</td></tr>
+<tr>
+<td> User Input</td>
+<td> Reset Button
+<p>Boot Button
+Power Button
+</p>
+</td></tr>
+<tr>
+<td> Video Out </td>
+<td>  none(HDMI socket removed)
+</td></tr>
+<tr>
+<td> Audio Out  </td>
+<td> Via A2DP(Advanced Audio Distribution Profile)
+</td></tr>
+<tr>
+<td> Expansion Connectors </td>
+<td> McASP0, SPI1, I2C, GPIO (69 max), LCD, GPMC, MMC1, MMC2, 7 AIN (1.8V MAX), 4 Timers, 4 Serial Ports, CAN0, EHRPWM(0,2),XDMA Interrupt, Power button, Expansion Board ID (Up to 4 can be stacked)
+</td></tr>
+<tr>
+<td> Expansion Connectors voltage </td>
+<td> Power 5 volts, 3.3 volts, VDD_ADC (1.8 volts)
+</td></tr>
+<tr>
+<td> PCB dimensions </td>
+<td> 86.4 mm(length) x 53.3 mm(width) or 3.4 inches(length) × 2.1 inches(width)
+</td></tr>
+<tr>
+<td>Max height  </td>
+<td> 19 mm(0.776 inches)
+</td></tr>
+<tr>
+<td> RoHS Compliant</td>
+<td> Yes
+</td></tr>
+<tr>
+<td>Weight </td>
+<td> 42 grams(1.48 oz)
+</td></tr></table>
+<p><br/>
+</p>
+<h3> Comparison with BeagleBone Green and BeagleBone Black </h3>
+<table>
+<tr>
+<td> BeagleBoneBlack (BBB)MSRP: US 55 Dollars </td>
+<td> SeeedStudioBeagleBoneGreen (BBG)MSRP: US 39 Dollars </td>
+<td>  SeeedStudioBeagleBoneGreen Wireless（BBGWireless）MSRP: US 44.9 Dollars
+</td></tr>
+<tr>
+<td> Processor: AM3358 1GHz ARM® Cortex-A8 </td>
+<td>  Processor: AM3358 1GHz ARM® Cortex-A8 </td>
+<td>  Processor: AM3358 1GHz ARM® Cortex-A8
+</td></tr>
+<tr>
+<td>  512MB DDR3 RAM</td>
+<td> 512MB DDR3 RAM </td>
+<td>  512MB DDR3 RAM
+</td></tr>
+<tr>
+<td> 4GB 8-bit eMMC on-board flash storage </td>
+<td>  4GB8-bit eMMCon-board flash storage </td>
+<td> 4GB 8-bit eMMC on-board flash storage
+</td></tr>
+<tr>
+<td>3D graphics accelerator  </td>
+<td> 3D graphics accelerator</td>
+<td>3D graphics accelerator
+</td></tr>
+<tr>
+<td>  NEON floating-point accelerator</td>
+<td> NEON floating-point accelerator</td>
+<td>NEON floating-point accelerator
+</td></tr>
+<tr>
+<td> 2x PRU 32-bit microcontrollers</td>
+<td>2x PRU 32-bit microcontrollers</td>
+<td>2x PRU 32-bit microcontrollers
+</td></tr>
+<tr>
+<td>  USB client for power &amp; communications</td>
+<td>  USB client for power &amp; communications</td>
+<td>USB client for power &amp; communications
+</td></tr>
+<tr>
+<td> One USB host</td>
+<td> One USB host</td>
+<td><span style="color: red">Four USB host</span>
+</td></tr>
+<tr>
+<td> Ethernet</td>
+<td> Ethernet</td>
+<td><span style="color: red">Wi-Fi 802.11 b/g/n 2.4 GHz and Bluetooth 4.1 LE</span>
+</td></tr>
+<tr>
+<td> 2×46 pin headers</td>
+<td>  2×46 pin headers</td>
+<td>2×46 pin headers
+</td></tr>
+<tr>
+<td>  HDMI port </td>
+<td> Two Grove connectors </td>
+<td> Two Grove connectors
+</td></tr></table>
+<h2> Hardware Overview </h2>
+<h4>  SeeedStudio BeagleBone Green Wireless hardware details </h4>
+<p><img src="img/MyWrok1.jpg" width="700"/>
+</p>
+<table>
+<tr>
+<th>No.   </th>
+<th> Name</th>
+<th> Function
+</th></tr>
+<tr>
+<td>1 </td>
+<td>LEDs</td>
+<td> Indicates the system status
+</td></tr>
+<tr>
+<td>2 </td>
+<td> Reset Button </td>
+<td> Allow the user to reset the processor
+</td></tr>
+<tr>
+<td>3 </td>
+<td> Power Button </td>
+<td> Initiate the power down sequence
+</td></tr>
+<tr>
+<td>4 </td>
+<td> P8 </td>
+<td> I/O expansion connector
+</td></tr>
+<tr>
+<td>5 </td>
+<td> eMMC </td>
+<td> On board MMC chip that holds up to 4GB of data
+</td></tr>
+<tr>
+<td>6 </td>
+<td> User &amp; Boot Button </td>
+<td> Force to boot from Micro SD Card or Switch the Wi-Fi mode between AP and station mode
+</td></tr>
+<tr>
+<td>7 </td>
+<td> Grove Interface </td>
+<td> Grove – UART Port
+</td></tr>
+<tr>
+<td>8 </td>
+<td> Grove Interface </td>
+<td> Grove – I2C Port
+</td></tr>
+<tr>
+<td>9 </td>
+<td> DDR3 </td>
+<td> 512MB DDR3 is the Dual Data Rate RAM memory
+</td></tr>
+<tr>
+<td>10 </td>
+<td> Processor </td>
+<td> Sitara AM3358BZCZ100 is the processor of the board
+</td></tr>
+<tr>
+<td>11 </td>
+<td> USB Hub Controller </td>
+<td> GL852G USB 2.0 MTT Hub Controller
+</td></tr>
+<tr>
+<td>12 </td>
+<td> Wi-Fi&amp;BT Module </td>
+<td> TI WiLink 8(WL1835/WG7835-V0) IEEE 802.11b/g/n, Bluetooth.Bluetooth LE, SISO&amp; MIMO supported
+</td></tr>
+<tr>
+<td>13 </td>
+<td> USB Host*4 </td>
+<td> Connect different USB interfaces such as Wi-Fi, BT, Keyboard, etc. Can power up to 1.5A
+</td></tr>
+<tr>
+<td>14 </td>
+<td> TPS65217C </td>
+<td> Provides the power rails to the various components on the board.
+</td></tr>
+<tr>
+<td>15 </td>
+<td> Serial Debug </td>
+<td> Serial Debug Port
+</td></tr>
+<tr>
+<td>16 </td>
+<td> P9 </td>
+<td> I/O expansion connector
+</td></tr>
+<tr>
+<td>17 </td>
+<td> Antenna base </td>
+<td> Increase the signal strength
+</td></tr>
+<tr>
+<td>18 </td>
+<td> Antenna base </td>
+<td> Increase the signal strength
+</td></tr>
+<tr>
+<td>19 </td>
+<td> USB Client </td>
+<td> Connect to a PC that can also power the board
+</td></tr>
+<tr>
+<td>20 </td>
+<td> Micro SD Slot </td>
+<td> A place where micro SD card can be installed
+</td></tr></table>
+<p><b>Note</b> that DO take care as you handle the USB micro type-B socket, or you might break the socket off.
+</p>
+<h3> expansion Headers</h3>
+<p><b>Note</b> that The expansion interface on the board is comprised of two 46 pin connectors. All signals on the expansion headers are 3.3V unless otherwise indicated.
+</p><p><b>Note</b> that do not connect 5V logic level signals to these pins or the board will be damaged. We do not recommend that using other ways to power up this board except powering up with USB cable.
+</p><p>The expansion headers provide extensive I/O capabilities.
+</p>
+<h4> Expansion Headers</h4>
+<p>Each digital I/O pin has 8 different modes that can be selected, including GPIO.
+</p><p><img src="img/BbgW_header.jpg" width="772"/>
+</p>
+<h4>  65 Possible Digital I/Os</h4>
+<p>In GPIO mode, each digital I/O can produce interrupts.
+</p><p><img src="img/Bbg_header_2.jpg" width="697"/>
+</p><p><br/>
+</p>
+<h4>  PWMs and Timers </h4>
+<p>Up to 8 digital I/O pins can be configured with pulse-width modulators (PWM) to produce 
+</p><p>signals to control motors or create pseudo analog voltage levels, without taking up any extra 
+</p><p>CPU cycles.
+</p><p><img src="img/Bbg_header_3.jpg" width="695"/>
+</p><p><br/>
+</p>
+<h4>  Analog Inputs </h4>
+<p>Make sure you don't input more than 1.8V to the analog input pins. This is a single 12-bit 
+</p><p>analog-to-digital converter with 8 channels, 7 of which are made available on the headers.
+</p><p><img src="img/Bbg_header_4.jpg" width="698"/>
+</p><p><br/>
+</p>
+<h4>  UART </h4>
+<p>There is a dedicated header for getting to the UART0 pins and connecting a debug cable. 
+</p><p>Five additional serial ports are brought to the expansion headers, 
+</p><p>but one of them only has a single direction brought to the headers.
+</p><p><img src="img/Bbg_header_5.jpg" width="696"/>
+</p><p><br/>
+</p>
+<h4>  I2C </h4>
+<p>The first I2C bus is utilized for reading EEPROMS on cape add-on boards and can't be used for 
+</p><p>other digital I/O operations without interfering with that function, but you can still use it 
+</p><p>to add other I2C devices at available addresses.
+</p><p>The second I2C bus is available for you to configure and use.
+</p><p><img src="img/Bbg_header_6.jpg" width="698"/>
+</p><p><br/>
+</p>
+<h4>  SPI </h4>
+<p>For shifting out data fast, you might consider using one of the SPI ports.
+</p><p><img src="img/Bbg_header_7.jpg" width="695"/>
+</p>
+<h3> <b>Package includes</b>(main parts) </h3>
+<table>
+<tr>
+<th>Parts name   </th>
+<th> Quantity
+</th></tr>
+<tr>
+<td>  SeeedStudio BeagleBone Green Wireless  </td>
+<td> one piece
+</td></tr>
+<tr>
+<td>User manual(brief copy)</td>
+<td> one piece
+</td></tr>
+<tr>
+<td>USB cable (Type-A to micro Type-B) × 1 </td>
+<td> one piece
+</td></tr></table>
+<h2> Preliminary work for programming</h2>
+<h3> Use station mode to connect local web server</h3>
+<dl><dd> 1. Once you have connected BBG Wireless to your computer or Mac with USB cables (type A to micro type B). A folder will pop up and you click the file <b>START.htm</b>. Then follow guidance to install driver. You can visit the site <a href="http://beagleboard.org/getting-started#step2">http://beagleboard.org/getting-started#step2</a> (only step2) to install driver. After you have driver installed successfully, you are connected to Internet with station mode. And you can visit the web server (a local server is built on BBG Wireless system) to by click: <a href="http://192.168.7.2">http://192.168.7.2</a>. 
+</dd><dd> <b>Note</b> that in some cases, you may need to change a web browser to login the local server.
+</dd></dl>
+<dl><dd> 2. Communicate with BBG Wireless system with SSH client. After login to local web server successful, Open an SSH client such as putty. Then select protocol SSH, input server IP <b>192.168.7.2</b> and use default port <b>22</b>. Click <b>Yes</b> after that a confirming dialog pops up. Now you configure the embedded system (a Debian Linux distributions) on BBG Wireless. For other SSH clients, the responses from may differ, but you can still use the host information mentioned to connect with embedded system. 
+</dd></dl>
+<dl><dd> <b>Note</b> that And in general, you shall create a password of accessing your board's AP, the command to change password in terminal is: <b>echo "xxxxxx" &gt; /etc/wificonfig/password</b>
+</dd></dl>
+<h3> Use AP mode to connect local web server </h3>
+<dl><dd> In rare cases, you might need to connect local server in a wireless manner. Once you have connected BBG Wireless to your computer or Mac with USB cables. On a Wi-Fi enabled computer or a laptop Mac, you can find an AP named BeagleBone<i>xxxx</i>. Connect this AP and click <a href="http://192.168.8.1">http://192.168.8.1</a>. Then you will login to the local server in BBG Wireless.
+</dd><dd> <b>Note</b> that in some cases, you may need to change a web browser to login the local server. 
+</dd></dl>
+<h3> Connect another device with AP provided by BBG Wireless</h3>
+<dl><dd> One of biggest feature of BBG Wireless is that it can be used a router. Connect your another Wi-Fi enabled device to the AP BeagleBone<i>xxxx</i>. Open your browser and type 192.168.8.1 in the address bar. Then select another Wi-Fi network name which can be connected to Internet and its password as following figure shows. <b>Tip:</b> use the arrow to up or bottom to switch different input box on phones. 
+</dd></dl>
+<dl><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_AP_in_another_device_1_600.png" width="600"/></div></div>
+</dd><dd> <b>Tip:</b> In some device such as Iphone, you may not have to input 192.168.8.1 in Wi-Fi enabled device's browser address bar, the device will switch to Wi-Fi connection page in browser automatically.
+</dd><dd> Click <b>OK</b> and wait few seconds, after then your device are connected to the Local area network which is consist of BBG Wireless and your device. We will improve this functionality to make it connect to Internet rather than a local area network.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_AP_in_another_device_2_600.png" width="600"/></div></div>
+</dd></dl>
+<p><br/>
+</p>
+<h3> Update to latest image</h3>
+<dl><dd> You can find a guidance for updating to latest image at: <a href="https://beagleboard.org/getting-started#update">https://beagleboard.org/getting-started#update</a>.
+</dd><dd> <b>Note</b> that you need to select the image that is fit for BBG Wireless.
+</dd><dd> <span style="color: red">Note</span> that only v8.4 or above versions of image file can be used flashed to SeeedStudio BeagleBone Green Wireless .
+</dd><dd> <b>Tip</b> You can find latest and stable images for BBGW at <a href="https://beagleboard.org/latest-images">https://beagleboard.org/latest-images</a>. You can find all newest and testing images at <a href="https://rcn-ee.net/rootfs/bb.org/testing/2016-06-06/seeed-iot/">https://rcn-ee.net/rootfs/bb.org/testing/2016-06-06/seeed-iot/</a>. For latter address in this paragraph, all images for BBG Wireless are under a folder named <b>seeed-iot</b>, you can change directory to find latest ones.  <b>Note</b> that only the file with the string <i>blank</i> in its file name is suitable for updating. 
+</dd></dl>
+<h4> Extra operations to updating BBG Wireless</h4>
+<dl><dd> 1. Use the way mentioned to connect SSH client with BeagleBone Wireless to access operation system(Debian) embedded.
+</dd><dd> 2. We suppose you that you have written fitting image to a micro SD card. And you have root privilege right now. Insert microSD card to the slot on the back side of BBG Wireless. Run following code in a terminal to before you insert microSD card, run following code again after you insert microSD card. You will find another MMC device which may contain string <b>mmcblk1p1</b>. So you have inserted correctly. 
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> ls <span class="sy2">/</span>dev<span class="sy2">/</span>mmc<span class="sy2">*</span></pre></div></div>
+<dl><dd> 3. Run following code to mount the microSD card device.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">mount <span class="sy2">/</span>dev<span class="sy2">/</span>mmcblk1p1 <span class="sy2">/</span>mnt</pre></div></div>
+<dl><dd> <b>Note</b> that  replace <b>mmcblk1p1</b> to your actual device name. But the the device name must contains string <b>p</b>. 
+</dd><dd> 4. Use the utility Vim to edit a file named <b>uEnv.txt</b> under folder <b>/mnt/boot/</b>. Run following code.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">vim <span class="sy2">/</span>mnt<span class="sy2">/</span>boot<span class="sy2">/</span>uEnv.<span class="me1">txt</span></pre></div></div>
+<dl><dd> 5. Disable the last line <b>cmdline=init=/opt/scripts/tools/eMMC/init-eMMC-flasher-v3.sh</b> by add symbol <b>#</b> to the begin of the code line.
+</dd><dd> 6. Save and exit. Visit web page <a href="http://unix.stackexchange.com/questions/93144/exit-vim-more-quickly">http://unix.stackexchange.com/questions/93144/exit-vim-more-quickly</a> to see how to do it. Now you can re-power your BBG wireless. And then the image updating process start automatically. You probably need to wait about eight minutes before updating process finish. After update process finishes, you can see USR LEDs light on in default configurations. Visit web page <a href="http://beagleboard.org/getting-started#step1">http://beagleboard.org/getting-started#step1</a> to know its default configurations.
+</dd></dl>
+<h3> Open IDEs</h3>
+<p>After login to the local web server, you can open IDEs at the left column by clicking <b>Node-RED</b> and <b>Cloud9</b>. We will describe how to use both IDE later.
+<b>Note</b> that in some cases, you may need to change a web browser to login the local server.
+</p>
+<h2> Programming on this board </h2>
+<p>Now let us get started with how to program on this board. For BeagleBone community, there are two main category libraries (or SDK): BoneScript, MRAA(UPM) library. <a href="http://beagleboard.org/support/BoneScript/">BoneScript</a> is a library developed by BeagleBone community and has Arduino-library-like JavaScript APIs. We have constructed local IDEs <a href="http://nodered.org/">Node-RED</a> and <a href="https://c9.io/">Cloud9</a> in BeagleBone Wireless system or build a JavaScript IDE by yourself to run codes written with BoneScript library. Because of that BoneScript only cover basic operations, so it may usually take more time for a big coding project.
+</p><p><a href="https://github.com/Pillar1989/mraa">MRAA</a> library is development by Intel and we recoded it to make it more convenient to use. <a href="https://github.com/Pillar1989/upm/tree/master">UPM</a> library is just a more abstracted and encapsulated library from MRAA library. This library covers more detailed and complicated operations for BBG wireless. UPM library is targeted for programming on different functional modules such as a sensor, actuator or motors. We recommend that you use UPM library to develop applications or projects. Also, you can use embedded IDE Node-RED or Cloud9 or build your own IDE.
+</p><p><b>Tip:</b> Down a <a href="res/MRAA_Mappings.zip">MRAA mapping reference</a> to find Pin mapping between MRAA and BBGW.
+</p><p>We will show the details to build an application with different libraries as following.
+</p><p><br/>
+</p>
+<h3> A example with BoneScript and Node-RED</h3>
+<p>This example shows a <i><b>hello world</b></i> like demo in elections domain.
+</p>
+<dl><dd> 1. After login to local web server, open Node-RED IDE by click <a href="http://192.168.7.2:1880/">http://192.168.7.2:1880/</a> if you use USB-cable connection. Click only <a href="http://192.168.8.1:1880">http://192.168.8.1:1880</a> if you use AP mode connection to your development environments. We use cable-connection in this case.
+</dd><dd> 2. Select a <b>inject</b> node in <b>input</b> category, drag it to workspace. Double click it and type information as follows. The node will be input of this flow.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_1_600.png" width="600"/></div></div>
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_2_600_s.png" width="600"/></div></div>
+</dd><dd> <b>Tip:</b> you can find enough information about current node <b>in info</b> tab in right column of this IDE.
+</dd><dd> 3. Create another <b>inject</b> node on workspace and input following information. The node will be input of this flow.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_4_600_s.png" width="600"/></div></div>
+</dd><dd> 4. Select a <b>BBB discrete</b>(output) node in BeagleBone category. Drag it to workspace on right of previous nodes as following image shows. 
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_3_600.png" width="600"/></div></div>
+</dd><dd> 5. Configure the <b>BBB discrete</b> node as following image shows.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_5_600_s.png" width="600"/></div></div>
+</dd><dd> 6. Connect input and output nodes. Place cursor to the right square of <b>inject</b> node until it is filled red color. Drag cursor onto the left square of <b>BBB discrete</b>(output) node and release cursor. Then you have made a connection between input and output nodes. And you can make another connection between lower <b>inject</b> node with <b>BBB discrete</b>(output) node in the same way.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_6_600_s.png" width="600"/></div></div>
+</dd><dd> 7. Click the <b>deploy</b>    button (in red background) on top-right of IDE to run code on BBG Wireless.
+</dd><dd> 8. Click the buttons (the square filled with blue color lies left of an arrow) on left side of the input nodes, you can find a the USR3 LED is turned on or off. Note that if the USR3 is already blink, use USR2 LED or other USR LEDs instead in coding.
+</dd></dl>
+<h3> A example with BoneScript and Cloud9</h3>
+<p>This example shows you 
+</p>
+<dl><dd> 1. After login to local web server, open Cloud9 IDE by clicking <a href="http://192.168.7.2:3000/">http://192.168.7.2:3000/</a> if you use a USB cable connection. Click <a href="http://192.168.8.1:3000">http://192.168.8.1:3000</a> if you use AP mode connection to your development environments. We use cable-connection in this case.
+</dd><dd> 2. You can a visit <a href="http://beagleboard.org/Support/bone101/#cloud9">http://beagleboard.org/Support/bone101/#cloud9</a> to know how to run a basic example in Cloud9.
+</dd></dl>
+<h3> A example with UPM and Node-RED</h3>
+<h4> Material required</h4>
+<ul><li><a href="https://www.seeedstudio.com/item_detail.html?p_id=1243">Grove - Button(P)</a> × 1
+</li><li>USB cable (type A to type B, for Arduino) × 1 or USB cable (Type-A to micro Type-B, for Seeeduino) × 1
+</li><li>BBG Wireless × 1
+</li><li>Jumper wire × 3
+</li></ul>
+<h4> Coding work</h4>
+<dl><dd> 1. After you login to local web server, open Node-RED IDE.
+</dd></dl>
+<dl><dd> 2. Select a <b>Grove Button</b> node in <b>Grove_sensors</b> category, drag it to workspace. Double click it and type information as follows.  
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_8_600_s.png" width="600"/></div></div>
+</dd><dd> 3. Soldering jumper wires to Grove-button pins.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_with_button_01_1200_s.jpg" width="600"/></div></div>
+</dd><dd> 4. Select a <b>BBB discrete</b>(output) node in BeagleBone category. Drag it to workspace on right of previous nodes as following image shows. 
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_9_600_s.png" width="600"/></div></div>
+</dd><dd> 5. Connect <b>Grove Button</b> node to <b>BBB discrete</b>(output) node in the way mentioned before.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_10_600_s.png" width="600"/></div></div>
+</dd></dl>
+<dl><dd> 6. Plug GNG jumper wire (the jumper wire be connected to GND pin on Grove - Button LED) to GND pins on BBG Wireless expansion headers such as pin 1 in the P9 connector. Plug SIG jumper wire (the jumper wire be connected to SIG pin on Grove - button) to pin 12 on the P9 connector of BBG Wireless expansion headers. Plug VCC jumper wire (the jumper wire be connected to VCC pin on Grove - button) to VDD pins on BBG Wireless expansion headers such as pin 4 in the P9 connector. 
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_with_button_02_1200_s.jpg" width="600"/></div></div>
+</dd><dd> 7. Click deploy in Node-RED IDE to run codes on BBG Wireless.
+</dd></dl>
+<dl><dd> 8. Press and release button, you can see LED on and off respectively.
+</dd></dl>
+<h3> A example with UPM and Cloud9</h3>
+<h4> Material required</h4>
+<ul><li><a href="http://www.seeedstudio.com/depot/Grove-Multi-Color-Flash-LED-5mm-p-1141.html?cPath=81_35">Grove - Multi Color Flash LED (5mm)</a> × 1
+</li><li>USB cable (type A to type B, for Arduino) × 1 or USB cable (Type-A to micro Type-B, for Seeeduino) × 1
+</li><li>BBG Wireless × 1
+</li><li>Jumper wire × 3
+</li></ul>
+<h4> Coding work</h4>
+<p>This example shows how to read signal from a digital pin.
+</p>
+<dl><dd> 1. After login to local web server, open Cloud9 IDE.
+</dd></dl>
+<dl><dd> 2. You can find more demo sketch at <a href="https://github.com/Seeed-Studio/upm">https://github.com/Seeed-Studio/upm</a> and development library at <a href="https://github.com/Seeed-Studio/upm/tree/BBGW/src">https://github.com/Seeed-Studio/upm/tree/BBGW/src</a>. 
+</dd><dd> Note that only several modules (listed in <b>Grove_sensors</b> category of Node-RED IDE)' UPM libraries and its examples have been tested, other modules' UPM libraries and its examples have not been tested yet. We will catch up as soon as possible. 
+</dd></dl>
+<dl><dd> 3. Soldering jumper wires to Grove-button pins.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_with_button_01_1200_s.jpg" width="600"/></div></div>
+</dd></dl>
+<dl><dd> 4. Connect <b>Grove Button</b> node to <b>BBB discrete</b>(output) node in the way mentioned.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_node-red_input_10_600_s.png" width="600"/></div></div>
+</dd></dl>
+<dl><dd> 5. Copy following code to Cloud9, save it to a <b>.js</b> file.  
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ Get input form Grove-button and print its current state one time in a second
+ */</span>
+ 
+<span class="co1">// Load Grove module</span>
+var groveSensor <span class="sy1">=</span> require<span class="br0">(</span><span class="st0">'jsupm_grove'</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">// Create the button object using GPIO pin 60</span>
+var button <span class="sy1">=</span> <span class="kw3">new</span> groveSensor.<span class="me1">GroveButton</span><span class="br0">(</span><span class="nu0">60</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">// Read the input and print, waiting one second between readings</span>
+function readButtonValue<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    console.<span class="kw3">log</span><span class="br0">(</span>button.<span class="me1">name</span><span class="br0">(</span><span class="br0">)</span> <span class="sy2">+</span> <span class="st0">" value is "</span> <span class="sy2">+</span> button.<span class="me1">value</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+setInterval<span class="br0">(</span>readButtonValue, <span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<dl><dd> 6. Click <b>Run</b> in Cloud9 IDE to run codes on BBG Wireless.
+</dd></dl>
+<dl><dd> 7. Wait about 10 seconds to view output at the bottom of Cloud9 IDE. The output probably looks like following image showing.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_demo_with_Cloud9_1_600_s.png" width="600"/></div></div>
+</dd></dl>
+<dl><dd> <b>Tip:</b> for more advanced demos, please visit <a href="http://www.seeed.cc/projects.html?t=BeagleBone">http://www.seeed.cc/projects.html?t=BeagleBone</a>.
+</dd></dl>
+<dl><dd> <b>Tip:</b> in UPM and MRAA libraries, you rarely can find that a library or example file's name is same with our products' name. Because we have to write code for the chip used inside a product rather than for the whole product.
+</dd></dl>
+<h3> A example with MRAA library and Cloud9</h3>
+<p>This example will make little noise with a buzzer.
+</p>
+<h4> Material required</h4>
+<ul><li><a href="http://bz.seeedstudio.com/depot/Grove-Buzzer-p-768.html">Grove - Buzzer</a> × 1
+</li><li>BBG Wireless × 1
+</li><li>USB cable (type A to type B, for Arduino) × 1 or USB cable (Type-A to micro Type-B, for Seeeduino) × 1
+</li><li>Jumper wire × 3
+</li></ul>
+<h4> Coding work</h4>
+<dl><dd> 1. After login to local web server, open Cloud9 IDE.
+</dd><dd> 2. You can find more demo sketch at <a href="https://github.com/Pillar1989/mraa/tree/BBGW/examples">https://github.com/Pillar1989/mraa/tree/BBGW/examples</a>.
+</dd><dd> 3. Soldering jumper wires to Grove-button pins.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_wiki_demo_of_using_MRAA_library.jpg" width="600"/></div></div>
+</dd><dd> 4. Connect <b>Grove - Buzzer</b> to BBG Wireless.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_Wireless_wiki_demo_of_using_MRAA_library_conneciton.jpg" width="600"/></div></div>
+</dd><dd> 5. Create a Python file named <b>buzzing.py</b> in Cloud9 IDE and save it.
+</dd><dd> 6. Copy and paste following code into the file <b>buzzing.py</b> and Click <b>Run</b> button to run the code. 
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">import mraa
+import <span class="kw3">time</span>
+ 
+<span class="co2"># Using BBG Wireless pin P9_14</span>
+x <span class="sy1">=</span> mraa.<span class="me1">Gpio</span><span class="br0">(</span><span class="nu0">60</span><span class="br0">)</span>
+x.<span class="me1">dir</span><span class="br0">(</span>mraa.<span class="me1">DIR_OUT</span><span class="br0">)</span>
+ 
+<span class="kw1">while</span> True<span class="sy4">:</span>
+    x.<span class="kw3">write</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span> <span class="co1">//send a high level digital signal to pin P9_14</span>
+    <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu16">0.5</span><span class="br0">)</span> <span class="co1">//set duration </span>
+    x.<span class="kw3">write</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="co1">//send a low level digital signal to pin P9_14</span>
+    <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu16">0.5</span><span class="br0">)</span><span class="co1">//set duration</span></pre></div></div>
+<h3> Play music over Bluetooth</h3>
+<p>This board features blooth communicatioin. And this example will show you how to play music over bluetooth.
+</p>
+<pre>====Material required====
+</pre>
+<ul><li>Bluetooth speaker × 1
+</li><li>BBG Wireless × 1
+</li><li>USB cable (type A to type B, for Arduino) × 1 or USB cable (Type-A to micro Type-B, for Seeeduino) × 1
+</li><li>MicroSD card × 1 (with music files of MP3 format)
+</li></ul>
+<h4> Steps to play music with BBG Wireless</h4>
+<dl><dd> 1. Power your BBG Wireless up with USB cable. 
+</dd><dd> 2. Build serial communication between BBG Wireless and host computer through SSH terminal emulators. In this case we use xshell.
+</dd><dd> 3. Run following command to start Bluetooth service.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="st0">''</span><span class="st0">'bb-wl18xx-bluetooth'</span><span class="st0">''</span></pre></div></div>
+<dl><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_W_demo_command_bb-wl18xx-bluetooth_s.png" width="600"/></div></div>
+</dd><dd> 4. Run follwing command to enter Bluetooth configuration environment.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+bluetoothctl</pre></div></div>
+<dl><dd> 5. Run following command to scan your Bluetooth devices. It will take several minutes to find out your Bluetooth speaker. You can use device identifier number or device name to recognize your device. In this case, our device name is <b>301</b>. The output of terminal emulator probably like following image.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">scan on</pre></div></div>
+<dl><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_W_demo_command_scan_on_600_s.png" width="600"/></div></div>
+</dd><dd> 6. Run following command to stop scanning devices.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">scan off</pre></div></div>
+<dl><dd> 7. Run following command to pair your Bluetooth with BBG Wireless. The output of terminal emulator probably like following image.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">pair <span class="nu0">78</span><span class="sy4">:</span><span class="nu19">09</span><span class="sy4">:</span><span class="nu0">73</span><span class="sy4">:</span>C8<span class="sy4">:</span><span class="nu0">77</span><span class="sy4">:</span><span class="nu0">50</span></pre></div></div>
+<dl><dd> <b>Note</b> that replace device identifier number to actual device identifier number of your Bluetooth speaker.
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_W_demo_command_pair_device_600_s.png" width="600"/></div></div>
+</dd><dd> 8. Run following command to ensure your Bluetooth speaker is trusted by BBG Wireless.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">trust <span class="nu0">78</span><span class="sy4">:</span><span class="nu19">09</span><span class="sy4">:</span><span class="nu0">73</span><span class="sy4">:</span>C8<span class="sy4">:</span><span class="nu0">77</span><span class="sy4">:</span><span class="nu0">50</span></pre></div></div>
+<dl><dd> 9. Run following command to let BBG Wireless connect to Bluetooth speaker. The output of terminal emulator probably like following image.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw3">connect</span> <span class="nu0">78</span><span class="sy4">:</span><span class="nu19">09</span><span class="sy4">:</span><span class="nu0">73</span><span class="sy4">:</span>C8<span class="sy4">:</span><span class="nu0">77</span><span class="sy4">:</span><span class="nu0">50</span></pre></div></div>
+<dl><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_W_demo_command_connect_device_600_s.png" width="600"/></div></div>
+</dd><dd> 10. Run following command to quit Bluetooth configuration environment.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">quit</pre></div></div>
+<dl><dd> 11. Run following command to find your device file in Linux files system, after you insert your MicroSD into SD card slot.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> ls <span class="sy2">/</span>dev<span class="sy2">/</span>mmc<span class="sy2">*</span></pre></div></div>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_W_demo_command_ls_device_files_600_s.png" width="600"/></div></div>
+<dl><dd> 12. Run following command to mount MicroSD card to files the directory  <b>/mnt/</b>.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> mount <span class="sy2">/</span>dev<span class="sy2">/</span>mmcblk0p5 <span class="sy2">/</span>mnt<span class="sy2">/</span></pre></div></div>
+<dl><dd> <b>Note</b> that replace <b>mmcblk1p1</b> to your actual device name. 
+</dd><dd> 13. Run following command to play your music. The output of terminal emulator probably like following image.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">mpg123 <span class="sy2">/</span>mnt<span class="sy2">/</span><span class="nu0">1</span>.<span class="me1">mp3</span></pre></div></div>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/BBG_W_demo_command_mpg123_600_s.png" width="600"/></div></div>
+<dl><dd> <b>Note</b> that <b>mpg123</b> is utility in Linux environment to open a music file of MP3 format. And replace the music filename <b>1.mp3</b> with actual music file names.
+</dd></dl>
+<h2> Make an Acrylic Case for BBGW</h2>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.instructables.com/id/5-Design-of-Laser-Cut-Cases-for-5-Popular-Platform/"><img src="img/Bbgw_case.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>If you need an acrylic case to protect your BBGW.
+</p><p>There's a tutorial to help you to make one. (click image)
+</p><p><a href="http://www.instructables.com/id/5-Design-of-Laser-Cut-Cases-for-5-Popular-Platform/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="http://www.seeed.cc/projects.html?t=BeagleBone">More demos</a>
+</li><li><a href="https://github.com/Seeed-Studio/beaglebone-getting-started/tree/BBGW/Docs/Hardware">Hardware file</a>
+</li><li><a href="https://github.com/Seeed-Studio/beaglebone-getting-started/tree/BBGW/Drivers">Drivers</a>
+</li><li><a href="http://nodered.org/">Node-RED</a>
+</li><li><a href="https://c9.io/">Cloud9</a>
+</li><li><a href="res/MRAA_Mappings.zip">MRAA Mappings for BBG Wireless</a>
+</li><li><a href="http://beagleboard.org/latest-images">System images</a>
+</li><li><a href="https://github.com/Seeed-Studio/beaglebone-getting-started">Flash driver files</a>, almost same with the files on BBG Wireless flash driver (it will pop up as it is booted), but you can find the latest update here.
+</li><li><a href="http://beagleboard.org/support/bonescript">Bonescript Main components data sheet</a>
+</li><li><a href="http://beagleboard.org/support/bonescript">Bonescript BoneScript Documentation</a>
+</li><li><a href="https://github.com/Seeed-Studio/upm">UPM Library and example code</a> on GitHub
+</li><li><a href="https://github.com/Seeed-Studio/mraa">MRAA Library and example code</a> on GitHub
+</li></ul>
+<h2> Is this page helpful</h2>
+<dl><dd> <iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/Y8TVNZ2" width="50%"></iframe>
+</dd></dl>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

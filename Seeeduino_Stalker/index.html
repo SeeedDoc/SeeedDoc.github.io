@@ -1,0 +1,575 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino Stalker</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino Stalker</h1><table>
+<tr>
+<td> <img src="/wiki/images/c/c6/Emo_%EF%BC%81.png" width="50"/>
+</td>
+<td> <div style=""><b>请加入最新stalker 3.0</b>。<a href="http://www.seeedstudio.com/w/index.php?title=Seeeduino_Stalker&amp;action=edit">我来编辑这个条目！</a></div>
+</td></tr></table>
+<p><br/>
+<strong class="selflink">Seeeduino Stalker</strong> is a feature rich Arduino compatible <b>Wireless Sensor Network node</b> with <b>Data logger functionality</b>. Its modular structure and onboard peripherals makes it convenient to log time stamped sensor data on a periodic basis. <strong class="selflink">Seeeduino Stalker</strong> comes with a <i>Temperature sensor, RTC with backup power, SD Card Socket, Bee Socket and Solar LiPoimer Ion Battery Charger</i>. The <strong class="selflink">Seeeduino Stalker</strong> is a good candidate for all your tracking, monitoring and control projects.
+</p><p><br/>
+</p>
+<hr/>
+<p><font color="green"><b>Please note that the current (and also the latest) version of is <a href="/Seeeduino-Stalker_v3" title="Seeeduino-Stalker v3">Seeeduino-Stalker v3</a></b> </font>
+<br/>
+Clicking on the images below will take you to the documentation for the corresponding version.
+</p>
+<table align="left">
+<tr>
+<td> <img src="img/Seeeduino-stalker-168.jpg" width="200"/>
+</td>
+<td> <img src="img/Stalkerv21.jpg" width="200"/>
+</td>
+<td> <img src="img/Seeduino_Stalker_v2.1.jpg" width="200"/>
+</td>
+<td> <img src="img/Seeduino_Stalker_v2.2.jpg" width="200"/>
+</td>
+<td> <img src="img/Seeduino_Stalker_v2.2.jpg" width="200"/>
+</td>
+<td> <img src="img/Seeed_Stalker_v3-6.png" width="200"/>
+</td></tr>
+<tr>
+<td width="300px"><div style="text-align: center"><a href="/Seeeduino_Stalker_v1.0" title="Seeeduino Stalker v1.0">Seeeduino Stalker v1.0</a></div>
+</td>
+<td width="300px"> <div style="text-align: center"><a href="/Seeeduino_Stalker_v2.0" title="Seeeduino Stalker v2.0">Seeeduino Stalker v2.0</a></div>
+</td>
+<td width="300px"><div style="text-align: center"><a href="/Seeeduino_Stalker_v2.1" title="Seeeduino Stalker v2.1">Seeeduino Stalker v2.1</a></div>
+</td>
+<td width="300px"> <div style="text-align: center"><a href="/Seeeduino_Stalker_v2.2" title="Seeeduino Stalker v2.2">Seeeduino Stalker v2.2</a></div>
+</td>
+<td width="300px"> <div style="text-align: center"><a href="/Seeeduino_Stalker_v2.3" title="Seeeduino Stalker v2.3">Seeeduino Stalker v2.3</a></div>
+</td>
+<td width="300px"> <div style="text-align: center"><a href="/Seeeduino-Stalker_v3" title="Seeeduino-Stalker v3">Seeeduino-Stalker v3</a></div>
+</td></tr></table>
+<p><br clear="all"/>
+</p><p><br/>
+</p>
+<h3>  Comparison between various versions of Seeeduino Stalker  </h3>
+<table border="1">
+<tr>
+<th> Parameter
+</th>
+<th> v1.0
+</th>
+<th> v2.0
+</th>
+<th> v2.1
+</th>
+<th> v2.2
+</th>
+<th> v2.3
+</th>
+<th> v3
+</th>
+<th> Remarks
+</th></tr>
+<tr style="font-size: 90%">
+<td width="250"> <b><font color="orange">Product Release Date</font></b>
+</td>
+<td width="150"> <b><font color="orange">23rd Dec 2009</font></b>
+</td>
+<td width="150"> <b><font color="orange">17th Dec 2010</font></b>
+</td>
+<td width="150"> <b><font color="orange">3rd Oct 2011</font></b>
+</td>
+<td width="150"> <b><font color="orange">27th Dec 2011</font></b>
+</td>
+<td width="150"> <b><font color="orange">29th Dec 2011</font></b>
+</td>
+<td width="150"> <b><font color="orange">6th  Jun 2014</font></b>
+</td>
+<td width="300">
+</td></tr>
+<tr style="font-size: 90%">
+<td width="250"> <b>Production Status</b>
+</td>
+<td width="150"> <b><font color="gray">Discontinued</font></b>
+</td>
+<td width="150"> <b><font color="gray">Discontinued</font></b>
+</td>
+<td width="150"> <b><font color="gray">Discontinued</font></b>
+</td>
+<td width="150"> <b><font color="gray">Discontinued</font></b>
+</td>
+<td width="150"> <b><font color="green">In Production</font></b>
+</td>
+<td width="150"> <b><font color="green">In Production</font></b>
+</td>
+<td width="300">
+</td></tr>
+<tr style="font-size: 90%">
+<td> <b>User LED &amp; Switch</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> User LED
+</td>
+<td> PB5 (Arduino Pin 13)
+</td>
+<td> PB0 (Arduino Pin 8)
+</td>
+<td> PB0 (Arduino Pin 8)
+</td>
+<td> PB5 (Arduino Pin 13)
+</td>
+<td> PB5 (Arduino Pin 13)
+</td>
+<td> PB0 (Arduino Pin 13)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> User Switch
+</td>
+<td> PB4 (Arduino Pin 12)
+</td>
+<td> Not Present
+</td>
+<td> Not Present
+</td>
+<td> Not Present
+</td>
+<td> Not Present
+</td>
+<td> Not Present
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> <b>Arduino Compatibility</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Physically compatible with Arduino pinout
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Compatible with Diecimila/Duemilanove/UNO
+</td></tr>
+<tr style="font-size: 90%">
+<td> Software compatible with Arduino
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Bootloader preloaded
+</td></tr>
+<tr style="font-size: 90%">
+<td> Atmega168 variant Available
+</td>
+<td> Yes
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Atmega328 variant Available
+</td>
+<td> No
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> AVRISP 6 Pin header present
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> FT232RL &amp; USB Connector Present
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> In both version "UartSBee V3.1" or <b>V4.0</b> must be brought seperately and used for program downloading using Arduino IDE. A connector to mate to UartSBee is present on both versions. Microcontroller reset will automatically be controlled by DTR. <b><font color="green"></font></b><font color="green"></font>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Standalone Operation
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Operation as a shield for Arduino/Seeeduino
+</td>
+<td> Yes
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td> No
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Can be stacked further in shield mode?
+</td>
+<td> Yes
+</td>
+<td> N.A.
+</td>
+<td> N.A.
+</td>
+<td> N.A.
+</td>
+<td> N.A.
+</td>
+<td> N.A.
+</td>
+<td> Using I<sup>2</sup>C Interface
+</td></tr>
+<tr style="font-size: 90%">
+<td> <b>Real Time Clock</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Chip
+</td>
+<td> DS1307
+</td>
+<td> RX8025
+</td>
+<td> DS3231
+</td>
+<td> DS3231
+</td>
+<td> DS3231
+</td>
+<td> DS1337
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Onboard backup power source
+</td>
+<td> CR2032 Coin Cell
+</td>
+<td> Super Capacitor
+</td>
+<td> CR2032 Coin Cell
+</td>
+<td> CR2032 Coin Cell
+</td>
+<td> CR2032 Coin Cell
+</td>
+<td> CR1220 Coin Cell
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Interface
+</td>
+<td> I<sup>2</sup>C
+</td>
+<td> I<sup>2</sup>C
+</td>
+<td> I<sup>2</sup>C
+</td>
+<td> I<sup>2</sup>C
+</td>
+<td> I<sup>2</sup>C
+</td>
+<td> I<sup>2</sup>C
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> <b>I<sup>2</sup>C Interface</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Connector for direct connection to PC4 and PC5 (ie SCL and SDA) of the microcontroller
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td> Yes
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Onboard level translation for connecting to 5.0 volt devices while microcontroller operates in 3.3v mode
+</td>
+<td> Yes (using PCA9306)
+</td>
+<td> Yes (using N channel enhancement MOSFET)
+</td>
+<td> Yes (using N channel enhancement MOSFET)
+</td>
+<td> Yes (using N channel enhancement MOSFET)
+</td>
+<td> Yes (using N channel enhancement MOSFET)
+</td>
+<td> Yes (using N channel enhancement MOSFET)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> <b>Power Supply</b>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> From DC Supply
+</td>
+<td> Yes (5-12V DC)
+</td>
+<td> Yes (connect to Solar Cell Connector, but apply 5.0 Volts only)
+</td>
+<td> Yes (connect to Solar Cell Connector, but apply 5.0 Volts only)
+</td>
+<td> Yes (connect to Solar Cell Connector, but apply 5.0 Volts only)
+</td>
+<td> Yes (connect to Solar Cell Connector, but apply 5.0 Volts only)
+</td>
+<td> Yes (connect to Solar Cell Connector, but apply 5.0 Volts only)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> From USB
+</td>
+<td> Yes (when used with UartSBee V3.1)
+</td>
+<td> Yes (when used with UartSBee V3.1)
+</td>
+<td> Yes (when used with UartSBee V4.0 or FTDI Cable)
+</td>
+<td> Yes (when used with UartSBee V4.0 or FTDI Cable)
+</td>
+<td> Yes (when used with UartSBee V4.0 or FTDI Cable)
+</td>
+<td> Yes (when used with UartSBee V4.0 or FTDI Cable)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> From Solar Panel
+</td>
+<td> No
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> From Lithium Polymer Battery
+</td>
+<td> No
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td> Yes (Seperate Connector Present)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Battery voltage measurement
+</td>
+<td> No
+</td>
+<td> Yes (Jumper for connecting to ADC7)
+</td>
+<td> Yes (Jumper for connecting to ADC7)
+</td>
+<td> Yes (Jumper for connecting to ADC7)
+</td>
+<td> Yes (Jumper for connecting to ADC7)
+</td>
+<td> Yes (Battery voltage connecting to ADC7)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Battery Charging?
+</td>
+<td> No
+</td>
+<td> Yes (Through solar cell, Managed by CN3063 Chip)
+</td>
+<td> Yes (Through solar cell, Managed by CN3063 Chip)
+</td>
+<td> Yes (Through solar cell, Managed by CN3063 Chip)
+</td>
+<td> Yes (Through solar cell, Managed by CN3063 Chip)
+</td>
+<td> Yes (Through solar cell, Managed by CN3065 Chip)
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Battery Charging Status Read?
+</td>
+<td> No
+</td>
+<td> Yes (Digital Pin 6&amp;7)
+</td>
+<td> Yes (Digital Pin 6&amp;7)
+</td>
+<td> Yes (ADC6)
+</td>
+<td> Yes (ADC6)
+</td>
+<td> Yes (ADC6)
+</td>
+<td>
+</td></tr></table>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

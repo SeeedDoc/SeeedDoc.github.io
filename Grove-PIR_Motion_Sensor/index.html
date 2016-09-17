@@ -1,0 +1,276 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - PIR Motion Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - PIR Motion Sensor</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:352px;"><img src="img/Grove-PIR_Motion_Sensor.jpg" width="350"/> <div class="thumbcaption"></div></div></div>
+<p>This is a simple to use PIR motion sensor with Grove compatible interface. This sensor allows you to sense motion, usually human movement in its range.  Simply connect it to Grove - Base shield and program it, when anyone moves in its detecting range, the sensor will output HIGH on its SIG pin. 
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-PIR-Motion-Sensor-p-802.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li> Grove compatible interface
+</li><li> Adjustable detecting distance
+</li><li> Adjustable holding time
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification </h2>
+<h3>  Specification </h3>
+<table>
+<tr>
+<th> Parameter </th>
+<th> Value/Range
+</th></tr>
+<tr>
+<td> Operating Voltage </td>
+<td> 3V–5V
+</td></tr>
+<tr>
+<td> Operating Current(VCC = 3V) </td>
+<td> 100uA
+</td></tr>
+<tr>
+<td> Operating Current(VCC = 5V) </td>
+<td> 150uA
+</td></tr>
+<tr>
+<td> Measuring Range </td>
+<td> 0.1 - 6m
+</td></tr>
+<tr>
+<td> Default detecting distance </td>
+<td> 3m
+</td></tr>
+<tr>
+<td> Holding Time </td>
+<td> 1 - 25s
+</td></tr>
+<tr>
+<td> Working Wave Length </td>
+<td> 7 - 14um
+</td></tr>
+<tr>
+<td> Detecting Angle </td>
+<td> 120 degrees
+</td></tr></table>
+<h3>  Platforms Supported </h3>
+<ul><li> Arduino
+</li><li> Raspberry Pi
+</li><li> TI LaunchPad
+</li></ul>
+<p><br/>
+</p>
+<h2> Application Ideas </h2>
+<ul><li> Motion Sensor
+</li><li> Thief-guarding System
+</li><li> Switch
+</li><li> Industrial Automation
+</li></ul>
+<p><br/>
+</p>
+<h2> Getting Started </h2>
+<p>Following documents help in getting the user started with Grove. 
+</p>
+<ul><li> <a href="http://www.seeedstudio.com/document/pdf/Preface.pdf">Preface - Getting Started</a>
+</li><li> <a href="http://www.seeedstudio.com/document/pdf/Introduction%20to%20Grove.pdf">Introduction to Grove</a>
+</li></ul>
+<p><br/>
+</p>
+<h2> Demos </h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>The following sketch demonstrates a simple application of sensing motion. When someone moves in its detecting range, it will output High through its SIG pin and the LED will light. Otherwise, it will output LOW. Then you can use it to detect the motion of people.
+</p><p><br/>
+</p>
+<h3>  Connections </h3>
+<table>
+<tr>
+<th> Base Shield </th>
+<th> Grove module
+</th></tr>
+<tr>
+<td> D2 </td>
+<td> Grove - PIR Motion Sensor
+</td></tr>
+<tr>
+<td> D4 </td>
+<td> Grove - LED
+</td></tr></table>
+<p><img src="img/PIR_Motion_test.jpg" width="600"/>
+</p><p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*macro definitions of PIR motion sensor pin and LED pin*/</span>
+<span class="co2">#define PIR_MOTION_SENSOR 2//Use pin 2 to receive the signal from the module </span>
+<span class="co2">#define LED	4//the Grove - LED is connected to D4 of Arduino</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	pinsInit<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+	<span class="kw1">if</span><span class="br0">(</span>isPeopleDetected<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="co1">//if it detects the moving people?</span>
+		turnOnLED<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+	<span class="kw1">else</span>
+		turnOffLED<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> pinsInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw3">pinMode</span><span class="br0">(</span>PIR_MOTION_SENSOR, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+	<span class="kw3">pinMode</span><span class="br0">(</span>LED,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> turnOnLED<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw3">digitalWrite</span><span class="br0">(</span>LED,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> turnOffLED<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw3">digitalWrite</span><span class="br0">(</span>LED,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="coMULTI">/***************************************************************/</span>
+<span class="coMULTI">/*Function: Detect whether anyone moves in it's detecting range*/</span>
+<span class="coMULTI">/*Return:-boolean, true is someone detected.*/</span>
+<span class="kw4">boolean</span> isPeopleDetected<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">int</span> sensorValue <span class="sy1">=</span> <span class="kw3">digitalRead</span><span class="br0">(</span>PIR_MOTION_SENSOR<span class="br0">)</span><span class="sy4">;</span>
+	<span class="kw1">if</span><span class="br0">(</span>sensorValue <span class="sy1">==</span> <span class="kw2">HIGH</span><span class="br0">)</span><span class="co1">//if the sensor value is HIGH?</span>
+	<span class="br0">{</span>
+		<span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span><span class="co1">//yes,return true</span>
+	<span class="br0">}</span>
+	<span class="kw1">else</span>
+	<span class="br0">{</span>
+		<span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span><span class="co1">//no,return false</span>
+	<span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p><p><br/>
+<b> Note:</b> The detecting distance and holding time can be adjusted by adding two extra potentiometers on board. For the details please refer to the V1.2 Eagle below. The module can also be set as retriggerable or un- retriggerable by changing the jumper hat.
+</p>
+<h3> With <a href="/w/index.php?title=TI_LaunchPad&amp;action=edit&amp;redlink=1" title="TI LaunchPad (page does not exist)">TI LaunchPad</a></h3>
+<p><b>Is Anybody here</b> (PIR Motion Sensor)
+</p>
+<dl><dd>    The following sketch demonstrates a simple application of sensing motion. When someone moves in its detecting range, the output of the application will be high through its SIG0 pin and the LED will turn on. Otherwise, the output will be LOW.  Note that the PIR motion sensor is very sensitive to motion!
+</dd></dl>
+<p><img src="img/PIR.jpg" width="600"/>
+</p><p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+  Grove-PIR-Motion-Sensor
+ The following sketch demonstrates a simple application of sensing motion.
+ When someone moves in its detecting range, it will output High through its 
+ SIG pin and the LED will light. Otherwise, it will output LOW. Then you can 
+ use it to detect the motion of people. 
+ 
+ The circuit:
+ * sig pin of the Grove-PIR-Motion-Sensor to pin39 (J14 plug on Grove Base BoosterPack)
+ * one side pin (either one) to ground
+ * the other side pin to +VCC
+ * LED anode (long leg) attached to RED_LED
+ * LED cathode (short leg) attached to ground
+ 
+ * Note: Position the trig jumper on N_Retrig to ensure  
+ 
+ This example code is in the public domain.
+ 
+http://www.seeedstudio.com/wiki/index.php?title=Twig_-_PIR_Motion_Sensor
+ 
+*/</span>
+ 
+<span class="coMULTI">/* Macro Define */</span>
+<span class="co2">#define PIR_MOTION_SENSOR        39            /* sig pin of the PIR sensor */</span>
+<span class="co2">#define LED                      RED_LED      /* led */</span>
+ 
+<span class="co2">#define ON                       HIGH                    /* led on */</span>
+<span class="co2">#define OFF                      LOW                     /* led off */</span>
+<span class="co2">#define _handle_led(x)           digitalWrite(LED, x)    /* handle led */ </span>
+ 
+<span class="coMULTI">/* the setup() method runs once, when the sketch starts */</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="kw3">pinMode</span><span class="br0">(</span>PIR_MOTION_SENSOR, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>   <span class="coMULTI">/* declare the sig pin as an INPUT */</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>RED_LED, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>            <span class="coMULTI">/* declare the red_led pin as an OUTPUT */</span>
+    _handle_led<span class="br0">(</span>OFF<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="coMULTI">/* the loop() method runs over and over again */</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span>isPeopleDetected<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        _handle_led<span class="br0">(</span>ON<span class="br0">)</span><span class="sy4">;</span>           <span class="coMULTI">/* if we detect a people, turn on the led */</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        _handle_led<span class="br0">(</span>OFF<span class="br0">)</span><span class="sy4">;</span>          <span class="coMULTI">/* found nobody, turn off the light */</span>
+    <span class="br0">}</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="coMULTI">/* judge if there is a people around */</span>
+<span class="kw4">boolean</span> isPeopleDetected<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">int</span> sensor_val <span class="sy1">=</span> <span class="kw3">digitalRead</span><span class="br0">(</span>PIR_MOTION_SENSOR<span class="br0">)</span><span class="sy4">;</span>        <span class="coMULTI">/* read sig pin */</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="kw2">HIGH</span> <span class="sy1">==</span> sensor_val<span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>                                        <span class="coMULTI">/* people detected */</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>                                       <span class="coMULTI">/* people un-detected */</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p><p><br/>
+</p>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have a Raspberry Pi and a GrovePi or GrovePi+.<br/>
+2. If the development environment is not configured, kindly follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+<br/>
+3.Connection
+<br/>
+</p>
+<ul><li> Plug the sensor to grovepi socket D8 by using a grove cable.<br/>
+</li></ul>
+<p>4.Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_pir_motion_sensor.py   # "Ctrl+x" to exit #
+</pre>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">import</span> grovepi
+ 
+<span class="co1"># Connect the Grove PIR Motion Sensor to digital port D8</span>
+<span class="co1"># SIG,NC,VCC,GND</span>
+pir_sensor <span class="sy0">=</span> <span class="nu0">8</span>
+ 
+grovepi.<span class="me1">pinMode</span><span class="br0">(</span>pir_sensor<span class="sy0">,</span><span class="st0">"INPUT"</span><span class="br0">)</span>
+ 
+<span class="kw1">while</span> <span class="kw2">True</span>:
+    <span class="kw1">try</span>:
+        <span class="co1"># Sense motion, usually human, within the target range</span>
+        <span class="kw1">if</span> grovepi.<span class="me1">digitalRead</span><span class="br0">(</span>pir_sensor<span class="br0">)</span>:
+            <span class="kw1">print</span> <span class="st0">'Motion Detected'</span>
+        <span class="kw1">else</span>:
+            <span class="kw1">print</span> <span class="st0">'-'</span>
+ 
+        <span class="co1"># if your hold time is less than this, you might not see as many detections</span>
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">.2</span><span class="br0">)</span>
+ 
+    <span class="kw1">except</span> <span class="kw2">IOError</span>:
+        <span class="kw1">print</span> <span class="st0">"Error"</span></pre></div></div>
+<p><br/>
+</p><p>5.Run the demo.<br/>
+</p>
+<pre>   sudo python grove_pir_motion_sensor.py
+</pre>
+<p><br/>
+</p>
+<h2> Resources </h2>
+<ul><li><a href="res/Grove_PIR_Sensor_v1.2_eagle.zip">Grove - PIR Motion Sensor Eagle File v1.2</a>
+</li><li><a href="res/Grove_PIR_Sensor_v1.2.pdf">Grove - PIR Motion Sensor v1.2 PDF</a>
+</li><li><a href="res/Grove-PIR_Motion_Sensor_Eagle_File.zip">Grove - PIR Motion Sensor Eagle File</a>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_PIR_Motion_Sensor">github repository for PIR Motion Sensor</a>
+</li><li><a href="res/Twig-BISS0001.pdf">BISS0001 Datasheet</a>
+</li><li><a href="res/Fresnel_lens_8120.pdf">Fresnel lens 8120 Datasheet</a>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,105 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Tempture<head>Humidity Sensor (High-Accuracy <head>Mini) v1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Tempture<div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en">Humidity Sensor (High-Accuracy <div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en">Mini) v1.0</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Grove-TemptureAndHumidity_Sensor-High-Accuracy_AndMini-.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>This is a multifunctional sensor that gives you temperature and relative humidity information at the same time. It utilizes a TH02 sensor that can meet measurement needs of general purposes. It provides reliable readings when environment humidity condition in between 0-80% RH, and temperature condition in between 0-70°C, covering needs in most home and daily applications that don't contain extreme conditions.<br/>
+</p><p><br/>
+<img src="img/Get_One_Now_Banner.png" width="300"/>
+</p><p><br/>
+</p>
+<h2> Specification</h2>
+<ul><li>Wide operating voltage range 
+</li></ul>
+<dl><dd><dl><dd>(3.3V ~ 5V)
+</dd></dl>
+</dd></dl>
+<ul><li>Low Power Consumption
+</li></ul>
+<dl><dd><dl><dd>350 µA during RH conversion
+</dd></dl>
+</dd></dl>
+<ul><li>0 to 100% RH operating range
+</li><li>Measuring Range: 
+</li></ul>
+<dl><dd><dl><dd>Humidity: 0% - 80% RH
+</dd><dd>Temperature: 0 ~ 70 °C
+</dd></dl>
+</dd></dl>
+<ul><li>Accuracy: 
+</li></ul>
+<dl><dd><dl><dd>Humidity: ±4.5% RH
+</dd><dd>Temperature: ±0.5°C
+</dd></dl>
+</dd></dl>
+<ul><li>I2C host interface
+</li><li>Excellent long term stability
+</li></ul>
+<p><br/>
+</p>
+<h2> Applications</h2>
+<ul><li>Industrial HVAC/R
+</li><li>Thermostats/humidistats
+</li><li>Micro-environments/data centers
+</li></ul>
+<p><br/>
+</p>
+<h2> Demonstration</h2>
+<p>This demo is going to show you how to read temperature and humidity information from this Grove - Temperature&amp;Humidity Sensor (High-Accuracy &amp;Mini) Sensor. 
+</p><p><br/> <img src="img/Temperature_Sensor-xin.jpg" width="500"/><br/> 
+The Temperature and Humidity sensor is connecting to analog port I2C of Grove - Base Shield. 
+</p>
+<ul><li> Download <a href="https://github.com/Seeed-Studio/Grove_Temper_Humidity_TH02">Grove_Temper_Humidity_TH02 library</a> and install the library into Arduino libraries.  
+</li></ul>
+<pre>
+/*
+ * Demo name   : TH02_dev demo 
+ * Usage       : DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR 
+ * Author      : Oliver Wang from Seeed Studio
+ * Version     : V0.1
+*/
+
+#include &lt;TH02_dev.h&gt;
+#include "Arduino.h"
+#include "Wire.h" 
+ 
+void setup()
+{  
+  Serial.begin(9600);        // start serial for output
+  
+  Serial.println("****TH02_dev demo by seeed studio****\n");
+  /* Power up,delay 150ms,until voltage is stable */
+  delay(150);
+  /* Reset HP20x_dev */
+  TH02.begin();
+  delay(100);
+  
+  /* Determine TH02_dev is available or not */
+  Serial.println("TH02_dev is available.\n");    
+}
+ 
+
+void loop()
+{
+   float temper = TH02.ReadTemperature(); 
+   Serial.println("Temperature: ");   
+   Serial.print(temper);
+   Serial.println("C\r\n");
+   
+   float humidity = TH02.ReadHumidity();
+   Serial.println("Humidity: ");
+   Serial.print(humidity);
+   Serial.println("%\r\n");
+   delay(1000);
+}
+ </pre>
+<p><b>Note:</b>
+</p>
+<ul><li>Upload it into your Arduino board and open the serial monitor to observe the temperature and relative humidity information of the environment<br/>
+</li></ul>
+<p><br/><img src="img/Result_Picture1.jpg" width="318"/><br/>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="res/Grove-TemperatureAndHumidity_Sensor-High-Accuracy_And_Mini-V1.0_sch_pcb.zip">Grove - Temperature&amp;Humidity Sensor (High-Accuracy &amp; Mini) V1.0 sch pcb</a><br/>
+</li><li><a href="res/TH02_SENSOR.pdf">TH02_SENSOR.pdf</a><br/>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_Temper_Humidity_TH02">Grove_Temper_Humidity_TH02 library</a><br/>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

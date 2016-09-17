@@ -1,0 +1,180 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino v3.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino v3.0</h1><center><img src="img/Seeeduino_v3.0_top.jpg" width="700"/></center>
+<h2>  Overview </h2>
+<p>The Seeeduino v3 is a microcontroller board based on the ATmega328, and it's an Arduino compatible board. It has a FTDI USB-to-serial driver chip which can be regarded as a bridge, let your computer can communicate with the board. It has 14 digit pins (which include 6 PWM pins and UART port) and 8 analog pins, a 16 MHz ceramic resonator, a USB connection, a reset button, an ICSP header and a DC power jack. It has two toggle switches, one for input voltage change of ATmega328, the other is enable/disable pin of DTR, which you can use FTDI function alone without the influence of ATmega328. It also has two white Grove connectors, and make it convenient for using Grove products with the board. 
+</p>
+<h2>  Specifications  </h2>
+<table border="1" cellspacing="0">
+<tr>
+<td width="250"> Microcontroller
+</td>
+<td width="500"> Atmel ATmega328 (AVR 8-bit) in TQFP-32 package
+</td></tr>
+<tr>
+<td> Board (Boot-loader)
+</td>
+<td> Arduino Duemilanove w/Atmega328
+</td></tr>
+<tr>
+<td> Operating Voltage
+</td>
+<td> 5V or 3.3V (choice by slide switch)
+</td></tr>
+<tr>
+<td> Maximum output current of 3V3 port and 5V port
+</td>
+<td> 5V port - 500mA, 3V3 port - 800mA(need to be powered by DC jack or Vin)
+</td></tr>
+<tr>
+<td> Maximum output current of digit pins
+</td>
+<td> 40mA
+</td></tr>
+<tr>
+<td> miniUSB Input Voltage
+</td>
+<td> 5V.  Maximum is 5.5V.
+</td></tr>
+<tr>
+<td> DC Jack &amp; Vin Input Voltage
+</td>
+<td> 7V to 12V (lower is preferred).  Maximum is 20V.  If input lower than 7V and switch set to 5V, then VCC at AVR is about 2V below the input.
+</td></tr>
+<tr>
+<td> Digital I/O Pins
+</td>
+<td> 14 (of which 6 provide PWM output)
+</td></tr>
+<tr>
+<td> Analog Input Pins
+</td>
+<td> 8 (of which 2 are used for I2C communication - PC4 and PC5)
+</td></tr>
+<tr>
+<td> Flash Memory
+</td>
+<td> 32 KB
+</td></tr>
+<tr>
+<td> SRAM
+</td>
+<td> 2 KB
+</td></tr>
+<tr>
+<td> EEPROM
+</td>
+<td> 1 KB
+</td></tr>
+<tr>
+<td> Clock Speed
+</td>
+<td> 16 MHz
+</td></tr></table>
+<h2>  Usage </h2>
+<h3> USB-to-Serial</h3>
+<p>The Seeeduino has a FTDI USB-to-serial driver chip onboard - FT232R which programmed as a USB-to-serial converter.
+</p>
+<div class="center"><div class="floatnone"><img src="img/Seeeduino_FTDI.png" width="700"/></div></div>
+<p>Ten pins of FT232R have been pointed out, it beside the ICSP port, make it convenient for you to use those pins if needed.
+</p>
+<div class="center"><div class="floatnone"><img src="img/Seeeduino_FTDI_pinout.png" width="500"/></div></div>
+<p>There's a toggle switch "M_RST_AUTO" onboard. This determines whether the DTR signal from the host is allowed to reset the ATmega328 micro controller.
+</p><p>Set to "AUTO" for Automatic mode, which allows the host to reset the microcontroller using the DTR signal to automatically reset the microcontroller. Note: This position is required during development, thus it will be the default position for most people.
+</p><p>Set to "M" for Manual mode, which disables the DTR signal from the host, thus requiring the user to physically press the RESET button to reset the micro controller. Also, it is necessary to set it to "M" mode if you wanna use FT232R alone.
+</p><p>More information about FTDI chip, you can refer to the <b><a href="http://www.ftdichip.com/index.html">homepage of FTDI</a></b>
+</p>
+<h3> Breakout</h3>
+<p>The Seeeduino is a main board based on ATmega328, and all useful pins are pointed out. There are power pins, 14 digital IO pins and 8 analog pins on Seeeduino, meantime, six of the digital IO pins can be used as PWM outputs. All the pins of Seeeduino are wired to 2.54mm spaced headers.
+</p>
+<div class="center"><div class="floatnone"><img src="img/Seeeduino_pinout.png" width="700"/></div></div>
+<p>Each of the 14 digital pins on the board can be used as an input or output, using <a href="http://arduino.cc/en/Reference/PinMode">pinMode()</a>
+<a href="http://arduino.cc/en/Reference/DigitalWrite">digitalWrite()</a><a href="http://arduino.cc/en/Reference/DigitalRead">digitalRead()</a> functions. They operate at 5 volts or 3.3 volts while turning the toggle switch "3V3_VCC_5V" to two different positions. And each pin can provide or receive a maximum of 40 mA. And a <a href="http://arduino.cc/en/Reference/SoftwareSerial">SoftwareSerial</a> library allows for serial communication on any of digital pins.
+</p>
+<h4> UART: D0 (RX) and D1 (TX).</h4>
+<p><i>It can be used to receive and transmit TTL serial data. These two pins have been connected to FTDI chip, which makes a direct communication between your computer and peripheral devices. </i>
+<br/>
+</p>
+<h4> External Interrupts: D2 and D3.</h4>
+<p><i>The two pins are the external interrupts from ATmega328, it can be configured to trigger an interrupt on a low value, a rising or falling edge, or a change in value. More information refer to <a href="http://arduino.cc/en/Reference/AttachInterrupt">attachInterrupt() function</a>.</i>
+<br/>
+</p>
+<h4> PWM: D3, D5, D6, D9, D10, D11.</h4>
+<p><i>Pulse Width Modulation, is a technique for getting analog results with digital means. It can be generated by using analogWrite(), with an output of a series of repeated HIGH and LOW pulse signals. The PWM frequency of Seeeduino is about 500Hz, and Provide 8-bit PWM output with the <a href="http://arduino.cc/en/Reference/AnalogWrite">analogWrite()</a> function. More information please refer to <a href="http://arduino.cc/en/Reference/AnalogWrite">PWM</a></i>
+<br/>
+</p>
+<h4> SPI: D10 (SS), D11 (MOSI), D12 (MISO), D13 (SCK).</h4>
+<p><i>These pins support SPI communication using the <a href="http://arduino.cc/en/Reference/SPI">SPI library</a>.</i>
+</p>
+<h5> SPI diagram</h5>
+<table border="1">
+<tr>
+<td> MISO (D12)
+</td>
+<td> VCC
+</td></tr>
+<tr>
+<td> SCK(D13)
+</td>
+<td> MOSI(D11)
+</td></tr>
+<tr>
+<td> Reset
+</td>
+<td> GND
+</td></tr></table>
+<p><br/>
+</p>
+<h4> "L" indicator.</h4>
+<p><i>There's a led "L" on the board, and it is connected to D13, you can control this led via D13.</i>
+</p><p>There are eight analog pins on the analog header, labeled A0 through A7. Each pin can provide 10 bits of resolution. This means that an analog input between 0V and 5V (0V to 3.3V) can be mapped to 0 to 1024 (0 to 675). You can use analogRead() to get the value from an analog input.
+</p>
+<h4> I2C: A4 (SDA) &amp; A5 (SCL).</h4>
+<p><i>Seeeduino can generate a bus clock to control its slave I2C device with a specific address. Grove I2C also connects to A4 &amp; A5.</i>
+</p><p>There's a reset button on the board, which connected to the pin of RST. Press the button and this pin will be pulled down, then the ATmega328 will restart.
+</p>
+<h3> Power</h3>
+<p>The Seeeduino can be powered through USB or DC Jack connector (Vin). If you use USB to power it, the input voltage should be regulated 5VDC, like a computer or a USB wall adaptor. On the other hand, when you choose DC Jack, which should be a 2.1mm center-positive plug with 5.5mm outer hole. DC power input should be 7-20V, however, as a result of overheat from a higher input voltage, 7-12V is recommended.There's a voltage regulator on the board, so it can convert 5v to 3.3v. While turning the toggle switch "3V3_VCC_5V" to 3V3 position, the input voltage of ATmega328 will be changed to 3.3v, meantime, the board will operate 3.3 volts.
+</p>
+<h3> Grove connectors</h3>
+<p>The Seeeduino has two white Grove connectors, one is IIC port and the other is UART port. This two port are pointed out from ATmega328, it is designed for plugging Grove products onto the board more conveniently.
+</p>
+<h3> On-board Indicators</h3>
+<p>There are some indicators on the board, which can display some status.
+</p>
+<table>
+<tr>
+<th> Label </th>
+<th> Connection
+</th></tr>
+<tr>
+<td width="300px"> User LED with "L" label
+</td>
+<td width="500px"> It is connected to ATmega328P PB5/SCK pin (Digital header pin 13).
+</td></tr>
+<tr>
+<td>Reset LED with "RST" label </td>
+<td>It is connected to ATmega328P PC6/RESET pin. It is lite when Reset is low.
+</td></tr>
+<tr>
+<td>Power LED with "PWR" label </td>
+<td>It is always on. It is connected to ATmega328P VCC pin.
+</td></tr>
+<tr>
+<td>Transmit LED with "TX" label </td>
+<td>It is connected to FT232RL CBUS1 pin.
+</td></tr>
+<tr>
+<td>Receive LED with "RX" label </td>
+<td>It is connected to FT232RL CBUS0 pin.
+</td></tr></table>
+<h2> Related Reading</h2>
+<ul><li> <a href="/How_to_use_Seeeduino">How to use Seeeduino</a>
+</li><li> <a href="/Seeeduino">Version Tracker</a>
+</li></ul>
+<h2>  Resources  </h2>
+<ul><li><a href="res/SeeeduinoV3.0_Source_File.zip">Seeeduino v3.0_Source_files</a>
+</li><li><a href="res/Seeeduino_v3.0.pdf">Schematic in pdf</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

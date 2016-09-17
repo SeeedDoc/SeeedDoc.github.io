@@ -1,0 +1,210 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Starter Kit V0.9b</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Starter Kit V0.9b</h1>
+
+<p>The <a href="/GROVE_System" title="GROVE System">Grove system</a> is a modular, safe and easy to use group of items that allow you to minimise the effort required to get started with microcontroller-based experimentation and learning. 
+Although there are many choices available for microcontroller development environments, the Grove system will work very well with the <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a> system. 
+</p><p>The Grove Starter Bundle consists of the following items, as pictured below:
+</p>
+<br/><center>
+<img src="img/Starter-bundle.jpg" width="500"/></center>
+<ul><li>One Grove board – this allows you to connect various “Grove units” (below) to *your <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> board;
+<ul><li><b>Nine Grove "Grove units”, consisting of:</b>
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#LCD_Module">8 x 2 character LCD display unit and matching</a>;
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Temperature_Sensor">Analog temperature sensor </a>;
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Piezo_Buzzer">piezo buzzer </a>;
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Button">button </a> (with two buttons for digital input);
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#LED">LED </a> (with one green and one red LED for digital output);
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Tilt">switch Tilt switch</a>;
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Potentiometer">potentiometer</a> (variable resistor of value 10k ohms) for analog input
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Relay">Relay </a>
+</li><li><a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Protoshield">Protoshield </a> (for adding your own components)
+</li></ul>
+</li><li>Ten pre-formed connecting wires to bridge Grove Units to the Base board (not shown)
+</li></ul>
+<h3>  Grove - Base shield</h3>
+<p>Now let's look at each component in more detail. First we start with the Grove base shield board. This is very similar in fashion to an <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a> shield board, and it is compatible with Seeeduino v2.21 (168p and 328p), and Arduino UNO and Duemilanove.. Here is a top-down view:
+</p>
+<center>
+<p><img src="img/Stem.jpg" width="500"/>
+</p>
+</center>
+<p>The purpose of the Grove base shield is to allow easy connection of any microprocessor input and output pins to the Grove units. Each socket is clearly labelled with its matching I/O pin. For a more detailed  examination of the Grove , please refer to the following diagram:
+</p>
+<center>
+<p><img src="img/Stem-diagram-sign.jpg" width="800"/>
+</p>
+</center>
+<p>For those working with <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> or <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a> boards, the layout should be quite familiar.   The labels on the "Power" header pins may be confusing - the new <a href="/w/index.php?title=Arduino_UNO&amp;action=edit&amp;redlink=1" title="Arduino UNO (page does not exist)">Arduino UNO</a> has two ground pins between the Vin and 5v, and label "GND" twice, but the Base Shield labels match the Duemilanove which label "GND" once, wider, to indicate both pins.
+</p><p>There is one small thing to take note of when to connect to analog or digital sockets. Each socket contains 5V, GND, and two I/O pin connections:
+</p>
+<center>
+<p><img src="img/Stem-diagram-conn.jpg" width="600"/>
+</p>
+</center>
+<p>When using the digital I/O, note the staggered alignment of the pins – that is, one socket handles D1 and D2, the next D2 and D3, and so on.  If you are going to use an input Grove and an output Grove which have two signal pins simultaneously  (e.g. <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#LED">LED</a> and <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Button">button </a>), separate your wires so that a socket is between them like this:
+</p>
+<center>
+<p><img src="img/Stem-diagram-conn-right.jpg" width="400"/>
+</p>
+</center>
+<p>Wires for two signal Grove units cannot sit side-by-side on the Base Shield because one pin (such as D2) will be multi-using. Or, if two Groves only use one digital pin, such as the <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Tilt-switch">tilt-switch</a> and the <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Piezo_Buzzer">piezo</a>, they can sit together on the board as they only use one of the digital lines in the connecting wire and therefore will not interfere with each other. It is the same as the Analog I/O sockets. Make sure you know the silkscreen of each socket before you start wiring.
+</p>
+<h3>  Grove units</h3>
+<p>Each "Grove" is a peripheral board that connects to the <a href="/GROVE_System" title="GROVE System">GROVE System</a> Base shield with a consistent 4-wire connectorised cable.  The connector leads are Ground, Vcc, D2, and D1, where the D1 and D2 leads may be digital or analog input or output, depending on the equipment on the Grove units.  The same format also supports I2C (IIC) signalling, and several of the Base shield connectors are tied to Analog pins 4 and 5 to support it for future I2C-based Groves.  
+</p><p>Most of the Groves use a 2cm x 2cm format, looking like jigsaw puzzle pieces which fit together with tabs, and bring the Ground and Vcc out to the corners and the D1 and D2 out to each side. <br/><i>(Request for description from the designer - the pieces don't actually snap together, so I can't tell if there's any way to use the connectors on the edges.  Are they meant to connect to header pins on a metric-spaced breadboard?  Are they meant to connect I2C Groves together, or are there other reasons to connect non-I2C Groves like that?)</i>
+</p><p><i>A circuit diagram would look really nice here.</i>
+</p><p>Next, let's examine each of our Grove, and then use each on in an example <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a> sketch that we can use with our <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> boards...
+</p>
+<h3>  Button </h3>
+<center>
+<p><img src="img/Twig-button.jpg" width="400"/>
+</p>
+</center>
+<p>The button Grove contains two independent buttons, which are configured with pull-down resistors – ready for use with our microcontrollers as digital inputs.  The red button signals the D1 wire, and the green button signals the D2 wire.  (What's the resistance of the pull-downs?  They're surface-mount, so too small for me to read.)
+</p>
+<h3>  Tilt switch </h3>
+<center>
+<p><img src="img/Twig-tilt.jpg" width="400"/>
+</p>
+</center>
+<p>The tilt switch Grove is the equivalent of a button, and is used as a digital input. When the switch is level it will open, and when tilted, the switch will close. It is wired to the D1 line,and D2 is not used on this Grove.  There's a surface-mount resistor (pull-down?  pull-up?  What resistance?)
+</p>
+<h3>  LED </h3>
+<center>
+<p><img src="img/Twig-LED.jpg" width="400"/>
+</p>
+</center>
+<p>The LED Grove consists of two LEDs, D1 being red and D2 being green. They both operate from 5V DC and draw 3 milliamps of current. Perfect for use on <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> digital outputs, or also can be controlled by using pulse-width modulation.  Each LED has a current-limiting resistor, which protects the LED and the Arduino from high current. (They're surface-mount, so they're too small for me to read the resistance - is there a diagram?)
+</p>
+<h3>  Potentiometer </h3>
+<center>
+<p><img src="img/Twig-Potentiometer.jpg" width="400"/>
+</p>
+</center>
+<p>The potentiometer Grove produces analog output between 0 and Vcc (5V DC with Seeeduino) on its D1 connector.  The D2 connector is not used. The angular range is 300 degrees with a linear change in value. The resistance value is 10k ohms, perfect for Arduino use. This may also be known as a “rotary angle sensor”.
+</p>
+<h3>  Temperature Sensor </h3>
+<center>
+<p><img src="img/Twig-Temperature-Sensor.jpg" width="400"/>
+</p>
+</center>
+<p>The temperature sensor Grove uses a thermistor which returns the ambient temperature in the form of a resistance value, which is then used to alter Vcc (5V with our Seeeduinos). Our board then converts this voltage value measured by an analog input pin to a temperature. The operating range is -40 to 125 degrees Celsius, with an accuracy of ±1.5ºC. 
+</p><p>As the temperature increases, the resistance value of the sensor decreases:
+</p>
+<center>
+<p><img src="img/Twig-Temperature-Sensor-value.jpg" width="400"/>
+</p>
+</center>
+<p>Although the calculation of the actual temperature can seem quite complex, it is simple to execute. For an example of how this is done, please refer to project seven described later in this guide.
+</p>
+<h3>  Piezo Buzzer </h3>
+<center>
+<p><img src="img/Twig-Piezo-Buzzer.jpg" width="400"/>
+</p>
+</center>
+<p>This is a simple yet enjoyable Grove to use. The piezo can be connected to digital outputs, and will emit a tone when the output is high. Alternatively it can be connected to an analog pulse-width modulation output to generate various tones and effects.
+</p>
+<h3>  Relay </h3>
+<center>
+<p><img src="img/Twig-Relay.jpg" width="400"/>
+</p>
+</center>
+<p>The relay Grove is a digital normally-open switch that controls a relay capable of switching much higher voltages and currents than your normal <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> boards. When set to HIGH the LED will light, and the relay will close allowing current to flow. The peak voltage capability is 250V at 10 amps. 
+</p><p><font color="red">
+Please exercise great care when working with mains voltages – if you are in doubt, please contact a professional such as a licensed electrician for help.
+</font>
+</p>
+<h3>  LCD Module </h3>
+<center>
+<p><img src="img/Twig-LCD.jpg" width="400"/>
+</p>
+</center>
+<p>This consists of two parts, a module holding an eight character by two line LCD, and the Grove itself. The LCD has an interface that is easily used under the Arduino IDE using the special Seeedstudio liquidCrystal library. 
+</p><p>Before using your LCD Grove, download the library from <a href="http://www.seeedstudio.com/depot/images/product/LiquidCrystal.rar">here</a>.
+</p><p>Then extract the “LiquidCrystal” folder and copy it into your Arduino libaries folder, usually located at ..\Arduino-xx\libraries. 
+</p><p>For a detailed example on how to use your <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#LCD_Module">LCD Module </a>, please see <a href="/Project_Six-LCD_Demonstration" title="Project Six – LCD Demonstration">project six</a> described later on in this guide.
+</p>
+<h3>  Protoshield </h3>
+<center>
+<p><img src="img/Twig-Protoshield.jpg" width="400"/>
+</p>
+</center>
+<p>This Grove allows you to add your own circuitry or components to your <a href="/GROVE_System" title="GROVE System">Grove system prototypes</a>. This allows you access to all four lines from the connector cable – D1, D2, 5V and GND. There is also an extra normally-open button to take advantage of. The hole spacing makes using normal DIP-format ICs and other components very simple. You may wish to purchase more for future use in advance.
+</p>
+<h2>  Features  </h2>
+<ul><li><b>Standardized</b> – scalable Jigsaw shape, unified 4 pin connector, screw hole grid, edge solder pad, reduce duplicate developing, reuse in different projects to reduce environment impact
+</li></ul>
+<ul><li><b>Compact</b> – size from 2cm*2 cm, seamless combination, surface mounting components, 2.0mm pitch cable
+</li></ul>
+<ul><li><b>Friendly</b> – easy buckled connection, dumb proof, various extension modes, open for DIY, libraries and demo codes
+</li></ul>
+<ul><li><b>Plentiful</b>- large selection of common circuits from basic (button, LED) to professional sensor (Gyro, Compass), keep adding per demand, 3rd party contributions, reusable
+</li></ul>
+<ul><li><b>Community based</b> – satisfying needs through voting, democratized design, project and recipe sharing, profit sharing business pattern, Renting and Reuse
+</li></ul>
+<h3>  Example  </h3>
+<p>Now you should be familiar with your Base Shield and <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle_V0.9b#Grove_units">Grove Units</a>, so let's examine them in more detail with the following projects:
+</p>
+<ul><li><a href="/Project_One-Double_Blink" title="Project One - Double Blink">Project One - Double Blink</a>
+</li><li><a href="/Project_Two-Digital_Input" title="Project Two – Digital Input">Project Two – Digital Input</a>
+</li><li><a href="/Project_Three-Analog_Input" title="Project Three – Analog Input">Project Three – Analog Input</a>
+</li><li><a href="/Project_Four-Noise_Maker" title="Project Four – Noise Maker">Project Four – Noise Maker</a>
+</li><li><a href="/Project_Five-Relay_Control" title="Project Five – Relay Control">Project Five – Relay Control</a>
+</li><li><a href="/Project_Six-LCD_Demonstration" title="Project Six – LCD Demonstration">Project Six – LCD Demonstration</a>
+</li><li><a href="/Project_Seven-Temperature" title="Project Seven - Temperature">Project Seven - Temperature</a>
+</li><li><a href="/Project_Eight-Thermostat" title="Project Eight - Thermostat">Project Eight - Thermostat</a>
+</li></ul>
+<p>They are written for use with the Arduino environment. All of the following projects can be made with only a <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> board and the Grove starter bundle.
+If you have not already done so, download and install the latest version of the Arduino IDE from: <a href="http://arduino.cc/en/Main/Software">http://arduino.cc/en/Main/Software</a>. 
+</p><p>Furthermore, if you are using a <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a>] or <a href="/Seeeduino_Mega" title="Seeeduino Mega">Seeeduino Mega</a>, make sure you have the switches set to 5V and auto, as such:
+<br/>
+<img src="img/Switch.jpg" width="300"/>
+<br/>
+This ensures the board running at 5V DC from the USB cable, and that the board will auto-reset upon uploading your sketch. Otherwise you will have to manually reset your <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> before the sketch starts operation. 
+</p><p><br/>
+By now we hope you have enjoyed experimenting with your <a href="http://garden.seeedstudio.com/index.php?title=Microcontrollers#Plain_Vanilla">Seeeduino</a> and the Grove starter bundle. You will find it simple and convenient to use this system to develop your ideas and prototypes. For technical support please email info@seeedi.com.
+</p><p>In the meanwhile, don't forget to regularly check the Seeedstudio Bazaar website for new Grove Units and other interesting and useful products at: <a href="http://seeedstudio.com/depot/">http://seeedstudio.com/depot/</a>
+</p>
+<h2>  FAQ </h2>
+<p>For more question and suggestions, please list them here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss. 
+</p>
+<h2>  Version Tracker  </h2>
+<table border="1">
+<tr>
+<th>Revision
+</th>
+<th>Descriptions
+</th>
+<th>Release Date
+</th></tr>
+<tr style="font-size: 90%">
+<td width="300"> GROVE Starter Bundle v1.0b
+</td>
+<td width="500"> draft
+</td>
+<td width="200"> Dec 31, 2010
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>There is no bug found until now. Have you found? Please write them here, we want to know what you have to say! 
+</p>
+<h2>  Additional Idea  </h2>
+<p>What do you think of our <a href="/GROVE_System" title="GROVE System">GROVE System</a> and <a href="http://garden.seeedstudio.com/index.php?title=GROVE_System#GROVE_-_Starter_Bundle">GROVE - Starter Bundle</a>? Don't forget that we always welcome your views on our goods and services so that we can continue to meet all your stock requirements. You can write them here or go to <a href="http://wish.seeedstudio.com">Seeedstudio's Wish page</a>.
+</p>
+<h2>  Resources  </h2>
+<p><a href="res/Electronic_Bricks_Starter_Kit_Cookbook_v1.3.pdf">the Electronic Brick Cookbook v1.1</a>
+</p>
+<h2>  How to buy  </h2>
+<p>Click here to buy <a href="http://www.seeedstudio.com/depot/grove-starter-bundle-p-709.html?cPath=138">GROVE - Starter Bundle</a> ,or other <a href="http://www.seeedstudio.com/depot">products</a> you like.
+</p>
+<h2>  See Also  </h2>
+<p>Other related products and resources.
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

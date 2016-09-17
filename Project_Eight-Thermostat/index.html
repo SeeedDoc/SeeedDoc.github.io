@@ -1,0 +1,47 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Project Eight - Thermostat</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Project Eight - Thermostat</h1><p>The final project in our series may seem complex, but is quite simple. We use the potentiometer to allow user input of a temperature value, and using the temperature sensor – if the ambient temperature rises above the value set via the potentiometer the relay is activated. 
+</p>
+<ol><li> Connect the Temperature Sensor to the Analog A0/A1 input jack, like it was in Project 7. 
+</li><li> The Grove produces an analog voltage on its D1 output, which is connected to Arduino A0 analog input on the A0/A1 input jack.
+</li><li> Connect the Potentiometer to the Analog A4/A5 input jack.
+</li><li> The Potentiometer produces an analog voltage on its D1 output, which is connected to Arduino A4 analog input on the A4/A5 input jack.<br/> Connect the Relay to the D2/D3 input jack.
+</li><li> The Arduino's D2 pin sends a signal to the Relay on the D1 connector. The Relay's red light indicates whether the relay is on or off, and the relay makes a clicking sound when it switches.<br/>
+</li></ol>
+<p><br/> <img src="img/Conn-eight.jpg" width="900"/> <br/> <i><b>Now upload the following Arduino sketch:</b></i>
+</p>
+<pre>// Project Eight - Thermostat
+//
+
+int a,c,d;
+int z=3975; 
+int relaypin=2;
+float b, q, resistance, temperature; 
+
+void setup()
+{
+  pinMode(relaypin, OUTPUT);
+}
+
+void loop()
+{
+  a=analogRead(4); 
+  b=0.0488*a;
+  c=int(b);
+  q=analogRead(0);
+  resistance=(float)(1023-q)*10000/q; 
+  temperature=1/(log(resistance/10000)/z+1/298.15)-273.15; 
+  d=int(temperature);
+  if (d&gt;=c)
+  {
+    digitalWrite(relaypin, HIGH);
+    delay(500);
+  } 
+  if (d&lt;c)
+  {
+    digitalWrite(relaypin, LOW);
+    delay(500);
+  }
+}
+</pre>
+<p>Try turning the potentiometer to the right and left and see if the relay turns on or off.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

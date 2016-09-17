@@ -1,0 +1,88 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>GrovePi+</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>GrovePi+</h1>
+<h2>  Introducing the GrovePi+</h2>
+<p><a href="http://www.dexterindustries.com/GrovePi/">GrovePi</a> is a system that brings <a href="/GROVE_System" title="GROVE System">Grove Sensors</a> to the <a href="http://www.seeedstudio.com/depot/s/Raspberry%2520Pi.html?search_in_description=0">Raspberry Pi</a>.  
+</p>
+<ul class="gallery">
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:40px auto;"><img src="img/GrovePi_Wiki_1.JPG" width="120"/></div></div>
+<div class="gallerytext">
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:42px auto;"><img src="img/GrovePi_Wiki_2.JPG" width="120"/></div></div>
+<div class="gallerytext">
+</div>
+</div></li>
+</ul>
+<p>GrovePi+ is a new version of <a href="http://www.seeedstudio.com/depot/GrovePi-p-1672.html">GrovePi</a>.<br/>
+It adds support for the newly RaspberryPi Model B+ and Model A+.<br/>
+There are three mounting holes can perfect match all version of Raspberry Pi.<br/>
+Camera cable outlet hole.<br/>
+It also improves the voltage level converting sub circuits.<br/>
+</p>
+<h2>  Features </h2>
+<ul><li>7 digital Ports 
+</li><li>3 analoge Ports
+</li><li>3 I2C ports
+</li><li>1 Serial port connect to GrovePi
+</li><li>1 Serial port connect to Raspberry Pi
+</li><li>Grove header Vcc output Voltage: 5Vdc
+</li></ul>
+<h2>  Get Started </h2>
+<p><b><big>Welcome to the Quickstart Guide to the GrovePi+.</big></b><br/>
+If you want to know more about how it works, you can find all the design files in the designer's <a href="https://github.com/DexterInd/GrovePi">Github Repository</a>.
+</p>
+<h3>  Connect the GrovePi to the Raspberry Pi </h3>
+<dl><dd>First, mount your GrovePi on the Raspberry Pi.  The GrovePi slides over top of the Raspberry Pi as shown in the picture below.<br/>
+</dd></dl>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovePiPlus_wiki_3.jpg" width="400"/> <div class="thumbcaption"></div></div></div><div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovePi_Wiki_1.JPG" width="400"/> <div class="thumbcaption"></div></div></div>
+<dl><dd>Ensure that the pins are properly aligned when stacking the GrovePi.
+</dd></dl>
+<h3>  Setup the Software on the Raspberry Pi </h3>
+<p>Next we will install the software on the Raspberry Pi. There are two options for installation:<br/>
+</p>
+<ul><li> You can use our BrickPi Image.<br/>
+</li><li> Use your own image.  If you already have your own flavor of linux running on the Raspberry Pi, you can use our bash script to setup for the GrovePi.<br/>
+</li></ul>
+<h4>  Using the BrickPi Image </h4>
+<ul><li> Download the Brick Pi Image and install the image on your SD card. <a href="http://www.dexterindustries.com/BrickPi/getting-started/pi-prep/">Here is the link to the BrickPi Page with steps to configure the SD card</a>.  You will need a minimum of 4GB SD Card for this installation.
+</li><li> Clone the Github repository at an appropriate location in Raspbian
+</li></ul>
+<pre>   git clone <a href="https://github.com/DexterInd/GrovePi.git">https://github.com/DexterInd/GrovePi.git</a>
+</pre>
+<ul><li> Run the bash script in the Scripts folder to configure the Raspbian. <a href="http://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/">Here is the tutorial for setting up with the Script.</a>
+</li><li> Restart your Raspberry Pi.
+</li></ul>
+<h4>  Configuring your own image </h4>
+<ul><li> Clone the Github repository at an appropriate location
+</li></ul>
+<pre>   git clone <a href="https://github.com/DexterInd/GrovePi.git">https://github.com/DexterInd/GrovePi.git</a>
+</pre>
+<ul><li> Run the bash script in the Scripts folder to configure the Raspbian. <a href="http://www.dexterindustries.com/GrovePi/get-started-with-the-grovepi/setting-software/">here</a> is the tutorial for setting up with the Script.
+</li><li> Restart the Raspberry Pi and start using the Grove Pi.
+</li></ul>
+<h3>  Testing the GrovePi </h3>
+<p>Once you have your Raspberry Pi configured to work with the GrovePi, it’s time to see it in action.<br/>
+We have developed three simple projects to illustrate how the GrovePi works.
+</p>
+<h2>  Supported Products </h2>
+<h3>  Grove List </h3>
+<ul><li> <a href="/Grove-Button#With_Raspberry_Pi">1. Grove - Button </a>
+</li><li> <a href="/Grove-Light_Sensor#With_Raspberry_Pi">2. Light Sensor</a>
+</li><li> <a href="/Grove-Buzzer#With_Raspberry_Pi">3. Buzzer</a>
+</li><li> <a href="/Grove-Sound_Sensor#With_Raspberry_Pi">4. Sound Sensor </a>
+</li><li> <a href="/Grove-Red_LED#With_Raspberry_Pi">5. Grove - Red LED </a>
+</li><li> <a href="/Grove-LED#With_Raspberry_Pi">6. Grove - Blue LED </a>
+</li><li> <a href="/Grove-LED#With_Raspberry_Pi">7. Grove - Green LED </a>
+</li><li> <a href="/Grove-LCD_RGB_Backlight#With_Raspberry_Pi">8. LCD RGB Backlight </a>
+</li><li> <a href="/Grove-Rotary_Angle_Sensor#With_Raspberry_Pi">9. Rotary Angle Sensor </a>
+</li><li> <a href="/Grove-Temperature_and_Humidity_Sensor#With_Raspberry_Pi">10. Temperature Humidity Sensor </a>
+</li><li> <a href="/Grove-Ultrasonic_Ranger#With_Raspberry_Pi">11. Ultrasonic Ranger Sensor</a>
+</li><li> <a href="/Grove-Relay#With_Raspberry_Pi">12. Relay</a>
+</li></ul>
+<h2>  See Also </h2>
+<p>Designer's web site: <a href="http://www.dexterindustries.com/GrovePi/">Dexterindustries</a><br/>
+Download the pdf file about setting up the softerware:
+<a href="res/Setting_Up_Software_for_GrovePi.pdf">Setting_Up_Software_for_GrovePi.pdf</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

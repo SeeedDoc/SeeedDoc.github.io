@@ -1,0 +1,23 @@
+img {
+  max-width:100%;
+  display: block;
+  margin: auto;
+  vertical-align:middle;
+}
+
+.mw-content-ltr {
+    padding: 50px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    box-shadow: 1px 1px 1px 1px #988888;
+}
+
+table {
+
+  display: block;
+  width: auto;
+}
+
+a:link {
+    text-decoration: none;
+}

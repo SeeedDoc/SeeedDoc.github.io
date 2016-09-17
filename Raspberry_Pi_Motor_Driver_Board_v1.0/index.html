@@ -1,0 +1,263 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Raspberry Pi Motor Driver Board v1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Raspberry Pi Motor Driver Board v1.0</h1><div class="floatright"><img src="img/Raspberry_Pi_Motor_Board_v1.0_p1.jpg" width="400"/></div>
+
+<p>Raspberry Pi Motor Driver Board v1.0 is based on the Freescale MC33932 dual H-Bridge Power IC, which can control inductive loads with currents up to 5.0A peak per single bridge. It lets you drive two DC motors with your Raspberry Pi B/B+/A+ and Pi 2 Model B, controlling the speed and direction of each one independently.<br/>
+Raspberry Pi Motor Driver Board v1.0 support a very wide range of input voltage from 6V~28V.
+otherwise ,the on board DC/DC converter support a very wide range of input voltage, and can provide a 5V power supply for the Raspberry Pi with 1000mA maximum current. So, you just need one power supply to drive the motors and power up the Raspberry Pi.<br/>
+</p>
+<h2> Features</h2>
+<ul><li> Output short-circuit protection (short to VPWR or GND)
+</li><li> Over-current limiting (regulation) via internal constant-off-time PWM 
+</li><li> Temperature dependant current limit threshold reduction
+</li><li> Raspberry Pi compatible
+</li></ul>
+<h2>  Specification </h2>
+<table border="1" cellspacing="0" width="800">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Operating Voltage
+</th>
+<td> 6
+</td>
+<td> /
+</td>
+<td> 28
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> DC/DC output:
+</th>
+<td> /
+</td>
+<td>5V/1000mA
+</td>
+<td> /
+</td>
+<td>
+</td></tr>
+<tr>
+<th scope="row"> Output Current(For Each Channel )
+</th>
+<td> /
+</td>
+<td> 2 (continuous operation)
+</td>
+<td> 5 (peak)
+</td>
+<td> A
+</td></tr>
+<tr>
+<th scope="row"> PWM Frequency
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 11
+</td>
+<td> kHz
+</td></tr>
+<tr>
+<th scope="row"> Output Duty Range
+</th>
+<td> 0
+</td>
+<td> /
+</td>
+<td> 100
+</td>
+<td> %
+</td></tr>
+<tr>
+<th scope="row"> Logic Input Voltage
+</th>
+<td> -0.3
+</td>
+<td> /
+</td>
+<td> 7
+</td>
+<td> V
+</td></tr>
+<tr>
+<th scope="row"> Operating Temperature
+</th>
+<td> -40
+</td>
+<td> /
+</td>
+<td> 120
+</td>
+<td> ℃
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 91.20 * 56.15*32
+</td>
+<td> mm
+</td></tr></table>
+<h2> Interface Function</h2>
+<p><img src="img/Raspberry_Pi_Motor_Board_v1.0_p3.jpg" width="800"/>
+</p>
+<ul><li><b>J1</b>:DC Input connector.   
+</li><li><b>J2</b>:Motor Driver output connector.
+</li><li><b>EN,FT</b>:Jumpers for EN control and Fault flag detection.If short circuit the EN jumper, the EN signal was mapped to the D4 pin ,you can control the H-Bridge disable output or reset the Fault flag by D4 pin. If short circuit the FT jumper, the fault flag signal was mapped to D3 pin ,you can read the fault flag from the D3 pin ether. 
+</li><li><b>IO</b>:Logic Voltage level Select Jumper. You can choose the control logic voltage level from this jumper.
+</li><li><b>Power Supply</b>: You have to power up the shield from the J1(DC input connector).The input voltage range can be set up to 6Vdc ~ 28Vdc.The on board DC/DC converter can convert the DC input voltage to 5Vdc output voltage to supply the logic circuit.The DC/DC converter can also power up the microcontroller board(Arduino/Seeeduino) form "5V" pin for maximun 100mA current.<br/>
+</li><li><b>Motor Interface</b>：Out 1 and Out 2(Out 3 and Out 4) connect Motor A(B) for DC Motor.
+</li></ul>
+<h2> Caution</h2>
+<p><b>Do not touch the H-bridge IC or PCB board during working. Its temperature can reach up to 100 degrees in the case of full load operating.</b>
+</p>
+<h2> Usage</h2>
+<p>This demo is using Raspberry Pi B to show that Raspberry Pi Motor Driver Board v1.0 be use to control DC motor forward and backward.
+</p>
+<h3> Hardware Installation</h3>
+<ul><li>1）	Raspberry Pi B &amp; Raspberry Pi Motor Driver Board v1.0
+</li><li>2）	Hardware connection as shown<br/>
+</li></ul>
+<p>connect to network and power<br/>
+<img src="img/Raspberry_Pi_Motor_Board_v1.0_p6.jpg" width="600"/><br/>
+</p>
+<h3> Software Part</h3>
+<ul><li>1) Copy these code as follows;
+</li></ul>
+<pre>
+#!/usr/bin/python
+import RPi.GPIO as GPIO
+import time
+import signal	
+
+from PiSoftPwm import *
+
+#print 'Go_1...'
+#frequency = 1.0 / self.sc_1.GetValue()
+#speed = self.sc_2.GetValue()
+	
+class Motor():
+    def __init__(self):
+	# MC33932 pins
+	self.PWMA = 25  
+	self.PWMB = 22
+	self._IN1 = 23  
+	self._IN2 = 24 
+	self._IN3 = 17
+	self._IN4 = 27
+
+	# Initialize PWMA PWMB 
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(self.PWMA, GPIO.OUT)
+	GPIO.setup(self.PWMB, GPIO.OUT)
+	GPIO.output(self.PWMA, True)
+	GPIO.output(self.PWMB, True)
+
+	# Initialize PWM outputs
+	self.OUT_1  = PiSoftPwm(0.1, 100, self._IN1, GPIO.BCM)
+	self.OUT_2  = PiSoftPwm(0.1, 100, self._IN2, GPIO.BCM)
+	self.OUT_3  = PiSoftPwm(0.1, 100, self._IN3, GPIO.BCM)
+	self.OUT_4  = PiSoftPwm(0.1, 100, self._IN4, GPIO.BCM)
+
+        # Close pwm output
+	self.OUT_1.start(0)
+	self.OUT_2.start(0)
+	self.OUT_3.start(0)
+	self.OUT_4.start(0)
+        
+        self.frequency = 0.01
+        self.duty = 60
+
+    def Setting(self, frequency, duty):
+        self.frequency = frequency
+        self.duty = duty
+
+    def Go_1(self):
+	self.OUT_1.changeBaseTime(self.frequency)
+	self.OUT_2.changeBaseTime(self.frequency)
+	self.OUT_1.changeNbSlicesOn(self.duty)
+	self.OUT_2.changeNbSlicesOn(0)
+
+    def Back_1(self):
+	self.OUT_1.changeBaseTime(self.frequency)
+	self.OUT_2.changeBaseTime(self.frequency)
+	self.OUT_1.changeNbSlicesOn(0)
+	self.OUT_2.changeNbSlicesOn(self.duty)
+
+    def Go_2(self):
+	self.OUT_3.changeBaseTime(self.frequency)
+	self.OUT_4.changeBaseTime(self.frequency)
+	self.OUT_3.changeNbSlicesOn(0)
+	self.OUT_4.changeNbSlicesOn(self.duty)
+
+    def Back_2(self):
+	self.OUT_3.changeBaseTime(self.frequency)
+	self.OUT_4.changeBaseTime(self.frequency)
+	self.OUT_3.changeNbSlicesOn(self.duty)
+	self.OUT_4.changeNbSlicesOn(0)
+
+    def Stop():
+	self.OUT_1.changeNbSlicesOn(0)
+	self.OUT_2.changeNbSlicesOn(0)
+	self.OUT_3.changeNbSlicesOn(0)
+	self.OUT_4.changeNbSlicesOn(0)
+
+if __name__=="__main__":
+    motor=Motor()
+    # Called on process interruption. Set all pins to "Input" default mode.
+    def endProcess(signalnum = None, handler = None):
+	    motor.OUT_1.stop()
+	    motor.OUT_2.stop()
+	    motor.OUT_3.stop()
+	    motor.OUT_4.stop()
+	    motor.GPIO.cleanup()
+	    exit(0)
+
+    # Prepare handlers for process exit
+    signal.signal(signal.SIGTERM, endProcess)
+    signal.signal(signal.SIGINT, endProcess)
+    signal.signal(signal.SIGHUP, endProcess)
+    signal.signal (signal.SIGQUIT, endProcess)
+
+    motor.Setting(0.01, 60)
+    print 'motor start...'
+    while True:
+        print 'turning direction...'
+        motor.Go_1()
+        time.sleep(1)
+        motor.Back_1()
+        time.sleep(1)
+        motor.Go_2()
+        time.sleep(1)
+        motor.Back_2()
+        time.sleep(1)
+</pre>
+<ul><li>2) Saved in the Raspberry Pi, According to your own path
+</li><li>3) Run this program,LED1,LED2 on Raspberry Pi Motor Driver Board v1.0 will Alternate lights up,LED3,LED4 is also.<br/>
+</li></ul>
+<p>it means Out 1 and Out 2(Out 3 and Out 4) connect Motor A(B) forward and back.
+</p>
+<ul><li>4) You can see phenomemon as follows:
+</li></ul>
+<p>serial console:<br/>
+</p><p><img src="img/Raspberry_Pi_Motor_Board_v1.0_p4.jpg" width="400"/>
+</p><p>Raspberry Pi Motor Driver Board v1.0:<br/>
+Green LED and Blue LED alternate lights up<br/>
+<img src="img/Raspberry_Pi_Motor_Board_v1.0_p5.jpg" width="400"/>
+</p>
+<h2> Resource</h2>
+<ul><li><a href="res/Raspberry_Pi_Motor_Driver_Board_v1.0_sch_pcb_20150119.zip">eagle file Raspberry Pi Motor Driver Board v1.0</a>
+</li><li><a href="res/Raspberry_Pi_Motor_Driver_Board_v1.0.pdf">PDF Raspberry Pi Motor Driver Board v1.0</a>
+</li><li><a href="res/MC33932VW.pdf">MC33932VW</a>
+</li><li> <a href="res/TD1519A.pdf">TD1519A</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

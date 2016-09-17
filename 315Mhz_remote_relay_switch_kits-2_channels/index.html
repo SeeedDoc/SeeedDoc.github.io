@@ -1,0 +1,85 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>315Mhz remote relay switch kits - 2 channels</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>315Mhz remote relay switch kits - 2 channels</h1>
+
+<p>This remote switch allows you to remotely control any 12 Volt DC device. Perfect for controlling any 12V devices such as Lights , Fans,Landscaping Lighting and more. This easy-to-wire kit is perfect for anybody with a basic knowledge of electrical wiring, and can easily be wired to many 12V applications. For PC Modders, the end of result of the Remote Control 12VDC kit are truly impressive and are sure to ooh and ah the crowds. For DIYers, the kit will give some magical effect to your projects.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/315mhz-remote-relay-switch-kits-2-channels-p-150.html?cPath=139_140">WLS103B5B</a></b>
+</p><p><a href="http://www.seeedstudio.com/depot/images/P2130781.jpg">http://www.seeedstudio.com/depot/images/P2130781.jpg</a>
+</p>
+<h2>  Specification  </h2>
+<ul><li> Frequency: 315Mhz.
+</li><li> Modulation: ASK
+</li><li> Working Voltage: 12VDC
+</li><li> Receiver Sensibility: -105dbm
+</li><li> Emission Distance: 100m in open ground
+</li><li> Size: 68mm*47mm*12mm
+</li><li> *Defaultly 315Mhz receiver, exchangable with 433Mhz receiver.
+</li></ul>
+<h2>  Pin definition and Rating  </h2>
+<p>Each Relay owns one group of 3 pins:
+</p>
+<ul><li><b>A</b> - Normally Closed, Open When Relay activate
+</li><li><b>B</b> -  Common Node
+</li><li><b>C</b> - Normally Open, Close When Relay activate
+</li></ul>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<h3>  Encoding and Decoding </h3>
+<p>The popular link is like this: MCU -&gt; Encoder -&gt; Transmitter ------ Receiver -&gt; Decoder -&gt; MCU,
+</p><p>PT2262(Encoder) and PT2272(Decoder) are optional, their existence is to
+</p><p>1)avoid confusing when multiple RF links in range 
+</p><p>2) isolate disturbance. You can integrate the encoding and decoding work to the MCUs on both side. Whenever there is no 315Mhz devices around, you may use it as direct cable connection.
+</p><p>To setup a PT2272 and PT2262 link, you would need to set PT2262 by a little soldering:
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/RFReceiverDec.jpg">http://www.seeedstudio.com/depot/images/product/RFReceiverDec.jpg</a>
+</p><p>And setup the corresponding pins on PT2272:
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/RFTransmitEnc.jpg">http://www.seeedstudio.com/depot/images/product/RFTransmitEnc.jpg</a>
+</p>
+<h3> Relay Operation Modes</h3>
+<p>The receiver has three modes that control how the relay outputs function. These modes are user selectable using
+the 3 pin jumper on the receiver.
+</p><p><b>Momentary:</b>
+Move the switch position to “M???to set the selected relay(s) in momentary mode. In momentary mode, the
+selected relay(s) will change it’s state and maintain it for the duration of the transmission received. Once the
+transmission is terminated, the relay will change back to its original state.
+</p><p><b>Flip-Flop:</b>
+Remove the shunt to set the selected relay(s) in Flip-Flop mode. In Flip-Flop mode, the selected
+relay(s) will change its state and maintain it until a matching transmission is received. Every time a transmission is
+received the relay will change its state and maintain it until another transmission is received.
+</p><p><b>Latching:</b>
+Move the switch position to “L???to set the selected relay(s) in Latching mode. In latching mode, when the selected relay is activated by the transmitter, that relay will change it’s state and maintain it until power to the receiver is removed or interrupted.
+</p><p>Please refer to the simple drawing for the 315Mhz RF link. On the transimitter side, You would need to supply 3-5VDC to the "+12V" pin,(<b>Caution</b>: the 12v is an error silk screen on PCB, never give it more than 5V）, and set "TE" high(5V) to enable transmission. On the receiver side, you may use +5VDC(aka VCC) for power and read the output from D0~D3. "TV" will indicate thenever there is changed data incoming.
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/315MhzTransmitter.gif">http://www.seeedstudio.com/depot/images/product/315MhzTransmitter.gif</a>
+</p>
+<h2>  FAQ  </h2>
+<p>Here is the <a href="/w/index.php?title=Wireless_FAQ&amp;action=edit&amp;redlink=1" title="Wireless FAQ (page does not exist)">Wireless FAQ</a>, people can go here to find questions and answers for this kind of products. 
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v1.0?
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> Jun 08, 2009
+</td></tr></table>
+<h2>  Resources  </h2>
+<ul><li><a href="http://www.seeedstudio.com/depot/datasheet/How%20to%20Use%20315MHz%20Remote%20Relay%20Kits.pdf">Manual for How to use</a>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy: <a href="http://www.seeedstudio.com/depot/315mhz-remote-relay-switch-kits-2-channels-p-150.html?cPath=139_140">http://www.seeedstudio.com/depot/315mhz-remote-relay-switch-kits-2-channels-p-150.html?cPath=139_140</a>. 
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

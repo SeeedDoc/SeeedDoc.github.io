@@ -1,0 +1,171 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Camera Shield</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Camera Shield</h1><div class="thumb tright"><div class="thumbinner" style="width:602px;"><img src="img/CameraShield.jpg" width="600"/> <div class="thumbcaption"></div></div></div>
+<h2> Introdcution</h2>
+<p>Camera Shield is the first shield board that support photograph, it is based on the solution of <b>VC0706 + OV7725</b>, the former is a high performance camera processor with enhanced image processing functions and it embedded the hard-wired JPEG codec, and the latter is a high-performance 1/4 inch, single-chip VGA camera and image processor in a small footprint package. We have written our library to control the Camera Shield via UART/SPI, which makes it possible to take picture easily by your Arduino board. Come on and use it to take a photo!
+</p>
+<h2> Specification</h2>
+<ul><li> Fully Compatible with Arduino or Seeeduino
+</li><li> Still Picture Resolution: (640x480) JPEG Output
+</li><li> High Speed Serial Bus Control: UART/SPI
+</li><li> Integrated MicroSD card Interface
+</li><li> Power Supply: 5 V
+</li></ul>
+<h2> Hardware Interface</h2>
+<p>Camera Shield can be controlled via SPI or UART interface.<br/>
+<img src="img/CameraShield_Interface.png" width="1370"/><br/>
+<img src="img/CameraShield_Interface2.png" width="831"/><br/>
+</p>
+<h2> Getting Started</h2>
+<p>Here is a brief introduction to use Camera Shield.<br/>
+1. Download the <a href="https://github.com/Seeed-Studio/Camera_Shield_VC0706">Camera Shield library</a> file from gitHub and then extract the library file to your Arduino libraries folder.<br/>
+2. Open the example folder in libraries/Camera_Shield_VC0706, you will find the snapshot example sketch, double click the snapshot.ino file to open it with arduino IDE.<br/>
+3. We arrange the library to make it possible to control the Camera Shield via Software Serial/Hardware Serial/SPI, you can have your choice via modifying the code. 
+</p>
+<pre>
+#include "SoftwareSerial.h"
+#include &lt;VC0706_UART.h&gt;
+#include &lt;SD.h&gt;
+#include &lt;SPI.h&gt;
+#define SS_SD  10
+
+//use software serial
+SoftwareSerial cameraconnection(2,3);//Rx, Tx
+VC0706 cam = VC0706(&amp;cameraconnection);
+//use hardware serial
+//VC0706 cam = VC0706(&amp;Serial1);
+
+void setup() 
+{
+    Serial.begin(9600);
+    Serial.println("VC0706 Camera Snapshot Test ...");
+    
+    if (!SD.begin(SS_SD)) {
+        Serial.println("SD Card init failed...");
+        return;
+    }  
+    if(true == cameraInit()){
+        snapShot();
+    }else{
+        Serial.println("camera init error...");
+    }
+}
+
+void loop() 
+{
+    //nothing to do
+}
+
+bool cameraInit()
+{
+    cam.begin(BaudRate_19200);
+    char *reply = cam.getVersion();
+    if (reply == 0) {
+        Serial.println("Failed to get version");
+        return false;
+    } else {
+        Serial.println("version:");
+        Serial.println("-----------------");
+        Serial.println(reply);
+        Serial.println("-----------------");
+        return true;
+    }
+}
+
+void snapShot()
+{
+    Serial.println("Snap in 3 secs...");
+    delay(3000);
+    if (! cam.takePicture()){ 
+        Serial.println("Failed to snap!");
+    }else { 
+        Serial.println("Picture taken!");
+    }
+    // Create an image with the name IMAGExx.JPG
+    char filename[13];
+    strcpy(filename, "IMAGE00.JPG");
+    for (int i = 0; i &lt; 100; i++) {
+        filename[5] = '0' + i/10;
+        filename[6] = '0' + i%10;
+        // create if does not exist, do not open existing, write, sync after write
+        if (! SD.exists(filename)) {
+            break;
+        }
+    }
+    // Open the file for writing
+    File imgFile = SD.open(filename, FILE_WRITE);
+    Serial.print("create ");
+    Serial.println(filename);
+    uint16_t jpglen = cam.getFrameLength();
+    Serial.print("wait to fetch ");
+    Serial.print(jpglen, DEC);
+    Serial.println(" byte image ...");
+    int32_t time = millis();
+    cam.getPicture(jpglen);
+    uint8_t *buffer;
+    while(jpglen != 0){
+         uint8_t bytesToRead = min(32, jpglen);
+         buffer = cam.readPicture(bytesToRead);     
+         imgFile.write(buffer, bytesToRead);
+         //Serial.print("Read ");  Serial.print(bytesToRead, DEC); Serial.println(" bytes");
+         jpglen -= bytesToRead;   
+    } 
+    imgFile.close();
+    time = millis() - time;
+    Serial.println("Done!");
+    Serial.print("Took "); Serial.print(time); Serial.println(" ms");
+    cam.resumeVideo();    
+}
+</pre>
+<p><b>use Hardware Serial or Software Serial for communication</b> <br/>
+we use Serial(Software Serial or Hardware serial) to communicate with Camera Shield, you can generate your applicance like below:<br/>
+</p>
+<pre>
+//use software serial
+SoftwareSerial cameraconnection(2,3);//Rx, Tx
+VC0706 cam = VC0706(&amp;cameraconnection);
+</pre>
+<p>or if you want to use the hardware serial, you can do it like below:<br/>
+</p>
+<pre>
+//use hardware serial
+VC0706 cam = VC0706(&amp;Serial1);
+</pre>
+<p>We use the software serial by default. If hardware serial is your choise, you need to modify the code in VC0706_UART head file. Change<br/>
+</p>
+<pre>#define USE_SOFTWARE_SERIAL         1
+</pre>
+<p>to
+</p>
+<pre>#define USE_SOFTWARE_SERIAL         0
+</pre>
+<p><b>Use UART or SPI for data transmission</b> <br/>
+Usually, you can take a picture by the following steps:<br/>
+</p>
+<pre>
+cam.takePicture();
+uint16_t jpglen = cam.getFrameLength();
+cam.getPicture(jpglen);
+buffer = cam.readPicture(bytesToRead);   
+</pre>
+<p>and we allow you to read data via two mode:<br/>
+</p>
+<ul><li>1. UART —— slower mode. Software Serial only support 9600/19200 baud rate. Hardware Serial can be 115200/38400/19200/9600. It will take about 30s to get a picture if you choose the uart mode and at 19200 baud rate. 
+</li><li>2. SPI —— faster mode. It will only take about 1s or 2s to get the whole picture back.
+</li></ul>
+<p>You can choose your mode in VC0706_UART header file. We use the SPI mode by default.<br/>
+</p>
+<pre>#define TRANSFER_BY_SPI             1
+</pre>
+<p>change it to
+</p>
+<pre>#define TRANSFER_BY_SPI             0
+</pre>
+<p>to use the UART mode.<br/>
+4. Stack the Camera Shield onto Arduino and Insert a mocro-SD card to the Camera Shield, you should pay attention to the serial jumpers that you defined in you code.<br/>
+</p><p>5. Compile the sketch and upload it to your arduino board. Open the Serial port of Arduino IDE, you can see the debug information shown from the Serial port. and the SD card status LED will blink quickly during the data transfer.<br/>
+</p><p>6. When the program finishes, pull out the SD card and insert it to your computer, you can see your photos. Have fun<br/>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="https://github.com/Seeed-Studio/Camera_Shield_VC0706">Camera Shield Library on gitHub</a>
+</li><li><a href="res/CameraShield-Schematic.zip">Schematic of Camera Shield</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

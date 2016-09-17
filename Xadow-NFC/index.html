@@ -1,0 +1,71 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow - NFC</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow - NFC</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/X_nfc_01.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>Near Field Communication (NFC) is a set of short-range wireless technologies. It's behind daily applications such as access control system and mobile payment system. <br/>
+Xadow NFC features a highly integrated transceiver module PN532 which handles contactless communication at 13.56MHz. You can read and write a 13.56MHz tag with this module or implement point to point data exchange with two Xadow NFCs.  Xadow NFC is designed to use I2C, SPI or UART communication protocols, and I2C is the default mode. In addition, we assign an independent PCB antenna which can easily stretch out of any enclosure you use, leaving more room for you to design the exterior of your project.
+</p>
+<h2> Specification</h2>
+<ul><li> Working Voltage: 3.3V
+</li><li> Working Current: 
+</li></ul>
+<dl><dd><dl><dd>Static Mode: 73mA
+</dd><dd>Write/Read Mode: 83mA
+</dd></dl>
+</dd></dl>
+<ul><li> Support host interface: I2C(default), SPI, UART.  
+</li><li> Serve for contactless communication at 13.56MHz.
+</li><li> Support ISO14443 Type A and Type B protocols.
+</li><li> Max operating distance for detecting NFC tags is 28mm depending on current antenna size. 
+</li><li> Support P2P communication.
+</li><li> Dimensions: 25.43mm x 20.35mm
+</li></ul>
+<h2> Demonstration </h2>
+<p>Xadow NFC has many capabilities which integrates a PN532 NFC controller, our Arduino library supports reading/writing tags, phone-to-Xadow NFC communication, tag emulation at this time, it's a 3-in-1 allstar.<br/>
+</p><p><b>Note: </b>When Xadow NFC is using SPI communication protocols, there is an existing library which supports phone-to-Xadow NFC communication. The default communication mode for this product is I2C, so the library cannot use directly.
+</p><p>Before reading/writing tag, what you need to prepare is the hardware installation and the libraries.
+</p>
+<ul><li>The hardware installation as shown below: 
+</li></ul>
+<p><br/><img src="img/XadowNFC.jpg" width="600"/><br/>
+Note: when connect <strong class="selflink">Xadow - NFC</strong> to <a href="/Xadow-Main_Board" title="Xadow - Main Board">Xadow - Main Board</a>, you should concern about the connection direction. The connection method is that the unfilled corner of one Xadow module need to connect to the right angle of another module (see four corners of each Xadow module).<br/>
+</p>
+<ul><li>Download <a href="https://github.com/Seeed-Studio/PN532">PN532 library</a> and <a href="https://github.com/don/NDEF">NDEF Library</a>. Do not forget to install these libraries into Arduino Library. If you haven't  knew clearly the operation, please jump to <a href="/How_to_install_Arduino_Library">there</a> for a closer look. 
+</li></ul>
+<p><b><big>Note:</big></b>
+</p><p>Make sure that you have folders - PN532, PN532_SPI, PN532_I2C, PN532_HSU and NDEF (from <a href="https://github.com/don/NDEF">NDEF Library</a>) in your Arduino Library folder.
+</p><p><br/>
+</p>
+<h3> Demo 1: Write messages to tag </h3>
+<ul><li>Open the code directly by the path:File -&gt; Example -&gt;Ndef_dev-&gt;WriteTag.
+</li></ul>
+<p><img src="img/Code_Interfae.jpg" width="450"/><br/>
+</p><p>In this code, <b>the function message.addUriRecord("<a href="http://arduino.cc">http://arduino.cc</a>")</b> is used to write message to tag. You can replace the message "<a href="http://arduino.cc">http://arduino.cc</a>" with new message. For example, we input "do you happy?" and "hello, world" using this function.
+</p>
+<ul><li>Upload the code and open the Serial Monitor, It prompts you to place a NFC tag on the NFC antenna. After a successful operation, it will prompt you to read the tag.
+</li></ul>
+<p><br/><img src="img/WriteTag.jpg" width="368"/><br/>
+</p>
+<h3> Demo 2: Read tag </h3>
+<p>If you want to know whether the writing operation you have just done is successful, you can use the code:ReadTag for checking.
+</p>
+<ul><li>Open the code:ReadTag directly by the path:File -&gt; Example -&gt;Ndef_dev-&gt;ReadTag and upload it to your Xadow Main Board.
+</li></ul>
+<p><img src="img/ReadTag_code.bmp" width="450"/><br/>
+</p>
+<ul><li>Open the Serial Monitor to see the tag information. Following figure shows the reading result:
+</li></ul>
+<p><br/><img src="img/Read_a_Tag.jpg" width="400"/><br/>
+It is essential to explain a NDEF message in order to have a clear recognition about the above picture. There can be multiple records in a NDEF message. For our analysis purposes we use only one NDEF records. 
+</p>
+<dl><dd><b>TNF(001)</b> - The TNF field value indicates the structure of the value of the TYPE field. The value 0x01 (NFC Forum well-known type) indicates that the TYPE field contains a value that follows the RTD type name format defined in the NFC Forum RTD specification).
+</dd><dd><b>Type Length</b> - The TYPE_LENGTH field is an unsigned 8-bit integer that specifies the length in octets of the TYPE field. The TYPE_LENGTH field is always zero for certain values of the TNF field.
+</dd><dd><b>Pay load Length</b> - The PAYLOAD_LENGTH field is an unsigned integer that specifies the length in octets of the PAYLOAD field (the application payload). The size of the PAYLOAD_LENGTH field is determined by the value of the SR flag
+</dd><dd><b>Type(55)</b> - The value of the TYPE field is an identifier describing the type of the payload, The URI record type (“U”)  
+</dd><dd><b>Pay Load</b> - The rest of the string in UTF-8
+</dd></dl>
+<h2> Resources</h2>
+<ul><li><a href="res/Xadow_NFC_Eagle_File.zip">Xadow NFC Eagle File</a><br/>
+</li><li><a href="res/Xadow_NFC_Antanna.zip">Xadow NFC Antenna Eagle File</a><br/>
+</li><li><a href="res/PN532.pdf">PN532 Datasheet</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

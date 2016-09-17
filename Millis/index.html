@@ -1,0 +1,95 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Millis()</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Millis()</h1><p>在前面我们用delay( )实现了LED的闪烁，可是当LED闪烁时，其他程序也需要运行时，该怎么办呢？
+</p><p>这里我们将学习一个很重要的命令——时间追踪器millis( )，它从程序开始运行时，进行计时，
+</p><p>因此我们可以令LED在特定的时间点亮起或是熄灭，这样就实现了闪烁效果，同时其他程序可以照常运行。
+</p><p><br/>
+<b>材料清单：</b>
+</p>
+<ul><li>Arduino
+</li><li>LED
+</li><li>220Ω电阻
+</li><li>面包线
+</li></ul>
+<p><br/>
+</p><p><b>线路图：</b>
+</p><p><img src="img/Sidekick_1_1.png" width="600"/>
+</p><p><b>原理图：</b>
+</p><p><img src="img/Sidekick_1_2.png" width="400"/>
+</p><p><b>代码:</b>
+</p><p>按以下路径打开代码：File-Examples-Digital-BlinkWithoutDelay。
+</p>
+<pre>
+/* Blink without Delay
+ 
+ Turns on and off a light emitting diode(LED) connected to a digital  
+ pin, without using the delay() function.  This means that other code
+ can run at the same time without being interrupted by the LED code.
+ 
+ The circuit:
+ * LED attached from pin 13 to ground.
+ * Note: on most Arduinos, there is already an LED on the board
+ that's attached to pin 13, so no hardware is needed for this example.
+ 
+ 
+ created 2005
+ by David A. Mellis
+ modified 8 Feb 2010
+ by Paul Stoffregen
+ 
+ This example code is in the public domain.
+
+ 
+ http://www.arduino.cc/en/Tutorial/BlinkWithoutDelay
+ */
+
+// constants won't change. Used here to 
+// set pin numbers:
+const int ledPin =  13;      // the number of the LED pin
+
+// Variables will change:
+int ledState = LOW;             // ledState used to set the LED
+long previousMillis = 0;        // will store last time LED was updated
+
+// the follow variables is a long because the time, measured in miliseconds,
+// will quickly become a bigger number than can be stored in an int.
+long interval = 1000;           // interval at which to blink (milliseconds)
+
+void setup() {
+  // set the digital pin as output:
+  pinMode(ledPin, OUTPUT);      
+}
+
+void loop()
+{
+  // here is where you'd put code that needs to be running all the time.
+
+  // check to see if it's time to blink the LED; that is, if the 
+  // difference between the current time and last time you blinked 
+  // the LED is bigger than the interval at which you want to 
+  // blink the LED.
+  unsigned long currentMillis = millis();
+ 
+  if(currentMillis - previousMillis &gt; interval) {
+    // save the last time you blinked the LED 
+    previousMillis = currentMillis;   
+
+    // if the LED is off turn it on and vice-versa:
+    if (ledState == LOW)
+      ledState = HIGH;
+    else
+      ledState = LOW;
+
+    // set the LED with the ledState of the variable:
+    digitalWrite(ledPin, ledState);
+  }
+}
+
+</pre>
+<p><br/>
+</p><p><br/>
+<b>参考连接</b>
+</p>
+<ul><li><a href="/读取模拟信号口的电压">上一篇：读取模拟信号口的电压</a>
+</li><li><a href="/用按键点亮LED">下一篇：用按键点亮LED</a>
+</li><li><a href="/Sidekick_plus_中文#.E5.8F.82.E8.80.83.E8.B5.84.E6.96.99">Sidekick Plus Wiki 主页</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

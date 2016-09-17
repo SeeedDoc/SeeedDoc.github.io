@@ -1,0 +1,101 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Finger-clip Heart Rate Sensor with shell</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Finger-clip Heart Rate Sensor with shell</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Grove-Finger-clip_Heart_Rate_Sensor_with_shell.JPG" width="400"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+Grove - Finger-clip Heart Rate Sensor with shell is based on PAH8001EI-2G, a high performance and low power CMOS-process optical sensor with Green LED and DSP integrated serving as a Heart Rate Detection (HRD) sensor.This module is based on optical technology which measures the variation human blood movement in the vessel. Low power consumption and flexible power saving mode make it suitable for wearable device. Cause the heart rate sensor chip need high processing speed for the algorithm of heart rate data, this module integrate a STM32, reserved SWD interface allow users to reprogram the STM32. This module equips a shell and two bands that allow users to fix the module on finger, wrist or arm easily.
+</p>
+<p><br/>
+</p>
+<h2> Specification</h2>
+<ul><li>Ultra-low power consumption, power saving mode during time of no touch movement
+</li><li>Flexible sleep rate control
+</li><li>Integrated the STM32F103
+</li><li>I2C interface
+</li><li>Heart rate sensor area just 3.0 x 4.7mm
+</li><li>Reserved SWD interface
+</li><li>equip with shell and bands
+</li><li>Working temperature: -20 to +60℃
+</li></ul>
+<h2> Interface Function</h2>
+<p><img src="img/Finger-clip_Heart_Rate_Sensor_TOP.jpg" width="500"/> <img src="img/Finger-clip_Heart_Rate_Sensor_Bottom.jpg" width="500"/>
+</p>
+<ul><li>1: Grove Interface
+</li><li>2: Reserved SWD Interface for programming to STM32
+</li><li>3: Heart Rate Sensor
+</li></ul>
+<h2> Usage</h2>
+<p>Here, We will provide an example here to show you how to use this sensor.
+</p>
+<h3> Hardware Installation</h3>
+<p>Link the Sensor to I2C port of Seeeduino with Grove Cable.	
+</p><p><img src="img/Grove-Finger-clip_Heart_Rate_Sensor_with_shell_connect.jpg" width="500"/><br/>
+When using the band to fix this module on your finger or wrist, please keep the sensor area contact the skin well and keep no motion, just like the picture. <br/>
+<img src="img/Grove-Finger-clip_Heart_Rate_Sensor_touch.jpg" width="500"/><br/><img src="img/Grove-Finger-clip_Heart_Rate_Sensor_touch2.JPG" width="500"/><br/>
+</p><p><br/>
+</p>
+<h3> Software Part</h3>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Copy the following code into a new sketch of Arduino and upload the sketch, then you can get heart rate from the Serial Monitor.
+It may take about a minute to get valid heart rate after you touch your finger with sensor.
+</p>
+<pre>
+#include &lt;Wire.h&gt;
+void setup() {
+  Serial.begin(9600);
+  Serial.println("heart rate sensor:");
+  Wire.begin();
+}
+void loop() {
+  Wire.requestFrom(0xA0 &gt;&gt; 1, 1);    // request 1 bytes from slave device 
+  while(Wire.available()) {          // slave may send less than requested
+    unsigned char c = Wire.read();   // receive heart rate value (a byte)
+    Serial.println(c, DEC);         // print heart rate value
+  }
+  delay(500);
+}
+</pre>
+<h3> With <a href="/w/index.php?title=Mbed&amp;action=edit&amp;redlink=1" title="Mbed (page does not exist)">Mbed</a></h3>
+<p>Read a byte from I2C device 0xA0 (8 bit address), it's the heart rate.
+</p>
+<pre>
+#include "mbed.h"
+ 
+I2C i2c(I2C_SDA, I2C_SCL);
+const int addr = 0xA0;
+ 
+int main() {
+    char heart_rate;
+    while (1) {
+        i2c.read(addr, &amp;heart_rate, 1);
+        printf("heart rate: = %d\r\n", heart_rate);
+    }
+}
+</pre>
+<h4> Upgrade firmware</h4>
+<p>We can upgrade the firmware of the heart rate sensor through its bootloader.
+</p>
+<ul><li> The bootloader is located at 0x08000000 - 0x08002000
+</li><li> The application is located at 0x08002000 - 0x08020000
+</li><li> To boot into bootloader, connect SWDIO to GND and reset to run
+</li></ul>
+<p><img src="img/Grove-Finger-clip_Heart_Rate_Sensor_boot_set.jpg" width="300"/>
+</p>
+<ul><li> Interface: UART (the Grove connector supports I2C and UART),when upgrade the firmware, the Grove interface run in UART mode. 
+</li></ul>
+<p>VCC  -  VCC<br/>
+GND  -  GND<br/>
+SDA  -  TX<br/>
+SCL  -  RX<br/>
+</p>
+<ul><li> UART Baud Rate: 115200
+</li><li> Protocol: ymodem (The recommended tool is Tera Term)
+</li></ul>
+<p><b>NOTE</b>: 
+The Grove - Finger-clip Heart Rate Sensor provides heart rate measurements. However, it is not a medical device. To use the heart rate detection sensor on your wrist, finger or palm, you must:
+</p><p>(1)Fasten the sensor snugly makes tight contact with your skin and maintain table (no motion) while measuring to acquire accurate heart rate. 
+If the sensor does not contact the skin well or have extreme motion while measuring that the heart rate will not be measured correctly.  
+(2)Sensor's performance is optimized with greater blood flow. On cold days or users have poor circulation(ex: cold hands, fingers and cold feet) the sensor performance (heart rate accuracy)can be impacted because of lower blood flow in the measuring position.
+</p>
+<h2> Resources</h2>
+<ul><li><a href="/index.php-title=Grove-Finger-clip_Heart_Rate_SensorAndaction=submit">Grove - Finger-clip Heart Rate Sensor eagle file</a>
+</li><li><a href="res/Grove-Finger-clip_Heart_Rate_Sensor_bin.zip">Grove - Finger-clip Heart Rate Sensor bin file</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

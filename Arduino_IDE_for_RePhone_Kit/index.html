@@ -1,1480 +1,195 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Arduino IDE for RePhone Kit - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Arduino IDE for RePhone Kit";
-    var mkdocs_page_input_path = "Arduino_IDE_for_RePhone_Kit.md";
-    var mkdocs_page_url = "/Arduino_IDE_for_RePhone_Kit/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Arduino IDE for RePhone Kit</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#download-arduino-ide-for-rephone">Download Arduino IDE for RePhone</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#install-the-driver">Install the Driver</a></li>
-                
-                    <li><a class="toctree-l4" href="#disable-driver-signature-enforcement-under-windows-8-81">Disable Driver Signature Enforcement under Windows 8 / 8.1</a></li>
-                
-                    <li><a class="toctree-l4" href="#normal-driver-installation">Normal Driver Installation</a></li>
-                
-                    <li><a class="toctree-l4" href="#install-the-driver-manually">Install the Driver Manually</a></li>
-                
-                    <li><a class="toctree-l4" href="#install-the-driver-with-linkit-assist-2502-sdk-2046">Install the Driver with LinkIt Assist 2502 SDK 2.0.46</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#updateflash-the-firmware">Update/Flash the Firmware</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#reset-to-default">Reset to default</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#a-demo-hello-world">A demo: Hello World</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#more-example-code">More Example Code</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#rephone-community">RePhone Community</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#more">More</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Tutorial &raquo;</li>
-        
-      
-    
-    <li>Arduino IDE for RePhone Kit</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Arduino IDE for RePhone Kit</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><a href="../Rephone"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Xadow_GSMPlusBLE_pingguo.JPG" /></a></p>
-<p>RePhone can be a learning tool for you to start interesting projects. Currently, RePhone supports various development environments and development languages, you can build applications either with C/C++ based on Eclipse IDE, Arduino IDE, or with Lua and JavaScript.</p>
-<p>This wiki is a User Guide to help you start your RePhone project with Arduino IDE.</p>
-<h2 id="download-arduino-ide-for-rephone">Download Arduino IDE for RePhone<a class="headerlink" href="#download-arduino-ide-for-rephone" title="Permanent link"></a></h2>
-<p>Before you download the Arduino IDE for RePhone, make sure you have an operation system as follows:</p>
-<p><strong>Windows XP/Vista/7/8/8.1</strong></p>
-<p>We have put the Arduino IDE for RePhone on our GitHub, and you are quite welcome to send us a &lsquo;pull request&rsquo; to help us optimize and improve it.</p>
-<p>If you ever used the Arduino IDE before, then this should be just a piece of cake. If you are not familiar with Arduino, which is fine as well, just follow the instructions, and you will be getting started with Arduino IDE easily and quickly.</p>
-<p>Now click on</p>
-<p><a href="https://github.com/Seeed-Studio/Arduino_IDE_for_RePhone"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Download_Arduino_IDE_for_RePhone.png" /></a></p>
-<p>On the Github page, click the <strong>Download ZIP</strong> to download the file as shown in the image below:</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Click_to_download_Arduino_IDE_for_RePhone.png" /></p>
-<p>When the download is complete, unzip the file to a proper location.</p>
-<h2 id="install-the-driver">Install the Driver<a class="headerlink" href="#install-the-driver" title="Permanent link"></a></h2>
-<h3 id="disable-driver-signature-enforcement-under-windows-8-81">Disable Driver Signature Enforcement under Windows 8 / 8.1<a class="headerlink" href="#disable-driver-signature-enforcement-under-windows-8-81" title="Permanent link"></a></h3>
-<p>If you are using the Windows8/8.1, you would need to disable <strong>Driver Signature Enforcement</strong> first to be able to install the driver.</p>
-<p><strong>You should save the files you are editing before trying to turn off the &lsquo;Driver Signature Enforcement&rsquo; as your system will be shut down during the operation.</strong></p>
-<p>Now follow the instructions below to disable the &lsquo;Driver Signature Enforcement.&rsquo;</p>
-<ol>
-<li>Press “Windows Key” +&rdquo;R&rdquo;</li>
-<li>Enter shutdown.exe /r /o /f /t 00</li>
-<li>Click the &ldquo;OK&rdquo; button.</li>
-<li>System will restart to a &ldquo;Choose an option&rdquo; screen</li>
-<li>Select &ldquo;Troubleshoot&rdquo; from &ldquo;Choose an option&rdquo; screen</li>
-<li>Select &ldquo;Advanced options&rdquo; from &ldquo;Troubleshoot&rdquo; screen</li>
-<li>Select &ldquo;Windows Startup Settings&rdquo; from &ldquo;Advanced options&rdquo; screen</li>
-<li>Click &ldquo;Restart&rdquo; button</li>
-<li>System will restart to &ldquo;Advanced Boot Options&rdquo; screen</li>
-<li>Select &ldquo;Disable Driver Signature Enforcement&rdquo;</li>
-<li>Once the system starts, you can install the Arduino drivers as same as Windows</li>
-</ol>
-<h3 id="normal-driver-installation">Normal Driver Installation<a class="headerlink" href="#normal-driver-installation" title="Permanent link"></a></h3>
-<ol>
-<li>
-<p>First, power up your RePhone by <strong>plugging in the battery</strong> or <strong>power it with external power sources (3.3 ~ 4.2V(no SIM)/3.5 ~ 4.2V(with SIM)) </strong>to the battery socket on the Xadow GSM+BLE, <strong>press and hold the power key (PWR) for 2 seconds to</strong> <strong>turn it ON</strong> (LED indicator shows <strong>GREEN</strong>), then connect your RePhone to PC with a Micro USB cable.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Connect_Xadow_GSMPlusBLE_to_PC.png" /></p>
-</li>
-<li>
-<p>Open <strong>Device Manager</strong> by clicking the <strong>Start</strong> button, clicking <strong>Control Panel</strong>, clicking <strong>System and Security</strong>, and then, under <strong>System</strong>, clicking <strong>Device Manager</strong>. If you&rsquo;re prompted for an administrator password or confirmation, type the password or provide confirmation.
-In the <strong>Device Manager</strong>, you will be seeing unknown devices as shown below:</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Unknown_Devices.png" /></p>
-</li>
-<li>
-<p>Right click on one of the unknown devices, choose <strong>Update Driver Software</strong>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Update_Driver_Software.png" /></p>
-</li>
-<li>
-<p>Choose <strong>Browse my computer for driver software</strong>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Browse_my_computer_for_driver_software.png" /></p>
-</li>
-<li>
-<p>Click <strong>Browse</strong> and the locate the folder which you&rsquo;ve unzipped the Arduino IDE for RePhone .. \Arduino_IDE_for_RePhone\drivers\mtk . Click <strong>Next</strong> to start the driver installation.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_Locate_Driver.png" /></p>
-</li>
-<li>
-<p>When the driver software is successfully installed, you will be able to see the following <strong>complete</strong> page, click <strong>Close</strong> and <strong>start over from step 1 to 6 to install the driver for another unknown device</strong>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Driver_Installation_complete_page.png" /></p>
-</li>
-</ol>
-<h3 id="install-the-driver-manually">Install the Driver Manually<a class="headerlink" href="#install-the-driver-manually" title="Permanent link"></a></h3>
-<p>You can also install the driver manually:</p>
-<ol>
-<li>
-<p>In &ldquo;<strong>Browse for driver software on your computer</strong>&rdquo; window, click <strong>&ldquo;Let me pick from a list of device drivers on my computer</strong>&ldquo;</p>
-</li>
-<li>
-<p>Then click &ldquo;<strong>Ports(COM&amp;LPT)</strong>&rdquo; and go &ldquo;<strong>next</strong>&ldquo;</p>
-</li>
-<li>
-<p>Click &ldquo;<strong>Have Disk</strong>&ldquo;</p>
-</li>
-<li>
-<p>Afterwards,</p>
-</li>
-</ol>
-<p>&ndash; if you are using <strong><big>Windows Vista 64bit</big></strong>, locate &ldquo;<strong>Arduino_IDE_for_RePhone-master\drivers\mtk\Vista\usb2ser_Vista64.inf\</strong>&ldquo;</p>
-<p>&ndash; if you are using <strong><big>Windows 7 or higher with 64bit</big></strong>, locate &ldquo;<strong>Arduino_IDE_for_RePhone-master\drivers\mtk\Win7\usb2ser_Win764.inf</strong>&ldquo;</p>
-<h3 id="install-the-driver-with-linkit-assist-2502-sdk-2046">Install the Driver with LinkIt Assist 2502 SDK 2.0.46<a class="headerlink" href="#install-the-driver-with-linkit-assist-2502-sdk-2046" title="Permanent link"></a></h3>
-<p>LinkIt Assist 2502 SDK 2.0.46 also provides a driver installation program.</p>
-<p><a href="http://download.labs.mediatek.com/MediaTek_LinkIt_Assist_2502_SDK_2_0_46.zip"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Linkit_assist_sdk_2.0.46-04.png" /></a></p>
-<p>Then find the driver installer in the path <strong>&ldquo;MediaTek_LinkIt_Assist_2502_SDK_2_0_46\LINKIT_ASSIST_SDK\Driver\InstallMTKUSBCOMPortDriver.exe&rdquo;</strong></p>
-<h2 id="updateflash-the-firmware">Update/Flash the Firmware<a class="headerlink" href="#updateflash-the-firmware" title="Permanent link"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-Please note that flashing the firmware will delete all the settings and files(images, musics) stored in the RePhone. Take a data backup before you flash/update the firmware.
-</div>
-
-<p>To make use of the Arduino IDE for RePhone, you have to update/flash the firmware as well. The process is as simple as follows:</p>
-<ol>
-<li>
-<p><strong>Disconnect your RePhone with PC</strong>, <strong>press and hold the power key(PWR) for 2 seconds to turn it OFF</strong> (LED indicator turn <strong>RED</strong> and then goes out)</p>
-</li>
-<li>
-<p>Open the <strong>FirmwareUpdater.exe</strong> under the path <strong><em>&hellip;Arduino_IDE_for_RePhone\hardware\tools\mtk\FirmwareUpdater.exe</em></strong>, be sure your platform on the Firmware Updater is &ldquo;<strong>RePhone</strong>&rdquo; as showing below, if not, click &ldquo;<strong>Others</strong>&rdquo; and locate to <strong><em>&hellip;Arduino_IDE_for_RePhone\hardware\tools\mtk\firmware\LinkIt_Device\RePhone\W15.19.p2-uart\SEEED02A_DEMO_BB.cfg</em></strong>, then click <strong>Download (The Green Button)</strong>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware.png" /></p>
-</li>
-<li>
-<p>Now you will be asked to connect your RePhone to PC via USB cable, make sure your RePhone has been turned <strong>OFF</strong> and meantime a functional battery should be always connected ( Powered Up).</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware_pluginrephone.png" /></p>
-</li>
-<li>
-<p>Wait until the downloading finishes. This might take about 1min, so it may remain stuck at 50% for quite a while, please <strong>be patient</strong>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware_downloading.png" /></p>
-</li>
-<li>
-<p>In the <strong>Complete</strong> page click <strong>OK</strong> to finish the firmware update.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Updatefirmware_complete.png" /></p>
-</li>
-</ol>
-<h2 id="reset-to-default">Reset to default<a class="headerlink" href="#reset-to-default" title="Permanent link"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-Please note that resetting your Rephone to default will delete all the settings and files(images, musics) in the RePhone. Take a data backup before you reset it to default.**
-</div>
-
-<p>To reset your RePhone to <strong>DEFAULT</strong>:</p>
-<ol>
-<li>
-<p>Follow the instructions in &ldquo;Update/Flash the Firmware&rdquo; section to flash the firmware</p>
-</li>
-<li>
-<p>Download the RePhone_Create_Kit_VXP file</p>
-<p><a href="https://github.com/WayenWeng/RePhone_Create_Kit_VXP/"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/RePhone_Kit_Create_VXP.png" /></a></p>
-</li>
-<li>
-<p>Enter the <a href="../Xadow_GSMPlusBLE#Mass_Storage_Mode">RePhone Mass Storage Mode</a></p>
-</li>
-<li>
-<p>Copy everything under the file named &ldquo;RePhone Create Kit VXP&rdquo; into the RePhone 5MB mass storage.</p>
-</li>
-<li>
-<p>Restart your RePhone then its done. As reset would have deleted all the files, you would have to put an mp3 file in the mass storage as well for the use of ringtone.</p>
-</li>
-</ol>
-<h2 id="a-demo-hello-world">A demo: Hello World<a class="headerlink" href="#a-demo-hello-world" title="Permanent link"></a></h2>
-<p>Now you have prepared things required, we are ready to rock on with RePhone.</p>
-<p>Let us start with a simple program <strong>Hello World</strong></p>
-<ol>
-<li>
-<p>Press and hold the power key (PWR) for 2 seconds to turn it ON (LED indicator shows GREEN)</p>
-</li>
-<li>
-<p>Open the <strong>Arduino_IDE_for_RePhone.exe</strong> in the folder where you unzipped the Arduino IDE for RePhone, the software interface is as follows:</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_interface.png" /></p>
-</li>
-<li>
-<p>Open <strong>Device Manager</strong> to check for the COM ports. There will be <strong>two COM ports</strong>:</p>
-<ul>
-<li>MTK USB Debug Port is used for uploading code</li>
-<li>MTK USB Modem Port is used for logs, like printing messages in the serial monitor with <strong>Serial.println()</strong></li>
-</ul>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_COM_Ports.png" /></p>
-</li>
-<li>
-<p>On the Arduino IDE window, click <strong>Tool =&gt; Port</strong>, select <strong>MTK USB Debug Port</strong>, which is <strong>COM20</strong> in this case, the COM number might be different in your PC, just make sure it corresponds to the Debug Port.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Debug_Port.png" /></p>
-</li>
-<li>
-<p>On the Arduino IDE window, click <strong>Tool =&gt; Board</strong>, select <strong>RePhone</strong></p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Board.png" /></p>
-</li>
-<li>
-<p>Now copy the following code to your Arduino IDE:</p>
-<pre><code>// hello world for test RePhone
-// loovee@10-18-2015
-
-void setup() {
-    Serial.begin(115200);
-}
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Arduino IDE for RePhone Kit</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Arduino IDE for RePhone Kit</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="/Rephone"><img src="img/Xadow_GSMPlusBLE_pingguo.JPG" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p><br/>
+RePhone can be a learning tool for you to start interesting projects. Currently, RePhone supports various development environment and development languages, you can either built applications with C/C++ based on Eclipse IDE, Arduino IDE, or with Lua and JavaScript.
+</p><p>This wiki is a User Guide to help you start your RePhone project with Arduino IDE. 
+</p>
+<p><br/>
+<br/>
+</p>
+<h2> Download Arduino IDE for RePhone</h2>
+<p>Before you download the Arduino IDE for RePhone, make sure you have an operation system as following:
+</p><p><b>Windows XP/Vista/7/8/8.1</b>
+</p><p>We have put the Arduino IDE for RePhone on our GitHub, and you are quite welcomed to send us 'pull request' to help us optimize and improve it. 
+</p><p>If you ever used the Arduino IDE before, then this should be just a piece of cake. If you are not familiar with Arduino, which is fine as well, just follow the instructions, and you will be getting started with Arduino IDE easily and quickly. 
+</p><p>Now click to 
+<br/><br/>
+</p><p><a href="https://github.com/Seeed-Studio/Arduino_IDE_for_RePhone"><img src="img/Download_Arduino_IDE_for_RePhone.png" width="300"/></a>
+<br/>
+<br/>
+</p><p>On the Github page, click the <b>Download ZIP</b> to download the file as the image shown below:
+<br/>
+</p><p><img src="img/Click_to_download_Arduino_IDE_for_RePhone.png" width="600"/>
+</p><p><br/>
+When the download is complete, unzip the file to a proper location.
+</p><p><br/>
+</p>
+<h2> Install the Driver</h2>
+<h3> Disable Driver Signature Enforcement under Windows 8/8.1</h3>
+<p><br/>
+If you are using the Windows8/8.1, you would need to disable <b>Driver Signature Enforcement</b> first to be able to install the driver.
+</p><p><b>You should save the files you are editing before trying to turn off the 'Driver Signature Enforcement' as your system will be shut down during the operation. </b>
+</p><p>Now follow the instructions below to disable the 'Driver Signature Enforcement.'
+<br/>
+</p>
+<ol><li>Press “Windows Key” +"R" <br/>
+</li><li>Enter shutdown.exe /r /o /f /t 00 <br/>
+</li><li>Click the "OK" button.<br/>
+</li><li>System will restart to a "Choose an option" screen<br/>
+</li><li>Select "Troubleshoot" from "Choose an option" screen<br/>
+</li><li>Select "Advanced options" from "Troubleshoot" screen<br/>
+</li><li>Select "Windows Startup Settings" from "Advanced options" screen<br/>
+</li><li>Click "Restart" button<br/>
+</li><li>System will restart to "Advanced Boot Options" screen<br/>
+</li><li>Select "Disable Driver Signature Enforcement"<br/>
+</li><li>Once the system starts, you can install the Arduino drivers as same as Windows<br/>
+</li></ol>
+<p><br/>
+</p>
+<h3> Normal Driver Installation</h3>
+<p>1. Firstly, power up your RePhone by <b>plug in the battery</b> or <b>power it with external power sources(3.3 ~ 4.2V(no SIM)/3.5 ~ 4.2V(with SIM))</b>to the battery socket on the Xadow GSM+BLE, <b>press and hold the power key (PWR) for 2 second to</b> <b>turn it ON</b> (LED indicator shows <b>GREEN</b>), then connect your RePhone to PC with a Micro USB cable.
+<br/>
+</p><p><img src="img/Connect_Xadow_GSMPlusBLE_to_PC.png" width="526"/>
+<br/>
+</p><p>2. Open <b>Device Manager</b> by clicking the <b>Start</b> button, clicking <b>Control Panel</b>, clicking <b>System and Security</b>, and then, under <b>System</b>, clicking <b>Device Manager</b>. If you're prompted for an administrator password or confirmation, type the password or provide confirmation.
+<br/>
+In the <b>Device Manager</b>, you'll be seeing unknown devices as shown below:
+<br/>
+</p><p><img src="img/Driver_Installation_Unknown_Devices.png" width="454"/>
+<br/>
+</p><p>3. Right click on one of the unknown devices, choose <b>Update Driver Software</b>.
+</p><p><img src="img/Driver_Installation_Update_Driver_Software.png" width="454"/>
+<br/>
+</p><p>4. Choose <b>Browse my computer for driver software</b>. 
+</p><p><img src="img/Driver_Installation_Browse_my_computer_for_driver_software.png" width="454"/>
+<br/>
+</p><p>5. Click <b>Browse</b> and the locate the folder which you've unzipped the Arduino IDE for RePhone  .. \Arduino_IDE_for_RePhone\drivers\mtk . Click <b>Next</b> to start the driver installation.
+</p><p><img src="img/Driver_Installation_Locate_Driver.png" width="454"/>
+<br/>
+</p><p>6. When the driver software is successfully installed, you will be able to see the following <b>complete</b> page, click <b>Close</b> and <b>start over from step 1 to 6 to install the driver for another unknown device</b>.
+</p><p><img src="img/Driver_Installation_complete_page.png" width="600"/>
+</p><p><br/>
+</p>
+<h3> Install the Driver Manually</h3>
+<p>You can also install the driver manually:<br/>
+</p><p>1. In "<b>Browse for driver software on your computer</b>" window, click <b>"Let me pick from a list of device drivers on my computer</b>"<br/>
+</p><p>2. Then click "<b>Ports(COM&amp;LPT)</b>" and go "<b>next</b>"<br/>
+</p><p>3. Click "<b>Have Disk</b>" <br/>
+</p><p>4. Afterwards, <br/>
+</p><p>-- if you are using <b><big>Windows Vista 64bit</big></b>, locate "<b>Arduino_IDE_for_RePhone-master\drivers\mtk\Vista\usb2ser_Vista64.inf\</b>"<br/>
+-- if you are using <b><big>Windows 7 or higher with 64bit</big></b>, locate "<b>Arduino_IDE_for_RePhone-master\drivers\mtk\Win7\usb2ser_Win764.inf</b>"<br/>
+<br/>
+</p>
+<h3> Install the Driver with LinkIt Assist 2502 SDK 2.0.46</h3>
+<p>LinkIt Assist 2502 SDK 2.0.46 also provide an driver installation program for you to install the drivers.
+<br/><br/>
+</p><p><a href="http://download.labs.mediatek.com/MediaTek_LinkIt_Assist_2502_SDK_2_0_46.zip"><img src="img/Linkit_assist_sdk_2.0.46-04.png" width="300"/></a>
+<br/><br/>
+</p><p>Then find the driver installer in the path <b>"MediaTek_LinkIt_Assist_2502_SDK_2_0_46\LINKIT_ASSIST_SDK\Driver\InstallMTKUSBCOMPortDriver.exe"</b>
+<br/>
+<br/>
+</p>
+<h2> Update/Flash the Firmware</h2>
+<p><b>NB: Please be noticed that flash the firmware will delete all the settings and files(images, musics) stored in the RePhone, please make sure you have been aware of this before you flash/update the firmware.</b> <br/><br/>
+</p><p>To make use of the Arduino IDE for RePhone, you would have to update/flash the firmware as well. The process is as simple as following:
+</p><p>1. <b>Disconnect your RePhone with PC</b>, <b>press and hold the power key(PWR) for 2 seconds to turn it OFF</b> (LED indicator turn <b>RED</b> and then goes out)<br/>
+</p><p><br/>
+2. Open the <b>FirmwareUpdater.exe</b> under the path <i><b>...Arduino_IDE_for_RePhone\hardware\tools\mtk\FirmwareUpdater.exe</b></i>, be sure your platform on the Firmware Updater is "<b>RePhone</b>" as showing below, if not, click "<b>Others</b>" and locate to <i><b>...Arduino_IDE_for_RePhone\hardware\tools\mtk\firmware\LinkIt_Device\RePhone\W15.19.p2-uart\SEEED02A_DEMO_BB.cfg</b></i>, then click <b>Download (The Green Button)</b>. <br/>
+</p><p><img src="img/Updatefirmware.png" width="567"/><br/>
+</p><p>3. Now you will be asked to connect your RePhone to PC via USB cable, make sure your RePhone has been turned <b>OFF</b> and meantime a functional battery should be always connected ( Powered Up). <br/>
+</p><p><img src="img/Updatefirmware_pluginrephone.png" width="567"/><br/>
+</p><p><br/>
+</p><p>4. Wait until the downloading finish. This might take about 1min, also it may stuck at 50% for quite a while, please <b>be patient</b>.  <br/>
+</p><p><img src="img/Updatefirmware_downloading.png" width="567"/><br/>
+</p><p><br/>
+</p><p>5. In the <b>Complete</b> page click <b>OK</b> to finish the firmware update.<br/>
+</p><p><img src="img/Updatefirmware_complete.png" width="263"/><br/><br/>
+</p>
+<h2> Reset to defaults</h2>
+<p><b>Please be noticed that reset your Rephone to defaults will delete all the settings and files(images, musics) in the RePhone, do aware of this before you reset it to defaults.</b><br/>
+</p><p>To reset your RePhone to <b>DEFAULTS</b>:<br/>
+</p><p>1. Follow the instructions in "Update/Flash the Firmware" section to flash the firmware<br/>
+</p><p>2. Download the RePhone_Create_Kit_VXP file<br/><br/>
+</p><p><a href="https://github.com/WayenWeng/RePhone_Create_Kit_VXP/"><img src="img/RePhone_Kit_Create_VXP.png" width="215"/></a><br/><br/>
+</p><p>3. Enter the <a href="/Xadow_GSMPlusBLE#Mass_Storage_Mode">RePhone Mass Storage Mode</a><br/>
+</p><p>4. Copy everything under the file named "RePhone Create Kit VXP" into the RePhone 5MB mass storage. <br/>
+</p><p>5. Restart your RePhone then its done. As reset have deleted all the files, you would have to put an mp3 file in the mass storage as well for the use of ringtone.
+<br/>
+<br/>
+</p>
+<h2> A demo: Hello World</h2>
+<p>Now you've prepared things required, and we are ready to rock on with RePhone. 
+</p><p>Let's start with a simple program <b>Hello World</b><br/>
+</p><p><br/>
+1. Press and hold the power key (PWR) for 2 seconds to turn it ON (LED indicator shows GREEN) <br/>
+</p><p><br/>
+2. Open the <b>Arduino_IDE_for_RePhone.exe</b> in the folder where you unzipped the Arduino IDE for RePhone, the software interface is as following:<br/>
+</p><p><img src="img/Arduino_IDE_for_RePhone_interface.png" width="454"/><br/>
+</p><p><br/>
+3. Open <b>Device Manager</b> to check for the COM ports. There will be <b>two COM ports</b>:<br/>
+</p>
+<ul><li> MTK USB Debug Port is used for uploading code
+</li><li> MTK USB Modem Port is used for logs, like printing messages in the serial monitor with <b>Serial.println()</b><br/>
+</li></ul>
+<p><img src="img/Arduino_IDE_for_RePhone_COM_Ports.png" width="454"/><br/>
+</p><p><br/>
+</p><p>4. On the Arduino IDE window, click <b>Tool =&gt; Port</b>, select <b>MTK USB Debug Port</b>, which is <b>COM20</b> in this case, the COM number might be different in your PC, just make sure it corresponds to the Debug Port. <br/>
+</p><p><img src="img/Arduino_IDE_for_RePhone_Debug_Port.png" width="454"/><br/>
+</p><p><br/>
+</p><p>5. On the Arduino IDE window, click <b>Tool =&gt; Board</b>, select <b>RePhone</b><br/>
+</p><p><img src="img/Arduino_IDE_for_RePhone_Board.png" width="600"/><br/>
+</p><p><br/>
+6. Now copy the following code to your Arduino IDE:<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// hello world for test RePhone</span>
+<span class="co1">// loovee@10-18-2015</span>
  
-void loop() {
-    // put your main code here, to run repeatedly:
-    Serial.println("Hello World, Hello RePhone!");
-    delay(100);
-}
-</code></pre>
-</li>
-<li>
-<p>Now press the <strong>Upload</strong> button to upload the code to your RePhone. You will see the <strong>Done uploading</strong> when the code is successfully uploaded.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_upload.png" /></p>
-</li>
-<li>
-<p>As RePhone uses different COM ports for uploading software and logs, to read the logs, we need to switch the selected COM Port to <strong>MTK USB Modem Port</strong>. On the Arduino IDE window, click <strong>Tool =&gt; Port</strong>, select <strong>MTK USB Modem Port</strong>, which is <strong>COM48</strong> in this case.</p>
-<p>Then open the <strong>Serial Monitor</strong>.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Serial_Monitor.png" /></p>
-</li>
-<li>
-<p>Now we can see the <strong>Hello World</strong> we have printed with <strong>Serial.println()</strong> .</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_IDE_for_RePhone_Helloworld.png" /></p>
-</li>
-</ol>
-<h2 id="more-example-code">More Example Code<a class="headerlink" href="#more-example-code" title="Permanent link"></a></h2>
-<p>Playing with some example code would be a good start if you are heading into some even more interesting projects.</p>
-<ol>
-<li>
-<p>Simply setup your <strong>sketchbook location</strong> in the <strong>preference</strong> as <strong><em>Arduino_IDE_for_RePhone-master\hardware\arduino\mtk</em></strong> (where you install the Arduino IDE for RePhone)</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_Sketchlocation_1.png" /></p>
-<p>then restart the <strong><em>Arduino_IDE_for_RePhone.exe</em></strong>, you will be able to see the example codes.
-<img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Arduino_Sketchlocation_2.png" /></p>
-</li>
-<li>
-<p>You can also find the Arduino example coded manually for all the RePhone modules in the following path:
-<strong><em>Arduino_IDE_for_RePhone-master\hardware\arduino\mtk\libraries</em></strong></p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/Example_code_Arduino_IDE.png" /></p>
-</li>
-</ol>
-<h2 id="rephone-community">RePhone Community<a class="headerlink" href="#rephone-community" title="Permanent link"></a></h2>
-<p><a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Arduino_IDE_for_RePhone_Kit/img/RePhone_Community-2.png" /></a></p>
-<p>We have been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.</p>
-<p>Now join us in the <a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4">RePhone Community</a>!</p>
-<p>Together we seek answers, make interesting stuff, care about each other, and share our experiences.</p>
-<h2 id="more">More<a class="headerlink" href="#more" title="Permanent link"></a></h2>
-<p>You have done a great job so far! RePhone comes with a big family of modules with different features and functionalities. Go to check the wiki for modules for more applications!</p>
-<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Arduino_IDE_for_RePhone_Kit -->
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Arduino_IDE_for_RePhone_Kit" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../How_to_Install_an_Arduino_Library/" class="btn btn-neutral float-right" title="How to install an Arduino library">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../survey_end/" class="btn btn-neutral" title="Survey"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../survey_end/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../How_to_Install_an_Arduino_Library/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// put your main code here, to run repeatedly:</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Hello World, Hello RePhone!"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+7. Now press the <b>Upload</b> button to upload the code to your RePhone. You will see the <b>Done uploading</b> when the code is successfully uploaded.<br/>
+</p><p><img src="img/Arduino_IDE_for_RePhone_upload.png" width="454"/><br/>
+</p><p>8. As RePhone use different COM ports for uploading software and logs, to read the logs, we need to switch the selected COM Port to <b>MTK USB Modem Port</b>. On the Arduino IDE window, click <b>Tool =&gt; Port</b>, select <b>MTK USB Modem Port</b>, which is <b>COM48</b> in this case.<br/>
+</p><p>Then open the <b>Serial Monitor</b><br/>
+</p><p><img src="img/Arduino_IDE_for_RePhone_Serial_Monitor.png" width="454"/><br/>
+</p><p>9. Now we can see the <b>Hello World</b> we have printed with <b>Serial.println()</b> . <br/>
+</p><p><img src="img/Arduino_IDE_for_RePhone_Helloworld.png" width="454"/><br/>
+</p>
+<h2> More Example Code</h2>
+<p>Playing with some example code would a good start if you are heading into some even more interesting project.<br/>
+</p><p>1. Simply setup your <b>sketchbook location</b> in the <b>preference</b> as <i><b>Arduino_IDE_for_RePhone-master\hardware\arduino\mtk</b></i> (where you install the Arduino IDE for RePhone)
+</p><p><img src="img/Arduino_Sketchlocation_1.png" width="528"/><br/><br/>
+</p><p>then restart the <i><b>Arduino_IDE_for_RePhone.exe</b></i>, you'll be able to see the example codes.<br/><br/>
+<img src="img/Arduino_Sketchlocation_2.png" width="597"/><br/><br/>
+<br/>
+</p><p><br/>
+2. You can also find the Arduino example coded manually for all the RePhone modules in the following path:<br/>
+<i><b>Arduino_IDE_for_RePhone-master\hardware\arduino\mtk\libraries</b></i><br/><br/>
+</p><p><br/>
+<img src="img/Example_code_Arduino_IDE.png" width="465"/><br/>
+</p><p><br/>
+<br/>
+</p>
+<h2> RePhone Community</h2>
+<p><a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4"><img src="img/RePhone_Community-2.png" width="300"/></a>
+</p><p>We’ve been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.
+</p><p>Now join us in the <a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4">RePhone Community</a>! 
+</p><p>Together we seek answers, make interesting stuff, care about each other, and share our experiences.
+<br/>
+<br/>
+</p>
+<h2> More</h2>
+<p>You've done a great job so far! 
+RePhone comes with a big family of modules with different features and functionalities. Go to check the wiki for modules for more applications!
+</p><p><br/>
+</p>
+<h2> Help us to make it better</h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/GTFVKPW" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

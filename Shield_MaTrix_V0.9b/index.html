@@ -1,0 +1,400 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Shield MaTrix V0.9b</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Shield MaTrix V0.9b</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Shield_matrix.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>Shield MaTrix is a stackable Shield for Arduino, which makes it possible to learn programming using the most simple sensors on board.
+</p><p>Model: <a href="http://www.seeedstudio.com/depot/Shield-Matrix-p-1773.html">830069001</a>
+</p><p><img src="img/MFull.JPG" width="900"/>
+</p>
+<h2>  Feature </h2>
+<ul><li> Arduino Mega compatible (recommended Freaduino Mega V1.4 (ATMega 2560 ) )
+</li><li> Support for Arduino Shield
+</li><li> Support for wireless devices based on the nRF24L01+, xBee
+</li><li> Support Matrix LED 60mm 8X8 ( bright red , bright green , yellow)
+</li><li> IR control ( remote control )
+</li><li> RGB LED ( to indicate the various parameters)
+</li><li> Clock button ( on / off various settings )
+</li><li> Buzzer ( Alarm or pressing the remote control buttons )
+</li><li> Light sensor (automatic illumination matrices )
+</li><li> RTC ( real time clock )
+</li><li> I2C- interface (optional I / O)
+</li><li> Voltage 9-24 V or USB controller (recommended 12V 2A)
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li> Digital clock (synchronization NTP) with alarm 
+</li><li> Weather station (temperature-house street-cellar, pressure, humidity) 
+</li><li> Marquee (reading e-mail, social networks, etc.) 
+</li><li> Data transfer (on a similar device)
+</li></ul>
+<h2>  The principle of data display </h2>
+<p>To display different information on the LED matrix display uses dynamic .
+At the same time information is displayed only one line ( corresponding LED lights (red and (or ) green ) ) , all other lines - repaid. The next step - the previous line is extinguished and ignited the next line ( for her current LEDs). Switching rows is very fast and eyes perceive this switch as a single image .
+</p><p>To minimize the number of pins involved are two different types of chips: the shift registers (used for control columns) and a demultiplexer ( control lines).
+</p><p>Shift registers included chain and connected via SPI ( pins involved are described below).
+</p><p>Demultiplexer has three address inputs (DA0, DA1, DA2) - a combination of "0" and "1" at the entrances clearly points to one of the 8 outputs, which will be active level . Additionally the demultiplexer has control inputs (E1, E2, E3) - with the first two (E1 and E2, they are connected in our scheme ) organized a complete quenching of the matrix , and with the input E3 - organized brightness adjustment (using PWM) .
+</p>
+<h2>  Interfaces </h2>
+<ul><li> Interface for 4 bicolor LED matrix :
+<ul><li> Set shift registers (74HC595 - 8 pcs.) To control the columns of LEDs
+</li><li> Demultiplexer 74HC138 to control the rows of LEDs and their brightness (via PWM)
+</li></ul>
+</li><li> Built-in clock (RTC) - based on the DS1307 with battery backup battery (CR1220 or CR1226)
+</li><li> Interface for RF- module nRF24L01 +
+</li><li> Clock button (for example, to turn off the alarm sound )
+</li><li> IR receiver at 38kHz ( for remote control )
+</li><li> Wiring for connecting RGB- LED with common cathode or anode (selected by jumper )
+</li><li> Light sensor ( for example, to automatically adjust the brightness)
+</li><li> Piezo transducer " beeper "
+</li><li> I2C- interface
+</li><li> xBee- interface
+</li><li> Interface for Arduino- Shield
+</li></ul>
+<p><b> Pins on the board, involved on Arduino Mega: </b>
+</p>
+<ul><li> D5 - IR receiver
+</li></ul>
+<ul><li> D24 - clock button
+</li></ul>
+<ul><li> xBee:
+<ul><li> D16 - DIN
+</li><li> D17 - DOUT
+</li></ul>
+</li></ul>
+<ul><li> I2C (DS1307)
+<ul><li> D20 - SDA
+</li><li> D21 - SCL
+</li></ul>
+</li></ul>
+<ul><li> RGB-LED (check):
+<ul><li> D34 - red
+</li><li> D35 - Green
+</li><li> D36 - Blue
+</li></ul>
+</li></ul>
+<ul><li> nRF24L01 +:
+<ul><li> D19 - RF_IRQ
+</li><li> D37 - RF_SCK
+</li><li> D38 - RF_MISO
+</li><li> D39 - RF_MOSI
+</li><li> D40 - RF_NSS
+</li><li> D41 - RF_CE
+</li></ul>
+</li></ul>
+<ul><li> D45 - squeaker
+</li></ul>
+<ul><li> A7 - light sensor
+</li></ul>
+<ul><li> Shift Registers:
+<ul><li> D42 - SS
+</li><li> D51 - MOSI
+</li><li> D52 - SCK
+</li></ul>
+</li></ul>
+<ul><li> Demultiplex
+<ul><li> D49 - DA0
+</li><li> D48 - DA1
+</li><li> D47 - DA2
+</li><li> D44 - E3 (brightness)
+</li><li> D43 - E1, E2 (quenching)
+</li></ul>
+</li></ul>
+<h2>  Cautions  </h2>
+<h2>  Schematic  </h2>
+<p>The right side of the board (when viewed from the matrix) are:
+</p>
+<ul><li> Clock button
+</li><li> Interface for nRF24l01 +
+</li><li> Place mounting RGB-LED
+</li><li> Select jumper type LEDs (common anode or common cathode)
+</li><li> IR receiver
+</li><li> I2C - Interface
+</li></ul>
+<p><img src="img/MRight.JPG" width="340"/>
+</p><p>On the left side of the board are:
+</p>
+<ul><li> Light sensor
+</li><li> Piezo buzzer (beeper)
+</li></ul>
+<p><img src="img/MLeft.JPG" width="300"/>
+</p><p><a href="res/SM09b_scheme.jpg">Schematic of the device</a>
+</p>
+<h2>  Necessary libraries </h2>
+<p>To use the various components Shield MaTrix requires the following libraries:
+</p><p>Displays information on the matrix - MaTrix - <a href="https://github.com/stepanovalex/MaTrix/archive/master.zip">MaTrix</a> (including a simple display test and two real time display sketches.)
+</p>
+<ul><li> Real-time clock (RTC) - RTClib - <a href="https://github.com/adafruit/RTClib/archive/master.zip">RTClib</a>
+</li><li> IR-receiver - IRremote <a href="https://github.com/shirriff/Arduino-IRremote/archive/master.zip">IRremote</a> (With this library, you can control the display using an IR remoter)
+</li><li> nRF24L01 + - iBoardRF24 - <a href="https://github.com/andykarpov/iBoardRF24/archive/master.zip">iBoardRF24</a> (<a href="http://www.seeedstudio.com/depot/DevDuino-Sensor-Node-V13-ATmega-328-RC2032-battery-holder-p-1774.html?cPath=19_22">DevDuino Sensor Node 2.4G nRF24L01+</a> remote control library)
+</li></ul>
+<p><img src="img/Shield-matrix_nRF24L01Plus.jpg" width="600"/> <br/>
+</p><p>Additionally required libraries that are used during operation of libraries:
+</p>
+<ul><li> Wire
+</li><li> SPI
+</li><li> <a href="https://code.google.com/p/digitalwritefast/downloads/detail?name=digitalWriteFast.zip&amp;can=2&amp;q=">digitalWriteFast</a>
+</li></ul>
+<h2>  Features using libraries </h2>
+<p>Only two libraries require little comment on their use:
+</p>
+<h3>   IR receiver </h3>
+<p>Since the IR receiver connected to digital pin of 5 must file / IRremote / IRremoteInt.h correct code as follows:
+</p>
+<pre>...
+
+// Arduino Mega
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+  //#define IR_USE_TIMER1   // tx = pin 11
+  //#define IR_USE_TIMER2     // tx = pin 9
+  #define IR_USE_TIMER3   // tx = pin 5
+  //#define IR_USE_TIMER4   // tx = pin 6
+  //#define IR_USE_TIMER5   // tx = pin 46
+
+...</pre>
+<h3>  nRF24L01+ </h3>
+<p>Initialize the module as follows:
+</p>
+<pre>...
+
+//iBoardRF24 radio(CE,CSN,MOSI,MISO,SCK,IRQ);
+iBoardRF24 radio(41,40,39,38,37,19);
+
+...</pre>
+<h1>  Library functions MaTrix </h1>
+<p>To use the library in your sketch MaTrix need to declare a function void setup () to enter the following line of code:
+</p><p><code>
+</code></p>
+<pre> #include &lt;SPI.h&gt;
+ #include &lt;MaTrix.h&gt;	//connection library MaTrix
+ 
+ MaTrix mymatrix;       //object creation mymatrix
+</pre>
+<p>
+</p>
+<h2>  Variables </h2>
+<p><b>byte array[8][8]</b> - main array. 
+The data from this array is determined that the currently displayed on the LED matrix
+</p><p><code>
+</code></p>
+<pre> byte array[8][8] = { // An array of 64 bytes
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 7
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 6
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 5
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 4
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 3
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 2
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 1
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000}   // строка 0
+   // red3      green3      red2      green2      red1      green1       red0      green0
+ };
+</pre>
+<p>
+Each bit corresponds to the corresponding LED in the matrix. 0 - LED "extinguished", 1 - LED "lit"
+</p><p><br/>
+<b>byte shadow[8][8]</b> - additional ("shadow") array. 
+Library functions used for organizing various effects and scrolling text (data from the shadow of the array for a particular effect rewritten the rule of the "shadow" of the array in the main).
+<code>
+</code></p>
+<pre> byte shadow[8][8] = { //An array of 64 bytes
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 7
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 6
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 5
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 4
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 3
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 2
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000},  // строка 1
+   {B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000, B00000000}   // строка 0
+   // red3      green3      red2      green2      red1      green1       red0      green0
+ };
+</pre>
+<p>
+</p>
+<h2>  Definitions </h2>
+<p><code>
+</code></p>
+<pre> // Color
+ #define RED    0
+ #define GREEN  1
+ #define YELLOW 2
+</pre>
+<pre> // delay iteration in "drawing" effects (ms)
+ #define VSLOW  500
+ #define SLOW   150
+ #define MID    100
+ #define FAST   50
+ #define VFAST  25
+</pre>
+<pre> // effects 
+ #define FADE   4
+ #define LEFT   3
+ #define UP     1
+ #define DOWN   2
+ #define NONE   0
+</pre>
+<pre> // hardware data
+ #define BRIGHT 44    // brightness (pin 44 - PWM)
+ #define LightSENS A7 // light sensor
+</pre>
+<p>
+</p>
+<h2>  Main function </h2>
+<p><u> <b>mymatrix.init();</b></u>
+</p>
+<dl><dd><i>Description</i>: nitialization module. 
+</dd></dl>
+<p><br/>
+<u> <b>mymatrix.clearLed();</b></u>
+</p>
+<dl><dd><i>Description</i>:cleaning the display. 
+</dd></dl>
+<p><br/>
+<u> <b>mymatrix.brightness(byte brightLevel);</b></u>
+</p>
+<dl><dd><i>Description</i>: sets the display brightness. 
+</dd><dd><i>brightLevel</i>:brightness level (byte), a value of 255 - set to maximum brightness.
+</dd></dl>
+<p><br/>
+Example of use:
+</p><p><code>
+</code></p>
+<pre> mymatrix.brightness(177);
+</pre>
+<p>
+</p><p><br/>
+<u> <b>mymatrix.get Brightness();</b></u>
+</p>
+<dl><dd><i>Description</i>: returns the current display brightness.
+</dd></dl>
+<p>Example of use:
+</p><p><code>
+</code></p>
+<pre> Serial.println(mymatrix.getBrightness());
+</pre>
+<p>
+</p><p><br/>
+</p><p><u> <b>printString(String s, byte pos, byte color, unsigned char *Font, char effect, int speed);</b></u>
+</p>
+<dl><dd><i>Description</i>: displays the specified string. 
+</dd><dd><i>pos</i>: starting position of the first character (byte). Counting from the right edge of the matrix, starting with 0.
+</dd><dd><i>color</i>: color (byte). Three predefined values - RED, GREEN, YELLOW
+</dd><dd><i>*Font</i>: a pointer to the font (unsigned char). Fonts available at the library: character - font5x8 (Latin), font6x8 (Latin and Cyrillic); digital - digit6x8bold, digit6x8future. Details about fonts, see the file fonts.c of the library archive MaTrix.
+</dd><dd><i>effect</i>: the effect of the inscription (char). Available predefined values: LEFT, UP, DOWN (shift in the corresponding direction), FADE (manifestation), NONE (No effect - instantly). Default value - NONE.
+</dd><dd><i>speed</i>: playback speed effect (int). Available predefined values: VSLOW, SLOW, MID,  FAST, VFAST (from "very slow" to "very quickly"), default value - MID.
+</dd></dl>
+<p>Example of use:
+</p><p><code>
+</code></p>
+<pre> mymatrix.printString("123", 3, GREEN, font6x8, UP, SLOW);
+</pre>
+<p>
+</p><p><br/>
+<u> <b>printRunningString(String s, byte color, unsigned char *Font, int speed);</b></u>
+</p>
+<dl><dd><i>Description</i>: displays the defined "running" line. 
+</dd><dd><i>color</i>: color (byte). Three predefined values - RED, GREEN, YELLOW
+</dd><dd><i>*Font</i>: a pointer to the font (unsigned char). Fonts available at the library: character - font5x8 (Latin), font6x8 (Latin and Cyrillic); digital - digit6x8bold, digit6x8future. Details about fonts, see the file fonts.c of the library archive MaTrix.
+</dd><dd><i>speed</i>: playback speed effect (int). Available predefined values: VSLOW, SLOW, MID,  FAST, VFAST (from "very slow" to "very quickly"), default value - MID.
+</dd></dl>
+<p><br/>
+Example of use:
+</p><p><code>
+</code></p>
+<pre> mymatrix.printRunningString("MaTrix test!", RED, font6x8, FAST);
+</pre>
+<p>
+</p>
+<h2>  Auxiliary functions </h2>
+<p><u> <b>printArray();</b></u>
+</p>
+<dl><dd><i>Description</i>: displays the serial port the current state of the main array (array).
+</dd></dl>
+<p><br/>
+<u> <b>printShadow();</b></u>
+</p>
+<dl><dd><i>Description</i>: displays the serial port the current state of the "shadow" of the array (shadow).
+</dd></dl>
+<p><br/>
+<u> <b>printChar(unsigned char sym, byte pos, byte color);</b></u>
+</p>
+<dl><dd><i>Description</i>: function changes the bulk (array)so that when displayed in the matrix in a predetermined position of the desired output color desired symbol.
+</dd><dd><i>pos</i>:starting character position (byte). Counting from the right edge of the matrix, starting with 0.
+</dd><dd><i>color</i>: color (byte). Three predefined values - RED, GREEN, YELLOW
+</dd></dl>
+<p>Attention! Font that is used when calling the function must be defined using the setFont.
+</p><p><br/>
+<u> <b>printCharShadow(unsigned char sym, byte pos, byte color);</b></u>
+</p>
+<dl><dd><i>Description</i>: function similar printChar, but is subject to modification "shadow" array (shadow).
+</dd></dl>
+<p><br/>
+<u> <b>printStr(unsigned char *s, byte pos, byte color);</b></u>
+</p>
+<dl><dd><i>Description</i>: function changes the bulk (array) so that when displayed on a matrix with a predetermined desired position of the array of characters displayed the color desired.
+</dd><dd><i>*s</i>: a pointer to an array of characters (unsigned char). 
+</dd><dd><i>pos</i>: starting position of the first character (byte). Counting from the right edge of the matrix, starting with 0.
+</dd><dd><i>color</i>: color (byte). Three predefined values - RED, GREEN, YELLOW
+</dd></dl>
+<p>Attention! Font that is used when calling the function must be defined using the setFont.
+</p><p><br/>
+<u> <b>printStrShadow(unsigned char *s, byte pos, byte color);</b></u>
+</p>
+<dl><dd><i>Description</i>: function similar printChar, but is subject to modification "shadow" array (shadow).
+</dd></dl>
+<h2>  References </h2>
+<p>Current version of the library <a href="https://github.com/stepanovalex/MaTrix/archive/master.zip">MaTrix</a>
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<p>All the components used to produce the product. 
+</p>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas,
+</p>
+<h2>  Version Tracker  </h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td width="150"> <b>Revision</b>
+</td>
+<td width="450"> <b>Descriptions</b>
+</td>
+<td width="80"> <b>Release </b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> 0.9
+</td>
+<td> Prototype
+</td>
+<td> 11.04.2013
+</td></tr>
+<tr style="font-size: 90%">
+<td> 0.9b
+</td>
+<td> Public version
+</td>
+<td> 27.10.2013
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our 
+</p><p>products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources </h2>
+<h2>  How to buy  </h2>
+<p>This product can be purchased:<br/>
+China (shipping worldwide) <br/>
+<a href="http://www.seeedstudio.com/depot/Shield-Matrix-p-1773.html">Seeed store</a> <br/>
+Russia <br/>
+<a href="http://devicter.ru/goods/Shield-MaTrix">Devicter store</a>
+</p>
+<h2>  See Also  </h2>
+<p>Other related products and resources.
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are 
+</p><p>licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

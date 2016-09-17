@@ -1,0 +1,210 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Hijack</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Hijack</h1>
+
+<p>HiJack is a hardware/software platform for creating cubic-inch sensor peripherals for the mobile phone. HiJack devices harvest power and use bandwidth from the mobile phone's headset interface. The HiJack platform enables a new class of small and cheap phone-centric sensor peripherals that support plug-and-play operation. HiJack has been tested with the iPhone 3G/3GS/4G, iPod Touch, and iPad devices. 
+<br/>
+A <a href="res/Hijack_lib.zip">Hijack app LIB</a> is also available to help you design your own particular "ixxxx" app with this kit. It would be great if you can share your innovations with the community.
+<br/>
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/hijack-development-pack-p-865.html?cPath=174">TES52959P</a></b>
+</p>
+<center>
+<p><img src="img/Hijack.jpg" width="500"/>
+</p>
+</center>
+<ul><li><a href="http://www.eecs.umich.edu/~prabal/projects/hijack/">hijack project</a>
+</li></ul>
+<p>The Hijack kit includes:
+</p>
+<ul><li>Hijack mainboard
+</li><li>Hijack programmer
+</li><li>HiJack ProtoBoard
+</li><li>Grove-Universal 4 Pin cable X5
+</li></ul>
+<h2>  Bug Tracker  </h2>
+<p><font color="red">Because of the connector we used in last batch can not be found in market, we have transferred to the original hijack version, which we found a fatal bug in the connector.
+In case of using with Iphone4&amp;4S, Because the MIC Pin of audio connector touches shell of Iphone4&amp;4GS, a insulating washer needs to be used to avoid this fatal bug, as the following:</font>
+<br/>
+<img src="img/Hijack_bug1.jpg" width="300"/>
+<img src="img/Hijack_bug2.jpg" width="300"/>
+</p>
+<h2>  How does Hijack works   </h2>
+<ul><li><b>Power</b>. The HiJack energy harvester can supply 7.4 mW to a load with 47% power conversion efficiency when driven by a 22 kHz tone from the output of a single audio channel through the iPhone/ipad/itouch headset port, no extra energy source is needed. The name "Hijack" refers to this energy harvestign method. 
+</li><li><b>Sensing and Data Translating to iPhone/ iPad/iTouch</b>: The Hijack kit made by seeedstudio has 2 <a href="http://garden.seeedstudio.com/index.php?title=GROVE_System#TWIG_Series">twig</a> interfaces; one for reading analog input and the other for I2C. The firmware for the  I2C interface to the sensor  is still in under development. The MCU on Hijack gets the sensor data and then translate it to the iPhone/ iPad/iTouch through the audio connector after encoding/demodulating.
+</li></ul>
+<center>
+<p><img src="img/Shield_of_Hijack.jpg" width="400"/>
+</p>
+</center>
+<h2>  Download the firmware  </h2>
+<p>The Hijack is shipped with a firmware downloaded into it's MCU. This firmware enables the MCU to convert the analog voltage on pin A_6 to a digital result, and then send this result to the iPhone/iPad/iTouch. However, you may occasionally need to re-download the firmware or upgrade it to a new version.
+</p>
+<ul><li>1. Connect the Hijack mainboard to the Hijack programmer
+</li><li>2. Insert the programmer into the USB port of PC. The red LED D1 should be lit. Then change the USB serial Port to <a href="/w/index.php?title=COM1&amp;action=edit&amp;redlink=1" title="COM1 (page does not exist)">COM1</a>
+</li></ul>
+<center>
+<p><img src="img/Change_COMM_port.jpg" width="400"/>
+</p>
+</center>
+<ul><li>3. Download the [<a href="http://garden.seeedstudio.com/images/7/76/Hijack_firmware.rar">Hijack firmware</a>] and then copy the folder: <a href="/w/index.php?title=Tos-bsl-win&amp;action=edit&amp;redlink=1" title="Tos-bsl-win (page does not exist)">tos-bsl-win</a> to the root directory of disk D: on your PC. Then click the "hijack_download.bat" script to begin the download.
+</li></ul>
+<center>
+<p><img src="img/Hijack_firmware_download.jpg" width="400"/>
+</p>
+</center>
+<p>If you see the "xxxx bytes programmed" message, the firmware download is OK. 
+<br/>When you want to upgrade the firmware, just replace the <a href="/w/index.php?title=Hijack_a6.ihex&amp;action=edit&amp;redlink=1" title="Hijack a6.ihex (page does not exist)">hijack_a6.ihex</a> in the <a href="/w/index.php?title=Tos-bsl-win&amp;action=edit&amp;redlink=1" title="Tos-bsl-win (page does not exist)">tos-bsl-win</a> with the firmware you want to upgrade to.
+</p>
+<h2>  Schematic  </h2>
+<p><a href="http://garden.seeedstudio.com/images/d/da/Hijack_mainboard.PDF">Hijack mainboard.PDF</a>
+<br/>
+<a href="http://garden.seeedstudio.com/images/9/97/HiJack_Programmer.PDF">Programmer.PDF</a>
+<br/>
+<a href="http://garden.seeedstudio.com/images/c/c3/HiJack_ProtoBoard.PDFfile:HiJack">ProtoBoard.PDF</a>
+<br/>
+</p>
+<h2>  Cautions  </h2>
+<ul><li> <a href="/w/index.php?title=Because_of_the_energy_harvest_mode,_the_sensor_power_draw_in_this_kit_should_not_exceed_5mW.&amp;action=edit&amp;redlink=1" title="Because of the energy harvest mode, the sensor power draw in this kit should not exceed 5mW. (page does not exist)">Because of the energy harvest mode, the sensor power draw in this kit should not exceed 5mW.</a>
+</li><li> [[Because of the connector differences between the iPhone&amp;iPad and the iPod Touch, The Hijack's connection with the iPod Touch may be poor; you may need to rotate the audio connector to improve the connection. Connections with the iPhone &amp; iPad are good in all orientations.]] 
+</li></ul>
+<p><br/>
+</p>
+<h2>  Specification  </h2>
+<p>May include key specifications and other specifications. 
+</p>
+<h3>  Key Specification  </h3>
+<table>
+<tr>
+<th> Item
+</th>
+<th> Minimum
+</th>
+<th> Typical
+</th>
+<th> Maximum
+</th></tr>
+<tr>
+<td width="400px"> Power available
+</td>
+<td width="200px"> -
+</td>
+<td width="200px"> 7.4mW
+</td>
+<td width="200px"> -
+</td></tr>
+<tr>
+<td width="400px"> Voltage output
+</td>
+<td width="200px"> 2.75v
+</td>
+<td width="200px"> 2.8v
+</td>
+<td width="200px"> 3.3v
+</td></tr></table>
+<h2>  Application  </h2>
+<p>The Hijack kit combines energy transfer, data input, and data output into a single, integrated application. With The Hijack kit, it is possible to change your iPhone/iPad/iPod Touch into an instrument that can display a sensor reading with the help of The Hijack.
+</p>
+<h3> Receive the analog input</h3>
+<p>Lots of sensors deliver analog output and it's easy to connect the seeedstudio twig with the HiJack ProtoBoard.
+<br/>
+</p>
+<h4> example 1</h4>
+<ul><li> connect the twig_Potentiometer to the analog read interface of the HiJack ProtoBoard, and then insert it to the Hijack mainboard.
+</li><li> Insert this kit into the audio connector to iPhone/iPad/iTouch.
+</li><li> Turn up the <a href="/w/index.php?title=Volume&amp;action=edit&amp;redlink=1" title="Volume (page does not exist)">volume</a> of iPhone/iPad/iTouch, and open the app: <a href="/w/index.php?title=Hijack.&amp;action=edit&amp;redlink=1" title="Hijack. (page does not exist)">Hijack.</a>It is a app which you can download from the app store for free.
+</li></ul>
+<p><img src="img/App-potention.jpg" width="350"/>
+<img src="img/Vol-potention.jpg" width="350"/>
+<br/>
+The MCU on the Hijack mainboard A/D convert the voltage on the Potentiometer , and then sent the result to the iPad via audio connector. Rotate the Potentiometer, you will see the waveform on the iPad changes with your rotating. And, the voltage result showed at the bottom of iPad changes.
+</p>
+<h4> example 2</h4>
+<p><img src="img/Hijack-light1.jpg" width="400"/>
+<img src="img/Hijack-light2.jpg" width="400"/>
+<br/>
+Connect the twig-light sensor to HiJack ProtoBoard, the waveform on the iPad changes because light sensors which change voltage based on the light of the environment.You can see from the pictures,the leftside one shows the low voltage about 0.8v because light sensor is in the dark place.The other one shows the 1.9v voltage because it is exposed to the light source.
+</p>
+<h3> Receive the digital input</h3>
+<p>When the voltage on A_6 pin is digital signal(0V or 3.3V), the MCU also A/D convert it and sent result to iPhone/iPad/iTouch. It is easy  for the this system to detect those sensors with logic output. For example, change the above Potentiometer  to a twig_touch sensor.
+</p>
+<center>
+<p><img src="img/Touch.jpg" width="400"/>
+</p>
+</center>
+<p>Touch the sensor with your finger, you will find the waveform on the iPad screen changes to high, about 3.3v, and release you finger, the waveform would drop to low, about 0v.
+<br/>
+<a href="http://www.flickr.com/photos/seeedstudio/5889783049"></a><a href="/w/index.php?title=Vidio_for_the_above_application&amp;action=edit&amp;redlink=1" title="Vidio for the above application (page does not exist)">Vidio for the above application</a><a href="http://www.flickr.com/photos/seeedstudio/5889783049"></a>
+</p>
+<h3> Other applications</h3>
+<p>Phone-powered EKG Interface:
+</p>
+<center>
+<p><img src="img/EKG.jpg" width="400"/>
+</p>
+</center>
+<p>Soil Moisture Sensors:
+</p>
+<center>
+<p><img src="img/Soil.jpg" width="250"/>
+</p>
+</center>
+<h3> Improvement in the future</h3>
+<p>The Hijack kit improvement  is still in processing. there will be improvement  in 2 aspect:
+</p>
+<ul><li> As the firmware, new firmware will be released. The communication type between the MCU and sensors would be more,including I2C/SPI/UART, or other interface.
+</li><li> As the App on the iPhone/iPad/iTouch, More nice App would be required. You are welcome to be a "Hijacker" as you are interested in the related work!
+</li></ul>
+<h2>  Mechanic Dimensions  </h2>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<h3>  Programming  </h3>
+<p>Includes important code snippet. 
+Demo code like : 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">Demo code
+<span class="br0">{</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Example  </h3>
+<p>The projects and application examples. 
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<p>All the components used to produce the product. 
+</p>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.9b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> date
+</td></tr></table>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p><p>In China every commercial bank deliver the certification in USB storage card.
+They can use this interface to communicate with the storage card.
+</p>
+<h2>  How to buy  </h2>
+<p>Give the product link on Bazaar. 
+</p>
+<h2>  See Also  </h2>
+<p>Other related products and resources.
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

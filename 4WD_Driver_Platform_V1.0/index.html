@@ -1,0 +1,152 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>4WD Driver Platform V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>4WD Driver Platform V1.0</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/4WD_Driver_Platform_V1.0_1200.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+4WD Driver Platform V1.0 (No Intel Edison chip included) is a motor driver board which support 4-wheel driving with bidirectional and full control to each motor. The most important features of this drive board is it expandability achieved by grove interfaces which can enable your project more versatile. It also get detailed and simple SDK (software development kit) which will make you development process quicker and easier. With Edison installed, you can build a powerful system to satisfy your different needs.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/4WD-Driver-Platform-V10-p-2536.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li>Support USB to device UART bridge
+</li><li>Support OTG(On The Go)
+</li><li>Support SPI program port
+</li><li>Support Grove Interface: UART port* 1, I2C port *3
+</li><li>Support 4 wheel encoder motor driving with bidirectional(Peak Current: 3A)
+</li><li>Support overcurrent, over loading and short circuit protection function.
+</li><li>Detailed and simple SDK
+</li><li>Designed for Intel Edison platform.
+</li></ul>
+<h2> Specification</h2>
+<table>
+<tr>
+<td colspan="2"> Basic parameters
+</td></tr>
+<tr>
+<td> Input voltage </td>
+<td> 6-16V
+</td></tr>
+<tr>
+<td> Output voltage </td>
+<td> 5V/4V/3.3V/1.8V
+</td></tr>
+<tr>
+<td> Idle Current </td>
+<td> Less than150mA
+</td></tr>
+<tr>
+<td> Dimensions </td>
+<td> 130*110mm
+</td></tr>
+<tr>
+<td colspan="2"> Motor Driver
+</td></tr>
+<tr>
+<td> Driver chip </td>
+<td> MC33931(Freescale) * 4, independent
+</td></tr>
+<tr>
+<td> Input voltage </td>
+<td> 5-30V
+</td></tr>
+<tr>
+<td> Output current</td>
+<td> 3A(MAX)
+</td></tr>
+<tr>
+<td> Protection</td>
+<td> Auto-cutting output for over temperature, low-voltage and short circuit occurrences
+</td></tr>
+<tr>
+<td colspan="2"> Expandability
+</td></tr>
+<tr>
+<td>I<sup style="font-size:0.8em">2</sup>C interface </td>
+<td> 3
+</td></tr>
+<tr>
+<td>SPI interface </td>
+<td> 1
+</td></tr>
+<tr>
+<td> UART interface </td>
+<td> 2
+</td></tr>
+<tr>
+<td> USB OTG interface </td>
+<td> 1
+</td></tr></table>
+<h2> Application ideas </h2>
+<ul><li> Various kinds of robots
+</li><li> Motor driver
+</li><li> Toy car
+</li><li> Industrial Control
+</li></ul>
+<p><br/>
+</p>
+<h2> Hardware Overview </h2>
+<p><img src="img/4WD_Driver_Platform_V1.0_3400_Modules.jpg" width="800"/>
+</p><p><br/>
+<b><span style="font-size:1em; color:#FF0000;">Note that only 3.3 V voltage is valid to apply on ALL motor interfaces and grove modules.</span></b>
+</p>
+<h2> Get started </h2>
+<p><b>Note</b> that this section only shows you how to build basic development environment.
+You can build a development environment for your project with following guides:
+</p>
+<h3> Assemble Edison on 4WD Driver board </h3>
+<h4> Material required</h4>
+<ul><li>4WD Driver Platform V1.0 *1
+</li><li>Intel Edison *1
+</li><li>2 Micro B to Type A USB cables
+</li></ul>
+<h4>  Software work </h4>
+<ul><li><a href="http://downloadmirror.intel.com/25028/eng/iotdk_win_installer.exe">Download Intel integrated tool pack(installed together with Driver)</a>
+</li><li><a href="http://downloads.arduino.cc/arduino-1.6.5-r5-windows.exe">Download Arduino IDE if you develop your projects on Arduino board</a>
+</li></ul>
+<p>Rule of thumb: We recommend you only select drivers and flash tool to be installed for the first if you connection speed to Intel server is not fast enough. Downloading other tools separately will be much quicker. 
+</p><p><b>Note</b> that 4WD Driver Platform V1.0 is not supported for Windows 10 at the moment.
+</p>
+<h4>  Check your IDE </h4>
+<p><a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">Download a putty for serical communication</a>
+</p>
+<ol><li>Open device manager.
+</li><li>Find USB serial port. Under Ports(COM &amp; LPT), find <i>USB Serial Port(COMx)</i>(Example: USB Serial Port(COM3))
+</li><li>Startup putty to and configure it as follow figure shows(marked with red rectangle)
+</li></ol>
+<ul class="gallery">
+<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><img src="img/Putty_config.jpg" width="124"/></div></div>
+<div class="gallerytext">
+<p><span style="text-align: center">putty configurations</span>
+</p>
+</div>
+</div></li>
+</ul>
+<dl><dd>4. Click Open to enter serial terminal
+</dd></dl>
+<ul class="gallery">
+<li class="gallerybox" style="width: 235px"><div style="width: 235px">
+<div class="thumb" style="width: 230px;"><div style="margin:15px auto;"><img src="img/Putty_login.png" width="198"/></div></div>
+<div class="gallerytext">
+<p><span style="text-align: center">putty login</span>
+</p>
+</div>
+</div></li>
+</ul>
+<dl><dd>5. Press Enter key to input user name and password to login to system in Edison.
+</dd></dl>
+<p><b>Note</b> that no password exist if it is the first time you use you Edison chip.
+</p><p><b>Note</b> that you can flash the latest firmware image to Edison with Intel Flash Tool.
+</p>
+<dl><dd>6. Now your IDE is well installed.
+</dd></dl>
+<h2> Demo </h2>
+<p><b>Note</b> that this section will show you a demo which implemented some simple functions.
+</p><p><b>Note</b> that make sure you have built a development environment successful by former sections and we assume you have got basic knowledge for Arduino platform.
+</p><p>You can refer to <a href="/Edison_4WD_Auto_Robotic_Platform_2.0">Edison 4WD Auto Robotic Platform 2.0</a> for a practical application with 4WD Driver Platform V1.0.
+</p>
+<h2> Resources </h2>
+<ul><li><a href="res/4WD_Auto_Robotic_Platform_V1.0_SCHAndPCB.zip">Schematic files</a>
+</li><li><a href="https://github.com/Pillar1989/webrobot/blob/master/motor.py">Git library(SDK) files</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

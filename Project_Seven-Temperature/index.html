@@ -1,0 +1,43 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Project Seven - Temperature</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Project Seven - Temperature</h1><p>Next on our Grove journey is the temperature sensor . It is an analog form of input, and as described earlier returns a voltage potential relative to the ambient temperature. We measure this voltage using an analog pin, and convert it to a temperature.
+</p><p>Connect the Temperature Sensor to the Analog A0/A1 input jack.
+The Grove unit produces an analog voltage on its D1 output, which is connected to Arduino A0 analog input on the A0/A1 input jack.
+</p><p><img src="img/Conn-seven.jpg" width="900"/>
+<br/>
+<i><b>Now upload the following Arduino sketch:</b></i>
+</p>
+<pre>
+// Project Seven - temperature
+//
+
+int a;
+int del=1000; // duration between temperature readings
+float ctemperature;
+float ftemperature;
+int B=3975; 
+float resistance;
+
+void setup()
+{
+  Serial.begin(9600);  
+}
+
+void loop()
+{
+  a=analogRead(0);
+  resistance=(float)(1023-a)*10000/a; 
+  ctemperature=1/(log(resistance/10000)/B+1/298.15)-273.15;
+  ftemperature=ctemperature*9/5+32;
+  Serial.print(ctemperature);
+  Serial.write(186);
+  Serial.print("C ");
+  Serial.print(ftemperature);
+  Serial.write(186);
+  Serial.println("F");
+  delay(del);
+}
+</pre>
+<p>You can copy and paste the lines above to add temperature capability to your own sketches. 
+</p><p>After you have uploaded the sketch, open the serial monitor window in the Arduino IDE, and you should be presented with a box similar to this:
+</p><p><img src="img/Aq0PYQjuq.png" width="411"/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,102 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino Lotus v1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino Lotus v1.0</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Seeeduino_Lotus_photo.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+
+<p>Seeeduino Lotus is an ATMEGA328 Microcontroller development board. It is a combination of Seeeduino and Base Shield. It uses an Atmel ATMEGA328P-MU and CH340. ATMEGA328P-MU is a high performance, low power AVR 8-Bit Microcontroller. CH340 is a USB bus converter chip that can realize a USB to serial interface. Seeeduino Lotus has 14 digital input/outputs (6 of which can output PWM) and 7 analog input/outputs, a micro USB connection, an ICSP header, 12 Grove connections, a reset button.     <br/>
+</p>
+<h2> Specification</h2>
+<ul><li>Microcontroller: ATmega328P-MU
+</li><li>Operating Voltage: 5V 
+</li><li>Digital I/O Pins: 14
+</li><li>PWM Channels: 6
+</li><li>Analog Input Channels: 7
+</li><li>DC Current per I/O Pin: 40 mA
+</li><li>Flash Memory: 32 KB (ATmega328P-MU)
+</li><li>RAM: 2 KB (ATmega328P-MU)
+</li><li>EEPROM: 1 KB (ATmega328P-MU)
+</li><li>Clock Speed: 16 MHz
+</li></ul>
+<h2> Interface Function</h2>
+<p><img src="img/Seeeduino_Lotus_Interface.jpg" width="400"/>
+</p>
+<ul><li>①：Micro USB
+</li><li>②：Reset button
+</li><li>③：Analog Ports: Analog sensors can return readings ranging from 0 to 1023. Compared with digital sensors that only return 0 or 1, analog readings are more detailed and precise.
+</li><li>④：I2C Ports: I2C is a low-speed bus protocol that transfers data via two wire : SCL and SDA . SCL is the clock line that synchronizes data transfer over the I2C bus, and SDA is the data line.
+</li><li>⑤：Digital Ports: Normally, they are used when reading a digital sensor that only outputs 0 or 1, or turning ON or OFF an actuator.
+</li><li>⑥：UART Port: We can control serial device by this port.
+</li></ul>
+<h2>  Driver Install  </h2>
+<p>Seeeduino Lotus uses CH340 to download. It needs a driver to be installed.<br/>
+</p>
+<h5>  Windows/Linux </h5>
+<p>Totally compatible with serial application program in computer endpoint Windows operation system
+</p>
+<ul><li>1) Plug it to computer's USB Port.
+</li><li>2) Wait till you find it in Device Manager.
+</li><li>3) If you do not find the port, please download the Driver from <a href="http://www.wch.cn/downloads.php?name=pro&amp;proid=5">Here</a>
+</li></ul>
+<p><img src="img/CH340_Driver.jpg" width="400"/>
+</p>
+<h5>  Mac OS </h5>
+<p>Download the driver from here:  <a href="http://www.wch.cn/download/CH341SER_MAC_ZIP.html">http://www.wch.cn/download/CH341SER_MAC_ZIP.html</a><br/>
+On Mac OS Yosemite:
+</p>
+<ul><li>1) Download and install the CH340/CH341 driver package
+</li><li>2) Open Terminal program (located in /Applications/Utilities/)
+</li><li>3) Type command: <code>sudo nvram boot-args="debug=0x146 kext-dev-mode=1"</code>
+</li><li>4) Enter your password for sudo
+</li><li>5) Restart your computer
+</li></ul>
+<p>The driver is not signed in Yosemite, so you need to bypass the signed driver check.
+</p><p>If you want restore your Mac’s setting, you can exit developer mode by redefining the boot-arg to your previous settings, or clear your boot-args as follows: <code>sudo nvram -d boot-args</code>
+</p><p>To see what the current boot-args are, if any, type: <code>sudo nvram boot-args</code>
+</p>
+<h2> Usage</h2>
+<p>Here is how to use Seeeduino Lotus. <br/>
+</p>
+<h3> Hardware Installation</h3>
+<ul><li>1) Part lists:
+</li></ul>
+<dl><dd><dl><dd> <a href="http://www.seeedstudio.com/depot/Seeeduino-Lotus-ATMega328-Board-with-Grove-Interface-p-1942.html">Seeeduino Lotus v1.0</a>
+</dd><dd> <a href="http://www.seeedstudio.com/depot/Grove-LCD-RGB-Backlight-p-1643.html">Grove - LCD RGB Backlight</a>
+</dd><dd> <a href="http://www.seeedstudio.com/depot/Grove-I2C-FM-Receiver-p-1953.html">Grove - I2C FM Receiver</a>
+</dd><dd> <a href="http://www.seeedstudio.com/depot/Grove-Button-p-766.html">Grove - Button</a>
+</dd><dd> <a href="http://www.seeedstudio.com/depot/Grove-Rotary-Angle-Sensor-p-770.html">Grove - Rotary Angle Sensor</a>
+</dd></dl>
+</dd></dl>
+<ul><li>2) Hardware linking is very easy, Grove - LCD RGB Backlight and Grove - I2C FM Receiver communicate over I2C, Grove - Button is a digital input, Grove - Rotary Angle Sensor is an analog input. So it can be linked as shown below.
+</li></ul>
+<p><img src="img/Seeeduino_Lotus_usage.jpg" width="600"/>
+</p>
+<h3> Software Part</h3>
+<ul><li>1) To download the demo code in github, click <a href="https://github.com/Seeed-Studio/Seeeduino_lotus_Usage">here</a>.
+</li><li>2) To install Arduino Library, please click <a href="/How_to_install_Arduino_Library">Here</a>
+</li><li>3) Open the I2C_FM_RGB_LCD example sketch: File-&gt;Examples-&gt;Seeeduino_lotus_Usage-&gt;I2C_FM_RGB_LCD
+</li></ul>
+<p><img src="img/Seeeduino_lotus_code.jpg" width="400"/> <br/>
+</p>
+<ul><li>4) In the Tools &gt; Board menu, select Arduino Uno.
+</li></ul>
+<p><img src="img/Seeeduino_lotus_board.jpg" width="500"/> <br/>
+</p>
+<ul><li>5) Select the serial device of the Arduino board from the Tools | Serial Port menu.
+</li></ul>
+<p><img src="img/Seeeduino_lotus_Serial_Port.jpg" width="400"/> <br/>
+</p>
+<ul><li>6）Now, simply click the "Upload" button in the environment. Wait a few seconds - If the upload is successful, the message "Done uploading." will appear in the status bar.
+</li></ul>
+<p><img src="img/Seeeduino_lotus_download.jpg" width="500"/> <br/>
+</p>
+<h2> Bug Report</h2>
+<ul><li> The silk printed near the D5 Grove connector has an error. The D4,D5 should be D5,D6. We will fix this error asap.
+</li></ul>
+<p><br/>
+<img src="img/未标题-1.bmp" width="255"/>
+</p>
+<h2> Resource</h2>
+<ul><li><a href="res/Seeeduino_Lotus_v1.0_Sch.zip">Seeeduino Lotus Eagle file</a>
+</li><li><a href="res/Seeeduino_lotus_bootloader.zip">Seeeduino Lotus bootloader</a>
+</li><li><a href="res/Seeeduino_Lotus_v1.0_pdf.pdf">Seeeduino Lotus PDF file </a>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

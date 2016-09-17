@@ -1,0 +1,19 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>RGB LED Shield</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>RGB LED Shield</h1><p>This Arduino-compatible shield uses three TI TLC5940 PWM LED driver ships to drive a 4x4 array of RGB LEDs. Each color is controlled by a different chip so you can adjust the reference resistors for the appropriate current. This also includes mounting positions for for three general-purpose buttons that are connected to ground, and a reset button. The TLC5940 chips are not directly connected to any Arduino pins, but a header is provided for you to make a manual connection depending on the needs of your sketch.
+</p><p>This board is a version of the circuit used at the first HTINK workshop on March 14th, 2009 at Bug Labs in New York City.
+</p><p>The best library I've seen for interfacing with the TLC5940 chips used in this shield is the tlc5940arduino library. We used it in the HTINK class and it performed very well.
+</p><p>On the shield, the four LEDs at the corners are labeled with their X,Y coordinates: "1,1", "1,4", "4,1", and "4,4". The formula to turn a coordinate into a LED number is (X - 1 + (Y - 1) * 4).
+</p><p><img src="img/Leddriver1.jpg" width="500"/>
+</p>
+<hr/>
+<p>Version 1.3
+This version has some major changes from the never-build 1.2 board. The GSCLK, BLANK, and XLAT signals are now all hard-wired to Arduino pins D3, D10, and D9 respectively. This is because the TLC5940 library uses those pins for their special timer properties, so they can't be reassigned. However, with the space savings from removing those from the jumper block, I've added an 2x4 output header that allows chaining a second board to the first one, with all the TLC5940 control pins, power, and ground provided..
+</p><p><img src="img/LED-schematic.png" width="965"/>
+</p><p>This version also eliminates the extra holes that were provided to wire up signals and replaces them with silkscreen labels for the Arduino signals. It also moves all of the resistors to the edge of the board, making it easy to hook up potentiometers to figure out the brightness settings for each channel, and it labels the ICs and resistors with the color channel they control.
+</p><p><a href="http://combee.net/rgbshield/RGB_LED_Shield_1.3.zip">http://combee.net/rgbshield/RGB_LED_Shield_1.3.zip</a>  - includes schematic, board image, and design files for Eagle CAD
+</p><p><br/>
+</p><p>Author: Ben combee
+Project Link:  <a href="http://combee.net/rgbshield/">http://combee.net/rgbshield/</a>
+</p><p>Source Files:  [<a href="http://combee.net/rgbshield/RGB_LED_Shield_1.3.zip">click to download</a>]
+</p><p>Fetch here:  <a href="http://www.seeedstudio.com/depot/arduinocompatible-rgb-led-shield-pcb-v14-p-342.html">http://www.seeedstudio.com/depot/arduinocompatible-rgb-led-shield-pcb-v14-p-342.html</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

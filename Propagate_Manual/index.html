@@ -1,0 +1,224 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Propagate Manual</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Propagate Manual</h1>
+
+<p>Propagate:
+Agile manufacturing for small batch PCB, kitting and  assembly！
+Please check this link and upload your project: <a href="http://www.seeedstudio.com/propagate/">http://www.seeedstudio.com/propagate/</a>
+</p>
+<h2>  Terms </h2>
+<ul><li><b>Sample</b> – A validated working sample shipped to SEEED
+</li><li><b>BOM</b> – The bill of material needs precise part name, product ID in major distributor, and verified stock
+</li><li><b>PCB File</b> – Gerber file or Eagle file, with requirements
+</li><li><b>Test Plan</b> – Step by step straightforward guide to validate manufactured products
+</li><li><b>NPI</b> – New product integration
+</li><li><b>ROI</b> – return of investment
+</li></ul>
+<h2>  Basic Work Flow </h2>
+<p><img src="img/Propagate-workflow.jpg" width="564"/>
+</p>
+<h2>  Specification </h2>
+<h3>  Materials </h3>
+<p>Bill of Material is the key factor for a successful PROPAGATE case, we will do our best to communicate and help. But please beware the risk of fake, lead time, out of stock, model confusion and etc. The preferred way is using popular components, prepare alternatives and plan ahead. 
+</p>
+<ol><li><b>Customer Provide.</b> For the first round of production, we need you to provide the materials needed, please order via major electronic distributors like mouser, digikey, farnell and ship to us. We will accountant the cost of custom declarations for you.
+</li><li><b>Components Pool:</b> Seeed maintains a pool of regular components like resistors, capacitors, pin headers and connectors, most of them are free to use. Please check out our components inventory, and add the ID into your BOM. <a href="/Open_parts_library" title="Open parts library">Open parts library</a>
+</li><li><b>Sourcing for customer:</b> Due to the complexity and the need for material validation (check out the <a href="http://www.sparkfun.com/commerce/news.php?id=350">story</a> of fake atmega328 from Sparkfun), we only do sourcing for order over 1000 pcs and strategic partners now. 
+</li></ol>
+<p>In anyway, please estimate the BOM cost for a quotation session, we will reply with a precise quotation in Invoice session before your payment.
+</p>
+<h3>  PCB capacity </h3>
+<table border="1">
+<tr>
+<td width="400px"> Multi Layers
+</td>
+<td width="400px"> 1-4
+</td></tr>
+<tr>
+<td>PCB Material
+</td>
+<td>FR-4
+</td></tr>
+<tr>
+<td>Minimum Qty
+</td>
+<td>100
+</td></tr>
+<tr>
+<td>Maximum Size
+</td>
+<td>500mm X 1100mm
+</td></tr>
+<tr>
+<td>Board Thickness
+</td>
+<td>0.4mm, 0.6mm, 0.8mm, 1.0mm, 1.2mm, 1.6mm2.0mm or 2.4mm
+</td></tr>
+<tr>
+<td>Thickness Tolerance (t≥0.8mm)
+</td>
+<td> ± 10%
+</td></tr>
+<tr>
+<td>Thickness Tolerance (t&lt;0.8mm)
+</td>
+<td> ± 10%
+</td></tr>
+<tr>
+<td>Insulation Layer Thickness
+</td>
+<td>0.075mm--5.00mm
+</td></tr>
+<tr>
+<td>Minimum Line
+</td>
+<td>6mil
+</td></tr>
+<tr>
+<td>Minimum Space
+</td>
+<td>6mil
+</td></tr>
+<tr>
+<td>Out Layer Copper Thickness
+</td>
+<td>1oz(35um)
+</td></tr>
+<tr>
+<td>Inner Layer Copper Thickness
+</td>
+<td>17um—100um
+</td></tr>
+<tr>
+<td>Drilling Hole (Mechanical)
+</td>
+<td>0.3mm—6.35mm
+</td></tr>
+<tr>
+<td>Finish Hole (Mechanical)
+</td>
+<td>0.3mm—6.30mm
+</td></tr>
+<tr>
+<td>Diameter Tolerance (Mechanical)
+</td>
+<td>0.08mm
+</td></tr>
+<tr>
+<td>Registration (Mechanical)
+</td>
+<td>0.09mm
+</td></tr>
+<tr>
+<td>Aspect Ratio
+</td>
+<td>8:1
+</td></tr>
+<tr>
+<td>Solder Mask Type
+</td>
+<td>Photosensitive ink
+</td></tr>
+<tr>
+<td>SMT min Solder Mask Width
+</td>
+<td>0.1mm
+</td></tr>
+<tr>
+<td>Min Solder Mask Clearance
+</td>
+<td>0.1mm
+</td></tr>
+<tr>
+<td>Plug Hole Diameter
+</td>
+<td>0.25—0.60mm
+</td></tr>
+<tr>
+<td>Surface Finish
+</td>
+<td>HASL, ENIG, Chem. Tin
+</td></tr>
+<tr>
+<td>Eagle Design Rule:
+</td>
+<td>
+<ul><li><a href="http://www.seeedstudio.com/depot/datasheet/Fusion%20eagle.zip">click to download</a>.
+</li><li>Drills line and long slot can’t be accepted
+</li><li>Minimum slot 1mm*1mm
+</li><li>DRC compatible as rule file attached
+</li><li>The PCB size is smallest rectangle that can accommodate PCB
+</li></ul>
+</td></tr></table>
+<h3>  PCBA </h3>
+<ul><li>Single/ Double
+</li><li>Min 0201
+</li><li>Up to QFP , 0.5mm
+</li><li>RoHS
+</li></ul>
+<h3>  Test </h3>
+<ul><li>No Lab test
+</li><li>No Reliability test
+</li><li>No defect analysis for yield over 90% (?)
+</li><li>Power up test
+</li></ul>
+<h3>  Test Plan </h3>
+<p>We prefer to help test and follow up any quality issue on the first sight. Please provide a simple and effective test plan of step by step instruction. We will make sure manufactured products will pass the test plan with expected results. A test report will be provided upon test finish.
+</p>
+<ul><li> <a href="/w/index.php?title=Sample_Test_Plan&amp;action=edit&amp;redlink=1" title="Sample Test Plan (page does not exist)">Sample Test Plan</a> - Kevin
+</li></ul>
+<p><a href="/w/index.php?title=Test_Plan_Reference&amp;action=edit&amp;redlink=1" title="Test Plan Reference (page does not exist)">Test Plan Reference</a>
+</p>
+<h3>  Repair </h3>
+<p>Default repair on defect units, recovered units will be counted as accept quantity, defect units reserved for 2 months, could be shipping back to designer or discard.<br/>
+NPI Target 90% pertentage, carry out defect analysis if yield lower than 90%, try recover defect units if yield higher than 90%. <br/>
+Repeated production will target 95% yield. 
+</p>
+<h3>  Package </h3>
+<p>Anti-static plastic bag, separately packed with enough buffer material. 
+</p>
+<h3>  Labelling </h3>
+<h2>  Accountings </h2>
+<h3>  Manufacture via Propagate </h3>
+<pre><b>Initial Balance = Deposit - accepted product quantity * Unit cost</b>
+</pre>
+<ul><li><b>Deposit:</b> After quotation is confirmed, our project manager will send out an invoice. A deposit is needed to initiate new product introduction (NPI). Designer also needs to send an email with following info to propagate@seeedstudio.com to confirm payment:
+</li></ul>
+<ol><li>email title start with “[PAY] #project number”
+</li><li>Attachment of Wiring Transfer receipt, Paypal confirmation email or balance guarantee.
+</li><li>Issuing account name
+</li><li>Amount and currency
+</li></ol>
+<ul><li><b>Accepted product quantity:</b> Designer will decide target quantity, Seeed start manufacture with target quantity and notify yield on batch ends. Due to manufacture loss, accepted product quantity might be less than target. Designer should understand the manufacture risk especially for NPI units. For defect units, Seeed will keep sample and corresponding evidence for review; try to fix, but not taking the responsibility of BOM cost. Seeed will cover corresponding cost of mass defect (over 20%) caused by soldering and PCB.
+</li><li><b>Unit cost</b> will base on target quantity, even if the accepted product quantity does not meet corresponding price break.
+</li></ul>
+<h3>  Distribution via Bazaar </h3>
+<pre><b>Current Balance = <br/> Sales Qty * Unit Price * (1- handling fee) + Previous Balance</b>
+</pre>
+<ul><li>Sales qty will be calculated each month via bazaar system. Every sales order is archived for review. 
+</li><li>Unit Price will be decided by customer.
+</li><li>Handling fee includes Paypal/TT/Credit card cost, storage, order handling, logistic, post-sales support, web-store (Bazaar) catalog listing, and shipping loss. 
+</li><li>Designer purchase: Designer could allocate inventory by placing orders in Bazaar. For drop-shipping, just fill in the shipping info and Seeed will handle the rest. Designer could also purchase other product or services for future work. To compensate the process, 10% of all purchases will be returned to designer’s next month balance. 
+</li><li>Balance could be withdrawn once each month to instructed bank account or Bazaar account credit. 
+</li></ul>
+<p>Seeed Studio will cover shipping loss. 
+</p>
+<pre><b>Wholesale order</b>
+</pre>
+<p>Designer with their own distributor network could use bazaar as a logistics center. We integrate this in Designer purchase for easier handling and leave maximal flexibility to Designers. The purchase of their own product will be circled back to themselves deducting handling fees. The 10% compensation is supposed to counteract handling fee impact to wholesale pricing.
+</p>
+<h3>  Multiple Projects </h3>
+<p>For each revision, Seeed view it as an individual projects. Each Designer will have a grand balance of all owned projects. After initial deposit is made, future projects could use positive balance.
+</p>
+<h2>  Risks </h2>
+<p>It is the user of the Propagate system's duty to understand there are inherent and unavoidable risks when using the service.
+</p><p>Seeed is committed to helping you the user but can not accept responsibility for defects the result of the inherent risks. Risks include Bill Of Material defects, manufacturing process errors and miscommunication. There are other risks which cannot be predicted which may cause your production run to have lower than 100% yield.  Seeed will cover the manufacturing cost for defective units but does not take responsibility for loss of materials or any any indirect costs.
+</p><p>Seeed will work with you to ensure your experience goes as smoothly as possible.
+</p>
+<h2>  FAQ </h2>
+<p>Please post your questions in <a href="/w/index.php?title=QnA&amp;action=edit&amp;redlink=1" title="QnA (page does not exist)">QnA</a> session.
+</p>
+<h2>  See Also </h2>
+<ul><li><a href="/Propagate" title="Propagate">Propagate</a>
+</li><li><a href="/Service_for_Propagate" title="Service for Propagate">Service for Propagate</a>
+</li><li><a href="/w/index.php?title=Test_Plan_Reference&amp;action=edit&amp;redlink=1" title="Test Plan Reference (page does not exist)">Test Plan Reference</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

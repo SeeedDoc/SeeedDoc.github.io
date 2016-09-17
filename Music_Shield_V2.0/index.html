@@ -1,0 +1,108 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Music Shield V2.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Music Shield V2.0</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Music_Shield_Picture.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+</p>
+
+<p>Time to build your real-time MIDI instrument/music player! It can play many format including MP3,WMA,WAV,AAC,MIDI,Ogg VorbisThe. Music Shield is an audio encoder/decoder compatible with Arduino, Seeeduino, Seeeduino Mega and Arduino Mega. It is based on the VC1053B chip, which enabled it to play sound files from SD card and do short-time recording as well. You can also use it to play MIDI notes by slightly changing its hardware installations. Due to the SPI communication mode, it keeps a minimum number of IO port that facilitates users’ own developments of this device. Additionally, the new multifunction button provides greater convenience for users to control. 
+</p><p><b>Notice:</b> The recording function works with Seeeduino Mega and Arduino Mega only. And the maximum size SD card you can use is 2GB. <br/>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2>  Specification  </h2>
+<p><br/><img src="img/Music_shield_frame.jpg" width="782"/> <br/>
+</p><p><br/><b>Multifunction button:</b> Change volume and select songs<br/><b>Play/Pause indicator LED (GREEN)：</b>Blinks while playing.<br/><b>Headsets interface: </b>It can drive 16 ohm or 32 ohm earphone and could serve as a external audio input port.<br/><b>Micro SD card</b>: can be FAT16 or FAT32, The maximum size SD card you can use is 2GB.<br/><b>U2:</b> VS1053B IC,Ogg Vorbis/MP3/AAC/WMA/FLAC/MIDI audio codec.<br/><b>U3,U7:</b> 74VHC125 IC, Quad Buffer.<br/><b>I2S: </b>for digital audio input/output.<br/><b>ISP interface</b>: for bringing SPI port when using with Mega series products.<br/>
+</p><p><b>Pins usage on Arduino</b>
+</p><p><b>Pins Used for Play Control:<br/></b>D3 - receiving signal from button for Volume Up;<br/>D4 - receiving signal from switch for Next Song function;<br/>D5 - receiving signal from switch for Play&amp;Stop and Record function;<br/>D6 - receiving signal from switch for Previous Song function;<br/>D7 - receiving signal from button for Volume Down.<br/>D8 - Green Led instructions; 
+</p><p><br/><b>Pins Used for SPI Interface:</b><br/>D10 - SPI Chip Select;<br/>D11 - SPI MOSI;<br/>D12 - SPI MISO;<br/>D13 - SPI SCK; 
+</p><p><br/><b>Pins Used for VS1053 Interface:<br/></b>A0 - Reset of VS1053;<br/>A1- Data Require of VS1053;<br/>A2 - Data Select of VS1053;<br/>A3 - Chip Select of VS1053; 
+</p><p><br/>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2>  Demonstration  </h2>
+<p><img src="img/Music_shield4.jpg" width="700"/><br/>
+<br/><b>Note:</b> 
+1. If you want to use MIDI function, you need to change the hardware installation.<br/>         
+2. If you changed the hardware installation in order to use MIDI function, you are not able to use playback &amp; recording functions until you restore it to the original condition.
+</p><p><br/>
+</p>
+<h3> <b> Play music<br/></b></h3>
+<p>1. Make sure there are songs in the micro SD card;<br/>
+2. Download <a href="https://github.com/Seeed-Studio/Music_Shield">Music shield V2.0 library</a><br/>
+3. Unzip and copy the folder to Arduino’s library path: ..\arduino-1.0\libraries; 
+</p><p><b>Demo 1: Play songs (e.g. in shuffle mode)<br/></b>In order to use the playback function, you need to create a playlist first. <br/>1. Restart the Arduino IDE. Open “creatList” example via the path: File --&gt; Examples --&gt; MusicPlayer --&gt; creatList as below. <br/><img src="img/OpenCreatListCode.jpg" width="500"/>  
+</p><p><br/>2. Set the play mode. In “creatList”, the function we use is described as follow.<br/><b>   Name:</b> setPlayMode(unsigned char playmode); <br/><b>   Function:</b> Set the play mode. There are four modes you can set: MODE_NORMAL、 MODE_SHUFFLE、 MODE_REPEAT_LIST、 MODE_REPEAT_ONE. Each mode stands for different playing orders. 
+</p><p><br/><img src="img/Play_Mode.jpg" width="497"/><br/>
+</p><p>3. Select the type of Arduino board that you are using by the path: Tools --&gt; Board --&gt; for example Arduino UNO.<br/>4. Select the correct serial port you are using by the path: Tools --&gt; Serial Port --&gt; for example COM3.<br/>5. Upload the code. Click to Serial Monitor when “Done uploading” appears, you will find the order of songs is randomized on the list.<br/><br/><img src="img/Play_List.jpg" width="312"/><br/>When press multifunction button to up or down, the volume will change. Of course, you can try others play modes.<br/>.<br/><b>Demo 2: Play selected songs <br/></b>1. This demo will show you how to play part of the songs from all songs in the SD card. Open the “addToList” example via the path: File --&gt; Examples --&gt; MusicPlayer --&gt; addToList.<br/><img src="img/Select_play.jpg" width="559"/> <br/>
+</p><p>2.Select songs from the playlist.You just need to list songs you want to play by name correctly in the function addToPlayList(char *songName) .<br/>But you must ensure that the song has been stored in the SD card and the format of those songs must be one of MP3,WMA,WAV,AAC,MIDI,Ogg Vorbis.<br/>3.Upload code. When you complete the upload,new add songs will be played. 
+</p><p><b>Demo 3: Control Volume by analog port<br/></b>1．Plug the Grove-Base Shield onto the Music shield, Connect the Grove socket of the Rotary and anolog port 4 of the Base Shield with a Grove cable. You can change to<br/>the digital port as well. But don't forget to change the port number in the definition of the demo code at the same time. <br/><img src="img/Music_shield_5.jpg" width="700"/><br/>2. Open the “analogInputControl” example and upload it onto your Arduino Board.<br/>3. Rotate the knob to change music volume. 
+</p><p><b>Demo 4: Record music:(Only support ATmega1280 and ATmega2560 based board)</b>
+</p><p>1. Upload any sketch in Music Shield library, for example the sketch "creatList". Open the Serial Monitor and it will play audio files on SD card. <br/>
+2. Press down the multifunction button for 5 seconds, then the indicator LED will light off. <br/>
+3. Press down the multifunction button for 5 seconds again, then the music shield will begin to record, the green indicator LED will blink.<br/>
+4. Quickly press down the multifunction button again, it will stop recording.<br/>
+5. Record will be played in the last place. <br/>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h3> <b>Using MIDI,no need to modify the hardware</b></h3>
+<p>The VS1058X's real time MIDI mode:
+</p><p>The "real time MIDI mode",in which it will instantly execute MIDI commands send to it through either SPI or UART,can be enabled with the method below:
+</p><p>Method:
+</p>
+<pre>      At the beginning,send a small software patch through SPI port.
+   
+   /*software patch for MIDI Play*/
+   const unsigned short gVS1053_MIDI_Patch[28]={
+   /*if you don't let GPIO1 = H,please send this patch by spi*/
+   0x0007, 0x0001, 0x8050, 0x0006, 0x0014, 0x0030, 0x0715, 0xb080, /* 0 */
+   0x3400, 0x0007, 0x9255, 0x3d00, 0x0024, 0x0030, 0x0295, 0x6890, /* 8 */
+   0x3400, 0x0030, 0x0495, 0x3d00, 0x0024, 0x2908, 0x4d40, 0x0030, /* 10 */
+   0x0200, 0x000a, 0x0001, 0x0050,
+   };
+   using that function to load:
+   /*
+   **@ function name: loadMidiPatch
+   **@ usage:load a software patch for vs10xx
+   **@ input:none
+   **@ retval:none
+   */
+   void VS10XX::loadMidiPlugin(void)
+   {
+     int i=0;
+     Serial.print("load MIDI Plugin...\r\n");
+     while(i &lt; sizeof(gVS1053_MIDI_Patch)/sizeof(gVS1053_MIDI_Patch[0]))
+     {
+       unsigned short addr, n, val;
+       addr = gVS1053_MIDI_Patch[i++];
+       n = gVS1053_MIDI_Patch[i++];
+       while(n--)
+       {
+         val = gVS1053_MIDI_Patch[i++];
+         writeRegister(addr, val &gt;&gt; 8, val&amp;0xff);
+       }
+     }
+     Serial.print("done\r\n");
+   }
+   I would like to tell you that there is an open source library called jdksmidi,by which you can make your own MIDI decoder through some small changes.
+   jdksmidi git-hub page:<a href="https://github.com/jdkoftinoff/jdksmidi">https://github.com/jdkoftinoff/jdksmidi</a>
+   we offer you some real time mode MIDI APIs(MusicPlayer.cpp):
+   midiNoteOn()
+   midiNoteOff()
+   midiWriteData()
+  
+   Now,it's time to build your real-time MIDI instrument/music player in any format(single-channel or multi-channel).
+   Your contribution is appreciated.
+   A demo MIDI player was add to the latest library.
+   MIDI Demo(upload the code. When completed, you will hear Fancy MIDI music):
+</pre>
+<p><img src="img/Music_shield_midi_demo.jpeg" width="568"/>
+<br/>
+</p><p><br/>
+</p>
+<h2>  Resources  </h2>
+<p><a href="res/Music_shield_eagle_files.zip"> Music Shield Eagle Files</a><br/> <a href="res/Music_Shield_Schematic.pdf">Music Shield Schematic.pdf</a><br/> <a href="res/VS1053.pdf">VS1053 IC.pdf</a><br/> <a href="https://github.com/Seeed-Studio/Music_Shield">Music Shield V2.0 libraries</a><br/>
+</p><p><br/>
+</p><p><b>MIDI number to note reference list:</b>
+</p><p><br/><img src="img/MIDIlist.gif" width="487"/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

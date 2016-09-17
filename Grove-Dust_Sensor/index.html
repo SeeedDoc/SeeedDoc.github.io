@@ -1,0 +1,220 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Dust Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Dust Sensor</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Dust_sensor.JPG" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>This Dust Sensor gives a good indication of the air quality in an environment by measuring the dust concentration. The Particulate Matter level (PM level) in the air is measured by counting the Low Pulse Occupancy time (LPO time) in given time unit. LPO time is proportional to PM concentration. This sensor can provide reliable data for air purifier systems; it is responsive to PM of diameter 1μm. 
+</p><p><b>Note:</b> This sensor uses counting method to measure dust concentration, not weighing method, and the unit is pcs/L or pcs/0.01cf.
+</p><p><b>Note:</b> Please pay attention to the warnings listed <a href="/Grove-Dust_Sensor#Cautions" title="Grove - Dust Sensor">here</a>.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-Dust-Sensor-p-1050.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li> Stable and sensitive detection of not only cigarette smoke but house dust which are indoor asthma triggers.
+</li><li> Air is self-aspirated with the current of air generation mechanism with a built-in heater.
+</li><li> Easy maintenance. High sensitivity lasts long term.
+</li><li> Dual output for the particle size over 1 micron and 2.5 micron (approx).
+</li><li> More compact and lighter, and easy installation.
+</li></ul>
+<p><b>Note :</b> In the latest version, output Hi Voltage is changed from 4.0V to 4.5V.
+<br/>
+</p><p><br/>
+</p>
+<h2> Specification </h2>
+<h3> Specification</h3>
+<table>
+<tr>
+<th> Item </th>
+<th> Min </th>
+<th> Norm </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td width="200"> VCC </td>
+<td width="100"> 4.75 </td>
+<td width="130"> - </td>
+<td width="100"> 5.75 </td>
+<td width="150"> V
+</td></tr>
+<tr>
+<td> Standby Current Supply	</td>
+<td> - </td>
+<td> 90 </td>
+<td> - </td>
+<td> mA
+</td></tr>
+<tr>
+<td> Detectable range of concentration</td>
+<td> - </td>
+<td> 0~28,000 / 0 ~ 8000	 </td>
+<td> - </td>
+<td> pcs/liter / pcs/0.01cf
+</td></tr>
+<tr>
+<td> Operating Temperature Range</td>
+<td> 0 </td>
+<td>  -	 </td>
+<td> 45 </td>
+<td>°C
+</td></tr>
+<tr>
+<td> Output Method	</td>
+<td colspan="4"> Negative Logic, Digital output, High: over 4.0V(Rev.2), Low: under 0.7V
+</td></tr>
+<tr>
+<td> Detecting the particle diameter</td>
+<td colspan="4"> &gt;1 μm
+</td></tr>
+<tr>
+<td> Dimensions</td>
+<td colspan="4"> 59(W) × 45(H) × 22(D) [mm]
+</td></tr>
+<tr>
+<td> Humidity Range</td>
+<td colspan="4"> 95% rh or less
+</td></tr></table>
+<h3> Platforms Supported</h3>
+<ul><li> Arduino.
+</li></ul>
+<p><br/>
+</p>
+<h2> Application Ideas </h2>
+<ul><li> Air Purifier
+</li><li> <a href="http://www.howmuchsnow.com/arduino/airquality/grovedust/">Air Quality Monitor</a>
+</li><li> Air Conditioner
+</li><li> Ventilator
+</li></ul>
+<p><br/>
+</p>
+<h2> Getting Started </h2>
+<h3> <b>Cautions </b> </h3>
+<ul><li> Please keep it upright.
+</li><li> 3 min preheat time is required while using for the first time.
+</li><li> Arbitrary operation may cause unexpected damage.
+</li><li> Following widgets (red rectangle marked) is used only for the factory setting. Please <b>DO NOT</b> change the default configuration. 
+</li></ul>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove-Dust_Sensor_cautions.jpg" width="600"/></div></div>
+<h3> <b>Grove - Help </b> </h3>
+<p>Following documents help user get started with Grove. 
+</p>
+<ul><li> <a href="http://www.seeedstudio.com/document/pdf/Preface.pdf">Preface - Getting Started</a>.
+</li><li> <a href="http://www.seeedstudio.com/document/pdf/Introduction%20to%20Grove.pdf">Introduction to Grove</a>.
+</li><li> <a href="/Seeeduino_v4.2#Getting_Started_on_Windows">Getting Started on Windows</a>
+</li><li> <a href="/Seeeduino_v4.2#Getting_Started_on_Mac_OS_X">Getting Started on Mac OS X</a>
+</li></ul>
+<p><br/>
+</p>
+<h2> Demos  </h2>
+<p>Here is a demo to show how to obtain PM concentration data from this Grove - Dust Sensor. 
+</p><p>1. Plug the dust sensor into digital port D8 on the <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>. It can only be D8 because the operation of this sensor involves sampling. This function only can be achieved by D8, the  input capturing pin of ATmega328P, on Arduino/Seeeduino. <br/> 
+Also, you can connect Grove - Dust sensor to Arduino UNO without Base Shield:
+<br/>
+</p>
+<table>
+<tr>
+<th> Arduino UNO</th>
+<th> Dust Sensor
+</th></tr>
+<tr>
+<td> 5V </td>
+<td> Red wire
+</td></tr>
+<tr>
+<td> GND </td>
+<td> Black wire
+</td></tr>
+<tr>
+<td> D8 </td>
+<td> Yellow wire
+</td></tr></table>
+<p><br/>
+2. Copy and paste the demo code below to a new Arduino sketch.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+Grove - Dust Sensor Demo v1.0
+ Interface to Shinyei Model PPD42NS Particle Sensor
+ Program by Christopher Nafis 
+ Written April 2012
+ 
+ http://www.seeedstudio.com/depot/grove-dust-sensor-p-1050.html
+ http://www.sca-shinyei.com/pdf/PPD42NS.pdf
+ 
+ JST Pin 1 (Black Wire)  =&amp;gt; //Arduino GND
+ JST Pin 3 (Red wire)    =&amp;gt; //Arduino 5VDC
+ JST Pin 4 (Yellow wire) =&amp;gt; //Arduino Digital Pin 8
+ */</span>
+ 
+<span class="kw4">int</span> pin <span class="sy1">=</span> <span class="nu0">8</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> duration<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> starttime<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> sampletime_ms <span class="sy1">=</span> <span class="nu0">2000</span><span class="sy4">;</span><span class="co1">//sampe 30s&amp;nbsp;;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> lowpulseoccupancy <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">float</span> ratio <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">float</span> concentration <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">8</span>,<span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  starttime <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//get the current time;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  duration <span class="sy1">=</span> <span class="kw3">pulseIn</span><span class="br0">(</span>pin, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  lowpulseoccupancy <span class="sy1">=</span> lowpulseoccupancy<span class="sy2">+</span>duration<span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span><span class="br0">(</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">-</span>starttime<span class="br0">)</span> <span class="sy1">&gt;=</span> sampletime_ms<span class="br0">)</span><span class="co1">//if the sampel time = = 30s</span>
+  <span class="br0">{</span>
+    ratio <span class="sy1">=</span> lowpulseoccupancy<span class="sy2">/</span><span class="br0">(</span>sampletime_ms<span class="sy2">*</span><span class="nu16">10.0</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// Integer percentage 0=&amp;gt;100</span>
+    concentration <span class="sy1">=</span> <span class="nu16">1.1</span><span class="sy2">*</span><span class="kw3">pow</span><span class="br0">(</span>ratio,<span class="nu0">3</span><span class="br0">)</span><span class="sy2">-</span><span class="nu16">3.8</span><span class="sy2">*</span><span class="kw3">pow</span><span class="br0">(</span>ratio,<span class="nu0">2</span><span class="br0">)</span><span class="sy2">+</span><span class="nu0">520</span><span class="sy2">*</span>ratio<span class="sy2">+</span><span class="nu16">0.62</span><span class="sy4">;</span> <span class="co1">// using spec sheet curve</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"concentration = "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>concentration<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">" pcs/0.01cf"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    lowpulseoccupancy <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    starttime <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+In this program, the Seeeduino samples the total duration of "logic low" in 30s, and this duration illustrates the dust density of environment. Open Serial Monitor, we can get air quality's value detected by sensor from PC's serial port.<br/><br/>
+</p><p><img src="img/Dust_sensor_1.png" width="464"/>
+<br/>
+<br/> 
+The result above consists of three parts: lowpulseoccupancy, ratio and concentration.
+</p><p>"lowpulseoccupancy" represents the Low Pulse Occupancy Time(LPO Time) detected in given 30s. Its unit is microseconds.
+</p><p>"ratio" reflects on which level LPO Time takes up the whole sample time.
+</p><p>"concentration" is a figure that has a physical meaning. It is calculated from the characteristic graph below by using the LPO time.<br/>
+</p><p><br/>
+<img src="img/Characteristics.jpg" width="600"/>
+<br/>
+<br/> 
+Here is a graph of the dust concentration measured in office :<br/>
+<br/>
+<img src="img/Dust_sensor_4.jpg" width="600"/>
+<br/>
+We can see the concentration of dust is very low in the evening, but it is higher in the afternoon. A threshold can be set  when the concentration is above a value. Also, if you want to set the sensor more sensitive you can add a fan on the sensor, and add a 10kΩ resistor between the Pin5 and Ground. <i>More information please visit the <a href="http://indiaairquality.com/2014/12/14/measuring-the-pickle-jr-a-modified-ppd42-with-an-attached-fan/">blog of A.J.</a> </i><br/>
+<br/>
+</p>
+<h2> Reference </h2>
+<p><a href="http://indiaairquality.com/2014/12/14/building-pickle-jr-the-low-cost-networked-pm2-5-monitor-part-2/">Building a low-cost networked PM2.5 monitor</a> <i> -- Made by A.J. </i> <br/>
+<a href="http://indiaairquality.com/2014/12/14/measuring-the-pickle-jr-a-modified-ppd42-with-an-attached-fan/">Measuring the Pickle Jr. – a modified PPD42 with an attached fan.</a> <i> -- Made by A.J. </i> <br/>
+<a href="http://irq5.io/2013/07/24/testing-the-shinyei-ppd42ns/">Testing the Shinyei PPD42NS</a> <i>-- Made by  darell tan</i> <br/>
+<a href="http://www.howmuchsnow.com/arduino/airquality/grovedust/">Air Quality Monitoring</a> <i> -- Made by Chris Nafis</i> <br/>
+</p>
+<h2> Related Projects </h2>
+<p>If you want to make some awesome projects by Grove - Dust Sensor, here is a project for reference.
+</p>
+<h3> Air Quality Box</h3>
+<p><img src="img/Overview0.png" width="600"/>
+</p><p>This section an IoT demo make by Seeeduino and <a href="/Grove_System" title="Grove System">Grove</a>.
+</p><p>More attention is being paid to the environmental air quality nowadays because the tiny particles in the air around can badly endanger people’s health. We always get the information of environment from our government department. But it’s the average value of the whole city/section. It can not reflect the environment around you accurately.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/recipe/35-air-quality-box.html"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h2> Resources </h2>
+<p><a href="res/Grove-Dust_sensor.pdf">Grove_-_Dust_sensor datasheet</a> <br/>
+<a href="http://takingspace.org/wp-content/uploads/ShinyeiPPD42NS_Deconstruction_TracyAllen.pdf">De-construction of the Shinyei PPD42NS dust sensor</a> <i> Made by Tracy Allen </i><br/>
+
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

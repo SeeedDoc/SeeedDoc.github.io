@@ -1,0 +1,426 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>2.8&#39;&#39; TFT Touch Shield V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>2.8&#39;&#39; TFT Touch Shield V1.0</h1>
+
+<p>2.8" TFT Touch Shield is an Arduino / Arduino Mega compatible multicolored TFT display with a 4-wire resistive touch screen. It includes an Arduino shield compatible footprint for attachment. The TFT driver is based on professional Driver IC and with 8 bit data and 4 bit control interface.
+</p><p><img src="img/Tft.jpg" width="400"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>Arduino/Seeeduino, Arduino Mega, and Seeeduino Mega compatible
+</li></ul>
+<ul><li>2.8” Size QVGA Display
+</li></ul>
+<ul><li>Resistive Touch Screen
+</li></ul>
+<h2>  Specification  </h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td>4.5
+</td>
+<td>5
+</td>
+<td>5.5
+</td>
+<td>VDC
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td>/
+</td>
+<td>/
+</td>
+<td>250
+</td>
+<td>mA
+</td></tr>
+<tr>
+<th scope="row"> LCD Panel Size
+</th>
+<td colspan="3"> 2.8
+</td>
+<td>inch
+</td></tr>
+<tr>
+<th scope="row"> View angle
+</th>
+<td colspan="3"> 60~120
+</td>
+<td>Deg
+</td></tr>
+<tr>
+<th scope="row"> Resolution
+</th>
+<td colspan="3"> 320x240
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> LCD color
+</th>
+<td colspan="3"> 65k
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> Backlight Type
+</th>
+<td colspan="3"> LED
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> LCD driver IC
+</th>
+<td colspan="3"> ST7781R
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> Interface Type
+</th>
+<td colspan="3"> 10±2
+</td>
+<td>g
+</td></tr>
+<tr>
+<th scope="row"> Interface Type
+</th>
+<td colspan="3"> Parallel port ( 8bit Data + 4bit Control )
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> Touch Screen
+</th>
+<td colspan="3"> 4-Wire resistive touch screen
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> Active area
+</th>
+<td colspan="3"> 43.2*57.3
+</td>
+<td>mm
+</td></tr>
+<tr>
+<th scope="row"> ESD contact discharge
+</th>
+<td colspan="3"> ±4
+</td>
+<td>KV
+</td></tr>
+<tr>
+<th scope="row"> ESD air discharge
+</th>
+<td colspan="3"> ±8
+</td>
+<td>KV
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 72.5x54.7x18
+</td>
+<td>mm
+</td></tr>
+<tr>
+<th scope="row"> Weight
+</th>
+<td colspan="3"> 24±2
+</td>
+<td>g
+</td></tr></table>
+<p><b>Cautions</b>
+</p><p><font color="red"> <strong>
+</strong></font></p>
+<ul><li>Do not subject the module to mechanical shock or impact by dropping it.
+</li></ul>
+<ul><li>Do not apply excessive force to the display surface or the adjoining areas since this may cause the color tone to vary.
+</li></ul>
+<p>
+</p>
+<h2>  Pins usage on Arduino  </h2>
+<p><img src="img/2.8_Inch_TFT_Touch_Shield_Block_Diagram.jpg" width="650"/>
+</p><p><b>D0</b> - Unused.<br/>
+<b>D1</b> - Unused.<br/>
+<b>D2</b> - LCD data bit 8.<br/>
+<b>D3</b> - LCD data bit 9.<br/>
+<b>D4</b> - LCD data bit 10.<br/>
+<b>D5</b> - LCD data bit 11.<br/>
+<b>D6</b> - LCD data bit 12.<br/>
+<b>D7</b> - LCD data bit 13.<br/>
+<b>D8</b> - LCD data bit 14.<br/>
+<b>D9</b> - LCD data bit 15.<br/>
+<b>D10</b> - LCD CS pin, active low.<br/>
+<b>D11</b> - LCD RS pin.<br/>
+<b>D12</b> - LCD WR pin.<br/>
+<b>D13</b> - LCD RD pin.<br/><br/>
+</p><p><b>D14(A0)</b> - Touch Screen Y-.<br/>
+<b>D15(A1)</b> - Touch Screen X-.<br/>
+<b>D16(A2)</b> - Touch Screen Y+.<br/>
+<b>D17(A3)</b> - Touch Screen X+.<br/>
+<b>D18(A4)</b> - Unused.<br/>
+<b>D19(A5)</b> - Unused.<br/>
+</p>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<ul><li>Insert the TFT Touch Shield to Seeeduino as shown below.
+</li></ul>
+<br/><div class="thumb tnone"><div class="thumbinner" style="width:352px;"><img src="img/TFT_Touch_Shield_with_Seeeduino.jpg" width="350"/> <div class="thumbcaption"></div></div></div>
+<h3>  TFT Programming  </h3>
+<p>The <b>TFT</b> library provides the following Application Programming Interfaces(<b>API</b>). The library makes use of direct access to PORT registers instead of Arduino APIs. This is to increase the speed of communication between MCU and TFT. At present, the library supports Arduino, Arduino Mega (1280 or 2560) and Seeeduino ADK Main Board compatible boards. In Mega the 8bit data port of TFT is distributed to different pins belonging to different ports. This decreases the speed of graphics drawing when compared to Arduino. The choice of port pins are purely based on Arduino / Mega port pin arrangement.
+</p>
+<h3>  General Functions  </h3>
+<hr/>
+<p><b>paintScreenBlack(void)</b>
+</p><p>The TFT RAM can only be initialized in display-off mode, so this function only for clearing screen with black colour.<br/>
+</p><p><b>setXY(unsigned int poX, unsigned int poY)</b>
+</p><p>Sets the cursor position to (poX,poY). This function is internally used by other graphics APIs. 
+</p><p><b>setPixel(unsigned int poX, unsigned int poY,unsigned int color)</b>
+</p><p>Sets the (poX,poY) pixel to color <i>color</i>. This function is internally used by other graphics APIs.
+</p><p><br/>
+</p>
+<h3> Lines</h3>
+<hr/>
+<p><b>drawLine(unsigned int x0,unsigned int y0,unsigned int x1,unsigned int y1,unsigned int color)</b>
+Draws a line from pixel (x0,y0) to pixel (x1,y1) with color <i>color</i>.
+</p><p><b>drawVerticalLine(unsigned int poX, unsigned int poY,unsigned int length,unsigned int color</b>
+Draws a Horizontal Line of length <i>length</i> with color <i>color</i> starting from pixel (poX,poY).
+</p><p><b>drawHorizontalLine(unsigned int poX, unsigned int poY,unsigned int length,unsigned int color)</b>
+Draws a Vertical Line of length <i>length</i> with color <b>color</b> starting from pixel (poX,poY).
+</p><p><br/>
+</p>
+<h3> Rectangle</h3>
+<hr/>
+<p><b>drawRectangle(unsigned int poX, unsigned int poY, unsigned int length,unsigned int width,unsigned int color)</b>
+Draws a rectangle starting from (poX,poY) of length <i>length</i>, width <i>width</i> and color <b>color</b>.
+</p><p><b>fillRectangle(unsigned int poX, unsigned int poY, unsigned int length, unsigned int width, unsigned int color)</b>
+Draws a filled rectangle starting from pixel (poX,poY) of length <i>length</i>, width <i>width</i> and color <b>color</b>.
+</p><p><br/>
+</p>
+<h3> Circle</h3>
+<hr/>
+<p><b>drawCircle(int poX, int poY, int r,unsigned int color)</b>
+Draws a circle at (poX,poY) of radius <b>radius</b> and color <b>color</b>.
+</p><p><b>fillCircle(int poX, int poY, int r,unsigned int color</b>
+Draws a filled circle at (poX,poY) of radius <b>radius</b> and color <b>color</b>.
+</p><p><br/>
+</p>
+<h3> Text</h3>
+<hr/>
+<p><b>drawChar(unsigned char ascii,unsigned int poX, unsigned int poY,unsigned int size, unsigned int fgcolor)</b>
+Draws a character starting from (poX,poY) using inbuilt font of size <b>size</b> and with color <i>fgcolor</i>. This function is used by drawString() function.
+</p><p><b>drawString(char *string,unsigned int poX, unsigned int poY,unsigned int size,unsigned int fgcolor)</b>
+Draws a string of text starting from (poX,poY) using inbuilt font of size <b>size</b> and with color <i>fgcolor</i>.
+</p><p><br/>
+</p>
+<h3>  TouchScreen Programming  </h3>
+<hr/>
+<p>TFT Touch Shield uses the <a href="https://github.com/adafruit/Touch-Screen-Library">Adafruit Touch Screen Library</a>. To understand the principle behind resistive touch screen refer <a href="http://garden.seeedstudio.com/index.php?title=2.8%27%27_TFT_Touch_Shield#External_Links">External Links</a>. In short, a 4-wire resistive touch screen provides two voltage divider each for X and Y axis. By applying proper voltages for each axis and scanning the ADC values the position of the touch can be detected. These values are always prone to noise. Hence a digital filter is used. 
+</p>
+<ul><li>To use the TouchScreen Library first create a TouchScreen object by 
+</li></ul>
+<p><code>
+TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
+</code>
+</p><p>Where XP, YP, XM and YM are ADC port pins connected to XPlus, YPlus, XMinus and YMinus pins of Touch Screen. 300 is the resistance across X plates.
+</p>
+<ul><li>Read the Raw ADC value using 
+</li></ul>
+<p><code>
+Point p = ts.getPoint();
+</code>
+</p>
+<ul><li>The Raw ADC value has to be converted to Pixel Co-ordinates. This is done with map function. This mapping changes for v0.9 and v1.0. The demo applications already takes care of this mapping.
+</li></ul>
+<p><code>
+p.x = map(p.x, TS_MINX, TS_MAXX, 240, 0);
+p.y = map(p.y, TS_MINY, TS_MAXY, 320, 0);
+</code>
+</p>
+<ul><li>The following sketch demonstrates use of TouchScreen Library. This can also be used to calibrate the touch screen co-ordinates.
+</li><li>Compile and upload the sketch.
+</li><li>Open serial port monitor and touch the points displayed on the screen.
+</li><li>See if the displayed X and Y values are correct. If not, we have to re-calibrate the touch screen coordinates.
+</li></ul>
+<h4> How to calibrate the touch screen ?</h4>
+<ul><li><ul><li>The parameters <code>TS_MINX, TS_MAXX, TS_MINY and TS_MAXY </code> actually decides the extreme ends of the touch screen and actually forms the calibration parameters.
+</li><li>The values assigned to these variables are measured ADC values (i.e Raw X, Raw Y) when we touch the extreme diagonal ends of touch screen.
+</li><li>Touch points (0,0) and (239,319) and note down Raw X and Raw Y values. For better accuracy, try out many times and find the right value.
+<ul><li> <b>TS_MINX</b> corresponds to ADC value when X = 0 ;
+</li><li> <b>TS_MINY</b> corresponds to ADC value when Y = 0 ;
+</li><li> <b>TS_MAXX</b> corresponds to ADC value when X = 240 -1 i.e 239 ;
+</li><li> <b>TS_MAXY</b> corresponds to ADC value when Y = 320 -1 i.e 319 ;
+</li></ul>
+</li><li>Change these parameters in the sketch, recompile and upload to Arduino.
+</li><li>Repeat the above steps if you still do not get accurate values.
+</li></ul>
+</li></ul>
+<h4> Touch Screen Demo Sketch</h4>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// Paint application - Demonstate both TFT and Touch Screen</span>
+<span class="co1">//  This library is free software; you can redistribute it and/or</span>
+<span class="co1">//  modify it under the terms of the GNU Lesser General Public</span>
+<span class="co1">//  License as published by the Free Software Foundation; either</span>
+<span class="co1">//  version 2.1 of the License, or (at your option) any later version.</span>
+<span class="co1">//</span>
+<span class="co1">//  This library is distributed in the hope that it will be useful,</span>
+<span class="co1">//  but WITHOUT ANY WARRANTY; without even the implied warranty of</span>
+<span class="co1">//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU</span>
+<span class="co1">//  Lesser General Public License for more details.</span>
+<span class="co1">//</span>
+<span class="co1">//  You should have received a copy of the GNU Lesser General Public</span>
+<span class="co1">//  License along with this library; if not, write to the Free Software</span>
+<span class="co1">//  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA</span>
+<span class="co2">#include &lt;stdint.h&gt;</span>
+<span class="co2">#include &lt;TouchScreen.h&gt;</span>
+<span class="co2">#include &lt;TFT.h&gt;</span>
+ 
+<span class="co2">#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__) // mega</span>
+<span class="co2">#define YP A2   // must be an analog pin, use "An" notation!</span>
+<span class="co2">#define XM A1   // must be an analog pin, use "An" notation!</span>
+<span class="co2">#define YM 54   // can be a digital pin, this is A0</span>
+<span class="co2">#define XP 57   // can be a digital pin, this is A3 </span>
+ 
+<span class="co2">#elif defined(__AVR_ATmega32U4__) // leonardo</span>
+<span class="co2">#define YP A2   // must be an analog pin, use "An" notation!</span>
+<span class="co2">#define XM A1   // must be an analog pin, use "An" notation!</span>
+<span class="co2">#define YM 18   // can be a digital pin, this is A0</span>
+<span class="co2">#define XP 21   // can be a digital pin, this is A3 </span>
+ 
+<span class="co2">#else //168, 328, something else</span>
+<span class="co2">#define YP A2   // must be an analog pin, use "An" notation!</span>
+<span class="co2">#define XM A1   // must be an analog pin, use "An" notation!</span>
+<span class="co2">#define YM 14   // can be a digital pin, this is A0</span>
+<span class="co2">#define XP 17   // can be a digital pin, this is A3 </span>
+ 
+<span class="co2">#endif</span>
+ 
+<span class="co1">//Measured ADC values for (0,0) and (210-1,320-1)</span>
+<span class="co1">//TS_MINX corresponds to ADC value when X = 0</span>
+<span class="co1">//TS_MINY corresponds to ADC value when Y = 0</span>
+<span class="co1">//TS_MAXX corresponds to ADC value when X = 240 -1</span>
+<span class="co1">//TS_MAXY corresponds to ADC value when Y = 320 -1</span>
+ 
+<span class="co2">#define TS_MINX 140</span>
+<span class="co2">#define TS_MAXX 900</span>
+<span class="co2">#define TS_MINY 120</span>
+<span class="co2">#define TS_MAXY 940</span>
+ 
+<span class="kw4">int</span> color <span class="sy1">=</span> WHITE<span class="sy4">;</span>  <span class="co1">//Paint brush color</span>
+ 
+<span class="co1">// For better pressure precision, we need to know the resistance</span>
+<span class="co1">// between X+ and X- Use any multimeter to read it</span>
+<span class="co1">// The 2.8" TFT Touch shield has 300 ohms across the X plate</span>
+ 
+TouchScreen ts <span class="sy1">=</span> TouchScreen<span class="br0">(</span>XP, YP, XM, YM, <span class="nu0">300</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//init TouchScreen port pins</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ 
+    Tft.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//init TFT library</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">0</span>,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">//Draw the pallet</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">0</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,BLACK<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">30</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,RED<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">60</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,GREEN<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">90</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,BLUE<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">120</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,CYAN<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">150</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,YELLOW<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">180</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,WHITE<span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">fillRectangle</span><span class="br0">(</span><span class="nu0">210</span>,<span class="nu0">0</span>,<span class="nu0">30</span>,<span class="nu0">10</span>,GRAY1<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ 
+    <span class="co1">// a point object holds x y and z coordinates.</span>
+    Point p <span class="sy1">=</span> ts.<span class="me1">getPoint</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">//map the ADC value read to into pixel co-ordinates</span>
+ 
+    p.<span class="me1">x</span> <span class="sy1">=</span> <span class="kw3">map</span><span class="br0">(</span>p.<span class="me1">x</span>, TS_MINX, TS_MAXX, <span class="nu0">240</span>, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+    p.<span class="me1">y</span> <span class="sy1">=</span> <span class="kw3">map</span><span class="br0">(</span>p.<span class="me1">y</span>, TS_MINY, TS_MAXY, <span class="nu0">320</span>, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// we have some minimum pressure we consider 'valid'</span>
+    <span class="co1">// pressure of 0 means no pressing!</span>
+ 
+    <span class="kw1">if</span> <span class="br0">(</span>p.<span class="me1">z</span> <span class="sy1">&gt;</span> ts.<span class="me1">pressureThreshhold</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+ 
+        <span class="co1">// Detect  paint brush color change</span>
+        <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">y</span> <span class="sy1">&lt;</span> <span class="nu0">15</span><span class="br0">)</span>
+        <span class="br0">{</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">0</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">30</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> BLACK<span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">30</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">60</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> RED<span class="sy4">;</span>
+                <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">0</span>,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">60</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">90</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> GREEN<span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">90</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">110</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> BLUE<span class="sy4">;</span>
+                <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">0</span>,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">120</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">150</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> CYAN<span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">150</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">180</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> YELLOW<span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">180</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">210</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> WHITE<span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">if</span><span class="br0">(</span>p.<span class="me1">x</span> <span class="sy1">&gt;=</span> <span class="nu0">210</span> <span class="sy3">&amp;&amp;</span> p.<span class="me1">x</span> <span class="sy1">&lt;</span> <span class="nu0">240</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                color <span class="sy1">=</span> GRAY1<span class="sy4">;</span>
+            <span class="br0">}</span>
+        <span class="br0">}</span>
+        <span class="kw1">else</span>
+        <span class="br0">{</span>
+            Tft.<span class="me1">fillCircle</span><span class="br0">(</span>p.<span class="me1">x</span>,p.<span class="me1">y</span>,<span class="nu0">2</span>,color<span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3> Demo Code shown</h3>
+<ul><li>Insert the TFT Touch Shield to Seeeduino as shown below.
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:352px;"><img src="img/DemoShow.JPG" width="350"/> <div class="thumbcaption"><b>TFT Touch Shield</b> connected to <b>Seeeduino</b></div></div></div>
+<p><br/>
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V1">TFT Touch Shield libraries.zip</a>
+</li><li><a href="http://seeedstudio.com/wiki/images/c/c5/2.8_TFT_Touch_Shield_v1.0_EagleFiles.zip">TFT Touch Shield v1.0 Schematic and Layout</a> <br/>
+</li><li><a href="res/Schematic_for_Radio_Shack_.zip">Radio Shack version of TFT Touch Shield in Eagle Files</a><br/>
+</li></ul>
+<ul><li>Datasheet: <a href="http://garden.seeedstudio.com/images/4/4e/ST7781R_datasheet.pdf">ST7781R</a> , <a href="http://garden.seeedstudio.com/images/7/75/FGD280E3715V1_8bit.pdf">FGD280E3715V1_8bit</a><br/>
+</li><li> <a href="http://www.adafruit.com/datasheets/AVR341.pdf">ATMEL - App Notes on Four and five-wire Touch Screen</a>
+</li><li> <a href="http://focus.ti.com/lit/an/slyt209a/slyt209a.pdf">TI - Using Resistive Touch Screen</a>
+</li><li> <a href="https://github.com/adafruit/SD">SD Card</a> library.
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

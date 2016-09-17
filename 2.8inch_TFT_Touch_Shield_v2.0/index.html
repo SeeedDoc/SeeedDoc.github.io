@@ -1,1507 +1,460 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>2.8&#39;&#39; TFT Touch Shield v2.0 - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "2.8&#39;&#39; TFT Touch Shield v2.0";
-    var mkdocs_page_input_path = "2.8inch_TFT_Touch_Shield_v2.0.md";
-    var mkdocs_page_url = "/2.8inch_TFT_Touch_Shield_v2.0/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#specification">Specification</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#application-ideas">Application Ideas</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#pin-used">Pin Used</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
-                
-                    <li><a class="toctree-l4" href="#download-arduino-library">Download Arduino Library</a></li>
-                
-                    <li><a class="toctree-l4" href="#connection-and-upload-the-code">Connection and Upload the code</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#backlight">Backlight</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Platform &raquo;</li>
-        
-      
-        
-          <li>Arduino &raquo;</li>
-        
-      
-    
-    <li>2.8&#39;&#39; TFT Touch Shield v2.0</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>2.8'' TFT Touch Shield v2.0</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/main.jpg" /></p>
-<p>This is a multifunctional Arduino/Seeeduino/Arduino Mega compatible resistive touch screen. It can be used as display device or sketch pad.Compared with the previous version, 2.8``TFT Touch Shield V1.0, we replaced the screen driver with a more professional chip, ILI9341 driver, providing different pin-saving SPI communication without sacrificing the data transmitting speed. Due to the communication method change, programs developed for the original version need modifications before being transplanted to the new version. With a SD card module integrated also on this shield, this shield reserves great room for other expansions to your project.</p>
-<p><a href="http://www.seeedstudio.com/2.8-TFT-Touch-Shield-V2.0-p-1286.html"><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now.png" /></a>  </p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
-<ul>
-<li>Big screen for easy and comfortable experience</li>
-<li>Backlight controllable via programming</li>
-<li>65k rich colors display</li>
-<li>SPI pin-saving communication method</li>
-<li>Full screen touch active range</li>
-</ul>
-<h2 id="specification">Specification<a class="headerlink" href="#specification" title="Permanent link"></a></h2>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>2.8&#39;&#39; TFT Touch Shield v2.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>2.8&#39;&#39; TFT Touch Shield v2.0</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/TFT_Touch_Shield_V2.0_.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+This is a versatile and Arduino/Seeeduino/Arduino Mega compatible resistive touch screen shield which can be used as display device, or sketch pad for user input/interface.<br/>
+</p><p>Compared with the previous version (2.8" TFT Touch Shield V1.0) we improved the screen driver with a professional chip (ILI9341) to provide the pin-saving SPI communication protocol without sacrificing the data transmission speed.<br/>
+</p><p>An SD card module is also integrated into the shield to provide storage space, and anything else you can think of, for your projects.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/28-TFT-Touch-Shield-V20-p-1286.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li> 2.8" 320 × 240 pixels, screen for a great easy to use and comfortable experience.
+</li><li> Micro SD card slot for file/image display.
+</li><li> Programmable backlight illumination for night/dark viewing.
+</li><li> 65535 rich colors.
+</li><li> Serial Peripheral Interface (SPI) - a high-speed pin-saving communication protocol.
+</li><li> Full-screen touch active range.
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification </h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td> 4.5
+</td>
+<td> 5
+</td>
+<td> 5.5
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 250
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> LCD Panel Size
+</th>
+<td colspan="3"> 2.8
+</td>
+<td> inch
+</td></tr>
+<tr>
+<th scope="row"> View angle
+</th>
+<td colspan="3"> 60~120
+</td>
+<td> Degree
+</td></tr>
+<tr>
+<th scope="row"> Resolution
+</th>
+<td colspan="3"> 320 × 240
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> LCD color
+</th>
+<td colspan="3"> 65k
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Backlight Type
+</th>
+<td colspan="3"> LED
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> LCD driver IC
+</th>
+<td colspan="3"> ILI9341
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Interface Type
+</th>
+<td colspan="3"> SPI
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Touch Screen
+</th>
+<td colspan="3"> 4-Wire resistive touch screen
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Active area
+</th>
+<td colspan="3"> 43.2*57.3
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> ESD contact discharge
+</th>
+<td colspan="3"> ±4
+</td>
+<td> KV
+</td></tr>
+<tr>
+<th scope="row"> ESD air discharge
+</th>
+<td colspan="3"> ±8
+</td>
+<td> KV
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 72.5 × 54.7 × 18
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Weight
+</th>
+<td colspan="3"> 24±2
+</td>
+<td> g
+</td></tr></table>
+<p><br/>
+</p>
+<h2> Cautions </h2>
+<ul><li>Be careful when handling and/or installing the TFT touch shield since the screen is fragile.
+</li><li>Pressing too hard on the screen might cause distortion of the graphics displayed in the screen.
+</li></ul>
+<p><br/>
+</p>
+<h2> Pin Map and Description </h2>
+<h3> Digital Pin Used</h3>
 <table>
-<thead>
 <tr>
-<th>Item</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
+<th> Arduino Pin </th>
+<th> Function
+</th></tr>
 <tr>
-<td>Working Voltage</td>
-<td>5 V</td>
-</tr>
+<td> D0 </td>
+<td> Not Used
+</td></tr>
 <tr>
-<td>Resolution</td>
-<td>320 x 240</td>
-</tr>
+<td> D1 </td>
+<td> Not Used
+</td></tr>
 <tr>
-<td>Colors</td>
-<td>65k</td>
-</tr>
-</tbody>
-</table>
-<h2 id="application-ideas">Application Ideas<a class="headerlink" href="#application-ideas" title="Permanent link"></a></h2>
-<ul>
-<li>Game</li>
-<li>Sensor Hub</li>
-<li>Human Machine Interface</li>
-<li>Smart House</li>
-</ul>
-<p>Here are some awesome projects for your reference. If you have project want to add to this chapter, please feel free to contact loovee@seeed.cc. </p>
+<td> D2 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D3 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D4 </td>
+<td> <b>TF_CS</b>
+</td></tr>
+<tr>
+<td> D5 </td>
+<td> <b>TFT_CS</b>
+</td></tr>
+<tr>
+<td> D6 </td>
+<td> <b>TFT_D/C</b>
+</td></tr>
+<tr>
+<td> D7 </td>
+<td> <b>Backlight Control</b>
+</td></tr>
+<tr>
+<td> D8 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D9 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D10 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D11 </td>
+<td> <b>SPI_MOSI</b>
+</td></tr>
+<tr>
+<td> D12 </td>
+<td> <b>SPI_MISO</b>
+</td></tr>
+<tr>
+<td> D13 </td>
+<td> <b>SPI_SCK</b>
+</td></tr></table>
+<h3> Analog Pin Used</h3>
 <table>
-<thead>
 <tr>
-<th>Arduino Phone</th>
-<th>Facebook Monitor</th>
-<th>Instrucatbles Monitor</th>
-</tr>
-</thead>
-<tbody>
+<th> Arduino Pin </th>
+<th> Function
+</th></tr>
 <tr>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/project1.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/project2.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/project3.jpg" /></td>
-</tr>
+<td> A0 </td>
+<td> <b>Y-</b>
+</td></tr>
 <tr>
-<td><a href="http://www.instructables.com/id/ArduinoPhone-20-an-Open-Source-Mobile-Phone-Based-/">Make it Now!</a></td>
-<td><a href="http://www.instructables.com/id/Facebook-Like-Monitor/">Make it Now!</a></td>
-<td><a href="http://www.instructables.com/id/Make-a-Instructables-Indicator/">Make it Now!</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="pin-used">Pin Used<a class="headerlink" href="#pin-used" title="Permanent link"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You can use the NOT USED pins to control the others module. </p>
-</div>
-<p>Digital Pins</p>
-<table>
-<thead>
+<td> A1 </td>
+<td> <b>X-</b>
+</td></tr>
 <tr>
-<th>Pin Name</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
+<td> A2 </td>
+<td> <b>Y+</b>
+</td></tr>
 <tr>
-<td>D0</td>
-<td>NOT USED</td>
-</tr>
+<td> A3 </td>
+<td> <b>X+</b>
+</td></tr>
 <tr>
-<td>D1</td>
-<td>NOT USED</td>
-</tr>
+<td> A4 </td>
+<td> Not Used
+</td></tr>
 <tr>
-<td>D2</td>
-<td>NOT USED</td>
-</tr>
-<tr>
-<td>D3</td>
-<td>NOT USED</td>
-</tr>
-<tr>
-<td>D4</td>
-<td><strong>TF_CS</strong></td>
-</tr>
-<tr>
-<td>D5</td>
-<td><strong>TFT_CS</strong></td>
-</tr>
-<tr>
-<td>D6</td>
-<td><strong>TFT_DC</strong></td>
-</tr>
-<tr>
-<td>D7</td>
-<td><strong>BACKLIGHT(Selectable)</strong></td>
-</tr>
-<tr>
-<td>D8</td>
-<td>NOT USED</td>
-</tr>
-<tr>
-<td>D9</td>
-<td>NOT USED</td>
-</tr>
-<tr>
-<td>D10</td>
-<td>NOT USED</td>
-</tr>
-<tr>
-<td>D11</td>
-<td><strong>SPI_MOSI</strong></td>
-</tr>
-<tr>
-<td>D12</td>
-<td><strong>SPI_MISO</strong></td>
-</tr>
-<tr>
-<td>D13</td>
-<td><strong>SPI_SCK</strong></td>
-</tr>
-</tbody>
-</table>
-<p>Analog Pins</p>
-<table>
-<thead>
-<tr>
-<th>Pin Name</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A0</td>
-<td><strong>TOUCH PANEL</strong></td>
-</tr>
-<tr>
-<td>A1</td>
-<td><strong>TOUCH PANEL</strong></td>
-</tr>
-<tr>
-<td>A2</td>
-<td><strong>TOUCH PANEL</strong></td>
-</tr>
-<tr>
-<td>A3</td>
-<td><strong>TOUCH PANEL</strong></td>
-</tr>
-<tr>
-<td>A4</td>
-<td>NOT USED</td>
-</tr>
-<tr>
-<td>A5</td>
-<td>NOT USED</td>
-</tr>
-</tbody>
-</table>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This getting started is based on Win10 and Arduino IDE 1.6.9</p>
-</div>
-<p>Here we will show you how this display work, we need thing as below to start. </p>
-<table>
-<thead>
-<tr>
-<th>Seeeduino V4</th>
-<th>2.8 TFT Touch Shield V2</th>
-<th>Micro USB Cable</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/gs1.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/gs2.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/gs3.jpg" /></td>
-</tr>
-<tr>
-<td><a href="http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html">More Details</a></td>
-<td><a href="http://www.seeedstudio.com/2.8-TFT-Touch-Shield-V2.0-p-1286.html">More Details</a></td>
-<td><a href="http://www.seeedstudio.com/Micro-USB-Cable-48cm-p-1475.html">More Details</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="download-arduino-library">Download Arduino Library<a class="headerlink" href="#download-arduino-library" title="Permanent link"></a></h3>
-<p>This library work for:</p>
-<ul>
-<li>Arduino/Genuino UNO</li>
-<li>Seeeduino V3/4.0/4.2</li>
-<li>Arduino/Genuino Mega</li>
-<li>Arduino Leonardo</li>
-<li>Seeeduino Lite/Clio/Lotus</li>
-<li>LinkIt ONE(Touch panel don&rsquo;t work)</li>
-</ul>
-<p>Click on the below button to download the library and install it <a href="http://wiki.seeed.cc/Tutorial/How_to_Install_an_Arduino_Library/">(HOW TO INSTALL AN ARDUINO LIBRARY)</a>. </p>
-<p><a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2/archive/master.zip"><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/library.png" /></a></p>
-<p>This library include few examples, </p>
-<ul>
-<li>drawCircle</li>
-<li>drawLines</li>
-<li>drawNumber</li>
-<li>drawRectangle</li>
-<li>paint</li>
-<li>shapes</li>
-<li>text</li>
-<li>tftbmp</li>
-<li>tftbmp2</li>
-</ul>
-<p>We use shapes example for this demo.</p>
-<h3 id="connection-and-upload-the-code">Connection and Upload the code<a class="headerlink" href="#connection-and-upload-the-code" title="Permanent link"></a></h3>
-<p>Insert the board to Seeeduino, and open your Arduino IDE. Click on <strong>File &gt; Examples &gt; TFT_Touch_Shield_V2-master &gt; shapes</strong> to open the code. </p>
-<p>Select the correct COM port and Boards(Seeeduino V4), upload the code to Seeeduino, then it&rsquo;s done. If you have any question about how to start the uploading, please put had on <a href="http://wiki.seeed.cc/Platform/Arduino/SeeeduinoV4.2/#getting-started">here</a> to get more details. </p>
-<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/display.jpeg" /></p>
-<h2 id="backlight">Backlight<a class="headerlink" href="#backlight" title="Permanent link"></a></h2>
-<p>The backlight is default on always, if you want to control the backlight, you need to do some hack in the board. Please look at the back side of the board, there&rsquo;s a BACKLIGHT label, and one side named ON the other side named D7. We need to cut the wire at ON side and solder D7 side. As shown below.</p>
-<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/TFT_Touch_Shield_V2/master/images/backlight.png" /></p>
-<p>Then you can control the backlight via control D7.</p>
-<p>To open backlight:
-     digitalWrite(7, HIGH);</p>
-<p>To close backlight:
-    digitaWrite(7, LOW);</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Please be careful when use a box cutter and soldering iron.</p>
-</div>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDocument/TFT_Touch_Shield_V2/raw/master/resources/TFT_Eagle_File.zip">Schematic in Eagle File</a></li>
-<li><a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2">Library at Github page</a></li>
-<li><a href="https://github.com/SeeedDocument/TFT_Touch_Shield_V2">Github page of this document</a></li>
-</ul>
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/tft_touch_shield_v2" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/" class="btn btn-neutral float-right" title="Battery Detector with Polymer Lithium Ion 1050mAh 3.7V">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+<td> A5 </td>
+<td> Not Used
+</td></tr></table>
+<p><br/>
+</p>
+<h3>  Chip Select, Data/Command, and Backlight pins</h3>
+<ul><li> <b>Arduino D4  to TF_CS:</b>
+</li></ul>
+<p>Used for SD card chip select (CS) SPI pin.
+<br/> This pin will indicate the shield that the Arduino wants to send and receive data to and from the micro SD card.
+</p>
+<ul><li> <b>Arduino D5  to TFT_CS:</b>
+</li></ul>
+<p>Used for touch screen chip select (CS) SPI pin. 
+<br/>This pin will indicate the shield that the Arduino wants to send and receive data to and from the display/screen.
+</p>
+<ul><li> <b>Arduino D6  to TFT_D/C:</b>
+</li></ul>
+<p>Used for TFT Data/Command control pin. 
+<br/>The value of this pin (HIGH, or LOW) will tell the shield if the Arduino wants to send data or commands.
+</p>
+<ul><li> <b>Arduino D7  to BACKLIGHT:</b>
+</li></ul>
+<p>Used for touch screen backlight on/off control.
+<br/>
+</p>
+<h3>  SPI Interface / Data Communication Pins</h3>
+<ul><li> <b>Arduino D11  is SPI (MOSI) data pin:</b>
+</li></ul>
+<p>Used as data pin for SD card and screen. This pin is used by the Arduino to send data to the SD card or screen.
+</p>
+<ul><li> <b>Arduino D12  is SPI (MISO) pin:</b>
+</li></ul>
+<p>Used as data pin for SD card and screen. This is the pin that the Arduino uses to receive data from the SD card or screen.
+</p>
+<ul><li> <b>Arduino D13  is SPI (SCK) pin:</b>
+</li></ul>
+<p>Used as serial clock pin for SD card and screen. This pin is used to clock data in and out of the Arduino.
+</p><p><br/>
+</p>
+<h2> TFT Touch Shield Setup </h2>
+<h3>  Hardware Installation </h3>
+<p>Stack the TFT Touch Shield on your Arduino board and connect the board to the PC using a USB cable.
+</p>
+<h3> Software Libraries Installation </h3>
+<ol><li> Download the <a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2">SeeedTFTV2.0 Library for Arduino 1.0</a> and <a href="https://github.com/Seeed-Studio/Touch_Screen_Driver">SeeedTouchScreen Library for Arduino 1.0</a> by clicking "Download ZIP"
+</li><li> Unzip the folders in the Arduino IDE path <i>..\arduino-1.0\libraries</i>
+</li></ol>
+<p><br/>
+</p>
+<h2> Getting Started </h2>
+<h3>  Example #1：Draw a Circle </h3>
+<p>1. Restart the Arduino IDE. 
+</p><p>2. Open the "drawCircle" example by going to File --&gt; Examples --&gt; SeeedTFTv2 --&gt; drawCircle. 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// drawCircle example</span>
+ 
+<span class="co2">#include &lt;stdint.h&gt;</span>
+<span class="co2">#include &lt;TFTv2.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    TFT_BL_ON<span class="sy4">;</span>                                          <span class="co1">//turn on the background light </span>
+ 
+    Tft.<span class="me1">TFTinit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                                      <span class="co1">//init TFT library             </span>
+ 
+    Tft.<span class="me1">drawCircle</span><span class="br0">(</span><span class="nu0">100</span>, <span class="nu0">100</span>, <span class="nu0">30</span>,YELLOW<span class="br0">)</span><span class="sy4">;</span>                <span class="co1">//center: (100, 100), r = 30 ,color : YELLOW              </span>
+ 
+    Tft.<span class="me1">drawCircle</span><span class="br0">(</span><span class="nu0">100</span>, <span class="nu0">200</span>, <span class="nu0">40</span>,CYAN<span class="br0">)</span><span class="sy4">;</span>                  <span class="co1">//center: (100, 200), r = 10 ,color : CYAN  </span>
+ 
+    Tft.<span class="me1">fillCircle</span><span class="br0">(</span><span class="nu0">200</span>, <span class="nu0">100</span>, <span class="nu0">30</span>,RED<span class="br0">)</span><span class="sy4">;</span>                   <span class="co1">//center: (200, 100), r = 30 ,color : RED    </span>
+ 
+    Tft.<span class="me1">fillCircle</span><span class="br0">(</span><span class="nu0">200</span>, <span class="nu0">200</span>, <span class="nu0">30</span>,BLUE<span class="br0">)</span><span class="sy4">;</span>                  <span class="co1">//center: (200, 200), r = 30 ,color : BLUE                 </span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p>3.   Upload the code to the Arduino board. You should be able to see several circles on the screen as shown below. 
+</p><p><br/>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/DisplayCircle.jpg" width="500"/> <div class="thumbcaption">The TFT Touch Shield showing off some of its basic drawing capabilities.</div></div></div></div>
+<p><br/>
+</p><p>Circles isn't the only thing our library can help you draw, we also have a <a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2/tree/master/examples">lines, number, rectangle, and many more examples</a>.  Check those out as well to become a pro with the shield.
+</p><p><br/>
+</p>
+<h4>  Code Explained </h4>
+<p>Let us show you how to use the <i>drawCircle</i> and <i>fillCircle</i> functions.
+</p>
+<h4>  drawCircle: </h4>
+<p><b>Function Heading:</b> drawCircle(int poX, int poY, int r, INT16U color)<br/>
+</p><p><b>Function Description:</b> The drawCircle function draws an empty circle with the center at the coordinates <i>poX</i>, and <i>poY</i>. The circle will be of radius <i>r</i> and the border color will be <i>color</i>. The <i>color</i> parameter is a 16-bit Red-Geen-Blue (RGB) integer, in the example code above the words YELLOW, CYAN, RED, and BLUE are defined as integers in the <a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2/blob/master/TFTv2.h">TFTv2.h file</a>. <br/>
+</p><p><b>RGB Integers: </b>A 16-bit RGB integer specifies the amount of red, green, and blue to form a color. From right to left, bits 0-4, 5-10, and 11-15 specify the amount of blue, green, and red.   For example, if you want to specify white as the color this will require an equal amount of red, green, and blue therefore the RGB integer for white will be 0xffff. <br/>
+</p><p>These are the colors defined in the TFT Touch Shield V2 library, but you can make your own of course:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Basic Colors</span>
+<span class="co2">#define RED		0xf800</span>
+<span class="co2">#define GREEN	0x07e0</span>
+<span class="co2">#define BLUE	0x001f</span>
+<span class="co2">#define BLACK	0x0000</span>
+<span class="co2">#define YELLOW	0xffe0</span>
+<span class="co2">#define WHITE	0xffff</span>
+ 
+<span class="co1">//Other Colors</span>
+<span class="co2">#define CYAN		0x07ff	</span>
+<span class="co2">#define BRIGHT_RED	0xf810	</span>
+<span class="co2">#define GRAY1		0x8410  </span>
+<span class="co2">#define GRAY2		0x4208</span></pre></div></div>
+<h4>  fillCircle: </h4>
+<p><b>Function Heading:</b> fillCircle(int poX, int poY, int r, INT16U color)<br/>
+</p><p><b>Function Description:</b> Draws a filled circle with center coordinates <i>poX</i>, and <i>poY</i>, with radius <i>r</i> and colored <i>color</i>.
+</p><p><b>Note:</b> There are many other examples in this library (e.g "drawLines"), try them out to figure out how to use each of the draw functions.
+</p>
+<h3>  Example #2: Display Images From The SD Card </h3>
+<p>This example will display a 320 × 240 24-bit-depth BMP image that you put in the micro SD card of the shield. 
+This shows that you can toggle between the SD card and screen using the SPI protocol.
+</p>
+<ol><li> Remove all power from the circuit.
+</li><li> Using your PC save a 320 × 240 BMP image in the micro SD card and insert the SD card into the shield.
+</li><li> Stack the shield on the Arduino board and connect the board to your to your PC's USB port.
+</li><li> In the Arduino IDE, open the “<a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2/blob/master/examples/tftbmp2/tftbmp2.ino">tftbmp2</a>” example in the same way as you opened the “drawCircle” example above. 
+</li><li> Upload the example code into the Arduino board. 
+</li><li> You should be able to see the BMP image(s) in the screen. Check out our results in the image below.
+</li></ol>
+<p><br/>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/Flower.jpg" width="500"/> <div class="thumbcaption">A beautiful yellow flower image we put in the TFT Touch Shield's SD card slot.</div></div></div></div>
+<p><br/>
+</p>
+<h3>  Example #3: Sketch Pad </h3>
+<p>This example shows how to make a sketch pad, with touch brushes of different colors.
+</p>
+<ol><li>Open the “<a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2/tree/master/examples/paint">paint</a>” the same way you opened the ”drawCircle” example above. 
+</li><li>Upload the code to the Arduino board. 
+</li><li>A color palette should be displayed on the right side of the screen to give the user different colors to choose from for his/her finger brush. The colors available in the palette are BLACK, RED, GREEN, BLUE, CYAN, YELLOW, WHITE, and GRAY1. Check out our artistic skills below!
+</li></ol>
+<p><br/>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/Paint.jpg" width="500"/> <div class="thumbcaption">Smiley face we made using the TFT shield as a sketch pad</div></div></div></div>
+<p><br/>
+</p><p><b>Note:</b> To clear the screen/canvas, simply press the reset button or power off and then power on the Shield.
+</p><p><br/>
+</p>
+<h3>  Example #4: Backlight Control </h3>
+<p>The TFT Touch Shield's backlight is on by default since its control circuit is directly powered by the 5V pin.  If, however, you wish to control the backlight's on/off state using the Arduino Digital I/O pin 7, a simple modification will have to be made:
+</p><p><b>Note:</b> Please read ALL of the following steps first before performing any action.
+</p><p>1. Find the back light's three terminals' locations (ON, BACKLIGHT, D7) in the back/bottom side of the shield (see figure below).
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:697px;"><img src="img/Tft-shield-backlight-terminals-location.png" width="695"/> <div class="thumbcaption">Backlight terminals location.</div></div></div></div>
+<p>2. Notice that the ON terminal is soldered to the BACKLIGHT terminal as shown in the PCB figure below. Scrape off this connection, or use a soldering iron to remove it.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Backlight_Control.jpg" width="300"/> <div class="thumbcaption">The default connection of the backlight (ON connected to BACKLIGHT).</div></div></div></div>
+<p>3. Now solder the D7 terminal to the BACKLIGHT terminal as shown in the PCB figure below.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/Backlight_Control1.jpg" width="300"/> <div class="thumbcaption">The required modification to control the backlight using digital pin 7 (connect BACKLIGHT to D7)</div></div></div></div>
+<p>Now controlling the backlight's state is as easy as controlling an LED, upload the following code to the Arduino board to see how to toggle the backlight every 500ms (1/2 second):  
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define Backlight 7</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span>
+<span class="br0">{</span>
+ <span class="kw3">pinMode</span><span class="br0">(</span>Backlight,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span> 
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span>
+<span class="br0">{</span> <span class="kw3">digitalWrite</span><span class="br0">(</span>Backlight,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// turn on the backlight</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">digitalWrite</span><span class="br0">(</span>Backlight,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// turn off the backlight</span>
+ <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h2> Related Projects </h2>
+<p>The best way to learn something is to create a project with it.
+</p><p><a href="http://www.seeedstudio.com/recipe/">Recipe Community</a> is a place which gathers a lot of amazing projects with step-by-step tutorials.
+Makers in the community have made an awesome project with the TFT Touch Shield V2.0, check this out!
+</p>
+<h3> Make an Instructables Indicator</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.instructables.com/id/Make-a-Instructables-Indicator/"><img src="img/F0NJUC8IFLC535P.MEDIUM.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p><a href="http://www.instructables.com/">Instructables</a> is really a good place to share your awesome project. There are so many makers here to share their works.
+</p><p>I had made many instructable as well, I will feel excite when my instructable get a large views or favorites. Especially when you first post your instructable, you will always go to the page and see if someone like it.
+</p><p>I still remember when I post my first Instructable post years ago, it's a project about Arduino, I made a phone with Arduino. It's called <a href="http://www.instructables.com/id/Make-a-Instructables-Indicator/">ArduinoPhone</a>, even today I can get some comments from it, and I am glad to help others to make their own phone with Arduino.
+</p><p>Now, I will share my latest instructions, it's a beautiful device that you can put it on the desk. It's named Instructables Indicator. With this instructable, you can know people like your Instructable if your Instructable posts get featured.
+</p><p>This application contains the below function:
+</p><p>Connecting to Wi-Fi
+</p>
+<ul><li> A 320 × 240 TFT display to show the message
+</li><li> Include Views, Favorites and Comments.
+</li><li> When your Instructable post get featured, the LEDs on the base will turn on
+</li></ul>
+<p>If you like Instructables and write instruction post, you will like this idea. I will share the process to make it, as well as the code, all things are open sources.
+</p><p><a href="http://www.instructables.com/id/Make-a-Instructables-Indicator/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h3>  ArduinoPhone </h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.instructables.com/id/ArduinoPhone/"><img src="img/ArduinoPhoneV2.0.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>Combining Arduino and other shield modules, we make a mobile phone named Arduino Phone. Meanwhile, we printed a shell for it with the 3D printer. Although it's not such fine as you think, even a little bit clunky, it's still very cool. That is the point this is a cell phone made by ourselves.
+</p><p>While, we can't install Arduino Phone Apps limited by Arduino. So, if you want to play Angry Birds, then you need to do some big modifications on Arduino Phone. :)
+</p><p>Next, I will make a detailed explanation about the steps of making an Arduino Phone, including the hardware connection and software implementation.
+</p><p>Now, let's begin.
+</p><p><a href="http://www.instructables.com/id/ArduinoPhone-20-an-Open-Source-Mobile-Phone-Based-/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+<br/>
+</p>
+<h2> Resources </h2>
+<ul><li><a href="https://github.com/Seeed-Studio/TFT_Touch_Shield_V2">SeeedTFTV2.0 Library for Arduino 1.0</a>
+</li><li><a href="https://github.com/Seeed-Studio/Touch_Screen_Driver">SeeedTouchScreen Library for Arduino 1.0</a><br/>
+</li><li><a href="res/Seeed_2.8_TFT_Touch_Shield.zip">Seeed TFT Touch Shield v2.0 in EAGLE file</a>
+</li><li><a href="res/2.8inch_TFT_Touch_Shield_v2_0.pdf">Seeed TFT Touch Shield v2.0 Schematic PDF</a>
+</li></ul>
+<p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/3WCF63S" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

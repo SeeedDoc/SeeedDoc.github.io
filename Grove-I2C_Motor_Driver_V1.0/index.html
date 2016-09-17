@@ -1,0 +1,205 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - I2C Motor Driver V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - I2C Motor Driver V1.0</h1>
+
+<p>The Grove-I2C motor driver is a new addition to the TWIG series with the same easy-to-use interface. Its heart is a dual channel H-bridge driver chip that can handle current up to 2A per channel, controlled by an Atmel ATmega8L which handles the I2C communication with for example an Arduino. Both motors can be driven simultaneously while set to a different speed and direction. It can power two brushed DC motors or one 4-wire two-phase stepper motor. It requires a 6V to 15V power supply to power the motor and has an onboard 5V voltage regulator which can power the I2C bus (selectable by jumper). All driver lines are diode protected from back EMF.
+</p><p>The easy software interface is not the only easy-to-use feature because the TWIG I2C motor driver is designed to get you up and running in no time. It features an LED for power and four LEDs to indicate which direction each motor is running. Screw terminals facilitate motor and power connections, and the GROVE system plug and I2C interface enables you to daisy-chain the driver with many other devices.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/twig-i2c-motor-driver-p-907.html">ROB72212P</a></b>
+</p>
+<h2> Feature</h2>
+<ul><li>Grove compatible
+</li><li>I2C interface
+</li><li>Motor's speed and direction can control
+</li><li>Number of channels: 2 
+</li><li>Easy to use
+</li></ul>
+<h2>  Specifications  </h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row">Working Voltage
+</th>
+<td> 6
+</td>
+<td> -
+</td>
+<td> 15
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Max Output Current per channel
+</th>
+<td colspan="3">0.7
+</td>
+<td> A
+</td></tr>
+<tr>
+<th scope="row"> Input/output voltage on I2C bus
+</th>
+<td colspan="3"> 5
+</td>
+<td> V
+</td></tr>
+<tr>
+<th scope="row">  Communication protocol
+</th>
+<td colspan="3"> I2C
+</td>
+<td> /
+</td></tr></table>
+<h2>  Interface Function  </h2>
+<p><br/><img src="img/I2C_Motor_Driver_Interface1.jpg" width="901"/><br/>
+</p><p><b>U5:</b> AMS1117 IC,5v voltage regulator<br/>
+<b>U1:</b> L298 IC,dual full bridge driver <br/>
+<b>IC1</b>: Atmega8 IC, Control Motor Rotate. <br/>
+</p><p><b>NOTE:</b> Input voltage on screw terminals is regulated to 5v and connected to I2C +5v via a jumper (J4). Remove jumper if both external power via the screw terminals and power via the I2C header is used. Use jumper if 5v should be supplied to the I2C bus.
+</p>
+<h2>  Application Ideas  </h2>
+<p>This motor driver can be used to drive any brushed electronic motor as long as it doesn't consume more than 2A at 5v. Two motors can be driven simultaneously while set to a different speed and direction. The speed can be set fully proportional and is controlled by the ATmega8 on the board using PWM. It is set by I2C commands sent from e.g. an Arduino.
+It is perfect for applications like robots, homebuilt RC cars, case fans, high power LED illumination or any other project that involves proportional load control.
+</p>
+<h2>  Cautions </h2>
+<ul><li>The board will be very hot while operating over 1Amps. Do keep off your hands!
+</li><li>Different Arduino IDE may have difference. I use Arduino-0019 and it works fine, but when I use Arduino - 0022, I need to add some delay() at the end of Wire.endTransmission().
+</li></ul>
+<h2>  Usage </h2>
+<p>The I2C Motor Driver can control motor which is based on the chip L298. The L298 isn’t just a dual motor driver, it is a dual H-bridge. An h-bridge is basically a specific setup of transistors that allow you to switch direction of current. So hooked up to a motor, which means you can have it spin in both directions, and with PWM input, you can use your Arduino to make them spin at any speed. Because the L298 has 2 H-bridges, you can not only make a robot go forwards and backwards, but also turn around by having each wheel spin in a different direction.<br/>
+Now, let's use the I2C Motor Driver to control two DC motors rotating in the positive or opposite direction.
+<br/>(图片)<br/>
+<span style="color:red"><b>Note:</b> <br/>
+</span></p>
+<dl><dd>1) The first thing to notice, however, is that you do need an external power source for your motors,  the 5v pin on the Arduino just can not source enough power to drive 2 motors, and you could damage your Arduino if you do.<br/>
+</dd><dd>2) It also should be reminded that the module can not drive Stepper Motor.<br/>
+</dd></dl>
+<p>The below is an example program to be used with an Arduino. The code for this is very basic. We created a function for you that makes controlling the L298 from your Arduino easier, but you can also change it up and do it your own way. 
+</p>
+<pre>
+
+/*
+  Grove- i2C motor driver demo v1.0
+  by: http://www.seeedstudio.com
+*/
+  //  Author:LG
+#include &lt;Wire.h&gt;
+
+#define MotorSpeedSet             0x82
+#define PWMFrequenceSet           0x84
+#define DirectionSet              0xaa
+#define MotorSetA                 0xa1
+#define MotorSetB                 0xa5
+#define Nothing                   0x01
+#define Stepernu                  0x1c
+#define I2CMotorDriverAdd         0x0f   // Set the address of the I2CMotorDriver
+
+void MotorSpeedSetAB(unsigned char MotorSpeedA , unsigned char MotorSpeedB)  {
+  MotorSpeedA=map(MotorSpeedA,0,100,0,255);
+  MotorSpeedB=map(MotorSpeedB,0,100,0,255);
+  Wire.beginTransmission(I2CMotorDriverAdd); // transmit to device I2CMotorDriverAdd
+  Wire.write(MotorSpeedSet);                 // set pwm header 
+  Wire.write(MotorSpeedA);                   // send pwma 
+  Wire.write(MotorSpeedB);                   // send pwmb    
+  Wire.endTransmission();                    // stop transmitting
+}
+
+void MotorPWMFrequenceSet(unsigned char Frequence)  {    
+  Wire.beginTransmission(I2CMotorDriverAdd); // transmit to device I2CMotorDriverAdd
+  Wire.write(PWMFrequenceSet);               // set frequence header
+  Wire.write(Frequence);                     //  send frequence 
+  Wire.write(Nothing);                       //  need to send this byte as the third byte(no meaning)  
+  Wire.endTransmission();                    // stop transmitting
+}
+
+void MotorDirectionSet(unsigned char Direction)  {     //  Adjust the direction of the motors 0b0000 I4 I3 I2 I1
+  Wire.beginTransmission(I2CMotorDriverAdd);           // transmit to device I2CMotorDriverAdd
+  Wire.write(DirectionSet);                            // Direction control header
+  Wire.write(Direction);                               // send direction control information
+  Wire.write(Nothing);                                 // need to send this byte as the third byte(no meaning)  
+  Wire.endTransmission();                              // stop transmitting 
+}
+
+void MotorDriectionAndSpeedSet(unsigned char Direction,unsigned char MotorSpeedA,unsigned char MotorSpeedB)  {  //you can adjust the direction and speed together
+  MotorDirectionSet(Direction);
+  MotorSpeedSetAB(MotorSpeedA,MotorSpeedB);  
+}
+
+void setup()  {
+  Wire.begin(); // join i2c bus (address optional for master)
+  delayMicroseconds(10000);
+  Serial.begin(9600);
+  Serial.println("setup begin");
+  stepperrun();
+}
+
+void loop()  {
+ 
+  while(1)  {
+    MotorSpeedSetAB(255,255);//defines the speed of motor 1 and motor 2;
+    delay(10); //this delay needed
+
+    MotorDirectionSet(0b1010);  //"0b1010" defines the output polarity, "10" means the M+ is "positive" while the M- is "negative"
+    // make sure M+ and M- is different polarity when driving DC motors.
+    delay(1000); 
+
+    MotorDirectionSet(0b0101);  //0b0101  Rotating in the opposite direction
+    delay(500);
+  }
+  
+}
+</pre>
+<ul><li>Upload it to Arduino. Please click <a href="/Upload_Code">here</a> if you do not know how to upload.<br/>
+</li><li>Then the motors will rotating in the positive or opposite direction in cycle.<br/>
+</li></ul>
+<p><b>Note:</b> Each motor has 3 control pins, 2 for direction, and one for speed. When one direction pin is HIGH and the other is LOW the motor will spin one direction, flip them and it spins the other direction (both HIGH or both LOW and the motor stops). The PWM pin allows you to analogWrite to this pin to control the speed of that one motor. analogWrite 0 and the motor stops, 255, and it will go full speed.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.9b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> July 21st, 2011
+</td></tr>
+<tr>
+<td width="300px"> v1.1
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> May 17th, 2012
+</td></tr>
+<tr>
+<td width="300px"> v1.2
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> June 15th, 2012
+</td></tr></table>
+<h2>  Resources  </h2>
+<ul><li><a href="http://www.st.com/stonline/books/pdf/docs/1773.pdf">L298 datasheet</a>
+</li></ul>
+<ul><li><a href="http://www.advanced-monolithic.com/pdf/ds1117.pdf">AMS1117 Datasheet</a>
+</li></ul>
+<ul><li><a href="http://garden.seeedstudio.com/images/7/74/Eagle_files_of_I2C_motor_driver_v0.92b.zip">I2C motor driver Eagle File</a>
+</li></ul>
+<ul><li><a href="res/Grove-I2C_Motor_Driver_firmware.zip" title="File:Grove-I2C Motor Driver firmware.zip">File:Grove-I2C Motor Driver firmware.zip</a>
+</li></ul>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

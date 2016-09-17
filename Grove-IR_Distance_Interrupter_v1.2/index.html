@@ -1,1500 +1,208 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Grove - IR Distance Interrupter v1.2 - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Grove - IR Distance Interrupter v1.2";
-    var mkdocs_page_input_path = "Grove-IR_Distance_Interrupter_v1.2.md";
-    var mkdocs_page_url = "/Grove-IR_Distance_Interrupter_v1.2/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Grove - IR Distance Interrupter v1.2</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#version-tracker">Version Tracker</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#platforms-supported">Platforms supported</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
-                
-                    <li><a class="toctree-l4" href="#package-includes">Package includes</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
-                
-                    <li><a class="toctree-l4" href="#with-arduino">With Arduino</a></li>
-                
-                    <li><a class="toctree-l4" href="#with-raspberry-pi">With Raspberry Pi</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#help-us-make-it-better">Help us make it better</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Grove &raquo;</li>
-        
-      
-        
-          <li>Sensor &raquo;</li>
-        
-      
-    
-    <li>Grove - IR Distance Interrupter v1.2</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Grove - IR Distance Interrupter v1.2</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/img/Grove_-_IR_Distance_Interrupter_v1.2.jpg" /></p>
-<p><strong>Grove - IR Distance Interrupter</strong> is used to detect any object blocking the path of light. The module consists of an IR LED and a photosensor (phototransistor) pair. The light emitted by the IR LED gets reflected by any object placed in front of the sensor and this reflection is detected by the photosensor(phototransistor). Any white (or lighter) colored surface reflects more than black (or darker) colored surface.</p>
-<p>When the reflected light is detected, it produces <strong>Digital HIGH</strong> (or Binary <strong>1</strong>) output on the <strong>SIG</strong> pin. The on-board LED indicator will also glow. If no reflection is detected or if the object is too far from the sensor, the output on the <strong>SIG</strong> pin stays at <strong>Digital LOW</strong> (Binary <strong>0</strong>). The on-board LED indicator will be off as well. The detectable range of this sensor is 7.5–40 cm. The module incorporates a Rail-to-Rail Operational Amplifier to amplify the output of phototransistor. There is a potentiometer which can be used to adjust the gain of the amplifier, that is, sensitivity of detection.</p>
-<p>With this sensor, you can build the following (but not limited to) applications: <strong>line following robots, optical encoders</strong> and <strong>object counting applications</strong>.</p>
-<p><a href="http://www.seeedstudio.com/Grove-IR-Distance-Interrupter-p-1278.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-This product is mildly sensitive to non-IR radiations also and hence any bright light on photosensor impairs or disturbs IR light detection.
-</div>
-
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-The instructions to use this product are same as <span style="font-weight:bold">Grove - Infrared Reflective Sensor's</span>. You can use this product directly if you have used Grove - Infrared Reflective Sensor.
-</div>
-
-<h2 id="version-tracker">Version Tracker<a class="headerlink" href="#version-tracker" title="Permanent link"></a></h2>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - IR Distance Interrupter v1.2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - IR Distance Interrupter v1.2</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/IR_Distance_Interrupter.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p><b>Grove - IR Distance Interrupter</b> is used to detect any object blocking the path of light. The module consists of an IR LED and a photosensor (phototransistor) pair. The light emitted by the IR LED gets reflected by any object placed in front of the sensor and this reflection is detected by the photosensor(phototransistor). Any white (or lighter) colored surface reflects more than black (or darker) colored surface. 
+</p><p>When the reflected light is detected, it produces <b>Digital HIGH</b> (or Binary <b>1</b>) output on the <b>SIG</b> pin. The on-board LED indicator will also glow. If no reflection is detected or if the object is too far from the sensor, the output on the <b>SIG</b> pin stays at <b>Digital LOW</b> (Binary <b>0</b>). The on-board LED indicator will be off as well. The detectable range of this sensor is 7.5–40 cm. The module incorporates a Rail-to-Rail Operational Amplifier to amplify the output of phototransistor. There is a potentiometer which can be used to adjust the gain of the amplifier, that is, sensitivity of detection.
+</p><p>With this sensor, you can build the following (but not limited to) applications: <b>line following robots, optical encoders</b> and <b>object counting applications</b>. 
+</p><p><b>Note</b> that this product is also mildly sensitive to non-IR radiations and hence any bright light on photosensor impairs or disturbs IR light detection.
+</p><p><b>Tip</b>: the instructions to use this product are same with <a href="/Grove-Infrared_Reflective_Sensor">Grove - Infrared Reflective Sensor</a>'s. You can use this product directly if you have used Grove - Infrared Reflective Sensor.
+</p>
+<h3> Version Tracker</h3>
 <table>
-<thead>
 <tr>
-<th>Product version</th>
-<th>Release date</th>
-<th>Support status</th>
-</tr>
-</thead>
-<tbody>
+<td>Product version </td>
+<td> Release date</td>
+<td> Support status </td>
+<td> Notes
+</td></tr>
 <tr>
-<td>Versions older than v1.2</td>
-<td>June 2012‎</td>
-<td>Not supported</td>
-</tr>
+<td> Versions older than v1.2 </td>
+<td> June 2012‎ </td>
+<td> Not supported </td>
+<td> None
+</td></tr>
 <tr>
-<td>Grove - IR Distance Interrupter v1.2(current version)</td>
-<td>April 2016</td>
-<td>Supported</td>
-</tr>
-</tbody>
-</table>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
-<ul>
-<li>Grove compatible and easy to use</li>
-<li>Highly sensitive and reliable</li>
-<li>Longer detectable distance</li>
-<li>Adjustable sensitivity for various occasions</li>
-<li>More durable</li>
-</ul>
-<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+<td> Grove - IR Distance Interrupter v1.2(current version) </td>
+<td> April 2016 </td>
+<td> Supported </td>
+<td> None
+</td></tr></table>
+<p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-IR-Distance-Interrupter-p-1278.html?cPath=25_31"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li>Grove compatible and easy to use
+</li><li>Highly sensitive and reliable
+</li><li>Longer detectable distance
+</li><li>Adjustable sensitivity for various occasions
+</li><li>More durable
+</li></ul>
+<h2> Specifications</h2>
 <table>
-<thead>
 <tr>
-<th>Parameter</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
+<td> Operating voltage(V) </td>
+<td> 3.3 or 5 Volts
+</td></tr>
 <tr>
-<td>Operating voltage(V)</td>
-<td>3.3 or 5 Volts</td>
-</tr>
+<td> Operating current(mA) </td>
+<td> Maximum: 20 mA
+</td></tr>
 <tr>
-<td>Operating current(mA)</td>
-<td>Maximum: 20 mA</td>
-</tr>
+<td> Effective detectable distance </td>
+<td> 7.5–40 cm
+</td></tr>
 <tr>
-<td>Effective detectable distance</td>
-<td>7.5–40 cm</td>
-</tr>
+<td> Reflective photosensor </td>
+<td> <a href="res/Reflective_photosensor.pdf">datasheet</a>
+</td></tr>
 <tr>
-<td>Reflective photosensor</td>
-<td><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/Reflective_photosensor.pdf">datasheet</a></td>
-</tr>
+<td> Output operational amplifiers </td>
+<td> <a href="res/LM393.pdf">datasheet</a>
+</td></tr>
 <tr>
-<td>Output operational amplifiers</td>
-<td><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/LM393.pdf">datasheet</a></td>
-</tr>
-<tr>
-<td>Weight</td>
-<td>2.5 g(for the module), 8.5 g(for all single package)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="platforms-supported">Platforms supported<a class="headerlink" href="#platforms-supported" title="Permanent link"></a></h2>
+<td> Weight </td>
+<td> 2.5 g(for the module), 8.5 g(for all single package)
+</td></tr></table>
+<h3> Platform supported</h3>
 <table>
-<thead>
 <tr>
-<th><strong>Seeeduino/Arduino</strong></th>
-<th><strong>Raspberry Pi</strong></th>
-<th><strong>BeagleBone</strong></th>
-<th><strong>LinkIt ONE</strong></th>
-</tr>
-</thead>
-<tbody>
+<td>Platform</td>
+<td> Seeeduino/Arduino </td>
+<td> Rasberry Pi </td>
+<td> Beaglebone </td>
+<td> LinkIt ONE
+</td></tr>
 <tr>
-<td><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Arduino_logo.jpg" /></td>
-<td><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Raspberry_Pi_logo.jpg" /></td>
-<td><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/BBG_logo.jpg" /></td>
-<td><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Linkit_logo.jpg" /></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-If no version number is mentioned for a specific platform, it means this product supports all versions within this platform. But, you will need additional Grove Shield like Grove - Base shield v2 board.
-</div>
-
-<h2 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h2>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/img/Grove-IR_Distance_Interrupter_v1.2_hardware_overview_1200.jpg" /></p>
-<ul>
-<li><strong>RPR-359F Reflective photosensor</strong>, Highly sensitive reflective photosensor.</li>
-<li><strong>LM393 operational amplifier</strong>, rail-to-rail operational amplifier.</li>
-<li><strong>LED Indicator</strong>, The LED will turn on when the received infrared light intensity exceeds a preset level.</li>
-<li><strong>Light sensitivity adjusting potentiometer</strong> , adjust the sensitivity of reflective photosensor to light.</li>
-</ul>
-<h3 id="package-includes"><strong>Package includes</strong><a class="headerlink" href="#package-includes" title="Permanent link"></a></h3>
+<td> Supported status</td>
+<td> Supported </td>
+<td> Supported  </td>
+<td> Supported </td>
+<td> Supported
+</td></tr>
+<tr>
+<td> Notes </td>
+<td colspan="5"> If no version number is mentioned for a specific platform, it means this product supports all versions within this platform. But, you will need additional Grove Shield like <a href="/Grove-Base_shield_v2">Grove - Base shield v2</a> board.
+</td></tr></table>
+<h2> Hardware Overview </h2>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove-IR_Distance_Interrupter_v1.2_hardware_overview_1200.jpg" width="600"/></div></div>
+<ul><li><b>RPR-359F Reflective photosensor</b>, Highly sensitive reflective photosensor.
+</li><li><b>LM393 operational amplifier</b>, rail-to-rail operational amplifier. 
+</li><li><b>LED Indicator</b>, The LED will turn on when the received infrared light intensity exceeds a preset level. 
+</li><li><b>Light sensitivity adjusting potentiometer </b>, adjust the sensitivity of reflective photosensor to light.
+</li></ul>
+<h3> <b>Package includes</b> </h3>
 <table>
-<thead>
 <tr>
-<th>Parts name</th>
-<th>Quantity</th>
-</tr>
-</thead>
-<tbody>
+<th>Parts name   </th>
+<th> Quantity
+</th></tr>
 <tr>
-<td>Grove - Infrared Reflective Sensor</td>
-<td>1 piece</td>
-</tr>
+<td> Grove - Infrared Reflective Sensor  </td>
+<td> 1 piece
+</td></tr>
 <tr>
-<td><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a></td>
-<td>1 piece</td>
-</tr>
-</tbody>
-</table>
-<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h2>
-<p>Let us see how to implement few basic applications with this module:</p>
-<h3 id="with-arduino">With Arduino<a class="headerlink" href="#with-arduino" title="Permanent link"></a></h3>
-<h4 id="material-required">Material required<a class="headerlink" href="#material-required" title="Permanent link"></a></h4>
-<ul>
-<li>Grove - IR Distance Interrupter v1.2 × 1</li>
-<li>Arduino UNO (other models also are fine) × 1</li>
-<li><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> × 1</li>
-<li><a href="../Grove-Base_shield_v2">Grove - Base Shield</a> × 1</li>
-</ul>
-<h4 id="connections">Connections<a class="headerlink" href="#connections" title="Permanent link"></a></h4>
-<p>1.Connect Grove - IR Distance Interrupter v1.2 to Arduino UNO with Grove cable.</p>
-<p>2.Place and hold the Reflective photosensor towards white(or light) colored surface.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/img/Reflective_photosensor3.jpg" /></p>
-<p>3.Adjust the potentiometer with a screwdriver to change the sensitivity of reflective photosensor, until the LED indicator glows. As your rotate clockwise, the reflective photosensor will be more sensitive to light. </p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-Use a proper screw-driver to adjust the tiny potentiometer. Applying heavy pressure or frequent adjustments might damage the wiper of the potentiometer.
-</div>
-
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/img/Reflective_photosensor2.jpg" /></p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/img/Reflective_photosensor1.jpg" /></p>
-<p>4.Create an Arduino sketch and copy the below code into it.</p>
-<pre><code>void setup()  {
-  Serial.begin(9600);
-  pinMode(6,INPUT);
-}
-void loop()  {
-  while(1)  {
-    delay(500);
-    if(digitalRead(6)==LOW)  {
-      Serial.println(&quot;Somebody is here.&quot;);
-    }
-    else  {
-      Serial.println(&quot;Nobody.&quot;);
-    }
-  }
-}
-</code></pre>
-
-<p>5.Upload the code. If you do not know how to upload a Arduino sketch, please visit <a href="https://www.arduino.cc/en/Guide/Windows">https://www.arduino.cc/en/Guide/Windows</a> for Windows user or <a href="https://www.arduino.cc/en/Guide/MacOSX">https://www.arduino.cc/en/Guide/MacOSX</a> for Mac user. You can see the result as below.</p>
-<p>6.When the path of light is blocked by some object, you would see &ldquo;Somebody is here.&rdquo; in Serial Terminal else you will see &ldquo;Nobody.&rdquo;</p>
-<h3 id="with-raspberry-pi">With Raspberry Pi<a class="headerlink" href="#with-raspberry-pi" title="Permanent link"></a></h3>
-<h4 id="material-required_1">Material required<a class="headerlink" href="#material-required_1" title="Permanent link"></a></h4>
-<ul>
-<li>Raspberry Pi (other models also are fine) × 1</li>
-<li><a href="http://www.seeedstudio.com/depot/GrovePi-p-1672.html?cPath=73">GrovePi</a> or <a href="http://www.seeedstudio.com/depot/GrovePi-p-2241.html?cPath=122_154_158">Grovepi+</a> × 1</li>
-<li><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> × 1</li>
-</ul>
-<h4 id="hardware-connections-and-software-work">Hardware Connections and Software Work<a class="headerlink" href="#hardware-connections-and-software-work" title="Permanent link"></a></h4>
-<p>1.You should have a Raspberry Pi and a GrovePi or GrovePi+. In this demo, we use GrovePi.</p>
-<p>2.We assume you have built the development environment successful. If not, follow <a href="../GrovePiPlus#Introducing_the_GrovePi.2B">this tutorial</a>.</p>
-<p>3.Connection: </p>
-<p>Plug Grove - IR Distance Interrupter into port D4 on GrovePi with <a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a>.</p>
-<p>4.Navigate to the demos&rsquo; directory, run the following command in a terminal.</p>
-<pre><code>    cd yourpath/GrovePi/Software/Python/
-</code></pre>
-
-<p>Run the command in a terminal:</p>
-<pre><code>    nano grove\_infrared\_distance\_interrupt.py
-</code></pre>
-
-<p>Copy and save the following code into it.</p>
-<pre><code>import time
-import grovepi
+<td> <a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> </td>
+<td> 1 piece
+</td></tr></table>
+<h2> Getting Started </h2>
+<p>Let us see how to implement few basic applications with this module: 
+</p>
+<h3> With Arduino</h3>
+<h4> Material required</h4>
+<ul><li>Grove - IR Distance Interrupter v1.2 × 1 
+</li><li>Arduino UNO (other models also are fine) × 1 
+</li><li><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> × 1 
+</li><li><a href="/Grove-Base_shield_v2">Grove - Base Shield</a> × 1 
+</li></ul>
+<h4> Connections</h4>
+<dl><dd> 1. Connect Grove - IR Distance Interrupter v1.2 to Arduino UNO with Grove cable.
+</dd></dl>
+<dl><dd> 2. Place and hold the Reflective photosensor towards white(or light) colored surface.
+</dd></dl>
+<dl><dd> <img src="img/Reflective_photosensor3.jpg" width="300"/>
+</dd></dl>
+<dl><dd> 3. Adjust the potentiometer with a screwdriver to change the sensitivity of reflective photosensor, until the LED indicator glows. As your rotate clockwise, the reflective photosensor will be more sensitive to light. <b>Note:</b> Use a proper screw-driver to adjust the tiny potentiometer. Applying heavy pressure or frequent adjustments might damage the wiper of the potentiometer. 
+</dd></dl>
+<dl><dd> <img src="img/Reflective_photosensor2.jpg" width="300"/>
+</dd></dl>
+<dl><dd> <img src="img/Reflective_photosensor1.jpg" width="300"/>
+</dd></dl>
+<dl><dd> 4. Create an Arduino sketch and copy the below code into it.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">6</span>,<span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>  <span class="br0">{</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span><span class="kw3">digitalRead</span><span class="br0">(</span><span class="nu0">6</span><span class="br0">)</span><span class="sy1">==</span><span class="kw2">LOW</span><span class="br0">)</span>  <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Somebody is here."</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span>  <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Nobody."</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dd> 5. Upload the code. If you do not know how to upload a Arduino sketch, please visit <a href="https://www.arduino.cc/en/Guide/Windows">https://www.arduino.cc/en/Guide/Windows</a> for Windows user or <a href="https://www.arduino.cc/en/Guide/MacOSX">https://www.arduino.cc/en/Guide/MacOSX</a> for Mac user. You can see the result as below.
+</dd><dd> 6. When the path of light is blocked by some object, you would see "Somebody is here." in Serial Terminal else you will see "Nobody."
+</dd></dl>
+<h3>  With Raspberry Pi </h3>
+<h4> Material required</h4>
+<ul><li>Raspberry Pi (other models also are fine) × 1 
+</li><li><a href="http://www.seeedstudio.com/depot/GrovePi-p-1672.html?cPath=73">GrovePi</a> or <a href="http://www.seeedstudio.com/depot/GrovePi-p-2241.html?cPath=122_154_158">Grovepi+</a> × 1 
+</li><li><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> × 1 
+</li></ul>
+<h4> Hardware Connections and Software Work</h4>
+<dl><dd> 1. You should have got a Raspberry Pi and a GrovePi or GrovePi+. In this demo, we use GrovePi.
+</dd><dd> 2. We assume you have built the development environment successful. If not, follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">this tutorial</a>.
+</dd><dd> 3. Connection.
+</dd></dl>
+<dl><dd> Plug Grove - IR Distance Interrupter into port D4 on GrovePi with <a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a>
+</dd><dd> 4. Navigate to the demos' directory, run the following command in a terminal: 
+</dd></dl>
+<dl><dd> <b>cd yourpath/GrovePi/Software/Python/</b>
+</dd></dl>
+<dl><dd> Run the command in a terminal:
+</dd></dl>
+<dl><dd> <b>nano grove_infrared_distance_interrupt.py  </b>
+</dd></dl>
+<dl><dd> Copy and save the following code into it:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">import</span> grovepi
  
-# Connect the Grove Infrared Distance Interrupt Sensor to digital port D4
-# SIG,NC,VCC,GND
-sensor = 4
+<span class="co1"># Connect the Grove Infrared Distance Interrupt Sensor to digital port D4</span>
+<span class="co1"># SIG,NC,VCC,GND</span>
+sensor <span class="sy0">=</span> <span class="nu0">4</span>
  
-grovepi.pinMode(sensor,&quot;INPUT&quot;)
+grovepi.<span class="me1">pinMode</span><span class="br0">(</span>sensor<span class="sy0">,</span><span class="st0">"INPUT"</span><span class="br0">)</span>
  
-while True:
-    try:
-        # Sensor returns LOW and onboard LED lights up when the
-        # received infrared light intensity exceeds the calibrated level
-        if grovepi.digitalRead(sensor) == 0:
-            print &quot;found something&quot;
-        else:
-            print &quot;nothing&quot;
+<span class="kw1">while</span> <span class="kw2">True</span>:
+    <span class="kw1">try</span>:
+        <span class="co1"># Sensor returns LOW and onboard LED lights up when the</span>
+        <span class="co1"># received infrared light intensity exceeds the calibrated level</span>
+        <span class="kw1">if</span> grovepi.<span class="me1">digitalRead</span><span class="br0">(</span>sensor<span class="br0">)</span> <span class="sy0">==</span> <span class="nu0">0</span>:
+            <span class="kw1">print</span> <span class="st0">"found something"</span>
+        <span class="kw1">else</span>:
+            <span class="kw1">print</span> <span class="st0">"nothing"</span>
  
-        time.sleep(.5)
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">.5</span><span class="br0">)</span>
  
-    except IOError:
-        print &quot;Error&quot;
-</code></pre>
-
-<p>5.Run the demo, run following command in terminal.</p>
-<pre><code>    sudo python grove\_infrared\_distance\_interrupt.py
-</code></pre>
-
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/Eagle_files.zip">Grove - IR Distance Interrupter v1.2 Eagle file</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/Reflective_photosensor.pdf">Reflective Photosensor Datasheet</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/LM393.pdf">LM393 Datasheet</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/LMV358_datasheet.pdf">LMV358 Datasheet</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-IR_Distance_Interrupter_v1.2/res/Grove-Infrared_Reflective_Sensor_v1.0_SourceFile.zip">Infrared Reflective Sensor Source Files</a></li>
-</ul>
-<h2 id="help-us-make-it-better">Help us make it better<a class="headerlink" href="#help-us-make-it-better" title="Permanent link"></a></h2>
-<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_IR_Distance_Interrupter_v1.2 -->
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Grove-IR_Distance_Interrupter_v1.2" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Grove-Infrared_Receiver/" class="btn btn-neutral float-right" title="Grove - Infrared Receiver">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Grove-IMU_9DOF_v2.0/" class="btn btn-neutral" title="Grove - IMU 9DOF v2.0"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Grove-IMU_9DOF_v2.0/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Grove-Infrared_Receiver/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+    <span class="kw1">except</span> <span class="kw2">IOError</span>:
+        <span class="kw1">print</span> <span class="st0">"Error"</span></pre></div></div>
+<dl><dd> 5. Run the demo, run following command in terminal.
+</dd><dd> <b>   sudo python grove_infrared_distance_interrupt.py</b>
+</dd></dl>
+<h2> Resources</h2>
+<ul><li><a href="res/Eagle_files.zip">Grove - IR Distance Interrupter v1.2 Eagle file</a>
+</li><li><a href="res/Reflective_photosensor.pdf">Reflective Photosensor Datasheet</a>
+</li><li><a href="res/LM393.pdf">LM393 Datasheet</a>
+</li><li><a href="res/LMV358_datasheet.pdf">LMV358 Datasheet</a>
+</li><li><a href="res/Grove-Infrared_Reflective_Sensor_v1.0_SourceFile.zip">Infrared Reflective Sensor Source Files</a>
+</li></ul>
+<h2> Is this page helpful</h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/7RPL7LJ" width="60%"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

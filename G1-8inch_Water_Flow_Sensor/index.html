@@ -1,0 +1,167 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>G1/8&quot; Water Flow Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>G1/8&quot; Water Flow Sensor</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="http://www.seeedstudio.com/depot/G18-Water-Flow-Sensor-p-1346.html?cPath=25_32"><img src="img/G18_Water_Flow_Sensor.jpg" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p>Water flow sensor consists of a plastic valve body, a water rotor, and a hall-effect sensor. When water flows through the rotor, rotor rolls. Its speed changes with different rate of flow. The hall-effect sensor outputs the corresponding pulse signal. This one is suitable to detect flow in water dispenser or coffee machine.
+</p><p>We have a comprehensive line of water flow sensors in different diameters. Check them out to find the one that meets your need most.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/G18-Water-Flow-Sensor-p-1346.html?cPath=25_32"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li> Compact, Easy to Install
+</li><li> High Sealing Performance
+</li><li> High Quality Hall Effect Sensor
+</li><li> RoHS Compliant
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification </h2>
+<table border="1">
+<tr>
+<td>Mini. Wokring Voltage
+</td>
+<td>DC 4.5V
+</td></tr>
+<tr>
+<td>Max. Working Current
+</td>
+<td>15mA(DC 5V)
+</td></tr>
+<tr>
+<td width="400px">Working Voltage
+</td>
+<td width="400px">5V～24V
+</td></tr>
+<tr>
+<td>Flow Rate Range
+</td>
+<td>0.3~6L/min
+</td></tr>
+<tr>
+<td>Load Capacity
+</td>
+<td>≤10mA(DC 5V)
+</td></tr>
+<tr>
+<td>Operating Temperature
+</td>
+<td>≤80℃
+</td></tr>
+<tr>
+<td>Liquid Temperature
+</td>
+<td>≤120℃
+</td></tr>
+<tr>
+<td>Operating Humidity
+</td>
+<td>35%～90%RH
+</td></tr>
+<tr>
+<td>Water Pressure
+</td>
+<td>≤2.0MPa
+</td></tr>
+<tr>
+<td>Storage Temperature
+</td>
+<td>-25℃～+80℃
+</td></tr>
+<tr>
+<td>Storage Humidity
+</td>
+<td>25%～95%RH
+</td></tr></table>
+<p><br/>
+</p>
+<h2> Getting Started</h2>
+<p><font>Note: This example is abstracted from the forum, which was done by Charles Gantt. Thanks for his contribution.Let's see how it works.</font><br/>
+</p>
+<h3>  Reading Water Flow rate with Water Flow Sensor </h3>
+<p>This is part of a project I have been working on and I thought I would share it here since there have been a few threads on how to read water flow rate in liters per hour using the Water Flow Sensor found in the Seeed Studio Depo. It uses a simple rotating wheel that pulses a hall effect sensor. By reading these pulses and implementing a little math, we can read the liquids flow rate accurate to within 3%. The threads are simple G3/4 so finding barbed ends will not be that hard.
+</p>
+<h4>  Hardware Installation  </h4>
+<p>You will need  Seeeduino / Arduino ,Water Flow Sensor,10K resistor,a breadboard and some jumper wires.
+</p><p>Wiring up the Water Flow Sensor is pretty simple. There are 3 wires: Black, Red, and Yellow. 
+Black to the Seeeduino's ground pin
+Red to Seeeduino's 5v pin
+The yellow wire will need to be connected to a 10k pull up resistor.and then to pin 2 on the Seeeduino.
+</p><p>Here is a fritzing diagram I made to show you how to wire it all up. <br/>
+<img src="img/Reading_liquid_flow_rate_with_an_Arduino.jpg" width="712"/><br/>
+Once you have it wired up you will need to upload the following code to your Seeeduino. Once it is uploaded and you have some fluid flowing through the Water Flow Sensor, you can open the serial monitor and it will display the flow rate, refreshing every second.
+</p>
+<h4>  Programming  </h4>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// reading liquid flow rate using Seeeduino and Water Flow Sensor from Seeedstudio.com</span>
+<span class="co1">// Code adapted by Charles Gantt from PC Fan RPM code written by Crenn @thebestcasescenario.com</span>
+<span class="co1">// http:/themakersworkbench.com http://thebestcasescenario.com http://seeedstudio.com</span>
+ 
+<span class="kw4">volatile</span> <span class="kw4">int</span> NbTopsFan<span class="sy4">;</span> <span class="co1">//measuring the rising edges of the signal</span>
+<span class="kw4">int</span> Calc<span class="sy4">;</span>
+<span class="kw4">int</span> hallsensor <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>    <span class="co1">//The pin location of the sensor</span>
+ 
+<span class="kw4">void</span> rpm <span class="br0">(</span><span class="br0">)</span>     <span class="co1">//This is the function that the interupt calls</span>
+<span class="br0">{</span>
+    NbTopsFan<span class="sy2">++</span><span class="sy4">;</span>  <span class="co1">//This function measures the rising and falling edge of the</span>
+ 
+    hall effect sensors <span class="kw4">signal</span>
+<span class="br0">}</span>
+<span class="co1">// The setup() method runs once, when the sketch starts</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="co1">//</span>
+<span class="br0">{</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>hallsensor, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//initializes digital pin 2 as an input</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//This is the setup function where the serial port is</span>
+ 
+    initialised,
+    <span class="kw3">attachInterrupt</span><span class="br0">(</span><span class="nu0">0</span>, rpm, <span class="kw2">RISING</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//and the interrupt is attached</span>
+<span class="br0">}</span>
+<span class="co1">// the loop() method runs over and over again,</span>
+<span class="co1">// as long as the Arduino has power</span>
+<span class="kw4">void</span> <span class="kw2">loop</span> <span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    NbTopsFan <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>   <span class="co1">//Set NbTops to 0 ready for calculations</span>
+    sei<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">//Enables interrupts</span>
+    <span class="kw3">delay</span> <span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">//Wait 1 second</span>
+    cli<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">//Disable interrupts</span>
+    Calc <span class="sy1">=</span> <span class="br0">(</span>NbTopsFan <span class="sy2">*</span> <span class="nu0">60</span> <span class="sy2">/</span> <span class="nu16">7.5</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//(Pulse frequency x 60) / 7.5Q, = flow rate</span>
+ 
+    in L<span class="sy2">/</span>hour
+    <span class="kw2">Serial</span>.<span class="kw3">print</span> <span class="br0">(</span>Calc, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Prints the number calculated above</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span> <span class="br0">(</span><span class="st0">" L/hour<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//Prints "L/hour" and returns a  new line</span>
+<span class="br0">}</span></pre></div></div>
+<p>You can refer our forum for more details about <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=4&amp;t=989&amp;p=3632#p3632">Reading Water Flow rate with Water Flow Sensor</a>.
+</p>
+<h2> Wiring Diagram </h2>
+<p>The external diameter of thread the connections use is 1.4mm.
+</p><p><img src="img/Wfs-wiring.jpg" width="355"/>
+</p>
+<h2> Output Table </h2>
+<p>Pulse frequency (Hz) in Horizontal Test= 7.5Q, Q is flow rate in L/min. (Results in +/- 3% range)
+</p>
+<table border="1">
+<tr>
+<td width="400px">Output pulse high level
+</td>
+<td width="400px">Signal voltage &gt;4.5 V( input DC 5 V)
+</td></tr>
+<tr>
+<td>Output pulse low level
+</td>
+<td>Signal voltage &lt;0.5V( input DC 5V)
+</td></tr>
+<tr>
+<td>Precision
+</td>
+<td>3% (Flow rate from 1L/min to 10L/min)
+</td></tr>
+<tr>
+<td>Output signal duty cycle
+</td>
+<td>40%～60%
+</td></tr></table>
+<h2> Resource </h2>
+<ul><li><a href="res/Water_flow_sensor_datasheet.pdf">Water flow sensor datasheet.pdf</a>
+</li><li><a href="http://www.seeedstudio.com/forum/viewtopic.php?f=4&amp;t=989&amp;p=3632#p3632">Reading Water Flow rate with Water Flow Sensor</a>
+</li><li><a href="http://www.practicalarduino.com/projects/water-flow-gauge">Water Flow rate display on LCD</a>
+</li><li><a href="http://garden.seeedstudio.com/images/4/4e/YEE70G30HSLNC..pdf">datasheet for the material</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

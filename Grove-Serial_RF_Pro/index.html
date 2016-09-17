@@ -1,0 +1,420 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Serial RF Pro</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Serial RF Pro</h1>
+
+<p>Grove-Serial RF Pro is a low cost, high performance transparent FSK transceiver with operating at 433/470/868/915 MHz, and the best performance is at 433M(Default). There is a UART interface that is easy to realize the wireless data transmission with only providing the UART data. It is flexible for the users to set the UART baud rate, frequency, output power, data rate, frequency deviation, receiving bandwidth etc parameters. It is your ideal choice for designing wireless data transmission products which can be widely used on wireless data transmission field.<br/>
+<b>Model: <a href="http://www.seeedstudio.com/depot/grove-serial-rf-pro-p-794.html?cPath=139_140">WLS31625P</a></b>
+</p><p><img src="img/Twigrf.jpg" width="400"/>
+</p>
+<h2> Features</h2>
+<ul><li>Grove compatible
+</li><li>High output power
+</li><li>High output power
+</li><li>Small size
+</li><li>Longer transmission distance
+</li></ul>
+<h2> Application Ideas</h2>
+<ul><li>Remote control, remote measurement system
+</li><li>Wireless meter
+</li><li>Access control
+</li><li>Identification system
+</li><li>Data collection
+</li><li>IT household appliance
+</li><li>Baby monitoring system
+</li></ul>
+<h2> Specification</h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<td scope="row">Working Voltage
+</td>
+<td> 4.75
+</td>
+<td> 5.0
+</td>
+<td> 5.25
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<td scope="row"> Current at sleep mode
+</td>
+<td colspan="3"> 1
+</td>
+<td> uA
+</td></tr>
+<tr>
+<td scope="row"> output power
+</td>
+<td> 1
+</td>
+<td> -
+</td>
+<td> 20
+</td>
+<td> dB
+</td></tr>
+<tr>
+<td scope="row"> Communication Speed
+</td>
+<td> 1.2
+</td>
+<td>  -
+</td>
+<td> 115.2
+</td>
+<td> Kbps
+</td></tr>
+<tr>
+<td scope="row"> Transmission Distance(Max)
+</td>
+<td colspan="3"> 1
+</td>
+<td> Km
+</td></tr>
+<tr>
+<td scope="row"> Sensitivity
+</td>
+<td colspan="3"> -117
+</td>
+<td> dBm
+</td></tr>
+<tr>
+<td scope="row"> Communication Protocol
+</td>
+<td colspan="3">  UART
+</td>
+<td> /
+</td></tr>
+<tr>
+<td scope="row"> Operate Temperature
+</td>
+<td> -40
+</td>
+<td>  -
+</td>
+<td> +85
+</td>
+<td> ℃
+</td></tr></table>
+<h2> Interface Function</h2>
+<p><img src="img/Serial_RF_Pro1.jpg" width="659"/><br/>
+</p>
+<table border="1">
+<tr>
+<th> Pad Type (5V Logic level)
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td width="100px"> G(GND)
+</td>
+<td width="450px"> Ground port
+</td></tr>
+<tr>
+<td> EN(ENABLE)
+</td>
+<td> Set low for normal mode as data transceiver (Default is low with 10k to GND). <br/>Set high to put into sleep mode.
+</td></tr>
+<tr>
+<td> CON(CONFIG)
+</td>
+<td> Set low for configuration mode (connect to GND). <br/>Set high for communication (Default is high).
+</td></tr>
+<tr>
+<td> RX
+</td>
+<td> UART Data input
+</td></tr>
+<tr>
+<td> TX
+</td>
+<td> UART Data output
+</td></tr>
+<tr>
+<td> V(VCC)
+</td>
+<td> Designed for 5V(+)supply
+</td></tr>
+<tr>
+<td> AT
+</td>
+<td> Antenna pin
+</td></tr></table>
+<h2> Usage</h2>
+<p>Here we show two RF Pro Grove units mutually transmitting/receiving data. You need two RF Pro Grove units and two Seeeduino to do the demo.
+</p>
+<ul><li>Connect one Grove - Serial RF Pro to UART of <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> and plug Grove - Base Shield into Seeeduino.
+</li></ul>
+<p><img src="img/Rfdemo.jpg" width="500"/>
+</p>
+<ul><li>Connect another Grove - Serial RF Pro to Seeeduino using the same method.
+</li></ul>
+<h3> Config and Inquiry methods</h3>
+<p>The module will be ready for Config status if ENABLE pin is low, CONFIG pin is low. It will be in Config
+if the red and green LED keep lighting. Then you can Config &amp; inquiry on the module.<br/>
+</p>
+<ul><li>Connect CON pin to LOW/GND to enter configure mode.
+</li><li>Send command to modify and query the config of the module. Config &amp; Inquiry instruction description see <a href="/Grove-Serial_RF_Pro#Reference">Reference</a>.
+</li></ul>
+<p>The Config instruction format is as AA+FA+[instruction]+[parameter]. The instruction is 1 byte, the parameter is the HEX data of 0-4 bytes (in big-endian ordering, with the high byte before the low byte).<br/>
+<b>Note:</b>
+</p>
+<dl><dd>1) Do remember the UART transfer speed (default is 9600, better not change) if you make some change, or you won't be able to control the module. The instruction’s transfer speed will change accordingly if changes the transfer speed of UART. The range of transfer speed of the instruction is from 1.2Kbps – 115.2K bps.
+</dd><dd>2) LED Function Description:
+<dl><dd>The red and green LED will flash when there is power and the module is working.
+</dd><dd>The module will be ready for configuration mode if EN(ENABLE) pin is low(default is low)，CON(Config) pin is low. When in configuration mode, the red and green LED will both be solidly lit. The green and red LED will not be solidly lit if the module is not in configuration mode.
+</dd><dd>The red LED flash when the module is transmitting, the red LED will be off when the transmission is finished.
+</dd><dd>The green LED is off when the module is waiting for data to be received, the green LED will flash once when the module receives data.
+</dd></dl>
+</dd></dl>
+<h3> Communication Mode</h3>
+<ul><li>Upload the below code into Seeeduino, Please click <a href="/Upload_Code">here</a> if you do not know how to upload.
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//send data routine</span>
+ 
+<span class="co1">// link between the computer and the SoftSerial Shield</span>
+<span class="co1">//at 9600 bps 8-N-1</span>
+<span class="co1">//Computer is connected to Hardware UART</span>
+<span class="co1">//SoftSerial Shield is connected to the Software UART:D2&amp;D3 </span>
+ 
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+<span class="kw2">SoftwareSerial</span> SoftSerial<span class="br0">(</span><span class="nu0">11</span>, <span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// TX, RX</span>
+<span class="kw4">int</span> buffer<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">int</span> count<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  
+<span class="br0">{</span>
+  SoftSerial.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>               <span class="co1">// the SoftSerial baud rate   </span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>             <span class="co1">// the Serial port of Arduino baud rate.</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+  SoftSerial.<span class="kw3">write</span><span class="br0">(</span><span class="nu12">0xAA</span><span class="br0">)</span><span class="sy4">;</span>
+  SoftSerial.<span class="kw3">write</span><span class="br0">(</span><span class="nu12">0xFA</span><span class="br0">)</span><span class="sy4">;</span>
+  SoftSerial.<span class="kw3">write</span><span class="br0">(</span><span class="nu12">0xE1</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>SoftSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>              <span class="co1">// if date is coming from software serial port ==&gt; data is coming from SoftSerial shield</span>
+  <span class="br0">{</span>
+    <span class="kw1">while</span><span class="br0">(</span>SoftSerial.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>          <span class="co1">// reading data into char array </span>
+    <span class="br0">{</span>
+      buffer<span class="br0">[</span>count<span class="sy2">++</span><span class="br0">]</span><span class="sy1">=</span>SoftSerial.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>     <span class="co1">// writing data into array</span>
+      <span class="kw1">if</span><span class="br0">(</span>count <span class="sy1">==</span> <span class="nu0">64</span><span class="br0">)</span><span class="kw1">break</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>count<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>buffer<span class="br0">[</span>i<span class="br0">]</span>,<span class="kw2">HEX</span><span class="br0">)</span><span class="sy4">;</span>            <span class="co1">// if no data transmission ends, write buffer to hardware serial port</span>
+    <span class="br0">}</span>
+    clearBufferArray<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>              <span class="co1">// call clearBufferArray function to clear the stored data from the array</span>
+    count <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>                       <span class="co1">// set counter of while loop to zero</span>
+  <span class="br0">}</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>            <span class="co1">// if data is available on hardware serial port ==&gt; data is coming from PC or notebook</span>
+    SoftSerial.<span class="kw3">write</span><span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// write it to the SoftSerial shield</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"..."</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> clearBufferArray<span class="br0">(</span><span class="br0">)</span>              <span class="co1">// function to clear buffer array</span>
+<span class="br0">{</span>
+  <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>count<span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+    <span class="br0">{</span> buffer<span class="br0">[</span>i<span class="br0">]</span><span class="sy1">=</span><span class="kw2">NULL</span><span class="sy4">;</span><span class="br0">}</span>                  <span class="co1">// clear all index of array with command NULL</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li>You can see as show below after open serial monitor.
+</li></ul>
+<p><img src="img/Communication_result.jpg" width="1000"/><br/>
+</p>
+<h2> Reference</h2>
+<p>The following table lists the commands and responses involved in interacting with Serial RF Pro v0.9b.
+</p>
+<table>
+<tr>
+<th>Instruction(HEX)
+</th>
+<th>Description
+</th>
+<th>Config instruction(HEX)
+</th>
+<th>Return Value
+</th></tr>
+<tr>
+<td>F0
+</td>
+<td>Reset to default parameters (except UART transfer speed), no parameter follows
+</td>
+<td width="400px">AA FA F0
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>E1
+</td>
+<td>Reading the current Config parameter, no parameter follows
+</td>
+<td>AA FA E1
+</td>
+<td>16 bytes: (<b>following the order below</b>)
+<pre>working frequency-4 bytes,
+wireless data rate-4 bytes,
+receiving bandwidth-2 bytes,
+frequency deviation-1 byte,
+transmission power-1 byte,
+UART transfer speed-4 bytes
+</pre>
+</td></tr>
+<tr>
+<td>D2
+</td>
+<td>Set up working frequency，[parameter]4 byte，[parameter] Unit :Hz.
+<p>Set up range:
+</p>
+<ul><li>HM-TRP-433: 414000000-454000000Hz;
+</li><li>HM-TRP-470: 450000000-490000000Hz;
+</li><li>HM-TRP-868: 849000000-889000000Hz;
+</li><li>HM-TRP-915: 895000000-935000000Hz	
+</li></ul>
+</td>
+<td>Example:
+<ul><li>Config instruction: AA FA D2 <b>36 89 CA C0</b>, set up frequency as 915000000Hz.(<b>0x36 89 CA C0=915000000</b>)
+</li><li>Config instruction: AA FA D2 <b>19 DE 50 80</b>, set up frequency as 434000000Hz.(<b>0x19 DE 50 80=434000000</b>)	
+</li></ul>
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>C3
+</td>
+<td>Set up wireless data rate，[parameter]4 byte，[parameter] unit :bps.
+<p>Set up range:1200-115200 bps	
+</p>
+</td>
+<td>Example:
+<ul><li>Config instruction: AA FA C3 <b>00 00 25 80</b>,set up transfer speed as 9600bps.(<b>0x00 00 25 80=9600</b>)
+</li><li>Config instruction: AA FA C3 <b>00 00 96 00</b>, set up transfer speed as 38400bps.(<b>0x00 00 96 00=38400</b>)	
+</li></ul>
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>B4
+</td>
+<td>Set up receiving bandwidth，[parameter]2 byte，[parameter]Unit :KHz
+<p>Set up range:30-620KHz	
+</p>
+</td>
+<td>Example:
+<ul><li>Config instruction: AA FA B4 <b>00 69</b>, set up receiving band as 105KHz.(<b>0x00 69=105</b>)
+</li><li>Config instruction: AA FA B4 <b>01 2C</b>, set up receiving band as 300KHz.(<b>0x01 2C=300</b>)	
+</li></ul>
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>A5
+</td>
+<td>Set up frequency deviation，[parameter]1 byte，[parameter]Unit :KHz
+<p>Set up range:10-160KHz	
+</p>
+</td>
+<td>Example:
+<ul><li>Config instruction: AA FA A5 <b>23</b>, set up modulation frequency as 35KHz.(<b>0x23=35</b>)
+</li><li>Config instruction: AA FA A5 <b>32</b>, set up modulation frequency as 50KHz.(<b>0x32=50</b>)	
+</li></ul>
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>96
+</td>
+<td>Set up transmission power ,[parameter]1 byte，0~7level
+<p>Set up range:0-7level(1-20 dBm)	
+</p>
+</td>
+<td>Example:
+<ul><li>Config instruction: AA FA 96 <b>07</b>, set up transmission power as level 7 (+20 dBm)
+</li><li>Config instruction:AA FA 96 <b>03</b>, set up transmission power as level 3 (+8 dBm)
+</li></ul>
+<pre>Transmission power level     Transmission power
+7                                 +20dBm
+6                                 +17dBm
+5                                 +14dBm
+4                                 +11dBm
+3                                 +8dBm
+2                                 +5dBm
+1                                 +2dBm
+0                                 +1dBm
+</pre>
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>1E
+</td>
+<td>Set up UART transfer speed，[parameter]4 byte，[parameter] unit: bps
+<p>Set up range:1200-115200 bps	
+</p>
+</td>
+<td>Example:
+<ul><li>Config Instruction :AA FA 1E <b>00 00 25 80</b>,set up speed as 9600bps.(<b>0x00 00 25 80=9600</b>)
+</li><li>Config instruction :AA FA 1E <b>00 00 96 00</b>, set up speed as 38400bps.(<b>0x00 00 96 00=38400</b>)	
+</li></ul>
+</td>
+<td>4F 4B 0D 0A （OK /r/n)
+</td></tr>
+<tr>
+<td>87
+</td>
+<td>Wireless signal strength when receiving useful data, follows no [parameter]
+</td>
+<td>Config Instruction：AA FA 87
+<p><img src="img/WirelesssignalstrengthRSSI.jpg" width="400"/>
+</p>
+</td>
+<td>RSSI value is 8 bit, range: 0-255
+</td></tr>
+<tr>
+<td>78
+</td>
+<td>Disturb wireless signal strength, follows no [parameter]
+<p>Note：
+</p>
+<ul><li>Modulation index : h = Fd/Rb, Range is 0.5 ~ 32.
+</li><li>If h&gt;1, BW =Rb+2Fd; If h&lt;1, BW =2Rb+ Fd.	
+</li></ul>
+</td>
+<td>Config Instruction：AA FA 78
+</td>
+<td>RSSI value is 8 bit , range: 0-255
+</td></tr></table>
+<h2> Version Tracker</h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.9b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> date
+</td></tr></table>
+<h2> Resources</h2>
+<ul><li> <a href="res/Serial_RF_Pro_Demo_Code.zip">Serial RF Pro Demo Code</a>
+</li><li> <a href="http://www.hoperf.com/upload/rf_app/hm-trp.pdf">the HopeRF HM-TRP Series 100mW Transceiver modules V1.0 Datasheet</a>
+</li><li>
+</li></ul>
+<h2> Support</h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

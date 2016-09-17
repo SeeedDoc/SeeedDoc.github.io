@@ -1,0 +1,85 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>LinkIt ONE Tutorial - Light Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>LinkIt ONE Tutorial - Light Sensor</h1><p><b>What We're Doing</b>
+</p><p>It's time to know about new sensors that could make our projects even more interesting. A photoresistor (light dependent resistor or photocell) is a light sensor which varies its resistance value based on the intensity of the ambient light. A buzzer is a electro-acoustic device used to generate standard tone when it is connected to the power supply. Lets use both these components in our experiments.
+</p><p><br/>
+<br/>
+<b>Things you need</b>
+</p>
+<ul><li> LinkIt One x 1
+</li><li> Break board x 1
+</li><li> Resistors 10kΩ,1kΩ,330Ω x 1
+</li><li> Buzzer x 1
+</li><li> Photoresistor x 1
+</li><li> Transistor（2N3904）x 1
+</li></ul>
+<p><br/>
+<br/>
+<b>Schematic</b>
+</p><p><img src="img/LinkItONE_Kit_8_1.jpg" width="300"/>
+</p><p><br/>
+<br/>
+<b>Connection</b>
+</p><p><img src="img/LinkItONE_Kit_8_2.jpg" width="600"/>
+</p><p><br/>
+<br/>
+<b>Code</b>
+</p><p>Please click on the button below to download the code for the kit:
+</p><p><br/>
+<a href="https://github.com/Seeed-Studio/Sidekick_Basic_Kit_for_LinkIt"><img src="img/Code_sidekick_linkit.png" width="300"/></a>
+</p><p><br/>
+You can unzip the file to the <b>Examples</b> folder of your Arduino IDE.
+</p><p>To access the demo code open:
+</p><p><i>File -&gt; Examples -&gt; Starter Kit for LinkIt -&gt; Basic -&gt; L8_Light_Control_Buzzer</i>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> pinBuz   <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span>                        <span class="co1">// pin define of LED</span>
+<span class="kw4">const</span> <span class="kw4">int</span> pinLight <span class="sy1">=</span> A0<span class="sy4">;</span>                        <span class="co1">// pin define of Light Sensor</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>pinBuz, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>pinLight, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> value <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>pinLight<span class="br0">)</span><span class="sy4">;</span>
+    value <span class="sy1">=</span> <span class="kw3">map</span><span class="br0">(</span>value, <span class="nu0">0</span>, <span class="nu0">1023</span>, <span class="nu0">255</span>, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">analogWrite</span><span class="br0">(</span>pinBuz, value<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+<b>Troubleshooting</b>
+</p>
+<ul><li> Photosensitive does not work ?
+<ul><li> Photoresistor lead's wire spacing is not standard. It is easy to short the leads. Carefully check.
+</li></ul>
+</li></ul>
+<ul><li> No Sound？
+<ul><li> Buzzer leads are very short. Carefully check if they are properly inserted in the breadboard.
+</li></ul>
+</li></ul>
+<p><br/>
+<br/>
+<b>Making it better</b>
+</p><p>Lets control the tone of the buzzer further using the photoresistor. Different tones can be generated if you vary the light intensity that falls on the photo resistor. Upload the following code and observe the difference.
+</p><p>To access the demo code open:
+</p><p><i>File -&gt; Examples -&gt; Starter Kit for LinkIt -&gt; Extend_Lesson –&gt; L8_Buzzer_Music</i>
+</p><p><br/>
+<br/>
+<b>More ideas</b>
+</p><p>We can make more interesting applications using photocell. Try making a light-sensitive Christmas gift.
+</p><p><br/>
+<br/>
+<b>Reference</b>
+</p>
+<ul><li> <a href="/LinkIt_ONE_Tutorial-The_Basics">The Basics</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Hello_World">Hello World</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Push_Button">Push Button</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Marquee">Marquee</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Colorful_World">Colorful World</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Analog_Interface">Analog Interface</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Mini_Servo">Mini Servo</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Light_Sensor">Light Sensor</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-SMS_control_the_LED">SMS Control the LED</a>
+</li><li> <a href="/LinkIt_ONE_Tutorial-Get_temperature_with_Webpage">Get Temperature with Webpage</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

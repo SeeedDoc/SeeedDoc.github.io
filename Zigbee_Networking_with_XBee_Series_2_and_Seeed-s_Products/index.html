@@ -1,0 +1,207 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Zigbee Networking with XBee Series 2 and Seeed&#39;s Products</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Zigbee Networking with XBee Series 2 and Seeed&#39;s Products</h1>
+
+<ol><li>This step-by-step tutorial is created to help users learn to use XBee ZB modules with <a href="/Seeeduino_V2.2" title="Seeeduino V2.2"> Seeeduino</a> / Arduino, <a href="/XBee-Shield" title="XBee® Shield">XBee® Shield</a>, <a href="/UartSBee" title="UartSBee">UartSBee</a>, <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a>, <a href="/Seeeduino_Stalker_v2.0" title="Seeeduino Stalker v2.0">Seeeduino Stalker v2.0</a>. These products makes life easier for working with XBee ZB modules.
+</li><li>XBee ZB modules can be used in many different ways. They also provide lots of configuration parameters. In this tutorial, we have tried to showcase the essential configurations in simple steps. 
+</li><li><font color="darkred"> Please read through the complete tutorial at-least once, before deciding which configuration to use for your application. </font>
+</li><li>This tutorial makes use of <b>XBee Series 2</b> modules and does not use the old Series 1 modules. We sell Series 2 modules in our Bazaar.
+</li></ol>
+<h2> Zigbee Modules and Network </h2>
+<p><b>Zigbee</b> is a standard for low-power, short range wireless devices based on an <b>IEEE 802</b> standard for personal area networks(<b>PAN</b>). Zigbee modules work in unlicensed ISM(Industrial Scientific Medical) band. Zigbee devices are capable of peer-to-peer, point-to-multipoint and mesh communication. They offer convenient low power wireless solutions for embedded systems where power consumption is a critical factor. A Zigbee network consist of three different types of ZigBee devices: <b>coordinator</b>, <b>router</b>, <b>end-device</b>. Each network has a 16bit <b>PAN ID</b>. All devices in a Zigbee network is assigned a single PAN ID.
+</p><p><img src="img/Zigbee_Network_Topology.jpg" width="500"/>
+</p>
+<h3> Device Types</h3>
+<ul><li> <b>ZigBee coordinator (ZC)</b>: The most capable device, the coordinator forms the root of the network tree and might bridge to other networks. There must be one ZigBee coordinator in each network since it is the device that starts the network originally. The coordinator initiates a Personal Area Network(PAN) by selecting a RF channel and PAN ID.  ZC also allows routers and end-devices to join the PAN. It is able to store information about the network, including acting as the Trust Center &amp; repository for security keys.
+</li></ul>
+<ul><li> <b>ZigBee Router (ZR)</b>: As well as running an application function, a router can act as an intermediate router, passing on data from other devices. A router can start operation only when it has establishes connection with <b>ZC</b>
+</li></ul>
+<ul><li> <b>ZigBee End Device (ZED)</b>: Contains just enough functionality to talk to the parent node (either the coordinator or a router); it cannot relay data from other devices. This relationship allows the node to be asleep a significant amount of the time thereby giving long battery life. A ZED must join PAN like a router before sending any senor data. A ZED requires the least amount of memory, and therefore can be less expensive to manufacture than a ZR or ZC.
+</li></ul>
+<h3> Device Addressing</h3>
+<ul><li>When a device connects to a Zigbee network it gets a <b>16-bit Network address</b>.
+</li><li>Each device(node) has a <b>64-Bit Device address</b>. In XBee ZB modules, this 64-bit address is a unique permanent number assigned by the manufacturer. This is also the serial number of the device.
+</li></ul>
+<p>Any data sent from one Zigbee device to another is sent by specifying the 16-bit Network Address and the 64-bit Device Address.
+</p>
+<h2> Getting Zigbee modules </h2>
+<p><b>Seeedstudio Bazaar</b> currently sells two types of Zigbee modules from <a href="http://www.digi.com/">digi</a> :
+</p>
+<ul><li><a href="http://www.seeedstudio.com/depot/xbee-pro-series2-rf-module-p-418.html?cPath=139_142">XBee® RF Modules ZNet 2.5 RF Module</a> and
+</li></ul>
+<ul><li><a href="http://www.seeedstudio.com/depot/xbee%C3%82%C2%AE-rf-modules-znet-25-1-mw-chip-antenna-p-226.html?cPath=139_142">XBee® Pro Series 2 RF module</a>. 
+</li></ul>
+<p><a href="http://www.seeedstudio.com/depot/xbee-pro-series2-rf-module-p-418.html?cPath=139_142">XBee® RF Modules ZNet 2.5 RF Module</a> modules are <b>Series 2</b> hardware which comes with <b>ZNet 2.5 firmware</b>. 
+</p><p>In this tutorial we are going to use <b>XBee ZB firmware</b> on a <b>XBee Znet 2.5 Module</b>. <b>XBee ZNet 2.5 Module</b> modules can be upgraded to <b>XBee ZB</b> firmware by following the procedure listed at <a href="http://www.digi.com/support/kbase/kbaseresultdetl.jsp?id=3025">Converting a XBee/XBee-PRO ZNet 2.5 Module to a ZB Module</a>. This procedure is also illustrated in the next section.
+</p>
+<h2> XBee ZB Hardware and Pin Layout</h2>
+<ul><li>XBee ZB module is available with a chip antenna.
+</li></ul>
+<p><a href="http://www.seeedstudio.com/depot/images/product/xbee2.jpg">http://www.seeedstudio.com/depot/images/product/xbee2.jpg</a>
+</p>
+<ul><li>Pins of XBee ZB module are shown below. 
+</li></ul>
+<p><img src="img/XBee_PinOut.jpeg" width="350"/>
+</p>
+<h2> Upgrading XBee firmware with UartSBee or Grove - XBee Carrier</h2>
+<p>The XBee modules have to be configured with a 3.3V logic UART. Both <a href="/UartSBee" title="UartSBee">UartSBee</a> and <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> comes with <b>FT232RL based USB to Serial Port</b> and a XBee compatible socket.
+</p>
+<h3> Installing drivers for USB-to-Serial Port </h3>
+<ul><li>If you are using <a href="/UartSBee" title="UartSBee">UartSBee</a> set the power switch to 3.3V before connecting to PC. <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> always works 3.3V logic. 
+</li><li>Connect the <b>XBee ZB</b> to XBee socket of <a href="/UartSBee" title="UartSBee">UartSBee</a> or <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> like this :
+</li></ul>
+<table>
+<tr>
+<th> <b>XBee ZB</b> connected to <a href="/UartSBee" title="UartSBee">UartSBee</a> for configuration
+</th>
+<th> <b>XBee ZB</b> connected to <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> for configuration
+</th></tr>
+<tr>
+<td> <img src="img/XBee_UartSBee.jpg" width="200"/>
+</td>
+<td> <img src="img/XBee_Stem-XBee-Carrier.jpg" width="300"/>
+</td></tr></table>
+<ul><li>Install the necessary driver for <b>FT232RL</b> chip by following the below steps :
+</li></ul>
+<h4> <b>Windows</b> </h4>
+<ul><li>In Windows OS, the first time you plug in the device (UartSBee or Grove -XBee Carrier), you might be asked for the driver.
+</li></ul>
+<p><img src="img/UartSbee_Detected_Windows.JPG" width="200"/> <br/>
+</p><p>Download and install the <b>Virtual COM port</b> driver from FTDI website : 
+</p><p><a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a>
+</p>
+<ul><li>A wizard opens for installing the driver. Choose "Install from a list or specific location"
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_1.JPG" width="400"/> <br/>
+</p>
+<ul><li>Choose the downloaded driver path
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_2.JPG" width="400"/> <br/>
+</p>
+<ul><li>If you have downloaded unsigned driver, the following Window appears. Just click "Continue Anyway"
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_2.1.JPG" width="200"/> <br/>
+</p>
+<ul><li><b>UartSBee</b> driver is successfully installed. Windows assigns a <b>COM</b> port name to <b>FT232RL</b> like <b>COM10</b>, <b>COM11</b> etc... Please check the exact name in Device Manager.  In this case "<b>COM16</b>" is assigned for UartSBee
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_3.JPG" width="400"/>
+</p>
+<h5> <b>GNU/Linux</b> </h5>
+<p>All modern <b>GNU/Linux OS</b> comes with FT232RL drivers. To check if UartSBee or Grove -XBee Carrier is detected, Issue a <b>lsusb</b> command. An output similar to below should appear. 
+</p><p><img src="img/Lsub.png" width="600"/>
+</p><p><b>GNU/Linux</b> assigns <b>/dev/ttyUSB0</b>, <b>/dev/ttyUSB1</b> etc... as device name.  
+</p>
+<h3> Using Digi's X-CTU (XCTU) Software </h3>
+<p><b>X-CTU</b> is <b>X</b>Bee <b>C</b>onfiguration and <b>T</b>est <b>U</b>tility. It is primarily used for configuring <b>XBee Modules</b> from <b>Digi</b> and also to upgrade the onboard MCU firmware. It comes with a <b>Serial-Terminal</b> to interact with XBee modem using <b>AT</b> commands. X-CTU is a Windows application. But, it is known to work under GNU/Linux using <a href="http://www.winehq.org/">Wine </a>.
+</p>
+<ul><li>Download X-CTU from <a href="http://www.digi.com/support/productdetl.jsp?pid=3352&amp;osvid=57&amp;s=316&amp;tp=5&amp;tp2=0">Digi's X-CTU Page</a>
+</li><li>Install X-CTU.
+</li><li>Open X-CTU --&gt; PC Settings Tab.
+</li><li>Select USB Serial Port (which is connected to UartSBee / Grove - XBee Carrier).
+</li><li>Click Test / Query Button
+</li></ul>
+<p><img src="img/X-CTU1.jpeg" width="450"/>
+</p>
+<ul><li>A dialog box shows the <b>Modem Type</b>, <b>Modem firmware Version</b> and <b>Serial Number</b>.
+</li><li>In this case, XBee ZNet 2.5 modem is displayed as <b>XB24-B</b>. This has to be upgraded to <b>XB24-ZB</b> firmware.
+</li></ul>
+<ul><li>Open Modem Configuration Tab.
+</li><li>Click Download New Versions button. 
+</li></ul>
+<p><img src="img/X-CTU_Update_Firmware.jpeg" width="450"/>
+</p>
+<ul><li>This opens the following dialog box :
+</li></ul>
+<p><img src="img/X-CTU-Update_Sources.jpeg" width="250"/>
+</p>
+<ul><li>Click Web button. This downloads all devices firmware from digi's server.
+</li><li>Once, latest firmwares are downloaded an update summary is displayed. This indicates that update happened without any issue. If you do not get this dialog box, repeat the above steps.
+</li></ul>
+<p><img src="img/X-CTU-Update_Summary.jpeg" width="250"/>
+</p>
+<ul><li>Open Modem Configuration Tab.
+</li><li>Click Modem Parameters and Firmware --&gt; Read button.
+</li></ul>
+<p><img src="img/X-CTU_ZNet2.5_firmware_detected.jpeg" width="450"/>
+</p>
+<ul><li>XBee ZNet 2.5 firmware XB24-B is detected and all its configured parameters are shown.
+</li><li>It also shows the firmware <b>Function Set</b> as <b>ZIGBEE ROUTER/END DEVICE AT</b> and version as <b>1220</b>.
+</li><li><b>Function Set</b> decides which firmware is already programmed / to be programmed to XBee Module. Series 2 devices can be used in many different modes(<b>ZC or ZR, ZED</b>). We have to choose the appropriate firmware function set.
+</li><li>Now, Update the firmware to <b>XB24-ZB</b>. (<font color="redorange">Please note, we are not using <b>XB24-B</b> firmware, we are using a different firmware set compatible with XBee ZNet 2.5 Module Hardware</font>)
+</li><li>Select Modem:XBEE as <b>XB24-ZB</b>
+</li><li>Select Function Set as <b>ZIGBEE COORDINATOR AT</b>. 
+<ul><li>Note: <b>ZIGBEE COORDINATOR AT</b> is one function set that we will use in the next section. You can choose any function set which is suitable for you application.
+</li></ul>
+</li><li>Select the latest version of firmware. At the time of writing this guide, it is <b>208C</b>
+</li><li>Click Write button. This permanently writes the firmware to XBee module.
+</li></ul>
+<p><img src="img/X-CTU_ZB_Firmware_Upgrade.jpeg" width="450"/>
+</p>
+<h2> Wireless UART demo using XBee ZB modules and PC</h2>
+<p>This demo configures two XBee modules to connect to each other automatically upon power-up and continuously trans-receive data. This setup can be used as a Wireless UART to connect any two PCs or two MCUs with serial ports. 
+</p>
+<ul><li>Use two <a href="/UartSBee" title="UartSBee">UartSBee</a> or two <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> with two XBee ZB modules.
+</li><li>Connect these modules to PCs Serial port and make sure the drivers are installed.
+</li><li>Open X-CTU, select the USB-Serial Ports of the device as shown below :
+</li></ul>
+<p><img src="img/XBee_ZB_Wireless-Serial-Port_1.png" width="700"/>
+</p>
+<ul><li>Program one module with <b>COORDINATOR AT</b> function-set firmware and another module with <b>ROUTER AT</b> function-set firmware. Always use the latest version of firmware. See the above section on how-to program firmware.
+</li><li>Now, Open Modem Configuration Tab and configure the destination addresses of both the modules as follows:
+<ul><li>Set the destination address high of COORDINATOR to serial number high of ROUTER.
+</li><li>Set the destination address low of COORDINATOR to serial number low of ROUTER.
+</li><li>Set the destination address high of ROUTER to serial number high of COORDINATOR. 
+</li><li>Set the destination address low of ROUTER to serial number low of COORDINATOR.
+</li><li>Write these parameters to the modules.
+</li></ul>
+</li><li>PAN ID was not modified during parameters configuration. It was left to 0, as there is only one Zigbee network in the vicinity. You might want to change these PAN IDs (of both the modules) to a 16bit number.
+</li></ul>
+<p><img src="img/XBee_ZB_Wireless-Serial-Port_2.png" width="700"/>
+</p>
+<ul><li>Open the Terminal Tabs for both the modules and click the Show Hex buttons.
+</li><li>Type a message in COORDINATOR terminal and it will be sent to ROUTER via wireless. Similarly, any text typed in ROUTER terminal is sent to COORDINATOR terminal.
+</li></ul>
+<p><img src="img/XBee_ZB_Wireless-Serial-Port_3.png" width="700"/>
+</p>
+<h2> Wireless UART demo using XBee ZB modules and Arduinos</h2>
+<h2> Wireless Sensor Networks(WSN) demo with XBee ZB modules</h2>
+<h3> Configuring a standalone sensor nodes using XBee ZB module and <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> </h3>
+<h3> Configuring a Zigbee Coordinator using XBee ZB module, Seeeduino and <a href="/XBee-Shield" title="XBee® Shield">XBee® Shield</a> </h3>
+<h3> Using Seeeduino as Internet Gateway using XBee ZB module,<a href="/Wifi_Bee" title="Wifi Bee">Wifi Bee</a> and <a href="/Bees_Shield" title="Bees Shield">Bees Shield</a></h3>
+<h2> References</h2>
+<ul><li>Wikipedia Zigbee Page - <a href="http://en.wikipedia.org/wiki/ZigBee#Device_types">Device types </a> (CC-BY-SA)
+</li></ul>
+<h2> Related Projects</h2>
+<p>If you want to make some awesome projects by XBee, here's some projects for reference.
+</p>
+<h3> Hummingbird</h3>
+<p><img src="img/Xbee_iot.JPG" width="480"/>
+</p><p>This is an interesting demo made by XBee and <a href="/Grove_System" title="Grove System">Grove</a>.<br/>
+This project uses a zigbee mesh and GPRS SIM900 card to communicate to a server. The server conducts an analysis on the data and provides the user with real time information as well as forecasting. 
+<br/>
+<a href="http://www.seeedstudio.com/recipe/265-hummingbird.html"><font color="#FF0000"><b>I want to make it.</b></font></a>
+</p><p><br/>
+</p>
+<h3> Hot Water Solar Boiler Project</h3>
+<p><img src="img/Xbee_iot1.JPG" width="600"/>
+</p><p>This is an IoT demo made by XBee and <a href="/Grove_System" title="Grove System">Grove</a>.<br/>
+A solar boiler is great because it gives you hot water using free-sun-energy, but what if there is not enough sun or someone already used all the hot water ? This project helps you take the right decision. It warns you when you run out of hot water and allows you to turn on the electric heating. It also let you know when you can take a bath or shower ! 
+<br/>
+<a href="http://www.seeedstudio.com/recipe/168-hot-water-solar-boiler-project.html"><font color="#FF0000"><b>I want to make it.</b></font></a>
+</p><p><br/>
+</p>
+<h3>  Share Your Awesome Projects with Us </h3>
+<p>Born with the spirit of making and sharing, that is what we believe makes a maker. 
+</p><p>And only because of this , the open source community can be as prosperous as it is today.
+</p><p>It does not matter what you are and what you have made, hacker, maker, artist and engineers, 
+</p><p>as long as you start sharing your works with others, 
+</p><p>you are being part of the open source community and you are making your contributions .
+</p><p>Now share you awesome projects on with us on <a href="http://www.seeedstudio.com/recipe/">Recipe</a>, and win a chance to become the Core User of Seeed.
+</p>
+<ul><li> Core Users, are those who showing high interests and significant contributions in Seeed products. 
+</li><li> We cooperate with our Core Users in the development of our new product, this, in another word, the Core Users will have the chance to experience any new products of Seeed before its official launch, and in return we expect valuable feedback from them to help us improving the product performance and user experience. And for most of cases if our Core Users have any good ideas for making things, we'll offer hardware pieces, PCBA services as well as technical support. Besides, further commercial cooperation with the Core Users is highly possible.
+</li></ul>
+<p><br/>
+<font color="#FF0000">Get more information about Core User please email to: recipe@seeed.cc</font>
+</p><p><br/>
+<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

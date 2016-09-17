@@ -1,0 +1,458 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Dragrove - Generic gateway for internet of things</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Dragrove - Generic gateway for internet of things</h1>
+
+<p>Dragrove is an open-source-based generic gateway for the Internet of Things. It combines a Dragino (Easy Internet Access, powerful CPU, Linux system), an Arduino-compatible daughter board (monitoring the physical world), and RF networks like XBee. 
+</p><p>The base board Dragino MS12 is a WiFi/Linux-enabled appliance for MCU projects. The goal of the Dragino is to solve the connectivity problem and greatly enhance micro-controller products such as the Arduino.
+</p><p>The  Arduino compatible daughter board for the Dragino was designed by SeeedStudio. With the rich interface it provides, developers can easily integrate or develop products with both advantages of the Dragino (Easy Internet Access, powerful CPU, Linux system) and the Arduino (monitoring the environment).
+</p><p><br/>
+<b>Model: <a href="http://www.seeedstudio.com/depot/dragrove-p-1118.html?cPath=139_141">WLS03261P</a></b>
+</p>
+<center>
+<p><img src="img/Dragrove1.jpg" width="500"/>
+<img src="img/Dragrove2.jpg" width="500"/>
+</p>
+</center>
+<h2> Features</h2>
+<ul><li> Network gateway: bridges physical measurements with the Internet;<br/>
+</li><li> User-friendly. Easy to configure the settings with a user interface;<br/>
+</li><li> Daughter board remote firmware download;<br/>
+</li><li> Compatible with SeeedStudio Groves &amp; Xbee Socket;<br/>
+</li><li> Dual NIC for Wifi and LAN. Can be ased as a normal router;<br/>
+</li><li> Based on Linux OpenWRT and Arduino;<br/>
+</li></ul>
+<h2> Specification</h2>
+<ul><li> 8M Flash, 32M SDRAM;
+</li><li> 1X10/100M Ethernet Port;
+</li><li> DC Input 9V~15V;
+</li><li> Wifi:802.11b/g;
+</li><li> Wifi Power: 20dbm;
+</li><li> Frquency band: 2.412GHz~2.472GHz;
+</li><li> External antenna;
+</li><li> 8 External sensor connectors plus 2 internal Grove connectors.
+</li></ul>
+<h2> Bug Tracker</h2>
+<p>There are two known bugs in the Dragrove daughter board's design:
+</p>
+<ol><li> System does not boot and keeps resetting (COLD Reset pin stays low)
+</li><li> I<sup>2</sup>C bus pins (SCL/SDA) are shorted to GND
+</li></ol>
+<p>Here are the details of these two bugs and the suggested workarounds:
+</p>
+<h3> <font color="red"><i>Dragino does not boot with daughter board installed</i></font></h3>
+<p>Users have observed that the system does not boot with the daughter board installed on Dragino.<br/>
+Thanks to <i>Tamir</i> for pointing this out  via his blog: <a href="http://tae09.blogspot.com/2012/04/dragrove-daughter-board.html">http://tae09.blogspot.com/2012/04/dragrove-daughter-board.html</a><br/><br/>
+<b>Summary of his investigation:</b><br/>
+The Dragino does not boot while the Dragrove daughter board is plugged in.
+This is because AR2317's reset pin (labelled COLD on the Router Connector) stays high and hence the AR2317 keeps resetting. If you look at the daughter board's schematic, you will observe that pin labelled "COLD" on the Router connector is connected to pin PD4 (via resistor) of the AVR micro-controller on the daughter board. Note that a '<i>Pull-down</i>" resistor has not been connected to this signal and the AVR microcontroller might be keeping this pin to logic high by default and hence AR2317 keeps resetting non-stop.<br/>
+<img src="img/Dragrove_pin_4.jpg" width="400"/><br/><br/>
+</p><p>The solution is to link a wire between COLD pin and Ground as shown in the image below: <br/>
+<img src="img/Dragrove_pin4_to_ground.jpg" width="400"/><br/>
+This solution forces COLD to LOW, which then allows the board to boot.
+You have to keep the COLD pin LOW to prevent Dragino from rebooting.
+Once the Dragino boots, you can program the daughter board (as described in the wiki further below) to bring COLD to LOW at startup.<br/>
+Once that is done, you can remove the jumper and reboot the Dragino without any problems.
+Make sure that every Arduino sketch you upload later on to the daughter board sets the COLD pin to LOW at start up. Here is the code to do that:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> <span class="co1">//COLD_RST pin is PD4 i.e. Digital Pin 4</span>
+ <span class="co2">#define COLD_RST (4)</span>
+ 
+ .....
+ 
+ <span class="kw3">pinMode</span><span class="br0">(</span>COLD_RST, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">digitalWrite</span><span class="br0">(</span>COLD_RST,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><br clear="all"/>
+</p>
+<h2> Tutorial</h2>
+<p>This manual is a tutorial for how to set up the platform and the program between Dragino and the Daughter board. In this manual we will provide following topics: <br/>
+</p>
+<ul><li><a href="/Dragrove#Configure_Dragino_to_Access_Internet">HOW TO - Access Dragrove and configure the network parameters</a>
+</li><li><a href="/Dragrove#Program_Dragrove_via_Dragino">HOW TO - Program the Daughter board via Dragino</a>
+</li><li><a href="/Dragrove#Sensor_Configure_Page.2FHow_to_get_data_from_UART_of_Dragrove">HOW TO - Configue Dragrove with Pachube support or record value in local file</a>
+</li><li><a href="/Dragrove#Sensor_Configure_Page.2FHow_to_get_data_from_UART_of_Dragrove">HOW TO - Send value from daughter board to Dragino via UART interface</a>
+</li><li><a href="/Dragrove#Send_Command_to_the_Dragrove_via_SPI_interface">HOW TO - Send To/Get Command from Dragino to daughter board via SPI interface</a>
+</li><li><a href="/Dragrove#Set_up_DDNS_for_remote_access">HOW TO - Setup DDNS service for remote access from internet</a>
+</li><li><a href="/Dragrove#Upgrade_the_Firmware_of_your_Dragino">HOW TO - Upgrade firmware of Dragino</a>
+</li><li><a href="/Dragrove#Reference">REFERENCE- software/hardware/mechanical relates documents</a>
+</li></ul>
+<h2>  Configure Dragino to Access Internet   </h2>
+<h4> Access Dragrove via WEB</h4>
+<p>You need to configure your Dragrove the first time you use it to set up the WAN. The Base board Dragino has a default IP address of 192.168.255.1 via its LAN port. To access the Dragrove, you can simply <font color="red">Set your computer to DHCP and connect an Ethernet cable between your computer and Dragrove.</font>
+</p><p>Dragrove will auto assign an IP address to your computer. Type <font color="red">192.168.255.1</font> in your browser and you will see the Dragrove setup page.
+</p><p>The Dragrove Wifi interface works in AP Client mode by default. You can configure it to connect to your wifi router and get Internet access.
+</p>
+<center>
+<p><img src="img/Config_wifi.png" width="400"/>
+</p>
+</center>
+<p>You can select the WAN (here it's WiFi) in DHCP mode or manual mode in the network menu. Here I would suggest to use the manual mode:
+</p>
+<center>
+<p><img src="img/Manual_IP.png" width="400"/>
+</p>
+</center>
+<p>Now the Dragrove has a WAN IP of 192.168.1.108. Disconnect the Ethernet cable between your computer and Dragrove and connect your computer to the Internet as usual. Type 192.168.1.108 in your browser and you will see the Dragrove setup page. That's it - the Dragrove is connected to your WiFi network.
+</p>
+<h4> Access Dragrove via SSH</h4>
+<p>The Dragrove base board Dragino is based on the embedded Linux system <i>OpenWrt</i>. You can access it via SSH and customize the system for different applications. You can download Putty <a href="res/Putty.zip">here</a>.  If you connect your computer to Dragrove with an Ethernet cable, you can log in Dragrove through the LAN port:
+<br/>
+</p>
+<center>
+<p><img src="img/Putty.png" width="400"/>
+</p>
+</center>
+<p>Also, you can use the WAN port (WiFi port) to log in:
+<br/>
+</p>
+<center>
+<p><img src="img/Puttywifi.png" width="280"/>
+</p>
+</center>
+<p>The SSH access for Dragrove is: 
+<br/>
+	IP: 192.168.255.1 on LAN port. If you want to connect to the Dragrove via WiFi, the IP should be 192.168.1.108.
+<br/>
+	Username: root
+<br/> 
+	Password: root
+<br/>
+</p><p>The SSH access password can be changed with this command:
+</p>
+<pre> root@dragino-751aff:~#passwd 
+ Changing password for root
+ New password: 
+ Retype password:
+ Password for root changed by root
+</pre>
+<p><b>Notice</b>: For security reason, it is recommended that you change the SSH password after your first log in.
+</p>
+<h2>  Program the daughter board via Dragino  </h2>
+<p>For the Dragino, we are using <i>avrdude</i> to upload the program (.hex format) to the daughter board. You can use the Arduino IDE to generate the hex file. The Arduino IDE will generate the hex file in a temporary directory. In the Arduino IDE press the "Shift key" as you click the "compile" command button. The Arduino IDE will automatically generate the .hex file for you. <b>NOTE that the .hex file will automatically be cleared when you close the Arduino sketch.</b><br/>
+</p>
+<center>
+<p><img src="img/Arduino_IDE.png" width="400"/>
+</p>
+</center>
+<p>You can find this hex file in your USER_TEMP_LATEST_build_directoy. Below is an example.
+<br/>
+</p>
+<center>
+<p><img src="img/Softserial.png" width="400"/>
+</p>
+</center>
+<p>To transfer this file to the daughter board, we can run a Windows TFTP server (tftpd32) and point the TFTP directory to where the hex file is and the IP of your server computer. You can download tftpd32 <a href="res/Tftpd32.zip">here</a>
+<br/>
+</p>
+<center>
+<p><img src="img/Tftpd32.png" width="400"/>
+</p>
+</center>
+<p>Select the daughter board .hex file path and select you server PC's IP address.
+<br/>
+Now we need to set up Dragino so it will automatically get the hex file and program the daughter board. 
+<br/>
+In SSH access to Dragino, run:
+</p>
+<pre> root@dragino-751aff:~# wget <a href="http://svn.dragino.com/scripts/upgrade_avr.sh">http://svn.dragino.com/scripts/upgrade_avr.sh</a>
+ // get the upgrade_avr script from Dragino SVN server
+ root@dragino-751aff:~#sh upgrade_avr.sh YOUR_HEX_FILE_NAME YOUR_TFTP_SERVER IP
+</pre>
+<p><br/>	
+The script will now transfer the file from your TFTP server and upload to the daughter board.
+<br/>
+<b>Note:</b> You can modify the upgrade.avr.sh for different configurations.
+</p>
+<h2> Sensor Configuration Page/How to get data from the daughter board's UART? </h2>
+<p>This page is used to configure the Dragrove to update different sensor values to Pachube or to save in a local file.
+</p>
+<center>
+<p><img src="img/Dragino_configure.png" width="400"/>
+</p>
+</center>
+<p><br/>
+<b>Save Sensor Data to Local File:</b>Enable/Disable local save.
+<br/>
+<b>Sensor Data Location:</b>the location to store the sensor value.
+<br/>
+<b>Update Interval:</b> How often to store the data value to local file or update to Pachube.
+<br/>
+'<i>Note:</i> 'local save will be cleared after reboot. You can change the local file location in /etc/config/sensor manual or to other location if you want to keep the data after reboot.
+</p><p>Pachube (www.pachube.com) is a free, public server where you can upload and plot your sensor data. 
+You can configure Dragino to update the sensor value and upload it to your Pachube account.
+<br/>
+<b>Update Sensor Data to Pachube:</b> Enable/disable update to Pachube service.
+<br/>
+<b>Pachube User Name:</b>Input your Pachube User Name here.
+<br/>
+<b>Pachube Feed ID:</b> Your Pachube ID.
+<br/>
+You can find this in your Pachube URL:
+</p>
+<center>
+<p><img src="img/Pachubeid.png" width="400"/>
+</p>
+</center>
+<p>For example, above feed has the ID: 40790
+<br/>
+<b>Pachube Secure Sharing Key:</b> Input Your Secure Sharing Key or API key here.
+<br/>
+<b>Sensor Port Configure:</b> Dragino offer 6 sensor ports to store data/sent data to Pachube. The sensor ID used for record/update to Pachube.
+<br/>
+</p>
+<h4>  How does Dragrove record data and update to Pachube?  </h4>
+<p>The baseboard Dragino runs a daemon that checks all data get from its UART interface and checks whether it matches this format: &lt;sensor ID&gt;VALUE[... ...]. if it matches, then the Dragino will store this value as the latest value of the sensor ID. It will store the data on a local location or upload to Pachube periodically and then clear the data buffer.
+</p><p>Examples of data format: 
+</p>
+<ul><li>1.)&lt;sensor1&gt;89&lt;sensor2&gt;133&lt;sensor3&gt;67 
+</li><li>2.)&lt;sensor1&gt;100&lt;sensor2&gt;43&lt;gas&gt;78
+</li></ul>
+<p>In (1), Dragino will store: sensor1=89, sensor2=133 and sensor3=67.
+In (2), Dragino will store: sensor1=100, sensor2=43, but no gas since gas is not a valid ID.
+<b>Note:</b> In the data format there should be one or more spaces between different sensor IDs.
+</p>
+<h4> SOFTWARE in the daughter board </h4>
+<p>The daughter board is used to send the sensor data to the Dragino via its UART interface.
+<br/>
+An example sketch for the daughter board can be download from:
+<a href="http://svn.dragino.com/examples/SerialToPachube/avr/">http://svn.dragino.com/examples/SerialToPachube/avr/</a>
+<br/> 
+This demo code sends sensor data from the daughter board to the Dragino. After you upload this code to the daughter board and configure Pachube as described above, you should see your feed updated every minute. Below is a plot example.
+</p>
+<center>
+<p><img src="img/Pachubesensor1.png" width="400"/>
+</p>
+</center>
+<center>
+<p><img src="img/Pachubesensor2.png" width="400"/>
+</p>
+</center>
+<h2>  Send Commands from the Dragino to the Daughter board via SPI </h2>
+<p>Besides the UART interface, the Dragino also connects to the Daughter board  via its SPI interface. We can use this interface to send commands and get feedback from the Arduino compatible Daughter board.
+<br/>
+You can find the example code on the link below (For Arduino022):
+<a href="http://svn.dragino.com/examples/Dragrove_SPI_Test/">http://svn.dragino.com/examples/Dragrove_SPI_Test/</a>
+<br/>
+<b>avr/</b> is the code running the Daughter board and <b>SPI_Test.lua</b> is the code running in the Dragino.
+<br/>
+AVR code include:<br/>
+<b>SPI/</b>: SPI library, copy this to Arduino\libraries.<br/>
+<b>Buffer/</b>: buffer library, copy this to Arduino\libraries.<br/>
+<b>NewSoftSerial/</b>: software serial library, copy this to Arduino\libraries<br/>
+<b>Dragrove_SPI_TEST.h</b>: use Arduino IDE  Sketch. Add this file to the sketch.<br/>
+<b>Dragrove_SPI_TEST.pde</b>: Sketch for the Dragrove.<br/>
+<b>Dragrove_SPI_TEST.cpp.hex</b>: Compiled hex file.<br/>
+You can also edit this Arduino sketch, adding your own case and commands and then <a href="/Dragrove#Program_Dragrove_via_Dragino">compile</a> your code to .hex file or just upload the .cpp.hex file to the daughter board. Upload the .hex file to Daughter board as above.
+</p><p>Then SSH to the Dragino, and run the SPI_Test.lun to send commands to the Dragrove:
+</p>
+<pre> root@dragino-751aff:~# lua SPI_Test.lua gb 
+</pre>
+<p>The Dragino will send command “gb” (Get_Board_Info) to the daughter board via SPI interface, and the daughter board will send back  the board info. The command <b>gb</b> is predefined in the daughter board. In the demo code there are two commands:
+gb: Get Board info.
+gd: Get data from the daughter board: the data will be sent via UART interface. 
+</p>
+<center>
+<p><img src="img/Testlua.png" width="400"/>
+</p>
+</center>
+<p><b>Notice:</b>If SPI_Test.lua can not be found you need to put SPI_Test.lua at the root of the Dragino with <a href="http://www.seeedstudio.com/document/winscp435setup.zip">SCP</a> and use <b>SCP</b> to log in the Dragino. Put SPI_Test.lua at the root.
+<br/>
+</p>
+<center>
+<p><img src="img/SCP1.png" width="300"/>
+<img src="img/SCP2.png" width="230"/>
+</p>
+</center>
+<p><br/>In the avr code running on the daughter board there is an interrupt code ISR(SPI_STC_vect). This will be called once there is a byte from the SPI interface. First it checks whether the byte is the end of the command message (“.”). If this it is not the end, then we add this to the Rx buffer. If it is the end, we set a flag that it is a new control message. The avr loop keeps checking the new message flag, so when this flag is set, it will run ctrlDecode to parse the command, which is stored in the Rx buffer.
+</p><p>You can define different commands in the switch/case condition code: for example control motor, get temperature etc. In this example, we only have a command “gb”  which simply shows the pre-defined board information. You can easily add your own command here. For example, a "gn" command was added in the following code to turn on an LED connected to pin 16 of the daughter board on; also, a "gf" command was added to turn it off.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> ctrlDecode<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw4">unsigned</span> <span class="kw4">int</span> cmd<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="sy4">;</span>
+  ctrlFlushTxBuffer<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//clear TX buffer</span>
+  ctrlAddToTxBuffer<span class="br0">(</span><span class="st0">' '</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// this bit will be ignored when transfer</span>
+  <span class="kw1">if</span> <span class="br0">(</span>ctrlGetFromRxBuffer<span class="br0">(</span>cmd<span class="br0">)</span> <span class="sy3">&amp;&amp;</span> ctrlGetFromRxBuffer<span class="br0">(</span>cmd<span class="sy2">+</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// get the CMD from the databuffer</span>
+    <span class="kw1">switch</span> <span class="br0">(</span>cmd<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="co1">// switch case here to do action according to different command.</span>
+       <span class="kw1">case</span> <span class="st0">'g'</span><span class="sy4">:</span> <span class="co1">// get</span>
+          <span class="kw1">switch</span> <span class="br0">(</span>cmd<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span> <span class="br0">{</span>
+            <span class="kw1">case</span> <span class="st0">'b'</span><span class="sy4">:</span>
+              GetBoardInfo<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// gb: get board info and add them to tx buffer.</span>
+              <span class="kw1">break</span><span class="sy4">;</span>
+            <span class="kw1">case</span> <span class="st0">'d'</span><span class="sy4">:</span>
+              SendDataToUart<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//gd: send sensor data to UART</span>
+              <span class="kw1">break</span><span class="sy4">;</span>
+            <span class="kw1">case</span> <span class="st0">'n'</span><span class="sy4">:</span>
+              digitalWrite<span class="br0">(</span><span class="nu0">16</span>,HIGH<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//gn to control the LED on</span>
+              <span class="kw1">break</span><span class="sy4">;</span>
+            <span class="kw1">case</span> <span class="st0">'f'</span><span class="sy4">:</span>
+              digitalWrite<span class="br0">(</span><span class="nu0">16</span>,LOW<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//gf to control the LED off</span>
+              <span class="kw1">break</span><span class="sy4">;</span>
+            <span class="kw1">default</span><span class="sy4">:</span>
+              ctrlAddStringToTxBuffer<span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span> <span class="sy2">*</span><span class="br0">)</span>invalid<span class="br0">)</span><span class="sy4">;</span>
+              <span class="kw1">break</span><span class="sy4">;</span>
+          <span class="br0">}</span>
+          <span class="kw1">break</span><span class="sy4">;</span>
+          <span class="co1">// case 'x': // add more custom commands here.</span>
+            <span class="co1">//ctrlCmdSet(cmd[1]);</span>
+            <span class="co1">// break;</span>
+       <span class="kw1">default</span><span class="sy4">:</span>
+         ctrlAddStringToTxBuffer<span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span> <span class="sy2">*</span><span class="br0">)</span>invalid<span class="br0">)</span><span class="sy4">;</span>
+         <span class="kw1">break</span><span class="sy4">;</span>
+     <span class="br0">}</span>
+   <span class="br0">}</span> <span class="kw1">else</span>
+     ctrlAddStringToTxBuffer<span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span> <span class="sy2">*</span><span class="br0">)</span>invalid<span class="br0">)</span><span class="sy4">;</span>
+   ctrlFlushRxBuffer<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// clear RX BUffer</span>
+<span class="br0">}</span></pre></div></div>
+<p>And added the pin in setup()
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1"> pinMode<span class="br0">(</span><span class="nu0">16</span>, OUTPUT<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>Then you can control the LED in the SSH input:
+</p>
+<pre>root@dragino-751aff:~# lua SPI_Test.lua gn 
+</pre>
+<p>The LED connected to A2 of Daughter board will be turned ON. If you input:
+</p>
+<pre>root@dragino-751aff:~# lua SPI_Test.lua gf
+</pre>
+<p>THe LED will be turned off.
+</p>
+<center>
+<p><img src="img/LEDON.jpg" width="400"/>
+</p>
+</center>
+<p><br/>
+To send data back to the Dragino, we put the data string in the Tx buffer and use received_from_spi(tx) to send a byte each time. 
+The Lua code in the Dragino shows how to write a message to the SPI interface, read the incoming SPI message and then print it out.
+</p>
+<h3> Wireless Communication Via Xbee Socket</h3>
+<p>There is an XBee socket included in the daughter board, making wireless communication and control possible. You can use SeeedStudio <a href="/Bee_series">BEE series</a> to achieve this.
+</p>
+<center>
+<p><img src="img/DragroveBeeSocket.jpg" width="400"/>
+<img src="img/DragroveBee.jpg" width="400"/>
+</p>
+</center>
+<p>There are two <a href="http://www.seeedstudio.com/depot/rfbee-v11-wireless-arduino-compatible-node-p-614.html?cPath=139_140">RFbees</a> used in this demo. One was inserted onto the Dragrove's XBee socket and the other was inserted onto an <a href="http://www.seeedstudio.com/depot/grove-xbee-carrier-p-905.html?cPath=132_134">XBee Carrier</a>. Set the baudrate to 9600.
+<br/>
+Add the following code in the AVR Sketch:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1">  <span class="kw1">case</span> <span class="st0">'f'</span><span class="sy4">:</span>
+    digitalWrite<span class="br0">(</span><span class="nu0">16</span>,LOW<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//gf to control the LED off</span>
+    <span class="kw1">break</span><span class="sy4">;</span>
+  <span class="kw1">default</span><span class="sy4">:</span>
+    ctrlAddStringToTxBuffer<span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span> <span class="sy2">*</span><span class="br0">)</span>invalid<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">break</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw1">break</span><span class="sy4">;</span>
+  <span class="kw1">case</span><span class="st0">'x'</span><span class="sy4">:</span> <span class="co1">// Switch the first char</span>
+    <span class="kw1">switch</span><span class="br0">(</span>cmd<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw1">case</span><span class="st0">'s'</span><span class="sy4">:</span> <span class="co1">// Switch the second char</span>
+        Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"hello,world!"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Action from Dragrove, send this to RFbee.</span>
+        <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">break</span><span class="sy4">;</span></pre></div></div>
+<p>Add the serial definition in setup():
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1">  Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><a href="/Dragrove#Program_Dragrove_via_Dragino">Compile</a> your code to .hex file and Upload the .hex file to Daughter board as above.
+<br/>
+Then SSH to the Dragino, and run the SPI_Test.lua to send commands to the daughter board.
+</p>
+<pre>root@dragino-3c0ae0:~# lua SPI_Test.lua xs
+</pre>
+<p>You will see the message defined in the AVR sketch has been sent to the RFbee on XBee carrier:
+</p>
+<center>
+<p><img src="img/Band.jpg" width="400"/>
+</p>
+</center>
+<h3> Hardware Connection of the daughter board</h3>
+<p>Besides the two <a href="/GROVE_System">Grove</a> connectors there are also some other pins of the daughter board routed out for your use:
+</p>
+<center>
+<p><img src="img/Pinsfordragrove.jpg" width="600"/>
+</p>
+</center>
+<h2> Set up DDNS for remote access</h2>
+<p>Dynamic DNS allows you access/control the Dragino from other location even you don't have a fix IP address.
+</p>
+<center>
+<p><img src="img/DDNS.png" width="400"/>
+</p>
+</center>
+<p><b>Enable DDNS Service:</b> Enable/Disable DDNS service.
+<br/>
+<b>DDNS Service Provide:</b> choose your service provide here.
+<br/>
+<b>Domain:</b> the hostname provide by your DDNS service provider.
+<br/>
+<b>Username:</b> Username of your DDNS service.
+<br/>
+<b>Password:</b> Password of your DDNS service
+Source of IP-Address: Where to look for your external IP address, You can choose: 
+</p>
+<ul><li>Interface: Set external IP according to your hardware network interface info: eth0, ath0.
+</li><li>URL: Set external IP according to URL info, for example, you can set it to <a href="http://www.whatismyip.com/automation/n09230945.asp">http://www.whatismyip.com/automation/n09230945.asp</a> so the Dragino will connect to this url and get its external IP. It is used when Dragino has a private IP address on its wan port.
+</li><li>Check for changed IP: how often to check if it needs to update its IP to DDNS service provider.
+</li><li>Force update: how often to force an update to DDNS service provider.
+</li></ul>
+<h2> Upgrade the Firmware of your Dragino</h2>
+<p>The latest firmware of Dragino can be found on the link below: <a href="http://www.dragino.com/downloads/MS12/firmware/">http://www.dragino.com/downloads/MS12/firmware/</a>
+<br/>
+</p>
+<ul><li>Step1: Download the firmware .squashfs and .lzma 
+</li><li>Step2: Connect the LAN port of Dragino and your PC directly, disable your wifi interface
+</li><li>Step3: Download and run FonFlash.exe 
+</li></ul>
+<p><i>If your computer reminds you that there is some dll lost in this procedure, please download and install the <b>winpcap</b> first.</i>
+<br/>
+Configure the FonFlash:
+</p>
+<ul><li><ul><li>1.) Firmware type: Openwrt
+</li><li>2.) Select the right Network Interface
+</li><li>3.) rootfs: choose openwrt-atheros-root.squashfs
+</li><li>4.) kernel: choose openwrt-atheros-vmlinux.lzma
+</li></ul>
+</li><li>Step4 :Click Flash Router Now and power on your Dragino.
+</li></ul>
+<p>Fonflash will upgrade the device. It will show <i>upgrade successfully</i> after finished and 
+exit. 
+<br/>
+Reference output during upgrade:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1">Peer MAC<span class="sy4">:</span> 7c<span class="sy4">:</span>dd<span class="sy4">:</span><span class="nu0">90</span><span class="sy4">:</span><span class="nu8">01</span><span class="sy4">:</span>2b<span class="sy4">:</span>c1 
+Peer IP <span class="sy4">:</span> 192.168.255.1 
+Your MAC<span class="sy4">:</span> <span class="nu8">00</span><span class="sy4">:</span>ba<span class="sy4">:</span>be<span class="sy4">:</span>ca<span class="sy4">:</span>ff<span class="sy4">:</span>ee 
+Your IP <span class="sy4">:</span> 192.168.255.0 
+ 
+Setting IP address... 
+<span class="me1">ip_addr</span> <span class="sy2">-</span>l 192.168.255.1<span class="sy2">/</span><span class="nu0">8</span> <span class="sy2">-</span>h 192.168.255.0 
+ 
+ 
+Initializing partitions ... 
+<span class="me1">fis</span> init 
+ 
+loading file<span class="sy4">:</span> 
+load <span class="sy2">-</span>r <span class="sy2">-</span>b <span class="nu12">0x80100000</span> <span class="sy2">-</span>m tftp file_1 
+ 
+creating flash partition <span class="br0">(</span><span class="kw3">this</span> may take some <span class="kw3">time</span><span class="br0">)</span> 
+fis create <span class="sy2">-</span>f <span class="nu12">0xa8030000</span> <span class="sy2">-</span>l <span class="nu12">0x006f0000</span>   <span class="sy2">-</span>e <span class="nu12">0x00000000</span>    rootfs</pre></div></div>
+<p>Wait until the Fonflash reminds you the upgrade has finished. It may take 5 minutes to finish this upgrade.
+</p>
+<h2> Resource</h2>
+<p><a href="res/Eagle_file_of_Dragrove_daughterboard.zip">Eagle file of Dragrove daughterboard</a>
+</p><p>
+</p>
+<h2> Reference</h2>
+<ul><li>www.openwrt.org: embedded linux used in Dragino.
+</li><li><a href="http://www.dragino.com/downloads/MS12/firmware/">http://www.dragino.com/downloads/MS12/firmware/</a> (old / link down)
+<ul><li>New: <a href="http://www.dragino.com/downloads/index.php?dir=motherboards/ms12/Firmware/">http://www.dragino.com/downloads/index.php?dir=motherboards/ms12/Firmware/</a>
+</li></ul>
+</li><li><a href="http://www.dragino.com/wiki/index.php?title=Main_Page">http://www.dragino.com/wiki/index.php?title=Main_Page</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  Bug Tracker  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Version Tracker  </h2>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

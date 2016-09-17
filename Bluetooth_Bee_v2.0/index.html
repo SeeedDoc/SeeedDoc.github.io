@@ -1,0 +1,924 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Bluetooth Bee v2.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Bluetooth Bee v2.0</h1><div class="thumb tright"><div class="thumbinner" style="width:562px;"><img src="img/Bluetooth_Bee_v2.0.jpg" width="560"/> <div class="thumbcaption"></div></div></div>
+
+<p>Bluetooth Bee is an easy to use Bluetooth SPP module compatible with existing Xbee sockets, designed for transparent wireless serial connection setup.
+<br/>
+Serial port Bluetooth module is fully qualified Bluetooth V2.0+EDR(Enhanced Data Rate) 3Mbps Modulation with complete 2.4GHz radio transceiver and baseband. <br/>It uses CSR Bluecore 04-External single chip Bluetooth system with CMOS technology and with AFH(Adaptive Frequency Hopping Feature).It even has the smallest footprint <br/>as small as 12.7mmx27mm. Hope it will simplify your overall design/development cycle.
+</p>
+<h2>  Features </h2>
+<h3>  Hardware Features </h3>
+<ul><li>Typical -80dBm sensitivity.
+</li><li>Up to +4dBm RF transmit power.
+</li><li>Fully Qualified Bluetooth V2.0+EDR 3Mbps Modulation.
+</li><li>Low Power 1.8V Operation, 1.8 to 3.6V I/O.
+</li><li>PIO control.
+</li><li>UART interface with programmable baud rate.
+</li><li>Integrated PCB antenna.
+</li><li>Bee compatible headers.
+</li></ul>
+<h3>  Software Features </h3>
+<ul><li>Default Baud rate: 38400, Data bits:8, Stop bit:1,Parity:No parity, Data control: has.
+</li><li>Supported baud rate: 9600,19200,38400,57600,115200,230400,460800.
+</li><li>Use CTS and RTS to control the data stream.
+</li><li>When a rising pulse is detected in PIO0, device will be disconnected.
+</li><li>Status instruction port PIO1: low-disconnected, high-connected;
+</li><li>PIO10 is connected to red led, PIO11 is connected to green led. When master and slave are paired, red and green led blinks 1time / 2s in interval, while disconnected only green led blinks 2 times/ s.
+</li><li>Auto-connect the last device on power as default.
+</li><li>Permit matched device connect by default.
+</li><li>Default PINCODE:0000.
+</li><li>Auto-reconnect in 30 min when disconnected as a result of beyond the range of connection.
+</li></ul>
+<h2>  Cautions </h2>
+<p>The supply voltage of this module is 3.3V, higher than this may cause permanent damage to the device.
+</p>
+<h2>  Hardware Installation </h2>
+<h3>  Connecting Bluetooth to PC through Uart Bee </h3>
+<p>The Bluetooth provides a standard XBee socket. In here we use a <a href="/UartSBee_v5">UartSBee V5</a> to connect Bluetooth and PC, ensure the supply voltage was selected as 3.3V by slider. <br/>
+<img src="img/Bluetooth_Bee_v2.0_ConnectToPC.jpg" width="480"/>
+<img src="img/Bluetooth_Bee_v2.0_ConnectToPCSet.jpg" width="420"/>
+</p>
+<h3>  Connecting Bluetooth to Arduino </h3>
+<p>Here we use <a href="/XBee_Shield_V2.0">XBee Shield</a> as a bridge between Bluetooth and <a href="/Seeeduino_Lotus_v1.0">Seeeduino Lotus</a>. <br/> 
+Since the hardware UART of Seeedino was used as debug with PC, We choose D2 and D3 to simulate software UART to communicate with Bluetooth. please refer to the jumper setting on below picture<br/>
+<img src="img/Bluetooth_Bee_v2.0_ConnectToArduino.jpg" width="480"/>
+<img src="img/Bluetooth_Bee_v2.0_ConnectToArduinoSet.jpg" width="480"/>
+</p>
+<h2>  Software Instruction </h2>
+<h3>  Conventions </h3>
+<ul><li>Factory default setting:
+<ul><li>Name: HMSoft;
+</li><li>Baud: 9600, N, 8, 1;
+</li><li>Pin code: 1234;
+</li><li>transmit Version.
+</li></ul>
+</li><li>AT Command format: 
+<ul><li>Uppercase AT command format. string format, without any other symbol. (e.g. \r or \n).
+</li><li>Any incorrect command would be no response.
+</li></ul>
+</li></ul>
+<h3>  AT Commands </h3>
+<p><b>1. Test Command</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT
+</td>
+<td width="300"> OK
+</td>
+<td width="300"> None
+</td></tr></table>
+<p><b>2. Query/Set baud rate</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+BAUD?
+</td>
+<td width="300"> OK+Set:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: Baud rate No. <br/>
+<p>1---------1200 <br/> 
+2---------2400 <br/> 
+3---------4800 <br/> 
+4---------9600 <br/> 
+5---------19200 <br/> 
+6---------38400 <br/> 
+7---------57600 <br/> 
+8---------115200 <br/> 
+9---------230400 <br/> 
+A---------460800 <br/> 
+B---------921600 <br/> 
+C---------1382400 <br/> 
+Default: 4(9600)
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+BAUD[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>3. Query/Set Parity bit</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> Query: AT+CHK?
+</td>
+<td width="300"> OK+CHK:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: 0,1,2 <br/>
+<p>0:None <br/> 
+1:ODD <br/> 
+2:EVEN <br/> 
+Default: 0 (None)
+</p>
+</td></tr>
+<tr>
+<td width="300"> Set: AT+CHK[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>4. Query/Set Stop bit</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+STOP?
+</td>
+<td width="300"> OK+STOP:[para1]
+</td>
+<td rowspan="2" width="300"> Para1:1, 2 <br/>
+<p>1: One stop bit <br/> 
+2: Two stop bit <br/> 
+Default: 1 (One stop bit)
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+STOP[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>5. Query/Set Baud rate, parity bit, stop bit</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+UART?
+</td>
+<td width="300"> OK+UART:[para1],[para2],[para3]
+</td>
+<td rowspan="2" width="300"> Para1: Baud rate <br/>
+<p>Value: 1~C <br/> 
+Default: 4(9600) <br/> 
+Para2: Parity bit <br/> 
+Value: 0,1,2 <br/> 
+Default: 0 (None) <br/> 
+Para3: Stop Bit <br/> 
+Value: 1, 2 <br/> 
+Default: 1(One Bit)
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+UART[para1][para2][para3]
+</td>
+<td width="300"> OK+Set:[para1] [para2] [para3]
+</td></tr></table>
+<p><b>6. Module self check command</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+SECH?
+</td>
+<td width="300"> OK+SECH:OKAY or <br/>
+<p>OK+SECH:FAIL
+</p>
+</td>
+<td width="300"> None
+</td></tr></table>
+<p><b>7. Module application sectors check command</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+APCH?
+</td>
+<td width="300"> OK+APCH:OKAY or <br/>
+<p>OK+APCH:FAIL
+</p>
+</td>
+<td width="300"> None
+</td></tr></table>
+<p><b>8. Query module temperature command</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+TEMP?
+</td>
+<td width="300"> OK+TEMP:[temp value]
+</td>
+<td width="300"> None
+</td></tr></table>
+<p><b>9. Query/Set module discoverable status</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+DISC?
+</td>
+<td width="300"> OK+DISC:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: 0,1,2 <br/>
+<p>0: discoverable and connectable <br/> 
+1: only discoverable not connectable <br/> 
+2: only connectable <br/> 
+Default: 0
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+DISC [para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>10. Query/Set PIO0 function (System KEY)</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+KEY?
+</td>
+<td width="300"> OK+KEY:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: 0, 1 <br/>
+<p>0: Cancel current status. <br/> 
+1: Cancel current status and restore factory setup. <br/> 
+Default: 0
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+ KEY[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>11. Query/Set PIO1 output status (System LED)</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+LED?
+</td>
+<td width="300"> OK+LED:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: 0, 1 <br/>
+<p>0:Unconnected Output 500ms High 500ms Low, Connected output High. <br/> 
+1:Unconnected output Low, Connected output High. <br/> 
+Default: 0 <br/>
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+ LED [para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>12. Query/Set module PIO Pins output status</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+PIO?
+</td>
+<td width="300"> OK+PIO:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: Length 10, every bit value is 1 or 0. <br/>
+<p>0: output low; 1:output high <br/> 
+Default: 0000000000 <br/>
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+PIO[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>13. Query/Set PIO pins output high or low</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+PIO[para1]?
+</td>
+<td width="300"> OK+PIO:[para1][para2]
+</td>
+<td rowspan="2" width="300"> Para1: 2~B Para2: 0, 1 <br/>
+<p>Para1 is which PIO pin you want to Query/Set Value:2,3,4,5,6,7,8,9,A,B. <br/> 
+Para2 is Query or setup value. 0 is low and 1 is high
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+PIO[para1][para2]
+</td>
+<td width="300"> OK+Set:[para1][para2]
+</td></tr></table>
+<p><b>14. Query/Set Module name</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+NAME?
+</td>
+<td width="300"> OK+NAME[para1]
+</td>
+<td rowspan="2" width="300"> Para1: module name,Max length is 12. <br/>
+<p>Default: HMSoft
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+NAME[para1]
+</td>
+<td width="300"> OK+Set[para1]
+</td></tr></table>
+<p><b>15. Restore all setup value to factory setup</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+DEFAULT
+</td>
+<td width="300"> OK+DEFAULT
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>16. Restart module</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+RESTART
+</td>
+<td width="300"> OK+RESTART
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>17.Query/Set Master and Slaver Role</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+ROLE?
+</td>
+<td width="300"> OK+ROLE:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: M, S <br/>
+<p>M: Master <br/> 
+S: Slaver <br/> 
+Default: S
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+ROLE[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>18. Query/Set Pin Code</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+PIN?
+</td>
+<td width="300"> OK+PIN:[para1]
+</td>
+<td rowspan="2" width="300"> Para1 is Pin Code, Max length is 12, Allow A~Z, a~z, 0~9 <br/>
+<p>Default: 1234
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+PIN[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>19. Clear Connected device address</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+CLEAR
+</td>
+<td width="300"> OK+CLEAR
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>20. Scan slave device</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+SCAN?
+</td>
+<td width="300"> OK+SCANS <br/>
+<p>OK+SCAN[MAC] <br/> 
+…………… <br/> 
+OK+SCANE
+</p>
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>21. Connect to a slave device MAC address</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+LNK[para1]
+</td>
+<td width="300"> OK+CONNS(start conn) <br/>
+<p>OK+CONN(conn ok) <br/> 
+OK+CONNF(conn failed)
+</p>
+</td>
+<td rowspan="2" width="300"> Para1 is MAC Address string.
+</td></tr></table>
+<p><b>22.Query Software Version</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+VERSION <br/>
+<p>AT+VERSION?
+</p>
+</td>
+<td width="300"> Version Information
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>23.System Help Information</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+HELP?
+</td>
+<td width="300"> Help Information
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>24. Query Last Connected Device Address</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+RADD?
+</td>
+<td width="300"> OK+ADDR:MAC Address
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>25. Query module address</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+LADD?<br/>
+<p>AT+ADDR?
+</p>
+</td>
+<td width="300"> OK+LADD:MAC Address
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>26. Query/Set Module work type</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+IMME?
+</td>
+<td width="300"> OOK+IMME:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: 0, 1 <br/>
+<p>0: When module is powered on, only respond the AT Command, don’t do anything. until AT + WORK is received <br/> 
+1: When power on, work immediately <br/> 
+Default: 1
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+IMME[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>27. Work immediately</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+WORK
+</td>
+<td width="300"> OK+WORK
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>28. Query/Set module connect remote device timeout value</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+TCON?
+</td>
+<td width="300"> OK+TCON:[para1]
+</td>
+<td rowspan="2" width="300"> Para1 is timeout value. when time is up module will not connect this address anymore, then enter search mode. <br/>
+<p>Para1 allowed value: 0000~9999 Unit is second. <br/> 
+Default: 0000 Connect forever
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+TCON[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>27. Work immediately</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+WORK
+</td>
+<td width="300"> OK+WORK
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>29 .Query/Set Module Work Mode</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+TYPE?
+</td>
+<td width="300"> OK+TYPE:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: 0~2 <br/>
+<p>0:Transmission Mode <br/> 
+1:Remote Control Mode <br/> 
+2:PIO Collection Mode
+Default: 0
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+TYPE[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>30. Query/Set report PIO states string delay time(unit ms)</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+TPIO?
+</td>
+<td width="300"> OK+TPIO:[para1]
+</td>
+<td rowspan="2" width="300"> Para1 value is between 0000 and 9999 ms If value &gt;0, when PIO states is changed, module will send PIO states string to remote device delay this value. <br/>
+<p>Default: 0 send once
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+TPIO[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>31. Switch Remote Control Mode to Transmission Mode(Only this time)</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+START
+</td>
+<td width="300"> OK+START
+</td>
+<td rowspan="2" width="300"> None
+</td></tr></table>
+<p><b>32. Query/Set Buffer save parameter</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+BUFF?
+</td>
+<td width="300"> OK+BUFF:[para1]
+</td>
+<td width="300"> None
+</td></tr>
+<tr>
+<td width="300"> AT+BUFF[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td>
+<td width="300"> Para1: 0~1 <br/>
+<p>0: Not save <br/> 
+1:Save <br/> 
+Default: 0
+</p>
+</td></tr></table>
+<p><b>33. Query/Set Search Filter</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+FILT?
+</td>
+<td width="300"> OK+FILT:[para1]
+</td>
+<td rowspan="2" width="300"> Para1: Allow Type <br/>
+<p>Value: 0~C <br/> 
+Default: C (All)
+</p>
+</td></tr>
+<tr>
+<td width="300"> AT+FILT[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td></tr></table>
+<p><b>34. Query/Set Module Notification</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+NOTI?
+</td>
+<td width="300"> OK+NOTI:[para1]
+</td>
+<td width="300"> None
+</td></tr>
+<tr>
+<td width="300"> AT+NOTI[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td>
+<td width="300"> Par1 value is 0, 1. <br/>
+<p>0: Don’t notify(default) <br/> 
+1:Notify when connected or disconnected
+</p>
+</td></tr></table>
+<p><b>35.Query/Set Module Class Of Device</b>
+</p>
+<table border="1">
+<tr>
+<th> Send
+</th>
+<th> Receive
+</th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="300"> AT+COD?
+</td>
+<td width="300"> OK+COD:[para1]
+</td>
+<td width="300"> None
+</td></tr>
+<tr>
+<td width="300"> AT+COD[para1]
+</td>
+<td width="300"> OK+Set:[para1]
+</td>
+<td width="300"> Par1 is COD value. <br/>
+<p>Value: 0000~0xFFFF <br/> 
+Default: 0x1F00 (unknown device)
+</p>
+</td></tr></table>
+<h2>  Programming </h2>
+<h3>  Configure the Bluetooth module with Serial Port under Windows </h3>
+<p>This section shows how to configure Bluetooth with PC, some basic methods of setting could be learn. <br/> 
+Set up hardware connection refer to “Hardware Installation” section. You will find the blue LED on the module flashes illustrate no connection is set up. <br/> 
+Open a serial terminal and set Baud Rate:9600, Databits: 8, Stopbits: 1 and No Flow Control. Send “AT” to Bluetooth with the serial terminal and “OK” will be return if all goes well. The Bluetooth only respond AT commands when no connection was set up, or all commands were seen as string and sent out. You can distinguish the status through LED indicates. <br/>
+<img src="img/HM-01-AT.png" width="480"/> <br/> 
+Then some useful configurations could be sent. Here’s are some samples of commands and response. <br/> 
+1. Test serial connection, send “AT”, will return “OK”. <br/> 
+2. Obtain firmware version, send “AT+VERSION?”, return “OK+VERSION:HMSoft V621”. <br/> 
+3. Restore factory settings, send “AT+DEFAULT”, return “OK+DEFAULT”. <br/> 
+4. Restart module, send “AT+RESTART”, return ”OK+RESTART”. <br/> 
+5. Reset baud rate of serial port, send “AT+BAUD4”, return “OK+Set:9600”. <br/> 
+6. Enable authentication, send “AT+AUTH1”, return “OK+SetAuth:1”. <br/> 
+7. Query module address , send “AT+LADD?”, return “OK+LADD:000EEACF1A57”. <br/> 
+8. Query Last Connected Device Address , send “AT+RADD?”, return “OK+RADD:000000000000”. <br/> 
+9. Set Module name, send “AT+NAMEHM-01”, return “OK+Set:HM-01”. <br/> 
+10. Set Pin Code, send “AT+PIN8888”, return “OK+SetPin:8888”. <br/> 
+11. Enable notify information of connection, send “AT+NOTI1”, return “OK+Set:1”. <br/> 
+12. Set to master mode, send “AT+ROLEM”, return “OK+Set:M”. <br/> 
+Or Set to Slave mode, send “AT+ROLES”, return “OK+Set:S”. <br/>
+</p><p>We use two Bluetooth connected with PC, one was set as Central while the other is Peripheral. Several seconds later they find each other and the LED stop flash, connected! <br/>
+</p>
+<h3>  Communicate with Android </h3>
+<p>This kind of Bluetooth module is compatible with Bluetooth Specification V2.1+EDR、V2.0+EDR、V2.1、V2.0, it can communicate with any device has one of these protocols. We use a Android phone to demonstrate how to use a cellphone to interact with Bluetooth module. <br/> 
+Power the module and configure it as Slave role(send “AT+ROLES” to module). Search and install an APP called “Bluetooth SPP pro” in Android phone. Launch the app, it will scan all Bluetooth device automatically. Select “HMSoft” and touch “Connect” button, and then “Byte stream mode”. Then we can send data to PC, write some words in the text field at the bottom of the Phone and hit send button. Also PC can transfer data to phone with serial terminal. <br/>
+<img src="img/HM-01-Screenshot_2015-01-09-14-37-42.png" width="280"/>
+<img src="img/HM-01-Screenshot_2015-01-09-14-38-43.png" width="280"/>
+<img src="img/HM-01-Screenshot_2015-01-09-14-38-48.png" width="280"/> <br/>
+<img src="img/HM-01-Screenshot_2015-01-09-14-39-52.png" width="280"/>
+<img src="img/HM-01-Dialog_with_Android.png" width="480"/>
+</p>
+<h3>  Data transmission between Two Arduinos </h3>
+<p>Are you ready to code? It’s time to do something after practice. Prepare a pair of Bluetooth, and Arduino or other platform to control them. Here we use two Arduino Uno. Set up the connection as mentioned in section “Hardware Installation”. <br/> 
+The program of Central and Peripheral use the same code, the only difference is the micro define at the beginning of the program. To assign the Bluetooth to Central role, Just need to modify the text to “#define MASTER 1”, or “#define MASTER 1” if Peripheral role was assigned. <br/> 
+The initialization program flow please refer to the following flow chart. First of all we need to distinguish the presetting baud rate of the Bluetooth. After this, send commands to restore factory settings, and change baud rate from 115200 to 9600 since software serial will not working well at high baud rate. Then other parameters were configured to the Bluetooth with Reset command in the final. <br/>
+<img src="img/HM-01-Init-flowchat.png" width="338"/> <br/> 
+After the initialization, the Central and Peripheral will do different things, the Central will send message to Peripheral interval and print what received from Peripheral while the Peripheral only responds the Central. <br/> 
+Click <a href="https://github.com/Seeed-Studio/HM-13_SW">here</a> to download the test code and open HM-13_SW.ino with Arduino IDE, compile and download to Arduino Uno. Remember to configure the Bluetooth to different role by modify the macro at the beginning. If you have any problem about how to start Arduino, please click <a href="/Getting_Started_with_Seeeduino">here</a> for some help. <br/> 
+After downloading program, open two serial terminal windows, the LEDs on Bluetooth will flash, several seconds later, they stop to flash and keep on, this indicates that they connected to each other. According to the program is written, the Central sends message to the Peripheral continually and get feedback every time. <br/>
+<img src="img/HM-01-Debug_Output_Master.png" width="300"/>
+<img src="img/HM-01-Debug_Output_Slave.png" width="300"/>
+</p>
+<h2>  Resources </h2>
+<h2>  Support </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or wish to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

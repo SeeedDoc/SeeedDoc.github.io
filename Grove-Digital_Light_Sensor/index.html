@@ -1,1726 +1,484 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Grove - Digital Light Sensor - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Grove - Digital Light Sensor";
-    var mkdocs_page_input_path = "Grove-Digital_Light_Sensor.md";
-    var mkdocs_page_url = "/Grove-Digital_Light_Sensor/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Grove - Digital Light Sensor</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Digital Light Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Digital Light Sensor</h1><p><br/>
+</p>
+
+<p>This module is based on the I2C light-to-digital converter TSL2561 to transform light intensity to a digital signal. Different from traditional analog light sensor, as <a href="http://www.seeedstudio.com/depot/grove-light-sensorp-p-1253.html?cPath=144_148">Grove - Light Sensor</a>, this digital module features a selectable light spectrum range due to its dual light sensitive diodes: infrared and full spectrum. 
+</p><p>You can switch among three detection modes to take your readings. They are infrared mode, full spectrum and human visible mode. When running under the human visible mode, this sensor will give you readings just close to your eye feelings.<br/><br/>
+</p><p><br/><img src="img/Digital_Light_Sensor.jpg" width="300"/><br/>
+</p>
+<h2>  Features  </h2>
+<ul><li>Selectable detection modes
+</li><li>High resolution 16-Bit digital output at 400 kHz I2C Fast-Mode
+</li><li>Wide dynamic range: 0.1 - 40,000 LUX
+</li><li>Wide operating temperature range: -40°C to 85°C
+</li><li>Programmable interrupt function with User-Defined Upper and lower threshold settings
+</li></ul>
+<h2>  Specifications </h2>
+<table border="1" cellspacing="0">
+<tr>
+<th scope="col"> Items
+</th>
+<th scope="col"> Min     Type      Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<td scope="row"> Supply voltage, VDD
+</td>
+<td> 3.3         5          5.1
+</td>
+<td> V
+</td></tr>
+<tr>
+<td scope="row"> Operating temperature
+</td>
+<td> -30         \            70
+</td>
+<td> ℃
+</td></tr>
+<tr>
+<td scope="row"> SCL,SDA input low voltage
+</td>
+<td> -0.5          \          0.8
+</td>
+<td> V
+</td></tr>
+<tr>
+<td scope="row"> SCL,SDA input high voltage
+</td>
+<td> 2.3           \          5.1
+</td>
+<td> V
+</td></tr></table>
+<h2>  Interface Function  </h2>
+<p><br/><img src="img/TSL2561_Interface_.jpg" width="300"/><br/>
+<b>U1:</b> TSL2561 IC, Light-To-Digital Converter.<br/>
+<b>U3:</b> XC6206MR332 IC, Positive Voltage Regulators. <br/>
+<b>Q1,Q2:</b> BSN20 IC, N-channel Enhancement Mode Vertical D-MOS Transistor.<br/>
+<b>SCL,SDA:</b> I2C Signal Interface<br/>
+</p>
+<h2> TSL2561 Functional Block Diagram</h2>
+<p><img src="img/Functional_Block_Diagram_2.jpg" width="912"/><br/>
+</p>
+<h2>  Usage  </h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>1. Plug the Grove - Digital Light Sensor onto the I2C port on Grove - Base Shield, and then plug the base shield onto Arduino; 
+<br/><img src="img/Digital_Light_Sensor_Connector.jpg" width="700"/><br/>
+</p><p>2. Download the library from here <a href="https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor">Digital Light Sensor Library</a>;<br/>
+</p><p>3. Unzip it into the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries.<br/>
+</p><p>4. Create an Arduino sketch and paste the following codes to it or open the code directly by the path:File -&gt; Example -&gt;Digital_Light_Sensor-&gt;Digital_Light_Sensor.<br/>
+</p>
+<pre>  
+/*
+ * Digital_Light_Sensor.ino
+ * A library for TSL2561
+ *
+ * Copyright (c) 2012 seeed technology inc.
+ * Website    : www.seeed.cc
+ * Author     : zhangkun
+ * Create Time:
+ * Change Log :
+ *
+ * The MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ */
+
+#include &lt;Wire.h&gt;
+#include &lt;Digital_Light_TSL2561.h&gt;
+void setup()
+{
+  Wire.begin();
+  Serial.begin(9600);
+  TSL2561.init();
+}
+
+void loop()
+{
+  Serial.print("The Light value is: ");
+  Serial.println(TSL2561.readVisibleLux());
+  delay(1000);
+}
+
+
+
+</pre>
+<p>5. Upload the code. Please click <a href="/Upload_Code">here</a> if you do not know how to upload.<br/>
+6. Open the serial monitor to see the result. <br/><img src="img/Digital_Light_Sensor_Score_Picture.jpg" width="319"/><br/>
+In the case of completely light matte, The output result is 0.
+</p>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.<br/>
+2.You should have completed configuring the development enviroment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+<br/>
+3.Connection
+<br/>
+</p>
+<ul><li> Plug Digital Light Sensor to the I2C sockets on grovepi.<br/>
+</li></ul>
+<p>4.Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/grove_i2c_digital_light_sensor/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_i2c_digital_light_sensor.py  # "Ctrl+x" to exit #
+</pre>
+<pre>
+import time
+import smbus
+from Adafruit_I2C import Adafruit_I2C
+import RPi.GPIO as GPIO
+import grovepi
+from smbus import SMBus
+
+global I2C_ADDRESS
+global I2C_SMBUS
+global _CMD
+global _CMD_CLEAR
+global _CMD_WORD
+global _CMD_BLOCK
+global _REG_CONTROL
+global _REG_TIMING
+global _REG_ID
+global _REG_BLOCKREAD
+global _REG_DATA0
+global _REG_DATA1
+global _POWER_UP
+global _POWER_DOWN
+global _GAIN_LOW
+global _GAIN_HIGH
+global _INTEGRATION_START
+global _INTEGRATION_STOP
+global _INTEGRATE_13
+global _INTEGRATE_101
+global _INTEGRATE_402
+global _INTEGRATE_DEFAULT
+global _INTEGRATE_NA
+global _GAIN
+global _MANUAL
+global _INTEG
+global _CHANNEL0
+global _CHANNEL1
+global _D0
+global _D1
+global _LUX
+
+
+# bus parameters
+rev = GPIO.RPI_REVISION
+if rev == 2 or rev == 3:
+    I2C_SMBUS = smbus.SMBus(1)
+else:
+    I2C_SMBUS = smbus.SMBus(0)
+
+# Default I2C address
+I2C_ADDRESS = 0x29
+
+# Commands
+_CMD       = 0x80
+_CMD_CLEAR = 0x40
+_CMD_WORD  = 0x20
+_CMD_BLOCK = 0x10
+
+# Registers
+_REG_CONTROL   = 0x00
+_REG_TIMING    = 0x01
+_REG_ID        = 0x0A
+_REG_BLOCKREAD = 0x0B
+_REG_DATA0     = 0x0C
+_REG_DATA1     = 0x0E
+
+# Control parameters
+_POWER_UP   = 0x03
+_POWER_DOWN = 0x00
+
+# Timing parameters
+_GAIN_LOW          = 0b00000000
+_GAIN_HIGH         = 0b00010000
+_INTEGRATION_START = 0b00001000
+_INTEGRATION_STOP  = 0b00000000
+_INTEGRATE_13      = 0b00000000
+_INTEGRATE_101     = 0b00000001
+_INTEGRATE_402     = 0b00000010
+_INTEGRATE_DEFAULT = _INTEGRATE_402
+_INTEGRATE_NA      = 0b00000011
+
+# Testing parameters
+ambient  = None
+IR       = None
+_ambient = 0
+_IR      = 0
+_LUX     = None
+
+
+class Tsl2561(object):
+        i2c = None
+        
+        def _init__(self, bus = I2C_SMBUS, addr = I2C_ADDRESS, debug = 1, pause = 0.8):  # set debug = 0 stops debugging output on screen
+                assert(bus is not None)
+        	assert(addr &gt; 0b000111 and addr &lt; 0b1111000)
+
+                self.i2c     = Adafruit_I2C(addr)
+                self.pause   = pause
+                self.debug   = debug
+                self.gain    = 0
+        	self._bus    = bus
+                self._addr   = addr
                 
-            
-                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
+        	ambient        = None
+                IR             = None
+        	self._ambient  = 0
+                self._IR       = 0
+        	self._LUX      = None
+                self._control(_POWER_UP)
+                self._partno_revision()
+        
+#        @property
+        
+        def _lux(self, gain):
+                '''
+                Returns a lux value.  Returns None if no valid value is set yet.
+                '''
+                var = readLux(gain)
+                ambient = var[0]
+                IR = var[1]
+                self._ambient = var[2]
+                self._IR = var[3]
+                self_LUX = var[4]
+                return (ambient, IR, self._ambient, self._IR, self._LUX)
+
+
+        def setGain(self, gain = 1):
+                """ Set the gain """
+                if (gain != self.gain):
+                        if (gain==1):
+                                cmd = _CMD | _REG_TIMING
+                                value = 0x02
+                                self.i2c.write8(cmd, value)  # Set gain = 1X and timing = 402 mSec
+                                if (self.debug):
+                                        print "Setting low gain"
+                        else:
+                                cmd = _CMD | _REG_TIMING
+                                value = 0x12
+                                self.i2c.write8(cmd, value)  # Set gain = 16X and timing = 402 mSec
+                                if (self.debug):
+                                        print "Setting high gain"
+                        self.gain=gain;  # Safe gain for calculation
+                        time.sleep(self.pause)  # Pause for integration (self.pause must be bigger than integration time)
+
+        
+        def readWord(self, reg):
+                """ Reads a word from the TSL2561 I2C device """
+                try:
+                        wordval = self.i2c.readU16(reg)
+                        newval = self.i2c.reverseByteOrder(wordval)
+                        if (self.debug):
+                                print("I2C: Device 0x%02X: returned 0x%04X from reg 0x%02X" % (self._addr, wordval &amp; 0xFFFF, reg))
+                        return newval
+                except IOError:
+                        print("Error accessing 0x%02X: Chcekcyour I2C address" % self._addr)
+                        return -1
                 
-            
-                <li class="toctree-l3"><a href="#hardware-overview">Hardware Overview</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#tsl2561-functional-block-diagram">TSL2561 Functional Block Diagram</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#usage">Usage</a></li>
-                
-                    <li><a class="toctree-l4" href="#with-arduino">With Arduino</a></li>
-                
-                    <li><a class="toctree-l4" href="#with-raspberry-pi">With Raspberry Pi</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#reference">Reference</a></li>
-                
-                    <li><a class="toctree-l4" href="#register-map">Register Map</a></li>
-                
-                    <li><a class="toctree-l4" href="#spectrum-response-curve">Spectrum Response Curve</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
         
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Sound_Sensor/">Grove - Sound Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
+        def readFull(self, reg = 0x8C):
+                """ Read visible + IR diode from the TSL2561 I2C device """
+                return self.readWord(reg);
+
+        def readIR(self, reg = 0x8E):
+                """ Reads only IR diode from the TSL2561 I2C device """
+                return self.readWord(reg);
+        
+        def readLux(self, gain = 0):
+                """ Grabs a lux reading either with autoranging (gain=0) or with specific gain (1, 16) """
+                if (self.debug):
+                        print "gain = ", gain
+                if (gain == 1 or gain == 16):
+                        self.setGain(gain)  # Low/highGain
+                        ambient = self.readFull()
+                        IR = self.readIR()
+                elif (gain == 0):  # Auto gain
+                        self.setGain(16)  # First try highGain
+                        ambient = self.readFull()
+                        if (ambient &lt; 65535):
+                                IR = self.readIR()
+                        if (ambient &gt;= 65535 or IR &gt;= 65535):  # Value(s) exeed(s) datarange
+                                self.setGain(1)  # Set lowGain
+                                ambient = self.readFull()
+                                IR = self.readIR()
+
+                # If either sensor is saturated, no acculate lux value can be achieved.
+                if (ambient == 0xffff or IR == 0xffff):
+        		self._LUX = None
+        		self._ambient = None
+        		self._IR = None
+        		return (self.ambient, self.IR, self._ambient, self._IR, self._LUX)
+                if (self.gain == 1):
+                        self._ambient = 16 * ambient  # Scale 1x to 16x
+                        self._IR = 16 * IR            # Scale 1x to 16x
+                else:
+                        self._ambient = 1 * ambient
+                        self._IR = 1 * IR
+                if (self.debug):
+                        print "IR Result without scaling: ", IR
+                        print "IR Result: ", self._IR
+                        print "Ambient Result without scaling: ", ambient
+                        print "Ambient Result: ", self._ambient
+                        
+                if (self._ambient == 0):
+         		# Sometimes, the channel 0 returns 0 when dark ...
+        		self._LUX = 0.0
+        		return (ambient, IR, self._ambient, self._IR, self._LUX)
+        	
+                ratio = (self._IR / float(self._ambient))  # Change to make it run under python 2
+
+                if (self.debug):
+                        print "ratio: ", ratio
+
+                if ((ratio &gt;= 0) and (ratio &lt;= 0.52)):
+                        self._LUX = (0.0315 * self._ambient) - (0.0593 * self._ambient * (ratio ** 1.4))
+                elif (ratio &lt;= 0.65):
+                        self._LUX = (0.0229 * self._ambient) - (0.0291 * self._IR)
+                elif (ratio &lt;= 0.80):
+                        self._LUX = (0.0157 * self._ambient) - (0.018 * self._IR)
+                elif (ratio &lt;= 1.3):
+                        self._LUX = (0.00338 * self._ambient) - (0.0026 * self._IR)
+                elif (ratio &gt; 1.3):
+                        self._LUX = 0
+
+                return (ambient, IR, self._ambient, self._IR, self._LUX)
+        
+        def _partno_revision(self):
+                """ Read Partnumber and revision of the sensor """
+                cmd = _CMD | _REG_ID
+                value = self.i2c.readS8(cmd)
+                part = str(value)[7:4]
+                if (part == "0000"):
+                        PartNo = "TSL2560CS"
+                elif (part == "0001"):
+                        PartNo = "TSL2561CS"
+                elif (part == "0100"):
+                        PartNo = "TSL2560T/FN/CL"
+                elif (part == "0101"):
+                        PartNo = "TSL2561T/FN/CL"
+                else:
+                        PartNo = "not TSL2560 or TSL 2561"
+                RevNo = str(value)[3:0]
+                if (self.debug):
+                        print "responce: ", value
+                        print "PartNo = ", PartNo
+                        print "RevNo = ", RevNo
+                return (PartNo, RevNo)
+        
+        def _control(self, params):
+                if (params == _POWER_UP):
+                        print "Power ON"
+                elif (params == _POWER_DOWN):
+                        print "Power OFF"
+                else:
+                        print "No params given"
+                cmd = _CMD | _REG_CONTROL | params
+                self.i2c.write8(self._addr, cmd)  # select command register and power on
+        	time.sleep(0.4)  # Wait for 400ms to power up or power down.
+        
         
-    </ul>
 
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Grove &raquo;</li>
-        
-      
-        
-          <li>Sensor &raquo;</li>
-        
-      
-    
-    <li>Grove - Digital Light Sensor</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Grove - Digital Light Sensor</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Digital_Light_Sensor.jpg" /></p>
-<p>This module is based on the I2C light-to-digital converter TSL2561 to transform light intensity to a digital signal. Different from traditional analog light sensor, as <a href="http://www.seeedstudio.com/depot/grove-light-sensorp-p-1253.html?cPath=144_148">Grove - Light Sensor</a>, this digital module features a selectable light spectrum range due to its dual light sensitive diodes: infrared and full spectrum.</p>
-<p>You can switch among three detection modes to take your readings. They are infrared mode, full spectrum and human visible mode. When running under the human visible mode, this sensor will give you readings just close to your eye feelings.</p>
-<p><a href="http://www.seeedstudio.com/Grove-Digital-Light-Sensor-p-1281.html"><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/common/Get_One_Now_Banner.png" /></a></p>
-<h2 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h2>
-<ul>
-<li>Selectable detection modes</li>
-<li>High resolution 16-Bit digital output at 400 kHz I2C Fast-Mode</li>
-<li>Wide dynamic range: 0.1 - 40,000 LUX</li>
-<li>Wide operating temperature range: -40°C to 85°C</li>
-<li>Programmable interrupt function with User-Defined Upper and lower threshold settings</li>
-</ul>
-<h2 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h2>
+def main():
+        TSL2561 = Tsl2561()
+        TSL2561._init__(I2C_SMBUS, I2C_ADDRESS)
+        while (True):
+                gain=0
+                val = TSL2561.readLux(gain)
+                ambient = val[0]
+                IR = val[1]
+                _ambient = val[2]
+                _IR = val[3]
+                _LUX = val[4]
+                if (ambient == 0xffff or IR == 0xffff):
+                        print ("Sensor is saturated, no lux value can be achieved:")
+        		print ("ambient = " + ambient)
+                	print ("IR = " + IR)
+                        print ("light = " + _LUX)
+        	elif (_ambient == 0):
+                	print ("It's dark:")
+                        print ("ambient = " + str(ambient))
+        		print ("IR = " + str(IR))
+                	print ("_ambient = " + str(_ambient))
+                        print ("_IR = " + str(_IR))
+        		print ("Light = " + str(_LUX) + " lux.")
+                else:
+                        print ("There is light:")
+        		print ("ambient = " + str(ambient))
+                        print ("IR = " + str(IR))
+                        print ("_ambient = " + str(_ambient))
+                        print ("_IR = " + str(_IR))
+                        print ("Light = " + str(_LUX) + " lux.")
+                time.sleep(2)
+                ambient  = None
+                IR       = None
+                _ambient = 0
+                _IR      = 0
+                _LUX     = None
+        	TSL2561._control(_POWER_DOWN)
+
+        
+if __name__=="__main__":
+        main()
+</pre>
+<p>5.Run the demo.<br/>
+</p>
+<pre>   sudo python grove_i2c_digital_light_sensor.py
+</pre>
+<p>6.Result<br/>
+</p><p><img src="img/Grovepi_digital_light_sensor_00.png" width="600"/><br/>
+</p>
+<h2>  Reference </h2>
+<h3>  Register Map </h3>
+<p>The TSL2561 is controlled and monitored by sixteen registers (three are reserved) and a command register accessed through the serial interface. These registers provide for a variety of control functions and can be read to determine results of the ADC conversions. The register set is summarised as show below. 
+</p><p><br/><img src="img/Register.jpg" width="600"/><br/>
+</p>
+<h3>  Spectrum Response Curve </h3>
+<p><br/> <img src="img/Spectral_responsivity.jpg" width="519"/><br/>
+</p><p>Two channels of the digital light sensor have different response characteristic. That's why you can choose its working mode by having both of them on or one of them off.
+</p>
+<h2>  Version Tracker  </h2>
 <table>
-<thead>
 <tr>
-<th>Items</th>
-<th>Min</th>
-<th>Typical</th>
-<th>Max</th>
-<th>Unit</th>
-</tr>
-</thead>
-<tbody>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
 <tr>
-<td>Supply voltage, VDD</td>
-<td>3.3</td>
-<td>5</td>
-<td>5.1</td>
-<td>V</td>
-</tr>
-<tr>
-<td>Operating temperature</td>
-<td>-30</td>
-<td>\</td>
-<td>70</td>
-<td>℃</td>
-</tr>
-<tr>
-<td>SCL,SDA input low voltage</td>
-<td>-0.5</td>
-<td>\</td>
-<td>0.8</td>
-<td>V</td>
-</tr>
-<tr>
-<td>SCL,SDA input high voltage</td>
-<td>2.3</td>
-<td>\</td>
-<td>5.1</td>
-<td>V</td>
-</tr>
-</tbody>
-</table>
-<h2 id="hardware-overview">Hardware Overview<a class="headerlink" href="#hardware-overview" title="Permanent link"></a></h2>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/TSL2561_Interface_.jpg" /></p>
-<p><strong>U1:</strong> TSL2561 IC, Light-To-Digital Converter.</p>
-<p><strong>U3:</strong> XC6206MR332 IC, Positive Voltage Regulators.</p>
-<p><strong>Q1,Q2:</strong> BSN20 IC, N-channel Enhancement Mode Vertical D-MOS Transistor.</p>
-<p><strong>SCL,SDA:</strong> I2C Signal Interface</p>
-<h2 id="tsl2561-functional-block-diagram">TSL2561 Functional Block Diagram<a class="headerlink" href="#tsl2561-functional-block-diagram" title="Permanent link"></a></h2>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Functional_Block_Diagram_2.jpg" /></p>
-<h2 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link"></a></h2>
-<h3 id="with-arduino">With <a href="../index.php?title=ArduinoAndaction=editAndredlink=1" title="Arduino">Arduino</a><a class="headerlink" href="#with-arduino" title="Permanent link"></a></h3>
-<p>1.Plug the Grove - Digital Light Sensor onto the I2C port on Grove - Base Shield, and then plug the base shield onto Arduino.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Digital_Light_Sensor_Connector.jpg" /></p>
-<p>2.Download the library from here <a href="https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor">Digital Light Sensor Library</a>;</p>
-<p>3.Unzip it into the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries.</p>
-<p>4.Create an Arduino sketch and paste the following code into it or open the code directly by the path:File -&gt; Example -&gt;Digital_Light_Sensor-&gt;Digital_Light_Sensor.</p>
-<pre><code>    /*
-     * Digital_Light_Sensor.ino
-     * A library for TSL2561
-     *
-     * Copyright (c) 2012 seeed technology inc.
-     * Website    : www.seeed.cc
-     * Author     : zhangkun
-     * Create Time:
-     * Change Log :
-     *
-     * The MIT License (MIT)
-     *
-     * Permission is hereby granted, free of charge, to any person obtaining a copy
-     * of this software and associated documentation files (the &quot;Software&quot;), to deal
-     * in the Software without restriction, including without limitation the rights
-     * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-     * copies of the Software, and to permit persons to whom the Software is
-     * furnished to do so, subject to the following conditions:
-     *
-     * The above copyright notice and this permission notice shall be included in
-     * all copies or substantial portions of the Software.
-     *
-     * THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-     * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-     * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-     * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-     * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-     * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-     * THE SOFTWARE.
-     */
-
-    #include &lt;Wire.h&gt;
-    #include &lt;Digital_Light_TSL2561.h&gt;
-    void setup()
-    {
-      Wire.begin();
-      Serial.begin(9600);
-      TSL2561.init();
-    }
-
-    void loop()
-    {
-      Serial.print(&quot;The Light value is: &quot;);
-      Serial.println(TSL2561.readVisibleLux());
-      delay(1000);
-    }
-</code></pre>
-
-<p>5.Upload the code. Please click <a href="../Upload_Code">here</a> if you do not know how to upload.</p>
-<p>6.Open the serial monitor to see the result.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Digital_Light_Sensor_Score_Picture.jpg" /></p>
-<p>In the case of completely light matte, The output result is 0.</p>
-<h3 id="with-raspberry-pi">With <a href="../GrovePiPlus" title="GrovePi+">Raspberry Pi</a><a class="headerlink" href="#with-raspberry-pi" title="Permanent link"></a></h3>
-<p>1.You should have got a raspberry pi and a grovepi or grovepi+.</p>
-<p>2.You should have completed configuring the development enviroment, otherwise follow <a href="../GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.</p>
-<p>3.Connection</p>
-<ul>
-<li>Plug Digital Light Sensor to the I2C sockets on grovepi.</li>
-</ul>
-<p>4.Navigate to the demos&rsquo; directory:</p>
-<pre><code>    cd yourpath/GrovePi/Software/Python/grove_i2c_digital_light_sensor/
-</code></pre>
-
-<ul>
-<li>To see the code</li>
-</ul>
-<pre><code>    nano grove_i2c_digital_light_sensor.py  # &quot;Ctrl+x&quot; to exit #
-</code></pre>
-
-<pre><code>    import time
-    import smbus
-    from Adafruit_I2C import Adafruit_I2C
-    import RPi.GPIO as GPIO
-    import grovepi
-    from smbus import SMBus
-
-    global I2C_ADDRESS
-    global I2C_SMBUS
-    global _CMD
-    global _CMD_CLEAR
-    global _CMD_WORD
-    global _CMD_BLOCK
-    global _REG_CONTROL
-    global _REG_TIMING
-    global _REG_ID
-    global _REG_BLOCKREAD
-    global _REG_DATA0
-    global _REG_DATA1
-    global _POWER_UP
-    global _POWER_DOWN
-    global _GAIN_LOW
-    global _GAIN_HIGH
-    global _INTEGRATION_START
-    global _INTEGRATION_STOP
-    global _INTEGRATE_13
-    global _INTEGRATE_101
-    global _INTEGRATE_402
-    global _INTEGRATE_DEFAULT
-    global _INTEGRATE_NA
-    global _GAIN
-    global _MANUAL
-    global _INTEG
-    global _CHANNEL0
-    global _CHANNEL1
-    global _D0
-    global _D1
-    global _LUX
-
-
-    # bus parameters
-    rev = GPIO.RPI_REVISION
-    if rev == 2 or rev == 3:
-        I2C_SMBUS = smbus.SMBus(1)
-    else:
-        I2C_SMBUS = smbus.SMBus(0)
-
-    # Default I2C address
-    I2C_ADDRESS = 0x29
-
-    # Commands
-    _CMD       = 0x80
-    _CMD_CLEAR = 0x40
-    _CMD_WORD  = 0x20
-    _CMD_BLOCK = 0x10
-
-    # Registers
-    _REG_CONTROL   = 0x00
-    _REG_TIMING    = 0x01
-    _REG_ID        = 0x0A
-    _REG_BLOCKREAD = 0x0B
-    _REG_DATA0     = 0x0C
-    _REG_DATA1     = 0x0E
-
-    # Control parameters
-    _POWER_UP   = 0x03
-    _POWER_DOWN = 0x00
-
-    # Timing parameters
-    _GAIN_LOW          = 0b00000000
-    _GAIN_HIGH         = 0b00010000
-    _INTEGRATION_START = 0b00001000
-    _INTEGRATION_STOP  = 0b00000000
-    _INTEGRATE_13      = 0b00000000
-    _INTEGRATE_101     = 0b00000001
-    _INTEGRATE_402     = 0b00000010
-    _INTEGRATE_DEFAULT = _INTEGRATE_402
-    _INTEGRATE_NA      = 0b00000011
-
-    # Testing parameters
-    ambient  = None
-    IR       = None
-    _ambient = 0
-    _IR      = 0
-    _LUX     = None
-
-
-    class Tsl2561(object):
-            i2c = None
-
-            def _init__(self, bus = I2C_SMBUS, addr = I2C_ADDRESS, debug = 1, pause = 0.8):  # set debug = 0 stops debugging output on screen
-                    assert(bus is not None)
-                assert(addr &gt; 0b000111 and addr &lt; 0b1111000)
-
-                    self.i2c     = Adafruit_I2C(addr)
-                    self.pause   = pause
-                    self.debug   = debug
-                    self.gain    = 0
-                self._bus    = bus
-                    self._addr   = addr
-
-                ambient        = None
-                    IR             = None
-                self._ambient  = 0
-                    self._IR       = 0
-                self._LUX      = None
-                    self._control(_POWER_UP)
-                    self._partno_revision()
-
-    #        @property
-
-            def _lux(self, gain):
-                    '''
-                    Returns a lux value.  Returns None if no valid value is set yet.
-                    '''
-                    var = readLux(gain)
-                    ambient = var[0]
-                    IR = var[1]
-                    self._ambient = var[2]
-                    self._IR = var[3]
-                    self_LUX = var[4]
-                    return (ambient, IR, self._ambient, self._IR, self._LUX)
-
-
-            def setGain(self, gain = 1):
-                    &quot;&quot;&quot; Set the gain &quot;&quot;&quot;
-                    if (gain != self.gain):
-                            if (gain==1):
-                                    cmd = _CMD | _REG_TIMING
-                                    value = 0x02
-                                    self.i2c.write8(cmd, value)  # Set gain = 1X and timing = 402 mSec
-                                    if (self.debug):
-                                            print &quot;Setting low gain&quot;
-                            else:
-                                    cmd = _CMD | _REG_TIMING
-                                    value = 0x12
-                                    self.i2c.write8(cmd, value)  # Set gain = 16X and timing = 402 mSec
-                                    if (self.debug):
-                                            print &quot;Setting high gain&quot;
-                            self.gain=gain;  # Safe gain for calculation
-                            time.sleep(self.pause)  # Pause for integration (self.pause must be bigger than integration time)
-
-
-            def readWord(self, reg):
-                    &quot;&quot;&quot; Reads a word from the TSL2561 I2C device &quot;&quot;&quot;
-                    try:
-                            wordval = self.i2c.readU16(reg)
-                            newval = self.i2c.reverseByteOrder(wordval)
-                            if (self.debug):
-                                    print(&quot;I2C: Device 0x%02X: returned 0x%04X from reg 0x%02X&quot; % (self._addr, wordval &amp; 0xFFFF, reg))
-                            return newval
-                    except IOError:
-                            print(&quot;Error accessing 0x%02X: Chcekcyour I2C address&quot; % self._addr)
-                            return -1
-
-
-            def readFull(self, reg = 0x8C):
-                    &quot;&quot;&quot; Read visible + IR diode from the TSL2561 I2C device &quot;&quot;&quot;
-                    return self.readWord(reg);
-
-            def readIR(self, reg = 0x8E):
-                    &quot;&quot;&quot; Reads only IR diode from the TSL2561 I2C device &quot;&quot;&quot;
-                    return self.readWord(reg);
-
-            def readLux(self, gain = 0):
-                    &quot;&quot;&quot; Grabs a lux reading either with autoranging (gain=0) or with specific gain (1, 16) &quot;&quot;&quot;
-                    if (self.debug):
-                            print &quot;gain = &quot;, gain
-                    if (gain == 1 or gain == 16):
-                            self.setGain(gain)  # Low/highGain
-                            ambient = self.readFull()
-                            IR = self.readIR()
-                    elif (gain == 0):  # Auto gain
-                            self.setGain(16)  # First try highGain
-                            ambient = self.readFull()
-                            if (ambient &lt; 65535):
-                                    IR = self.readIR()
-                            if (ambient &gt;= 65535 or IR &gt;= 65535):  # Value(s) exeed(s) datarange
-                                    self.setGain(1)  # Set lowGain
-                                    ambient = self.readFull()
-                                    IR = self.readIR()
-
-                    # If either sensor is saturated, no acculate lux value can be achieved.
-                    if (ambient == 0xffff or IR == 0xffff):
-                    self._LUX = None
-                    self._ambient = None
-                    self._IR = None
-                    return (self.ambient, self.IR, self._ambient, self._IR, self._LUX)
-                    if (self.gain == 1):
-                            self._ambient = 16 * ambient  # Scale 1x to 16x
-                            self._IR = 16 * IR            # Scale 1x to 16x
-                    else:
-                            self._ambient = 1 * ambient
-                            self._IR = 1 * IR
-                    if (self.debug):
-                            print &quot;IR Result without scaling: &quot;, IR
-                            print &quot;IR Result: &quot;, self._IR
-                            print &quot;Ambient Result without scaling: &quot;, ambient
-                            print &quot;Ambient Result: &quot;, self._ambient
-
-                    if (self._ambient == 0):
-                    # Sometimes, the channel 0 returns 0 when dark ...
-                    self._LUX = 0.0
-                    return (ambient, IR, self._ambient, self._IR, self._LUX)
-
-                    ratio = (self._IR / float(self._ambient))  # Change to make it run under python 2
-
-                    if (self.debug):
-                            print &quot;ratio: &quot;, ratio
-
-                    if ((ratio &gt;= 0) and (ratio &lt;= 0.52)):
-                            self._LUX = (0.0315 * self._ambient) - (0.0593 * self._ambient * (ratio ** 1.4))
-                    elif (ratio &lt;= 0.65):
-                            self._LUX = (0.0229 * self._ambient) - (0.0291 * self._IR)
-                    elif (ratio &lt;= 0.80):
-                            self._LUX = (0.0157 * self._ambient) - (0.018 * self._IR)
-                    elif (ratio &lt;= 1.3):
-                            self._LUX = (0.00338 * self._ambient) - (0.0026 * self._IR)
-                    elif (ratio &gt; 1.3):
-                            self._LUX = 0
-
-                    return (ambient, IR, self._ambient, self._IR, self._LUX)
-
-            def _partno_revision(self):
-                    &quot;&quot;&quot; Read Partnumber and revision of the sensor &quot;&quot;&quot;
-                    cmd = _CMD | _REG_ID
-                    value = self.i2c.readS8(cmd)
-                    part = str(value)[7:4]
-                    if (part == &quot;0000&quot;):
-                            PartNo = &quot;TSL2560CS&quot;
-                    elif (part == &quot;0001&quot;):
-                            PartNo = &quot;TSL2561CS&quot;
-                    elif (part == &quot;0100&quot;):
-                            PartNo = &quot;TSL2560T/FN/CL&quot;
-                    elif (part == &quot;0101&quot;):
-                            PartNo = &quot;TSL2561T/FN/CL&quot;
-                    else:
-                            PartNo = &quot;not TSL2560 or TSL 2561&quot;
-                    RevNo = str(value)[3:0]
-                    if (self.debug):
-                            print &quot;responce: &quot;, value
-                            print &quot;PartNo = &quot;, PartNo
-                            print &quot;RevNo = &quot;, RevNo
-                    return (PartNo, RevNo)
-
-            def _control(self, params):
-                    if (params == _POWER_UP):
-                            print &quot;Power ON&quot;
-                    elif (params == _POWER_DOWN):
-                            print &quot;Power OFF&quot;
-                    else:
-                            print &quot;No params given&quot;
-                    cmd = _CMD | _REG_CONTROL | params
-                    self.i2c.write8(self._addr, cmd)  # select command register and power on
-                time.sleep(0.4)  # Wait for 400ms to power up or power down.
-
-
-
-    def main():
-            TSL2561 = Tsl2561()
-            TSL2561._init__(I2C_SMBUS, I2C_ADDRESS)
-            while (True):
-                    gain=0
-                    val = TSL2561.readLux(gain)
-                    ambient = val[0]
-                    IR = val[1]
-                    _ambient = val[2]
-                    _IR = val[3]
-                    _LUX = val[4]
-                    if (ambient == 0xffff or IR == 0xffff):
-                            print (&quot;Sensor is saturated, no lux value can be achieved:&quot;)
-                    print (&quot;ambient = &quot; + ambient)
-                        print (&quot;IR = &quot; + IR)
-                            print (&quot;light = &quot; + _LUX)
-                elif (_ambient == 0):
-                        print (&quot;It's dark:&quot;)
-                            print (&quot;ambient = &quot; + str(ambient))
-                    print (&quot;IR = &quot; + str(IR))
-                        print (&quot;_ambient = &quot; + str(_ambient))
-                            print (&quot;_IR = &quot; + str(_IR))
-                    print (&quot;Light = &quot; + str(_LUX) + &quot; lux.&quot;)
-                    else:
-                            print (&quot;There is light:&quot;)
-                    print (&quot;ambient = &quot; + str(ambient))
-                            print (&quot;IR = &quot; + str(IR))
-                            print (&quot;_ambient = &quot; + str(_ambient))
-                            print (&quot;_IR = &quot; + str(_IR))
-                            print (&quot;Light = &quot; + str(_LUX) + &quot; lux.&quot;)
-                    time.sleep(2)
-                    ambient  = None
-                    IR       = None
-                    _ambient = 0
-                    _IR      = 0
-                    _LUX     = None
-                TSL2561._control(_POWER_DOWN)
-
-
-    if __name__==&quot;__main__&quot;:
-            main()
-</code></pre>
-
-<p>5.Run the demo.</p>
-<pre><code>    sudo python grove_i2c_digital_light_sensor.py
-</code></pre>
-
-<p>6.Result</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Grovepi_digital_light_sensor_00.png" /></p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link"></a></h2>
-<h3 id="register-map">Register Map<a class="headerlink" href="#register-map" title="Permanent link"></a></h3>
-<p>The TSL2561 is controlled and monitored by sixteen registers (three are reserved) and a command register accessed through the serial interface. These registers provide for a variety of control functions and can be read to determine results of the ADC conversions. The register set is summarised as shown below.</p>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Register.jpg" /></p>
-<h3 id="spectrum-response-curve">Spectrum Response Curve<a class="headerlink" href="#spectrum-response-curve" title="Permanent link"></a></h3>
-<p><img alt="" src="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/img/Spectral_responsivity.jpg" /></p>
-<p>Two channels of the digital light sensor have different response characteristic. That&rsquo;s why you can choose its working mode by having both of them on or one of them off.</p>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/res/Digital_light_sensor_eagle_file.zip">Grove - Digital Light Sensor Eagle File</a>(include printed PDF format files)</li>
-<li><a href="https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor">Library Github Repo</a></li>
-<li><a href="https://github.com/SeeedDoc/WikiMigrationSync/raw/master/docs/assets/Grove-Digital_Light_Sensor/res/TSL2561T.pdf">TSL2561 Datasheet</a></li>
-</ul>
-<!-- This Markdown file was created from http://www.seeedstudio.com/wiki/Grove_-_Digital_Light_Sensor -->
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.research.net/r/Grove-Digital_Light_Sensor" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Grove-EMG_Detector/" class="btn btn-neutral float-right" title="Grove - EMG Detector">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Grove-Digital_Infrared_Temperature_Sensor/" class="btn btn-neutral" title="Grove - Digital Infrared Temperature Sensor"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Grove-Digital_Infrared_Temperature_Sensor/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Grove-EMG_Detector/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+<td width="300"> Grove - Digit light sensor v0.9b
+</td>
+<td width="500"> Initial public release for Grove module
+</td>
+<td width="200">
+</td></tr></table>
+<h2> Resource</h2>
+<p><a href="res/Digital_light_sensor_eagle_file.zip">Grove - Digital Light Sensor Eagle File</a>(include printed PDF format files)<br/>
+</p><p><a href="https://github.com/Seeed-Studio/Grove_Digital_Light_Sensor">Library Github Repo</a><br/>
+<a href="res/TSL2561T.pdf">TSL2561 Datasheet</a>
+</p><p>
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

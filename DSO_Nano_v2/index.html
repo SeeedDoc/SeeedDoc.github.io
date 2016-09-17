@@ -1,0 +1,343 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>DSO Nano v2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>DSO Nano v2</h1>
+
+<p>DSO Nano v2 is a Digital Storage Oscilloscope designed for basic electronic engineering tasks. The device runs on the ARM Cortex™-M3 32 bit platform, providing basic waveform monitoring with extensive functions. It features a 320 x 240 full-color TFT LCD, micro SD card storage slot, portable probes, LiPo Battery, USB connection and signal generator. Its palm size and handy features make it great for in-field diagnosis, quick measurement, and hobbyist projects. Schematics and source code files are also openly available for re-innovating. 
+</p><p>This is an upgraded version of the previous Nano, with multiple improvements. 
+</p><p><br/> <b>What’s new?</b>
+</p>
+<ol><li>Upgraded to steel alloy case for: 
+<ul><li>Mechanical endurance 
+</li><li>Noise shielding 
+</li><li>Easier assembly 
+</li><li>Unibody PCB design for better reliability 
+</li><li>Complete charging circuit with LTC4054 IC 
+</li><li>Dedicated channel for signal generator. 
+</li><li>Extra button for quick-access features 
+</li><li>Fixed battery connector 
+</li><li>Compact size (95mm x 62mm x 13mm, 76g) 
+</li><li>Updated software (something beyond v2.4 is in the works)
+</li></ul>
+</li></ol>
+<p><b>Model: <a href="http://www.seeedstudio.com/depot/dso-nano-v2-p-681.html?cPath=174">TOL131B2P</a></b>
+</p><p><img src="img/Dsonanov2intro.jpg" width="493"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>Portable and lightweight 
+</li><li>Color display 
+</li><li>Waveform storage and playback 
+</li><li>6 triggering modes 
+</li><li>200Khz Analog Bandwidth 
+</li><li>Complete measurement markers and signal characteristics 
+</li><li>Built-in Signal Generator 
+</li><li>Accessories available 
+</li><li>Open Source
+</li></ul>
+<h2>  Cautions  </h2>
+<p>The ground probe of the DSO Nano is connected directly to the ground line of the USB port. This means that, when using the Nano with a PC, the PC's ground will be tied to the measurement target's ground. Do not connect the Nano to a circuit and computer simultaneously unless the computer and circuit share a common ground. 
+</p>
+<h2>  Specifications  </h2>
+<h3>  Key Specs  </h3>
+<table>
+<tr>
+<td width="400px"> Display
+</td>
+<td width="600px"> Full Color 2.8" TFT LCD 65K 320×240
+</td></tr>
+<tr>
+<td> Analog bandwidth
+</td>
+<td> 0 - 200KHz
+</td></tr>
+<tr>
+<td> Max sample rate
+</td>
+<td> 1Msps 12Bits
+</td></tr>
+<tr>
+<td> Sample memory depth
+</td>
+<td> 4096 Point
+</td></tr>
+<tr>
+<td> Horizontal sensitivity
+</td>
+<td> 1uS/Div~10S/Div
+</td></tr>
+<tr>
+<td> Horizontal position
+</td>
+<td> adjustable with indicator
+</td></tr>
+<tr>
+<td rowspan="1"> Vertical sensitivity
+</td>
+<td> 10mV/Div~10V/Div (with ×1 probe)
+</td></tr>
+<tr>
+<td> 0.5V/Div~100V/Div (with ×10 probe)
+</td></tr>
+<tr>
+<td> Vertical position
+</td>
+<td> adjustable with indicator
+</td></tr>
+<tr>
+<td> Input impedance
+</td>
+<td> &gt;500K6
+</td></tr>
+<tr>
+<td> Max input voltage
+</td>
+<td> 80Vpp (by ×1 probe)
+</td></tr>
+<tr>
+<td> Coupling
+</td>
+<td> DCs
+</td></tr>
+<tr>
+<td rowspan="4"> Trig modes
+</td>
+<td> Auto, Normal, Single, None, Scan and Fit
+</td></tr>
+<tr>
+<td> Rising/Falling edge/level trigger
+</td></tr>
+<tr>
+<td> Trig level adjustable with indicator
+</td></tr>
+<tr>
+<td> Trig sensitivity adjustable with indicator
+</td></tr>
+<tr>
+<td rowspan="4"> Waveform Functions
+</td>
+<td> Auto measurement: frequency, cycle time, duty cycle, peak voltage, RMS voltage, Average voltage and DC voltage
+</td></tr>
+<tr>
+<td> Precise vertical measurement with markers
+</td></tr>
+<tr>
+<td> Precise horizontal measurement with markers
+</td></tr>
+<tr>
+<td> Hold/Run
+</td></tr>
+<tr>
+<td> Signal Generator
+</td>
+<td> 10Hz~1MHz square wave
+</td></tr>
+<tr>
+<td> Waveform storage
+</td>
+<td> Micro SD card
+</td></tr>
+<tr>
+<td> PC connection via USB
+</td>
+<td> as SD card reader
+</td></tr>
+<tr>
+<td> Upgrade
+</td>
+<td> USB
+</td></tr>
+<tr>
+<td> Power supply
+</td>
+<td> 500mAh 3.7V Lithium battery / USB
+</td></tr>
+<tr>
+<td> Dimension (w/o probe)
+</td>
+<td> 95mm*62mm*13mm
+</td></tr>
+<tr>
+<td> Weight
+</td>
+<td> 76 gram
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3>  Structure  </h3>
+<p><img src="img/Dsonanov2stru.jpg" width="625"/>
+</p>
+<h3>  Basic Operation  </h3>
+<p><b>Left/Right buttons</b> are mainly used to navigate through menu items. The selected menu item will be highlighted; its corresponding screen element will blink. Press <b>UP/Down buttons</b> to adjust. The <b>OK button</b> controls display/hide markers or confirm operations. 
+</p><p>Pressing <b>A (Run/Stop) Button</b> once will freeze the current display. Press 'A' again to resume. The <b>B (Shift) Button</b> is used for quick functions. 
+</p><p>Throughout this text, adjustable items will be labeled in <span style="color:red;">red</span>. 
+</p><p><img src="img/Dsonanov2-user-interface-1.jpg" width="621"/>
+</p>
+<h3>  User Interface Overview  </h3>
+<p>The screen is broken into a central display area and 3 operation bars around it. The menu on the top provides the most frequently-used adjustments to signal display. The status bar on the bottom provides precise measurement results and monitoring status. Adjust more advanced functions with the column of function icons on the right. 
+</p>
+<h3>  Zooming on Signals  </h3>
+<p>Move the cursor to the <font color="red">Vertical Scale </font>and <font color="red">Time Base</font> to start exploring the signal display. Press the up/down buttons to adjust the voltage/div or time/div. Each “div” is a grid unit "division" of the screen; count the divisions to estimate a quick measurement. The vertical scale ranges from 10mV/div to 10V/div. The time base ranges from 1uS/div to 10S/div. Beware that in the larger time bases the display may look frozen, since 10S/div means it takes 120 seconds to refresh whole the screen (12 divs wide). 
+</p><p>The waveform might be out of the range of the display even in the appropriate voltage/div setting. You can change the Y position to move the waveform up and down to center the wave onscreen. The <font color="red">Y position marker</font> indicates 0V for your reference. 
+</p><p>Press button A to freeze the current display (setting the <font color="red">status</font> to HOLD) and press again to resume refreshing (status RUN). With the status on HOLD, you can select the <font color="red">T0</font> icon and press the up/down buttons to pan back and forth. Press the OK button to display or hide the X position marker (a yellow dotted vertical line). 
+</p>
+<h3>  Triggering Modes  </h3>
+<p>The Nano has six triggering modes, accessible in the top left corner of the screen. These are: 
+</p><p><b>AUTO</b>: Always refresh the display, and synchronize when triggered.<br/> <b>NORM (al)</b>: Display synchronized waveform when triggered, and blank if not triggering.<br/> <b>SING (le)</b>: Display triggered waveform and hold, then blank again before triggering.<br/> <b>SCAN:</b> Repeatedly sweep waveform onscreen left to right.<br/> <b>NONE:</b> Refresh unsynchronized waveform ignoring triggering.<br/> <b>FIT:</b> Automatically adjust vertical and horizontal scale to display waveform.<br/>
+</p>
+<table border="1">
+<caption> Comparison table of the triggering modes
+</caption>
+<tr>
+<th> Mode
+</th>
+<th> Trigger
+</th>
+<th> Display Waveform
+</th>
+<th> Synchronization
+</th>
+<th> Example Applications
+</th></tr>
+<tr>
+<td width="150px"> AUTO
+</td>
+<td width="150px"> Yes
+</td>
+<td width="200px"> Always
+</td>
+<td width="200px"> Yes
+</td>
+<td width="300px"> General use
+</td></tr>
+<tr>
+<td> NORM
+</td>
+<td> Yes
+</td>
+<td> Triggered
+</td>
+<td> Yes
+</td>
+<td> Only watch periodic signals
+</td></tr>
+<tr>
+<td> SING
+</td>
+<td> Yes
+</td>
+<td> Triggered
+</td>
+<td> Auto-hold
+</td>
+<td> Capture a random pulse
+</td></tr>
+<tr>
+<td> SCAN
+</td>
+<td> No
+</td>
+<td> Always
+</td>
+<td> No
+</td>
+<td> Keep monitoring signals
+</td></tr>
+<tr>
+<td> NONE
+</td>
+<td> No
+</td>
+<td> Always
+</td>
+<td> No
+</td>
+<td> Watch an unsynchronized waveform
+</td></tr>
+<tr>
+<td> FIT
+</td>
+<td> Yes
+</td>
+<td> Auto-adjust
+</td>
+<td> Yes
+</td>
+<td> Easily watch periodic signals
+</td></tr></table>
+<p>To set the triggering level, move cursor to <font color="red">Vt = ??.?mV </font>and press the up/down buttons. Press OK to display or hide the trigger level markers (horizontal green dotted lines). To fine tune triggering, you may tweak the trigger sensitivity range <font color="red">TR </font> and the <font color="red">trigger type</font>. By default the trigger type is set to <font color="red">up S</font> which means the trigger will fire when the signal crosses from the lower trigger line to the higher line. <font color="red">Down S </font>will likewise trigger on a falling signal edge. 
+</p><p>This could prevent mistaken triggering caused by noise, especially while measuring fast low-amplitude signals. If you set the sensitivity to 0, where the two trigger level markers overlap each other, you get level triggering. Please refer to <a href="http://en.wikipedia.org/wiki/Oscilloscope#Triggered_sweeps">Wikipedia for more informaiton on oscilloscope triggering</a>. 
+</p>
+<h3>  Measurement  </h3>
+<p><img src="img/Dsonanov2measurement.jpg" width="621"/>
+</p><p>Auto measurement is useful for quickly exploring signal characteristics. Measurement options include frequency, cycle time, duty cycle, peak voltage, RMS voltage, average voltage and DC voltage. Please note that frequency, cycle time and duty cycle can only be measured while triggering. 
+</p><p>To get a more precise measurement, use the measurement markers. T2 and T1 control the time markers, the two vertical dotted lines. A precise time difference between two marker positions is displayed in "time measure" near bottom of the screen. The V1 marker and V2 marker can be adjusted directly from the "voltage measure" result panel ("V1-V2=? V") at the bottom center of the screen. 
+</p><p>Pressing the OK button in a menu item will hide or show the corresponding line onscreen. 
+</p>
+<h3>  Waveform Storage  </h3>
+<p><i><font color="red">Please note : For the device with firmware app2.6, it is not necessary to the execute the third step .</font></i>
+</p><p>Waveforms can be saved to an SD card or loaded to the display. You need a microSD card to do this (not included). Please note that SDHC cards (high-speed cards larger than 2 GB) are not supported for now. Follow the below steps to set up your microSD card: 
+</p>
+<ol><li>Make sure your SD card supports SPI mode. (Most SDHC cards over 2GB do not. 
+</li><li>Format your SD card with the FAT16 filesystem. 
+</li><li>Create a new file named FILEXXX.DAT in your SDcard root (file size must be bigger than 1KB). Or directly download <a href="res/SrcFileForSave.zip">SrcFileForSave</a> and uncompress it into SD card root.
+</li></ol>
+<p>When the microSD card is prepared, the <b>FS</b> (file save) and <b>FL</b> (file load) icons are enabled. Press the OK button on <b>FS</b> to save a waveform, or on <b>FL</b> to load the waveform from the microSD card.<br/>
+</p>
+<h3>  Signal Generator  </h3>
+<p>The 3.5mm audio jack under the mini USB port is used for the signal generator. It outputs a square wave from 10Hz to 1MHz. Frequency can be adjusted via Fo ("frequency out"). The peak voltage is the same as the supplied power, or approximately 3.7v if powered from battery, and 5v when powered by USB. 
+</p>
+<h3>  Power Supply  </h3>
+<p>The DSO Nano can be powered by the internal 500mAh LiPo battery or by the external mini-USB port. Charging takes about 2 hours 20 minutes to reach 4.12V. A brand-new unit can only run about 1 hour by battery, but the battery life will be extended after the LiPo battery is fully charged. 
+</p><p><img src="img/Dsonanov2-charging.JPG" width="600"/>
+</p>
+<h3>  Firmware and Upgrades  </h3>
+<h4>  DSO Nano firmware update methods(App Ver2.4 and below)  </h4>
+<p>    1. Download "<a href="http://www.st.com/internet/com/SOFTWARE_RESOURCES/SW_COMPONENT/SW_FUNCTION/steval-mki062v2_sw_dfuse_v3_0_1.zip">DfuSe USB Device Firmware Upgrade</a>" and install . On Linux and Mac OS X you cuold use <a href="/Dfu-util">dfu-util</a>(0.5 or newer). 
+</p><p>    2. Use USB cable connect DSO Nano with PC, press and hold down key, switch on power, untill DSO Nano displays "Please Connect to USB Host, DSO201 Device Firmware Upgarde Ver 2.0". If it is the first time connection, it will be prompted to install device drivers. You could find the corresponding driver in the "ST official development kit program" installation directory. In the default installation directory path"C:\ProgramFile\STMicroelectronics\Software\DfuSe\Driver\x86" When PC connection is detected, it will display "Firmware Upgrading...Please Wait". 
+</p><p>    3. Run "Dfuse Demo" on PC, check "Verify after download", check "Choose" to select firmware, check "Upgarde"to upload firmware.(e,g "DS0201_APP_V2.40.dfu"."DS0201_LIB_V2.2.dfu").Please note that both APP firmware and LIB firmware files needs to be programmed while upgarding.<br/>
+</p><p>    4. Shut down and reactivate power to use new firmware. 
+</p><p>    <img src="img/DfuSe_Demo-v3-.png" width="577"/>
+</p>
+<h4>  DSO Nano <b>firmware </b>update methods(App Ver2.6):  </h4>
+<p>    1. Use USB cable connect DSO Nano with PC, press and hold down key, switch on power, DSO Nano will display "Device Firmware Upgrade V3.22A. Please copy Hex or Bin file to the DFU virtual USB disk". Wait till PC detects DFU virtual USB disk. 
+</p><p>    2. Download the DSO Nano firmware, copy both of hex files into DFU virtual USB disk(e.g"201AP263.hex"."LIB_A227.hex"). Wait till it change to "LIB_A227.err"  and "201AP263.rdy". 
+</p><p>    3. Shut down and reactivate power to use new firmware.<br/>
+</p><p><font color="red"><i>Please note different device of Dfu corresponse different firmware , please download corresponsing firmware of your device in Resourses.</i></font><br/>
+</p>
+<h2>  FAQ  </h2>
+<ul><li>What is the maximum input voltage when using a 10x probe on the DSO Nano v2?
+</li></ul>
+<p><b>  </b>The maximum input voltage could be 80Vpp. So when using a 10x probe on the Nano DSO, it could be 800 Vpp. However, we did not test that, and we are not responsible for any damage and injury because of measuring high voltage.<br/>
+</p>
+<ul><li>What is the difference between APP Ver2.6 and APP Ver2.4 ?
+</li></ul>
+<p>  Firmware for APP Ver2.4 and APP Ver2.6 are different files in format. Firmware for APP Ver2.4 of LIB format suffixe is compatible with Nano which with DFU Ver2.0. Firmware for APP Ver2.6 of HEX format suffixe is compatible with Nano which with DFU Ver3.0. Besides, APP Ver2.6 is more humanized, you could directly save wavaform to SD Card as file in DAT format or PNG format.  
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="http://www.seeedstudio.com/depot/datasheet/DSO%20Nano%20v2%20Manual.pdf">DSO Nano v2 Manual v0.91B</a>
+</li><li><a href="res/DSO_Nano_V2.6_VCT_PCB_Layout.pdf">DSO Nano Hardware v2.6 Layout.pdf</a>
+</li><li><a href="res/DSO_Nano_V2.6_VCT_Schematic.pdf">DSO Nano Hardware v2.6 Shcematic.pdf</a>
+</li></ul>
+<h3>  Firmware(.dfu files) for DSO Nano of DFU Ver2.0:  </h3>
+<ul><li><a href="res/DSO_Nano_2.4_firmware.zip">DSO Nano Official Firmware App2.4</a>      
+</li><li><a href="res/DSO_BenF_Firmware_v3.64.zip">BenF Firmware v3.64</a>   Thank <b>Benf </b>for sharing this great firmware.
+</li></ul>
+<h3>  Firmware(.hex files) for DSO Nano of DFU Ver3.22  </h3>
+<ul><li><a href="res/DSO_Nano_2.6_firmware.zip">DSO Nano Official Firmware App2.6</a>   
+</li><li><a href="res/BenF364_LIB353.zip">BenF Firmware v3.64</a>   Thank <b>Benf </b>for sharing this great firmware and <b>Alf </b>arranging it to work with DFU Ver3.22
+</li></ul>
+<h2>  External Links  </h2>
+<ul><li><a href="http://www.seeedstudio.com/forum/viewforum.php?f=22">DSO Nano On SeeedStudio Forum</a>
+</li><li><a href="http://www.minidso.com/bbs/thread.php?fid=6">Pocket Oscilloscope-DS0201 forum</a>
+</li><li><a href="http://www.minidso.com/bbs/read.php?tid=216">Firmware Update Released</a> 
+</li></ul>
+<p><i><font color="red">Please note that firmwares on the above link is only support DSO Nano with DFU Ver3.0 , don't use this firmware to upgrade DSO Nano with DFU Ver2.0 or lower.</font></i>
+</p>
+<h2>  How to buy  </h2>
+<ul><li>Click here to buy : <a href="http://www.seeedstudio.com/depot/dso-nano-v2-p-681.html?cPath=174">DSO Nano v2</a>
+</li></ul>
+<h2>  See Also  </h2>
+<ul><li><a href="/DSO_Nano" title="DSO Nano">DSO Nano</a>
+</li><li><a href="/DSO_Nano_v1" title="DSO Nano v1">DSO Nano v1</a>
+</li><li><a href="/DSO_Quad" title="DSO Quad">DSO Quad</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

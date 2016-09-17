@@ -1,0 +1,547 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>FST-01</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>FST-01</h1>
+
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><img src="img/FST-01_board.jpg" width="180"/> <div class="thumbcaption"></div></div></div>
+<p>FST-01 is a tiny USB 32-bit computer.  In fact, FST-01 is an abbreviation and its full name is "Flying Stone Tiny ZERO-ONE". 
+</p><p>It is designed by Flying Stone Technology, a company in Maebashi, Gunma, Japan. 
+</p><p>The concept is "Minimalist Design".    It is by free (as in freedom) hardware design.  The intended applications are Gnuk (The Cryptographic Token for GnuPG) and NeuG (True Random Number Generator based on ADC noise).  Those applications are Free Software.
+</p><p>Flying Stone Technology is a second source manufacturer of "Gnuk", which is copyrighted by the Non-Profit organization, Free Software Initiative of Japan.
+</p><p>For those who want rich features, please consider <a href="/Leaf_Maple-Cortex_M3" title="Leaf Maple (Cortex M3)">Leaf Maple</a> or <a href="http://www.seeedstudio.com/depot/maple-mini-p-861.html">Maple Mini</a>, instead.
+</p>
+<pre>
+                        SWD port
+                        (GND, SWD-CLK, SWD-IO)
+    Power port +---------------------+
+           Vdd |[]           []()() -------+
+           GND |[]                  |      |
+               |()() I/O port       | USB  |
+               |      (PA2, PA3)    |      |
+               |                    -------+
+               +---------------------+
+</pre>
+<p>Please use <a href="http://no-passwd.net/askbot/questions/">FST-01 Q&amp;A site</a> for your questions.
+</p>
+<h2>  Applications  </h2>
+<p>As explained in the section above, we intend to run <a href="http://www.fsij.org/gnuk/">Gnuk</a> on FST-01.  It is copyrighted software distributed under <a href="/w/index.php?title=GPLv3&amp;action=edit&amp;redlink=1" title="GPLv3 (page does not exist)">GPLv3</a> license.
+</p><p><img src="img/Gnuk-sticker.png" width="248"/>
+</p><p>Gnuk is an implementation of Cryptographic Token for GnuPG, and it runs on STM32F103.  Source code is available at gniibe.org or gitorious.org.  FOr source code, please visit: <a href="https://gitorious.org/gnuk/gnuk/trees/release/1.0.1">https://gitorious.org/gnuk/gnuk/trees/release/1.0.1</a>
+</p><p>For more information about Gnuk, please visit: <a href="https://gitorious.org/gnuk/pages/Home">Gnuk WiKi</a> and <a href="http://www.fsij.org/doc-gnuk/">Official Gnuk Documentation</a>.
+</p><p>Also, we intend to run NeuG on FST-01.
+</p><p><img src="img/NeuG.png" width="248"/>
+</p><p><a href="http://www.gniibe.org/memo/development/gnuk/rng/neug">NeuG</a> is an implementation of True Random Number Generator based on quantization error of ADC.
+</p><p>Note that only an application can be installed on FST-01 (either Gnuk or NeuG).
+</p>
+<h3>  Development Environment </h3>
+<p>For Gnuk 1.0.1, we use <a href="https://launchpad.net/gcc-arm-embedded/+milestone/4.6-2012-q2-update">GCC ARM Embedded 4.6-2012-q2</a>.
+</p>
+<h3>  For the first lot of FST-01 </h3>
+<p>In this product, it contains copyrighted software, Gnuk version 1.0.1, that is licensed under the GPLv3. A copy of that license is included in this WiKi, see <a href="/w/index.php?title=GPLv3&amp;action=edit&amp;redlink=1" title="GPLv3 (page does not exist)">GPLv3</a>.
+You may obtain the complete Corresponding Source code for a period of three years after the last shipment of this product, which will be no earlier than 2016-01-01, on the manufacturer website at <a href="http://git.gniibe.org/gitweb/?p=gnuk/gnuk.git">http://git.gniibe.org/gitweb/?p=gnuk/gnuk.git</a> and we put the tag "release/1.0.1" for the version of the product.
+</p><p>Note that Gnuk binary in the first lot of FST-01 was compiled with "-O3 -Os" option by GCC ARM Embedded 4.6-2012-q2.
+</p>
+<h3>  Mailing list for Gnuk/NeuG </h3>
+<p>We have a mailing list for Gnuk/NeuG: <a href="https://lists.alioth.debian.org/mailman/listinfo/gnuk-users">https://lists.alioth.debian.org/mailman/listinfo/gnuk-users</a>
+</p><p>As well as git.gniibe.org, the source code repositories are available at : <a href="https://anonscm.debian.org/cgit/gnuk/">https://anonscm.debian.org/cgit/gnuk/</a>
+</p>
+<h2>  Writing flash ROM of MCU  </h2>
+<p>We use SWD port to write flash ROM of MCU. Since SWD is a kind of new, there is not yet good hardware and software experiences. 
+</p><p>We select ST-Link/V2 for cheap SWD debugger and wrote our own tool stlinkv2.py in Python. The tool stlinkv2.py is distributed within Gnuk.  See <a href="http://www.gniibe.org/memo/development/fst-01/dongle/fst-01-swd-connection">this article</a> for the connection of ST-Link/V2 and FST-01.
+</p><p>Forthcoming OpenOCD 0.6.0 will support ST-Link/V2 and SWD.  You will be able to use that, too.
+</p><p><br/>
+</p>
+<h2>  Products available at Seeed Bazaar (From end of September 2012)  </h2>
+<ul><li> <a href="http://www.seeedstudio.com/depot/fst01-without-enclosure-p-1276.html">FST-01 without enclosure</a>
+</li></ul>
+<ul><li> <a href="http://www.seeedstudio.com/depot/fst01-with-heat-shrink-tube-p-1277.html">FST-01 with heat shrink tube </a>
+</li><li> <a href="http://www.seeedstudio.com/depot/fst01-with-white-enclosure-p-1279.html">FST-01 with case (P1A-120704U)</a>
+</li></ul>
+<p>Prices will be 35, 36, and 37 USD, respectively.
+</p><p>It is also available at Flying Stone Technology (飛石技術), person to person.  See <a href="http://www.gniibe.org/shop/buy-fst-01">Buy FST-01!</a> page at gniibe.org (in Japanese).
+</p>
+<h3>  Description </h3>
+<blockquote>
+FST-01 is minimum STM32F103 board, which is suitable to run computation-oriented applications like <a href="http://www.fsij.org/gnuk/">Gnuk</a>.
+
+<ul><li> Dimensions: 1.62 x 0.52 inch (including USB plug)
+</li><li> USB Bus Powered
+</li><li> MCU: 32-bit ARM Cortex M3 at 72MHz (STM32F103TBU6), flash ROM: 128KB, RAM: 20KB
+</li><li> SPI Flash Memory: 4MB
+</li><li> SWD port, Two I/O pins
+</li><li> Content of Flash ROM of MCU: As a side effect of test plan, FST-01 comes with Gnuk version 1.0.1 installed on the flash ROM of MCU and it is protected.  You need to disable the protection before writing the flash ROM.
+</li></ul>
+
+Please visit <a href="/index.php-title=FST-01">this page</a> for detail.
+
+<h3>  FST-01 without enclosure </h3>
+<p>This is a bare board for evaluation, development or those who want their own enclosures.
+</p><p>You can access SWD port and change the content of flash ROM.
+</p>
+<h3>  FST-01 with heat shrink tube </h3>
+<p>The board is covered by transparent heat shrink tube.
+Thus, it is not possible to access SWD port.
+</p><p>This can be daily use as Gnuk Token.
+</p><p><br/>
+</p>
+<h3>  FST-01 with case (P1A-120704U) </h3>
+<p>The board comes with the case.  Note that it is users who put the board to the case.
+</p><p>This would be better if transparent tube doesn't match your taste or you want to change the content of flash ROM of MCU.
+</p><p>Although FST-01 PCB is designed following the recommendation of P1A-120704U specification,
+the case might be a bit larger and you will need a bit of glue to fit the board and the case.
+Otherwise, the board will be able to move a bit (&lt; 1mm or so).
+</p>
+</blockquote>
+<h2>  History  </h2>
+<ul><li>2011-08-06: <a href="http://www.gniibe.org/memo/development/fst-01/fst-01-idea">Idea</a>
+</li><li>2011-08-08: Initial commit to <a href="http://www.gniibe.org/gitweb?p=fst-01.git">FST-01 Git repository</a>
+</li><li>2011-08-23: Fusion PCB order for prototype PCB: #33163
+</li><li>2011-08-26: <a href="http://www.seeedstudio.com/wish/?p=783">Wish for FST-01</a>
+</li><li>2011-09-06: Fusion PCB order for prototype PCB: #34012
+</li><li>2011-09-13: Fusion PCB order for prototype PCB: #34217
+</li><li>2011-09-30: Fusion PCB order for prototype PCB: #35421
+</li><li>2011-10-27: Fusion PCB order for prototype PCB: #37126
+</li><li>2011-11-14: Version 1.0 of FST-01 PCB Design released
+</li><li>2012-07-10: Submitted to Propagete
+</li><li>2012-08-??: Placed the order for production
+</li><li>2012-09-27: Production finish for the first lot
+<ul><li> For the first lot, XTAL is changed to one with 20pF load capacitance. (Because of availability of the part.)
+</li><li> For the first lot, content of flash ROM of MCU is Gnuk 1.0.1 and it's protected.
+</li></ul>
+</li><li>2012-10-08: Start selling at Seeed Bazaar
+</li><li>2015-04-01: Start selling at FSF Shop, with NeuG installed: <a href="http://shop.fsf.org/product/usb/">http://shop.fsf.org/product/usb/</a>
+</li></ul>
+<h2>  Free (as in freedom) Board Design  </h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><img src="img/Fst-01-schematic.png" width="180"/> <div class="thumbcaption">Fst-01-schematic.png</div></div></div>
+<p>The board design is available as <a href="http://www.kicad-pcb.org/">KiCAD</a> format. Please visit <a href="http://git.gniibe.org/gitweb?p=gnuk/fst-01.git">FST-01 Git repository</a>. 
+</p><p>The schematic design is distributed under Creative Commons Attribution 3.0 Unported License (CC BY 3.0). 
+</p><p>The PCB design is distributed under Creative Commons Attribution-ShareAlike 3.0 Unported License (CC BY-SA 3.0).
+</p>
+<h2>  BOM of FST-01 </h2>
+<table border="1" cellspacing="0">
+<caption> BoM of FST-01
+</caption>
+<tr>
+<th> Part #
+</th>
+<th> Name
+</th>
+<th> Detail
+</th>
+<th> Package
+</th>
+<th> Manufacturer
+</th>
+<th> Distributor
+</th>
+<th> distributor reference
+</th></tr>
+<tr>
+<td> C1
+</td>
+<td> Capacitor
+</td>
+<td> 27pF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C2
+</td>
+<td> Capacitor
+</td>
+<td> 27pF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C3
+</td>
+<td> Capacitor
+</td>
+<td>0.1uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C4
+</td>
+<td> Capacitor
+</td>
+<td> 0.1uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C5
+</td>
+<td> Capacitor
+</td>
+<td> 0.1uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C6
+</td>
+<td> Capacitor
+</td>
+<td> 0.1uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C7
+</td>
+<td> Capacitor
+</td>
+<td> 0.1uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C8
+</td>
+<td> Capacitor
+</td>
+<td> 4.7uF
+</td>
+<td> C0603
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C9
+</td>
+<td> Capacitor
+</td>
+<td> 0.01uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C10
+</td>
+<td> Capacitor
+</td>
+<td> 4.7uF
+</td>
+<td> C0603
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> C11
+</td>
+<td> Capacitor
+</td>
+<td> 0.1uF
+</td>
+<td> C0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> R1
+</td>
+<td> Resister
+</td>
+<td> 510R
+</td>
+<td> R0402
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> D1
+</td>
+<td> LED
+</td>
+<td> Blue
+</td>
+<td> LED0603
+</td>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr>
+<td> J1
+</td>
+<td> Connector
+</td>
+<td> USB 2.0, 1002-015-01001
+</td>
+<td> USB Plug A Male
+</td>
+<td> CNC Tech
+</td>
+<td> Digikey
+</td>
+<td> 1175-1020-ND
+</td></tr>
+<tr>
+<td> U1
+</td>
+<td> MCU
+</td>
+<td> STM32F103TBU6
+</td>
+<td> QFN36
+</td>
+<td> ST Microelectronics
+</td>
+<td> AVNET
+</td>
+<td> STM32F103TBU6
+</td></tr>
+<tr>
+<td> U2
+</td>
+<td> LDO V-Regulator
+</td>
+<td> CAT6217-330TDGT3 +3.3V
+</td>
+<td> TSOT23-5
+</td>
+<td> ON Semiconductor
+</td>
+<td> Mouser
+</td>
+<td> 698-CAT6217330TD-G
+</td></tr>
+<tr>
+<td> U3
+</td>
+<td> USB Terminator
+</td>
+<td> NUF2221W1
+</td>
+<td> SOT363
+</td>
+<td> ON Semiconductor
+</td>
+<td> Digikey
+</td>
+<td> NUF2221W1T2GOSTR-ND
+</td></tr>
+<tr>
+<td> U4
+</td>
+<td> SPI Flash Memory
+</td>
+<td> SST25VF032B-80-4I-QAE-T
+</td>
+<td> WSON8
+</td>
+<td> Silicon Storage Technology
+</td>
+<td> Digikey
+</td>
+<td> SST25VF032B-80-4I-QAE-T-ND
+</td></tr>
+<tr>
+<td> X1
+</td>
+<td> Crystal
+</td>
+<td> ABM8G-12.000MHZ-18-D2Y-T
+</td>
+<td> 3.2mmx2.5mm
+</td>
+<td> Abracon Corporation
+</td>
+<td> Digikey
+</td>
+<td> 535-10261-2-ND
+</td></tr>
+<tr>
+<td>
+</td>
+<td> Enclosure
+</td>
+<td> P1A-120704U  White
+</td>
+<td> 1.2 x .71 x .40 inch
+</td>
+<td> New Age Enclosures
+</td>
+<td>
+</td>
+<td>
+</td></tr></table>
+<h2>  Components of FST-01  </h2>
+<ul><li>STM32F103TB 
+</li><li>SPI Flash memory (32Mbit) 
+</li><li>USB Terminator 
+</li><li>LDO Regulator (3.3V) 
+</li><li>12MHz XTAL C<sub>L</sub>=18pF
+</li><li>LED 
+</li><li>SWD Port of GND/SWDIO/SWDCLK 
+</li><li>Extension port of VDD/GND/Port0/Port1 
+</li><li>USB plug A
+</li></ul>
+<h3>  STM32F103TB  </h3>
+<p>MCU is Cortex-M3 based ARM by STMicroelectronics.  It runs at 72MHz, it has 128KB flash ROM and 20KB RAM. 
+</p>
+<h3>  SPI Flash memory  </h3>
+<p>Secret data should be on MCU's flash, but non confidential data (such as backup of public keyring) can be on SPI flash memory. 
+</p><p>We use SST25VF032B (32Mbit = 4MB). 
+</p>
+<h3>  USB Terminator  </h3>
+<p>We use NUF2221W1 USB Upstream Terminator. 
+</p><p>This is because it has the feature of electrostatic discharge protection.  It is also better for smaller footprint than two capacitors and two resistors. 
+</p>
+<h3>  LDO Regulator  </h3>
+<p>We use CAT6217-330 for 3.3V Regulator (from 5V).  Currency of 150mA is enough. 
+</p>
+<h3>  XTAL 12MHz C<sub>L</sub>=18pF  </h3>
+<p>We use 12MHz XTAL C<sub>L</sub>=18pF. 
+</p><p>This is because we can find smaller footprint XTAL for 12MHz (than 8MHz). 
+</p>
+<h3>  LED  </h3>
+<p>We use a LED to show status. 
+</p>
+<h3>  SWD port  </h3>
+<p>SWD port is to install firmware to MCU's flash ROM. 
+</p>
+<h3>  Extension port of VDD/GND/Port0/Port1  </h3>
+<p>We decided to have two I/O pins. (One I/O pin is not enough even for minimalist.) 
+</p><p>With two I/O pins, it can be: 
+</p>
+<ul><li>TX and RX of serial communication 
+</li><li>Drive and input of touch sensor 
+</li><li>Controlling other MCU's SWD port
+</li></ul>
+<h3>  USB plug A  </h3>
+<p>FST-01 usage is just connect it to USB port, like USB thumb drive.
+</p>
+<h2>  Possible Changes to the circuit and parts </h2>
+<h3>  LDO Regulator </h3>
+<p>MCP1700T-330 would be alternative (electrical characteristic seems worse, but for the case of more current).  In this case, we need to change circuit a bit.
+</p>
+<h3>  XTAL </h3>
+<p>It is possible to just replace XTAL with 12MHz XTAL C<sub>L</sub>=20pF.
+This change is within the margin of the design.
+</p><p>It would be better to also replace C1 and C2 to 33pF together in that case, if you will do that from the beginning.
+</p><p>See <a href="http://en.wikipedia.org/wiki/Pierce_oscillator#Load_capacitance">explanation about load capacitance in Wikipedia</a>.
+</p>
+<h3>  Shield GND to Signal GND </h3>
+<p>FST-01 is intended to be inserted to USB port directly.
+If the usage is not direct but connected by extension cable, it is better to connect Shield GND and Signal GND by resister (and capacitor if you like).
+</p><p>Reference: 
+<a href="http://electronics.stackexchange.com/questions/4515/how-to-connect-usb-connector-shield">http://electronics.stackexchange.com/questions/4515/how-to-connect-usb-connector-shield</a>
+</p>
+<h3>  USB_EN </h3>
+<p>USB_EN is not needed, but pin 5 of NUF2221W1 can be connected to 3.3V (Vdd) directly.
+</p><p>In many designs of boards with STM32F103, we see something like that, but because it is possible to control USB D+ to be 0V by software, USB_EN is not needed.
+</p>
+<h3>  No SPI flash memory by default </h3>
+<p>The size is somewhat too small to be useful, so, it could be a special users' option and no chip would be OK by default.
+</p>
+<h2>  PCB images </h2>
+<p>PCB images are generated by <a href="http://projects.qi-hardware.com/index.php/p/eda-tools/source/tree/master/fab/prettygerbv">prettygerbv</a>.
+</p>
+<ul class="gallery">
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:44.5px auto;"><img src="img/Fst-01-front.png" width="120"/></div></div>
+<div class="gallerytext">
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:44.5px auto;"><img src="img/Fst-01-back.png" width="120"/></div></div>
+<div class="gallerytext">
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:44.5px auto;"><img src="img/Fst-01-conn.png" width="120"/></div></div>
+<div class="gallerytext">
+</div>
+</div></li>
+</ul>
+<h2>  Engineering Prototype of FST-01  </h2>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><img src="img/FST-01-Prototype-PCB.jpg" width="180"/> <div class="thumbcaption">FST-01-Prototype-PCB.jpg</div></div></div>
+<p>Thanks to Fusion PCB service, we made PCB of FST-01 Engineering Prototype. 
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><img src="img/FST-01-prototype.jpg" width="180"/> <div class="thumbcaption"></div></div></div>
+<p>PCB Assembly was done by <a href="/User-Gniibe" title="User:Gniibe">User:Gniibe</a> by hand.  See <a href="http://www.gniibe.org/memo/development/fst-01/qfn-diy-soldering">my article</a> for detail.
+</p><p><br/>
+</p>
+<h2>  Test plan outline  </h2>
+<ol><li>Check MCU ID 
+</li><li>Write to flash ROM of MCU 
+</li><li>Check LED blinking 
+</li><li>Check SPI Flash ROM access 
+</li><li>Run an application which uses USB and see if it works (Hub assigning address)
+<ol><li>On power up (or reset), LED emits light.
+</li><li>FST-01 application waits for USB address assignment by USB Hub. (It takes a few seconds for Hub to detect and to assign address to the device.)
+</li><li>After USB address assignment, FST-01 application goes enter the loop
+<ol><li>waiting 5 seconds
+</li><li>blink LED (emits lights for 25ms,off 200ms).
+</li></ol>
+</li></ol>
+</li></ol>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,960 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Ethernet Shield V2.4</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Ethernet Shield V2.4</h1>
+<h2>  Overview </h2>
+<p>The Seeeduino V2.4 Ethernet shield can be used to provide your projects with internet connectivity. The shield features the W5200 Ethernet controller to support up to eight simulatneous TCP/UDP connections. The shield also has a microSD card slot to support projects which require storing large amounts of data for Internet of Things (IoT) applications. The RJ45 port (Where the Ethernet cable is connected to) is low enough to allow you to stack more shields on top of this one if needed.
+</p><p><a href="http://www.seeedstudio.com/depot/W5200-Ethernet-Shield-p-1577.html">Product Page: W5200 Ethernet Shield V2.4</a>
+</p>
+<h2>  Specification </h2>
+<ul><li> High speed Ethernet controller - W5200
+</li><li> SPI interface
+</li><li> 32 Kbytes inner buffer
+</li><li> Minimal RJ45 Ethernet port
+</li><li> Supports up to eight simultaneous TCP/UDP connections
+</li><li> microSD card socket for data intensive projects
+</li><li> Grove ports for I2C and UART
+</li></ul>
+<h2>  Shield Interface and Components </h2>
+<h3>  Overview </h3>
+<p>See the text below the image for a description of the components highlighted in the Ethernet shield.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:479px;"><img src="img/Ethernet_shield_v2_4_interface.png" width="477"/> <div class="thumbcaption">Ethernet shield interface/components top side</div></div></div></div>
+<p><br/>
+</p>
+<ol>
+<li><b>Ethernet port RJ45:</b> This is where you connect the Ethernet cable to the shield.</li>
+<li><b>PWR(Power) LED:</b> is lit up green when the shield is receiving power from a source.</li>
+<li><b>SW1:</b> Reset switch, resets the W5200 Ethernet controller and Arduino/Seeeduino board.</li>
+<li><b>W5200 Ethernet controller:</b> This chip is what makes the TCP/IP communication possible. The SPI pins MOSI, MISO, SCK, and CS/SS of this chip are connected to digital pins 11, 12, 13, and 10 respectively.</li>
+<li><b>I2C and UART grove connectors:</b> The UART connector is connected to digital pin 0 and 1 for RX and TX respectively. The I2C connector is connected to Analog pins 5 and 4 (bottom right of the siheld) for SCL and SDA as well as the pins SCL and SDA (top left of the shield).</li>
+<li><b>microSD card socket:</b> A microSD card socket for projects that require memory storage. The SPI pins MOSI, MISO, SCK, and CS/SS of this socket are connected to digital pins 11, 12, 13, and 4 respectively.</li>
+<li><b>ICSP Connector:</b></li>
+</ol>
+<h3>  Pins Used / Shield Compatibility </h3>
+<p><b>SPI Pins:</b>
+</p><p>The Ethernet shield uses digital pins 11, 12, 13, 10, and 4 for SPI communication with the W5200 Ethernet controller and SD card. Therefore, the shield is compatible with any other shield that does not use pins 10, and 4 in this regard.
+</p><p><b>I2C and UART Pins:</b>
+</p><p>The shield does not make use of this pins but provides easy access to them via the Grove connectors and pins described the Overview section above.
+</p><p><b>Power Pins:</b>
+</p><p>The shield is powered from the Vin, and 5V pins of the Arduino.
+</p><p><b>Reset Pin:</b>
+</p><p>The RST pin is used by the SW1 switch, pressing this switch will reset both the W5200 Ethernet controller and Arduino board.
+</p>
+<h2>  Seeeduino Ethernet Library </h2>
+<p>The library for this Ethernet shield's is the same as the Arduino's Ethernet library with the difference that we have replaced the W5100.h/cpp and socket.h/cpp files and references with versions that work with the newer W5200 controller which is what our shield has.
+</p>
+<h3>  Setup </h3>
+<ol><li> <a href="https://github.com/Seeed-Studio/Ethernet_Shield_W5200">Goto github and download the W5200 Ethernet Shield's library</a>.
+</li><li> Unzip the downloaded file and paste the folder into your …/arduino/libraries/ folder.
+</li><li> Start the Arduino IDE (or restart if it is open).
+</li></ol>
+<h3>  Usage </h3>
+<p>In addition to the various examples/applications we provide in this WiKi you may check out the Arduino's <a href="http://arduino.cc/en/Reference/Ethernet">"Ethernet library" reference page</a> for a detail description of the classes and functions the library offers.
+</p>
+<h2>  SD Card Library </h2>
+<p>As described in the "Overview" section of this WiKi, the Seeeduino Ethernet shield incorporates a microSD card port for storage/data intensive projects. The shield uses the SPI port to communicate with the microSD and is therefore compatible with the <a href="http://arduino.cc/en/Reference/SD">Arduino's SD card library</a> on pin 4 for chip select (CS).
+</p>
+<h3>  Setup </h3>
+<p>The SD card library is already installed with the Arduino IDE in the arduino/libraries folder.
+</p>
+<h2>  Ethernet Shield Examples/Applications </h2>
+<h3>  Example 1: How To Connect To an Internet Access Point / Router </h3>
+<h4>  Let The Access Point Automatically Assign an IP Address </h4>
+<p>The code below is the basic code needed to connect to an internet router or access point. The access point will automatically assign an IP address to Ethernet shield upon connection.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;EthernetV2_0.h&gt;</span>
+ 
+<span class="co1">// Enter a MAC address for your controller below.</span>
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> 
+  <span class="nu12">0xDE</span>, <span class="nu12">0xAD</span>, <span class="nu12">0xBE</span>, <span class="nu12">0xEF</span>, <span class="nu12">0xFE</span>, <span class="nu12">0xED</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// CS pin of W5200 Controller</span>
+<span class="co2">#define W5200_CS  10</span>
+<span class="co1">// CS pin of SD card</span>
+<span class="co2">#define SDCARD_CS 4</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// Open serial communications and wait for port to open:</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// The SD card and ethernet controller use the same SPI port.</span>
+  <span class="co1">// We need to make sure that the SD card is deselected by setting the SD card CS pin to HIGH</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//Deselect the SD card</span>
+  <span class="co1">// loop until we get a connection</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac<span class="br0">)</span><span class="sy1">==</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"DHCP configuration failed"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="co1">// connected to router.</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"DHCP configuration succeeded"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="me1">localIP</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Display the Ethernet shield's local IP address</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h4>  Use The IP Address You Want </h4>
+<p>Instead of letting the access point automatically assign a local IP address to your shield we can define the IP address:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">IPAddress ip<span class="br0">(</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>, <span class="nu0">177</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><br/>
+and pass this value to the "begin" function:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac, ip<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>There are some caveats to assigning your own defined IP address however: 
+</p>
+<ul>
+<li>The IP address you select is required to be within the range of the IP address values your internet router or access point allows. You can find this range in your access point's local network webpage, in some routers this will be under "DHCP Server Settings"'s "Start IP Address" and "End IP Address". </li>
+<li>This version of the "begin" function returns a void value, so you cannot check if the DHCP connection was successful.</li>
+</ul>
+<p><b>How To Find Your Router's Page</b>
+</p>
+<ol>
+<li>In Windows 7, click the start button and search for "Network".</li>
+<li>Click on "Network" to open the "Network Page"</li>
+<li>Your internet router should be listed under "Networ Infrastructure"</li>
+<li>Right click in your router then select "View device webpage"</li>
+<li>Your web browser should open and present you with the router's settings webpage.</li>
+</ol>
+<h3>  Example 2: Shield as Web Server </h3>
+<p>In this example we will show you how to use the Ethernet shield to serve a webpage to a web browser or any other device that requests it.
+</p><p>In the Arduino code we will create a server on port 80 (commonly used for HTTP), and when you visit the shield's IP address on a web browser/client (e.g. Google Chrome, Firefox, Internet Explorer, Safari) the shield will respond back to the browser with a webpage.
+</p><p><b>HTTP Headers</b>
+</p><p>Let's talk a little bit about what happens in the background communication between the web browser and the Ethernet shield.
+</p><p>When you visit any website or IP address from a web browser the browser sends an HTTP Request to the server (in this case the Ethernet shield). The HTTP Request can vary by browser but a typical request looks like this:
+</p>
+<pre>
+GET / HTTP/1.1\r\n
+Host: mywebserver.com\r\n
+Connection: keep-alive\r\n
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\n
+User-Agent: Chrome/40.0.2214.93 Safari/537.36\r\n
+\r\n
+</pre>
+<p><b>Note: </b>Notice that each of the request's line ends with the two characters "\r\n", commonly known as carriage return (CR) and line feed (LN) respectively. We can use this to our advantage, in the Arduino code we will look for this pattern to know when the browser is done sending this information.
+</p><p>The server (Ethernet shield) will then need to send back an HTTP reply that may look like the following:
+</p>
+<pre>
+HTTP/1.1 200 OK\r\n
+Content-Type: text/html\r\n
+Connnection: close\r\n
+\r\n
+&lt;html&gt;
+&lt;body&gt;
+&lt;h1&gt;Hello World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<p>This is the HTTP reply we'll send back from the Arduino to the web browser. You now know a little about HTTP request and are ready to get started serving webpages from your shield!
+</p><p><br/>
+<b>Arduino Code:</b>
+</p><p>Stack the Ethernet shield on the Arduino and upload the code below to it.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;EthernetV2_0.h&gt;</span>
+ 
+<span class="co1">// define the controller's MAC address</span>
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> 
+  <span class="nu12">0xDE</span>, <span class="nu12">0xAD</span>, <span class="nu12">0xBE</span>, <span class="nu12">0xEF</span>, <span class="nu12">0xFE</span>, <span class="nu12">0xED</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// set the server at port 80 for HTTP</span>
+EthernetServer server<span class="br0">(</span><span class="nu0">80</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// Ethernet controller SPI CS pin</span>
+<span class="co2">#define W5200_CS  10</span>
+<span class="co1">// SD card SPI CS pin</span>
+<span class="co2">#define SDCARD_CS 4</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// make sure that the SD card is not selected for the SPI port</span>
+  <span class="co1">// by setting the CS pin to HIGH</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// loop until we get a connection to the access point</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac<span class="br0">)</span><span class="sy1">==</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"DHCP configuration failed. Trying again..."</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="co1">// now that we have a good ethernet connection we can start the server</span>
+  server.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"The server can be accessed at: "</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="me1">localIP</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// listen for incoming clients</span>
+  EthernetClient client <span class="sy1">=</span> server.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span>client<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"new client"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// An http request ends with "\r\n\r\n" so we need to look for that</span>
+    <span class="co1">// by using several if statements. This is how </span>
+    <span class="co1">// we know that we are ready to send the webpage back to the device requesting.</span>
+ 
+    <span class="kw4">boolean</span> currentLineIsBlank <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span>client.<span class="kw3">connected</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw4">char</span> c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy1">==</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="sy3">&amp;&amp;</span> currentLineIsBlank<span class="br0">)</span> <span class="br0">{</span>
+          <span class="co1">// if you've gotten to the end of the line (received a newline</span>
+          <span class="co1">// character) and the line is blank, the http request has ended,</span>
+          <span class="co1">// so you can send a reply.</span>
+          <span class="co1">// send a standard http response header</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"HTTP/1.1 200 OK"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Content-Type: text/html"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Connnection: close"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;!DOCTYPE HTML&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;html&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;body&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;h1&gt;My Ethernet Shield Web Page&lt;/h1&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;a href=<span class="es1">\"</span>http://yahoo.com/<span class="es1">\"</span>&gt;Link to Yahoo!&lt;/a&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;button&gt;Button 1&lt;/button&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;/body&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;/html&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy1">==</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="br0">)</span> <span class="br0">{</span>
+          <span class="co1">// you're starting a new line</span>
+          currentLineIsBlank <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+        <span class="br0">}</span> 
+        <span class="kw1">else</span> <span class="kw1">if</span> <span class="br0">(</span>c <span class="sy3">!</span><span class="sy1">=</span> <span class="st0">'<span class="es1">\r</span>'</span><span class="br0">)</span> <span class="br0">{</span>
+          <span class="co1">// you've gotten a character on the current line</span>
+          currentLineIsBlank <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+    <span class="co1">// give the web browser time to receive the data</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// close the http connection:</span>
+    client.<span class="kw3">stop</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"client disonnected"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>Open the Arduino's serial comm window and visit the IP address in a web browser. The webpage displayed will be similar to the following:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:520px;"><img src="img/Arduino-simple-webserver-webpage.png" width="518"/> <div class="thumbcaption">Arduino webserver webpage as seen in Google Chrome when the ethernet shield's IP address is visited.</div></div></div></div>
+<p>The output in the Arduino's serial comm window should be similar to the following:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:888px;"><img src="img/Arduino-simple-webserver-output.png" width="886"/> <div class="thumbcaption">Arduino serial comm window output when it receives a new browser connection.</div></div></div></div>
+<h3>  Example 3: Control The Arduino's Digital Pins From a Webpage Served by The Shield </h3>
+<p>The Ethernet shield can be used not only to serve webpages but also receive information from them. In this example we will create a webpage with some buttons that will be used to toggle the Arduino's digital pins, we will connect some LEDs so you can see the toggling in action.
+</p><p><b>Hardware/Circuit</b>
+</p><p>Connect three LEDs with current limiting resistors as shown in the schematic below:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:523px;"><img src="img/Ethernet_shield_v2_4_led_connections.png" width="521"/> <div class="thumbcaption">Three LEDs connected to pins 2,3, 5, and GND.</div></div></div></div>
+<p><b>Arduino Code:</b>
+</p><p>The flow of the code is as follows:
+</p>
+<ul>
+<li>When the user "visits" the IP address in a web browser display a webpage with buttons</li>
+<li>Each button has an ID attribute whose value is the Arduino pin it will control.</li>
+<li>When a button is pressed send the pin value in a GET request in a parameter called "pin" to the shield.</li>
+<li>On the Arduino side, read the pin value and toggle the pin.</li>
+</ul>
+<p>The webpage makes use of HTML, Javascript, and JQuery ( a Javascript library). If you would like to more about these two languages (HTML and Javascript) and the JQuery library visit <a href="http://www.w3schools.com/">http://www.w3schools.com/</a>
+</p><p>Stack the Ethernet shield on your Arduino and upload the code below to it.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;EthernetV2_0.h&gt;</span>
+ 
+<span class="kw4">int</span> pins<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">2</span>,<span class="nu0">3</span>,<span class="nu0">5</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// the digital pins you want to control. </span>
+<span class="co1">// NOTE: do not attempt to control the pins used by the SPI bus or 0,1, and 4 pins</span>
+ 
+<span class="co1">// define the controller's MAC address</span>
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> 
+  <span class="nu12">0xDE</span>, <span class="nu12">0xAD</span>, <span class="nu12">0xBE</span>, <span class="nu12">0xEF</span>, <span class="nu12">0xFE</span>, <span class="nu12">0xED</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// set the server at port 80 for HTTP</span>
+<span class="kw4">int</span> port <span class="sy1">=</span> <span class="nu0">80</span><span class="sy4">;</span>
+String ipAddress <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+EthernetServer server<span class="br0">(</span>port<span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// Ethernet controller SPI CS pin</span>
+<span class="co2">#define W5200_CS  10</span>
+<span class="co1">// SD card SPI CS pin</span>
+<span class="co2">#define SDCARD_CS 4</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// the pins to be OUTPUTS and be LOW intially</span>
+  <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span><span class="kw3">sizeof</span><span class="br0">(</span>pins<span class="br0">)</span><span class="sy2">/</span><span class="kw3">sizeof</span><span class="br0">(</span>pins<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>pins<span class="br0">[</span>i<span class="br0">]</span>,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>pins<span class="br0">[</span>i<span class="br0">]</span>,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// make sure that the SD card is not selected for the SPI port</span>
+  <span class="co1">// by setting the CS pin to HIGH</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// loop until we get a connection to the access point</span>
+  <span class="kw1">while</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac<span class="br0">)</span><span class="sy1">==</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"DHCP configuration failed. Trying again..."</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="co1">// now that we have a good ethernet connection we can start the server</span>
+  server.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"The server can be accessed at: "</span><span class="br0">)</span><span class="sy4">;</span>
+  IPAddress ip <span class="sy1">=</span> <span class="kw2">Ethernet</span>.<span class="me1">localIP</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  ipAddress <span class="sy2">+</span><span class="sy1">=</span> ip<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy4">;</span>
+  ipAddress<span class="sy2">+</span><span class="sy1">=</span> <span class="st0">"."</span><span class="sy4">;</span>
+  ipAddress <span class="sy2">+</span><span class="sy1">=</span> ip<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy4">;</span>
+  ipAddress <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">"."</span><span class="sy4">;</span>
+  ipAddress <span class="sy2">+</span><span class="sy1">=</span> ip<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="sy4">;</span>
+  ipAddress <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">"."</span><span class="sy4">;</span>
+  ipAddress <span class="sy2">+</span><span class="sy1">=</span> ip<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>ipAddress<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// listen for incoming clients</span>
+  EthernetClient client <span class="sy1">=</span> server.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span>client<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"new client"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// an http request ends with a blank line</span>
+    <span class="kw4">boolean</span> currentLineIsBlank <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span>client.<span class="kw3">connected</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw4">char</span> c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="co1">// look for the string "pin=" in the browser/client request</span>
+        <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"pin="</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span> 
+          <span class="co1">// the string "pin=" is not present in the browser/client HTTP request</span>
+          <span class="co1">// so display the buttons webpage.</span>
+ 
+          <span class="co1">// send a standard http response header</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"HTTP/1.1 200 OK"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Content-Type: text/html"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Connnection: close"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;!DOCTYPE HTML&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;html&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;head&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;title&gt;WiFi Shield Webpage&lt;/title&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;/head&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;body&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;h1&gt;LED Toggle Webpage&lt;/h1&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+          <span class="co1">// Create the HTML button code e.g. &lt;button id="xx" class="led"&gt;Toggle Pin xx&lt;/button&gt; where xx is the pin number</span>
+  	  <span class="co1">// In the &lt;button id="xx" class="led"&gt; tags, the ID attribute is the value sent to the arduino via the "pin" GET parameter</span>
+           <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span><span class="kw3">sizeof</span><span class="br0">(</span>pins<span class="br0">)</span><span class="sy2">/</span><span class="kw3">sizeof</span><span class="br0">(</span>pins<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+           <span class="br0">{</span>
+              String buttonHTML <span class="sy1">=</span> <span class="st0">"&lt;button id=<span class="es1">\"</span>"</span><span class="sy4">;</span>
+              buttonHTML<span class="sy2">+</span><span class="sy1">=</span>pins<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span>
+              buttonHTML<span class="sy2">+</span><span class="sy1">=</span><span class="st0">"<span class="es1">\"</span> class=<span class="es1">\"</span>led<span class="es1">\"</span>&gt;Toggle Pin "</span><span class="sy4">;</span>
+              buttonHTML<span class="sy2">+</span><span class="sy1">=</span>pins<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span>
+              buttonHTML<span class="sy2">+</span><span class="sy1">=</span><span class="st0">"&lt;/button&gt;&lt;br /&gt;"</span><span class="sy4">;</span>
+              client.<span class="kw3">println</span><span class="br0">(</span>buttonHTML<span class="br0">)</span><span class="sy4">;</span>
+           <span class="br0">}</span>
+ 
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;script src=<span class="es1">\"</span>http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js<span class="es1">\"</span>&gt;&lt;/script&gt;"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// include the JQuery library hosted by Google</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;script type=<span class="es1">\"</span>text/javascript<span class="es1">\"</span>&gt;"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// beg javascript code</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"$(document).ready(function(){"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"$(<span class="es1">\"</span>.led<span class="es1">\"</span>).click(function(){"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"var p = $(this).attr('id');"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// get id value (i.e. pin13, pin12, or pin11)</span>
+ 
+          <span class="co1">// create the JQuery $.get function "$.get(\"http://ipaddress:port/\", {pin:p},function(data){alert(data)});"</span>
+          <span class="co1">// The .get functions sends and HTTP GET request to the IP address of the shield with the parameter "pin" and value "p", then executes the function alert</span>
+          String get <span class="sy1">=</span> <span class="st0">"$.get(<span class="es1">\"</span>http://"</span><span class="sy4">;</span>
+          get<span class="sy2">+</span><span class="sy1">=</span>ipAddress<span class="sy4">;</span>
+          get<span class="sy2">+</span><span class="sy1">=</span><span class="st0">":"</span><span class="sy4">;</span>
+          get<span class="sy2">+</span><span class="sy1">=</span>port<span class="sy4">;</span>
+          get<span class="sy2">+</span><span class="sy1">=</span><span class="st0">"/<span class="es1">\"</span>, {pin:p},function(data){alert(data)});"</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span>get<span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"});"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// close the click function</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"});"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// close the read function</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;/script&gt;"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// end the javascript snippet</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;/body&gt;"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// end HTML body</span>
+          client.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;/html&gt;"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// end HTML </span>
+          <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="br0">}</span><span class="kw1">else</span><span class="br0">{</span>
+          <span class="co1">// The string "pin=" is found in the browser/client rquest, this meanst that the user wants to toggle the LEDs</span>
+          <span class="kw4">int</span> pinNumber <span class="sy1">=</span> <span class="br0">(</span>client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">-</span><span class="nu0">48</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// get first number i.e. if the pin 13 then the 1st number is 1</span>
+          <span class="kw4">int</span> secondNumber <span class="sy1">=</span> <span class="br0">(</span>client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">-</span><span class="nu0">48</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw1">if</span><span class="br0">(</span>secondNumber<span class="sy1">&gt;=</span><span class="nu0">0</span> <span class="sy3">&amp;&amp;</span> secondNumber<span class="sy1">&lt;=</span><span class="nu0">9</span><span class="br0">)</span>
+          <span class="br0">{</span>
+          pinNumber<span class="sy2">*</span><span class="sy1">=</span><span class="nu0">10</span><span class="sy4">;</span>
+          pinNumber <span class="sy2">+</span><span class="sy1">=</span>secondNumber<span class="sy4">;</span> <span class="co1">// get second number, i.e. if the pin number is 13 then the 2nd number is 3, then add to the first number</span>
+          <span class="br0">}</span>
+ 
+          <span class="kw3">digitalWrite</span><span class="br0">(</span>pinNumber, <span class="sy3">!</span><span class="kw3">digitalRead</span><span class="br0">(</span>pinNumber<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// toggle pin </span>
+ 
+          <span class="co1">// Build pinstate string. The Arduino replies to the browser with this string.</span>
+          String pinState <span class="sy1">=</span> <span class="st0">"Pin "</span><span class="sy4">;</span>
+          pinState<span class="sy2">+</span><span class="sy1">=</span>pinNumber<span class="sy4">;</span>
+          pinState<span class="sy2">+</span><span class="sy1">=</span><span class="st0">" is "</span><span class="sy4">;</span>
+          <span class="kw1">if</span><span class="br0">(</span><span class="kw3">digitalRead</span><span class="br0">(</span>pinNumber<span class="br0">)</span><span class="br0">)</span> <span class="co1">// check if the pin is ON or OFF</span>
+          <span class="br0">{</span>
+          pinState<span class="sy2">+</span><span class="sy1">=</span><span class="st0">"ON"</span><span class="sy4">;</span> <span class="co1">// the pin is on</span>
+          <span class="br0">}</span>
+          <span class="kw1">else</span>
+          <span class="br0">{</span>
+           pinState<span class="sy2">+</span><span class="sy1">=</span><span class="st0">"OFF"</span><span class="sy4">;</span>  <span class="co1">// the pin is off</span>
+          <span class="br0">}</span>
+ 
+          <span class="co1">// Send HTTP response back to browser/client</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"HTTP/1.1 200 OK"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Content-Type: text/html"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Connnection: close"</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+          client.<span class="kw3">println</span><span class="br0">(</span>pinState<span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw1">break</span><span class="sy4">;</span> 
+        <span class="br0">}</span>
+ 
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+    <span class="co1">// give the web browser time to receive the data</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// close the connection:</span>
+    client.<span class="kw3">stop</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"client disonnected"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>Open the serial monitor window and wait for the shield to respond with it's assigned IP address. Now open your web browser and visit that IP address, a website like the one below should display:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:492px;"><img src="img/Arduino-ethernetshield-toggle-led-webpage.png" width="490"/> <div class="thumbcaption">Pin/LED control webpage served from the Ethernet shield as seen in Google Chrome.</div></div></div></div>
+<p>Now press one of the buttons. The Arduino will toggle the LED/pin and reply back with the pin's ON/OFF state in an alert dialog as shown below:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:492px;"><img src="img/Arduino-ethernetshield-toggle-led-webpage-led-state-dialog.png" width="490"/> <div class="thumbcaption">The Arduino's reply to Google Chrome displayed in an alert dialog.</div></div></div></div>
+<p>The Arduino's serial monitor output should look like this:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:388px;"><img src="img/Arduino-ethernetshield-toggle-led-serial-comm-output.png" width="386"/> <div class="thumbcaption">Arduino Ethernet shield's serial communication's output.</div></div></div></div>
+<h3>  Example 4: Request Weather Information From Any City in The World (Shield as Web Client) </h3>
+<p>A web client can be used to send and receive information from a web server, the Ethernet shield can be used as a client and we'll show you how in this example.  We'll use an application programming interface (API) provided by <a href="http://openweathermap.org/">OpenWeatherMap</a> to request weather data from any city in the world. The way the OpenWeatherMap API works is you send the city name and country to their webserver and they reply back with weather data for that city.
+</p><p><b>The HTTP Request</b>
+</p><p>For this example we'll be requesting weather information for San Francisco, U.S. The HTTP request we have to send from the Arduino through the internet shield will have to look like this:
+</p>
+<pre>
+GET /data/2.5/weather?q=San%20Francisco,ca HTTP/1.1\r\n
+Host: api.openweathermap.org\r\n
+\r\n
+</pre>
+<p><b>Note:</b> The characters "%20" are the URL encoded representation of the space " " character.
+</p><p>You can actually see the result our Ethernet shield will receive from api.openweathermap.org when it sends the HTTP request above by visiting this URL <a href="http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,ca">http://api.openweathermap.org/data/2.5/weather?q=San%20Francisco,ca</a>
+</p><p>When you visit the URL you should see a JSON string similar to the following:
+</p>
+<pre>
+{
+"coord":{"lon":-122.42,"lat":37.78},
+"sys":{"type":3,"id":56874,"message":0.0953,"country":"United States of America","sunrise":1422630884,"sunset":1422667881},
+"weather":[{"id":800,"main":"Clear","description":"Sky is Clear","icon":"01n"}],
+"base":"cmc stations",
+"main":{"temp":286.75,"humidity":69,"pressure":1017.843,"temp_min":286.75,"temp_max":286.75},
+"wind":{"speed":2.16,"deg":276.502},
+"clouds":{"all":0},
+"dt":1422585485,
+"id":5391959,
+"name":"San Francisco",
+"cod":200
+}
+</pre>
+<p>This JSON string contains the weather information, we'll have to write some software to extract only what we need.
+</p><p><b>Arduino Code</b>
+</p><p>In the Arduino code we will extract the values of the "description" string, "Sky is Clear"; "temp", 286.75 (in Kelvins); and "humidity", 69 (in %RH). To extract these values all we have to do is use the find(xxx) function where xxx will be the characters before the values we are trying to extract, we will then continue reading the remaining values using read() until we have read all the values. The way we know when we have read all the values is by reading in a for loop until the character ' " ', ",", and "," for description, temperature, and humidity respectively have been found.
+</p><p>Upload the code below to your Arduino and open the serial monitor window once the it's done uploading.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;EthernetV2_0.h&gt;</span>
+ 
+<span class="co1">// Enter a MAC address for your controller below.</span>
+<span class="co1">// Newer Ethernet shields have a MAC address printed on a sticker on the shield</span>
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span>  <span class="nu12">0x00</span>, <span class="nu12">0xAA</span>, <span class="nu12">0xBB</span>, <span class="nu12">0xCC</span>, <span class="nu12">0xDE</span>, <span class="nu12">0x02</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">char</span> serverName<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="st0">"api.openweathermap.org"</span><span class="sy4">;</span>
+ 
+ 
+<span class="co1">// Initialize the Ethernet client library</span>
+<span class="co1">// with the IP address and port of the server </span>
+<span class="co1">// that you want to connect to (port 80 is default for HTTP):</span>
+EthernetClient client<span class="sy4">;</span>
+<span class="co2">#define W5200_CS  10</span>
+<span class="co2">#define SDCARD_CS 4</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ <span class="co1">// Open serial communications and wait for port to open:</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">digitalWrite</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//Deselect the SD card</span>
+   <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span><span class="kw2">Serial</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="sy4">;</span> <span class="co1">// wait for serial port to connect. Needed for Leonardo only</span>
+  <span class="br0">}</span>
+ 
+ 
+  <span class="co1">// start the Ethernet connection:</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac<span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Failed to configure Ethernet using DHCP"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// no point in carrying on, so do nothing forevermore:</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="co1">// give the Ethernet shield a second to initialize:</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connecting..."</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// if you get a connection, report back via serial:</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">connect</span><span class="br0">(</span>serverName, <span class="nu0">80</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connected"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// Make a HTTP request:</span>
+    client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"GET /data/2.5/weather?q=San%20Francisco,us HTTP/1.0"</span><span class="br0">)</span><span class="sy4">;</span>
+    client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> 
+  <span class="kw1">else</span> <span class="br0">{</span>
+    <span class="co1">// kf you didn't get a connection to the server:</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connection failed"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="co1">// if there are incoming bytes available </span>
+  <span class="co1">// from the server, read them and print them:</span>
+  <span class="kw1">while</span><span class="br0">(</span>client.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+     <span class="co1">// get the short weather description</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"description<span class="es1">\"</span>:<span class="es1">\"</span>"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       String description <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">'<span class="es1">\"</span>'</span><span class="sy4">;</span> c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">// description ends with a quote "</span>
+       description<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Description: "</span><span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>description<span class="br0">)</span><span class="sy4">;</span>
+     <span class="br0">}</span>
+ 
+     <span class="co1">// get the temperature now</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"temp<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Temp: "</span><span class="br0">)</span><span class="sy4">;</span>
+       String temp <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">','</span><span class="sy4">;</span> c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">// temperature ends with a comma ","</span>
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+ 
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>temp<span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">" Kelvins"</span><span class="br0">)</span><span class="sy4">;</span>
+     <span class="br0">}</span>
+ 
+     <span class="co1">// get the humidity</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"humidity<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Humidity: "</span><span class="br0">)</span><span class="sy4">;</span>
+       String hum <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">','</span><span class="sy4">;</span> c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">// humidity ends with a comma ","</span>
+       hum<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+ 
+       <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>hum<span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">" %RH"</span><span class="br0">)</span><span class="sy4">;</span>
+     <span class="br0">}</span>
+ 
+  <span class="br0">}</span>
+ 
+  <span class="co1">// if the server's disconnected, stop the client:</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>client.<span class="kw3">connected</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"disconnecting."</span><span class="br0">)</span><span class="sy4">;</span>
+    client.<span class="kw3">stop</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// do nothing forevermore:</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>The serial monitor window should print the following:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:411px;"><img src="img/Arduino-weather-client-output.png" width="409"/> <div class="thumbcaption">Weather data for San Francisco U.S. provided by the OpenWeatherMap API.</div></div></div></div>
+<h3>  Example 5: Android App Communication With Shield </h3>
+<p>We've made a native Android app you can use to send HTTP data from a phone to the Ethernet shield. This app will send a pin number, depending on which button you press, to the Ethernet shield. When the Arduino gets the pin number it will toggle that pin and send the state of the pin back to the phone.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:602px;"><img src="img/Androidapp-ethernet-shield-led-toggle.png" width="600"/> <div class="thumbcaption">The Android app you can use to control the Arduino's pins through the WiFi or Ethernet Shield.</div></div></div></div>
+<p><b>Android App Code:</b>
+</p><p>Download the Android app (an Android Studio project) from this link:
+</p><p><a href="res/EthernetShieldLEDControl.zip" title="File:EthernetShieldLEDControl.zip">File:EthernetShieldLEDControl.zip</a>
+</p><p><b>Arduino Code and Circuit: </b>
+</p><p>The code you need to upload to the Arduino is the one used in "Example 3: Control The Arduino's Digital Pins From a Webpage Served by The Shield" of this WiKi page. The circuit is also the same.
+</p><p>The actually also works with our WiFi shield since all it does is send HTTP requests, you watch a video about it here:
+</p><p><a href="https://www.youtube.com/watch?v=ek63patAl80">Android App for LED Control Over WiFi or Ethernet</a>
+</p>
+<h3>  Example 6: Chat Sever With Another Device/Terminal </h3>
+<p>The Ethernet shield can have a concurrent connection with another device to be able to send and receive data. In this example we'll show you how to use the shield to create a chat service. The chat service will send data from the Arudino's serial communication terminal to another PC/client's terminal (you can use the same PC you use for your Arduino if you like).
+</p><p><b>Download a TCP Terminal:</b>
+</p><p><a href="http://sourceforge.net/projects/realterm/files/Realterm/2.0.0.70/Realterm_2.0.0.70_setup.exe/download">Download and install RealTerm</a>, a utility terminal that will allow use to connect to the WiFi shield.
+</p><p><b>Arduino Code:</b>
+</p><p>The code works like this:
+</p>
+<ol>
+<li>Connect the shield to the access point to obtain an IP address</li>
+<li>When a client's terminal sends data to the Arduino:<ol>
+<li>If this is the first time print "We have a new client" in the Arduino's terminal, and print "Hello, client!" to the client.</li>
+<li>If this is not the first time a message was sent simply print the text sent in the Arduino's terminal.</li>
+</ol>
+</li>
+<li>When you type something in the Arduino's terminal and press the "Enter" key:
+   <ol>
+<li>Read the string and print in the Arduin's terminal and send/print it to the client.</li>
+</ol>
+</li>
+</ol>
+<p>Upload the code below to your Arduino board and open the Arduino's serial communication terminal, the shield's IP address should be printed. Also do not close the Arduino's serial comm. window.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;EthernetV2_0.h&gt;</span>
+ 
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> 
+  <span class="nu12">0xDE</span>, <span class="nu12">0xAD</span>, <span class="nu12">0xBE</span>, <span class="nu12">0xEF</span>, <span class="nu12">0xFE</span>, <span class="nu12">0xED</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+ 
+<span class="co1">// telnet defaults to port 23</span>
+EthernetServer server<span class="br0">(</span><span class="nu0">23</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">boolean</span> alreadyConnected <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span> <span class="co1">// whether or not the client was connected previously</span>
+<span class="co2">#define W5200_CS  10</span>
+<span class="co2">#define SDCARD_CS 4</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="kw3">digitalWrite</span><span class="br0">(</span>SDCARD_CS,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//Deselect the SD card</span>
+  <span class="co1">// initialize the ethernet device</span>
+  <span class="kw1">if</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac<span class="br0">)</span><span class="sy3">!</span><span class="sy1">=</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Could not connect to router"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span><span class="sy4">;</span>
+  <span class="co1">// start listening for clients</span>
+  server.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="co1">// Open serial communications and wait for port to open:</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+   <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span><span class="kw2">Serial</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="sy4">;</span> <span class="co1">// wait for serial port to connect. Needed for Leonardo only</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Chat server address:"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="me1">localIP</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// wait for a new client:</span>
+  EthernetClient client <span class="sy1">=</span> server.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// when the client sends the first byte, say hello:</span>
+  <span class="kw1">if</span> <span class="br0">(</span>client<span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>alreadyConnected<span class="br0">)</span> <span class="br0">{</span>
+      <span class="co1">// clead out the input buffer  </span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"We have a new client"</span><span class="br0">)</span><span class="sy4">;</span>
+      client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Hello, client!"</span><span class="br0">)</span><span class="sy4">;</span> 
+      alreadyConnected <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="br0">}</span> 
+ 
+    <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+      <span class="co1">// read the bytes incoming from the client:</span>
+      <span class="kw4">char</span> thisChar <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="co1">// echo the bytes back to the client:</span>
+      server.<span class="kw3">write</span><span class="br0">(</span>thisChar<span class="br0">)</span><span class="sy4">;</span>
+      <span class="co1">// echo the bytes to the server as well:</span>
+      <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>thisChar<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+  <span class="br0">}</span>
+ 
+  <span class="co1">// read data from the serial comm window and send it to the terminal client</span>
+  <span class="kw1">if</span><span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">)</span>
+  <span class="br0">{</span>
+   <span class="kw4">char</span> c <span class="sy1">=</span> <span class="kw2">Serial</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+   server.<span class="kw3">write</span><span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>
+   <span class="kw2">Serial</span>.<span class="kw3">write</span><span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p><b>Client Terminal Settings:</b>
+</p><p>Open RealTerm and enter the Ethernet shield's IP address and port as shown in the image below, then click the "Open" button. The "Connected" square should be green to signal a successful connection to the Arduino's terminal.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:593px;"><img src="img/Arduino-ethernetshield-chat-server-terminal-settings.png" width="591"/> <div class="thumbcaption">Terminal settings: Where and how to enter the IP address and port.</div></div></div></div>
+<p><b>Start Chatting:</b>
+</p><p>In RealTerm go to the "Send" tab, enter the text you would like to send to the Arduino's terminal followed by "\r\n" and press the "SendASCII" button. You can also send messages from the Arduino's terminal to the client's terminal (RealTerm). The images below show a chat example's ouput:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:576px;"><img src="img/Arduino-ethernetshield-chat-server-terminal-output.png" width="574"/> <div class="thumbcaption">The chat as seen on the terminal program.</div></div></div></div>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:337px;"><img src="img/Arduino-ethernetshield-chat-server-serial-window-output.png" width="335"/> <div class="thumbcaption">The chat as seen in the Arduino serial comm window.</div></div></div></div>
+<h3>  Example 7: How To Use The microSD card </h3>
+<p>The microSD card slot is connected to the Arduino's SPI port with the CS line on digital pin 4. This means that the shield is compatible with the Arduino's default SD card library and you can find numerous examples for it online. 
+</p><p>We do provide an example you can use in our library, the example will write the Arduino's analog pin values on the SD card as well as display them on a webpage.
+</p><p>To see this example:
+</p>
+<ol><li>In the Arduino IDE go to File-&gt;Examples-&gt;Ethernet_Shield_W5200-&gt;WebServerWithSD
+</li><li>Insert a microSD card into the shield's microSD card slot and upload the code
+</li><li>Don't forget to change the IP address to one that your router is able to assign, or modify the code to allow the router to auto-assign one as described in "Example 1: How To Connect To an Internet Access Point / Router".
+</li><li>Now open the Arduino Serial monitor window and in a web browser visit the Ethernet shield's IP address, the analog pin values should be displayed and updated on the browser and will also be written to the SD card.
+</li></ol>
+<p>The important thing to keep in mind while using both the SD card and Ethernet functions of the shield is to deselect the SD card when using the Ethernet function
+</p>
+<pre>
+digitalWrite(SDCARD_CS, HIGH); // deselects SD card from SPI port.
+</pre>
+<h3>  Application 1: Home Forecast Weather Station </h3>
+<p>We can make some great applications by combining the Ethernet shield with others. The application we're going to make here is an internet connected weather forecast station, you will be able to see any city's weather for the day in a touch screen.
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:202px;"><img src="img/Forecast_weather_station.png" width="200"/> <div class="thumbcaption">Internet connected weather forecast station</div></div></div></div>
+<p><b>The Touch Screen:</b>
+</p><p>The touch screen we'll be using is  Seeedstudio's <a href="http://www.seeedstudio.com/depot/28-tft-touch-shield-v20-p-1286.html?cPath=132_134">2.8<i> TFT Touch Shield V2.0</i></a><i>. </i>
+</p><p><b>How We Obtain Weather Data:</b>
+</p><p>We'll obtain San Francisco, US' weather information the same way we did in "Example 4: Request Weather Information From Any City in The World (Shield as Web Client)", that is using the OpenWeatherMap API which we will then display on the touch shield.
+</p><p><b>Software Libraries:</b>
+</p><p>In addition to the Ethernet shield's software libraries we'll make use of touch shield's libraries which you can download from the "Resources" section in this wiki.
+</p><p><a href="/2.8inch_TFT_Touch_Shield_V2.0">WiKi: 2.8<i> TFT Touch Shield V2.0</i></a>
+</p><p><b>Arduino Code:</b>
+</p>
+<ul>
+<li>Remove all power sources from your Arduino board.</li>
+<li>Stack the Ethernet shield on the Arduino, then stack the TFT Touch shield on the Ethernet shield.</li>
+<li>Now power up your Arduino and upload the code below</li>
+</ul>
+<p>The weather data for San Francisco, U.S. should be displayed on the TFT touch shield and update every 10 seconds, the first time it might take a while (1 minute) since the Ethernet shield is initializing.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SD.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;Streaming.h&gt;</span>
+<span class="co2">#include &lt;EthernetV2_0.h&gt;</span>
+ 
+<span class="co2">#include "TFTv2.h"</span>
+ 
+<span class="kw4">const</span> <span class="kw4">int</span> PIN_SD_CS <span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span>                        <span class="co1">// pin of sd card</span>
+ 
+<span class="co1">// Ethernet</span>
+<span class="co2">#define W5200_CS  10</span>
+<span class="co1">// Enter a MAC address for your controller below.</span>
+<span class="co1">// Newer Ethernet shields have a MAC address printed on a sticker on the shield</span>
+byte mac<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span>  <span class="nu12">0x00</span>, <span class="nu12">0xAA</span>, <span class="nu12">0xBB</span>, <span class="nu12">0xCC</span>, <span class="nu12">0xDE</span>, <span class="nu12">0x02</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">char</span> serverName<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="st0">"api.openweathermap.org"</span><span class="sy4">;</span>
+ 
+EthernetClient client<span class="sy4">;</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ 
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// deselect the SD card</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>PIN_SD_CS,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>PIN_SD_CS,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  Tft.<span class="me1">TFTinit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  drawHeaders<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  TFT_BL_ON<span class="sy4">;</span>
+ 
+ 
+  <span class="co1">// Ethernet</span>
+  <span class="co1">// start the Ethernet connection:</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Ethernet</span>.<span class="kw3">begin</span><span class="br0">(</span>mac<span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Failed to configure Ethernet using DHCP"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// no point in carrying on, so do nothing forevermore:</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="co1">// give the Ethernet shield a second to initialize:</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connecting..."</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// if you get a connection, report back via serial:</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">connect</span><span class="br0">(</span>serverName, <span class="nu0">80</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connected"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// Make a HTTP request:</span>
+    client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"GET /data/2.5/forecast/daily?q=san%20francisco,us&amp;mode=json&amp;units=imperial&amp;cnt=1 HTTP/1.0"</span><span class="br0">)</span><span class="sy4">;</span>
+    client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> 
+  <span class="kw1">else</span> <span class="br0">{</span>
+    <span class="co1">// kf you didn't get a connection to the server:</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connection failed"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+ 
+  String day <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+  String morning <span class="sy1">=</span><span class="st0">""</span><span class="sy4">;</span>
+  String evening <span class="sy1">=</span><span class="st0">""</span><span class="sy4">;</span>
+  String night <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+  String description <span class="sy1">=</span> <span class="st0">""</span><span class="sy4">;</span>
+ 
+  <span class="kw1">while</span><span class="br0">(</span>client.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+     <span class="co1">// get the day temp</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"day<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">','</span><span class="sy4">;</span> <span class="br0">)</span><span class="br0">{</span> <span class="co1">// data data ends with a comma ","</span>
+        c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        day<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+     <span class="br0">}</span>
+ 
+ 
+ 
+     <span class="co1">// get the night temp</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"night<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">','</span><span class="sy4">;</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">// night data ends with a comma ","</span>
+        c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        night<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+     <span class="br0">}</span>
+ 
+ 
+     <span class="co1">// get the evening temp</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"eve<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">','</span><span class="sy4">;</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">// evening data ends with a comma ","</span>
+         c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        evening<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+     <span class="br0">}</span>
+ 
+ 
+     <span class="co1">// get the morning temp</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"morn<span class="es1">\"</span>:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">'}'</span><span class="sy4">;</span> <span class="br0">)</span><span class="br0">{</span> <span class="co1">// morning data ends with a  "}"</span>
+        c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        morning<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+     <span class="br0">}</span>
+ 
+ 
+     <span class="co1">// get the short weather description</span>
+     <span class="kw1">if</span><span class="br0">(</span>client.<span class="me1">find</span><span class="br0">(</span><span class="st0">"description<span class="es1">\"</span>:<span class="es1">\"</span>"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+ 
+       <span class="kw1">for</span><span class="br0">(</span><span class="kw4">char</span> c <span class="sy1">=</span> <span class="st0">' '</span><span class="sy4">;</span> c<span class="sy3">!</span><span class="sy1">=</span><span class="st0">'<span class="es1">\"</span>'</span><span class="sy4">;</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">// description ends with a quote "</span>
+        c <span class="sy1">=</span> client.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        description<span class="sy2">+</span><span class="sy1">=</span>c<span class="sy4">;</span>
+       <span class="br0">}</span><span class="sy4">;</span> 
+     <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// Draw the red text (weather data)</span>
+  <span class="kw1">if</span><span class="br0">(</span>description.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="sy1">&gt;</span><span class="nu0">0</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    Tft.<span class="me1">fillScreen</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">240</span>, <span class="nu0">0</span>, <span class="nu0">320</span>, BLACK<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// clear the screen</span>
+    drawHeaders<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// the strings need to be changed to arrays because that is what the drawString function requires.</span>
+    <span class="kw4">char</span> d<span class="br0">[</span>day.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span>
+    day.<span class="me1">toCharArray</span><span class="br0">(</span>d,day.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">drawString</span><span class="br0">(</span>d,<span class="nu0">75</span>,<span class="nu0">58</span>,<span class="nu0">2</span>,RED<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// day</span>
+ 
+    <span class="kw4">char</span> m<span class="br0">[</span>morning.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span>
+    morning.<span class="me1">toCharArray</span><span class="br0">(</span>m,morning.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">drawString</span><span class="br0">(</span>m,<span class="nu0">96</span>,<span class="nu0">87</span>,<span class="nu0">2</span>,RED<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// morning</span>
+ 
+    <span class="kw4">char</span> n<span class="br0">[</span>day.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span>
+    night.<span class="me1">toCharArray</span><span class="br0">(</span>n,night.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">drawString</span><span class="br0">(</span>n,<span class="nu0">90</span>,<span class="nu0">143</span>,<span class="nu0">2</span>,RED<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// night</span>
+ 
+    <span class="kw4">char</span> e<span class="br0">[</span>evening.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span>
+    evening.<span class="me1">toCharArray</span><span class="br0">(</span>e,evening.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">drawString</span><span class="br0">(</span>e,<span class="nu0">80</span>,<span class="nu0">113</span>,<span class="nu0">2</span>,RED<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// evening</span>
+ 
+    <span class="kw4">char</span> des<span class="br0">[</span>description.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span>
+    description.<span class="me1">toCharArray</span><span class="br0">(</span>des,description.<span class="me1">length</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    Tft.<span class="me1">drawString</span><span class="br0">(</span>des,<span class="nu0">30</span>,<span class="nu0">233</span>,<span class="nu0">2</span>,RED<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// description</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// disconnect from the server if the server has disconnected</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span>client.<span class="kw3">connected</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"disconnecting."</span><span class="br0">)</span><span class="sy4">;</span>
+    client.<span class="kw3">stop</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="br0">}</span>
+ 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// update every 100 seconds</span>
+  <span class="co1">// start a new weather request</span>
+  <span class="kw1">if</span> <span class="br0">(</span>client.<span class="kw3">connect</span><span class="br0">(</span>serverName, <span class="nu0">80</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connected"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// Make a HTTP request:</span>
+    client.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"GET /data/2.5/forecast/daily?q=san%20antonio,us&amp;mode=json&amp;units=imperial&amp;cnt=1 HTTP/1.0"</span><span class="br0">)</span><span class="sy4">;</span>
+    client.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> 
+  <span class="kw1">else</span> <span class="br0">{</span>
+    <span class="co1">// kf you didn't get a connection to the server:</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"connection failed"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// This functions draws the text in green.</span>
+<span class="kw4">void</span> drawHeaders<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  Tft.<span class="me1">drawString</span><span class="br0">(</span><span class="st0">"Temp.(C)"</span>,<span class="nu0">10</span>,<span class="nu0">10</span>,<span class="nu0">4</span>,GREEN<span class="br0">)</span><span class="sy4">;</span>
+  Tft.<span class="me1">drawString</span><span class="br0">(</span><span class="st0">"Day:"</span>,<span class="nu0">10</span>,<span class="nu0">58</span>,<span class="nu0">2</span>,GREEN<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// day</span>
+  Tft.<span class="me1">drawString</span><span class="br0">(</span><span class="st0">"Morn:"</span>,<span class="nu0">10</span>,<span class="nu0">87</span>,<span class="nu0">2</span>,GREEN<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// morning</span>
+  Tft.<span class="me1">drawString</span><span class="br0">(</span><span class="st0">"Night:"</span>,<span class="nu0">10</span>,<span class="nu0">143</span>,<span class="nu0">2</span>,GREEN<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// night</span>
+  Tft.<span class="me1">drawString</span><span class="br0">(</span><span class="st0">"Eve: "</span>,<span class="nu0">10</span>,<span class="nu0">113</span>,<span class="nu0">2</span>,GREEN<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// evening </span>
+<span class="br0">}</span></pre></div></div>
+<p>If you would like to change the units to the metric system use the following URL in your code:
+</p>
+<pre>
+/data/2.5/forecast/daily?q=san%20francisco,us&amp;mode=json&amp;units=metric&amp;cnt=1
+</pre>
+<h2>  Related Reading </h2>
+<p>Depending on the type of project you are working on you might have to learn a couple of different web languages. To help you get started we recommend the following website(s):
+</p>
+<ul>
+<li><a href="http://www.w3schools.com/">W3Schools Online Web Tutorials</a></li>
+<li><a href="http://jquery.com/">jQuery - Javascript library</a></li>
+</ul>
+<h2>  Resources </h2>
+<ul>
+<li><a href="res/W5200_Ethernet_Shield_V2.4.zip">W5200 Ethernet Shield V2.4 Eagle Files</a></li>
+</ul>
+<h2>  Related Projects </h2>
+<p>It's a pity that we don't have any demo about Ethernet Shield in the <a href="http://www.seeedstudio.com/recipe/">Recipe</a> yet. 
+</p><p>Post your awesome project about Ethernet Shield to <font color="#FF0000">win $100 Coupon!</font> Please feel free to contact us: <a href="mailto:recipe@seeed.cc">recipe@seeed.cc</a>
+</p><p><br/>
+Here we introduce some projects about <a href="http://www.seeedstudio.com/depot/LinkIt-ONE-p-2017.html">LinkIt ONE</a>.
+</p>
+<h3> What is LinkIt ONE</h3>
+<p><img src="img/Linkit-one-page.jpg" width="600"/>
+</p><p>The LinkIt ONE development board is an open source, high performance board for prototyping Wearables and IoT devices. 
+</p><p>It's based on the world's leading SoC for Wearables, MediaTek Aster (MT2502) combined with high performance Wi-Fi (MT5931) 
+</p><p>and GPS (MT3332) chipsets to provide you with access to all the features of MediaTek LinkIt. 
+</p><p>It also provides similar pin-out features to Arduino boards, making it easy for you to connect to various sensors, peripherals, and Arduino shields.
+</p><p><br/>
+</p>
+<h3> LinkIt ONE IoT Demo</h3>
+<p><img src="img/Seeed-recipe-77-20141020151546.jpg" width="600"/>
+</p><p>This is an IoT demo make by LinkIt ONE.
+</p><p>With this demo, we can:
+</p>
+<ul><li> Display household temperautre, humidity, luminosity, volume control data collection on OLED screen
+</li></ul>
+<ul><li> Cloud service, data uploaded to Cloud platform Xively, real-time monitoring
+</li></ul>
+<ul><li> Data retention for reviewing how data changes over time
+</li></ul>
+<ul><li> Remote control Household Appliances by sending a message
+</li></ul>
+<ul><li> Table Lamp, 3D Printing, controlled by your phone
+</li></ul>
+<p><br/>
+<a href="http://www.seeedstudio.com/recipe/77-linkit-one-iot-demo.html"><b>I want to make it</b></a>.
+</p><p><br/>
+</p>
+<h3> Pringles Can antenna with a LinkIt ONE</h3>
+<p><img src="img/5515ae26588ec.jpg" width="600"/>
+</p><p>Make a focused antenna with a pringles can.
+</p><p><a href="http://www.seeedstudio.com/recipe/177-pringles-can-antenna-with-a-linkit-one.html"><b>I want to make it.</b></a>
+</p><p><a href="http://www.seeedstudio.com/recipe/index.php?m=Home&amp;controller=Recipe&amp;action=productDetail&amp;id=2"><b>More Awesome Projects by LinkIt ONE</b></a>
+</p><p><br/>
+<br/>
+</p>
+<h3>  Share Your Awesome Projects with Us </h3>
+<p>Born with the spirit of making and sharing, that is what we believe makes a maker. 
+</p><p>And only because of this, the open source community can be as prosperous as it is today.
+</p><p>It does not matter what you are and what you have made, hacker, maker, artist or engineers.
+</p><p>As long as you start sharing your works with others, you are being part of the open source community and you are making your contributions.
+</p><p>Now share your awesome projects with us on <a href="http://www.seeedstudio.com/recipe/">Recipe</a>, and win a chance to become the Core User of Seeed.
+</p>
+<ul><li> Core Users, are those who show high interests in Seeed products and make significant contributions on Recipe. 
+</li><li> We cooperate with our Core Users in the development of our new product, this, in another word, the Core Users will have the chance to experience any new products of Seeed before its official launch, and in return we expect valuable feedback from them to help us improve the product performance and user experience. And in most cases when our Core Users have some good ideas of making things, we'll offer hardware pieces, PCBA services as well as technical support. Besides, further commercial cooperation with the Core Users is highly possible.
+</li></ul>
+<p><font color="#FF0000">Get more information about Core User please email to:</font> <a href="mailto:recipe@seeed.cc">recipe@seeed.cc</a>
+</p><p><br/>
+<br/>
+</p><p><br/>
+</p>
+<h2>  Support </h2>
+<ul><li><a href="http://www.seeedstudio.com/forum/">Forum</a>: <i>Please visit our forum and post your questions here if you have any problem about products. </i>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

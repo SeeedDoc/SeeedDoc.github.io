@@ -1,0 +1,309 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - 3-Axis Digital Accelerometer(±16g)</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - 3-Axis Digital Accelerometer(±16g)</h1>
+
+<table align="left">
+<tr>
+<td> <div class="center"><div class="floatnone"><img src="img/3-axis_Accelerometer_ADXL345.jpg" width="200"/></div></div>
+</td>
+<td> <div class="center"><div class="floatnone"><img src="img/Grove-3-Axis-16g-v1.3.jpg" width="200"/></div></div>
+</td></tr>
+<tr>
+<td width="200px"> <div style="text-align: center">Grove - 3-Axis Digital Accelerometer(16g) v1.2</div>
+</td>
+<td width="200px"> <div style="text-align: center">Grove - 3-Axis Digital Accelerometer(16g) v1.3</div>
+</td></tr></table>
+<p><br clear="all"/>
+</p><p>This is a high resolution digital accelerometer providing you at max 3.9mg/LSB resolution and large ±16g measurement range. It's base on an advanced 3-axis IC ADXL345. Have no worry to implement it into your free-fall detection project, cause it's robust enough to survive up to 10,000g shock. Meanwhile, it's agile enough to detect single and double taps. It's ideal for motion detection, Gesture detection as well as robotics.
+</p><p><br/>
+</p><p><br/>
+<br/>
+</p>
+<h2>  Specifications </h2>
+<ul><li> Input Voltage: 3.3V, 5V
+</li><li> Test Range: ±16
+</li><li> High sensitivity
+</li><li> Large measurement range
+</li><li> Low power 0.1 μA in standby mode at VS = 2.5 V (typical) 
+</li><li> 10,000 g shock survival
+</li><li> RoHS/WEEE lead-free compliant
+</li><li>Suli-compatible Library
+</li></ul>
+<p><br/>
+<b>Note:</b>
+<i>More details about Suli-compatible Library, please refer to <a href="/Suli">Suli</a></i>
+</p><p><br/>
+</p><p><br/>
+<br/>
+</p>
+<h2>  Demonstration </h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Every accelerometer has been individually tested before shipping to you. But in rare cases, you might need to reset the zero-offset by yourself.  
+</p><p>Here below we show you how to read the raw data and obtain data in the unit of g, AKA g-force, from this accelerometer.<br/> <img src="img/Grove-3-Axis_Digital_Accelerometer_ADXL345_connect_photo.JPG" width="495"/><br/>
+</p><p>1. Plug it onto the I2C port of your <a href="http://www.seeedstudio.com/depot/grove-base-shield-p-754.html?cPath=132_134">Grove - Base Shield</a>.<br/>
+</p><p>2. Download the <a href="res/DigitalAccelerometer_ADXL345.zip">Digital Accelerometer(±16g) Library .zip</a> and unpack it into arduino-1.0\libraries in your Arduino installation folder. <br/>
+</p><p>3. Open the demo code directly by the path:File -&gt; Example -&gt;DigitalAccelerometer_ADXL345-&gt;ADXL345_demo_code. 
+</p><p>4. Upload the code and open the serial monitor. Please click <a href="/Upload_Code">here</a> if you do not know how to upload. 
+</p><p>5. Open the serial monitor to check the result.<br/> <img src="img/Digital_Accelerometer.jpg" width="376"/><br/>
+</p><p>The outputs of this sensor consist of two parts: raw data and 3-axis acceleration info converted into the unit of gravity, "g".
+</p><p><br/>
+</p><p><br/>
+<br/>
+</p><p><br/>
+</p>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.<br/>
+2.You should have completed configuring the development enviroment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+<br/>
+3.Connection
+<br/>
+</p>
+<ul><li> Plug the sensor to grovepi socket i2c-x(1~3) by using a grove cable.<br/>
+</li></ul>
+<p>4.Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grovepi_tilt_switch.py   # "Ctrl+x" to exit #
+</pre>
+<pre>
+import smbus
+from time import sleep
+
+# select the correct i2c bus for this revision of Raspberry Pi
+revision = ([l[12:-1] for l in open('/proc/cpuinfo','r').readlines() if l[:8]=="Revision"]+['0000'])[0]
+bus = smbus.SMBus(1 if int(revision, 16) &gt;= 4 else 0)
+
+# ADXL345 constants
+EARTH_GRAVITY_MS2   = 9.80665
+SCALE_MULTIPLIER    = 0.004
+
+DATA_FORMAT         = 0x31
+BW_RATE             = 0x2C
+POWER_CTL           = 0x2D
+
+BW_RATE_1600HZ      = 0x0F
+BW_RATE_800HZ       = 0x0E
+BW_RATE_400HZ       = 0x0D
+BW_RATE_200HZ       = 0x0C
+BW_RATE_100HZ       = 0x0B
+BW_RATE_50HZ        = 0x0A
+BW_RATE_25HZ        = 0x09
+
+RANGE_2G            = 0x00
+RANGE_4G            = 0x01
+RANGE_8G            = 0x02
+RANGE_16G           = 0x03
+
+MEASURE             = 0x08
+AXES_DATA           = 0x32
+
+class ADXL345:
+
+    address = None
+
+    def __init__(self, address = 0x53):        
+        self.address = address
+        self.setBandwidthRate(BW_RATE_100HZ)
+        self.setRange(RANGE_2G)
+        self.enableMeasurement()
+
+    def enableMeasurement(self):
+        bus.write_byte_data(self.address, POWER_CTL, MEASURE)
+
+    def setBandwidthRate(self, rate_flag):
+        bus.write_byte_data(self.address, BW_RATE, rate_flag)
+
+    # set the measurement range for 10-bit readings
+    def setRange(self, range_flag):
+        value = bus.read_byte_data(self.address, DATA_FORMAT)
+
+        value &amp;= ~0x0F;
+        value |= range_flag;  
+        value |= 0x08;
+
+        bus.write_byte_data(self.address, DATA_FORMAT, value)
+    
+    # returns the current reading from the sensor for each axis
+    #
+    # parameter gforce:
+    #    False (default): result is returned in m/s^2
+    #    True           : result is returned in gs
+    def getAxes(self, gforce = False):
+        bytes = bus.read_i2c_block_data(self.address, AXES_DATA, 6)
+        
+        x = bytes[0] | (bytes[1] &lt;&lt; 8)
+        if(x &amp; (1 &lt;&lt; 16 - 1)):
+            x = x - (1&lt;&lt;16)
+
+        y = bytes[2] | (bytes[3] &lt;&lt; 8)
+        if(y &amp; (1 &lt;&lt; 16 - 1)):
+            y = y - (1&lt;&lt;16)
+
+        z = bytes[4] | (bytes[5] &lt;&lt; 8)
+        if(z &amp; (1 &lt;&lt; 16 - 1)):
+            z = z - (1&lt;&lt;16)
+
+        x = x * SCALE_MULTIPLIER 
+        y = y * SCALE_MULTIPLIER
+        z = z * SCALE_MULTIPLIER
+
+        if gforce == False:
+            x = x * EARTH_GRAVITY_MS2
+            y = y * EARTH_GRAVITY_MS2
+            z = z * EARTH_GRAVITY_MS2
+
+        x = round(x, 4)
+        y = round(y, 4)
+        z = round(z, 4)
+
+        return {"x": x, "y": y, "z": z}
+
+if __name__ == "__main__":
+    # if run directly we'll just create an instance of the class and output 
+    # the current readings
+    adxl345 = ADXL345()
+    
+    axes = adxl345.getAxes(True)
+    print "ADXL345 on address 0x%x:" % (adxl345.address)
+    print "   x = %.3fG" % ( axes['x'] )
+    print "   y = %.3fG" % ( axes['y'] )
+    print "   z = %.3fG" % ( axes['z'] )
+</pre>
+<p>5.Run the demo.
+</p>
+<pre>   sudo python grove_tilt_switch.py
+</pre>
+<h3>  With Beaglebone Green</h3>
+<p>To begin editing programs that live on BBG, you can use the Cloud9 IDE.<br/>
+As a simple exercise to become familiar with Cloud9 IDE, creating a simple application to blink one of the 4 user programmable LEDs on the BeagleBone is a good start.
+</p><p>If this is your first time to use Cloud9 IDE, please follow this <a href="/Beaglebone_green#Getting_Started"><b>link</b></a>.
+<br/>
+</p><p><br/>
+<b>Step1:</b> Set the Grove - UART socket as a Grove - GPIO Socket, just follow this <a href="http://www.seeedstudio.com/recipe/362-how-to-use-the-grove-uart-port-as-a-gpio-on-bbg.html"><b>link</b></a>.
+</p><p><b>Step2:</b> Click the "+" in the top-right to create a new file.
+</p><p><img src="img/C9-create-tab.png" width="168"/>
+</p><p><img src="img/C9_newfile.jpg" width="440"/>
+</p><p><b>Step3:</b> Copy and paste the following code into the new tab
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> smbus
+<span class="kw1">import</span> <span class="kw3">time</span>
+ 
+bus <span class="sy0">=</span> smbus.<span class="me1">SMBus</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>
+ 
+<span class="co1"># ADXL345 device address</span>
+ADXL345_DEVICE <span class="sy0">=</span> <span class="nu0">0x53</span>
+ 
+<span class="co1"># ADXL345 constants</span>
+EARTH_GRAVITY_MS2   <span class="sy0">=</span> <span class="nu0">9.80665</span>
+SCALE_MULTIPLIER    <span class="sy0">=</span> <span class="nu0">0.004</span>
+ 
+DATA_FORMAT         <span class="sy0">=</span> <span class="nu0">0x31</span>
+BW_RATE             <span class="sy0">=</span> <span class="nu0">0x2C</span>
+POWER_CTL           <span class="sy0">=</span> <span class="nu0">0x2D</span>
+ 
+BW_RATE_1600HZ      <span class="sy0">=</span> <span class="nu0">0x0F</span>
+BW_RATE_800HZ       <span class="sy0">=</span> <span class="nu0">0x0E</span>
+BW_RATE_400HZ       <span class="sy0">=</span> <span class="nu0">0x0D</span>
+BW_RATE_200HZ       <span class="sy0">=</span> <span class="nu0">0x0C</span>
+BW_RATE_100HZ       <span class="sy0">=</span> <span class="nu0">0x0B</span>
+BW_RATE_50HZ        <span class="sy0">=</span> <span class="nu0">0x0A</span>
+BW_RATE_25HZ        <span class="sy0">=</span> <span class="nu0">0x09</span>
+ 
+RANGE_2G            <span class="sy0">=</span> <span class="nu0">0x00</span>
+RANGE_4G            <span class="sy0">=</span> <span class="nu0">0x01</span>
+RANGE_8G            <span class="sy0">=</span> <span class="nu0">0x02</span>
+RANGE_16G           <span class="sy0">=</span> <span class="nu0">0x03</span>
+ 
+MEASURE             <span class="sy0">=</span> <span class="nu0">0x08</span>
+AXES_DATA           <span class="sy0">=</span> <span class="nu0">0x32</span>
+ 
+<span class="kw1">class</span> ADXL345:
+ 
+    address <span class="sy0">=</span> <span class="kw2">None</span>
+ 
+    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span><span class="sy0">,</span> address <span class="sy0">=</span> ADXL345_DEVICE<span class="br0">)</span>:        
+        <span class="kw2">self</span>.<span class="me1">address</span> <span class="sy0">=</span> address
+        <span class="kw2">self</span>.<span class="me1">setBandwidthRate</span><span class="br0">(</span>BW_RATE_100HZ<span class="br0">)</span>
+        <span class="kw2">self</span>.<span class="me1">setRange</span><span class="br0">(</span>RANGE_2G<span class="br0">)</span>
+        <span class="kw2">self</span>.<span class="me1">enableMeasurement</span><span class="br0">(</span><span class="br0">)</span>
+ 
+    <span class="kw1">def</span> enableMeasurement<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+        bus.<span class="me1">write_byte_data</span><span class="br0">(</span><span class="kw2">self</span>.<span class="me1">address</span><span class="sy0">,</span> POWER_CTL<span class="sy0">,</span> MEASURE<span class="br0">)</span>
+ 
+    <span class="kw1">def</span> setBandwidthRate<span class="br0">(</span><span class="kw2">self</span><span class="sy0">,</span> rate_flag<span class="br0">)</span>:
+        bus.<span class="me1">write_byte_data</span><span class="br0">(</span><span class="kw2">self</span>.<span class="me1">address</span><span class="sy0">,</span> BW_RATE<span class="sy0">,</span> rate_flag<span class="br0">)</span>
+ 
+    <span class="co1"># set the measurement range for 10-bit readings</span>
+    <span class="kw1">def</span> setRange<span class="br0">(</span><span class="kw2">self</span><span class="sy0">,</span> range_flag<span class="br0">)</span>:
+        value <span class="sy0">=</span> bus.<span class="me1">read_byte_data</span><span class="br0">(</span><span class="kw2">self</span>.<span class="me1">address</span><span class="sy0">,</span> DATA_FORMAT<span class="br0">)</span>
+ 
+        value &amp;<span class="sy0">=</span> <span class="sy0">~</span><span class="nu0">0x0F</span><span class="sy0">;</span>
+        value |<span class="sy0">=</span> range_flag<span class="sy0">;</span>  
+        value |<span class="sy0">=</span> <span class="nu0">0x08</span><span class="sy0">;</span>
+ 
+        bus.<span class="me1">write_byte_data</span><span class="br0">(</span><span class="kw2">self</span>.<span class="me1">address</span><span class="sy0">,</span> DATA_FORMAT<span class="sy0">,</span> value<span class="br0">)</span>
+ 
+    <span class="co1"># returns the current reading from the sensor for each axis</span>
+    <span class="co1">#</span>
+    <span class="co1"># parameter gforce:</span>
+    <span class="co1">#    False (default): result is returned in m/s^2</span>
+    <span class="co1">#    True           : result is returned in gs</span>
+    <span class="kw1">def</span> getAxes<span class="br0">(</span><span class="kw2">self</span><span class="sy0">,</span> gforce <span class="sy0">=</span> <span class="kw2">False</span><span class="br0">)</span>:
+        <span class="kw3">bytes</span> <span class="sy0">=</span> bus.<span class="me1">read_i2c_block_data</span><span class="br0">(</span><span class="kw2">self</span>.<span class="me1">address</span><span class="sy0">,</span> AXES_DATA<span class="sy0">,</span> <span class="nu0">6</span><span class="br0">)</span>
+ 
+        x <span class="sy0">=</span> <span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> | <span class="br0">(</span><span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">8</span><span class="br0">)</span>
+        <span class="kw1">if</span><span class="br0">(</span>x &amp; <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">16</span> - <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>:
+            x <span class="sy0">=</span> x - <span class="br0">(</span><span class="nu0">1</span><span class="sy0">&lt;&lt;</span><span class="nu0">16</span><span class="br0">)</span>
+ 
+        y <span class="sy0">=</span> <span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> | <span class="br0">(</span><span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">8</span><span class="br0">)</span>
+        <span class="kw1">if</span><span class="br0">(</span>y &amp; <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">16</span> - <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>:
+            y <span class="sy0">=</span> y - <span class="br0">(</span><span class="nu0">1</span><span class="sy0">&lt;&lt;</span><span class="nu0">16</span><span class="br0">)</span>
+ 
+        z <span class="sy0">=</span> <span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> | <span class="br0">(</span><span class="kw3">bytes</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">8</span><span class="br0">)</span>
+        <span class="kw1">if</span><span class="br0">(</span>z &amp; <span class="br0">(</span><span class="nu0">1</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">16</span> - <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>:
+            z <span class="sy0">=</span> z - <span class="br0">(</span><span class="nu0">1</span><span class="sy0">&lt;&lt;</span><span class="nu0">16</span><span class="br0">)</span>
+ 
+        x <span class="sy0">=</span> x * SCALE_MULTIPLIER 
+        y <span class="sy0">=</span> y * SCALE_MULTIPLIER
+        z <span class="sy0">=</span> z * SCALE_MULTIPLIER
+ 
+        <span class="kw1">if</span> gforce <span class="sy0">==</span> <span class="kw2">False</span>:
+            x <span class="sy0">=</span> x * EARTH_GRAVITY_MS2
+            y <span class="sy0">=</span> y * EARTH_GRAVITY_MS2
+            z <span class="sy0">=</span> z * EARTH_GRAVITY_MS2
+ 
+        x <span class="sy0">=</span> <span class="kw2">round</span><span class="br0">(</span>x<span class="sy0">,</span> <span class="nu0">4</span><span class="br0">)</span>
+        y <span class="sy0">=</span> <span class="kw2">round</span><span class="br0">(</span>y<span class="sy0">,</span> <span class="nu0">4</span><span class="br0">)</span>
+        z <span class="sy0">=</span> <span class="kw2">round</span><span class="br0">(</span>z<span class="sy0">,</span> <span class="nu0">4</span><span class="br0">)</span>
+ 
+        <span class="kw1">return</span> <span class="br0">{</span><span class="st0">"x"</span>: x<span class="sy0">,</span> <span class="st0">"y"</span>: y<span class="sy0">,</span> <span class="st0">"z"</span>: z<span class="br0">}</span>
+ 
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">"__main__"</span>:
+    <span class="co1"># if run directly we'll just create an instance of the class and output </span>
+    <span class="co1"># the current readings</span>
+    adxl345 <span class="sy0">=</span> ADXL345<span class="br0">(</span><span class="br0">)</span>
+ 
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        axes <span class="sy0">=</span> adxl345.<span class="me1">getAxes</span><span class="br0">(</span><span class="kw2">True</span><span class="br0">)</span>
+        <span class="kw1">print</span> <span class="st0">"ADXL345 on address 0x%x:"</span> % <span class="br0">(</span>adxl345.<span class="me1">address</span><span class="br0">)</span>
+        <span class="kw1">print</span> <span class="st0">"   x = %.3fG"</span> % <span class="br0">(</span> axes<span class="br0">[</span><span class="st0">'x'</span><span class="br0">]</span> <span class="br0">)</span>
+        <span class="kw1">print</span> <span class="st0">"   y = %.3fG"</span> % <span class="br0">(</span> axes<span class="br0">[</span><span class="st0">'y'</span><span class="br0">]</span> <span class="br0">)</span>
+        <span class="kw1">print</span> <span class="st0">"   z = %.3fG"</span> % <span class="br0">(</span> axes<span class="br0">[</span><span class="st0">'z'</span><span class="br0">]</span> <span class="br0">)</span>
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span></pre></div></div>
+<p><b>Step4:</b> Save the file by clicking the disk icon with with the .py extension..
+</p><p><br/>
+<b>Step5:</b> Connect Grove - 3-Axis Digital Accelerometer(±16g) to Grove I2C socket on BBG.
+</p><p><b>Step6:</b> Run the code.
+You'll find that the terminal outputs Gravity info every 2 seconds.
+</p>
+<h2>  Resources  </h2>
+<ul><li> <a href="https://github.com/Seeed-Studio/ACC_Adxl345_Suli">Suli-compatible Library</a>
+</li><li> <a href="https://github.com/Seeed-Studio/Grove_3Axis_Digital_Accelerometer_ADXL345">github repository for 3-Axis Digital Accelerometer(±16g)</a>
+</li><li> <a href="res/DigitalAccelerometer_ADXL345.zip">Digital Accelerometer(±16g) Library .zip</a>
+</li><li> <a href="res/Grove-3-Axis_Digital_Accelerometer-16g-Eagle_File.zip">Grove - 3-Axis Digital Accelerometer(±16g) Eagle file.zip</a>
+</li><li> <a href="res/ADXL345_datasheet.pdf">ADXL345 datasheet.pdf</a>
+</li></ul>
+<ul><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

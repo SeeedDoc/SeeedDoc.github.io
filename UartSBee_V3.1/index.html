@@ -1,0 +1,438 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>UartSBee V3.1</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>UartSBee V3.1</h1>
+
+<p><b>UartSBee v3.1</b> is a fully loaded <b>USB to Serial</b> adapter equipped with BEE socket(20pin 2.0mm). The integrated <b>FT232RL</b> can be used for programming or communicating with MCUs.On the other hand, you might connect your PC to various wireless applications via a <b>Bee</b> compatible module. UartSBee provides breakouts for the bit-bang mode pins of <b>FT232RL</b> as well.This Bit-bang mode pins (8 I/O pins) can be used as a replacement for applications involving PC parallel port which is scares now a day. 
+</p><p><br/> <b>Model:<a href="http://www.seeedstudio.com/depot/uartsbee-v31-p-688.html?cPath=104_109">INT110B2P</a></b> <br/> <img src="img/Uartsb31.jpg" width="500"/>
+</p>
+<h2>  Features </h2>
+<ul><li>USB 2.0 compatible Serial Interface. 
+</li><li>3.3V and 5V compatible I/Os. 
+</li><li>3.3V and 5V dual power outputs. 
+</li><li>Reset button for BEE modules. 
+</li><li>Bit-Bang mode ready (8 Serial I/Os or as SPI). 
+</li><li>LEDs for UART and BEE operations.
+</li></ul>
+<h2>  Applications Ideas  </h2>
+<ul><li>USB to Serial adapter for communicating with TTL/CMOS level Serial devices. 
+</li><li>Programmer for Arduino / Seeeduino and compatible boards. 
+</li><li>Programmer for micro-controllers / CPLDs using ISP(in-circuit-serial-programming). 
+</li><li>3.3V / 5V power source for a breadboard MCU applications 
+</li><li>USB Adapter for BEE modules (for PC wireless function). 
+</li><li>Endless possibilities as a USB based parallel device in FT232RL bit-bang mode - Known to work as <b>AVR-ISP</b>, Slowspeed <b>JTAG</b> with OpenOCD, as <b>I2C</b>, 
+</li></ul>
+<p><br/>
+</p>
+<h2>  Cautions  </h2>
+<p><font color="red"> <strong>
+</strong></font></p>
+<ul><li><b>UartSBee v3.1</b> provide a <b>power selection</b>(3.3V or 5V) <b>toggle switch</b>. <u>Before connecting</u> the board to any other device, make sure you set the power selection switch to either 3.3V or 5V. 
+</li></ul>
+<h2>  Schematic  </h2>
+<p><img src="img/UartSbee_Schematic.png" width="800"/>
+</p>
+<h2>  Specifications  </h2>
+<h3>  Key Specifications  </h3>
+<table cellpadding="1" cellspacing="1">
+<tr>
+<th scope="row"> Microprocessor
+</th>
+<td> FT232RL
+</td></tr>
+<tr>
+<th scope="row"> PCB size
+</th>
+<td> 3.1cm x 4.1cm
+</td></tr>
+<tr>
+<th scope="row"> Indicators
+</th>
+<td> POWER,Green LED. LEDs for Txd and Rxd
+</td></tr>
+<tr>
+<th scope="row"> Power supply
+</th>
+<td> 3.3V and 5V DC
+</td></tr>
+<tr>
+<th scope="row"> Interface
+</th>
+<td> Mini-B USB, 2.54mm pitch pin header
+</td></tr>
+<tr>
+<th scope="row"> Adapter socket
+</th>
+<td> XBee compatible 2.0mm pitch female pin header
+</td></tr>
+<tr>
+<th scope="row"> Connectivity
+</th>
+<td> USB
+</td></tr>
+<tr>
+<th scope="row"> Communication Protocol
+</th>
+<td> UART, Bit Bang I/O, SPI
+</td></tr>
+<tr>
+<th scope="row"> ROHS
+</th>
+<td> YES
+</td></tr></table>
+<p><br/>
+</p>
+<h3>  Electrical Characterstics  </h3>
+<table border="1">
+<tr>
+<th> Specification
+</th>
+<th> Minimum
+</th>
+<th> Typical
+</th>
+<th> Maximum
+</th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Input voltage
+</td>
+<td> -
+</td>
+<td> 5
+</td>
+<td> 5
+</td>
+<td> Vdc
+</td></tr>
+<tr>
+<td> Current Consumption
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> 500
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Output voltage
+</td>
+<td> 3.3
+</td>
+<td> -
+</td>
+<td> 5
+</td>
+<td> Vdc
+</td></tr></table>
+<h2>  System Block Digram  </h2>
+<p><img src="img/Uartsbee-block-diagram.jpg" width="600"/>
+</p><p><br/>
+</p>
+<ul><li>A tiny <b>reset</b> <b>switch</b> is provided for reseting <b>Bee</b> compatible devices. 
+</li><li>Apart from <b>2 x 10</b> Breakout for BEE compatible modules, additional pads for <b>2 x 10pin headers</b>, <b>2 x 3 ISP header</b> are provided.Users can solder pin headers appropriately.
+</li></ul>
+<h2> Applications </h2>
+<h3>  USB – Serial Port  </h3>
+<p><b>UartSBee</b> is commonly used as USB to Serial Port (COM port) interface. This kind of configuration can be used to communicate with a MCU serial port or to program a MCU which support UART based ISP. 
+</p>
+<h4> <b>Windows</b> </h4>
+<ul><li>In Windows OS, the first time you plug in the device, you might be asked for the driver.
+</li></ul>
+<p><img src="img/UartSbee_Detected_Windows.JPG" width="200"/> <br/>
+</p><p>Download and install the <b>Virtual COM port</b> driver from FTDI website : 
+</p><p><a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a>
+</p>
+<ul><li>A wizard opens for installing the driver. Choose "Install from a list or specific location"
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_1.JPG" width="400"/> <br/>
+</p>
+<ul><li>Choose the downloaded driver path
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_2.JPG" width="400"/> <br/>
+</p>
+<ul><li>If you have downloaded unsigned driver, the following Window appears. Just click "Continue Anyway"
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_2.1.JPG" width="200"/> <br/>
+</p>
+<ul><li><b>UartSBee</b> driver is successfully installed. Windows assigns a <b>COM</b> port name to <b>FT232RL</b> like <b>COM10</b>, <b>COM11</b> etc... Please check the exact name in Device Manager.  In this case "<b>COM16</b>" is assigned for UartSBee
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_3.JPG" width="400"/> <br/>
+</p><p><br/>
+</p>
+<h4> <b>GNU/Linux</b> </h4>
+<p>All modern <b>GNU/Linux OS</b> comes with FT232RL drivers. To check if UartSBee is detected, Issue a <b>lsusb</b> command. An output similar to below should appear. 
+</p><p><img src="img/Lsub.png" width="600"/>
+</p><p><b>GNU/Linux</b> assigns <b>/dev/ttyUSB0</b>, <b>/dev/ttyUSB1</b> etc... as device name.   
+</p><p>To verify the working of serial port connect <b>TxD</b> and <b>RxD</b> pins of UartSBee and use a terminal application like <b>cutecom</b> to configure the device parameters as shown below.  
+</p><p><b>Baudrate</b>:9600, <b>Data bits</b>:8, <b>Stop bits</b>:None and no Handshake 
+</p><p><br/>
+</p><p><img src="img/Uartsbee-txd-rxd-connected.JPG" width="480"/>
+</p><p><br/>
+</p><p>Any character typed in terminal would be echoed back as shown. 
+</p><p><img src="img/UartsBee-CuteCom.png" width="480"/><br/><br/>
+</p><p>The same functionality can be checked in <b>Windows</b> - <b>Hyperterminal</b> as well.
+</p>
+<h3>  3.3V / 5v Power Source for MCU breadboard µCs and Programmer for µCs / CPLDs  </h3>
+<p>Apart from 3.3V and 5V power outputs provided by UartSBee , the logic level of I/O pins can be selected for <b>5.0V</b> <b>TTL</b> or <b>3.3V CMOS</b> operations. In the below example a bread based board micro-controller application is demonstrated. A LPC1343 ARM Cortex-M3 MCU is connected to UartSBee. As this is a 3.3V device, the power toggle switch is set to 3.3V. LPC1343 can be programmed through UART. This application could be extended to any MCU / CPLDs which support UART based flashing or SPI based flashing (Needs FT232R BitBang mode). 
+</p><p><br/>
+</p><p><b>BreadBoard Prototyping</b>: <b>UartSBee v3.1</b> acting as as 3.3V power-supply and 3.3V UART flash programming port for LPC1343. 
+</p><p><img src="img/UartSBee_as_uCPowerSupplyAndProgPort_BreadBoard.JPG" width="400"/>       <b>Switch</b>: 3.3V I/O Selected   <img src="img/UarSBee-Switch_3.3V_selected.jpg" width="133"/>
+</p><p><b><br/></b>
+</p><p><b><br/></b>
+</p>
+<h3>  Bee Module Interfacing for PC Wireless application  </h3>
+<p><b>PC Wireless Ad-Ons</b>
+</p><p>UartSBee's Bee compatible interface provided can be used to connect Bee module like <b>XBee</b>, <b>Bluetooth Bee</b>, <b>RF Bee</b>, <b>Wifi Bee</b>, <b>GPS Bee </b>to PC USB. This makes Bee based PC Wireless application easier. As most of these Bee modules support UART interface, PC programming is easy as well. 
+</p><p><b>MCU Wireless Ad-Ons</b>
+</p><p>This type of arrangement can be also used to interface with UART of micro-controllers (Seeeduino) . 
+</p><p>Please refer the Bee module documentation for more information. 
+</p><p><br/>
+</p><p><b>          XBee </b>Connected to<b>UartSBee                                                                     BluetoothBee </b>Connected to<b>UartSBee</b>
+</p><p><img src="img/UartSBee-hardware.jpg" width="400"/> <img src="img/BluetoothBee_with_UartSBee.JPG" width="350"/> <br/>
+</p>
+<h3>  BitBang Mode  </h3>
+<p>An nice feature of UartSBee v3.1 compared to other FT232RL based USB-Serial devices is that all the Bit-Bang I/Os are brought to the header pins. 
+</p><p>Bit-Bang mode is a special feature of FT232RL in which 8 I/O lines (<b>D0 - D7</b>) can be used as a general purpose bidirectional  I/O lines. Three Bit-Bang modes are supported by FT232RL 
+</p>
+<ul><li><b>Asynchronous Bit-Bang mode </b>
+</li></ul>
+<p>Any data written to the device is clocked to the configured output pins. The rate of data transfer is configured based on baud rate generator. In this mode any of 8 I/O lines can be configured as input or ouput. 
+</p>
+<ul><li><b>Synchronous Bit-Bang mode</b>
+</li></ul>
+<p>In this mode data is sent synchronously. An input is read before an output byte is sent to the device. Hence to read input, a write operation must be performed. 
+</p>
+<ul><li><b>CBUS Bit-Bang Mode</b>
+</li></ul>
+<p>This is a special mode which requires reprogramming of FT232RL EEPROM. This uses signals <b>C0 - C3</b>. 
+</p><p><br/> <b>Bit-Bang Mode</b> of <b>FT232RL</b> is well documented in the application note<a href="http://www.ftdichip.com/Support/Documents/AppNotes/AN_232R-01_Bit_Bang_Mode_Available_For_FT232R_and_Ft245R.pdf">[1]</a>
+</p><p><br/>
+</p><p><b>Table: Bit-Bang I/O Mapping</b>
+</p>
+<table border="1">
+<tr>
+<th> UartSBee Signal
+</th>
+<th> BitBang I/O Signal
+</th></tr>
+<tr>
+<td> TxD
+</td>
+<td> D0
+</td></tr>
+<tr>
+<td> RxD
+</td>
+<td> D1
+</td></tr>
+<tr>
+<td> RTS
+</td>
+<td> D2
+</td></tr>
+<tr>
+<td> CTS
+</td>
+<td> D3
+</td></tr>
+<tr>
+<td> DTR
+</td>
+<td> D4
+</td></tr>
+<tr>
+<td> DSR
+</td>
+<td> D5
+</td></tr>
+<tr>
+<td> DCD
+</td>
+<td> D6
+</td></tr>
+<tr>
+<td> RI
+</td>
+<td> D7
+</td></tr></table>
+<p><br/>
+</p><p><b>BitBang Mode Operation:</b>  
+</p><p>A simple Asynchronous Bit-Bang mode operation is demonstrated in the below breadboard arrangement in which DTR (D4) pin is connected to an LED. The LED blinking rate is controlled by the PC side application program. 
+</p><p><br/> <b>LED Blinky Circuit                                                             BitBang I/Os of UartSBee V3.1 - Bottom Side</b>
+</p><p><img src="img/UartSBee_bit-bang-DTR.jpg" width="300"/>   <img src="img/UartSBee_Bottom_Bit_Bang.png" width="500"/>
+</p><p><br/>
+</p><p>Bit-Bang mode requires special FTDI direct driver called <a href="http://www.ftdichip.com/Drivers/D2XX.htm">D2XX</a>. This driver needs to be installed after removing the Virtual COM Port driver of FT232RL chip. In GNU/Linux this driver runs in kernel mode. As an alternative to D2XX an Free Open Source driver <a href="http://www.intra2net.com/en/developer/libftdi/">libFTDI</a> is available. This works in Windows, GNU/Linux and Mac OS. It runs in user mode in GNU/Linux. Hence no need to remove the existing FT232RL driver. 
+</p><p><b>libFTDI</b>
+</p><p><a href="http://www.intra2net.com/en/developer/libftdi/">http://www.intra2net.com/en/developer/libftdi/</a>
+</p><p><b>libUSB</b> libFTDI required libusb which can be downloaded from  
+</p><p><a href="http://www.libusb.org/">http://www.libusb.org/</a>
+</p><p><br/>
+</p><p>The below example code can be compiled in the similar way as that of libFTDI example files. An easy way is to copy the contents of the below code to one of the existing example .c file and build the whole driver using 
+</p><p>./configure 
+</p><p>make 
+</p><p><br/> <b>Code Example</b>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+Blinky.C&amp;nbsp;: UartSBee v3.1 (FT232RL) Bit-Bang mode - Blinky.
+ 
+Circuit:
+Connect DTR to Anode of LED, Connect one end of resistor to GND and other end
+to Cathode of the LED
+*/</span>
+ 
+<span class="co2">#ifdef __WIN32__</span>
+<span class="co2">#define sleep(x) Sleep(x)</span>
+<span class="co2">#endif</span>
+ 
+<span class="co1">// 8 bit pin mask for I/O pin </span>
+<span class="co2">#define TXD 0x01  </span>
+<span class="co2">#define RXD 0x02  </span>
+<span class="co2">#define RTS 0x04  </span>
+<span class="co2">#define CTS 0x08  </span>
+<span class="co2">#define DTR 0x10</span>
+<span class="co2">#define DSR 0x20</span>
+<span class="co2">#define DCD 0x40</span>
+<span class="co2">#define RI  0x80</span>
+ 
+<span class="co2">#include &amp;lt;stdio.h&amp;gt;</span>
+<span class="co2">#include &amp;lt;ftdi.h&amp;gt;    </span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> ouputState <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw4">struct</span> ftdi_context ftdic<span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* 1. Initialize ftdi device context */</span>
+    ftdi_init<span class="br0">(</span><span class="sy3">&amp;</span>amp<span class="sy4">;</span>ftdic<span class="br0">)</span><span class="sy4">;</span>  
+ 
+    <span class="coMULTI">/* 2. Open the device based of VID/PID pair */</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span>ftdi_usb_open<span class="br0">(</span><span class="sy3">&amp;</span>amp<span class="sy4">;</span>ftdic, <span class="nu12">0x0403</span>, <span class="nu12">0x6001</span><span class="br0">)</span> <span class="sy3">&amp;</span>lt<span class="sy4">;</span> <span class="nu0">0</span><span class="br0">)</span> 
+    <span class="br0">{</span>
+        <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"Unable to UartSBee v3.1"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="coMULTI">/* 3. Enable Bit-Bang mode with for DTR line  */</span>
+    ftdi_set_bitmode<span class="br0">(</span><span class="sy3">&amp;</span>amp<span class="sy4">;</span>ftdic, DTR, BITMODE_BITBANG<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* 4. Blink LED every 1 second */</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+        ouputState <span class="sy3">^</span><span class="sy1">=</span> DTR<span class="sy4">;</span>
+        ftdi_write_data<span class="br0">(</span><span class="sy3">&amp;</span>amp<span class="sy4">;</span>ftdic, <span class="sy3">&amp;</span>amp<span class="sy4">;</span>ouputState, <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+        sleep<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>FT232RL Bit-Bang mode can be used to construct AVR ISP, JTAG, SPI and I2C Ports. Refer the external links. 
+</p><p><br/>
+</p><p><b>                           AVR-ISP Connection Idea</b>
+</p><p><img src="img/UartSbee_ISP_Connection_BitBang.jpg" width="400"/>
+</p>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.<br/>
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons Attribution-Noncommercial-Share Alike License 3.0</a>. Source code and libraries are licensed under <a href="/w/index.php?title=GPL&amp;action=edit&amp;redlink=1" title="GPL (page does not exist)">GPL</a>/<a href="/w/index.php?title=LGPL&amp;action=edit&amp;redlink=1" title="LGPL (page does not exist)">LGPL</a>, see source code files for details. 
+</p><p><br/>
+</p>
+<h2>  Document Version Tracker  </h2>
+<table border="1">
+<tr>
+<th> Revision
+</th>
+<th> Description
+</th>
+<th> Editor
+</th>
+<th> Release Date
+</th></tr>
+<tr>
+<td> V0.9d
+</td>
+<td> Detailed Application Notes
+</td>
+<td> Visweswara R
+</td>
+<td> 23rd December 2010
+</td></tr></table>
+<p><br/>
+</p>
+<h2>  Hardware Version Tracker  </h2>
+<table border="1">
+<tr>
+<th> Revision
+</th>
+<th> Description
+</th>
+<th> Release Date
+</th></tr>
+<tr>
+<td> UartSBee V3.1
+</td>
+<td> Delete Bluetooth’s breakout on the bottom side, Reduce form factor
+</td>
+<td> Sept 02, 2010
+</td></tr>
+<tr>
+<td> UartSBee V2.3
+</td>
+<td> DC current for 3.3v pin, up to 500mA provided for better support of XBee pro
+</td>
+<td> Jul 21, 2009
+</td></tr>
+<tr>
+<td> UartSBee V2.1
+</td>
+<td> Initial public release
+</td>
+<td> Feb 01, 2009
+</td></tr></table>
+<p><br/>
+</p>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<p>Schematic and Board Files [<a href="http://garden.seeedstudio.com/images/b/b4/Uartsbee31_Schematic_Board.zip">[2]</a>];
+</p>
+<h2>  External Links  </h2>
+<ul><li><b><a href="http://www.ftdichip.com/Products/ICs/FT232R.htm">[3]</a></b><a href="http://www.ftdichip.com/Products/ICs/FT232R.htm">FTDI FT232RL product Page</a>
+</li><li>[<a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a> FTDI Virtual COM Port (VCP) drivers 
+</li><li><a href="http://www.ftdichip.com/Drivers/D2XX.htm">FTDI D2XX drivers</a>
+</li><li><a href="http://www.ftdichip.com/Support/Documents/AppNotes/AN_232R-01_Bit_Bang_Mode_Available_For_FT232R_and_Ft245R.pdf">FTDI Bit-Bang mode application note</a>
+</li></ul>
+<p><br/> <b>Open Source Drivers</b>
+</p>
+<ul><li><a href="http://www.intra2net.com/en/developer/libftdi/">libFTDI</a>
+</li><li><a href="http://www.libusb.org/">libUSB</a>
+</li></ul>
+<p><br/>
+</p><p><b> Other Sources of FT232RL application information</b>
+</p>
+<ul><li><a href="http://hackaday.com/2009/09/22/introduction-to-ftdi-bitbang-mode/">Hackaday - Introduction to bit-bang mode</a>
+</li><li><a href="http://vak.ru/doku.php/proj/bitbang/bitbang-jtag">FT232R JTAG implementation with OpenOCD </a>
+</li><li><a href="http://openschemes.com/2009/11/05/bit-banging-spi-on-arduinos-ft232rl/">FT232R SPI Bitbang Mode example</a>
+</li><li><a href="http://www.geocities.co.jp/arduino_diecimila/bootloader/index_en.html">Flashing Arduino with FT232R bitbang mode</a>
+</li></ul>
+<p><b><br/></b>
+</p>
+<h2>  How to buy  </h2>
+<p>You can buy UartSBee V3.1 at: <a href="http://www.seeedstudio.com/depot/uartsbee-v31-p-688.html?cPath=104_109">http://www.seeedstudio.com/depot/uartsbee-v31-p-688.html?cPath=104_109</a>
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">Bee series</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

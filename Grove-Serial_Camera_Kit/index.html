@@ -1,0 +1,55 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Serial Camera Kit</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Serial Camera Kit</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/GSCK_Introduction.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+
+<p>Grove - Serial Camera Kit includes one control board and two interchangeable lenses, one is standard lens and the other is wide-angle lens. It's a great camera for Arduino centered image recognition projects, because 30W pixel wouldn't be overwhelming for Arduino, so that real-time image recognition is possible. To make it more fun and playable, lenses of two specs are shipped in this kit. The standard one is for common photo shots and the wide-angle one is specially suitable for monitoring projects.
+</p>
+<h2> Specifications</h2>
+<ul><li>Input Voltage: 5V
+</li><li>Pixel: 300,000
+</li><li>Resolution: 640*480, 320*240, 160*120
+</li><li>Uart Baud Rate: 9600~115200
+</li><li>Communication: RS485 and RS232
+</li><li>Photo JPEG compression, high, medium and low grades Optional
+</li><li>AGC
+</li><li>Auto Exposure Event Control
+</li><li>Automatic White Balance Control
+</li><li>Focus adjustable
+</li></ul>
+<h2> Demonstration</h2>
+<p>This demo will show you how to use Grove - Serial Camera Kit. We need a <a href="http://www.seeedstudio.com/depot/seeeduino-v30-atmega-328p-p-669.html?cPath=6_7">Seeeduino</a>, an <a href="http://www.seeedstudio.com/depot/sd-card-shield-v40-p-1381.html?cPath=105">SD Card Shield</a> and a <a href="http://www.seeedstudio.com/depot/index.php?main_page=advanced_search_result&amp;search_in_description=0&amp;keyword=Grove+-+Button&amp;x=12&amp;y=8">Grove - Button</a>. When the button pressed, we take a photo and save it to SD Card. 
+Follow the below steps step by step, you can easily run your Grove - Serial Camera Kit. Then let's go.
+</p>
+<h3> Hardware Installation</h3>
+<p>We can find that there are two Grove interfaces on SD Card Shield V4.0, so we needn't a Base Shield, just plug Button to I2C Grove and plug Camera to Uart Grove.
+</p><p><img src="img/GSCK_Hardware.jpg" width="400"/>
+</p>
+<h3> Download Code and Upload</h3>
+<p>You can download demo code in github, click <a href="https://github.com/Seeed-Studio/Grove_Serial_Camera_Kit">here</a>
+</p><p>Then upload the code, and it works.
+</p><p><br/>
+</p>
+<h3> Take a Photo</h3>
+<p>After finish uploading demo code, we can take a photo now, just press the button, then wait for a few seconds, a photo will be saved to SD card.<br/>
+The following image is the ceiling of my office use straight angle lens.<br/>
+<img src="img/GSCK_60.jpg" width="320"/>
+</p>
+<h3> Replacing a Lens</h3>
+<p>There is another wide-angle lens, I will show you how to replace it.<br/>
+</p><p>Firstly you should have a screwdriver：
+</p><p><img src="img/GSCK_Step1.jpg" width="400"/>
+</p><p>Then, unscrew the screws on the side of lens:
+</p><p><img src="img/GSCK_Step2.jpg" width="400"/>
+</p><p>Try rotating the lens, it can be screwed out：
+</p><p><img src="img/GSCK_Step3.jpg" width="400"/>
+</p><p>We use  the wide-angle lens to take a photo, also, it's  the ceiling of my office!<br/>
+Find anything different from the ceiling image previous?
+</p><p><img src="img/GSCK_90.jpg" width="400"/>
+</p>
+<h3> How To Focus</h3>
+<p>Lens screwed different depths represent different focal length, you can have a try.
+</p>
+<h2> Resources</h2>
+<p><a href="https://github.com/Seeed-Studio/Grove_Serial_Camera_Kit">Demo Code</a>
+</p><p>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

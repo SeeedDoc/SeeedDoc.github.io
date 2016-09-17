@@ -1,0 +1,132 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - UV Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - UV Sensor</h1>
+
+<p>The Grove – UV Sensor is used for detecting the intensity of incident ultraviolet(UV) radiation. This form of electromagnetic radiation has shorter wavelengths than visible radiation. The Grove - UV Sensor is based on the sensor GUVA-S12D which has a wide spectral range of 200nm-400nm. The module outputs electrical signal which varies with the UV intensity, which gives your suggestion if it is a good idea to beach today.<br/>
+<b>Model</b>:<a href="http://www.seeedstudio.com/depot/grove-uv-sensor-p-1540.html">SEN00700P</a><br/>
+</p><p><img src="img/UV_Sensor_01.jpg" width="700"/>
+</p>
+<h2> Feature</h2>
+<ul><li> High stability
+</li><li> Good Sensitivity
+</li><li> Low power consumption
+</li><li> Schottky type photodiode sensor
+</li><li> Wide response range
+</li><li> Grove Interface
+</li></ul>
+<h2> Specification</h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row">Operating Voltage
+</th>
+<td> 3.0
+</td>
+<td> 5.0
+</td>
+<td> 5.1
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td>
+</td>
+<td> 0.31
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> Output Voltage
+</th>
+<td>
+</td>
+<td>
+</td>
+<td>
+</td>
+<td> mV
+</td></tr>
+<tr>
+<th scope="row"> Response wavelength
+</th>
+<td> 240
+</td>
+<td> ~
+</td>
+<td> 370
+</td>
+<td> nm
+</td></tr>
+<tr>
+<th scope="row"> Working Temperature
+</th>
+<td> -30
+</td>
+<td> ~
+</td>
+<td> 85
+</td>
+<td> ℃
+</td></tr></table>
+<h2> Usage</h2>
+<p>UV sensors are used in many different applications. Examples include pharmaceuticals, automobiles, and robotics. UV sensors are also used in the printing industry for solvent handling and dyeing processes. In addition, UV sensors are also used in the chemical industry for the production, storage, and transportation of chemicals.
+</p><p>The fact of the UV sensor work is: In sunlight, the UV index and Photocurrent are a linear relationship.
+</p><p><br/><img src="img/Reference1.jpg" width="628"/><br/>
+</p><p>About our Grove - UV Sensor, we have converted Photocurrent to corresponding voltage value collected by Arduino/Seeeduino. The output voltage and the UV index is linear:
+</p><p><b>illumination intensity = 307 * Vsig </b>
+</p><p>where: <br/>
+Vsig is the value of voltage measured from the SIG pin of the Grove interface, unit V.<br/>
+illumination intensity unit: mW/m<sup>2</sup> for the combination strength of UV light with wavelength range: 240nm~370nm
+</p><p>Note: To calculate the UV index value, please refer to <a href="http://www2.epa.gov/sunwise/uv-index">http://www2.epa.gov/sunwise/uv-index</a>. It's hard to say that the measurement from this sensor can be converted to the EPA standard UV index, but can be estimated roughly.
+</p><p>UV Index = illumination intensity / 200
+</p>
+<h3> Example</h3>
+<ul><li>Connect it to A0 port of <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>.
+</li><li>Plug the Grove - Base Shield into Arduino/Seeeduino and connect them to  PC using a USB cable.
+</li></ul>
+<ul><li>The demo code as show below.  
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="cpp source-cpp"><pre class="de1"> <span class="co1">// modified by Victor </span>
+ <span class="co1">// to calculate UV index directly</span>
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+ 
+  Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>  
+  <span class="kw4">int</span> sensorValue<span class="sy4">;</span>
+  <span class="kw4">long</span>  sum<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+  <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="nu0">1024</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span><span class="co1">// accumulate readings for 1024 times</span>
+   <span class="br0">{</span>  
+      sensorValue<span class="sy1">=</span>analogRead<span class="br0">(</span>A0<span class="br0">)</span><span class="sy4">;</span>
+      sum<span class="sy1">=</span>sensorValue<span class="sy2">+</span>sum<span class="sy4">;</span>
+      delay<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span>
+   <span class="br0">}</span>   
+ <span class="kw4">long</span> meanVal <span class="sy1">=</span> sum<span class="sy2">/</span><span class="nu0">1024</span><span class="sy4">;</span>  <span class="co1">// get mean value</span>
+ Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"The current UV index is:"</span><span class="br0">)</span><span class="sy4">;</span>
+ Serial.<span class="me1">print</span><span class="br0">(</span><span class="br0">(</span>meanVal<span class="sy2">*</span><span class="nu0">1000</span><span class="sy2">/</span><span class="nu16">4.3</span><span class="sy2">-</span><span class="nu0">83</span><span class="br0">)</span><span class="sy2">/</span><span class="nu0">21</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// get a detailed calculating expression for UV index in schematic files. </span>
+ Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"<span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+ delay<span class="br0">(</span><span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span> 
+ 
+<span class="br0">}</span></pre></div></div>
+<h2> Resource</h2>
+<p><a href="res/Grove-UV_Sensor_v1.1_Schematics.zip">Grove - UV Sensor v1.1 schematics(current version)</a><br/>
+<a href="res/Grove-UV_Sensor_v1.1_Datasheets.zip">Grove - UV Sensor v1.1 Sensor Datasheets(current version)</a><br/>
+<a href="https://www.epa.gov/sunsafety/uv-index-scale-1">US EPA Suggestions About UV Radiation</a>
+</p><p><a href="res/Grove-UV_Sensor_v1.0_Datasheets.zip">Grove - UV Sensor v1.0 schematics and datasheets(older version)</a><br/>
+
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

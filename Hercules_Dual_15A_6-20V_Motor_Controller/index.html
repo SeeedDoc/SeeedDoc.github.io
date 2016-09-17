@@ -1,0 +1,270 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Hercules Dual 15A 6-20V Motor Controller</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Hercules Dual 15A 6-20V Motor Controller</h1>
+
+<p>Hercules Dual 15A 6-20V Motor Controller is a high current motor drive control board. including micro controller processor, motor drive circuit, charging circuit and protection circuit. It features a complete solution to power supply, control and drive.
+</p><p>Compared with L298, its half bridge motor controller IR2104 and N-MOSFET take prominent advantage to drive heavy load device with output current even up to 15A. Hercules Dual motor controller is wide power supply designed, so the universal 7.4~11.1V lipo battery in the remote car and model airplane can be applied as well. Fuse will protect the board while overloaded, the correspondent LED show the protection status.
+</p><p>This motor controller is Arduino compatible. Best of all, it is focusing on high- expansion. The reserved standard Grove ports bring you a convenient access to abundant modules on the platform of motor car, such as Servo and Encoder, thus it embraces multi-functions that you can build up versatile masterpieces.
+</p><p><br/>
+<b>Model:</b><a href="http://www.seeedstudio.com/depot/hercules-dual-15a-620v-motor-controller-p-1515.html">ROB00100M</a> <br/>
+</p><p><img src="img/Hercules_03.jpg" width="700"/>
+</p>
+<h2> Feature</h2>
+<ul><li>Full bridge drive circuit based on MOSFET supports two independent channels， each channel up to 15A 
+</li><li>LED shows fuse protection status
+</li><li>Several Grove ports, conveniently connect with servo, encoder and sensors
+</li><li>Atmege328 controller, Arduino compatible
+</li></ul>
+<h2> Specification</h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row">Working  Voltage
+</th>
+<td> 6.0
+</td>
+<td>  -
+</td>
+<td> 20.0
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Motor Current per Channel
+</th>
+<td> -
+</td>
+<td> -
+</td>
+<td> 15
+</td>
+<td> A
+</td></tr>
+<tr>
+<th scope="row"> I/O Voltage
+</th>
+<td> -
+</td>
+<td> 5
+</td>
+<td> -
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> I/O Logic(TTL)
+</th>
+<td> -
+</td>
+<td> 5
+</td>
+<td> -
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Temperature Range
+</th>
+<td> -40
+</td>
+<td>
+</td>
+<td> +125
+</td>
+<td> C
+</td></tr></table>
+<h2>  Headware Overview  </h2>
+<p><br/><img src="img/4WD_Robot_Controller_Interface_Function.jpg" width="900"/><br/>
+<b>A:</b> Encoder Connectors.<br/>
+</p><p><b>B:</b> Grove Connectors.<br/>
+</p><p><b>C</b>: Servo Connectors.<br/>
+</p><p><b>D:</b> Atmega328P IC.<br/>
+</p><p><b>E:</b> SPI Connector.<br/>
+</p><p><b>F: </b>Programming Connector.<br/>
+</p><p><b>G: </b>Reset Button.<br/>
+</p><p><b>H:</b> Channel 1 Motor Blow Fuse. <br/>
+</p><p><b>J:</b> Channel 2 Motor Blow Fuse. <br/>
+</p><p><b>K:</b> DC Motor Channel 1 Screw Terminals. <br/>
+</p><p><b>L:</b> DC Motor Channel 2 Screw Terminals. <br/>
+</p><p><b>M: </b>Battery Input Screw Terminals.<br/>
+</p><p><br/>
+</p>
+<h2> Usage</h2>
+<h3>  Connectors Overview  </h3>
+<p><b>Encoder Connectors</b>
+</p><p>There are encoders in the motors of the <a href="http://seeedstudio.com/wiki/Skeleton_Bot_-_4WD_hercules_mobile_robotic_platform">Hercules platform</a> to measure the motor speed. These two Connectors are used to connect these encoders. The header also supplies 5VDC to power the encoder.
+</p><p><b> Grove Connectors</b>
+</p><p>These Servo Connectors are setup for standard servo style headers GND, +5V and Signal to control the angle of servo. 
+</p><p><b> Battery Input Screw Terminals </b>
+</p><p>The battery connectors are marked with a GND and VM on the input screw terminal. VM is the positive side of the battery . The GND is the negative side of the battery. Please make sure the input voltage range in 6~20v to avoid any damage.
+</p><p><b> Motor Screw Terminals</b>
+</p><p>The motor screw terminals are marked with M1A / M1B for channel 1 and M2A / M2B for channel 2. There is no specific polarities for the motors. If the motor runs in the opposite way that you want, you may reverse the motor wires to reverse rotation. Please note that the J21&amp;J20,J22&amp;J23 are parallel connected, that is, you should connect the left 2 motors of the <a href="http://seeedstudio.com/wiki/Skeleton_Bot_-_4WD_hercules_mobile_robotic_platform">Hercules</a> to one channel, and the right 2 motors to the other channel.
+</p>
+<h3> The Usage</h3>
+<p><font color="red">The controller cannot be powered directly from the programming connector which connect to PC for code downloading</font>. The controller must be powered from the Power screw J1, by batteries or a DC supply (6-20V). The controller uses 2 15A slow blow fuses to protect the “H” bridges. After connecting the power supply:
+</p>
+<ul><li>Connect a DC Motor to Channel 1 Screw Terminals. 
+</li><li>Connect the controller to your computer with <a href="/UartSBee_V4">UartSBee</a> and a USB cable.<br/>
+</li></ul>
+<pre><img src="img/IMG_0204-1-.JPG" width="500"/><br/>
+</pre>
+<ul><li>Load the <a href="res/Motor_Controller_Library.zip">File:Motor Controller Library</a> and run the "motorDriverDemo"  program.
+</li></ul>
+<pre>
+#include "motordriver_4wd.h"
+#include &lt;seeed_pwm.h&gt;
+
+void setup()
+{
+    MOTOR.init(); //Init all pin
+}
+
+void loop()
+{
+    MOTOR.setSpeedDir(DIRF, 80); //Set motor 1 and motor 2 direction:DIRF, Speed:80 (range:0-100).
+    delay(3000);
+    MOTOR.setSpeedDir(DIRR, 80); //Set motor 1 and motor 2 direction:DIRR, Speed:80 (range:0-100).
+    delay(3000);
+}
+</pre>
+<p><b>Note:</b> The motor has two run direction: DIRF(forward) and DIRR(backward).If the motor runs in the opposite way,you may reverse the motor wires to reverse rotation.<br/>
+</p>
+<ul><li>Disconnect the controller from your computer.
+</li><li>Connect the controller to a battery or DC supply by the battery input screw terminals.
+</li><li>Now you can see the motor rotate at a speed.
+</li></ul>
+<h3> Reference</h3>
+<p>The  "motorDriverDemo" contains some functions. To figure out how every line affects the turnout, you have to study the comments carefully. Please refer to the below functions defined in the motodriver_4wd Library.<br/>
+</p><p><b>1. setStop1()</b><br/>
+</p>
+<dl><dd>Description: stop motor 1 
+</dd></dl>
+<p><b>2. setStop2()</b><br/>
+</p>
+<dl><dd>Description: stop motor 2 
+</dd></dl>
+<p><b>3. void setSpeedDir(int ispeed, unsigned char dir)</b><br/>
+</p>
+<dl><dd>Description:set the speed and direction of motor1 and motor2
+</dd></dl>
+<p><b>4. void setSpeedDir1(int ispeed, unsigned char dir)</b><br/>
+</p>
+<dl><dd>Description:set motor1 speed and direction
+</dd></dl>
+<p><b>5. void setSpeedDir2(int ispeed, unsigned char dir)</b><br/>
+</p>
+<dl><dd>Description:set motor2 speed and direction
+</dd></dl>
+<h2> Expand Usage </h2>
+<p>Based on the Hercules Dual 15A 6-20V Motor Controller, we have designed a Remote Control Car which has strong power and good effect of shock absorption. 
+</p>
+<h3>  Remote control </h3>
+<p>RFBee Module + Grove - Thumb Joystick + Grove - XBee Carrier + Battery <br/>
+Rfbee module: used for remote send data.<br/>
+A Grove - Thumb Joystick: Using it to remote control car.<br/>
+Grove - XBee Carrier: offers convenience to use RFbee. We can use the MiniUSB Socket to upload code for RFBee.<br/>
+<b>Note:</b> You can connect to PC using USB cable to replace Battery. <br/>
+</p>
+<ul><li>Plug RFBee into Bee Socket of Grove - XBee Carrier.<br/>
+</li><li>Download the <a href="res/RFBee_Library.zip">File:RFBee Library.zip</a> and Unzip it into the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries. 
+</li><li>Download and Upload <a href="res/Remote_lvc.zip">the demo: Remote lvc</a> to one RFbee. Before upload, you need select Tools-&gt;Board-&gt;Arduino Pro or Pro Mini (3.3v, 8MHz) w/ATmega168 and Choose the correct serial port from the Tools menu. 
+</li><li>Connect Grove - Thumb Joystick to IIC Grove Connector of Grove - XBee Carrier.<br/>
+</li><li>Connect battery into Battery Connector of Grove - XBee Carrier.<br/>
+</li></ul>
+<p><br/><img src="img/Remote_Control.jpg" width="700"/><br/><b>Note:</b> You can reference <a href="/index.php-title=Bee_Stem#Interface_Function">the Interface of Grove - XBee Carrier wiki</a> for connector.
+</p>
+<h3>  Receiver </h3>
+<p>RFBee Module + Grove - XBee Carrier + Hercules Dual 15A 6-20V Motor Controller<br/>
+Rfbee module: used for remote send data.<br/>
+Grove - XBee Carrier: offers convenience to use RFbee. We can use the MiniUSB Socket to upload code for RFBee.<br/>
+The 15A 6-20V Motor Controller: Drive Motor to rotate.<br/>
+</p>
+<ul><li>Plug RFBee into Bee Socket of Grove - XBee Carrier.<br/>
+</li><li>Connect IIC of Grove - XBee Carrier to IIC Connector of Motor Controller.<br/>
+</li><li>Connect four motor to Motor1A/Motor1B(Motor2A/Motor2B). <br/>
+</li></ul>
+<p><b>Note: </b>  We use <span style="color:red">the 4WD hercules mobile robotic platform</span> for the motor controller as show below:
+<br/><img src="img/4WD_Robot_Car_Body.jpg" width="800"/><br/>
+</p>
+<ul><li>Upload The code to another RFBee module.
+</li></ul>
+<pre>// demo of rfbee send and recv
+#include &lt;Arduino.h&gt;
+#include &lt;EEPROM.h&gt;
+#include &lt;RFBeeSendRev.h&gt;
+#include &lt;RFBeeCore.h&gt;
+#include &lt;Wire.h&gt;
+
+#define FRAMESTART1                 0x53                // data frame start1
+#define FRAMESTART2                 0x01                // data frame start2
+#define FRAMEEND1                   0x2f                // data frame end1
+#define FRAMEEND2                   0x45                // data frame end2
+
+void sendToI2C(unsigned char ilen, unsigned char *idata)
+{
+    Wire.beginTransmission(4);                           // transmit to device #4
+    for(int i = 0; i&lt;ilen; i++) {Wire.write(idata[i]);}  // sends one byte
+    Wire.endTransmission();                              // stop transmitting
+    
+}
+
+void setup(){
+
+    pinMode(10, OUTPUT);
+    RFBEE.init();
+    Wire.begin();
+    Serial.begin(38400);
+    Serial.println("ok");
+}
+
+unsigned char rxData1[200];               // data len
+unsigned char len1;                       // len
+unsigned char srcAddress1;
+unsigned char destAddress1;
+char rssi1;
+unsigned char lqi1;
+int result1;
+
+unsigned char cntGetDta = 5;
+
+void loop()
+{
+    if(RFBEE.isDta())
+    {
+        result1 = receiveData(rxData1, &amp;len1, &amp;srcAddress1, &amp;destAddress1, (unsigned char *)&amp;rssi1 , &amp;lqi1);
+        Serial.println(len1);
+        for(int i = 0; i&lt; len1; i++)
+        {
+            Serial.print(rxData1[i]);Serial.print("\t");
+        }
+        
+        Serial.println();
+        
+        sendToI2C(6, rxData1);
+    }
+}
+
+</pre>
+<ul><li>The Library <a href="res/Motodriver_4wd.zip">File:Motodriver 4wd.zip</a> for Motor Controller. When upload code, you need select Tools-&gt;Board-&gt;Arduino Duimelanovew/ATmega328.
+</li></ul>
+<h3>  Result </h3>
+<p>The Remote Control Car besed on the Hercules Dual 15A 6-20V Motor Controller and  4WD hercules mobile robotic platform can load a bucket of water which capicity is 19L. 
+</p><p><br/><img src="img/4WD_Robot.jpg" width="494"/><br/>
+</p>
+<h2> Resources</h2>
+<p><a href="res/Source_file.zip">4WD Robot Controller Eagle File</a><br/>
+<a href="res/4WD_Robot_Controller_Schematic.pdf">4WD Robot Controller Schematic.pdf</a><br/>
+<a href="res/Motor_Controller_Library.zip">File:Motor Controller Library</a>
+</p>
+<h2> Support</h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

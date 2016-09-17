@@ -1,0 +1,282 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Shield Bot V1.2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Shield Bot V1.2</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Shield_Bot_Kit_Product_Image.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>Shield Bot is an easy to use entry level robotic platform that helps you leap to Robotics. You could build a line follower robot in few minutes by using the library &amp; sketch provided. 
+</p><p>Compared to the previous version, The Shield Bot V1.2 has not changed much.<br/>
+Note: Compatible Arduino Board is not included, get a <a href="/Seeeduino" title="Seeeduino">Seeeduino</a> or Arduino
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Shield-Bot-p-1380.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+<br/>
+</p>
+<h2> Features </h2>
+<ul><li><b>Easy to start</b> - The Shieldbot is plug &amp; play. It can be run out of the box in minutes
+</li><li><b>Expandable for imagination</b>- Solderless Grove expansion ports enable easy attachment of more sensors and actuators. It Shield headers allows use of any additional Arduino shields
+</li><li><b>Open source</b> -  Its designed to be hacked, adapted and transformed into whatever you want it to be!
+</li><li><b>Arduino Based</b> - The Shieldbot is an Arduino shield. The extensive Arduino community and shield ecosystem can be used for endless expansion!
+</li><li><b>Charging efficiency</b> - Can fully charge quickly. It has a high efficiency.
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification </h2>
+<h3> General Specification</h3>
+<table>
+<tr>
+<th> Item </th>
+<th> Parameter
+</th></tr>
+<tr>
+<td width="200"> Sensor </td>
+<td width="300"> 5x IR reflectance sensors for line and edge following
+</td></tr>
+<tr>
+<td> Li-ion rechargeable battery	</td>
+<td> 900 mAh
+</td></tr>
+<tr>
+<td>Gearmotor </td>
+<td> Two durable 160:1 micro metal Gearmotors
+</td></tr>
+<tr>
+<td> Grove Port </td>
+<td> 6x Grove expansion ports
+</td></tr>
+<tr>
+<td>Shield header </td>
+<td> Arduino Shield Expansion Headers
+</td></tr></table>
+<h3> Charging Specification</h3>
+<p><font color="red">Charge mode and charge efficiency as the following table:</font>
+</p>
+<table>
+<tr>
+<th> Mode </th>
+<th> Charge Current(A) </th>
+<th> the input power(W) </th>
+<th>Charge power(W) </th>
+<th> Charge Efficiency(%) </th>
+<th>Charge time(h)
+</th></tr>
+<tr>
+<td width="200"> USB Charge	 </td>
+<td width="200"> 0.396 </td>
+<td width="200"> 3.94	 </td>
+<td width="200"> 3.56 </td>
+<td width="200"> 90.36 </td>
+<td width="200"> 2.50
+</td></tr>
+<tr>
+<td> Vin Charge	 </td>
+<td>  0.7	</td>
+<td>   6.78		 </td>
+<td>  6.30</td>
+<td>  92.92 </td>
+<td>   1.41
+</td></tr></table>
+<h2> Hardware Overview </h2>
+<p><img src="img/Shield_Bot_V1.2_Foto_1.JPG" width="600"/>
+</p>
+<ul><li><b>Power Switch</b>: When ShieldBot is off, The shield bot can not run. But you can use the <b>USB Charge Port</b> to charge for battery.
+</li><li><b>USB Charge Port:</b> USB mini-B, used for charging for battery.
+</li><li><b>Grove Ports:</b> Grove ports access pins D0, D1, D2, D3, D4, D5, A4, A5.can connect Grove modules to these Grove ports.        
+</li><li><b>IR Line Finder Potentiometer</b>: Used for adjusting the Line Finders Sensitivity. Clockwise adjustment, the Sensitivity increases; Counter-clockwise adjustment,the Sensitivity decreases.
+</li><li><b>IR Line Finders:</b> S1 to S5. Blue if non reflective surface is detected (ex Black tape line) 
+</li><li><b>Line Finder Switch:</b> Turn switch towards "ON" to connect line finders to I/O pins(Occupied pins are A0,A1,A2,A3,D4) of Arduino. The LineFollowingSimple demo in library is used line finders output signal to control Shield Bot run. If switch is toward "OFF", Seeeduino/Arduino cannot control Shield Bot through line finders output signal.
+</li><li><b>Arduino Shield Expansion Headers</b>: Shield Bot can truly stack other shields.<br/>
+</li></ul>
+<p><font color="red"><b>Note:</b> </font>   1)  If S5 is enabled you can not use grove ports j14 and j13.
+</p>
+<dl><dd><dl><dd>2) You may only use ONE of the Arduino's serial line, UART grove port or j11 as they all share the D1/TX line.
+</dd></dl>
+</dd></dl>
+<h2> Status Lights</h2>
+<p>The Shield Bot has lots of LEDs to show you whats going on!
+<br/>
+<img src="img/Shield_bot_1.2_LEDs.JPG" width="600"/>
+<br/>
+</p>
+<table>
+<tr>
+<th> Light Numbers </th>
+<th> Function </th>
+<th> Status
+</th></tr>
+<tr>
+<td width="200"> D22 </td>
+<td> Power</td>
+<td> Green when Shieldbot is on. When ShieldBot is off, ShieldBot can only charge for battery.
+</td></tr>
+<tr>
+<td> D23 and D24	 </td>
+<td> Charging status</td>
+<td> Red means charging, green means done charging.
+</td></tr>
+<tr>
+<td> D18 </td>
+<td> Reset</td>
+<td> Red if reset button is pressed.
+</td></tr>
+<tr>
+<td> D11 and D12	 </td>
+<td> Right Motor Indicators	</td>
+<td> Green means forwards, red means backwards, both means stopped.
+</td></tr>
+<tr>
+<td> D13 and D15		 </td>
+<td> Left Motor Indicators		</td>
+<td> Green means forwards, red means backwards, both means stopped.
+</td></tr>
+<tr>
+<td> D5 D10 D14 D17 D19	 </td>
+<td> Light Sensor Indicators		</td>
+<td> Blue if non reflective surface is detected (ex Black tape line).
+</td></tr></table>
+<h2> Structure </h2>
+<p><br/>
+<img src="img/Position_for_seeeduino.jpg" width="600"/>
+<br/>
+The Part 1,Part 2 and Part 3 are made by our 3D printer. You can also see the Installation Position for Seeeduino board.
+<br/>
+</p>
+<h2> Getting Started </h2>
+<p>Getting the Shieldbot setup is quick and easy! Follow these steps to get your robotic companion up and running. 
+</p>
+<h3> The Preparatory Work</h3>
+<ul><li> First you need plug Arduino into the buttom of Shield Bot and connect it to PC using a USB cable .<br/>
+</li></ul>
+<p><img src="img/ShieldBot_Programming2.JPG" width="600"/><br/>
+</p>
+<ul><li> You would better turn Power Switch towards <i>OFF</i> before upload the code. Otherwise, It runs when you are not attention and may scare you.    
+</li></ul>
+<p>We've built a nice library for the Shield Bot with useful functions to control your Shield Bot and a number of examples so you can get it up and running in no time!  
+</p>
+<ul><li> Download the library from <a href="res/Shield_Bot_1.2_Library.zip">here</a> and Unzip.  
+</li><li> Put ShieldBot file  into the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries.
+</li></ul>
+<h3> Install the battery</h3>
+<p>The battery is needed when you want to make Shield Bot run on the ground. 
+</p><p><br/>
+<b>Note:</b>
+</p>
+<dl><dd>1) Once the battery is installed, you can charge  battery with a mini-b USB cable. When the battery is charging, a red LED will be on. When it is done charging, a green LED will be lit. 
+</dd><dd>2) When upload the code, you need connect the USB port of your Seeeduino to your PC. The USB port on the shield bot is only used for charging for battery.
+</dd></dl>
+<p><br/>
+</p>
+<h3> Demo 1: Drive motors to Run </h3>
+<ul><li>Open the Arduino environment and go to File-&gt;Examples-&gt;Shieldbot-&gt;drive to load the first Shield Bot example. Make sure you select the correct Arduino Board and Serial Port. 
+</li><li>Then upload code onto the Arduino. Once the upload is complete, the console should show "Done Uploading".
+</li><li>You can unplug the USB cable after completing the upload.  
+</li><li>Then put the Shield Bot on a spacious place and turn the power switch turn '<b>ON'</b>.
+</li><li>Now the Shield Bot will run at a certain speed.
+</li></ul>
+<h3> Demo 2: Following Black Line </h3>
+<p>The Shield Bot can detect reflective surface based on the Line finder sensors (s1,s2,s3,s4,s5). The blue indictors will lit if non reflective surface is detected (ex Black tape line). Now let us use it to make the run following the black line.
+<font color="red"><b>Note:</b> Make sure the dip switches are turned ON, and none of your shields are using pins A0,A1,A2,A3 or D4.  </font>
+</p>
+<ul><li>Reupload the new demo:LineFollowingSimple after connect Seeeduino to PC using the USB cable.
+</li><li>After complete the upload. Put the Shield Bot in the Pre-build black runway. Then the fine screen will appear:
+</li></ul>
+<p><br/><img src="img/Shield_Bot_Line_Finder.jpg" width="600"/><br/>
+</p>
+<ul><li>You can adjust the IR Line Finder Potentiometer to change the Line Finders Sensitivity. When Clockwise adjustment, the Sensitivity increases, Counterclockwise adjustment,the Sensitivity decreases. Have a try!
+</li></ul>
+<h3> Adaptation Instances</h3>
+<p><b>1. Clock</b><br/>
+This is a  incredibly simple, working clock. The wheels turn one forward and one reverse, spinning the reflectance sensors around the wheel indicating the minutes. Upon the hour mark the bot drives forward and advances the linear slide to indicate hours. Extra credit for the free linear rails made out of laser cut scrap and cellophane tape! 
+<br/><img src="img/Team1_2.jpg" width="532"/><br/>
+<b>2. Shot.Bot </b><br/>
+It was a really gorgeous device that many people in the event remarked they'd like to buy. The line following robot would take orders then drive the track to the dispenser where it would use a servo to actuate an amount of either of 3 beverages, before driving back to the patron
+<br/><img src="img/Team7_2.jpg" width="600"/><br/>
+<b>3. Simon</b><br/>
+There has a a beautifully designed, though not quite finished, 2 player heads up simon clone. The bot plays out a tune with lights and you use the laser cut puck, complete with braille so even the sight impaired could play, to mark the tones on the whiteboard. The Shieldbot then drives forward and uses the sensors to see if you've marked correctly. You want to get more right answers than your opponent so the bot drives towards their goal! 
+</p>
+<pre><br/><img src="img/Team6_2.jpg" width="600"/><br/>
+</pre>
+<p><b>4. HackPHX-Plotter</b><br/>
+The device is very close to knocking off the Der Kritzler 2d drawing machine which is a vertical x,y table with makerslide and had the ingenious idea of bolting the tires of the Shield bot down such that when it was put in reverse, it lifted the pen off the drawing surface :) They even worked with the designer to come up with a PC side user interface!  
+</p>
+<pre><br/><img src="img/Team8.jpg" width="600"/><br/>
+</pre>
+<h2> Reference </h2>
+<p>To use the Shield Bot library simply add the Shield Bot library and declare a Shieldbot object at the top of your Arduino code before your void setup()
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Shieldbot.h&gt;	//includes the Shield Bot Library</span>
+ 
+Shieldbot shieldbot <span class="sy1">=</span> Shieldbot<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//decares a Shieldbot object</span></pre></div></div>
+<p><u> <b>setMaxSpeed(int both)</b></u>
+</p>
+<dl><dd><i>Description</i>: set max speed of two motors. 
+</dd><dd><i>both</i>:  between 0(basically off) and 255(full speed) 
+</dd></dl>
+<p><u> <b>setMaxSpeed(int left, int right)</b> </u>
+</p>
+<dl><dd><i>Description</i>: Write a max speed to the left and right motor.  
+</dd><dd><i>left,right</i>: Left is the speed of the left motor. right is the speed of the right motor. between 0(basically off) and 255(full speed) 
+</dd></dl>
+<p><u> <b>rightMotor(char mag) </b> </u>
+</p>
+<dl><dd><i>Description</i>: Enables the right motor, negative for backwards, positive for forwards. If you make one motor drive slower, it will turn in that direction. If you make the motors turn in opposite direction it will spin. 
+</dd><dd><i>mag</i>: the direction to spin the right motor; -128: backwards all the way, 0: donot move, 127: forwards all the way
+</dd></dl>
+<p><u> <b>leftMotor(char mag) </b> </u>
+</p>
+<dl><dd><i>Description</i>: Enables the left motor, negative for backwards, positive for forwards. 
+</dd><dd><i>mag</i>: the direction to spin the left motor; -128: backwards all the way, 0: donot move, 127: forwards all the way
+</dd></dl>
+<p><u> <b> forward() </b> </u>
+</p>
+<dl><dd><i>Description</i>: Enables the motors to send the bot straight forward at the setSpeed().  
+</dd></dl>
+<p><u> <b> backward()  </b> </u>
+</p>
+<dl><dd><i>Description</i>: Enables the motors to send the bot straight backward at the setSpeed().  
+</dd></dl>
+<p><u> <b> drive(char left, char right) </b> </u>
+</p>
+<dl><dd><i>Description</i>: All purpose drive call. Calls leftMotor and rightMotor directly. 
+</dd><dd><i>left</i>: between -128 (left motor backwards 100% of max speed), 0 (standing still), and 127 (left motor forwards 100% of max speed) :<i>right</i>: between -128 (right motor backwards 100% of max speed), 0 (standing still), and 127 (right motor forwards 100% of max speed) 
+</dd></dl>
+<p><u> <b> stop() </b> </u>
+</p>
+<dl><dd><i>Description</i>: Disables the motors. You may also use drive(0,0). 
+</dd></dl>
+<p><u> <b> stopLeft() </b> </u>
+</p>
+<dl><dd><i>Description</i>: Disables the left motor. You may also use drive(0,X). 
+</dd></dl>
+<p><u> <b>stopRight()</b> </u>
+</p>
+<dl><dd><i>Description</i>: Disables the right motor. You may also use drive(X,0). 
+</dd></dl>
+<p><u> <b>fastStop()</b> </u>
+</p>
+<dl><dd><i>Description</i>: Disables the right motor. You may also use drive(X,0). 
+</dd></dl>
+<p><u> <b>fastStopLeft()</b> </u>
+</p>
+<dl><dd><i>Description</i>: Disables the left motor quicker. This is considered possibly bad for the motor chip so use at your discretion 
+</dd></dl>
+<p><u> <b>fastStopRight()</b> </u>
+</p>
+<dl><dd><i>Description</i>:  Disables the right motor quicker. This is considered possibly bad for the motor chip so use at your discretion 
+</dd></dl>
+<p><u><b>readS1(), readS2(), readS3(), readS4(), readS5()</b> </u>
+</p>
+<dl><dd><i>Description</i>: Reads any of the 5 light sensors on board. NOTE you NEED to connect the sensors to the arduino ports using the dip switch block (switches TOWARDS the numbers and ON text) These switches would otherwise allow you to use those pins for other things if you didn't want to use your light sensors 
+</dd><dd><i>Returns</i>: LOW if the surface reflects (ex. white) and HIGH if the surface doesn't reflect anything (ex BLACK)
+</dd></dl>
+<p><br/><img src="img/ShieldBot_driveLibrary.png" width="600"/><br/>
+</p>
+<h2> Resources </h2>
+<ul><li><a href="res/Shield_Bot_1.2_Library.zip">Shield Bot 1.2 Library</a>
+</li><li><a href="res/Shield_Bot_1.2_eagle_files.zip">Shield Bot 1.2 Eagle Files</a>
+</li><li><a href="res/Shield_Bot_v1.2.pdf">ShieldBot 1.2 Schematic</a>
+</li><li><a href="res/RPR-220.pdf">RPR-220 Datasheet</a> IR Reflectance Sensor
+</li><li><a href="res/ISL97516.pdf">ISL97516 Datasheet</a> Step up regulator
+</li><li><a href="res/BQ2057.pdf">BQ2057 Datasheet</a> Li-ion charger
+</li><li><a href="res/L298.pdf">L298 Datasheet</a> H-Bridge Motor Driver
+</li><li><a href="http://www.ti.com/product/lmv358">358 Datasheet</a> Op-Amp as a comparator for reflectance sensors
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

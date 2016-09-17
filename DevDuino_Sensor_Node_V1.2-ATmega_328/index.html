@@ -1,0 +1,255 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>DevDuino Sensor Node V1.2 (ATmega 328)</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>DevDuino Sensor Node V1.2 (ATmega 328)</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Sn.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>devDuino Sensor Node V1.2 (ATmega 328) is a compact Arduino-compatible microcontroller and is designed to build wireless networks based on transceiver nRF24L01+. You can easily connect other sensors <a href="/GROVE_System">(series Grove)</a> or actuators to this platform, to build your remote monitoring or controlling system..<br/>
+</p><p>Model: <a href="http://www.seeedstudio.com/depot/DevDuino-Sensor-Node-V12-ATmega-328-p-1774.html">830068001</a>
+</p><p><img src="img/IMG_2230.jpg" width="880"/>
+</p>
+<h2>  Feature </h2>
+<ul><li> Built on Arduino-compatible architecture
+</li><li> Clock frequency - 16MHz (may be reduced in order to reduce energy consumption by up to 8MHz)
+</li><li> Built-in temperature sensor MCP9700 (-40 ° C +125 ° C, accuracy of ± 2 ° C)
+</li><li> Built-in voltage divider (to monitor the supply voltage)
+</li><li> Built-in  button
+</li><li> Built-in LED
+</li><li> 2 power circuits 2.4G nRF24L01 + (by jumper)
+</li><li> 3 GROVE-compatible connector: I2C, Analog, Digital
+</li><li> Powered by one element CR2032 (not included)
+</li><li> Dimensions 30 x 40 mm
+</li></ul>
+<h2>  Layout and schematics </h2>
+<p><img src="img/Sn-top.jpg" width="400"/>
+</p><p><a href="//wiki.devicter.ru/images/6/6b/Sn-sh.jpg">Schematic of the device</a>
+</p>
+<h2>  Basic functionality </h2>
+<p>In the basic version (without additional sensors) module can be used as a wireless temperature sensor (using built-in sensor MCP9700, connected to A3) to control the battery charge level (via integrated voltage divider connected to A2).
+</p>
+<h2>  Expansion Capabilities </h2>
+<p>Basic functionality can be greatly expanded by connecting the various components <a href="//devicter.ru/catalog/serija-grove">series GROVE</a> from Seeed Studio.
+</p><p><img src="img/Sn-grove.jpg" width="880"/>
+</p><p>Also you can use the modules own making, for example, a temperature sensor based on MCP9700 (a temperature sensor similar to that installed on board Sensor Node).
+</p><p><img src="img/OutT-sens.jpg" width="880"/>
+</p>
+<h2>  Interfaces </h2>
+<ul><li> A0, A1 - displayed on the connector "Analog" (the other two pin connector - VCC and GND for sensor supply)
+</li><li> D3, D4 - displayed on the connector "Digital" (the other two pin connector - VCC and GND for sensor supply)
+</li><li> A4 (SDA), A5 (SCL) - displayed on the connector "I2C" (the other two pin connector - VCC and GND for sensor supply)
+</li><li> Interface for RF-module nRF24L01 +:
+<ul><li> D11 - RF_MOSI
+</li><li> D12 - RF_MISO
+</li><li> D13 - RF_SCK
+</li><li> D8 - RF_CE
+</li><li> D7 - RF_CSN
+</li><li> D2 - RF_IRQ
+</li></ul>
+</li><li> D4 -  button
+</li><li> D9 - LED
+</li><li> A2 - voltage divider to monitor the battery level
+</li><li> A3 - MCP9700 temperature sensor
+</li></ul>
+<h2>  Features Sensor Node </h2>
+<h3>  Module Programming </h3>
+<h4>  With the help of programmer based FT232RL (and such) </h4>
+<p>By default, the standard boot stitched microcontroller Arduino, allowing to record the firmware in the module with the type of programmers <a href="//devicter.ru/goods/Foca-v2-1-FT232RL">FOCA v2.2</a>.
+</p><p>Connecting the programmer via 5-pin (PROG) on the module (battery installed when programming is required - module receives power from the programmer)
+</p><p><b>Warning!</b> Do not forget to set the programmer working voltage of 3.3V.
+When flashing the bootloader via ISP, be sure to disconnect the wireless module nRF24L01 +.
+</p><p>Just programmer can be used to debug (monitor port).
+</p>
+<h4>  Using ISP-Programmer </h4>
+<p>If you want to get even further about 2K more memory for your sketch, you can use almost any ISP-Programmer for example, Arduino ISP (regular Arduino-compatible board and a standard example of the environment Arduino) or <a href="http://devicter.ru/goods/USBtinyISP-Arduino-bootloader-programmer">USBtinyISP</a>.
+</p><p>Connecting programmer via 6-pin connector (ISP) on the module (battery installed when programming is required - module receives power from the programmer).
+</p>
+<h3>  Option module supply nRF24L01+ </h3>
+<ul><li> Power to the constantly fed - jumper RFpower position 1-2
+</li><li> Power to the given with digital pin microcontroller (D6) - jumper RFpower position 2-3 
+</li></ul>
+<p>In the first case, to maximize the operating time of a battery should be fitted in use nRF24L01+ power saving mechanisms:
+</p>
+<pre>...
+
+      radio.powerUp();  //turn the power on NRF24
+      
+      // sending data
+      
+      ...
+
+      radio.powerDown();  //turn off the power on NRF24
+
+...</pre>
+<p><br/>
+In the second case power is supplied to a module only when the high level signal D6:
+</p>
+<pre>...
+
+      digitalWrite(6, HIGH);  //turn off the power on NRF24
+      
+      // sending data
+      
+      ...
+
+      digitalWrite(6, LOW);  //turn the power on NRF24
+
+...</pre>
+<h3>  Job button </h3>
+<p>Button connected to digital pin of D4 without external pull-up resistor. This connection is necessary to use the built-in pull-up resistor microcontroller.
+</p><p>This is done as follows (in the example being polled button once 0.5s and if it is pressed - LED lights):
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+<span class="kw4">void</span> <span class="kw2">setup</span> <span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  <span class="co1">// button</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">4</span>, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// enable pull-up resistor</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">4</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// LED</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  <span class="kw1">if</span><span class="br0">(</span><span class="kw3">digitalRead</span><span class="br0">(</span><span class="nu0">4</span><span class="br0">)</span> <span class="sy1">==</span> <span class="kw2">LOW</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw1">else</span> <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">9</span>, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Measurement voltage power </h3>
+<p>Besides measuring the voltage at the voltage divider with a simple analogRead (A2), you can use more "advanced" way - use the built-in capabilities of the microcontroller.
+</p><p>You can use the following universal function:
+</p>
+<pre>
+long readVcc() {
+  // Read 1.1V reference against AVcc
+  // set the reference to Vcc and the measurement to the internal 1.1V reference
+  #if defined(__AVR_ATmega32U4__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+    ADMUX = _BV(REFS0) | _BV(MUX4) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
+  #elif defined (__AVR_ATtiny24__) || defined(__AVR_ATtiny44__) || defined(__AVR_ATtiny84__)
+    ADMUX = _BV(MUX5) | _BV(MUX0);
+  #elif defined (__AVR_ATtiny25__) || defined(__AVR_ATtiny45__) || defined(__AVR_ATtiny85__)
+    ADMUX = _BV(MUX3) | _BV(MUX2);
+  #else
+    ADMUX = _BV(REFS0) | _BV(MUX3) | _BV(MUX2) | _BV(MUX1);
+  #endif  
+
+  delay(75); // Wait for Vref to settle
+  ADCSRA |= _BV(ADSC); // Start conversion
+  while (bit_is_set(ADCSRA,ADSC)); // measuring
+
+  uint8_t low  = ADCL; // must read ADCL first - it then locks ADCH  
+  uint8_t high = ADCH; // unlocks both
+
+  long result = (high&lt;&lt;8) | low;
+
+  result = 1125300L / result; // Calculate Vcc (in mV); 1125300 = 1.1*1023*1000
+  return result; // Vcc in millivolts
+}
+</pre>
+<p>The function returns the voltage in millivolts.
+</p>
+<h3>  Features connector Digital </h3>
+<p>In the present pin connector Digital D3. The peculiarity of its use is that this digital signal to the pins of the interrupt can be processed (INT1).
+</p>
+<h3>  Getting more time working Sensor Node </h3>
+<p>To ensure longer battery module from one battery can reduce the frequency of the microcontroller to 1MHz and lower "threshold" voltage at which it will start to 1.8V. 
+</p><p>This is done by adding the following section in the file boards.txt IDE Arduino:
+</p>
+<pre>
+s328o1.name=Sensor328p (int1MHz, 1.8V)
+
+s328o1.upload.protocol=arduino
+s328o1.upload.maximum_size=30720
+s328o1.upload.speed=19200
+
+s328o1.bootloader.low_fuses=0x62
+s328o1.bootloader.high_fuses=0xda
+s328o1.bootloader.extended_fuses=0x06
+s328o1.bootloader.path=atmega
+
+s328o1.bootloader.file=ATmegaBOOT_168_atmega328_pro_8MHz.hex
+
+#s328o8.bootloader.file=ATmegaBOOT_168_atmega328.hex
+
+s328o1.bootloader.unlock_bits=0x3F
+s328o1.bootloader.lock_bits=0x0F
+
+s328o1.build.mcu=atmega328p
+s328o1.build.f_cpu=1000000L
+s328o1.build.core=arduino
+s328o1.build.variant=standard
+</pre>
+<p>After adding this code to the appropriate file (and restarting the Arduino) in the list of available cards will be a new line: Sensor328 (int1MHz, 1.8V)
+</p><p><b>Warning!</b> Fuse bits specified in the file boards.txt and defining modes of microcontroller sewn Arduino environment only when writing the bootloader (but not the firmware of the microcontroller).
+</p><p>To correct fuse bits without changing the boot loader can be used, for example <a href="http://sourceforge.net/projects/avrdude-gui/">avrdude GUI</a>
+</p>
+<h2>  Libraries </h2>
+<h3>  Necessary libraries </h3>
+<p>To use the Sensor Node requires the following libraries:
+</p>
+<ul><li> Working with the transceiver nRF24L01+ - <a href="https://github.com/maniacbug/RF24/archive/master.zip">RF24</a>
+</li></ul>
+<p>Requires the libraries that are used at work RF24:
+</p>
+<ul><li> SPI
+</li></ul>
+<h3>  Features using libraries </h3>
+<p>Library has used examples of them just to understand how it works.
+</p><p>Initialization RF-module as follows:
+</p>
+<pre>...
+
+//RF24 radio(CE,CSN);
+RF24 radio(8,7);
+
+...</pre>
+<h2> Version Tracker</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td width="150"> <b>Revision</b>
+</td>
+<td width="450"> <b>Description</b>
+</td>
+<td width="80"> <b>Release</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> 0.9
+</td>
+<td> Prototype
+</td>
+<td> 07.06.2013
+</td></tr>
+<tr style="font-size: 90%">
+<td> 1.2
+</td>
+<td> Public version
+</td>
+<td> 04.11.2013
+</td></tr></table>
+<h2>  Areas of application </h2>
+<ul><li> Weather station sensors (basic functionality)
+</li><li> Collect data with pulse sensors or gas flow (using interrupt (D3 - IRQ1))
+</li><li> Universal sensor (with extensions Grove)
+</li><li> Data transfer (on a similar device)<br/>
+</li></ul>
+<h2>  Questions and Answers </h2>
+<ul><li>Blog <a href="//devicter.blogspot.ru/2013/12/shield-matrix-sensor-node.html">Sensor Node</a>
+</li><li>Ask a question by e-mail support@devicter.ru
+</li></ul>
+<h2>  How to buy  </h2>
+<p>This product can be purchased:<br/>
+China (shipping worldwide) <br/>
+<a href="http://www.seeedstudio.com/depot/DevDuino-Sensor-Node-V12-ATmega-328-p-1774.html">Seeed store</a> <br/>
+<a href="http://www.elecrow.com/arduino-compatiable-c-109/micro-controller-c-109_117/sensor-node-v12-atmega-328-p-759.html">Elecrow store</a> <br/>
+Russia <br/>
+<a href="http://devicter.ru/goods/Sensor-Node">Devicter store</a>
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are 
+</p><p>licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  Useful links </h2>
+<p><a href="//wiki.devicter.ru/images/6/6b/Sn-sh.jpg">Schematic of the device</a>
+</p><p><a href="http://habrahabr.ru/post/202898/">Wireless communication is a "smart home"</a> RU
+</p><p><a href="http://blog.unlimite.net/?p=224">Measuring voltage microcontroller</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

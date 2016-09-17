@@ -1,0 +1,95 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Wifi Bee v2.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Wifi Bee v2.0</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Wifi_bee_v2_01.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>Wifi Bee v2.0 is the update version of Wifi Bee v1.0. We replace transceiver module MRF24WB0MA which is SPI interface with RN-171 used UART interface. Wifi Bee v2.0 module incorporates 802.11 b/g radio, 32 bit processor, TCP/IP stack, real-time clock, crypto accelerator, power management unit and analog sensor interface. It can directly plug into the Bee sockets and use the UART port for communication. You can also use AT command for advanced configuration to meet your unique requirement.
+</p>
+<h2> Specification</h2>
+<ul><li>Compatible with any Bee socket
+</li><li>Host interface： UART
+</li><li>Transmit power: 0dBm to 12dBm
+</li><li>Frequency：2402~2480 MHz
+</li><li>Channal：0~13 
+</li><li>Integrated TCP / IP protocol stack
+</li><li>On-board Multilayer Chip Antenna 
+</li></ul>
+<h2> Demonstration</h2>
+<p>In this section, we will use Wifi Bee to create a Web server as an sample application. Let's follow the steps below to make it work! 
+Note: In order to configure this module, you will need an adapter or Xbee shield that lets you communicate with the module, before you can plug it and use on other modules.<br/>
+</p>
+<h3> Hardware Installation</h3>
+<p>Here's all the hardware needed.
+</p>
+<dl><dd><ul><li> 1) Wifi Bee   
+</li><li> 2) An adaptor，such as <a href="http://www.seeedstudio.com/depot/xbee-shield-v20-p-1375.html?cPath=98_16Uart">SBee</a>,  <a href="http://www.seeedstudio.com/depot/grove-xbee-carrier-p-905.html?cPath=98_16">Grove -Xbee Carrier</a>， <a href="http://www.seeedstudio.com/depot/xbee-shield-v20-p-1375.html?cPath=98_16">Xbee Shield</a>
+</li><li> 3) Mini USB cable
+</li></ul>
+</dd></dl>
+<p>Plug wifi bee into the Bee Socket of your adaptor, and connect adaptor to your computer via Mini USB cable. Before wifi bee donot connect to your network, the ASSOC indicator is in flash state.<br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/Wifi_Beev2.0.jpg" width="600"/></div></div><br/>
+<h3> Configure Wifi Bee</h3>
+<p>We need a serial monitor for configuring the Wifi Bee. So before configuring Wifi bee, you need perpare a serial tool. In this case, we choose usual <a href="res/Sscom32E.zip">SSCOM3.2</a> <br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/Serial_Tool.png" width="509"/></div></div><br/>
+<ul><li>1) Choose the right serial port and click "Open Com" button，shown above, set the baud rate to 9600. 
+</li><li>2) Donot select "SendNew", and send AT command <font color="red">$$$</font> to the wifi Bee and it will reply "CMD" to indicate that it enter the configure mode properly. <br/>
+</li><li>3) Select "SendNew" after entering to configure mode，send AT command <font color="red">set u b 9600</font> to set the baud rate as 9600. Of cource，you can also set it as 38400.<br/>
+</li><li>4) Type <font color="red">show net</font>   and it will show current network settings.  <br/>
+</li><li>5) Type  <font color="red">scan </font> to view a list of Wifi networks around.<br/>
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Serial_Tool_Scan_net.png" width="561"/></div></div><br/>
+<ul><li>6) Send AT command <font color="red"> set wlan join 1</font>，if the serial port reply "ADK" which indicates Wifi Bee enters to Auto control mode.  <br/>
+</li><li>7)Type join your router's SSID (like join Seeed-STU)to connect to associate with an open access point. If we join a a secure network type like this:<font color="red">
+</font></li></ul>
+<p>set wlan ssid your router's SSID<br/>
+set wlan pass your router's password<br/>
+save<br/>
+reboot <br/> 
+And the monitor replies with current ip address and opened port. It can be easily figured out that the ip address of my Wifi Bee is 192.168.0.28 and the port is 2000. <br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/Join_network.png" width="561"/></div></div><br/>
+<ul><li>8) Use Web browser to access <a href="http://ip:port">http://ip:port</a>, like: <a href="http://192.168.0.28:2000">http://192.168.0.28:2000</a>, and the monitor receives the http request from the Web browser shown below. However, the Web browser will not receive anything due to the wifi bee replies nothing.<br/>
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Web_access.png" width="593"/></div></div><br/>
+<p>For more command, please view the Wifly Command Reference of Resource part.
+</p>
+<h3> Connect the TCP server and Wifi Bee</h3>
+<p>Here we select <a href="res/TCPUDPDbg.zip">TCPUDPbg</a> to work as an TCP client and send commands to the Wifi Bee. <br/>
+</p>
+<ul><li>1） Download and run TCPUDPbg. Click "CreatConnection", we can see this picture：<br/>
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/TCPUDPTool.png" width="700"/></div></div><br/>
+<ul><li>2）After selecting TCP Type, type IP address and port of Wifi Bee and click "Create".<br/>
+</li><li>3）Click"Connect" button in left sidebar，Now you could send commands via the TCP client simulated by TCPUDPbg to the wifi bee. Thus TCPUDPbg will receive the strings sent from the Serial monitor also！<br/>
+</li></ul>
+<div class="center"><div class="floatnone"><img src="img/Communication.png" width="900"/></div></div><br/>
+<h2> Version Tracker </h2>
+<table>
+<tr>
+<th>  Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> Wifi Bee v1.0
+</td>
+<td width="500px"> transceiver module MRF24WB0MA which is SPI interface, and using a Atmega328p
+</td>
+<td width="200px"> Dec 13, 2011
+</td></tr>
+<tr>
+<td width="300px"> Wifi Bee v2.0
+</td>
+<td width="500px"> replace MRF24WB0MA with RN-171, cancel Atmega328p chip
+</td>
+<td width="200px"> Nov 11, 2013
+</td></tr></table>
+<h2> Resource</h2>
+<ul><li><a href="res/Wifi_Bee_v2.0_Eagle_File.zip">Wifi Bee v2.0 Eagle File</a>
+</li><li><a href="res/WiFly-RN-171.pdf">RN-171 Datasheet</a><br/>
+</li><li><a href="res/WiFly-RN-UM.pdf">Wifi Command Reference</a>
+</li><li><a href="res/Antenna_Datasheet.pdf">Antenna Datasheet</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

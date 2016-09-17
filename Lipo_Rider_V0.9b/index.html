@@ -1,0 +1,281 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Lipo Rider V0.9b</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Lipo Rider V0.9b</h1>
+
+<p><a href="/Lipo_Rider" title="Lipo Rider">Lipo Rider</a> is a power module with <a href="/w/index.php?title=Li-Po_battery&amp;action=edit&amp;redlink=1" title="Li-Po battery (page does not exist)">Li-Po battery</a> charge management and boost circuit designed for <a href="/w/index.php?title=MCU&amp;action=edit&amp;redlink=1" title="MCU (page does not exist)">MCU</a> projects with standard USB output interface.
+</p><p>Model:<a href="http://www.seeedstudio.com/depot/lipo-rider-p-710.html?cPath=155">POW115D2P</a>
+</p><p><img src="img/Lipo-rider.jpg" width="500"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>JST 2.54 connector
+</li><li>Charge a Li-Po battery from USB/Solar cell/wall adaptor 
+</li><li>Automatically adjusted charge current 
+</li><li>Automatic recharge 
+</li><li>User output power switch
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Mobile USB Host power 
+</li><li>Energy harvester 
+</li><li>Sports equipment 
+</li><li>Robotics 
+</li><li>Navigation 
+</li><li>Other off the grid projects
+</li></ul>
+<h2>  Cautions  </h2>
+<p>The warnings and wrong operations possible cause dangerous. 
+</p>
+<h2>  Schematic  </h2>
+<h3>  Charge Diagram  </h3>
+<p><img src="img/Charge_diagram.jpg" width="907"/>
+</p>
+<h2>  Specification  </h2>
+<ul><li>Up to 400mA charge current 
+</li><li>Up to 5VDC 350mA supply ability 
+</li><li>Less than 100mV ripple @300mA 
+</li><li>Dimensions: 47*37.5*6.6 (mm)
+</li></ul>
+<h3>  Key Specification  </h3>
+<table border="1">
+<tr>
+<th>Items
+</th>
+<th>Min
+</th>
+<th>Norm
+</th>
+<th>Max
+</th></tr>
+<tr style="font-size: 90%;">
+<td width="400"> Input Voltage
+</td>
+<td width="200"> 4.8V
+</td>
+<td width="200"> 5.0V
+</td>
+<td width="200"> 6.0V
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Output Voltage
+</td>
+<td> 4.8V
+</td>
+<td> 5.0V
+</td>
+<td> 5.2V
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Output Current
+</td>
+<td colspan="3" rowspan="1"> 300mA
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Operate Temperature
+</td>
+<td colspan="3" rowspan="1"> -20℃~65℃
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Storage Temperature
+</td>
+<td colspan="3" rowspan="1"> -25℃~85℃
+</td></tr></table>
+<h3>  Charger IC Specifications  </h3>
+<table border="1">
+<tr>
+<th>Items
+</th>
+<th>Min
+</th>
+<th>Norm
+</th>
+<th>Max
+</th></tr>
+<tr style="font-size: 90%;">
+<td> Charger IC
+</td>
+<td colspan="3" rowspan="1"> CN3083
+</td></tr>
+<tr style="font-size: 90%;">
+<td width="400"> Charger input voltage
+</td>
+<td width="200"> 4.8V
+</td>
+<td width="200"> 5.0V
+</td>
+<td width="200"> 6.0V
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Charger input current
+</td>
+<td> 5mA
+</td>
+<td> 400mA
+</td>
+<td> -
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Sleep mode
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> 3uA
+</td></tr></table>
+<h3>  Boost IC Specifications  </h3>
+<table border="1">
+<tr>
+<th>Items
+</th>
+<th>Min
+</th>
+<th>Norm
+</th>
+<th>Max
+</th></tr>
+<tr style="font-size: 90%;">
+<td> Boost IC
+</td>
+<td colspan="3" rowspan="1"> AIC1896
+</td></tr>
+<tr style="font-size: 90%;">
+<td width="400"> Output voltage
+</td>
+<td width="200"> 4.8V
+</td>
+<td width="200"> 5.0V
+</td>
+<td width="200"> 5.2V
+</td></tr>
+<tr style="font-size: 90%;">
+<td> Output current
+</td>
+<td> 5mA
+</td>
+<td> 100mA
+</td>
+<td> 350mA
+</td></tr></table>
+<h2>  Pin definition and Rating  </h2>
+<h3>  Pin Instruction and LED Statement  </h3>
+<table border="1">
+<tr>
+<th>CH pin level(Red LED state)
+</th>
+<th>OK pin level(Green LED state)
+</th>
+<th>Statements
+</th></tr>
+<tr style="font-size: 90%;">
+<td width="300"> low level(on)
+</td>
+<td width="300"> high level(off)
+</td>
+<td width="400"> Charging
+</td></tr>
+<tr style="font-size: 90%;">
+<td> high level(off)
+</td>
+<td> low level(last on)
+</td>
+<td> Complete
+</td></tr>
+<tr style="font-size: 90%;">
+<td> pulse signal(flash)
+</td>
+<td> pulse signal(on)
+</td>
+<td> The battery isn't exist
+</td></tr>
+<tr style="font-size: 90%;">
+<td> high level(off)
+</td>
+<td> high level(off)
+</td>
+<td>           Two situations :<br/>
+<ul><li>     Input voltage lower than gate voltage 
+</li><li>     The input voltage lower than battery voltage
+</li></ul>
+</td></tr></table>
+<h2>  Pin definition and Rating  </h2>
+<h2>  Mechanical Dimensions  </h2>
+<p>The outline dimensions are 47mm * 37.5mm * 6.6mm as shown below:
+</p><p><img src="img/LipoRider-dimension.jpg" width="823"/>
+</p>
+<h2>  Usage  </h2>
+<p>The Lipo Rider works as a power module to supply a stable 5VDC power for <a href="/w/index.php?title=MCU&amp;action=edit&amp;redlink=1" title="MCU (page does not exist)">MCU</a> projects. Here is an example to drive 300mA output wave for a power supply: 
+</p><p><img src="img/MAP001.jpg" width="662"/>
+</p>
+<h3>  Hardware Setup  </h3>
+<p><a href="/Lipo_Rider" title="Lipo Rider">Lipo Rider</a> provides a reliable solution to charge a Li-Po battery from solar or USB power and output a boosted 5VDC power to the standard USB port. When the mini USB power socket is connected, it will charge the Li-Po battery and disable the boost circuit so that the mini USB power is directly output to the standard USB socket. When the solar JST power socket is connected, it will charge the Li-Po battery and boost the Li-Po battery power to the standard USB port.
+</p><p>This is the hardware setup example for the Lipo Rider. When you put the setup under illumination, the solar panel collects the luminous energy and charges the Li-Po battery, Lipo Rider boosts the Li-Po battery power to 5v for Seeeduino or other microcontroller project. The switch is on and the lit LEDs marked by red circle show that the Lipo Rider is working. 
+</p><p><img src="img/Liporider-setup.jpg" width="702"/>
+</p>
+<h3>  Programming  </h3>
+<p>Includes important code snippet. 
+Demo code like : 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="php source-php"><pre class="de1">Demo code
+<span class="br0">{</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h3>  Example  </h3>
+<p>The projects and application examples. 
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<p>All the components used to produce the product. 
+</p>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table border="1">
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Date
+</th>
+<th> Editor
+</th></tr>
+<tr>
+<td width="200"> <strong class="selflink">Lipo Rider V0.9b</strong>
+</td>
+<td width="400"> Initial public release
+</td>
+<td width="200"> Nov 2, 2010
+</td>
+<td width="200"> Lafier
+</td></tr>
+<tr>
+<td> <a href="/w/index.php?title=Lipo_Rider_V1.2&amp;action=edit&amp;redlink=1" title="Lipo Rider V1.2 (page does not exist)">Lipo Rider V1.2</a>
+</td>
+<td> Revise release
+</td>
+<td> Jan 11, 2011
+</td>
+<td> Silas Wan
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<p>The resources need to be downloaded, like Eagle file, Demo code, project or other datasheet. 
+</p>
+<h2>  How to buy  </h2>
+<p>Click <a href="http://www.seeedstudio.com/depot/lipo-rider-p-710.html?cPath=104_107">here</a> to buy <a href="/Lipo_Rider" title="Lipo Rider">Lipo Rider</a> ,or other <a href="http://www.seeedstudio.com/depot">products</a> you like.
+</p>
+<h2>  See Also  </h2>
+<p>Other related products and resources.
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

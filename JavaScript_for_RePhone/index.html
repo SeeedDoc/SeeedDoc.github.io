@@ -1,0 +1,76 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>JavaScript for RePhone</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>JavaScript for RePhone</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="/Rephone"><img src="img/Xadow_GSMPlusBLE_pingguo.JPG" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p><br/>
+RePhone can be a learning tool for you to start interesting projects. Currently, RePhone supports various development environment and development languages, you can either built applications with C/C++ based on Eclipse IDE, Arduino IDE, or with Lua and JavaScript.
+</p><p>This wiki is a User Guide to help you start your RePhone project with JavaScript. 
+</p>
+<p><br/>
+</p>
+<h2> Install Driver and Update Firmware</h2>
+<ul><li> To <b>Install the Driver</b>, please refer to the <b>section 2 of <a href="/Arduino_IDE_for_RePhone_Kit" title="Arduino IDE for RePhone Kit">Arduino_IDE_for_RePhone_Kit</a></b> <br/>
+</li></ul>
+<ul><li> To <b>Update Firmware</b>, please refer to <b>section 3 of <a href="/Arduino_IDE_for_RePhone_Kit" title="Arduino IDE for RePhone Kit">Arduino_IDE_for_RePhone_Kit</a></b>
+</li></ul>
+<p><br/>
+<br/>
+</p>
+<h2> Download JavaScript for RePhone Application</h2>
+<p><b><span style="font-size:1.3em;">Step 1.</span></b> Go <b>JavaScript for RePhone</b> project's github release channel to download <i><b>js_for_rephone_xxx.zip</b></i>
+<br/><br/>
+</p><p><a href="https://github.com/Seeed-Studio/JavaScript_for_RePhone/releases">Download JavaScript for RePhone</a>
+<br/><br/>
+<br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 2.</span></b> Set your RePhone into storage mode by <b>plugging in the battery</b> and connect it to PC with a Micro USB cable. 
+<br/><br/>
+</p><p><img src="img/Connect_Xadow_GSMPlusBLE_to_PC.png" width="526"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 4.</span></b> Unzip the <i><b>js_for_rephone_xxx.zip</b></i> file into the 5MB disk of RePhone, you can also put some music files (mp3 format) into the disk. Here I've put the 'music1.mp3' and 'music2.mp3' in it.
+<br/>
+&lt;br /
+</p><p><img src="img/Lua_1.png" width="276"/>
+<br/><br/>
+</p>
+<h2> Use JavaScript Shell</h2>
+<p><b><span style="font-size:1.3em;">Step 1.</span></b> Now press and hold the power key of your RePhone (Xadow GSM+BLE, see the diagram above in step 3 of section 2) for <i><b>2 seconds</b></i> to turn it on, then identify the COM number for the serial port, which will be <i><b>MTK USB Modem Port</b></i> showing in the <i><b>Device Manager</b></i>, also please be noted that <i>the COM number might be different on different PC</i>.
+<br/>
+</p><p>Open <b>Device Manager</b> by clicking the <b>Start</b> button, clicking <b>Control Panel</b>, clicking <b>System and Security</b>, and then, under <b>System</b>, clicking <b>Device Manager</b>. If you're prompted for an administrator password or confirmation, type the password or provide confirmation. See the following image:
+<br/><br/>
+</p><p><img src="img/Check_ports.png" width="584"/>
+<br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 2.</span></b> We use a serial terminal tool such as <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">PuTTY</a> to access the Lua shell running on the RePhone. 
+</p><p><br/>
+If you use PuTTY, please remember to enable <i><b>"implicit CR in every LF"</b></i> option. Otherwise, line breaks will be weird. As Lua shell of RePhone use LF ('\n') as EOL, while PuTTY uses CR LF ("\r\n") as default EOL. 
+</p><p><img src="img/Putty_EOL.png" width="452"/>
+<br/>
+<br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 3.</span></b>Open the MTK USB Modem Port (its baudrate doesn't matter as it is a USB virtual serial port) and type "print('hello, world')", you will get your first Lua code running on the RePhone.
+</p><p><img src="img/RePhone_Lua_Shell.png" width="404"/>
+</p><p>If you have some music files in the RePhone, type "audio.play('music.mp3')" to play it. If you have a SIM card inserted, type "gsm.call('phone_number')" to call someone or "gsm.text('phone_number', 'message from rephone')" to send a text message.
+</p><p><br/>
+<br/>
+</p>
+<h2> Examples</h2>
+<p>1. play a music repeatly
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="javascript source-javascript"><pre class="de1"><span class="kw1">function</span> aplay<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> audio.<span class="me1">play</span><span class="br0">(</span><span class="st0">'music.mp3'</span><span class="br0">)</span><span class="sy0">;</span> <span class="br0">}</span>
+t <span class="sy0">=</span> timer.<span class="me1">create</span><span class="br0">(</span><span class="nu0">10000</span><span class="sy0">,</span> aplay<span class="br0">)</span></pre></div></div><br/>
+<p><br/>
+</p><p>2. auto-reply message<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="javascript source-javascript"><pre class="de1"><span class="kw1">function</span> re<span class="br0">(</span>f<span class="sy0">,</span> c<span class="br0">)</span> <span class="br0">{</span> print<span class="br0">(</span><span class="st0">'message:'</span><span class="sy0">,</span> c<span class="sy0">,</span> <span class="st0">' from:'</span><span class="sy0">,</span> f<span class="br0">)</span><span class="sy0">;</span> gsm.<span class="me1">text</span><span class="br0">(</span>f<span class="sy0">,</span> <span class="st0">'Thanks for your message'</span><span class="br0">)</span><span class="sy0">;</span> <span class="br0">}</span>
+gsm.<span class="me1">on_new_message</span><span class="br0">(</span>re<span class="br0">)</span></pre></div></div>
+<h2> RePhone Community</h2>
+<p><a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4"><img src="img/RePhone_Community-2.png" width="300"/></a>
+</p><p>We’ve been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.
+</p><p>Now join us in the <a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4">RePhone Community</a>! 
+</p><p>Together we seek answers, make interesting stuff, care about each other, and share our experiences.
+<br/>
+<br/>
+</p>
+<h2> Resources</h2>
+<p>1. <a href="https://github.com/Seeed-Studio/JavaScript_for_RePhone">Source Code of JavaScript for RePhone</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

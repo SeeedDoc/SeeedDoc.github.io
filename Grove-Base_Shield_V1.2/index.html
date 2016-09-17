@@ -1,0 +1,140 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Base Shield V1.2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Base Shield V1.2</h1>
+
+<p>The Grove base shield board is very similar in fashion to an <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a> shield board, and in fact is used as such with our <a href="/w/index.php?title=Seeeduino_Family&amp;action=edit&amp;redlink=1" title="Seeeduino Family (page does not exist)">Seeeduino</a> or <a href="/Seeeduino_Mega" title="Seeeduino Mega">Mega</a> board. Here is a top-down view:
+</p>
+<center>
+<p><img src="img/Stem1.jpg" width="500"/>
+</p>
+</center>
+<p>For those working with <a href="/w/index.php?title=Seeeduino_Family&amp;action=edit&amp;redlink=1" title="Seeeduino Family (page does not exist)">Seeduino</a> or <a href="/w/index.php?title=Official_Arduino_Boards&amp;action=edit&amp;redlink=1" title="Official Arduino Boards (page does not exist)">Arduino</a> boards, the layout should be quite familiar.   The labels on the "Power" header pins may be confusing - the new <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a> Uno has two ground pins between the Vin and 5v, and label "GND" twice, but the Base Shiedl labels match the Duemilanove which label "GND" once, wider, to indicate both pins.
+<br/>
+<b>Model:<a href="http://www.seeedstudio.com/depot/grove-base-shield-p-754.html?cPath=132_134">SLD12148P</a></b>
+</p>
+<h2>  Features  </h2>
+<ul><li>Teach children the magic world of microcontrollers and Arduino
+</li><li>Create a sturdy, modular robot platform that you can easily expand or modify.
+</li><li>Learn programming without all the extra hassle of wiring the components.
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Application1 
+</li><li>Application2 
+</li><li>Application3
+</li></ul>
+<h2>  Cautions  </h2>
+<p>The warnings and wrong operations possible cause dangerous. 
+</p>
+<h2>  Schematic  </h2>
+<p>The purpose of the base shield is to allow easy connection of any microprocessor input and output pins to the Grove units. Each socket is clearly labelled with its matching I/O pin. For a more detailed  examination of the Base Board, please consider the following diagram:
+</p>
+<center>
+<p><img src="img/Stem-diagram-sign.jpg" width="800"/>
+</p>
+</center>
+<h2>  Specification  </h2>
+<p>May include key specification and other specifications. 
+</p>
+<h2>  Pin definition and Rating  </h2>
+<h2>  Mechanic Dimensions  </h2>
+<h2>  Usage  </h2>
+<p>There is one small thing to take note of when connecting to analog or digital sockets. Each socket contains 5V, GND, and two I/O pin connections:
+</p>
+<center>
+<p><img src="img/Stem-diagram-conn.jpg" width="600"/>
+</p>
+</center>
+<h3>  Hardware Installation  </h3>
+<p>When using the digital I/O, note the staggered alignment of the pins – that is, one socket handles D1 and D2, the next D2 and D3, and so on.  If you are going to use an input Grove and an output Grove which have two signal pins simultaneously  (e.g. LED module and button module), separate your wires so that a socket is between them as such:
+</p>
+<center>
+<p><img src="img/Stem-diagram-conn-right.jpg" width="400"/>
+</p>
+</center>
+<p>Wires for two signal Grove cannot sit side-by-side on the Base board because one pin (such as D2) will be multi-using. Or, if two Grove units only use one digital pin, such as the <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle#Tilt-switch">tilt switch</a> and the <a href="http://garden.seeedstudio.com/index.php?title=GROVE_-_Starter_Bundle#Piezo_Buzzer">piezo</a>, they can sit together on the Base board as they only use one of the digital lines in the connecting wire and therefore will not interfere with each other. It is the same as the Analog I/O sockets. Make sure you know the silkscreen of each socket before you start wiring.
+</p>
+<h3>  Programming  </h3>
+<p>Includes important code snippet. 
+Demo code like : 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">Demo code
+<span class="br0">{</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Example  </h3>
+<ul><li><a href="/Project_One-Blink" title="Project One - Blink">Project One - Blink</a>
+</li><li><a href="/Project_Two-Digital_Input" title="Project Two – Digital Input">Project Two – Digital Input</a>
+</li><li><a href="/Project_Three-Analog_Input" title="Project Three – Analog Input">Project Three – Analog Input</a>
+</li><li><a href="/Project_Four-Noise_Maker" title="Project Four – Noise Maker">Project Four – Noise Maker</a>
+</li><li><a href="/Project_Five-Relay_Control" title="Project Five – Relay Control">Project Five – Relay Control</a>
+</li><li><a href="/Project_Six-LCD_Demonstration" title="Project Six – LCD Demonstration">Project Six – LCD Demonstration</a>
+</li><li><a href="/Project_Seven-Temperature" title="Project Seven - Temperature">Project Seven - Temperature</a>
+</li><li><a href="/Project_Eight-Thermostat" title="Project Eight - Thermostat">Project Eight - Thermostat</a>
+</li></ul>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<p>All the components used to produce the product. 
+</p>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> Grove - Starter Kit v0.9b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> Jan 14, 2011
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<p>The resources need to be downloaded, like Eagle file, Demo code, project or other datasheet.
+</p>
+<ul><li><a href="res/Base_shield_V1.2_Eagle_files.zip" title="File:Base shield V1.2 Eagle files.zip">File:Base shield V1.2 Eagle files.zip</a>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy Grove - Base Shield: <a href="http://www.seeedstudio.com/depot/grove-base-shield-p-754.html?cPath=132_134">http://www.seeedstudio.com/depot/grove-base-shield-p-754.html?cPath=132_134</a>.<br/>
+It is one components of Grove pack sale, Users can buy <a href="/GROVE-Starter_Kit_V0.9b" title="GROVE - Starter Kit V0.9b">GROVE - Starter Kit V0.9b</a> at <a href="http://www.seeedstudio.com/depot/grove-starter-kit-p-709.html?cPath=138">http://www.seeedstudio.com/depot/grove-starter-kit-p-709.html?cPath=138</a>.
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/GROVE_System" title="GROVE System">GROVE System</a>
+</li><li><a href="/GROVE-Starter_Kit_V1.0b" title="GROVE - Starter Kit V1.0b">GROVE - Starter Kit V1.0b</a>
+</li><li><a href="/GROVE-Starter_Kit_V0.9b" title="GROVE - Starter Kit V0.9b">GROVE - Starter Kit V0.9b</a>
+</li><li><a href="/w/index.php?title=Grove_-_3-axis_Compass&amp;action=edit&amp;redlink=1" title="Grove - 3-axis Compass (page does not exist)">Grove - 3-axis Compass</a>
+</li><li><a href="/Grove-3-axis_Gyro" title="Grove - 3-axis Gyro">Grove - 3-axis Gyro</a>
+</li><li><a href="/Grove-Alcohol_Sensor" title="Grove - Alcohol Sensor">Grove - Alcohol Sensor</a>
+</li><li><a href="/Grove-Electricity_Sensor" title="Grove - Electricity Sensor">Grove - Electricity Sensor</a>
+</li><li><a href="/Grove-Electricity_Sensor" title="Grove - Electricity Sensor">Grove - Electricity Sensor</a>
+</li><li><a href="/Grove-I2C_3-axis_Accelerometer" title="Grove - I2C 3-axis Accelerometer">Grove - I2C 3-axis Accelerometer</a>
+</li><li><a href="/Grove-Light_Sensor" title="Grove - Light Sensor">Grove - Light Sensor</a>
+</li><li><a href="/Grove-Magnetic_Switch" title="Grove - Magnetic Switch">Grove - Magnetic Switch</a>
+</li><li><a href="/w/index.php?title=Grove_-_Manetic_Switch&amp;action=edit&amp;redlink=1" title="Grove - Manetic Switch (page does not exist)">Grove - Manetic Switch</a>
+</li><li><a href="/Grove-PIR_Motion_Sensor" title="Grove - PIR Motion Sensor">Grove - PIR Motion Sensor</a>
+</li><li><a href="/w/index.php?title=Grove_-_80cm_Infrared_Proximity_Sensor_v0.9&amp;action=edit&amp;redlink=1" title="Grove - 80cm Infrared Proximity Sensor v0.9 (page does not exist)">Grove - 80cm Infrared Proximity Sensor v0.9</a>
+</li><li><a href="/Grove-RTC" title="Grove - RTC">Grove - RTC</a>
+</li><li><a href="/Grove-Serial_LCD" title="Grove - Serial LCD">Grove - Serial LCD</a>
+</li><li><a href="/Grove-Sound_Sensor" title="Grove - Sound Sensor">Grove - Sound Sensor</a>
+</li><li><a href="/Grove-Temperature_and_Humidity_Sensor" title="Grove - Temperature and Humidity Sensor">Grove - Temperature and Humidity Sensor</a>
+</li><li><a href="/Grove-Touch_Sensor" title="Grove - Touch Sensor">Grove - Touch Sensor</a>
+</li><li><a href="/Grove-Water_Sensor" title="Grove - Water Sensor">Grove - Water Sensor</a>
+</li><li><a href="/w/index.php?title=Grove_Wanted&amp;action=edit&amp;redlink=1" title="Grove Wanted (page does not exist)">Grove Wanted</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

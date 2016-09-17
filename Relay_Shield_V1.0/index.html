@@ -1,0 +1,238 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Relay Shield V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Relay Shield V1.0</h1>
+
+<p>The Relay Shield is an Arduino compatible smart module with 4 mechanical relays providing an easy way to control high voltage. The max switching power is 35VDC 70W for each channel. It can be directly controlled by Arduino/Seeeduino through digital IOs with external 9V DC supply. With the XBee form socket and 315/433MHz RF module interface, the Relay shield can be remotely controlled, making it easy to use in robotics, industry control, smart houses etc.<br/>
+<b>Note</b>: Take care the pins on the Shield should not be touched with USB connector of Arduino UNO when they are connected . <br/>
+<img src="img/RelayShield.jpg" width="320"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>Arduino/Seeeduino, Arduino Mega, and Seeeduino Mega compatible
+</li><li>4 mechanical relays with photo-coupled circuit 
+</li><li>Equipped with screw holes for easy installation 
+</li><li>Light weight 
+</li><li>Small form factor 
+</li><li>Native Arduino/Seeeduino compatibility 
+</li><li>Extendible
+</li></ul>
+<h2>  Specification </h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td>7
+</td>
+<td>9
+</td>
+<td>12
+</td>
+<td>VDC
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td>8
+</td>
+<td>/
+</td>
+<td>250
+</td>
+<td>mA
+</td></tr>
+<tr>
+<th scope="row"> Switching Voltage
+</th>
+<td>/
+</td>
+<td>/
+</td>
+<td>35
+</td>
+<td>VDC
+</td></tr>
+<tr>
+<th scope="row"> Switching Current
+</th>
+<td>/
+</td>
+<td>/
+</td>
+<td>2
+</td>
+<td>A
+</td></tr>
+<tr>
+<th scope="row"> Frequency Response
+</th>
+<td>-1
+</td>
+<td>/
+</td>
+<td>1
+</td>
+<td>dB
+</td></tr>
+<tr>
+<th scope="row"> Switching Power
+</th>
+<td>/
+</td>
+<td>/
+</td>
+<td>70
+</td>
+<td>W
+</td></tr>
+<tr>
+<th scope="row"> Relay Life
+</th>
+<td>100,000
+</td>
+<td>/
+</td>
+<td>/
+</td>
+<td>Cycle
+</td></tr>
+<tr>
+<th scope="row"> ESD contact discharge
+</th>
+<td colspan="3"> ±4
+</td>
+<td>KV
+</td></tr>
+<tr>
+<th scope="row"> ESD air discharge
+</th>
+<td colspan="3"> ±8
+</td>
+<td>/
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 80.0x58.0x21.2
+</td>
+<td>mm
+</td></tr>
+<tr>
+<th scope="row"> Net Weight
+</th>
+<td colspan="3"> 31±2
+</td>
+<td>g
+</td></tr></table>
+<h2>  Cautions  </h2>
+<p><font color="red"> <strong>
+Place 2 layers of electrical tape on the top of the<a href="/w/index.php?title=Arduino%27s&amp;action=edit&amp;redlink=1" title="Arduino's (page does not exist)">Arduino's</a> usb connector.  This will prevent the relay shield from making contact.
+Do not operate voltage more than 35V DC.
+</strong></font>
+</p>
+<h2>  Interface Function </h2>
+<p><img src="img/Relayshield_schematic.jpg" width="600"/>
+</p><p><b>4 groups of channels for High voltage connection</b><br/>
+Terminal 1:<br/>
+COM1- Common pin<br/>
+NC1- Normally Closed, in which case NC1 is connected with COM1 when D0 is set low and disconnected when D0 is high;<br/>
+NO1- Normally Open, in which case NO1 is disconnected with COM1 when D0 is set low and connected when D0 is high.<br/>
+Terminal 2-4 are similar to terminal 1, except that the control ports are D1-D3.<br/>
+</p><p><b>9V DC power supply connection</b><br/>
+The function of the Terminal and the Jack is the same since they are internally connected, and you can choose either of them in needs.<br/>
+</p><p><b>IO controlling 4 on-board relays</b><br/>
+D0-D3 4pins could be connected directly with Arduino pin number of 7-4, so that four relays could be easily controlled by the Arduino.<br/>
+</p><p><b>315/433MHz RF control interface</b><br/>
+Together with pin of GND and 5V, they are the interface for 315/433MHz RF with encoder module (can be bought separately from Seeed Studio) to control the 4 relays remotely.<br/>
+</p><p><b>XBee form Socket for directly control by Seeed RFBee</b><br/>
+The 4 relays can be directly controlled by the RFBee through the 4 DIO ports of RFBee (can be bought separately from Seeed Studio).<br/>
+</p><p><b>RFBee cascading control interface</b><br/>
+As the RFBee has 12 DIO ports, 2 more Relay Shield (8 more relays) could be controlled through one RFBee. HUB1 and HUB2 are the drawn-out ports of RFBee (4 as a group), which is connected to 315/433MHz RF interface of the cascading Relay Shield.<br/>
+</p>
+<h2> Usage  </h2>
+<h3>  With Arduino/Seeeduino  </h3>
+<p>Relay Shield could be directly controlled by <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a>. 
+</p><p><img src="img/WithArduino.jpg" width="422"/>
+</p><p>Step1. Plug Relay Shield onto <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a> Duemilanove (or compatible) board;<br/>Step2. Supply 9v DC power to <a href="/w/index.php?title=Microcontrollers&amp;action=edit&amp;redlink=1" title="Microcontrollers (page does not exist)">Arduino</a>;<br/>Step3. Download the <a href="res/RelayShieldDemoCode.zip">example code</a> and run in <a href="http://arduino.cc/en/Main/Software">Arduino IDE</a>.<br/>
+If using Arduino via its USB connection for power, you must also provide 9v DC power to the Relay Shield or the relays won't switch.<br/>
+Relays 1-4 can be activated by setting Arduino ports 4-7 to output, and doing a digitalWrite(portNumber,HIGH).<br/>
+Use COMx and either NCx (normally closed) or NOx (normally opened) connections to switch power through to the controlled device.
+</p>
+<h3>  With <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node">RFBee </a> </h3>
+<h4>  One RFBee controls one <a href="/Relay_Shield" title="Relay Shield">Relay Shield</a> </h4>
+<p><img src="img/WithRFBee.jpg" width="436"/>
+</p><p>Step1. Download <a href="res/RFBee_v1_1_for_RelayShield.zip">Arduino code</a> for the slave and master RFBee.<br/>
+Step2. Plug the slave RFBee to the Relay Shield.<br/>
+Step3. Supply the 9VDC power to the Relay Shield.<br/>
+Step4. Power the master RFBee with 3.3V by <a href="/UartSBee" title="UartSBee">UartSBee</a> or other adapter.<br/>
+</p>
+<h4>  One RFBee controls 3 Relay Shields  </h4>
+<p><img src="img/MutiRelay.jpg" width="438"/>
+</p><p>Step1. Download <a href="res/RFBee_v1_1_for_RelayShield.zip">Arduino code</a> for the slave and master RFBee. <br/>
+Step2. Plug the slave RFBee onto the Relay Shield.<br/>
+Step3. Connect the second and third Relay Shield to the mother shield by connecting 315/433MHz RF pins to hub1 and hub2. (Note: 5VDC and GND also need to be connected).<br/>
+Step4. Supply the 9VDC power to the Relay Shield. (Note: the extended Relay Shields DO NOT need extra power supply).<br/>
+Step5. Power the master RFBee with 3.3V by <a href="/UartSBee" title="UartSBee">UartSBee</a> or other adapter.<br/>
+</p>
+<h3>   With <a href="http://www.seeedstudio.com/depot/315mhz-rf-link-kits-with-encoder-and-decoder-p-151.html?cPath=139_140">315/433MHz RF Module</a> </h3>
+<p><img src="img/WithRF.jpg" width="365"/>
+</p><p>Step1. Plug and solder the Receiver onto the Relay Shield.<br/>Step2: Supply the Relay Shield with 9VDC power.<br/>Step3: <a href="/315Mhz_RF_link_kits-with_encoder_and_decoder#Using_with_Arduino_without_Encoding_and_Decoding">Control the Transmitter</a>.
+</p>
+<h2>  Version Tracker  </h2>
+<table border="1">
+<tr>
+<th>Revision
+</th>
+<th>Descriptions
+</th>
+<th>Release Date
+</th></tr>
+<tr style="font-size: 90%">
+<td width="300px"> Relay shield V1.0
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> 03/31/2010
+</td></tr>
+<tr style="font-size: 90%">
+<td> Relay shield V1.1
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Relay shield V1.2
+</td>
+<td>
+</td>
+<td>
+</td></tr>
+<tr style="font-size: 90%">
+<td> Relay shield V1.3
+</td>
+<td>
+<ol><li>Change the package of 7805
+</li><li>Make the terminas not touch the USB connector of Arduino
+</li><li>Add the protection for the multi-power supply when use with Arduino
+</li><li>Add the thickness of the wires connected to the Relays
+</li><li>Change the silkcreen to the bottom side of the board
+</li><li>Add open source hardware logo
+</li></ol>
+</td>
+<td> 12/01/2011
+</td></tr></table>
+<h2>  Resources </h2>
+<ul><li><a href="res/RelayShieldEagleFiles.zip">Relay Shield Eagle Files</a>
+</li><li><a href="res/Relay_shield_Schematic.pdf">Relay_shield Schematic.pdf</a>
+</li><li><a href="res/RelayShieldDemoCode.zip">Relay Shield demo code for Arduino</a><br/>
+</li><li><a href="res/RFBee_v1_1_for_RelayShield.zip">Arduino Code for RFBee control RelayShield</a><br/>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

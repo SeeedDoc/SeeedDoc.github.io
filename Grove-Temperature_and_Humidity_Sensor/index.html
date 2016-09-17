@@ -1,0 +1,245 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Temperature and Humidity Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Temperature and Humidity Sensor</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="http://www.seeedstudio.com/depot/grove-temphumi-sensor-p-745.html"><img src="img/TempAndHumi.jpg" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p>This is a multifunctional sensor that gives you temperature and relative humidity information at the same time. It utilizes a DHT11 sensor that can meet measurement needs of general purposes. It provides reliable readings when environment humidity condition in between 20% RH and 90% RH, and temperature condition in between 0°C and 50°C, covering needs in most home and daily applications that don't contain extreme conditions.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/grove-temphumi-sensor-p-745.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Specification</h2>
+<ul><li>Work Voltage: 3.3V ~ 5V
+</li><li>Measuring Range: 
+</li></ul>
+<dl><dd><dl><dd>Humidity: 20% - 90% RH
+</dd><dd>Temperature: 0 ~ 50 °C
+</dd></dl>
+</dd></dl>
+<ul><li>Accuracy: 
+</li></ul>
+<dl><dd><dl><dd>Humidity: ±5% RH
+</dd><dd>Temperature: ±2°C
+</dd></dl>
+</dd></dl>
+<ul><li>Sensitivity: 
+</li></ul>
+<dl><dd><dl><dd>Humidity: ±1% RH
+</dd><dd>Temperature: 1°C
+</dd></dl>
+</dd></dl>
+<ul><li>Signal Collecting Period: 2S
+</li></ul>
+<h2> Getting Started</h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>This demo is going to show you how to read temperature and humidity information from this Grove - Temperature and Humidity Sensor. 
+</p><p><br/> <img src="img/Temperature_Sensor-xin.jpg" width="500"/><br/> 
+The Temperature and Humidity sensor is connecting to analog port A0 of Grove - Base Shield. 
+</p>
+<ul><li> Download <a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">Humidity_Temperature_Sensor library</a> for Arduino boards with 16MHz XTAL; Unzip and put it in the libraries file of Arduino IDE by the path: ..\arduino-1.0\libraries; Another library - <a href="https://github.com/RobTillaart/Arduino/tree/master/libraries/DHTlib">DHTlib</a> is also available instead of Humidity_Temperature_Sensor library. This library supports both 16MHz and 8MHz Arduino(eg. Seeeduino Stalker)
+</li></ul>
+<ul><li> Open “DHTtester” example via the path: File --&gt; Examples --&gt; Humidity_Temperature_Sensor --&gt; DHTtester. 
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// Example testing sketch for various DHT humidity/temperature sensors</span>
+<span class="co1">// Written by ladyada, public domain</span>
+ 
+<span class="co2">#include "DHT.h"</span>
+ 
+<span class="co2">#define DHTPIN A0 // what pin we're connected to</span>
+ 
+<span class="co1">// Uncomment whatever type you're using!</span>
+<span class="co2">#define DHTTYPE DHT11 // DHT 11</span>
+<span class="co1">//#define DHTTYPE DHT22 // DHT 22 (AM2302)</span>
+<span class="co1">//#define DHTTYPE DHT21 // DHT 21 (AM2301)</span>
+ 
+<span class="co1">// Connect pin 1 (on the left) of the sensor to +5V</span>
+<span class="co1">// Connect pin 2 of the sensor to whatever your DHTPIN is</span>
+<span class="co1">// Connect pin 4 (on the right) of the sensor to GROUND</span>
+<span class="co1">// Connect a 10K resistor from pin 2 (data) to pin 1 (power) of the sensor</span>
+ 
+DHT dht<span class="br0">(</span>DHTPIN, DHTTYPE<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"DHTxx test!"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    dht.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// Reading temperature or humidity takes about 250 milliseconds!</span>
+    <span class="co1">// Sensor readings may also be up to A0 seconds 'old' (its a very slow sensor)</span>
+    <span class="kw4">float</span> h <span class="sy1">=</span> dht.<span class="me1">readHumidity</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">float</span> t <span class="sy1">=</span> dht.<span class="me1">readTemperature</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// check if returns are valid, if they are NaN (not a number) then something went wrong!</span>
+    <span class="kw1">if</span> <span class="br0">(</span>isnan<span class="br0">(</span>t<span class="br0">)</span> <span class="sy3">||</span> isnan<span class="br0">(</span>h<span class="br0">)</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Failed to read from DHT"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">else</span>
+    <span class="br0">{</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Humidity: "</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>h<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" %<span class="es1">\t</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Temperature: "</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">" *C"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><b>Note:</b>
+This Grove - Temperature and Humidity Sensor and our another product <a href="/Grove-Temperature_and_Humidity_Sensor_Pro">Grove - Temperature and Humidity Sensor Pro</a> are sharing this library. No matter which product you are using, make sure that you have made the definition line of the sensor of your board into effect and commented out the definition lines of other specs. For example, the sensor used on Grove - Temperature and Humidity Sensor is DHT 11. So the definition part of the sensor spec should be:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define DHTTYPE DHT11   // DHT 11 </span>
+<span class="co1">//#define DHTTYPE DHT22   // DHT 22  (AM2302)</span>
+<span class="co1">//#define DHTTYPE DHT21   // DHT 21 (AM2301)</span></pre></div></div>
+<ul><li>Upload it into your Arduino board and open the serial monitor to observe the temperature and relative humidity information of the environment
+</li></ul>
+<p><img src="img/Result_Picture1.jpg" width="318"/>
+</p>
+<h3> With <a href="/w/index.php?title=TI_LaunchPad&amp;action=edit&amp;redlink=1" title="TI LaunchPad (page does not exist)">TI LaunchPad</a></h3>
+<p>Feeling the Environments (Temperature and humidity)
+</p>
+<dl><dd>    This example allows you to read the value from grove-temperature-humidity sensor. The temperature &amp; humidity values are displayed on the Grove 4 digital display.
+</dd></dl>
+<p><img src="img/Temperature.jpg" width="600"/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+  Grove-Temperature-Humidity Sensor
+ Read value from grove-temperature-humidity sensor then display on grove-4-digital-display
+ 
+ The circuit:
+ * 4-digital-display attached to pin38 &amp; pin39 (J14 plug on Grove Base BoosterPack)
+ * sig pin of the Grove-Temperature-Humidity Sensor to the analog pin 24 (Grove connector J6)
+ * one side pin (either one) to ground
+ * the other side pin to +VCC
+ * LED anode (long leg) attached to RED_LED
+ * LED cathode (short leg) attached to ground
+ 
+ * Note: Put your hands on Grove-Temperature-Humidity Sensor, both of the value 
+         will rise. 
+ 
+         4-digital-display:
+         |--------------------------|
+         | temperature :  humidity  |    
+         |--------------------------| 
+ 
+ This example code is in the public domain.
+ 
+ http://www.seeedstudio.com/wiki/Grove_-_Temperature_and_Humidity_Sensor_Pro 
+ 
+ */</span>
+ 
+<span class="co2">#include "TM1637.h" </span>
+<span class="co2">#include "DHT.h"</span>
+ 
+<span class="coMULTI">/* Macro Define */</span>
+<span class="co2">#define CLK               39                  /* 4-digital display clock pin */</span>
+<span class="co2">#define DIO               38                 /* 4-digital display data pin */</span>
+<span class="co2">#define BLINK_LED         RED_LED            /* blink led */</span>
+<span class="co2">#define TEMP_HUMI_PIN     24                 /* pin of temperature&amp;humidity sensor */</span>
+ 
+<span class="coMULTI">/* Global Varibles */</span>
+TM1637 tm1637<span class="br0">(</span>CLK, DIO<span class="br0">)</span><span class="sy4">;</span>                  <span class="coMULTI">/* 4-digital display object */</span>
+DHT dht<span class="br0">(</span>TEMP_HUMI_PIN, DHT22<span class="br0">)</span><span class="sy4">;</span>            <span class="coMULTI">/* temperature&amp;humidity sensor object */</span>
+ 
+int8_t t_bits<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>                   <span class="coMULTI">/* array to store the single bits of the temperature */</span>
+int8_t h_bits<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>                   <span class="coMULTI">/* array to store the single bits of the humidity */</span>  
+ 
+<span class="coMULTI">/* the setup() method runs once, when the sketch starts */</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    tm1637.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                       <span class="coMULTI">/* initialize 4-digital display */</span>
+    tm1637.<span class="me1">set</span><span class="br0">(</span>BRIGHT_TYPICAL<span class="br0">)</span><span class="sy4">;</span>          <span class="coMULTI">/* set the brightness */</span>    
+    tm1637.<span class="me1">point</span><span class="br0">(</span>POINT_ON<span class="br0">)</span><span class="sy4">;</span>              <span class="coMULTI">/* light the clock point ":" */</span>
+ 
+    dht.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                         <span class="coMULTI">/* initialize temperature humidity sensor */</span>
+ 
+    <span class="kw3">pinMode</span><span class="br0">(</span>RED_LED, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>            <span class="coMULTI">/* declare the red_led pin as an OUTPUT */</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="coMULTI">/* the loop() method runs over and over again */</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>   
+ 
+    <span class="kw4">int</span> _temperature <span class="sy1">=</span> dht.<span class="me1">readTemperature</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>             <span class="coMULTI">/* read the temperature value from the sensor */</span>
+    <span class="kw4">int</span> _humidity <span class="sy1">=</span> dht.<span class="me1">readHumidity</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>                   <span class="coMULTI">/* read the humidity value from the sensor */</span>    
+ 
+    <span class="kw3">memset</span><span class="br0">(</span>t_bits, <span class="nu0">0</span>, <span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span>                                 <span class="coMULTI">/* reset array when we use it */</span>
+    <span class="kw3">memset</span><span class="br0">(</span>h_bits, <span class="nu0">0</span>, <span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* 4-digital-display [0,1] is used to display temperature */</span>
+    t_bits<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy1">=</span> _temperature <span class="sy2">%</span> <span class="nu0">10</span><span class="sy4">;</span>
+    _temperature <span class="sy2">/</span><span class="sy1">=</span> <span class="nu0">10</span><span class="sy4">;</span>
+    t_bits<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy1">=</span> _temperature <span class="sy2">%</span> <span class="nu0">10</span><span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* 4-digital-display [2,3] is used to display humidity */</span> 
+    h_bits<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy1">=</span> _humidity <span class="sy2">%</span> <span class="nu0">10</span><span class="sy4">;</span>
+    _humidity <span class="sy2">/</span><span class="sy1">=</span> <span class="nu0">10</span><span class="sy4">;</span>
+    h_bits<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy1">=</span> _humidity <span class="sy2">%</span> <span class="nu0">10</span><span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* show it */</span>
+    tm1637.<span class="kw3">display</span><span class="br0">(</span><span class="nu0">1</span>, t_bits<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+    tm1637.<span class="kw3">display</span><span class="br0">(</span><span class="nu0">0</span>, t_bits<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    tm1637.<span class="kw3">display</span><span class="br0">(</span><span class="nu0">3</span>, h_bits<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+    tm1637.<span class="kw3">display</span><span class="br0">(</span><span class="nu0">2</span>, h_bits<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h3> With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a></h3>
+<p>This example can Return temperature and humidity value,And show them on <a href="/Grove-LCD_RGB_Backlight" title="Grove - LCD RGB Backlight">Grove - LCD RGB Backlight</a>.Also print them on PC terminal.
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovePiPlus_TemAndHumi_sensor2.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<ul><li>Notice: To use the method dht(pin,module_type) you need to chang parameter module_type to 1 when using DHT pro and to 0 when using DHT.
+</li></ul>
+<pre>
+# grovepi_lcd_dht.py
+
+# dht(pin,module_type), change module_type number to use other kind of dht
+# module_type:
+#             DHT11 0
+#             DHT22 1
+#             DHT21 2
+#             DHT2301 3
+
+from grovepi import *
+from grove_rgb_lcd import *
+
+dht_sensor_port = 7		# Connect the DHt sensor to port 7
+
+while True:
+	try:
+		[ temp,hum ] = dht(dht_sensor_port,1)		#Get the temperature and Humidity from the DHT sensor
+		print "temp =", temp, "C\thumadity =", hum,"%" 	
+		t = str(temp)
+		h = str(hum)
+		
+		setRGB(0,128,64)
+		setRGB(0,255,0)
+		setText("Temp:" + t + "C      " + "Humidity :" + h + "%")			
+	except (IOError,TypeError) as e:
+		print "Error"
+</pre>
+<p><br/>
+</p>
+<h4> Run the program</h4>
+<ul><li>Find the path to the file(According to your own path)
+</li></ul>
+<pre>    cd Desktop/Applications/GrovePi/GrovePi LCD DHT/
+</pre>
+<ul><li> Run Program
+</li></ul>
+<pre>    sudo python grovepi_lcd_dht.py
+</pre>
+<h2> Resources</h2>
+<ul><li><a href="http://garden.seeedstudio.com/images/7/79/Temperature_Humidity.zip">Temperature Humidity Eagle File</a>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_Temperature_And_Humidity_Sensor">library</a>
+</li><li><a href="res/DHT11.pdf">DHT11 datasheet</a>
+</li><li>
+</li></ul>
+<p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/GNTGX7H" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,196 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Air Quality Sensor v1.3</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Air Quality Sensor v1.3</h1>
+
+<p>This sensor is designed for comprehensive monitor over indoor air condition. It's responsive to a wide scope of harmful gases, as carbon monixide, alcohol, acetone, thinner, formaldehyde and so on. Due to the measuring mechanism, this sensor can not output specific data to describe target gases' concentrations quantitatively. But it's still competent enough to be used in applications that require only qualitative results, like auto refresher sprayers and auto air cycling systems.
+</p><p><img src="img/Grove-Air_Quality_Sensor_v1.3_Top.jpg" width="480"/>
+</p>
+<h2>  Features </h2>
+<ul><li>Responsive to a wide scope of target gases 
+</li><li>Cost efficient 
+</li><li>Durable
+</li><li>Compatible with 5V and 3.3V
+</li></ul>
+<h2>  Cautions  </h2>
+<ul><li>Requires relatively clean air as an initial condition.
+</li><li>Long time exposure to highly polluted air can significantly weaken its sensitivity.
+</li><li>Coffre-fort et armoire forte:
+</li></ul>
+<p>Il convient de sécuriser les prouctions dans une <a href="http://www.infosafe.fr/Armoirefortedin/Armoirefortedin.htm">armoire forte ignifuge</a> blindée (Computer translation: Safe and strong cabinet: It should secure product in a strong armored fireproof cabinet, spam in french?)
+</p>
+<h2>  Usage </h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>As described in Introduction, this sensor does better in providing qualitative results over a wide scope of target gases. In this demo, we define 4 statuses for reference in the .cpp file. They are: 
+</p>
+<dl><dd>a. air fresh -- indicating a good air condition
+</dd></dl>
+<dl><dd>b. low pollution -- indicating a rather low concentration of target gases exist.
+</dd></dl>
+<dl><dd>c. high pollution(without "Force signal active" message printed on serial monitor) -- you should be aware of the pollution level and consider if some measures could be taken.
+</dd></dl>
+<dl><dd>d. high pollution(with "Force signal active" message printed on serial monitor) -- instant measures should be taken to improve the air quality.
+</dd></dl>
+<p>We encapsulated the decision  structure in a .cpp file. You can find info in there on how to modify the thresholds. 
+</p><p>Let's try it out! 
+</p><p><br/>
+1. Connect the Sensor to A0 port of <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>.<br/>
+<img src="img/Grove-Air_Quality_Sensor_v1.3_Test.jpg" width="800"/><br/>
+2. Download the <a href="res/AirQuality_Sensor.zip">File :AirQuality_Sensor Library</a>.<b><br/></b>
+</p><p>3. Wait at least 2 minutes after powering on for heat-up of the sensor. Then open the example below by the path: File -&gt; Example -&gt;AirQuality_Sensor-&gt;AirQuality_Sensor. 
+</p>
+<pre>/*
+AirQuality Demo V1.0.
+connect to A1 to start testing. it will needs about 20s to start
+* By: http://www.seeedstudio.com
+*/
+#include "AirQuality.h"
+#include "Arduino.h"
+AirQuality airqualitysensor;
+int current_quality =-1;
+void setup()
+{
+Serial.begin(9600);
+airqualitysensor.init(14);
+}
+void loop()
+{
+current_quality=airqualitysensor.slope();
+if (current_quality &gt;= 0)// if a valid data returned.
+{
+if (current_quality==0)
+Serial.println("High pollution! Force signal active");
+else if (current_quality==1)
+Serial.println("High pollution!");
+else if (current_quality==2)
+Serial.println("Low pollution!");
+else if (current_quality ==3)
+Serial.println("Fresh air");
+}
+}
+ISR(TIMER2_OVF_vect)
+{
+if(airqualitysensor.counter==122)//set 2 seconds as a detected duty
+{
+
+airqualitysensor.last_vol=airqualitysensor.first_vol;
+airqualitysensor.first_vol=analogRead(A0); // change this value if you use another A port
+airqualitysensor.counter=0;
+airqualitysensor.timer_index=1;
+PORTB=PORTB^0x20;
+}
+else
+{
+airqualitysensor.counter++;
+}
+}</pre>
+<p>4. Upload the code. Please click <a href="/Upload_Code">here</a> if you do not know how to upload it.
+</p><p>5. Open serial monitor.
+</p><p><img src="img/AirQualitySensot_Demo.jpg" width="500"/>
+</p><p><br/>
+</p><p>To adjust the thresholds and indicating messages, refer to the decision structure below in the .cpp file.<br/>
+</p>
+<div class="mw-geshi" dir="ltr" style="text-align: left"><div class="arduino source-arduino"><pre class="de1"> int AirQuality::slope(void)
+{
+while(timer_index)
+{
+if(first_vol-last_vol&gt;400||first_vol&gt;700)
+{
+Serial.println("High pollution! Force signal active."); 
+timer_index=0; 
+avg_voltage(); 
+return 0; 
+
+}
+else if((first_vol-last_vol&gt;400&amp;&amp;first_vol&lt;700)||first_vol-vol_standard&gt;150)
+{ 
+Serial.print("sensor_value:"); 
+Serial.print(first_vol); 
+Serial.println("\t High pollution!"); 
+timer_index=0; 
+avg_voltage();
+return 1;
+
+}
+else if((first_vol-last_vol&gt;200&amp;&amp;first_vol&lt;700)||first_vol-vol_standard&gt;50)
+{
+//Serial.println(first_vol-last_vol);
+Serial.print("sensor_value:");
+Serial.print(first_vol); 
+Serial.println("\t Low pollution!"); 
+timer_index=0;
+avg_voltage();
+return 2; 
+}
+else
+{
+avg_voltage(); 
+Serial.print("sensor_value:");
+Serial.print(first_vol);
+Serial.println("\t Air fresh");
+timer_index=0;
+return 3;
+}
+}
+return -1;
+}</pre></div></div>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.<br/>
+2.You should have completed configuring the development enviroment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+<br/>
+3.Connection
+<br/>
+</p>
+<ul><li> Plug the sensor to grovepi socket A0 by using a grove cable.<br/>
+</li></ul>
+<p>4.Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_air_quality_sensor.py   # "Ctrl+x" to exit #
+</pre>
+<pre>
+import time
+import grovepi
+
+# Connect the Grove Air Quality Sensor to analog port A0
+# SIG,NC,VCC,GND
+air_sensor = 0
+
+grovepi.pinMode(air_sensor,"INPUT")
+
+while True:
+    try:
+        # Get sensor value
+        sensor_value = grovepi.analogRead(air_sensor)
+
+        if sensor_value &gt; 700:
+            print "High pollution"
+        elif sensor_value &gt; 300:
+            print "Low pollution"
+        else:
+            print "Air fresh"
+
+        print "sensor_value =", sensor_value
+        time.sleep(.5)
+
+    except IOError:
+        print "Error"
+
+</pre>
+<p>5.Run the demo.<br/>
+</p>
+<pre>   sudo python grove_air_quality_sensor.py
+</pre>
+<p><br/>
+</p>
+<h2>  Resources  </h2>
+<p><a href="res/AirQuality_Sensor.zip">AirQuality Sensor Library.zip</a> <br/>
+<a href="res/Grove-Air_quality_sensor_v1.3_sch_pcb.zip">Grove_-_Air_quality_sensor_v1.3_sch_pcb.zip</a><br/>
+<a href="res/Grove-Air_quality_sensor_v1.3_sch.pdf">Grove_-_Air_quality_sensor_v1.3_sch.pdf</a><br/>
+<a href="res/Air_quality_sensor_MP503.pdf">Air_quality_sensor_MP503_Chinese.pdf</a><br/>
+<a href="res/Mp503.pdf">Air_quality sensor_MP503_English.pdf</a><br/>
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://seeedstudio.com/wish">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

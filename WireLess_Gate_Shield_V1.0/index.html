@@ -1,0 +1,626 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>WireLess Gate Shield V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>WireLess Gate Shield V1.0</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/WLG_h.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>WireLess Gate Shield is an Arduino-compatible expansion card designed to build a system of receiving / transmitting and broadcasting various wireless commands and data. For maximum coverage possible wireless communication interfaces on the board has an IR receiver interface for connecting popular  transceiver nRF24L01 + and RFM69HW. Additionally, the board has a real time clock module DS1307.
+</p><p>Model: <a href="http://www.seeedstudio.com/depot/WireLess-Gate-Shield-p-2117.html">113990088</a>
+</p><p><img src="img/WLG_intro.jpg" width="600"/>
+</p>
+<h2>  Features </h2>
+<ul><li> Interface to connect the transceiver 315/433/868/915 MHz (depending on the version) <a href="http://devicter.ru/goods/RFM69HW-RF-transceiver">RFM69HW</a>
+</li><li> Interface to connect the transceiver at 2.4 GHz <a href="http://www.seeedstudio.com/depot/s/nRF24L01.html?search_in_description=0">nRF24L01 +</a>
+</li><li> IR receiver 
+</li><li> Real-time clock module based on DS1307 with battery backup 
+</li><li> LED automatic activity radio modules 
+</li><li> LED for user 
+</li><li> Clock button to operate 
+</li><li> <a href="http://www.seeedstudio.com/depot/Grove-t-3.html?ref=top">GROVE</a>-compatible connector: I2C 
+</li><li> Fully compatible with <a href="http://www.seeedstudio.com/depot/W5200-Ethernet-Shield-p-1577.html">Ethernet Shield</a>
+</li></ul>
+<h2>  Layout and schematics </h2>
+<p><img src="img/Wl-top.png" width="400"/>
+</p><p>On the left side WireLess Gate Shield are interfaces to wireless modules: 
+</p>
+<ul><li> nRF24l01 +, including the enhanced ("PA") version (above) 
+</li><li> RFM69HW (bottom). 
+</li></ul>
+<p>Between wireless modules is U.FL connector for external antenna for RFM69HW. If you plan to use the regular antenna (bit of wire required length) - it is possible to solder directly to the board Schild (near the connector U.FL) 
+</p><p>To the right and slightly above the module is RFM69HW LED LED1 "RF433" 
+</p><p>In the central part of the board is a slot for a backup battery for clock module DS1307 
+</p><p>To the right and slightly below the slot for the battery - I2C-connector. 
+</p><p>On the right side is (top-down): 
+</p>
+<ul><li> LED LED2 "RF24" 
+</li><li> IR receiver 
+</li><li> LED LED3 - user 
+</li><li> Clock button S1 
+</li></ul>
+<p><img src="img/Wl-Scheme.PNG" width="500"/>
+</p>
+<h2>  Basic functionality  </h2>
+<p>In the basic version (without the use of Ethernet Shield) may organize a wireless gateway between the radios and the IR receiver. 
+</p><p>Command (or data) can be broadcast between all three wireless interfaces according to the logic of that program the user. 
+</p><p>Availability of real-time clock module will automate the sending of any data or commands with reference to the date / time. 
+</p><p>Device Management can be organized using a button located on the Shield.
+</p>
+<h2> Expansion Capabilities</h2>
+<p>Additionally WireLess Gate Shield can connect any i2c device using Grove-compatible connections (sensors, displays, etc.). 
+</p><p>WireLess Gate Shield was designed to be fully compatible with <a href="http://www.seeedstudio.com/depot/W5200-Ethernet-Shield-p-1577.html">Ethernet Shield</a> - so you can use these two together Schild to create even more advanced wireless control device (logging on SD-card and presenting data on a web page, manage wireless devices via the web).
+</p>
+<h2> Interfaces  </h2>
+<ul><li> Interface for RF-module nRF24L01 +: 
+<ul><li>D11 - MOSI
+</li><li>D12 - MISO 
+</li><li>D13 - SCK
+</li><li>D7 - RF24_CE
+</li><li>D8 - RF24_CSN
+</li><li>D2 - RF24_IRQ
+</li></ul>
+</li><li> Interface for RF-module RFM69HW: 
+<ul><li>D11 - MOSI
+</li><li>D12 - MISO 
+</li><li>D13 - SCK
+</li><li>D9 - RF433_NSS
+</li><li>A0 - RF433_RESET
+</li><li>D3 - RF433_IRQ
+</li></ul>
+</li><li> A4 (SDA), A5 (SCL) - displayed on the connector "I2C" (the other two pins in the connector - VCC and GND for sensor supply) 
+</li><li> A4 (SDA), A5 (SCL) - are involved in parallel for RTC DS1307 
+</li><li> A1 - Button 
+</li><li> D6 - Custom LED (LED3)
+</li></ul>
+<h2> Features  WireLess Gate Shield </h2>
+<h3>  Wireless Modules  </h3>
+<p>Both wireless module RFM69HW and nRF24l01 + connected hardware bus SPI. 
+</p><p>Selection of a particular wireless module is a low potential for the establishment of the appropriate chip select pin: 
+</p>
+<ul><li> CSN (D8) for the module nRF24l01 + 
+</li><li> NSS (D9) for the module RFM69HW 
+</li></ul>
+<p><i> 'Warning', 'If you have installed, but the software is not involved RFM69HW, be sure to install NSS pin of this module in state HIGH (otherwise it will interfere with the normal operation nRF24l01 + and Ethernet Shield. </i>
+</p>
+<h3>  Automatic display of the wireless modules </h3>
+<p>LED indication of the wireless module is implemented as follows: 
+</p>
+<ul><li> LED cathode LED1 "RF24" connected to pin CSN (D8) module nRF24l01 +, the anode of the LED (through a current limiting resistor) - to pin SCK bus SPI (D13) 
+</li><li> LED cathode LED2 "RF433" connected to pin NSS (D9) module RFM69HW, the anode of the LED (through a current limiting resistor) - to pin SCK bus SPI (D13) 
+</li></ul>
+<p>When radios are not active - at the appropriate pines chip select (CSN and NSS) there is a high potential, with the appearance of the clock at pin SCK does not lead to the ignition of the LEDs. 
+If the same MK "communicates" with any wireless module to select it at the appropriate Pina (CSN and NSS) is set low potential and at the same timing pulses at pin SCK "ignite" the corresponding LED. 
+</p><p>Thus, the user is not required to arrange for any additional programming work on the MC to indicate operation of the module. 
+</p>
+<h3>  Features </h3>
+<p>If necessary, SMD-LED to replace the usual outs (eg to embed the finished device in a cute case with display): 
+</p>
+<ul><li> The board is close to the equipment corresponding LED is seating where you can solder terminals LEDs (or the appropriate cable). 
+</li><li> Current-limiting resistor is on the board (for the output of the LED series resistor is not required) 
+</li><li> SMD-LED when setting the output of the LED must be removed from the board 
+</li></ul>
+<h3>  Modification to control via IR </h3>
+<p>Custom LED can be replaced by LED3 pin IR LED and thereby further expand the use of WireLess Gate Shield (for example, a command sent via any wireless interface or LAN - control devices using infrared commands).
+</p>
+<h2> Libraries </h2>
+<h3> Required Library </h3>
+<p>To use the WireLess Gate Shield requires the following libraries: 
+</p>
+<ul><li> Work with the transceiver nRF24L01 + - <a href="https://github.com/maniacbug/RF24/archive/master.zip">RF24</a>
+</li><li> Work with the transceiver RFM69HW - <a href="https://github.com/LowPowerLab/RFM69/archive/master.zip">RFM69</a>
+</li><li> Real-time clock (RTC) - <a href="https://github.com/adafruit/RTClib/archive/master.zip">RTClib</a>
+</li><li> IR-receiver - <a href="https://github.com/shirriff/Arduino-IRremote/archive/master.zip">IRremote</a>
+</li></ul>
+<p>Additionally required libraries that are used when working RF24 and LCD-display: 
+</p>
+<ul><li> SPI 
+</li></ul>
+<p>Libraries are examples of them just to understand how they work. 
+</p>
+<h3>  Features  use libraries </h3>
+<h4>  NRF24l01 + </h4>
+<p>Module Initialization nRF24l01 + as follows:
+</p>
+<pre>...
+
+//RF24 radio(CE,CSN);
+RF24 radio(7,8);
+
+...</pre>
+<h4>  RFM69HW </h4>
+<p>To work with a wireless module RFM69HW need to make minor corrections to the file RFM69.h follows: 
+</p><p>At the beginning of the file to find the line:
+</p>
+<pre>
+#define SPI_CS               SS // SS is the SPI slave select pin, for instance D10 on atmega328
+#define RF69_IRQ_PIN          2 // INT0 on AVRs should be connected to DIO0 (ex on Atmega328 it's D2)
+</pre>
+<p>And replace them with:
+</p>
+<pre>
+//#define SPI_CS               SS // SS is the SPI slave select pin, for instance D10 on atmega328
+//#define RF69_IRQ_PIN          2 // INT0 on AVRs should be connected to DIO0 (ex on Atmega328 it's D2)
+#define SPI_CS               9 // SS is the SPI slave select pin, for WireLess Gate Shield - D9
+#define RF69_IRQ_PIN          3 // INT1 on AVRs should be connected to DIO0 (ex on Atmega328 it's D3)
+</pre>
+<p>Additionally, the file RFM69.cpp need to find the line:
+</p>
+<pre>
+void RFM69::isr0() { selfPointer-&gt;interruptHandler(); }
+</pre>
+<p>And replace them with:
+</p>
+<pre>
+//void RFM69::isr0() { selfPointer-&gt;interruptHandler(); }
+void RFM69::isr1() { selfPointer-&gt;interruptHandler(); }
+</pre>
+<p>Module Initialization RFM69HW as follows:
+</p>
+<pre>...
+
+  resetRFM69();
+  radio.setCS(9); // NSS - D9
+  radio.initialize(FREQUENCY,NODEID,NETWORKID);
+
+...</pre>
+<p><i> 'Note:' </i> Working with RFM69HW determined by the state of its registers. For more tinctures for specific endpoints required by the rules in the file RFM69.cpp function RFM69 :: initialize 
+To better understand the purpose registers read the file RFM69registers.h (also included in the library), and documentation <a href="http://st.devicter.ru/9/1115/243/RFM69HW.pdf">radio RFM69HW</a>
+</p>
+<h2>  Demonstration </h2>
+<h3>  Code for the main unit with WireLess Gate Shield (works with RTC, IR, RFM69HW, nRF24l01 +) </h3>
+<ul><li> Sends a structure to another RFM69HW and receives a response (ping-pong). 
+</li><li> Listen nRF24l01 + comes and if appropriate package - outputs it to monitor 
+</li><li> Accepts commands via IR receiver (the recognized commands are displayed in the monitor) and lights custom LED 
+</li></ul>
+<p>All results are displayed in the Serial Monitor
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+<span class="co2">#include &lt;RFM69.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include "RF24.h"</span>
+<span class="co2">#include &lt;IRremote.h&gt;</span>
+<span class="co2">#include &lt;Wire.h&gt;</span>
+<span class="co2">#include "RTClib.h"</span>
+ 
+RF24 radio24<span class="br0">(</span><span class="nu0">7</span>,<span class="nu0">8</span><span class="br0">)</span><span class="sy4">;</span> 
+ 
+RTC_DS1307 RTC<span class="sy4">;</span>
+ 
+<span class="kw4">int</span> RECV_PIN <span class="sy1">=</span> <span class="nu0">5</span><span class="sy4">;</span>
+ 
+IRrecv irrecv<span class="br0">(</span>RECV_PIN<span class="br0">)</span><span class="sy4">;</span>
+ 
+decode_results results<span class="sy4">;</span>
+ 
+<span class="co1">// create a framework for the transmission of values</span>
+<span class="kw4">typedef</span> <span class="kw4">struct</span><span class="br0">{</span>         
+  <span class="kw4">int</span> SensorID<span class="sy4">;</span>        <span class="co1">// ID sensor</span>
+  <span class="kw4">int</span> CommandTo<span class="sy4">;</span>       <span class="co1">// command module number ...</span>
+  <span class="kw4">int</span> Command<span class="sy4">;</span>         <span class="co1">// command</span>
+  <span class="co1">// 0 - answer </span>
+  <span class="co1">// 1 - get the value</span>
+  <span class="co1">// 2 - set the value</span>
+  <span class="kw4">int</span> ParamID<span class="sy4">;</span>         <span class="co1">// parameter identifier</span>
+  <span class="kw4">float</span> ParamValue<span class="sy4">;</span>    <span class="co1">// value</span>
+  <span class="kw4">boolean</span> Status<span class="sy4">;</span>      <span class="co1">// status</span>
+  <span class="co1">// 0 - read-only (RO)</span>
+  <span class="co1">// 1 -  can change the (RW)</span>
+  <span class="kw4">char</span> Comment<span class="br0">[</span><span class="nu0">16</span><span class="br0">]</span><span class="sy4">;</span>    <span class="co1">// comment</span>
+<span class="br0">}</span>
+Message<span class="sy4">;</span>
+ 
+Message sensor<span class="sy4">;</span> 
+ 
+<span class="kw4">const</span> uint64_t pipes<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span> 
+  0xF0F0F0F0E1LL, 0xF0F0F0F0D2LL <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">volatile</span> <span class="kw4">boolean</span> waitRF24 <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+ 
+<span class="co2">#define NODEID      99</span>
+<span class="co2">#define NETWORKID   100</span>
+<span class="co2">#define GATEWAYID   1</span>
+<span class="co2">#define FREQUENCY   RF69_433MHZ //Match this with the version of your Moteino! (others: RF69_433MHZ, RF69_868MHZ)</span>
+<span class="co2">#define KEY         "thisIsEncryptKey" //has to be same 16 characters/bytes on all nodes, not more not less!</span>
+<span class="co2">#define LED         6</span>
+<span class="co2">#define SERIAL_BAUD 115200</span>
+<span class="co2">#define ACK_TIME    30  // # of ms to wait for an ack</span>
+ 
+<span class="co2">#define RFM69_RESET 14  //A0</span>
+<span class="co2">#define RFM69_NSS 9</span>
+<span class="co2">#define RFM69_DIO0 3</span>
+ 
+<span class="co2">#define BUTTON 15 // A1</span>
+ 
+<span class="co2">#define MOSI 11</span>
+<span class="co2">#define MISO 12</span>
+<span class="co2">#define SCK 13</span>
+ 
+<span class="kw4">int</span> TRANSMITPERIOD <span class="sy1">=</span> <span class="nu0">500</span><span class="sy4">;</span> <span class="co1">//transmit a packet to gateway so often (in ms)</span>
+byte sendSize<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">boolean</span> requestACK <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+RFM69 radio<span class="sy4">;</span>
+ 
+<span class="kw4">int</span> delta<span class="sy1">=</span><span class="nu0">2000</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">long</span> blinkStop<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">long</span> timeReady<span class="sy4">;</span>
+ 
+<span class="kw4">typedef</span> <span class="kw4">struct</span> <span class="br0">{</span>		
+  <span class="kw4">int</span>           nodeId<span class="sy4">;</span> <span class="co1">//store this nodeId</span>
+  <span class="kw4">unsigned</span> <span class="kw4">long</span> uptime<span class="sy4">;</span> <span class="co1">//uptime in ms</span>
+  <span class="kw4">float</span>         temp<span class="sy4">;</span>   <span class="co1">//temperature maybe?</span>
+<span class="br0">}</span> 
+Payload<span class="sy4">;</span>
+Payload theData<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span>SERIAL_BAUD<span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">pinMode</span><span class="br0">(</span>LED, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">pinMode</span><span class="br0">(</span>RFM69_NSS, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">7</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">8</span>, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>MOSI, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>MISO, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>SCK, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">pinMode</span><span class="br0">(</span>RFM69_RESET, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>RFM69_DIO0, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">pinMode</span><span class="br0">(</span>BUTTON, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>RFM69_NSS, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">7</span>, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  resetRFM69<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  radio.<span class="me1">setCS</span><span class="br0">(</span>RFM69_NSS<span class="br0">)</span><span class="sy4">;</span>
+  radio.<span class="me1">initialize</span><span class="br0">(</span>FREQUENCY,NODEID,NETWORKID<span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">//radio.setHighPower(); //uncomment only for RFM69HW!</span>
+ 
+  radio.<span class="me1">encrypt</span><span class="br0">(</span>KEY<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw4">char</span> buff<span class="br0">[</span><span class="nu0">50</span><span class="br0">]</span><span class="sy4">;</span>
+  <span class="kw3">sprintf</span><span class="br0">(</span>buff, <span class="st0">"<span class="es1">\n</span>Transmitting at %d Mhz..."</span>, FREQUENCY<span class="sy1">==</span>RF69_433MHZ <span class="sy4">?</span> <span class="nu0">433</span> <span class="sy4">:</span> FREQUENCY<span class="sy1">==</span>RF69_868MHZ <span class="sy4">?</span> <span class="nu0">868</span> <span class="sy4">:</span> <span class="nu0">915</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>buff<span class="br0">)</span><span class="sy4">;</span>
+ 
+  radio24.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// optionally, increase the delay between retries &amp; # of retries</span>
+  radio24.<span class="me1">setRetries</span><span class="br0">(</span><span class="nu0">15</span>,<span class="nu0">15</span><span class="br0">)</span><span class="sy4">;</span>
+  radio24.<span class="me1">setChannel</span><span class="br0">(</span><span class="nu0">119</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">// по умолчанию СЛУШАЕМ</span>
+  radio24.<span class="me1">openWritingPipe</span><span class="br0">(</span>pipes<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+  radio24.<span class="me1">openReadingPipe</span><span class="br0">(</span><span class="nu0">1</span>,pipes<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+  radio24.<span class="me1">startListening</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">attachInterrupt</span><span class="br0">(</span><span class="nu0">0</span>, isr_RF24, <span class="kw2">FALLING</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  irrecv.<span class="me1">enableIRIn</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw2">Wire</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  RTC.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span> RTC.<span class="me1">isrunning</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"RTC is NOT running!"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// following line sets the RTC to the date &amp; time this sketch was compiled</span>
+    RTC.<span class="me1">adjust</span><span class="br0">(</span>DateTime<span class="br0">(</span>__DATE__, __TIME__<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">long</span> lastPeriod <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+  <span class="co1">//check for any received packets</span>
+  <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">receiveDone</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">'['</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>radio.<span class="me1">SENDERID</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"] "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">(</span>byte i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> i <span class="sy1">&lt;</span> radio.<span class="me1">DATALEN</span><span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span>radio.<span class="me1">DATA</span><span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"   [RX_RSSI:"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>radio.<span class="me1">readRSSI</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"]"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">ACK_REQUESTED</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      radio.<span class="me1">sendACK</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" - ACK sent"</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw4">int</span> currPeriod <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">/</span>TRANSMITPERIOD<span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span>currPeriod <span class="sy3">!</span><span class="sy1">=</span> lastPeriod<span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="co1">//fill in the struct with new values</span>
+    theData.<span class="me1">nodeId</span> <span class="sy1">=</span> NODEID<span class="sy4">;</span>
+    theData.<span class="me1">uptime</span> <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    theData.<span class="me1">temp</span> <span class="sy1">=</span> radio.<span class="me1">readTemperature</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//91.23; //it's hot!</span>
+ 
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Sending struct ("</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="kw3">sizeof</span><span class="br0">(</span>theData<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" bytes) ... "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">sendWithRetry</span><span class="br0">(</span>GATEWAYID, <span class="br0">(</span><span class="kw4">const</span> <span class="kw4">void</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span><span class="sy3">&amp;</span>theData<span class="br0">)</span>, <span class="kw3">sizeof</span><span class="br0">(</span>theData<span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" ok!"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">else</span> <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" nothing..."</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    lastPeriod<span class="sy1">=</span>currPeriod<span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  listenRF24<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>irrecv.<span class="me1">decode</span><span class="br0">(</span><span class="sy3">&amp;</span>results<span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>results.<span class="me1">value</span>, <span class="kw2">HEX</span><span class="br0">)</span><span class="sy4">;</span>
+    irrecv.<span class="me1">resume</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Receive the next value</span>
+    blinkStop<span class="sy1">=</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">+</span><span class="nu0">100</span><span class="sy4">;</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>LED, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw3">digitalRead</span><span class="br0">(</span>BUTTON<span class="br0">)</span><span class="sy1">==</span><span class="kw2">LOW</span><span class="br0">)</span> <span class="br0">{</span>
+    blinkStop<span class="sy1">=</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">+</span><span class="nu0">1000</span><span class="sy4">;</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>LED, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy1">&gt;</span>blinkStop<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>LED, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">if</span><span class="br0">(</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy1">&gt;</span>timeReady<span class="br0">)</span><span class="br0">{</span>
+    timeReady<span class="sy1">=</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy2">+</span><span class="nu0">2000</span><span class="sy4">;</span>
+    DateTime now <span class="sy1">=</span> RTC.<span class="me1">now</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>now.<span class="me1">year</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">'/'</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>now.<span class="me1">month</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">'/'</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>now.<span class="me1">day</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">' '</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>now.<span class="me1">hour</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">':'</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>now.<span class="me1">minute</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">':'</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>now.<span class="me1">second</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> Blink<span class="br0">(</span>byte PIN, <span class="kw4">int</span> DELAY_MS<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>PIN, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>PIN,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span>DELAY_MS<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>PIN,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> resetRFM69<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>RFM69_RESET, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>RFM69_RESET, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> isr_RF24<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  waitRF24 <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> listenRF24<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">if</span> <span class="br0">(</span>waitRF24<span class="br0">)</span> <span class="br0">{</span>
+    waitRF24 <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span> radio24.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw4">bool</span> done <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+      <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span>done<span class="br0">)</span>
+      <span class="br0">{</span>
+        done <span class="sy1">=</span> radio24.<span class="kw3">read</span><span class="br0">(</span> <span class="sy3">&amp;</span>sensor, <span class="kw3">sizeof</span><span class="br0">(</span>sensor<span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">(</span>sensor.<span class="me1">Command</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>  
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>sensor.<span class="me1">SensorID</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"  "</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>sensor.<span class="me1">ParamID</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"  "</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>sensor.<span class="me1">ParamValue</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" "</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>sensor.<span class="me1">Comment</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Code for "receiver" (for the test used Arduino Nano and RFM69HW module on the breadboard) </h3>
+<ul><li> Takes using RFM69HW structure 
+</li><li> Accountable for admission 
+</li><li> Prints additional information regarding the module RFM69HW (registers, etc.)
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+<span class="co2">#include &lt;RFM69.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+ 
+<span class="co2">#define NODEID      1</span>
+<span class="co2">#define NETWORKID   100</span>
+<span class="co2">#define FREQUENCY   RF69_433MHZ //Match this with the version of your Moteino! (others: RF69_433MHZ, RF69_868MHZ)</span>
+<span class="co2">#define KEY         "thisIsEncryptKey" //has to be same 16 characters/bytes on all nodes, not more not less!</span>
+<span class="co2">#define LED         6</span>
+<span class="co2">#define SERIAL_BAUD 115200</span>
+<span class="co2">#define ACK_TIME    30  // # of ms to wait for an ack</span>
+ 
+<span class="co2">#define RFM69_RESET 14</span>
+ 
+RFM69 radio<span class="sy4">;</span>
+<span class="kw4">bool</span> promiscuousMode <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span> <span class="co1">//set to 'true' to sniff all packets on the same network</span>
+ 
+<span class="kw4">typedef</span> <span class="kw4">struct</span> <span class="br0">{</span>		
+  <span class="kw4">int</span>           nodeId<span class="sy4">;</span> <span class="co1">//store this nodeId</span>
+  <span class="kw4">unsigned</span> <span class="kw4">long</span> uptime<span class="sy4">;</span> <span class="co1">//uptime in ms</span>
+  <span class="kw4">float</span>         temp<span class="sy4">;</span>   <span class="co1">//temperature maybe?</span>
+<span class="br0">}</span> Payload<span class="sy4">;</span>
+Payload theData<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span>SERIAL_BAUD<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>RFM69_RESET, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">3</span>, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  resetRFM69<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  radio.<span class="me1">setCS</span><span class="br0">(</span><span class="nu0">9</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">//delay(10);</span>
+  radio.<span class="me1">initialize</span><span class="br0">(</span>FREQUENCY,NODEID,NETWORKID<span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">//radio.setHighPower(); //uncomment only for RFM69HW!</span>
+ 
+  radio.<span class="me1">encrypt</span><span class="br0">(</span>KEY<span class="br0">)</span><span class="sy4">;</span>
+  radio.<span class="me1">promiscuous</span><span class="br0">(</span>promiscuousMode<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw4">char</span> buff<span class="br0">[</span><span class="nu0">50</span><span class="br0">]</span><span class="sy4">;</span>
+  <span class="kw3">sprintf</span><span class="br0">(</span>buff, <span class="st0">"<span class="es1">\n</span>Listening at %d Mhz..."</span>, FREQUENCY<span class="sy1">==</span>RF69_433MHZ <span class="sy4">?</span> <span class="nu0">433</span> <span class="sy4">:</span> FREQUENCY<span class="sy1">==</span>RF69_868MHZ <span class="sy4">?</span> <span class="nu0">868</span> <span class="sy4">:</span> <span class="nu0">915</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>buff<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+byte ackCount<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">//process any serial input</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw2">Serial</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw4">char</span> input <span class="sy1">=</span> <span class="kw2">Serial</span>.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'r'</span><span class="br0">)</span> <span class="co1">//d=dump all register values</span>
+      radio.<span class="me1">readAllRegs</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'E'</span><span class="br0">)</span> <span class="co1">//E=enable encryption</span>
+      radio.<span class="me1">encrypt</span><span class="br0">(</span>KEY<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'e'</span><span class="br0">)</span> <span class="co1">//e=disable encryption</span>
+      radio.<span class="me1">encrypt</span><span class="br0">(</span>null<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'p'</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      promiscuousMode <span class="sy1">=</span> <span class="sy3">!</span>promiscuousMode<span class="sy4">;</span>
+      radio.<span class="me1">promiscuous</span><span class="br0">(</span>promiscuousMode<span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Promiscuous mode "</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>promiscuousMode <span class="sy4">?</span> <span class="st0">"on"</span> <span class="sy4">:</span> <span class="st0">"off"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'d'</span><span class="br0">)</span> <span class="co1">//d=dump flash area</span>
+    <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Flash content:"</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw4">int</span> counter <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+      <span class="kw1">while</span><span class="br0">(</span>counter<span class="sy1">&lt;=</span><span class="nu0">256</span><span class="br0">)</span><span class="br0">{</span>
+        <span class="co1">//Serial.print(flash.readByte(counter++), HEX);</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">'.'</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="br0">}</span>
+      <span class="co1">//while(flash.busy());</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'D'</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Deleting Flash chip content... "</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="co1">//flash.chipErase();</span>
+      <span class="co1">//while(flash.busy());</span>
+      <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"DONE"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">if</span> <span class="br0">(</span>input <span class="sy1">==</span> <span class="st0">'i'</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"DeviceID: "</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="co1">//word jedecid = flash.readDeviceId();</span>
+      <span class="co1">//Serial.println(jedecid, HEX);</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">receiveDone</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">'['</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>radio.<span class="me1">SENDERID</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"] "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" [RX_RSSI:"</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>radio.<span class="me1">readRSSI</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"]"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>promiscuousMode<span class="br0">)</span>
+	<span class="br0">{</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"to ["</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>radio.<span class="me1">TARGETID</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"] "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">DATALEN</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="kw3">sizeof</span><span class="br0">(</span>Payload<span class="br0">)</span><span class="br0">)</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Invalid payload received, not matching Payload struct!"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">else</span>
+    <span class="br0">{</span>
+      theData <span class="sy1">=</span> <span class="sy2">*</span><span class="br0">(</span>Payload<span class="sy2">*</span><span class="br0">)</span>radio.<span class="me1">DATA</span><span class="sy4">;</span> <span class="co1">//assume radio.DATA actually contains our struct and not something else</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" nodeId="</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>theData.<span class="me1">nodeId</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" uptime="</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>theData.<span class="me1">uptime</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" temp="</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>theData.<span class="me1">temp</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">ACK_REQUESTED</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      byte theNodeID <span class="sy1">=</span> radio.<span class="me1">SENDERID</span><span class="sy4">;</span>
+      radio.<span class="me1">sendACK</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" - ACK sent."</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+      <span class="co1">// When a node requests an ACK, respond to the ACK</span>
+      <span class="co1">// and also send a packet requesting an ACK (every 3rd one only)</span>
+      <span class="co1">// This way both TX/RX NODE functions are tested on 1 end at the GATEWAY</span>
+      <span class="kw1">if</span> <span class="br0">(</span>ackCount<span class="sy2">++%</span><span class="nu19">3</span><span class="sy1">==</span><span class="nu0">0</span><span class="br0">)</span>
+      <span class="br0">{</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" Pinging node "</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>theNodeID<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" - ACK..."</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//need this when sending right after reception .. ?</span>
+        <span class="kw1">if</span> <span class="br0">(</span>radio.<span class="me1">sendWithRetry</span><span class="br0">(</span>theNodeID, <span class="st0">"ACK TEST"</span>, <span class="nu0">8</span>, <span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span>  <span class="co1">// 0 = only 1 attempt, no retries</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"ok!"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">else</span> <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"nothing"</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    Blink<span class="br0">(</span>LED,<span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> Blink<span class="br0">(</span>byte PIN, <span class="kw4">int</span> DELAY_MS<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>PIN, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>PIN,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span>DELAY_MS<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>PIN,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> resetRFM69<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>RFM69_RESET, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>RFM69_RESET, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h2> Product versions</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td width="150"> <b>Revision</b>
+</td>
+<td width="450"> <b>Description</b>
+</td>
+<td width="80"> <b>Release</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> 0.9
+</td>
+<td> Prototype
+</td>
+<td> 05.05.2014
+</td></tr>
+<tr style="font-size: 90%">
+<td> 1.0
+</td>
+<td> Public version
+</td>
+<td> 05.07.2014
+</td></tr></table>
+<h2>  Applications </h2>
+<ul><li> Universal Wireless Gateway RF2.4 GHz (nRF24l01 +), RF433 MHz (RFM69HW), IR and LAN (using Ethernet Shield) 
+</li><li> Logging system commands and data wireless devices with the time (using the Ethernet Shield) 
+</li><li> Design and construction of administering various wireless commands at a certain time (for example, "turn on the light August 23, 2014 at 18:02" or "every day to include an automatic watering at 5:00")
+</li></ul>
+<h2>  Questions and Answers </h2>
+<ul><li>Blog <a href="//devicter.blogspot.ru">WireLess Gate Shield</a> RU
+</li><li>Ask a question by e-mail support@devicter.ru
+</li></ul>
+<h2>  How to buy  </h2>
+<p>This product can be purchased:<br/>
+China (shipping worldwide) <br/>
+<a href="http://www.elecrow.com/wireless-gate-shield-p-1139.html">Elecrow store</a> <br/>
+<a href="http://www.seeedstudio.com/depot/wireless-gate-shield.html">Seeed store</a> <br/>
+</p><p>Russia <br/>
+<a href="http://devicter.ru/goods/WireLess-Gate-Shield">Devicter store</a>
+</p>
+<h2>  Links </h2>
+<ul><li> <a href="http://st.devicter.ru/9/1115/243/RFM69HW.pdf">Description RFM69HW</a>
+</li><li> <a href="ftp://imall.iteadstudio.com/Modules/IM120606002_nRF24L01_module/DS_nRF24L01.pdf">Description nRF24l01+</a>
+</li><li> <a href="http://wiki.devicter.ru/images/c/c7/Wl-Scheme.PNG">schematic of the device</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,464 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - OLED Display 0.96&quot;</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - OLED Display 0.96&quot;</h1>
+
+<p>LED 128×64 Display module is an OLED monochrome 128×64dot matrix display module with Grove 4pin I2C Interface.Comparing to LCD, OLED screens are way more competitive, which has a number of advantages such as high brightness, self-emission, high contrast ratio, slim / thin outline, wide viewing angle, wide temperature range, and low power consumption. It has bigger screen so that it can display more contents than the <a href="/index.php-title=Grove-OLED_Display_96x96">OLED 96×96</a>. <br/>
+<b>Model:<a href="http://www.seeedstudio.com/depot/grove-oled-display-12864-p-781.html?cPath=163_167">OLE35046P</a></b>
+</p><p><br/> <img src="img/Toled128642.jpg" width="400"/><img src="img/Toled128642_01.jpg" width="400"/>
+</p>
+<h2>  Features </h2>
+<ul><li>Grove compatible interface
+</li><li>Communicate Mode:I2C  
+</li><li>Low power consumption
+</li><li>Display Color: White
+</li><li>Wide range of operating temperature:-20℃~70℃
+</li></ul>
+<h2>  Cautions </h2>
+<p><span style="color:red">Please notice: heavy impact or stress on the OLED will cause the breakdown of screen..</span>
+</p>
+<h2>  Specifications </h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col">Items
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Norm
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Power Voltage (VCC)
+</th>
+<td> 3.3
+</td>
+<td> 5.0
+</td>
+<td> 5.5
+</td>
+<td> V
+</td></tr>
+<tr>
+<th scope="row"> Driver IC
+</th>
+<td colspan="3" rowspan="1"> SSD1308Z
+</td>
+<td>-
+</td></tr>
+<tr>
+<th scope="row"> Display Color
+</th>
+<td colspan="3" rowspan="1"> White
+</td>
+<td>-
+</td></tr>
+<tr>
+<th scope="row"> Dot Matrix
+</th>
+<td colspan="3" rowspan="1"> 128×64
+</td>
+<td>-
+</td></tr>
+<tr>
+<th scope="row"> Panel Size
+</th>
+<td colspan="3" rowspan="1"> 26.7(W)×19.26(H)
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Active Area
+</th>
+<td colspan="3" rowspan="1"> 21.74(W)×11.175 (H)
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Dot Pitch
+</th>
+<td colspan="3" rowspan="1"> 0.17(W)×0.175 (H)
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Dot Size
+</th>
+<td colspan="3" rowspan="1"> 0.15(W)×0.15 (H)
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Wide range of operating temperature
+</th>
+<td colspan="3" rowspan="1"> -20~70
+</td>
+<td>℃
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3> With Arduino</h3>
+<p>The OLED128*64 uses all the pins of SSD1308 chip, the default original point is on the top left corner. You can also change the original point by adjusting the program and in order to display your desired patterns. For more details, please consult <a href="http://garden.seeedstudio.com/images/4/46/SSD1308_1.0.pdf">File:SSD1308_1.0.pdf</a> and <a href="http://garden.seeedstudio.com/images/c/c4/LY190-128064.pdf">File:LY190-128064.pdf</a>.<br/>
+</p><p>Here we demonstrate how to display "Seeedstudio" on the screen. 
+</p>
+<ul><li>Plug the Grove - OLED Display 128*64 onto the I2C port on Grove - Base Shield, and then plug the Base Shield onto Arduino;
+</li></ul>
+<p><br/> <img src="img/Grove-OLED_Display_128X64.jpg" width="700"/><br/>
+</p>
+<ul><li>Download the library <a href="res/OLED_Display12864.zip">File:OLED_Display128X64 Library</a>;<br/>
+</li><li>Unzip it into the libraries file of Arduino IDE by the path: ..\arduino-1.0\libraries.<br/>
+</li><li>Open the code directly by the path: File -&gt; Example -&gt;OLED_Display12864-&gt;OLED_Bitmap_Inverse_Display. 
+</li></ul>
+<pre>  
+  
+#include &lt;Wire.h&gt;
+#include &lt;SeeedOLED.h&gt;
+#include &lt;avr/pgmspace.h&gt;
+
+static unsigned char SeeedLogo[] PROGMEM ={
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x60, 0xf0, 0xc0, 0x00, 0x00, 0x00, 0xfc, 0xff, 0x87, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03,
+0xff, 0xfc, 0x00, 0x00, 0x00, 0x80, 0xf0, 0x20, 0x00, 0x00, 0x80, 0xc0, 0xc0, 0x60, 0xe0, 0xc0,
+0xc0, 0x00, 0x00, 0x00, 0xc0, 0xc0, 0xc0, 0x60, 0xe0, 0xc0, 0xc0, 0x80, 0x00, 0x00, 0x80, 0xc0,
+0xc0, 0xe0, 0x60, 0xc0, 0xc0, 0x80, 0x00, 0x00, 0x00, 0xc0, 0xc0, 0xc0, 0x60, 0xe0, 0xc0, 0xc0,
+0x80, 0x00, 0x00, 0x80, 0xc0, 0xc0, 0xe0, 0xe0, 0xc0, 0xc0, 0xf8, 0xf8, 0x00, 0x00, 0x00, 0x00,
+0x00, 0xc0, 0xc0, 0xe0, 0x60, 0xc0, 0xc0, 0x80, 0x00, 0xc0, 0xf0, 0xf0, 0xf0, 0xc0, 0x00, 0xc0,
+0xc0, 0x00, 0x00, 0x00, 0x00, 0xc0, 0xc0, 0x00, 0x00, 0x80, 0xc0, 0xc0, 0xe0, 0xe0, 0xc0, 0xc0,
+0xf8, 0xf8, 0x00, 0xd8, 0xd8, 0x00, 0x00, 0x80, 0xc0, 0xc0, 0xe0, 0x60, 0xc0, 0xc0, 0x80, 0x00,
+0x00, 0x03, 0x0f, 0x1e, 0x3c, 0x70, 0xe3, 0xcf, 0x9f, 0x30, 0x00, 0x00, 0x00, 0x00, 0x70, 0xbf,
+0xcf, 0xe3, 0x70, 0x78, 0x3e, 0x0f, 0x03, 0x00, 0x00, 0x00, 0x33, 0x77, 0x66, 0x66, 0x66, 0x6c,
+0x7d, 0x18, 0x00, 0x1f, 0x3f, 0x76, 0x66, 0x66, 0x66, 0x76, 0x37, 0x07, 0x00, 0x0f, 0x3f, 0x7f,
+0x66, 0x66, 0x66, 0x66, 0x77, 0x27, 0x07, 0x00, 0x1f, 0x3f, 0x76, 0x66, 0x66, 0x66, 0x76, 0x37,
+0x07, 0x00, 0x0f, 0x3f, 0x71, 0x60, 0x60, 0x60, 0x60, 0x31, 0x7f, 0x7f, 0x00, 0x00, 0x00, 0x00,
+0x11, 0x37, 0x67, 0x66, 0x66, 0x6c, 0x7d, 0x38, 0x00, 0x00, 0x3f, 0x7f, 0x3f, 0x00, 0x00, 0x1f,
+0x3f, 0x70, 0x60, 0x60, 0x70, 0x7f, 0x7f, 0x00, 0x0f, 0x3f, 0x71, 0x60, 0x60, 0x60, 0x60, 0x31,
+0x7f, 0x7f, 0x00, 0x7f, 0x7f, 0x00, 0x06, 0x1f, 0x3b, 0x60, 0x60, 0x60, 0x60, 0x71, 0x3f, 0x1f,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01, 0x00, 0x00, 0x00, 0x00, 0x01, 0x01,
+0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf8, 0x48, 0x48, 0x48, 0xb0, 0x00, 0xc0, 0x20,
+0x20, 0x20, 0xc0, 0x00, 0xc0, 0x20, 0x20, 0x20, 0xc0, 0x00, 0x40, 0xa0, 0xa0, 0xa0, 0x20, 0x00,
+0x00, 0x20, 0xf0, 0x20, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x08, 0x08, 0xf8, 0x08,
+0x08, 0x00, 0xc0, 0x20, 0x20, 0x20, 0xf8, 0x00, 0xc0, 0xa0, 0xa0, 0xa0, 0xc0, 0x00, 0x20, 0xa0,
+0xa0, 0xa0, 0xc0, 0x00, 0x40, 0xa0, 0xa0, 0xa0, 0x20, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0xf8, 0x48, 0x48, 0x48, 0x08, 0x00, 0x20, 0x40, 0x80, 0x40,
+0x20, 0x00, 0x00, 0x20, 0xf0, 0x20, 0x20, 0x00, 0xc0, 0xa0, 0xa0, 0xa0, 0xc0, 0x00, 0xe0, 0x00,
+0x20, 0x20, 0xc0, 0x00, 0xc0, 0x20, 0x20, 0x20, 0xf8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x02, 0x02, 0x02, 0x01, 0x00, 0x01, 0x02,
+0x02, 0x02, 0x01, 0x00, 0x01, 0x02, 0x02, 0x02, 0x01, 0x00, 0x02, 0x02, 0x02, 0x02, 0x01, 0x00,
+0x00, 0x00, 0x01, 0x02, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x02, 0x03, 0x02,
+0x02, 0x00, 0x01, 0x02, 0x02, 0x02, 0x03, 0x00, 0x01, 0x02, 0x02, 0x02, 0x00, 0x00, 0x01, 0x02,
+0x02, 0x02, 0x01, 0x02, 0x02, 0x02, 0x02, 0x02, 0x01, 0x00, 0x00, 0x08, 0x06, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x02, 0x02, 0x82, 0x02, 0x00, 0x02, 0x01, 0x01, 0x01,
+0x02, 0x00, 0x00, 0x00, 0x01, 0x02, 0x02, 0x00, 0x01, 0x02, 0x02, 0x02, 0x00, 0x00, 0x03, 0x00,
+0x00, 0x00, 0x03, 0x00, 0x01, 0x02, 0x02, 0x02, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x82, 0x8c, 0x60, 0x1c, 0x02, 0x00, 0x1c, 0x22, 0x22, 0x22, 0x1c, 0x00, 0x1e,
+0x20, 0x20, 0x00, 0x3e, 0x00, 0x00, 0x3e, 0x04, 0x02, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x3e, 0x04, 0x02, 0x02, 0x00, 0x1c, 0x2a, 0x2a, 0x2a, 0x0c, 0x00, 0x12, 0x2a, 0x2a,
+0x2a, 0x1c, 0x20, 0x1c, 0x22, 0x22, 0x22, 0x14, 0x00, 0x3f, 0x00, 0x02, 0x02, 0x3c, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00   
+};
+
+void setup()
+{
+  Wire.begin();	
+  SeeedOled.init();  //initialze SEEED OLED display
+  DDRB|=0x21;        //digital pin 8, LED glow indicates OLED properly Connected .
+  PORTB |= 0x21;
+
+  SeeedOled.setInverseDisplay();          // Set Display to inverse mode
+  SeeedOled.clearDisplay();               // clear the screen and set start position to top left corner
+  SeeedOled.drawBitmap(SeeedLogo,1024);   // 1024 = 128 Pixels * 64 Pixels / 8
+
+}
+
+void loop()
+{
+  
+}
+
+</pre>
+<ul><li>Upload the code. Please click <a href="/Upload_Code">here</a> if you do not know how to upload.<br/>
+</li><li>You can see : 
+</li></ul>
+<p><br/><img src="img/OLED_Display.jpg" width="700"/><br/>
+</p><p>You can open other examples in the same menu bar. The key code here is the main instruction program extracted by the example, hope it can be helpful for you to understand clearly. For more details, please check the Demo code Resources linked.<br/> <b>Note:</b>This module is similar to <a href="/Grove-OLED_Display_96x96" title="Grove - OLED Display 96*96">Grove - OLED Display 96*96</a> in its usage and some library functions, you can make an gray 128*64 image arbitrary that can be shown on OLED 128*64. Please consult the latter one's <b>Usage</b> part of <a href="/Grove-OLED_Display_96x96">WIKI</a> page for detailed instructions.
+</p>
+<p>
+&lt;iframe style="height: 510px; width: 100%; margin: 10px 0 10px;" allowTransparency="true" src="<a href="https://codebender.cc/embed/example/SeeedGrayOLED/OLED_Hello_World">https://codebender.cc/embed/example/SeeedGrayOLED/OLED_Hello_World</a>" frameborder="0"&gt;&lt;/iframe&gt;
+</p>
+<h3>  With Beaglebone Green</h3>
+<p>To begin editing programs that live on BBG, you can use the Cloud9 IDE.<br/>
+As a simple exercise to become familiar with Cloud9 IDE, creating a simple application to blink one of the 4 user programmable LEDs on the BeagleBone is a good start.
+</p><p>If this is your first time to use Cloud9 IDE, please follow this <a href="/Beaglebone_green#Getting_Started"><b>link</b></a>.
+<br/>
+</p><p><b>Step1:</b> Click the "+" in the top-right to create a new file.
+</p><p><img src="img/C9-create-tab.png" width="168"/>
+</p><p><img src="img/C9_newfile.jpg" width="440"/>
+</p><p><b>Step2:</b> Copy and paste the following code into the new tab
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">from</span> Adafruit_I2C <span class="kw1">import</span> Adafruit_I2C
+<span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">import</span> <span class="kw3">math</span>
+ 
+ 
+Oled <span class="sy0">=</span> Adafruit_I2C<span class="br0">(</span><span class="nu0">0x3c</span><span class="br0">)</span>
+Command_Mode<span class="sy0">=</span><span class="nu0">0x80</span>
+Data_mode<span class="sy0">=</span><span class="nu0">0x40</span>
+ 
+grayH<span class="sy0">=</span> <span class="nu0">0xF0</span>
+grayL<span class="sy0">=</span> <span class="nu0">0x0F</span>
+Normal_Display_Cmd<span class="sy0">=</span><span class="nu0">0xA4</span>
+ 
+BasicFont <span class="sy0">=</span> <span class="br0">[</span><span class="br0">[</span><span class="nu0">0</span> <span class="kw1">for</span> x <span class="kw1">in</span> <span class="kw2">xrange</span><span class="br0">(</span><span class="nu0">8</span><span class="br0">)</span><span class="br0">]</span> <span class="kw1">for</span> x <span class="kw1">in</span> <span class="kw2">xrange</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="br0">]</span>
+BasicFont<span class="sy0">=</span><span class="br0">[</span><span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x5F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x07</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x07</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x24</span><span class="sy0">,</span><span class="nu0">0x2A</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x2A</span><span class="sy0">,</span><span class="nu0">0x12</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x23</span><span class="sy0">,</span><span class="nu0">0x13</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x64</span><span class="sy0">,</span><span class="nu0">0x62</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x55</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x50</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x05</span><span class="sy0">,</span><span class="nu0">0x03</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x2A</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0x2A</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0xA0</span><span class="sy0">,</span><span class="nu0">0x60</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x60</span><span class="sy0">,</span><span class="nu0">0x60</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x10</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x51</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x45</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x42</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x62</span><span class="sy0">,</span><span class="nu0">0x51</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x46</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x18</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x12</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x10</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x27</span><span class="sy0">,</span><span class="nu0">0x45</span><span class="sy0">,</span><span class="nu0">0x45</span><span class="sy0">,</span><span class="nu0">0x45</span><span class="sy0">,</span><span class="nu0">0x39</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3C</span><span class="sy0">,</span><span class="nu0">0x4A</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x30</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x71</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x05</span><span class="sy0">,</span><span class="nu0">0x03</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x06</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x29</span><span class="sy0">,</span><span class="nu0">0x1E</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0xAC</span><span class="sy0">,</span><span class="nu0">0x6C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x51</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x06</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x32</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x79</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7E</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x7E</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x51</span><span class="sy0">,</span><span class="nu0">0x72</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x3F</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x22</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x0C</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x10</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x06</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3E</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x51</span><span class="sy0">,</span><span class="nu0">0x21</span><span class="sy0">,</span><span class="nu0">0x5E</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x19</span><span class="sy0">,</span><span class="nu0">0x29</span><span class="sy0">,</span><span class="nu0">0x46</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x26</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x32</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3F</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x3F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x1F</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x1F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3F</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x3F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x63</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x14</span><span class="sy0">,</span><span class="nu0">0x63</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x03</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x78</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x03</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x61</span><span class="sy0">,</span><span class="nu0">0x51</span><span class="sy0">,</span><span class="nu0">0x49</span><span class="sy0">,</span><span class="nu0">0x45</span><span class="sy0">,</span><span class="nu0">0x43</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x10</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x80</span><span class="sy0">,</span><span class="nu0">0x80</span><span class="sy0">,</span><span class="nu0">0x80</span><span class="sy0">,</span><span class="nu0">0x80</span><span class="sy0">,</span><span class="nu0">0x80</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x78</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x48</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x28</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x48</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x18</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x7E</span><span class="sy0">,</span><span class="nu0">0x09</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x18</span><span class="sy0">,</span><span class="nu0">0xA4</span><span class="sy0">,</span><span class="nu0">0xA4</span><span class="sy0">,</span><span class="nu0">0xA4</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x78</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7D</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x80</span><span class="sy0">,</span><span class="nu0">0x84</span><span class="sy0">,</span><span class="nu0">0x7D</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x10</span><span class="sy0">,</span><span class="nu0">0x28</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x18</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x78</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x38</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0xFC</span><span class="sy0">,</span><span class="nu0">0x24</span><span class="sy0">,</span><span class="nu0">0x24</span><span class="sy0">,</span><span class="nu0">0x18</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x18</span><span class="sy0">,</span><span class="nu0">0x24</span><span class="sy0">,</span><span class="nu0">0x24</span><span class="sy0">,</span><span class="nu0">0xFC</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x48</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x24</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x04</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3C</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x20</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x3C</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x30</span><span class="sy0">,</span><span class="nu0">0x40</span><span class="sy0">,</span><span class="nu0">0x3C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x28</span><span class="sy0">,</span><span class="nu0">0x10</span><span class="sy0">,</span><span class="nu0">0x28</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x1C</span><span class="sy0">,</span><span class="nu0">0xA0</span><span class="sy0">,</span><span class="nu0">0xA0</span><span class="sy0">,</span><span class="nu0">0x7C</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x64</span><span class="sy0">,</span><span class="nu0">0x54</span><span class="sy0">,</span><span class="nu0">0x4C</span><span class="sy0">,</span><span class="nu0">0x44</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x7F</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x41</span><span class="sy0">,</span><span class="nu0">0x36</span><span class="sy0">,</span><span class="nu0">0x08</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x01</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="sy0">,</span>
+<span class="br0">[</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x05</span><span class="sy0">,</span><span class="nu0">0x05</span><span class="sy0">,</span><span class="nu0">0x02</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="sy0">,</span><span class="nu0">0x00</span><span class="br0">]</span><span class="br0">]</span>
+ 
+<span class="kw1">def</span> oled_init<span class="br0">(</span><span class="br0">)</span>:
+    sendCommand<span class="br0">(</span><span class="nu0">0xFD</span><span class="br0">)</span> <span class="co1"># Unlock OLED driver IC MCU interface from entering command. i.e: Accept commands</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x12</span><span class="br0">)</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xAE</span><span class="br0">)</span> <span class="co1"># Set display off</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xA8</span><span class="br0">)</span> <span class="co1"># set multiplex ratio</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x5F</span><span class="br0">)</span> <span class="co1"># 96</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xA1</span><span class="br0">)</span> <span class="co1"># set display start line</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x00</span><span class="br0">)</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xA2</span><span class="br0">)</span> <span class="co1"># set display offset</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x60</span><span class="br0">)</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xA0</span><span class="br0">)</span> <span class="co1"># set remap</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x46</span><span class="br0">)</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xAB</span><span class="br0">)</span> <span class="co1"># set vdd internal</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x01</span><span class="br0">)</span> 
+    sendCommand<span class="br0">(</span><span class="nu0">0x81</span><span class="br0">)</span> <span class="co1"># set contrasr</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x53</span><span class="br0">)</span> <span class="co1"># 100 nit</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xB1</span><span class="br0">)</span> <span class="co1"># Set Phase Length</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0X51</span><span class="br0">)</span> 
+    sendCommand<span class="br0">(</span><span class="nu0">0xB3</span><span class="br0">)</span> <span class="co1"># Set Display Clock Divide Ratio/Oscillator Frequency</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x01</span><span class="br0">)</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xB9</span><span class="br0">)</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xBC</span><span class="br0">)</span> <span class="co1"># set pre_charge voltage/VCOMH</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x08</span><span class="br0">)</span> <span class="co1"># (0x08);</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xBE</span><span class="br0">)</span> <span class="co1"># set VCOMH</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0X07</span><span class="br0">)</span> <span class="co1"># (0x07);</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xB6</span><span class="br0">)</span> <span class="co1"># Set second pre-charge period</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x01</span><span class="br0">)</span> 
+    sendCommand<span class="br0">(</span><span class="nu0">0xD5</span><span class="br0">)</span> <span class="co1"># enable second precharge and enternal vsl</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0X62</span><span class="br0">)</span> <span class="co1"># (0x62);</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xA4</span><span class="br0">)</span> <span class="co1"># Set Normal Display Mode</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x2E</span><span class="br0">)</span> <span class="co1"># Deactivate Scroll</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0xAF</span><span class="br0">)</span> <span class="co1"># Switch on display</span>
+    <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">0.1</span><span class="br0">)</span>
+    <span class="co1"># delay(100);</span>
+ 
+    <span class="co1"># Row Address</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x75</span><span class="br0">)</span>    <span class="co1"># Set Row Address </span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x00</span><span class="br0">)</span>    <span class="co1"># Start 0</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x5f</span><span class="br0">)</span>    <span class="co1"># End 95 </span>
+ 
+ 
+    <span class="co1"># Column Address</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x15</span><span class="br0">)</span>    <span class="co1"># Set Column Address </span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x08</span><span class="br0">)</span>    <span class="co1"># Start from 8th Column of driver IC. This is 0th Column for OLED </span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x37</span><span class="br0">)</span>    <span class="co1"># End at  (8 + 47)th column. Each Column has 2 pixels(segments)</span>
+ 
+    <span class="co1"># Init gray level for text. Default:Brightest White</span>
+    grayH<span class="sy0">=</span> <span class="nu0">0xF0</span>
+    grayL<span class="sy0">=</span> <span class="nu0">0x0F</span>
+ 
+<span class="kw1">def</span> sendCommand<span class="br0">(</span>byte<span class="br0">)</span>:
+    Oled.<span class="me1">write8</span><span class="br0">(</span>Command_Mode<span class="sy0">,</span>byte<span class="br0">)</span>
+ 
+<span class="kw1">def</span> sendData<span class="br0">(</span>byte<span class="br0">)</span>:
+    Oled.<span class="me1">write8</span><span class="br0">(</span>Data_mode<span class="sy0">,</span>byte<span class="br0">)</span>
+ 
+<span class="kw1">def</span> multi_comm<span class="br0">(</span><span class="kw3">commands</span><span class="br0">)</span>:
+    <span class="kw1">for</span> c <span class="kw1">in</span> <span class="kw3">commands</span>:
+        sendCommand<span class="br0">(</span>c<span class="br0">)</span>
+ 
+<span class="kw1">def</span> oled_clearDisplay<span class="br0">(</span><span class="br0">)</span>:
+    <span class="kw1">for</span> j <span class="kw1">in</span> <span class="kw2">range</span> <span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">48</span><span class="br0">)</span>:
+        <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span> <span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">96</span><span class="br0">)</span>:
+            sendData<span class="br0">(</span><span class="nu0">0x00</span><span class="br0">)</span>
+ 
+<span class="kw1">def</span> oled_setNormalDisplay<span class="br0">(</span><span class="br0">)</span>:
+    sendCommand<span class="br0">(</span>Normal_Display_Cmd<span class="br0">)</span>
+ 
+<span class="kw1">def</span> oled_setVerticalMode<span class="br0">(</span><span class="br0">)</span>:
+    sendCommand<span class="br0">(</span><span class="nu0">0xA0</span><span class="br0">)</span>    <span class="co1"># remap to</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x46</span><span class="br0">)</span>    <span class="co1"># Vertical mode</span>
+ 
+<span class="kw1">def</span> oled_setTextXY<span class="br0">(</span>Row<span class="sy0">,</span>Column<span class="br0">)</span>:
+    sendCommand<span class="br0">(</span><span class="nu0">0x15</span><span class="br0">)</span>             <span class="co1"># Set Column Address</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x08</span>+<span class="br0">(</span>Column*<span class="nu0">4</span><span class="br0">)</span><span class="br0">)</span>  <span class="co1"># Start Column: Start from 8</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x37</span><span class="br0">)</span>             <span class="co1"># End Column</span>
+    <span class="co1"># Row Address</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x75</span><span class="br0">)</span>             <span class="co1"># Set Row Address</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x00</span>+<span class="br0">(</span>Row*<span class="nu0">8</span><span class="br0">)</span><span class="br0">)</span>     <span class="co1"># Start Row</span>
+    sendCommand<span class="br0">(</span><span class="nu0">0x07</span>+<span class="br0">(</span>Row*<span class="nu0">8</span><span class="br0">)</span><span class="br0">)</span>     <span class="co1"># End Row</span>
+ 
+<span class="kw1">def</span> oled_putChar<span class="br0">(</span>C<span class="br0">)</span>:
+    C_add<span class="sy0">=</span><span class="kw2">ord</span><span class="br0">(</span>C<span class="br0">)</span>
+    <span class="kw1">if</span> C_add<span class="sy0">&lt;</span><span class="nu0">32</span> <span class="kw1">or</span> C_add<span class="sy0">&gt;</span><span class="nu0">127</span>:     <span class="co1"># Ignore non-printable ASCII characters</span>
+        C<span class="sy0">=</span><span class="st0">' '</span>
+        C_add<span class="sy0">=</span><span class="kw2">ord</span><span class="br0">(</span>C<span class="br0">)</span>
+ 
+    <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">8</span><span class="sy0">,</span><span class="nu0">2</span><span class="br0">)</span>:
+        <span class="kw1">for</span> j <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">8</span><span class="br0">)</span>:
+            c<span class="sy0">=</span><span class="nu0">0x00</span>
+            bit1<span class="sy0">=</span><span class="br0">(</span><span class="br0">(</span>BasicFont<span class="br0">[</span>C_add-<span class="nu0">32</span><span class="br0">]</span><span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><span class="sy0">&gt;&gt;</span>j<span class="br0">)</span>&amp;<span class="nu0">0x01</span>
+            bit2<span class="sy0">=</span><span class="br0">(</span><span class="br0">(</span>BasicFont<span class="br0">[</span>C_add-<span class="nu0">32</span><span class="br0">]</span><span class="br0">[</span>i+<span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span><span class="sy0">&gt;&gt;</span>j<span class="br0">)</span>&amp;<span class="nu0">0x01</span>
+            <span class="kw1">if</span> bit1:
+                c<span class="sy0">=</span>c|grayH
+            <span class="kw1">else</span>:
+                c<span class="sy0">=</span>c|<span class="nu0">0x00</span>
+            <span class="kw1">if</span> bit2:
+                c<span class="sy0">=</span>c|grayL
+            <span class="kw1">else</span>:
+                c<span class="sy0">=</span>c|<span class="nu0">0x00</span>
+            sendData<span class="br0">(</span>c<span class="br0">)</span>
+ 
+<span class="kw1">def</span> oled_putString<span class="br0">(</span>String<span class="br0">)</span>:
+    <span class="kw1">for</span> i <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="kw2">len</span><span class="br0">(</span>String<span class="br0">)</span><span class="br0">)</span>:
+        oled_putChar<span class="br0">(</span>String<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span>   
+ 
+ 
+<span class="kw1">if</span> __name__<span class="sy0">==</span><span class="st0">"__main__"</span>:
+    oled_init<span class="br0">(</span><span class="br0">)</span>
+    oled_setNormalDisplay<span class="br0">(</span><span class="br0">)</span>
+    oled_setTextXY<span class="br0">(</span><span class="nu0">0</span><span class="sy0">,</span><span class="nu0">0</span><span class="br0">)</span>
+    oled_putString<span class="br0">(</span><span class="st0">"Hello"</span><span class="br0">)</span>
+    <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span>
+    <span class="co1">#Oled.write8(Command_Mode,0xFD)</span>
+    <span class="co1">#sendCommand(0xFD)</span>
+    <span class="kw1">print</span> <span class="st0">'hello world'</span></pre></div></div>
+<p><b>Step3:</b> Save the file by clicking the disk icon with with the .py extension.
+</p><p><b>Step4:</b> Connect Grove - OLED to Grove I2C socket on BBG.
+</p><p><b>Step5:</b> Run the code.
+You'll find that the Grove - OLED outputs "Hello World".
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="res/SeeedOLED03142012.zip">Seeed 128x64 OLED library for Arduino 1.0 and Arduino 0023</a>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_OLED_Display_128X64">github repository for OLED Display 128*64</a>
+</li><li><a href="http://garden.seeedstudio.com/images/d/dc/Twig-OLED128x64_v0.9b.pdf">Grove-OLED128x64 Schematic.pdf</a>
+</li><li><a href="http://garden.seeedstudio.com/images/4/46/SSD1308_1.0.pdf">Resources of SSD1308_1.0.pdf</a>
+</li><li><a href="http://garden.seeedstudio.com/images/c/c4/LY190-128064.pdf">Resources of LY190-128064.pdf</a>
+</li><li>
+</li></ul>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, welcome to discuss with us in our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

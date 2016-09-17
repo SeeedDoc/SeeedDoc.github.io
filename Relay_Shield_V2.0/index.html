@@ -1,0 +1,256 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Relay Shield V2.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Relay Shield V2.0</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="http://www.seeedstudio.com/depot/relay-shield-v20-p-1376.html"><img src="img/Relayshield_01.jpg" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p>The Relay Shield provides a solution for controlling high current devices that cannot be controlled by the Arduino's Digital I/O pins due to their current and voltage limits.
+</p><p>The Relay Shield features four high quality relays and provides NO/NC interfaces, four dynamic LED indicators to show the on/off state of each relay, and the standardized shield form factor to provide a smooth connection to the Arduino/Seeeduino board or other Arduino compatible boards.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/relay-shield-v20-p-1376.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li> Arudino Uno/Leonardo/Seeeduino compatible; Other board  or microcontroller via jumper cables
+</li><li> Interface via digital I/O pins 4,5,6, and 7
+</li><li> Relay screw terminals
+</li><li> Standardized shield shape and design
+</li><li> LED working status indicators for each relay
+</li><li> High quality relays
+</li><li> COM, NO (Normally Open), and NC (Normally Closed) relay pins for each relay
+</li></ul>
+<p><br/>
+</p>
+<h2> Specification </h2>
+<table border="1" cellspacing="0" width="800">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Supply Voltage
+</th>
+<td> 4.75
+</td>
+<td> 5
+</td>
+<td> 5.25
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Working Current
+</th>
+<td> 8
+</td>
+<td> /
+</td>
+<td> 250
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> Switching Voltage
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 35
+</td>
+<td> VDC
+</td></tr>
+<tr>
+<th scope="row"> Switching Current
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 8
+</td>
+<td> A
+</td></tr>
+<tr>
+<th scope="row"> Frequency
+</th>
+<td> /
+</td>
+<td> 1
+</td>
+<td> /
+</td>
+<td> HZ
+</td></tr>
+<tr>
+<th scope="row"> Switching Power
+</th>
+<td> /
+</td>
+<td> /
+</td>
+<td> 70
+</td>
+<td> W
+</td></tr>
+<tr>
+<th scope="row"> Relay Life
+</th>
+<td> 100,000
+</td>
+<td> /
+</td>
+<td> /
+</td>
+<td> Cycle
+</td></tr>
+<tr>
+<th scope="row"> ESD contact discharge
+</th>
+<td colspan="3"> ±4
+</td>
+<td> KV
+</td></tr>
+<tr>
+<th scope="row"> ESD air discharge
+</th>
+<td colspan="3"> ±8
+</td>
+<td> KV
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 68.7X53.5X30.8
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Net Weight
+</th>
+<td colspan="3"> 55±2
+</td>
+<td> g
+</td></tr></table>
+<p><font color="red"> <strong>
+Place 2 layers of electrical tape on the top of the <a href="/w/index.php?title=Arduino%27s&amp;action=edit&amp;redlink=1" title="Arduino's (page does not exist)">Arduino's</a> usb connector.  This will prevent the relay shield from making contact.
+Do not operate voltage more than 35V DC.
+</strong></font>
+</p><p><br/>
+</p>
+<h2> Shield Interface Description</h2>
+<p></p><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:1069px;"><img src="img/Relays-Shield-PCB-Explained-real.png" width="1067"/> <div class="thumbcaption">Relay Shield V2.0 terminal connections description</div></div></div></div><br/>
+<ul><li> Digital 4 – controls RELAY4’s COM4 pin (located in J4)
+</li><li> Digital 5 – controls RELAY3’s COM3 pin (located in J3)
+</li><li> Digital 6 – controls RELAY2’s COM2 pin (located in J2)
+</li><li> Digital 7 – controls RELAY1’s COM1 pin (located in J1)
+</li></ul>
+<p><br/>
+</p><p><b>J1 Interface/Terminal Pin Description:</b>
+</p>
+<ul><li> <b>COM1 (Common Pin) :</b>  The relay pin controlled from the digital pin.
+</li><li> <b>NC1 (Normally Closed):</b> This terminal will be connected to COM1 when the RELAY1 control pin (Digital 7 I/O pin) is set low and disconnected when the RELAY1 control pin is set high.
+</li><li> <b>NO1 (Normally Open):</b> This terminal will be connected to COM1 when the RELAY1 control pin (Digital 7 I/O pin) is set high and disconnected when the RELAY1 control pin is set low.
+</li></ul>
+<p><b>Terminals J2-4 are similar to J1 except that they control RELAY2-RELAY4 respectively.</b>
+<br/><br/>
+<b>Note:</b> Only four Arduino Digital I/O pins, pins 4-7, are required to control the four different relays. Additionally the 5V and two GND Arduino pins are also required to power up the Relay Shield.
+</p>
+<h2> How Relay works</h2>
+<p>Relays are basically electromagnetic switches: when the relay is energized by the control circuit (i.e. when a voltage and current is applied to the coil), the current and coil create a magnetic field which is able to attract the COM terminal towards the NO terminal, when the control circuit removes the applied voltage and current the COM terminal returns to contact the NC terminal due to a mechanical force (usually a spring).<br/>
+</p><p>Some practical relay applications include: control of high voltage using low voltage, motor control, remote control, anti-hearing alarm, automatic temperature alarm, incubators and son on.<br/>
+</p><p>A motor control application with one relay and one motor is shown below:<br/>
+</p><p><br/>
+</p>
+<table align="center">
+<tr>
+<td> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:355px;"><img src="img/Low_Level_Control4.jpg" width="353"/> <div class="thumbcaption">The motor is not currently running since there is no connection from the power supply to the motor. The control circuit is not energizing the relay, so the COM terminal is not attracted to the NO terminal</div></div></div></div>
+</td>
+<td> <div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:395px;"><img src="img/High_Level_Control3.jpg" width="393"/> <div class="thumbcaption">The motor is running since it is contact with the power supply's + and - terminals. The control circuit is energizing the relay and its magnetic force has attracted the COM terminal to the NO terminal.</div></div></div></div>
+</td></tr></table>
+<p><br/>
+In the case of the Relay Shield, the two “Control Circuit” terminals for each of the four relays are controlled by only one Arduino Digital I/O pin. Pins 4, 5, 6, and 7 control relays 4, 3, 2, and 1 respectively.
+<br/>
+</p>
+<h2> Getting Started</h2>
+<p>Now that you know how a relay works internally, let us show you how to use the Relay Shield.
+</p>
+<h3>  Example #1: DC Motor Control </h3>
+<ol><li> Stack the Relay Shield onto the Arduino development board.
+</li><li> Connect the Arduino to the PC using a USB cable.
+</li><li> We will use RELAY3 to control the DC motor. Connect the DC motor and Relay Shield as shown in the schematic and figure below:
+</li></ol>
+<p><br/>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:321px;"><img src="img/Motor-shield-schematic-drawing.png" width="319"/> <div class="thumbcaption">Motor and Relay Shield schematic</div></div></div></div>
+<p><br/>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:602px;"><img src="img/Relay_Shield_Connector.jpg" width="600"/> <div class="thumbcaption">Arduino board with Relay Shield, and a motor connected to the Relay Shield</div></div></div></div>
+<p><br/>
+<b>Note:</b> The external power supply in the figure above can be a battery or power supply. The external supply must be able to provide enough current and be set to the correct voltage for the motor. In our testing, we used a lithium battery as the external power supply for the motor.
+<br/>
+<br/>
+4. Start the Arduino IDE and upload the following code to the Arduino board:
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">int</span> MotorControl <span class="sy1">=</span> <span class="nu0">5</span><span class="sy4">;</span>    <span class="co1">// Digital Arduino Pin used to control the motor</span>
+ 
+<span class="co1">// the setup routine runs once when you press reset:</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+    <span class="co1">// declare pin 5 to be an output:</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>MotorControl, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// the loop routine runs over and over again forever:</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>MotorControl,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// NO3 and COM3 Connected (the motor is running)</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// wait 1000 milliseconds (1 second)</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>MotorControl,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">// NO3 and COM3 Disconnected (the motor is not running)</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// wait 1000 milliseconds (1 second)</span>
+<span class="br0">}</span></pre></div></div>
+<p>When you have uploaded the code to your Arduino/Seeeduino board the motor should run one second, stop for another second and repeat the process indefinitely. When the motor is running (NO3 and COM3 are connected), the NO3 LED indicator will be lit.
+</p>
+<h3>  Example #2: How to Use More Than One Relay Shield With Only One Arduino/Seeeduino Board </h3>
+<p>Because the Relay Shield uses digital pins on the Arduino to control each the relays, more than one Relay Shield can be used with the same Arduino board, to do so simply follow these steps:
+<br/>
+</p>
+<ol><li> Stack one of the Relay Shields (let’s call this one Relay Shield #1) onto the Arduino development board
+</li><li> Connect another Relay Shield (let’s call this one Relay Shield #2) using jumper cables/wires to Relay Shield #1 as shown in the figure below:
+</li></ol>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><img src="img/Two-relay-shields-one-arduino.png" width="800"/> <div class="thumbcaption">Double Relay Shield with only one Arduino board schematic.</div></div></div></div>
+<ul><li> Relay Shield #1 GND pins are connected to Relay Shield #2 GND pins
+</li><li> Relay Shield #1 5V pin is connected to Relay Shield #2 5V pin
+</li><li> Relay Shield #1 Digital Pins 8, 9, 10, and 11, are connected to Relay Shield #2 Digital Pins 7, 6, 5, and 4 respectively.
+</li></ul>
+<p><br/>
+3. Now you can control relays 1, 2, 3, and 4 in Relay Shield #2 using the Arduino’s 8, 9, 10, and 11 digital I/O pins. See sample code below for controlling RELAY1 in Relay Shield #2:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">int</span> relay1inShield2 <span class="sy1">=</span> <span class="nu0">8</span><span class="sy4">;</span>    <span class="co1">// Digital Arduino Pin 8 is used to control relay 1 in Relay Shield #2</span>
+ 
+<span class="co1">// the setup routine runs once when you press reset:</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+    <span class="co1">// declare pin 8 to be an output:</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>relay1inShield2, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// the loop routine runs over and over again forever:</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>  <span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>relay1inShield2,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// relay is energized (NO is connected to COM)</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// wait 1000 milliseconds (1 second)</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>relay1inShield2,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// NO is disconnected from COM</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// wait 1000 milliseconds (1 second)</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h2> Resources </h2>
+<p><a href="res/Relay_Shield_eagle.zip">Relay Shield EagleCAD Files</a>
+</p><p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/GXHBTX3" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

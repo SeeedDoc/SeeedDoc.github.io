@@ -1,0 +1,505 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>RFbee V1.1 - Wireless Arduino compatible node</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>RFbee V1.1 - Wireless Arduino compatible node</h1>
+
+<p>The RFBee is a RF module providing easy and flexible wireless data transmission between devices. It is based on a AVR Atmega168 working as a fully functional <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a> connected via SPI to a TI CC1101 RF transceiver. 
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/images/rfbee1.jpg">http://www.seeedstudio.com/depot/images/rfbee1.jpg</a>
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/rfbee-v11-wireless-arduino-compatible-node-p-614.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p>
+<h2>  Features  </h2>
+<ul><li>Range: Indoor/Urban: up to 50m; Outdoor line-of-sight: up to 120m; 
+</li><li>Receiver Sensitivity: -95dBm 
+</li><li>RF Data Transmission Rate: 4,800bps; 76,800bps 
+</li><li>Working Frequency : 868MHz &amp; 915MHz 
+</li><li>Communication type: Point to Point, or Point to Multipoint. 
+</li><li>Easy-to-Use Serial Interface and rich extendable ports 
+</li><li>Easy-to-Use AT Command: Set working mode, Serial Baud Rate, etc. 
+</li><li>Open source Hardware and Firmware 
+</li><li>Socket compatible with the Xbee, so you can plug it into any Xbee socket as a quick replacement.
+</li></ul>
+<p><b>Note:</b>
+</p><p>Only the Rx,Tx, VCC, GND pins are identical to the Xbee. RFbee’s will not communicate with Xbee’s, so RFbee’s need to be used on both ends of the wireless connection. 
+</p>
+<h2>  Application Ideas  </h2>
+<ul><li>Powerful RF control 
+</li><li>Easy to implement of WSN (Wireless Sensor Network)
+</li></ul>
+<p><br/>
+</p>
+<h2>  Specification  </h2>
+<table>
+<tr>
+<th> Specification
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td width="400px"> Microprocessor
+</td>
+<td width="600px"> Atmega168(Version &lt; V1.2), Atmega328(Version &gt;= 1.2)
+</td></tr>
+<tr>
+<td> PCB size
+</td>
+<td> 24.38mmx32.94mmx0.8mm
+</td></tr>
+<tr>
+<td> Indicators
+</td>
+<td> No
+</td></tr>
+<tr>
+<td> Power supply
+</td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td> IO counts
+</td>
+<td> 9
+</td></tr>
+<tr>
+<td> ADC input
+</td>
+<td> 7(6 multiplexing with IO)
+</td></tr>
+<tr>
+<td> Program interface
+</td>
+<td> USB
+</td></tr>
+<tr>
+<td> Connectivity
+</td>
+<td> Socket compatible with XBee
+</td></tr>
+<tr>
+<td> Communication Protocol
+</td>
+<td> Uart(TTL)
+</td></tr>
+<tr>
+<td> Operating Frequency Band
+</td>
+<td> ISM 868MHz &amp; 915MHz
+</td></tr>
+<tr>
+<td> Outline Dimension
+</td>
+<td> 24.38mmx32.94mmx15mm
+</td></tr></table>
+<h3>  Electrical Characteristics  </h3>
+<table border="1">
+<tr>
+<th> Specification
+</th>
+<th> Min
+</th>
+<th> Typ
+</th>
+<th> Max
+</th>
+<th> Unit
+</th></tr>
+<tr>
+<td width="400px"> Input voltage
+</td>
+<td width="150px"> 3.0
+</td>
+<td width="150px"> 3.3
+</td>
+<td width="150px"> 3.6
+</td>
+<td width="150px"> VDC
+</td></tr>
+<tr>
+<td> Transmit Current
+</td>
+<td>
+</td>
+<td> 34.5
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Receive Current
+</td>
+<td>
+</td>
+<td> 18.1
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Idle Current
+</td>
+<td>
+</td>
+<td> 5.2
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Power-down Current
+</td>
+<td>
+</td>
+<td>  &lt;0.3
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Operating Temperature
+</td>
+<td> -50
+</td>
+<td>
+</td>
+<td> 125
+</td>
+<td> °C
+</td></tr></table>
+<h2>  Pin definition and Rating  </h2>
+<p><img src="img/RFBee-pin.jpg" width="427"/>
+</p>
+<table border="1">
+<tr>
+<th> Pin
+</th>
+<th> #
+</th>
+<th> Pad Type
+</th>
+<th> Description
+</th>
+<th> Arduino Pin Number
+</th></tr>
+<tr>
+<td width="100px"> 3V3
+</td>
+<td width="100px"> 1
+</td>
+<td width="200px"> Supply input
+</td>
+<td width="300px"> VCC, +3.3V
+</td>
+<td width="300px"> -
+</td></tr>
+<tr>
+<td> TX
+</td>
+<td> 2
+</td>
+<td> Output
+</td>
+<td> Uart Tx port
+</td>
+<td> 1(DIO)
+</td></tr>
+<tr>
+<td> RX
+</td>
+<td> 3
+</td>
+<td> Input
+</td>
+<td> Uart Rx port
+</td>
+<td> 0(DIO)
+</td></tr>
+<tr>
+<td> PD4
+</td>
+<td> 4
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PD4
+</td>
+<td> 4(DIO)
+</td></tr>
+<tr>
+<td>  !RESET
+</td>
+<td> 5
+</td>
+<td> Input
+</td>
+<td> ATmega168 Reset port
+</td>
+<td>
+</td></tr>
+<tr>
+<td> PB1
+</td>
+<td> 6
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PB1
+</td>
+<td> 9(DIO)
+</td></tr>
+<tr>
+<td> PB0
+</td>
+<td> 7
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PB0
+</td>
+<td> 8(DIO)
+</td></tr>
+<tr>
+<td> PD7
+</td>
+<td> 8
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PD7
+</td>
+<td> 7(DIO)
+</td></tr>
+<tr>
+<td>  !DTR
+</td>
+<td> 9
+</td>
+<td> Input
+</td>
+<td> Used for programming the ATmega168
+</td>
+<td> -
+</td></tr>
+<tr>
+<td> GND
+</td>
+<td> 10
+</td>
+<td> GND
+</td>
+<td> GND
+</td>
+<td> -
+</td></tr>
+<tr>
+<td> PC3
+</td>
+<td> 11
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PC3
+</td>
+<td> 3(Analog input)/17(DIO)
+</td></tr>
+<tr>
+<td> PC2
+</td>
+<td> 12
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PC2
+</td>
+<td> 2(Analog input)/16(DIO)
+</td></tr>
+<tr>
+<td> PC1
+</td>
+<td> 13
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PC1
+</td>
+<td> 1(Analog input)/15(DIO)
+</td></tr>
+<tr>
+<td> VREF
+</td>
+<td> 14
+</td>
+<td> Input
+</td>
+<td> ATmega168 AREF port
+</td>
+<td> -
+</td></tr>
+<tr>
+<td> PC0
+</td>
+<td> 15
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PC0
+</td>
+<td> 0(Analog input)/14(DIO)
+</td></tr>
+<tr>
+<td> ADC7
+</td>
+<td> 16
+</td>
+<td> Input
+</td>
+<td> ATmega168 ADC7
+</td>
+<td> 7(Analog input)
+</td></tr>
+<tr>
+<td> PD5
+</td>
+<td> 17
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PD5
+</td>
+<td> 5(DIO)
+</td></tr>
+<tr>
+<td> PD6
+</td>
+<td> 18
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PD6
+</td>
+<td> 6(DIO)
+</td></tr>
+<tr>
+<td> PC5
+</td>
+<td> 19
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PC5
+</td>
+<td> 5(Analog input)/19(DIO)
+</td></tr>
+<tr>
+<td> PC4
+</td>
+<td> 20
+</td>
+<td> Input/Output
+</td>
+<td> ATmega168 PC4
+</td>
+<td> 4(Analog input)/18(DIO)
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<p>The RFBee can be connected in various ways, e.g.: 
+</p>
+<ul><li>to a PC via USB using a UartSB device. 
+</li><li>to a Seeeduino (or Arduino) via an XbeeShield 
+</li><li>to any other device having a Uart port
+</li></ul>
+<p>Note: the UartSBee device and the XbeeShield are sold separately. 
+</p>
+<ul><li>UartSBee: <a href="http://www.seeedstudio.com/depot/uartsbee-v4-p-688.html?cPath=63_66">http://www.seeedstudio.com/depot/uartsbee-v4-p-688.html?cPath=63_66</a>
+</li><li>XbeeShield: <a href="http://www.seeedstudio.com/depot/xbee-shield-v20-p-1375.html?cPath=98_16">http://www.seeedstudio.com/depot/xbee-shield-v20-p-1375.html?cPath=98_16</a>
+</li><li>Grove-XBee Carrier: <a href="http://www.seeedstudio.com/depot/grove-xbee-carrier-p-905.html?cPath=98_16">http://www.seeedstudio.com/depot/grove-xbee-carrier-p-905.html?cPath=98_16</a>
+</li></ul>
+<h4>  Figure 1:USB using UartSBee (The following picture's demonstrated with older version UartSBee) </h4>
+<p><img src="img/RFBee-figure1.jpg" width="600"/>
+</p>
+<h4>  Figure 2:Seeduino via XbeeShield  (Version 1)</h4>
+<p><img src="img/RFBee-figure2.jpg" width="600"/>
+</p>
+<h4>  Any device using a Uart  </h4>
+<p><img src="img/RFBee-figure3.jpg" width="600"/>
+</p>
+<h3>  Example  </h3>
+<p>Here is a tutorial on how to use a RFBee transceiver from www.SeeedStudio.com with a RF Explorer Spectrum Analyzer from www.rf-explorer.com. 
+</p>
+<h4>  RFBee monitored by RF Explorer  </h4>
+<p>The RFBee is a nice device which accepts some simple AT ASCII command strings to do some basic configuration. An ideal tool to experiment with digital RF transmission. 
+</p><p>This example code is in the public domain and available <a href="http://micro.arocholl.com/download/RFBeeTutorial/Test_RFBee.pde">here</a> and tested in Arduino IDE v0022. 
+</p>
+<table border="0">
+<tr>
+<td> <img src="img/RFBee-Exam1.jpg" width="300"/>
+</td>
+<td> <img src="img/RFBee-Exam2.jpg" width="300"/>
+</td>
+<td> <img src="img/RFBee-Exam3.jpg" width="300"/>
+</td></tr></table>
+<h5>  Requirements  </h5>
+<p>You may use a Seeeduino Stalker v02b to host the RFBee. Just plug the RFBee into the XBee slot. You also need a way to connect your Stalker to your PC to upload the sketch, I personally used a CP2102 USB bridge, you can use other USB bridges including the UartSBee recommended by Seeed. 
+</p><p>Alternatively, you can do the same with an Arduino compatible board but will have to connect the RFBee with RX/TX of the CPU using a XBee 2mm connector, which may not be easy to get at your local shop. 
+</p><p>Finally, you will need two jumper cables to connect Stalker port 2 to GND and port 3 and GND. We will use them as simple switches to configure the RFBee in different ways. Feel free to check the trivial sketch code to better understand how it works, and make your own changes. 
+</p><p>Some familiarity with RFExplorer and RFBee user manual is required, otherwise some steps may not be obvious to you. 
+</p>
+<h5>  Set RFBee to work  </h5>
+<p>After you upload the script in the Stalker, power off the unit completely so both ATMegas (Stalker's and RFBee's) resets at the same time and you start from a clean state. 
+</p><p>Power the unit back, it will start transmission after Stalker led blinks 6 times. 
+</p><p>RFExplorer will show received power and frequency. Play with antenna orientation till you get the best power response. In this tutorial we will use RFBee in 915Mhz, but equivalent results will be obtained in the 868Mhz. Take a look in the sketch code and uncomment the couple of lines coded for 868Mhz if your RF Explorer is in that band. 
+</p><p><b>More details, please visit</b> <a href="http://micro.arocholl.com/index.php?option=com_content&amp;view=article&amp;id=53:tutorial-how-to-use-rf-explorer-to-monitor-a-rfbee&amp;catid=40:article&amp;Itemid=61">micro.arocholl.com</a>. 
+</p>
+<h2>  Support  </h2>
+<h3>  How to update firmware  </h3>
+<p>You can update the RFbee firmware using the Arduino IDE using the procedure below. This procedure assumes the use of UartSB as this is the easiest way to connect a RFBee to a PC, see the section on Hardware installation for different ways to connect. 
+</p>
+<ol><li>Connect your RFBee to UartSB, move switches to XBee and 3.3v, then connect it to your computer through a USB cable. 
+</li><li>Download the source code of the RFBee firmware into your Arduino sketch folder 
+</li><li>Open the Arduino IDE and open the RFBee_vx_x project. Then select Tools-&gt;Board-&gt;Arduino Pro or Pro Mini (3.3v, 8MHz) w/ATmega168(Atmega328 when version &gt;= V1.2). Choose the correct serial port from the Tools menu. You can now upload your RFBee firmware. 
+</li><li>Reapply the configuration changes in the RFBee if they got lost during the update. 
+</li><li>You could add or modify the firmware upon your demands, as the RFBee is able to work standalone as an Arduino.
+</li></ol>
+<p>&gt;&gt;RFBee firmware: <a href="http://code.google.com/p/rfbee/downloads/list">http://code.google.com/p/rfbee/downloads/list</a>
+</p><p><br/> If you have other questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v1.0
+</td>
+<td width="500px"> Initial release
+</td>
+<td width="200px"> Mar 05, 2010
+</td></tr>
+<tr>
+<td width="300px"> v1.1
+</td>
+<td width="500px"> revise release
+</td>
+<td width="200px"> Aug 27, 2010
+</td></tr>
+<tr>
+<td width="300px"> v1.2
+</td>
+<td width="500px"> Change MCU to Atmega328
+</td>
+<td width="200px"> Oct 10, 2015
+</td></tr></table>
+<h2>  Resources  </h2>
+<ul><li><a href="http://www.seeedstudio.com/depot/datasheet/RFBee%20User%20Manual%20v1.1.pdf">RFBee User Manual</a>
+</li><li><a href="res/RFbee_for_arduino1.0.zip">RFbee firmware for Adruino 1.0 </a>
+</li><li><a href="https://github.com/Seeed-Studio/RFBee">RFbee firmware 1.1 (latest)</a>
+</li><li><a href="http://www.seeedstudio.com/depot/datasheet/RFBee%20hardware%20v1.1.zip">Schematic and layout in EAGLE file</a>
+</li><li><a href="http://www.seeedstudio.com/forum/viewtopic.php?f=10&amp;t=682&amp;sid=7a9b1bed4f9fd10a9b1003ca1e48e756">Forum</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

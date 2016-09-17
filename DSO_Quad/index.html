@@ -1,0 +1,391 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>DSO Quad</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>DSO Quad</h1>
+
+<p>DSO Quad also known as DSO203 is a pocket size 4 channel digital oscilloscope for common electronic engineering tasks. It's based on ARM cortex M3 (STM32F103VCT6), providing 72MS/s sampling rate with integrated FPGA and high speed ADC. An internal 2MB USB disk can be used to store waveform captures, user applications and to upgrade firmware.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/DSO-Quad-Aluminium-Alloy-Silver-p-1033.html?cPath=63_65">TES725AAS</a></b>
+</p><p><img src="img/P10308912-1024x684.jpg" width="562"/>
+</p>
+<h2>  Features </h2>
+<ul><li>Pocket size and light weight 
+</li><li>Two 36MS/s analog channels, Upto 72MS/s if configured to single channel. <br/><b>(Upgrade to Two 72MS/s analog channels, Upto 144MS/s if configured to single channel from .sys version v1.31)</b>
+</li><li>Two digital channels 
+</li><li>Signal Generator
+</li><li>Various Triggering Option 
+</li><li>Easy waveform storage 
+</li><li>Firmware upgrade 
+</li><li>User applications 
+</li><li>Open source
+</li></ul>
+<p><b>Source(s):</b> <a href="http://www.downloadranking.com/privacypolicy.php">Features support</a>
+</p>
+<h2>  Application Ideas  </h2>
+<h3>  User applications </h3>
+<p>Ongoing projects:
+</p>
+<ul><li> GCC port with FFT, spectrogram and various fixes <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=2957">by pmos69 and marcosin</a>
+</li><li> Alternative user interface <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=10&amp;t=2362">by gabonator1</a>
+</li><li> GCC port of the default firmware <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=10&amp;t=2274">by tmbinc</a>
+</li><li> Frequency response plotter <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=10&amp;t=2485">by jpa</a>
+</li><li> FFT example application <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=2098">by gabonator1</a>
+</li><li> Logic analyzer <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=2861">by jpa</a>
+</li><li> Pawn programming environment and various applications <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=3239">by jpa</a>
+</li><li> Port of SYS to gcc: <a href="https://github.com/neilstockbridge/dsoquad-BIOS">[1]</a>
+</li><li> Tetris <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=2344">by LinX</a>
+</li></ul>
+<h4>  Idea Collection  </h4>
+<h5>  Applications  </h5>
+<ul><li>"Simple Mode" - where only the most basic functions are available to help people without experience. 
+</li><li><a href="https://github.com/PetteriAimonen/QuadPawn/wiki/Advanced-Volt-Meter">"Multimeter mode" - basic multimeter functions (AC/DC VOM, peak/rms/delta would be nice)</a>
+<ul><li>Detailed at <a href="https://github.com/PetteriAimonen/QuadPawn/wiki/Advanced-Volt-Meter">https://github.com/PetteriAimonen/QuadPawn/wiki/Advanced-Volt-Meter</a>
+</li></ul>
+</li><li><s>A dedicated logic-analyzer mode where all 4 channels are interpreted as logic signals.</s>
+<ul><li>Implemented, see above 
+</li></ul>
+</li><li>Protocol analysis/data capture - Serial, I2C, SPI, CAN 
+</li><li>LCR (uH, uF and R) measurement capability - The inbuilt signal generator makes this a natural. Three methods exist, all requiring an external component(s) <a href="http://www.edn.com/design/test-and-measurement/4363759/Circuit-measures-capacitance-or-inductance">Example</a>
+</li><li>Semiconductor Analyzer - Use the DAC to test and chart the voltage response of a diode / transistor (and simply identify components, such as transistor pinout and polarity) 
+</li><li><s>Frequency Sweeper/Response Analyzer - using built-in generator and a spectrum analyzer mode - would be tremendously useful even within audio frequencies</s>
+<ul><li>Implemented, see above. 
+</li></ul>
+</li><li>RF spectrum analyzer 
+</li><li>A 2D X-Y mode that plots the analog channels against each other on two axes with a digital channel optionally functioning as a "beam" enable/disable. 
+<ul><li><a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22t=2458">Something</a> seems to exist? Not in APP2.50 yet.
+</li></ul>
+</li><li>A DMX Decoder/Analyser and generator (used in conjunction with an external RS485 IC) would make this a VERY useful gadget for theatre techs.
+</li><li>Television mode (analog TV) : Display frame/field/line (select field A/B) or line number. Display vectorscope diagram. Display content (ie: the TV image).
+</li><li>Synchronization with a second DSO Quad for a 4 channel analog/digital signal, perhaps similar USBscope50 [moved from HARDWARE]
+</li></ul>
+<p>use 'wave out' to generate a pulse/step when master unit triggers, use C/D as trigger for slave(s) 
+</p>
+<ul><li>Create USB remote control software, such that if LCD breaks, you can still use it with PC software. [moved from HARDWARE] 
+</li><li>Stream data to PC - Use PC as storage buffer, with additional processing power. A PC could decode I2C words and other protocols where the Quad wouldn't. [moved from HARDWARE]
+</li><li>White noise function - add to the functions generator
+</li></ul>
+<h5> Enhancements</h5>
+<ul><li>A spectrum analyzer displaying a view from a frequency/time perspective 
+</li><li>Fast Fourier Transform, would be nice and easy for viewing spectrum data of a single signal. 
+</li></ul>
+<h5> Hardware/Device-Oriented</h5>
+<ul><li>SDR (Software defined radio) note we only have USB full speed (12Mb/s)
+</li><li>Preamplifier 10x badly needed!!! 
+</li><li>Add bezel buttons for easier to access menus. 
+</li><li>Add 2 more analog channels, Perhaps via USB dongle.
+</li><li>Add port for expansion devices, such that and add-on device can offer more capabilities, like RF generation, or a function generator that is capable of larger amplitudes. In particular a +5v and 3.3v output would be useful.
+</li></ul>
+<h5> Other</h5>
+<ul><li>Service application for technical support staff. Could split the screen and display instructions like "Check if port 3, pin 5 has a signal, if not xyz might be broken". There could be a next button and for each step the text, the right timescale, trigger values etc. are selected 
+</li><li>My phone is ARM based, perhaps make a USB version of this and an app for my phone, that allows my phone to be the display / insured touch screen display. 
+</li><li>Simple math functions on both analog channels and generated signal.
+</li><li>Two totally ground separated input would enable measureing inputs, which are not the same ground referenced. (like in the Velleman two-channel personal scope) 
+</li><li>Input overvoltage protection diode should be added to protect device form HV spikes
+</li><li>Oversampling and its software implementation could decrease noise, and increase effective bit depth 
+</li><li>Special technique equivalent time sampling, could increase bandwidth for repetitive signals
+</li><li>Non-storage mode which constantly sweeps the visible area instead of storing into a huge offscreen buffer. I set the sample rate to 50ms in the current version (eg. to look at an audio signal) it only updates the screen once every few seconds, it should update continuously.
+</li></ul>
+<ul><li><i>Please add more ideas...</i>
+</li></ul>
+<p>See also information on <a href="/DSO_Quad-ApplicationDevelopment" title="DSO Quad:ApplicationDevelopment">application development</a> for the DSO Quad
+</p>
+<h2>  Specifications </h2>
+<table border="1">
+<tr>
+<td> Analog channel * 2                </td>
+<td> [CH_A] [CH_B]
+</td></tr>
+<tr>
+<td> Digital channel * 2               </td>
+<td> [CH_C] [CH_D]
+</td></tr>
+<tr>
+<td> Vertical Scale                    </td>
+<td> 20mV-10V/div (1-2-5 step) on x1 probe / 200mV -100V/div (1-2-5 step) on x10 probe
+</td></tr>
+<tr>
+<td> Vertical resolution               </td>
+<td> 8 bit
+</td></tr>
+<tr>
+<td> Input coupling                    </td>
+<td> AC/DC
+</td></tr>
+<tr>
+<td> Max input voltage                 </td>
+<td> 80Vpp (x1 probe) / 400Vpp (x10 probe)
+</td></tr>
+<tr>
+<td> Storage                           </td>
+<td> 4K per channel / 8K on single channel
+</td></tr>
+<tr>
+<td> Software trigger type             </td>
+<td> edge, pulse, level (to be added)
+</td></tr>
+<tr>
+<td> Hardware trigger type             </td>
+<td> edge
+</td></tr>
+<tr>
+<td> Trigger source                    </td>
+<td> CH1/CH2/EXT
+</td></tr>
+<tr>
+<td> Trigger mode                      </td>
+<td> Auto, Normal, Single, SCAN, None
+</td></tr>
+<tr>
+<td> Test Signal generator             </td>
+<td> 10Hz to 8MHz 2.8Vpp Square Wave, duty cycle 10~90% adjustable / 10Hz to 20kHz 2.8Vpp Sine, Square, Sawtooth, Triangle wave
+</td></tr>
+<tr>
+<td> Storage                           </td>
+<td> internal 2MB USB disk, BMP, DAT file
+</td></tr>
+<tr>
+<td> Auto measure                      </td>
+<td> Vmax, Vmin, Vpp, Vavr, Vrms, Freq, Period, Pulse, Duty
+</td></tr>
+<tr>
+<td> Cursor measurement                </td>
+<td> Level, Voltage
+</td></tr>
+<tr>
+<td> Display mode                      </td>
+<td> CH1, CH2, EXT, CH1+CH2, CH1-CH2
+</td></tr>
+<tr>
+<td> Sampling mode                     </td>
+<td> real time
+</td></tr>
+<tr>
+<td> Sampling rate                     </td>
+<td> 30S/s - 72MS/s
+</td></tr>
+<tr>
+<td> Power                             </td>
+<td> LiPo battery
+</td></tr>
+<tr>
+<td> Dimension                         </td>
+<td> 98 * 60 * 14.5 (mm)
+</td></tr>
+<tr>
+<td> Weight                            </td>
+<td> 80g (without battery)
+</td></tr>
+<tr>
+<td> Accesories within Pack            </td>
+<td> 2 mcx osilloscope probe, 2 mcx digital probe
+</td></tr></table>
+<h2>  Components </h2>
+<p>Please add links to core components data-sheets like 
+</p>
+<table border="1">
+<tr>
+<td> CPU                 </td>
+<td> 72 Mhz - ARM 32-bit Cortex™-M3 CPU - STM32F103VC <a href="http://www.st.com/internet/mcu/product/164492.jsp">[2]</a>
+</td></tr>
+<tr>
+<td> FPGA                </td>
+<td>ICE65F_VQ100 <a href="http://www.siliconbluetech.com/media/downloads/iCE65L04DiCEDatasheet.pdf">[3]</a>
+</td></tr>
+<tr>
+<td> TFT                 </td>
+<td>
+</td></tr>
+<tr>
+<td> ADC                 </td>
+<td> AD9288-40 <a href="http://www.analog.com/static/imported-files/data_sheets/AD9288.pdf">[4]</a>
+</td></tr>
+<tr>
+<td> OP-Amps             </td>
+<td> OPA2354 <a href="http://www.datasheetcatalog.org/datasheet/texasinstruments/opa354.pdf">[5]</a>
+</td></tr>
+<tr>
+<td> MOSFET-Switches     </td>
+<td>
+</td></tr>
+<tr>
+<td> USB-Storage         </td>
+<td>
+</td></tr>
+<tr>
+<td> (add more here)     </td>
+<td>
+</td></tr></table>
+<h2>  Caution </h2>
+<p>Improper operation of this device could result in physical injury and/or damage to the device. Note all necessary precautions, and be sure to read all documentation before using the device.
+</p>
+<h2>  Resources  </h2>
+<p>Schematic and firmware (HW2.2 ~ HW2.72) - <a href="/DSO_Quad-Upgrading_Firmware#Firmware_List">http://www.seeedstudio.com/wiki/DSO_Quad:Upgrading_Firmware#Firmware_List</a>
+</p><p>Discussion board with resouces for HW2.6 - <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=1929">http://www.seeedstudio.com/forum/viewtopic.php?f=22&amp;t=1929</a>
+</p><p>DSO Quad User's manual(ver1.0 above): <a href="res/DS203_yijian_app_user_manual.rar">DS203_yijian_app_user_manual.rar‎</a>
+</p><p>Unofficial manual written by the community: <a href="/DSO_Quad_Manual-by_the_community" title="DSO Quad Manual (by the community)">DSO Quad Manual (by the community)</a>
+</p><p><br/>
+</p>
+<h2>  Upgrading firmware </h2>
+<p>Please note that this procedure currently only works under Windows. <a href="/DSO_Quad-Upgrading_Firmware#Linux" title="DSO Quad:Upgrading Firmware">Instructions For Linux are here</a>. (2011-04-29) If we can get the upgrade disk to work on Linux and Mac, it would be quite easy to write an application to automate this process for less experienced users. It might even be possible to have the upgrade program check the hardware version to prevent uploading the wrong firmware.
+</p>
+<h3>  Where to find firmware </h3>
+<p>Track the latest version to firmware at:
+<a href="http://garden.seeedstudio.com/index.php?title=DSO_Quad:Upgrading_Firmware#Firmware_List">http://garden.seeedstudio.com/index.php?title=DSO_Quad:Upgrading_Firmware#Firmware_List</a>
+you can always download the latest version of firmware
+</p><p>You could also <a href="/DSO_Quad-Building_Firmware" title="DSO Quad:Building Firmware">build the firmware from source</a>.
+</p>
+<h3>  Version warning </h3>
+<p><b>WARNING: </b>It is important that you use the firmware for your particular hardware version. The hardware version is shown on the splash screen when you boot the device. Ask for help in the forums if you can't determine your hardware version. If you upload the wrong firmware, you could brick the device.
+</p>
+<h3>  Upgrade procedure </h3>
+<p>(Windows only) Connect the DSO Quad to your PC with a mini USB cable. Hold down the "&gt;||" (play/pause) button while turning on the device. Your device is now in firmware upgrade mode, and a USB disk should appear on your system. You copy the firmware files one at a time, and each time you copy a new file, the device will disconnect to prepare the file. When the disk reconnects, the extension of the file you uploaded will change (".rdy" means the upload worked properly).
+</p><p>The order that you upload the files in DOES matter. Start by uploading the .hex files (order unimportant). To upload the .BIN files, you need to first upload the corresponding .ADR file. This tells the device where to put the binary file (e.g. upload CFG_FPGA.ADR first, then upload xxxxFPGA.BIN immediately after). If you make a mistake, delete all the files and start again.
+</p><p>When you're finished uploading all the firmware files, turn off the device to complete the upgrade. When you boot the device again, your firmware versions should be updated. If you get an error at the splash screen, try uploading the firmware again, carefully following the instructions above.
+</p><p>More details and Linux instructions here: <a href="/DSO_Quad-Upgrading_Firmware" title="DSO Quad:Upgrading Firmware">DSO_Quad:Upgrading_Firmware</a>
+</p>
+<h3>  File Descriptions </h3>
+<table>
+<tr>
+<th> File Type </th>
+<th> Filename Format </th>
+<th> Description
+</th></tr>
+<tr>
+<td> FPGA File </td>
+<td> xxxxFPGA.BIN </td>
+<td> configuration data for the FPGA
+</td></tr>
+<tr>
+<td> Logo File </td>
+<td> logo_xxx.BIN </td>
+<td> Create any 16 color 64*256 .BMP file (filesize = 46.9KB), and change the extension to .INF. This is the image displayed on the splash screen.
+</td></tr>
+<tr>
+<td> System File </td>
+<td> SYS_xxxx.hex </td>
+<td> ??? (description needed)
+</td></tr>
+<tr>
+<td> Application File </td>
+<td> APP_xxxx.hex </td>
+<td> ??? (description needed)
+</td></tr>
+<tr>
+<td> Address File </td>
+<td> xxxx.ADR </td>
+<td> These files tell the device where to put the next .BIN file you upload. There is one for the FPGA file, and one for the LOGO file. The files are named so that you know which goes with which.
+</td></tr></table>
+<p><b>note:</b> as newer versions become available, these filenames may appear slightly different. The x's represent values that could change over time.
+</p>
+<h3>  Memory layout  </h3>
+<p><img src="img/DSOQuad-bug-2.jpg" width="585"/>
+</p><p><br/>
+</p>
+<table border="1" cellpadding="1" cellspacing="1">
+<tr>
+<td> Begin
+</td>
+<td> End
+</td>
+<td> Size
+</td>
+<td> note
+</td></tr>
+<tr>
+<td> 0x00000
+</td>
+<td> 0x03fff
+</td>
+<td> 16384
+</td>
+<td> DFU
+</td></tr>
+<tr>
+<td> 0x04000
+</td>
+<td> 0x0bfff
+</td>
+<td> 32768
+</td>
+<td> SYS
+</td></tr>
+<tr>
+<td> 0x0c000
+</td>
+<td> 0x13fff
+</td>
+<td> 32768
+</td>
+<td> APP1 (default)
+</td></tr>
+<tr>
+<td> 0x14000
+</td>
+<td> 0x1bfff
+</td>
+<td> 32768
+</td>
+<td> APP2
+</td></tr>
+<tr>
+<td> 0x1c000
+</td>
+<td> 0x23fff
+</td>
+<td> 32768
+</td>
+<td> APP3
+</td></tr>
+<tr>
+<td> 0x24000
+</td>
+<td> 0x2bfff
+</td>
+<td> 32768
+</td>
+<td> APP4
+</td></tr>
+<tr>
+<td> 0x2c000
+</td>
+<td> 0x3d7ff
+</td>
+<td> 71680
+</td>
+<td> FPGA bitstream (Datasheet says maximum size is 533KBit, so this is a bit large)
+</td></tr>
+<tr>
+<td> 0x3d800
+</td>
+<td> 0x3ffff
+</td>
+<td> 10240
+</td>
+<td> Logo (bmp, 256x64, 4 bit)
+</td></tr></table>
+<p><br/> Note: The flash base address is 0x08000000, but is mirrored by the chip at 0x00000000 when BOOT0 is low.<br/>
+</p>
+<h2>  Bug Tracker  </h2>
+<p><a href="http://www.seeedstudio.com/forum/viewtopic.php?f=12&amp;t=1449">DSO Quad engineering sample bug and firmware</a>
+</p>
+<h2>  Reviews </h2>
+<ul><li><a href="http://www.justblair.co.uk/Oscilloscopes/seeedstudio-dso-quad-early-preview.html">SeeedStudio DSO Quad Engineering Sample: A video review by JustBlair</a>
+</li><li><a href="http://youtu.be/Qk_3QGTUsF8">Video of DSO Quad Engineering Sample from Lygra</a>
+</li></ul>
+<p><br/>
+</p>
+<h2>  Related Pages </h2>
+<ul><li> <a href="/DSO_Quad-Calibration" title="DSO Quad:Calibration">DSO Quad:Calibration</a>
+</li><li> <a href="/w/index.php?title=DSO_Quad:Interface&amp;action=edit&amp;redlink=1" title="DSO Quad:Interface (page does not exist)">DSO Quad:Interface</a>
+</li><li> <a href="/DSO_Quad-Upgrading_Firmware" title="DSO Quad:Upgrading Firmware">DSO Quad:Upgrading Firmware</a>
+</li><li> <a href="/DSO_Quad-Beta_HW" title="DSO Quad:Beta HW">DSO Quad:Beta HW</a>
+</li></ul>
+<h2>  See Also </h2>
+<p><a href="/DSO_Nano" title="DSO Nano">DSO Nano</a>
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p><p><br/>
+</p>
+<h2>  External Links  </h2>
+<ol><li> Seeedstudio Blog <a href="http://www.seeedstudio.com/blog/tag/dso-quad/">[6]</a>
+</li><li> More photos on flickr <a href="http://www.flickr.com/photos/seeedstudio/tags/dsoquad/">[7]</a>
+</li><li> <a href="http://translate.google.gr/translate?js=n&amp;prev=_t&amp;hl=zh-CN&amp;ie=UTF-8&amp;layout=2&amp;eotf=1&amp;sl=zh-CN&amp;tl=en&amp;u=http%3A%2F%2Fwww.minidso.com%2Fforum%2Fviewtopic.php%3Ff%3D4%26t%3D54">DS203 application in BMW inspection (Chinese, translated automatically in to english)</a> <a href="http://www.minidso.com/forum/viewtopic.php?f=4&amp;t=54">[Original page</a> ] - Some guys working for BMW inspected the car with a DSO203, besides the palm size and handy performance, DSO203 operates perfectly in inspecting the BWM bus:FlexRay.
+</li></ol>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

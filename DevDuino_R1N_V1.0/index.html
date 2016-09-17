@@ -1,0 +1,315 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>DevDuino R1N V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>DevDuino R1N V1.0</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/DevDuinoR1N_face.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>devDuino Relay 1 Node is a compact, Arduino-compatible microcontroller with a built-in power supply from the AC mains supply, a compact switch and is designed for wireless networks based on transceiver NRF24L01 +. <br/>
+This version supports firmware upgrade over the air (on the basis of UNO Optiboot loader) and data encryption. <br/>
+You can easily connect other sensors or display for this platform to build a remote monitoring or for example to make a smart thermostat.
+</p><p><br/>
+Model: [SOON] 
+</p><p><img src="img/DevDuinoR1NV1.jpg" width="440"/>
+<img src="img/DevDuinoR1N_.jpg" width="440"/>
+</p>
+<h2>  Features </h2>
+<ul><li> Built on Arduino-compatible architecture (UNO Optiboot)
+</li><li> Transceiver nRF24L01+ (mini)
+</li><li> On board 64kb SPI flash / E2prom (for OTA firmware updates)
+</li><li> On board ATSHA204A (for data encryption)
+</li><li> Clock frequency - 16MHz
+</li><li> 1 isolated relay - 10A
+</li><li> Integrated ACS712 Current Sensor (20A)
+</li><li> Built-in clock button
+</li><li> Built-in 3 LED (user, Power, Relay)
+</li><li> FTDI header similar to Arduino UNO
+</li><li> Atmel programming ISCP header
+</li><li> Header for temperature sensor DS18B20
+</li><li> <a href="http://www.seeedstudio.com/depot/category_products?themes_id=1417">2 GROVE</a> -compatible connector: I2C, 2- Digital
+</li><li> Power Supply (110 – 220 V)
+</li></ul>
+<p>Supports update over the air only on the chip microcontrollers ATmega 328 with firmware (based loader UNO Optiboot).
+</p><p><br/>
+</p>
+<h2>  Layout and schematics </h2>
+<p><img src="img/DevDuinoR1N-top.png" width="400"/>
+<img src="img/DevDuinoR1N.png" width="400"/>
+</p><p><img src="img/Scheme_devDuinoR1N.PNG" width="500"/>
+</p>
+<h2>  Cautions  </h2>
+<p><font color="red"> <strong>
+<big>Be very careful on the board there are components of high voltage!</big></strong></font>
+</p>
+<h2>  Interfaces </h2>
+<ul><li> A0 - connector for temperature sensor DS18B20 (a resistor)
+</li><li> D3, D5 - displayed on the connector "Digital" (the other two pin connector - VCC and GND for sensor supply)
+</li><li> A4 (SDA), A5 (SCL) - displayed on the connector "I2C" (the other two pin connector - VCC and GND for sensor supply)
+</li><li> Interface for RF-module nRF24L01 +:
+<ul><li> D11 - RF_MOSI
+</li><li> D12 - RF_MISO
+</li><li> D13 - RF_SCK
+</li><li> D7 - RF_CE
+</li><li> D6 - RF_CSN
+</li><li> D2 - RF_IRQ
+</li></ul>
+</li><li> D4 - BUTTON
+</li><li> D9 - LED
+</li><li> A2 - ATSHA204A
+</li><li> A3 - ACS712 Current Sensor (20A)
+</li><li> D10 - Raley (10A)
+</li><li> Interface for EEPROM AT25DF512C:
+<ul><li> D11 - MOSI
+</li><li> D12 - MISO
+</li><li> D13 - SCK
+</li><li> D8 - EEPROM_CS
+</li></ul>
+</li></ul>
+<h2>  Libraries </h2>
+<h3>  Necessary libraries </h3>
+<p>To use the Relay Node requires the following libraries:
+</p>
+<ul><li> You must use the library from - <a href="https://github.com/mysensors/Arduino/tree/master">www.mysensors.org</a>
+</li></ul>
+<p>Software debugging and use
+</p>
+<ul><li> For Windows (GUI) - <a href="http://www.mysensors.org/controller/myscontroller">MYSController</a>
+</li><li> For other OS - <a href="http://www.mycontroller.org/#/home">MyController.org</a>
+</li></ul>
+<p>API 
+</p>
+<ul><li> MySensors Arduino Library <a href="http://www.mysensors.org/download/sensor_api_15">(v1.5)</a>
+</li></ul>
+<h3>  Demo code (example)</h3>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+<span class="coMULTI">/*
+This sketch is for a devDuino Relay 1 Node v1.0 with the support OTA 
+http://www.seeedstudio.com/wiki/DevDuino_R1N_V1.0
+and MySensors 1.5
+ 
+Support wireless updates available via Software MYSController
+http://www.mysensors.org/controller/myscontroller
+ 
+Is based on the coding
+for sensor Sensebender Micro
+http://www.mysensors.org/hardware/micro
+ 
+ modified
+ 27 May 2016
+ by greengo
+ */</span>
+ 
+<span class="co2">#include &lt;MySensor.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include "utility/SPIFlash.h"</span>
+<span class="co2">#include &lt;EEPROM.h&gt;  </span>
+<span class="co2">#include &lt;sha204_lib_return_codes.h&gt;</span>
+<span class="co2">#include &lt;sha204_library.h&gt;</span>
+ 
+<span class="co1">// Define a static node address, remove if you want auto address assignment</span>
+<span class="co2">#define NODE_ADDRESS   10</span>
+<span class="co2">#define SKETCH_NAME "devDuino R1Nv1.0"</span>
+<span class="co2">#define SKETCH_VERSION "1.1"</span>
+<span class="co2">#define NODE_REPEAT false</span>
+ 
+<span class="co2">#define CHILD_ID_RELAY            0</span>
+<span class="co2">#define CHILD_ID_CURRENT_SENSOR   1</span>
+ 
+<span class="co2">#define LED_PIN                   9 // Led</span>
+<span class="co2">#define CURRENT_SENSOR_PIN       A3 // Current sensor</span>
+<span class="co2">#define ATSHA204_PIN             A2 // ATSHA204A </span>
+ 
+<span class="co2">#define RELAY_PIN_1              10 //  Relay </span>
+ 
+<span class="co2">#define RELAY_ON                  1</span>
+<span class="co2">#define RELAY_OFF                 0</span>
+ 
+<span class="co1">// FORCE_TRANSMIT_INTERVAL, this number of times of wakeup, the sensor is forced to report all values to the controller</span>
+<span class="co2">#define FORCE_TRANSMIT_INTERVAL 300 //every 5 min</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">long</span> SLEEP_TIME <span class="sy1">=</span> <span class="nu0">1000</span><span class="sy4">;</span> <span class="co1">// Sleep time between reads (in milliseconds)</span>
+ 
+<span class="co2">#define CURRENT_TRANSMIT_THRESHOLD  0.20</span>
+ 
+<span class="kw4">const</span> <span class="kw4">int</span> sha204Pin <span class="sy1">=</span> ATSHA204_PIN<span class="sy4">;</span>
+atsha204Class sha204<span class="br0">(</span>sha204Pin<span class="br0">)</span><span class="sy4">;</span>
+ 
+SPIFlash flash<span class="br0">(</span><span class="nu0">8</span>, <span class="nu12">0x1F65</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+MyTransportNRF24 transport<span class="br0">(</span><span class="nu0">7</span>, <span class="nu0">6</span><span class="br0">)</span><span class="sy4">;</span>
+MySensor gw<span class="br0">(</span>transport<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">long</span> CHECK_TIME <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+MyMessage msgRelayStatus<span class="br0">(</span>CHILD_ID_RELAY, V_LIGHT<span class="br0">)</span><span class="sy4">;</span>
+MyMessage msgWatt<span class="br0">(</span>CHILD_ID_CURRENT_SENSOR, V_CURRENT<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">bool</span> lightState<span class="sy4">;</span>
+<span class="kw4">int</span> measureCount <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">float</span> lastCurrent <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">boolean</span> transmission_occured <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+ 
+<span class="kw4">float</span> sensorValue <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">int</span> countvalues <span class="sy1">=</span> <span class="nu0">50</span><span class="sy4">;</span>     <span class="co1">// how many values must be averaged</span>
+<span class="kw4">float</span> ZeroLevel <span class="sy1">=</span> <span class="nu0">514</span><span class="sy4">;</span>    <span class="co1">// Zero level</span>
+<span class="co1">//float kVolt = 0.0026;     // conversion factor</span>
+<span class="kw4">float</span> kVolt <span class="sy1">=</span> <span class="nu16">0.0506</span><span class="sy4">;</span>      <span class="co1">// conversion factor</span>
+ 
+ 
+<span class="co1">// the setup function runs once when you press reset or power the board</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+  <span class="co1">// initialize digital pin 9 as an output.</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>LED_PIN, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+     <span class="co1">// Then set relay pins in output mode</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>RELAY_PIN_1, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Then set current sensor pins in input mode</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>CURRENT_SENSOR_PIN , <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>CURRENT_SENSOR_PIN, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span> 
+ 
+   <span class="co1">// Make sure that ATSHA204 is not floating</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span>ATSHA204_PIN, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>ATSHA204_PIN, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>LED_PIN, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span> 
+   gw.<span class="kw3">begin</span><span class="br0">(</span>incomingMessage, NODE_ADDRESS, NODE_REPEAT<span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">digitalWrite</span><span class="br0">(</span>LED_PIN, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+   gw.<span class="me1">sendSketchInfo</span><span class="br0">(</span>SKETCH_NAME, SKETCH_VERSION<span class="br0">)</span><span class="sy4">;</span>
+ 
+   gw.<span class="me1">present</span><span class="br0">(</span>CHILD_ID_RELAY, S_LIGHT<span class="br0">)</span><span class="sy4">;</span>
+   gw.<span class="me1">present</span><span class="br0">(</span>CHILD_ID_CURRENT_SENSOR, S_MULTIMETER<span class="br0">)</span><span class="sy4">;</span>
+ 
+sendPowerMeasurements<span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="co1">// the loop function runs over and over again forever</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+  gw.<span class="me1">process</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw4">unsigned</span> <span class="kw4">long</span> NOW_TIME <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span><span class="br0">(</span>NOW_TIME <span class="sy2">-</span> CHECK_TIME <span class="sy1">&gt;=</span> SLEEP_TIME<span class="br0">)</span>
+  <span class="br0">{</span> 
+  measureCount <span class="sy2">++</span><span class="sy4">;</span> 
+   <span class="kw4">bool</span> forceTransmit <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+   transmission_occured <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+ 
+ <span class="kw1">if</span> <span class="br0">(</span>measureCount <span class="sy1">&gt;</span> FORCE_TRANSMIT_INTERVAL<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// force a transmission</span>
+    forceTransmit <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> 
+    measureCount <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+   sendPowerMeasurements<span class="br0">(</span>forceTransmit<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">//  Serial.print(" measureCount: ");</span>
+<span class="co1">//  Serial.println(measureCount); </span>
+ 
+      CHECK_TIME <span class="sy1">=</span> NOW_TIME<span class="sy4">;</span>
+     <span class="br0">}</span> 
+  <span class="br0">}</span>
+ 
+<span class="kw4">void</span> sendPowerMeasurements<span class="br0">(</span><span class="kw4">bool</span> force<span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw4">bool</span> tx <span class="sy1">=</span> force<span class="sy4">;</span>
+ 
+<span class="kw4">int</span> CurrentValue <span class="sy1">=</span> Current<span class="br0">(</span>CURRENT_SENSOR_PIN<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">float</span>  current <span class="sy1">=</span> kVolt <span class="sy2">*</span> <span class="br0">(</span>CurrentValue <span class="sy2">-</span> ZeroLevel<span class="br0">)</span><span class="sy4">;</span>
+ 
+   <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">350</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+   <span class="kw1">if</span> <span class="br0">(</span><span class="br0">(</span>current <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy3">||</span><span class="br0">(</span>current <span class="sy1">&lt;</span> <span class="nu16">2.80</span><span class="br0">)</span><span class="br0">)</span> current <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+  <span class="kw1">else</span>
+      current <span class="sy1">=</span> current<span class="sy4">;</span>
+ 
+  <span class="kw4">float</span> diffCurrent <span class="sy1">=</span> <span class="kw3">abs</span><span class="br0">(</span>lastCurrent <span class="sy2">-</span> current<span class="br0">)</span><span class="sy4">;</span>
+ 
+   <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>F<span class="br0">(</span><span class="st0">" &gt;diffCurrent :"</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>diffCurrent<span class="br0">)</span><span class="sy4">;</span>
+ 
+   <span class="kw1">if</span> <span class="br0">(</span>diffCurrent <span class="sy1">&gt;</span> CURRENT_TRANSMIT_THRESHOLD<span class="br0">)</span> tx <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+   <span class="kw1">if</span> <span class="br0">(</span>tx<span class="br0">)</span> <span class="br0">{</span>
+    measureCount <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+ <span class="co1">// Led </span>
+   <span class="kw3">digitalWrite</span><span class="br0">(</span>LED_PIN, <span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>  
+ 
+     gw.<span class="kw3">send</span><span class="br0">(</span>msgWatt.<span class="me1">set</span><span class="br0">(</span>current,<span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+   <span class="kw3">digitalWrite</span><span class="br0">(</span>LED_PIN, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+    lastCurrent <span class="sy1">=</span> current<span class="sy4">;</span>    
+    transmission_occured <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+ 
+ <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Cur: "</span><span class="br0">)</span><span class="sy4">;</span><span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>current<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> Current<span class="br0">(</span><span class="kw4">int</span> sensorPin<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw4">float</span> TMPsensorValue <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+  <span class="kw4">int</span> count <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+  <span class="kw1">for</span> <span class="br0">(</span>count <span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> count <span class="sy1">&lt;</span> countvalues<span class="sy4">;</span> count<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// read the value from the sensor:</span>
+    TMPsensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>sensorPin<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">30</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// make average value</span>
+    sensorValue <span class="sy1">=</span> <span class="br0">(</span>sensorValue<span class="sy2">+</span>TMPsensorValue<span class="br0">)</span><span class="sy2">/</span><span class="nu0">2</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+  <span class="kw1">return</span> sensorValue<span class="sy4">;</span>
+ 
+  <span class="br0">}</span>
+ 
+<span class="co1">//*******************************************</span>
+<span class="kw4">void</span> incomingMessage<span class="br0">(</span><span class="kw4">const</span> MyMessage <span class="sy3">&amp;</span>message<span class="br0">)</span> <span class="br0">{</span>
+   <span class="kw1">if</span> <span class="br0">(</span>message.<span class="me1">isAck</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+     <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"This is an ack from gateway"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span><span class="br0">(</span>message.<span class="me1">type</span> <span class="sy1">==</span> V_LIGHT<span class="br0">)</span> <span class="sy3">&amp;&amp;</span> <span class="br0">(</span>message.<span class="me1">sensor</span> <span class="sy1">==</span> CHILD_ID_RELAY<span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+     <span class="co1">// Change relay state</span>
+     lightState <span class="sy1">=</span> message.<span class="me1">getBool</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+     <span class="kw3">digitalWrite</span><span class="br0">(</span>RELAY_PIN_1, lightState<span class="sy4">?</span>RELAY_ON<span class="sy4">:</span>RELAY_OFF<span class="br0">)</span><span class="sy4">;</span>
+     <span class="co1">// Store state in eeprom</span>
+     <span class="co1">//gw.saveState(CHILD_ID_RELAY, lightState);</span>
+ 
+     <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Incoming change for Light:"</span><span class="br0">)</span><span class="sy4">;</span>
+     <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>message.<span class="me1">sensor</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">//     Serial.print(message.type);</span>
+ 
+     <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">", New status: "</span><span class="br0">)</span><span class="sy4">;</span>
+     <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>message.<span class="me1">getBool</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+   <span class="br0">}</span> 
+<span class="br0">}</span></pre></div></div>
+<h2> Version Tracker</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td width="150"> <b>Revision</b>
+</td>
+<td width="450"> <b>Description</b>
+</td>
+<td width="80"> <b>Release</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> 1.0 rev 1
+</td>
+<td> Public version
+</td>
+<td> 03.12.2015
+</td></tr></table>
+<h2>  Questions and Answers </h2>
+<ul><li>Blog <a href="//devicter.blogspot.ru/2013/12/shield-matrix-sensor-node.html">Sensor Node</a>
+</li><li>Ask a question by e-mail support@devicter.ru
+</li></ul>
+<h2>  How to buy  </h2>
+<p>This product can be purchased:<br/>
+China (shipping worldwide) <br/>
+[Seeed store] <br/>
+<a href="http://www.elecrow.com/devduino-relay-1-node-v10-atmega-328-%E2%80%93-with-support-ota-updat-p-1611.html">Elecrow store</a> <br/>
+Russia <br/>
+<a href="http://devicter.ru/goods/devDuino-Relay-1-Node-V1-0-ATmega-328">Devicter store</a>
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are 
+</p><p>licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

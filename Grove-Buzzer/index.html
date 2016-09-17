@@ -1,0 +1,191 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Buzzer</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Buzzer</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Buzzer1.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+
+<p>The <strong class="selflink">Grove - Buzzer</strong> module has a <a href="http://en.wikipedia.org/wiki/Buzzer#Piezoelectric">piezo buzzer</a> as the main component. The piezo can be connected to digital outputs, and will emit a tone when the output is HIGH. Alternatively, it can be connected to an analog pulse-width modulation output to generate various tones and effects.
+</p>
+<h2> Features</h2>
+<ul><li> Easy to use piezoelectric buzzer
+</li><li> Uses Standard 4-pin <a href="/GROVE_System#Grove_Cables" title="GROVE System">Grove Cables</a> to connect to other Grove modules such as <a href="/GROVE_System#Power" title="GROVE System">Grove Power Modules</a> and <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>
+</li></ul>
+<h2> Specifications</h2>
+<ul><li> Operating Voltage: 4-8V
+</li><li> Sound Output: ≥85dB
+</li><li> Resonant Frequency: 2300±300Hz
+</li></ul>
+<h2> Usage</h2>
+<h3> Standalone</h3>
+<p>Follow these steps to build a sample circuit using this module but without using any microcontroller:
+</p>
+<ol><li> Connect the buzzer module to the output side of your circuit (to the right of the power module). On the input side of the circuit, you may use a range of sensor based input modules (<a href="/Grove-Light_Sensor" title="Grove - Light Sensor">Grove - Light Sensor</a>, <a href="/Grove-Button" title="Grove - Button">Grove - Button</a> or <a href="/Grove-Slide_Potentiometer" title="Grove - Slide Potentiometer">Grove - Slide Potentiometer</a>). 
+</li><li> Power up the circuit.
+</li><li> The buzzer will start to "buzz" when the input module supplies a trigger:
+</li></ol>
+<dl><dd><dl><dd><dl><dd><ul><li> If using with a momentary switch like the one on the <a href="/Grove-Button" title="Grove - Button">Grove - Button</a> module, simply press the button to turn ON the buzzer.
+</li><li> If using with a <a href="/Grove-Slide_Potentiometer" title="Grove - Slide Potentiometer">Grove - Slide Potentiometer</a>, move the slider from the GND position to VCC and see how the tone and frequency of the buzzer vary as the supplied voltage increases. 
+</li><li> If using with a <a href="/Grove-Light_Sensor" title="Grove - Light Sensor">Grove - Light Sensor</a> connected directly to the input side of the circuit, you should hear the buzzer in bright light and it should stop "buzzing" in the dark. If you want the buzzer to sound only in the dark, add a <a href="/Grove-NOT" title="Grove - NOT">Grove - NOT</a> module between the light sensor and the power module.
+</li></ul>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>You can use either the <a href="/Grove-Mixer_Pack#2._USB_Power" title="Grove - Mixer Pack">Grove - USB Power</a> module or the <a href="/Grove-DC_Jack_Power" title="Grove - DC Jack Power">Grove - DC Jack Power</a> module for the Grove circuit.
+</p><p><br/>
+</p>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Follow these simple steps to build a Grove circuit using the buzzer:
+</p>
+<ol><li> When using the module in conjunction with an <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a> or a <a href="/Seeeduino" title="Seeeduino">Seeeduino</a>, use the <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> and connect the Grove - Buzzer module to the shield using a designated Grove Interface as shown below:
+</li></ol>
+<div class="center"><div class="floatnone"><img src="img/Conn-four.jpg" width="400"/></div></div>
+<ol><li> Upload the following sample sketch to make the Buzzer make a beeping noise:
+</li></ol>
+<pre>
+// Project Four - Noise maker
+//
+
+void setup()
+{
+  pinMode(6, OUTPUT);
+}
+
+void loop()
+{
+  digitalWrite(6, HIGH);
+  delay(analogRead(0));
+  digitalWrite(6, LOW);
+  delay(analogRead(0));
+}
+  
+</pre>
+<h3> With <a href="/w/index.php?title=TI_LaunchPad&amp;action=edit&amp;redlink=1" title="TI LaunchPad (page does not exist)">TI LaunchPad</a></h3>
+<p>Playing Music (Buzzer)
+</p>
+<dl><dd>    This example shows how to use the Grove buzzer module to play melodies. It sends a square wave of the appropriate frequency to the buzzer, generating the corresponding tone.
+</dd></dl>
+<p><img src="img/Buzzer.jpg" width="600"/>
+</p>
+<pre>
+/*
+  Buzzer
+ The example use a buzzer to play melodies. It sends a square wave of the 
+ appropriate frequency to the buzzer, generating the corresponding tone.
+ 
+ The circuit:
+ * Buzzer attached to pin39 (J14 plug on Grove Base BoosterPack)
+ * one side pin (either one) to ground
+ * the other side pin to VCC
+ * LED anode (long leg) attached to RED_LED
+ * LED cathode (short leg) attached to ground
+ 
+ * Note:  
+ 
+ 
+ This example code is in the public domain.
+ 
+ http://www.seeedstudio.com/wiki/index.php?title=GROVE_-_Starter_Kit_v1.1b#Grove_-_Buzzer
+ 
+*/
+
+/* Macro Define */
+#define BUZZER_PIN               39            /* sig pin of the buzzer */
+
+int length = 15;         /* the number of notes */
+char notes[] = "ccggaagffeeddc ";
+int beats[] = { 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 2, 4 };
+int tempo = 300;
+
+void setup()
+{
+    /* set buzzer pin as output */
+    pinMode(BUZZER_PIN, OUTPUT);       
+}
+
+void loop()
+{
+    for(int i = 0; i &lt; length; i++) {
+        if(notes[i] == ' ') {
+            delay(beats[i] * tempo);
+        } else {
+            playNote(notes[i], beats[i] * tempo);
+        }
+        delay(tempo / 2);    /* delay between notes */
+    }
+  
+}
+
+/* play tone */
+void playTone(int tone, int duration) {
+  for (long i = 0; i &lt; duration * 1000L; i += tone * 2) {
+    digitalWrite(BUZZER_PIN, HIGH);
+    delayMicroseconds(tone);
+    digitalWrite(BUZZER_PIN, LOW);
+    delayMicroseconds(tone);
+  }
+}
+
+void playNote(char note, int duration) {
+  char names[] = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', 'C' };
+  int tones[] = { 1915, 1700, 1519, 1432, 1275, 1136, 1014, 956 };
+  
+  // play the tone corresponding to the note name
+  for (int i = 0; i &lt; 8; i++) {
+    if (names[i] == note) {
+      playTone(tones[i], duration);
+    }
+  }
+}
+</pre>
+<p><br/>
+</p>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>The following is a simple example to show how to use the Grove - Buzzer module on Raspberry Pi. The buzzer makes noise and delays one second. Then quiet for a second.It repeats the above action.
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovePiPlus_Grove_buzzer.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<pre>
+# GrovePi + Grove Buzzer
+import time
+import grovepi
+
+# Connect the Grove Buzzer to digital port D8
+# SIG,NC,VCC,GND
+buzzer = 8
+
+grovepi.pinMode(buzzer,"OUTPUT")
+
+while True:
+    try:
+        # Buzz for 1 second
+        grovepi.digitalWrite(buzzer,1)
+        print 'start'
+        time.sleep(1)
+
+        # Stop buzzing for 1 second and repeat
+        grovepi.digitalWrite(buzzer,0)
+        print 'stop'
+        time.sleep(1)
+
+    except KeyboardInterrupt:
+        grovepi.digitalWrite(buzzer,0)
+        break
+    except IOError:
+        print "Error"
+</pre>
+<h4>  Run the program </h4>
+<ul><li> Find the path to the file(According to your own path)
+</li></ul>
+<pre>   cd GrovePi/Software/Python/
+</pre>
+<ul><li> Run Program
+</li></ul>
+<pre>   sudo python grove_buzzer.py
+</pre>
+<h2> Availability</h2>
+<p>This <a href="/Grove" title="Grove">Grove</a> module is available as part of all the <a href="/GROVE_System#GROVE_Kit_Series" title="GROVE System">Grove Kits</a> including the most recently released  <a href="/GROVE_MIXER_PACK_V2" title="GROVE MIXER PACK V2">Grove Mixer Pack V2</a>.
+</p><p>Alternatively, it can be bought stand-alone <a href="http://www.seeedstudio.com/depot/Grove-Buzzer-p-768.html">here</a> at the <a href="http://www.seeedstudio.com/depot/Grove-Buzzer-p-768.html">Seeed Studio Bazaar</a>.
+</p>
+<h2> Resources</h2>
+<ul><li><a href="res/Grove-Buzzer_V1.1_eagle.zip">Grove - Buzzer Source Files v1.1</a>
+</li><li><a href="res/Grove-Buzzer_v1.0_Source_File.zip">Grove - Buzzer Source Files v1.0 (Eagle and pdf)</a>
+</li><li><a href="res/S9013.pdf">S9013datasheet</a>
+</li><li><a href="res/Buzzer.pdf">Buzzer</a>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

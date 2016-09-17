@@ -1,0 +1,139 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Stanford Hapkit Board</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Stanford Hapkit Board</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Haptic_View.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+
+<p>We worked with Stanford University to design Haptic. It merges a microcontroller Atmega328, Micro SD card Slot and Motor driver L298P, which can achieve this functions: control operation, data recording, motor driver. There are Hapkit-specific sensor connections: Mr Sensor connection and FSR Sensor connection. Standard Shield shape and Grove Interfaces, makes it convenient to connect more modules.
+</p><p>Its power can  from Micro USB or 7v ~ 15v extern power. Only select extern power when you drive DC motors.
+</p>
+<h2> Specification</h2>
+<ul><li>working Voltage：5V ~ 15V
+</li><li>Micorcontroller：Atmega328p
+</li><li>Support SD Card Type：Micro SD card, FAT/FAT32 (less than 2G)
+</li><li>Max output current per channel：2A
+</li><li>Output Duty Range：0%~100%
+</li></ul>
+<h2> Product View</h2>
+<p><img src="img/Haptic_View_Introduction.png" width="565"/>
+</p>
+<ul><li>①：Extern Power Connector.
+</li><li>②：Micro USB Interface.
+</li><li>③：Reset Button.
+</li><li>④：FT232，USB to UART converter.
+</li><li>⑤：Mr Sensor Interface.
+</li><li>⑥：Microcontroller Atmega328.
+</li><li>⑦：Motor Driver L289P. 
+</li><li>⑧：Screw Terminal.
+</li><li>⑨：Motor rotate direction indictors.
+</li><li>⑩：FSR Sensor Interface.
+</li></ul>
+<h2>  Demonstration </h2>
+<p>Like Motor Shield, Haptic features motor interfaces for connecting two DC motors.  Next we will show you how to use the strong motor driver. 
+What you need are ：<br/>
+</p>
+<dl><dd><ul><li>A DC motor.
+</li><li>A Micro USB cable.
+</li><li>7~15V power：used to drive DC motor. And Micro 5V can not drive motor. We use a 12 power here.
+</li><li>A Screw：Used to fix motor on Screw terminal.
+</li></ul>
+</dd></dl>
+<p><b>Hardware Installation:</b><br/>
+<br/><img src="img/Haptic_Usage.jpg" width="800"/><br/>
+DC motor is connected to M1+ and M1- interfaces, because we select channel 1 to control motor in the belowing code. In fact, the hardware connection is changeable, make sure hardware connection and control pins in code are consistency.<br/>
+</p><p><br/>
+<b>Upload code:</b><br/>
+Donot forget to select <i>Arduino Uno</i> from Tools-&gt;Board.
+</p>
+<pre>
+#define motorAEnble 5      // Motor A Enble pin
+#define motorAControl 8    // Motor A Control pin
+//#define motorBEnble 6      // Motor B Enble pin
+//#define motorBControl 7    // Motor B Control pin
+/*
+ * setup() - this function runs once when you turn your Arduino on
+ * We set the motors pin to be an output (turning the pin high (+5v) or low (ground) (-))
+*/
+void setup()
+{
+ 
+ pinMode(motorAEnble, OUTPUT); 
+ pinMode(motorAControl, OUTPUT); 
+ //pinMode(motorBEnble, OUTPUT); 
+ //pinMode(motorBControl, OUTPUT); 
+}
+
+
+/*
+ * loop() - this function will start after setup finishes and then repeat
+ * we call a function called motorOnThenOff()
+ */
+
+void loop()                     // run over and over again
+{
+ motorOnThenOff();
+ motorOnThenOffWithSpeed();
+ motorAcceleration();
+}
+
+/*
+ * motorOnThenOff() - turns motor on then off 
+ */
+void motorOnThenOff(){
+  int onTime = 2500;  //the number of milliseconds for the motor to turn on for
+  int offTime = 1000; //the number of milliseconds for the motor to turn off for
+ digitalWrite(motorAEnble, HIGH); 
+ digitalWrite(motorAControl, HIGH); // turns the motor On
+  delay(onTime);                // waits for onTime milliseconds
+  digitalWrite(motorAControl, LOW);  // turns the motor Off
+  delay(offTime);               // waits for offTime milliseconds
+  digitalWrite(motorAEnble, LOW); 
+}
+
+/*
+ * motorOnThenOffWithSpeed() - turns motor on then off but uses speed values as well 
+ */
+void motorOnThenOffWithSpeed(){
+  
+  int onSpeed = 200;  // a number between 0 (stopped) and 255 (full speed) 
+  int onTime = 2500;  //the number of milliseconds for the motor to turn on for
+  
+  int offSpeed = 50;  // a number between 0 (stopped) and 255 (full speed) 
+  int offTime = 1000; //the number of milliseconds for the motor to turn off for
+   digitalWrite(motorAEnble, HIGH); 
+  analogWrite(motorAControl, onSpeed);   // turns the motor On
+  delay(onTime);                    // waits for onTime milliseconds
+  analogWrite(motorAControl, offSpeed);  // turns the motor Off
+  delay(offTime);                   // waits for offTime milliseconds
+  digitalWrite(motorAEnble, LOW); 
+}
+
+/*
+ * motorAcceleration() - accelerates the motor to full speed then
+ * back down to zero
+*/
+void motorAcceleration(){
+  int delayTime = 50; //milliseconds between each speed step
+   digitalWrite(motorAEnble, HIGH); 
+  //Accelerates the motor
+  for(int i = 0; i &lt; 256; i++){ //goes through each speed from 0 to 255
+    analogWrite(motorAControl, i);   //sets the new speed
+    delay(delayTime);           // waits for delayTime milliseconds
+  }
+  
+  //Decelerates the motor
+  for(int i = 255; i &gt;= 0; i--){ //goes through each speed from 255 to 0
+    analogWrite(motorAControl, i);   //sets the new speed
+    delay(delayTime);           // waits for delayTime milliseconds
+  }
+  digitalWrite(motorAEnble, LOW); 
+}
+</pre>
+<p>After uploading code, connect 12v power to extern power connection of Haptic(can unplug Micro USB), DC motor will rotate.<br/>
+</p><p>Note：while the current is flowing from M+ to M-, that is motorAControl and motorBControl are high level，the blue indictor lights. In contrast，green indictor lights up.
+</p><p>The Haptic  was used as an educational device for learning and researching. click <a href="http://hapkit.stanford.edu/index.html">here</a> to find more information.<br/>
+<img src="img/History.jpg" width="1200"/>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="res/Stanford_Haptic_Shield_Eagle_File.zip">Stanford Haptic Shield Eagle File</a>
+</li><li><a href="res/L298.pdf">L298 Datasheet</a>
+</li><li><a href="res/78M05_datasheet.pdf">78M05 Datasheet</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

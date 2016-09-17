@@ -1,0 +1,101 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow - IMU 6DOF</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow - IMU 6DOF</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Imu_6dof_01.jpg" width="300"/> <div class="thumbcaption"></div></div></div><br/>
+
+<p>Xadow - IMU 6DOF is a motion tracking module. Its design is based on the sensor MPU6050 which is the world’s first integrated 6-axis MotionTracking device, that combines a 3-axis gyroscope, 3-axis accelerometer, and a Digital Motion Processor™ (DMP). MPU6050 features three 16-bit analog-to-digital converters (ADCs) for digitizing the gyroscope outputs and three 16-bit ADCs for digitizing the accelerometer outputs so Xadow - IMU 6DOF achieves a high converter accuracy. For precision tracking of both fast and slow motions, the parts feature a user-programmable gyroscope full-scale range  and a user-programmable accelerometer full-scale range.
+</p><p><br/>
+</p>
+<h2> Specification</h2>
+<ul><li>Working Voltage: 3.3V
+</li><li>Measure Range:
+</li></ul>
+<dl><dd><ul><li>Gyroscope full-scale range: ±250,. ±500,. ±1000,. ±2000°/sec
+</li><li>Accelerometer full-scale range：±2g, ±4g, ±8g, and ±16g.
+</li></ul>
+</dd></dl>
+<ul><li>Control Mode: I2C
+</li><li>Dimensions: 25.43mm x 20.35mm
+</li></ul>
+<h2> Demonstration</h2>
+<p>Based on our available library，you can get accele and gyro value easily.Now let's show how to use the module. <br/>
+<b>Hardware Connection：</b><br/>
+<a href="/w/index.php?title=Picture&amp;action=edit&amp;redlink=1" title="Picture (page does not exist)">Picture</a><br/>
+Note: when connect Xadow IMU 6DOF to Xadow Main Board, the connection direction should be cautious. The connection method is that the unfilled corner of one Xadow module connect to the right angle of another module(see four corners of each Xadow module).<br/>
+<b>Test Code：</b><br/>
+</p>
+<ul><li>Download [Xadow - IMU 6DOF <a href="https://github.com/Seeed-Studio/Xadow_IMU_6DOF">https://github.com/Seeed-Studio/Xadow_IMU_6DOF</a> MPU6050 Library] from Github, and install I2Cdev file and MPU6050 file to your Arduino Library. About the library installation，please refer to <a href="/Arduino库文件的安装">here</a> in wiki page.
+</li><li>Open the example: MPU6050_DMP6 by the pathFile - &gt;Examples -&gt; MPU6050 -&gt;Examples-&gt;MPU6050_DMP6.
+</li></ul>
+<pre>
+#include &lt;I2Cdev.h&gt;//add necessary headfiles
+#include &lt;MPU6050.h&gt;//add necessary headfiles
+#include &lt;Wire.h&gt;
+//====the offset of gyro===========
+#define Gx_offset  -1.50
+#define Gy_offset  0
+#define Gz_offset  0.80
+//====the offset of accelerator===========
+#define Ax_offset -0.07
+#define Ay_offset 0.02
+#define Az_offset 0.14
+//====================
+MPU6050 accelgyro;
+ 
+int16_t ax,ay,az;//original data;
+int16_t gx,gy,gz;//original data;
+float Ax,Ay,Az;//Unit g(9.8m/s^2)
+float Gx,Gy,Gz;//Unit deg/s
+ 
+ 
+void setup()
+{
+  Wire.begin();
+  Serial.begin(9600);
+ 
+  Serial.println("Initializing I2C device.....");
+  accelgyro.initialize();
+  
+  Serial.println("Testing device connections...");
+  Serial.println(accelgyro.testConnection() ? "MPU6050 connection successful":"MPU6050 connection failure");
+}
+void loop()
+{
+  
+  accelgyro.getMotion6(&amp;ax,&amp;ay,&amp;az,&amp;gx,&amp;gy,&amp;gz);//get the gyro and accelerator   
+   //==========accelerator================================
+   Ax=ax/16384.00;//to get data of unit(g)
+   Ay=ay/16384.00;//to get data of unit(g)
+   Az=az/16384.00;//to get data of unit(g)
+   Serial.println("Acce data.....");
+   Serial.print(Ax+Ax_offset);
+   Serial.print("   ");
+   Serial.print(Ay+Ay_offset);
+   Serial.print("   ");
+   Serial.println(Az+Az_offset);
+   //===============gyro================================
+   Gx=gx/131.00;
+   Gy=gy/131.00;
+   Gz=gz/131.00;
+   Serial.println("Gyro data.....");
+   Serial.print(Gx+Gx_offset);
+   Serial.print("   ");
+   Serial.print(Gy+Gy_offset);
+   Serial.print("   ");
+   Serial.println(Gz+Gz_offset);
+  //blinkState=!blinkState;
+  //digitalWrite(LED_PIN,blinkState); 
+  delay(1000);//control time of sampling
+}</pre>
+<ul><li>Upload code to Xadow Main Board. Remember to select 'Seeeduino Xadow'from Tools -&gt;Board.Open serial monitor to observe the output value of MPU6050 Sensor.<br/>
+</li></ul>
+<p><img src="img/Xadow_IMU_6DOF_result.png" width="325"/><br/>
+In static state，the z-Axis output value is about 0.98g，so you can refer to this to test if your sensor can work normally.<br/>
+<b>Orientation of Axes</b> <br/>
+The diagram below shows the orientation of the axes of sensitivity and the polarity of rotation. <br/>
+<img src="img/MPU6050_轴向定位.png" width="350"/><br/>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="res/Xadow_IMU_6DOF_Eagle_File.zip">Xadow - IMU 6DOF Eagle File</a>
+</li><li><a href="res/MPU6050.pdf">MPU6050 datasheet</a>
+</li><li><a href="https://github.com/Seeed-Studio/Xadow_IMU_6DOF">Library File</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

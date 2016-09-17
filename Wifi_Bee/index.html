@@ -1,0 +1,773 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Wifi Bee</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Wifi Bee</h1>
+
+<p><strong class="selflink">Wifi Bee</strong> is a xBee Pro socket compatible standalone MCU node useful for <b>Wireless Sensor Network</b>. It integrates Microchip <b>IEEE 802.11 Wi-Fi</b> transceiver module <a href="http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en548014">MRF24WB0MA</a> and a 8bit AVR MCU <a href="http://www.atmel.com/dyn/products/product_card.asp?part_id=4198"><b>ATMega328P</b></a>. The smart and xBee Pro Socket compatible outlook makes it very easy to integrate in your product. The <b>ATMega328P</b> could be directly programmed under the open source Arduino IDE when you plug it on to the <a href="/UartSBee" title="UartSBee">UartSBee</a> or <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a>. The <b>SPI</b> pins on MCU are connected to the corresponding pins of <b>MRF24WB0MA</b> to communicate with each other, while some of the other pins (DIO, AD,PWM etc.) are brought out to the 20 pins of 2.0 mm male pin headers. Please note there is no dedicated firmware for Wifi Bee yet now, but you may use the firmware of <a href="https://github.com/asynclabs/WiShield">WiShield</a> from AsyncLabs. Please make sure you can use it before you buy. 
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/wifi-bee-p-823.html?cPath=139_141&amp;zenid=15bcf2644eb7ecf4b3722eb98c79b074">WLS48188P</a></b>
+</p><p><img src="img/Seeedstudio_Wifibee_MRF24WB0MA.jpg" width="350"/>
+<img src="img/SeeedStudio_Wifibee_ATMega328.jpg" width="350"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>xBee compatible headers
+</li><li>Programmable using Arduino IDE 
+<ul><li>Arduino Duemilanove bootloader preprogrammed
+</li></ul>
+</li><li>Supports low power and low data rate Wi-Fi.
+</li><li>802.11b compatible 
+</li><li>WEP, WPA-PSK, WPA2-PSK Security
+</li><li>LEDs for PWR and Wi-Fi connection indication.
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Wireless Local Area Network
+</li><li>Wireless Sensor Network using <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a>
+</li><li>Internet connectivity
+</li><li>Build endless network applications with <a href="http://en.wikipedia.org/wiki/UIP_(micro_IP)"><b>uIP TCP/IP Stack</b></a>
+<ul><li>Ideal for people wanting to learn and experiment with TCP/IP Stack
+</li></ul>
+</li></ul>
+<h2>  Schematic  </h2>
+<p><img src="img/Wifi_Bee_v0.91b.png" width="750"/>
+</p><p><a href="http://garden.seeedstudio.com/images/9/9f/WifiBee_v0.91b.pdf">Click here to open schematic in PDF format</a>
+</p>
+<h2>  Key Specification  </h2>
+<table>
+<tr>
+<th> Item
+</th>
+<th> Minimum
+</th>
+<th> Typical
+</th>
+<th> Maximum
+</th></tr>
+<tr>
+<td width="400px"> Operate voltage
+</td>
+<td width="200px"> 3.0V
+</td>
+<td width="200px"> 3.3V
+</td>
+<td width="200px"> 3.6V
+</td></tr>
+<tr>
+<td> Working temperature
+</td>
+<td colspan="3" rowspan="1"> 0°C to +70°C
+</td></tr>
+<tr>
+<td> Working frequency
+</td>
+<td colspan="3" rowspan="1"> 16MHz
+</td></tr>
+<tr>
+<td> MCU
+</td>
+<td colspan="3" rowspan="1"> ATmega328P
+</td></tr></table>
+<h2>  Mechanical Dimensions  </h2>
+<p>Wifi Bee is of 27.2mm x 35.7mm size.
+</p><p><img src="img/Wifi_Bee_v0.91b_pcb.png" width="200"/>
+</p>
+<h2>  Hardware </h2>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:452px;"><img src="img/Seeedstudio_WifiBee_Parts.png" width="450"/> <div class="thumbcaption"><b>Wifi Bee</b> - Parts</div></div></div>
+<p><br clear="all"/>
+</p>
+<h3>  Pin definition &amp; Rating  </h3>
+<table border="1">
+<tr>
+<th>Pin
+</th>
+<th>#
+</th>
+<th>Pad Type
+</th>
+<th>Description
+</th>
+<th>Arduino Pin Number
+</th></tr>
+<tr>
+<td width="100px">3V3
+</td>
+<td width="60px">1
+</td>
+<td width="100px">Supply input
+</td>
+<td width="300px">VCC, +3.3V
+</td>
+<td width="300px">-
+</td></tr>
+<tr>
+<td>TX
+</td>
+<td>2
+</td>
+<td>Output
+</td>
+<td>Uart Tx port
+</td>
+<td>1(DIO)
+</td></tr>
+<tr>
+<td>RX
+</td>
+<td>3
+</td>
+<td>Input
+</td>
+<td>Uart Rx port
+</td>
+<td>0(DIO)
+</td></tr>
+<tr>
+<td>PB0
+</td>
+<td>4
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PB0
+</td>
+<td>8(DIO)
+</td></tr>
+<tr>
+<td>!RESET
+</td>
+<td>5
+</td>
+<td>Input
+</td>
+<td>ATmega328 Reset port
+</td>
+<td>
+</td></tr>
+<tr>
+<td>PD7
+</td>
+<td>6
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PD7
+</td>
+<td>7(DIO)
+</td></tr>
+<tr>
+<td>PD6
+</td>
+<td>7
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PD6
+</td>
+<td>6(DIO)
+</td></tr>
+<tr>
+<td>PD5
+</td>
+<td>8
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PD5
+</td>
+<td>5(DIO)
+</td></tr>
+<tr>
+<td>!DTR
+</td>
+<td>9
+</td>
+<td>Input
+</td>
+<td>Used for programming the ATmega328P
+</td>
+<td>  -
+</td></tr>
+<tr>
+<td>GND
+</td>
+<td>10
+</td>
+<td>GND
+</td>
+<td>GND
+</td>
+<td> -
+</td></tr>
+<tr>
+<td>PC1
+</td>
+<td>11
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PC1
+</td>
+<td>1(Analog input)/15(DIO)
+</td></tr>
+<tr>
+<td>PC0
+</td>
+<td>12
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PC0
+</td>
+<td>0(Analog input)/14(DIO)
+</td></tr>
+<tr>
+<td>AD7
+</td>
+<td>13
+</td>
+<td>Input
+</td>
+<td>ATmega328P ADC7
+</td>
+<td>7(Analog input)
+</td></tr>
+<tr>
+<td>VREF
+</td>
+<td>14
+</td>
+<td>Input
+</td>
+<td>ATmega328P AREF port
+</td>
+<td> -
+</td></tr>
+<tr>
+<td>AD6
+</td>
+<td>15
+</td>
+<td>Input
+</td>
+<td>ATmega328P ADC6
+</td>
+<td>6(Analog input)
+</td></tr>
+<tr>
+<td>INT1
+</td>
+<td>16
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PD3
+</td>
+<td>3(DIO)
+</td></tr>
+<tr>
+<td>PC3
+</td>
+<td>17
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PC3
+</td>
+<td>3(Analog input)/17(DIO)
+</td></tr>
+<tr>
+<td>PC2
+</td>
+<td>18
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PC2
+</td>
+<td>2(Analog input)/16(DIO)
+</td></tr>
+<tr>
+<td>SCL
+</td>
+<td>19
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PC5
+</td>
+<td>5(Analog input)/19(DIO)
+</td></tr>
+<tr>
+<td>SDA
+</td>
+<td>20
+</td>
+<td>Input/Output
+</td>
+<td>ATmega328P PC4
+</td>
+<td>4(Analog input)/18(DIO)
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<ul><li>The best way to use Wifi Bee is to connect it to <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a>. <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> provides USB-UART connectivity for programming and Power Supply with its built-in 3.3V LDO regulator.
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/Bee_Stem_Connected_to_Wifi_BEE_and_A_Twig.jpg" width="400"/> <div class="thumbcaption"><b>Grove - XBee Carrier - Connected to <strong class="selflink">Wifi Bee</strong></b> and  Powered By USB</div></div></div>
+<p><br clear="all"/>
+</p>
+<h3>  Programming  </h3>
+<h4>  Wireless Network Setup  </h4>
+<p>This section gives a brief overview on setting up a Home Network with a WiFi router suitable for <strong class="selflink">Wifi Bee</strong>. 
+</p><p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:602px;"><img src="img/WifiBee_Network_Architecture.jpg" width="600"/> <div class="thumbcaption"><b>Wireless Sensor Network</b> - <i>Sample Architecture with <b>Wifi Bee</b> Nodes</i></div></div></div>
+<p><br clear="all"/>
+</p>
+<ol><li>Login to web configuration interface of WiFi router using a web browser. Normally a default IP address like <b>192.168.0.1</b> and a Login id:<b>admin</b> and Password:<b>password</b> is provided by the router manufacturer. Use this.
+</li><li>In the above case the router IP address <b>192.168.0.1</b> is also the Gateway IP Address of the Wireless Network. The subnet mask for this IP address is <b>255.255.255.0</b>
+</li><li>Set a name or <b>SSID</b> for the Wireless Network. Let us set it to <b>HOMENETWORK</b>. This name will be used throughout the tutorial.
+</li><li>Any node that connects to a router gets an IP address through DHCP. But, Wifi Bee does not support DHCP. We have to assign a static IP address. Many routers provide <b>address reservation</b> using MAC address for network devices. In LAN setup section of wireless router, reserve IP address <b>192.168.0.4</b> for <strong class="selflink">Wifi Bee</strong>.
+<ol><li>Enter the IP address to be reserved as <b>192.168.0.4</b>. This is the IP address of <strong class="selflink">Wifi Bee</strong>
+</li><li>You need to enter the MAC address displayed on Wifi Bee in the form of <b>AB:CD:EF:GH:IJ:KL</b>
+</li><li>Give the device-name as <b>WIFIBEE</b>. This name can be any word and not very important. 
+</li></ol>
+</li><li>Configure the Security options of the Network. Wifi Bee supports <b>Open(Security disabled)</b>, <b>WEP (Wired Equivalent Privacy)</b>, <b>WPA-PSK (Wi-Fi Protected Access Pre-Shared Key)</b> and <b>WPA2-PSK (Wi-Fi Protected Access 2 with Pre-Shared Key)</b>. Set a suitable security option. This setting is used by <strong class="selflink">Wifi Bee</strong> for establishing connection. 
+<ol><li>Let us set security option to <b>WPA-PSK</b>.
+</li><li>WPA-PSK mode requires <b>WPA-PSK Security Encryption Network Key</b>. Set this key to <b>12345678</b>
+</li></ol>
+</li><li>Consult the router's user guide for configuring other setting like connecting to internet, etc..
+</li></ol>
+<h4>  Downloading and configuring the Library for running the application examples </h4>
+<p>The application examples uses the WiSheild library of Asynclabs. There is no other dedicated firmware for <strong class="selflink">Wifi Bee</strong>. This library uses <a href="http://code.google.com/p/avr-uip/">uip TCP/IP stack</a> of Adam Dunkels.
+This library is provided under GPL v2 by the original author. Hence, any application that could be built with WiShield should also be GPLv2 compatible. 
+</p>
+<ol><li>Download the library from <a href="https://github.com/asynclabs/WiShield">WiShield</a>. 
+</li><li>Extract the contents to Arduino <b>/libraries/WiShield</b> directory.
+</li><li>The library comes with many application examples. It is written in a configurable manner such that only the required functionality is built. This saves FLASH.
+<ul><li>This configuration is handled in <b>/libraries/WiShield/apps-conf.h</b>.
+</li><li>Uncomment the desired mode for the application that you are building like WEB-SERVER or WEB-CLIENT or SOCKET Application, etc.. in <b>/libraries/WiShield/apps-conf.h</b> file.
+</li><li>For example if you want to build a Web Server Application the <b>#define APP_WEBSERVER</b> should have been uncommented and all other modes are commented. These change requires rebuild of the library. Hence close and re-open Arduino IDE.
+</li></ul>
+</li><li>Let us build the WebServer example.
+<ul><li>Set the mode configuration as APP_WEBSERVER in <b>/libraries/WiShield/apps-conf.h</b>.
+</li><li>Open /libraries/WiShield/examples/WebServer/<b>WebServer.pde</b> sketch in Arduino IDE
+</li><li>Set the <b> local_ip[]</b> array to {<b>192,168,0.4</b>}. This the IP address <strong class="selflink">Wifi Bee</strong> as configured above.
+</li><li>Set the <b>gateway_ip[]</b> array to {<b>192,168,0,1</b>}. This is the router's IP address as configured in network setup above.
+</li><li>Set the  <b>subnet_mask[]</b> array to {<b>255,255,255,0</b>}. This is the sub-net mask for the local wireless network.
+</li><li>Set <b>prog_char ssid[]</b> to {<b>"HOMENETWORK"</b>}. This name was also assigned during network setup.
+</li><li>Next step is to set the <b>security_type</b> to security options configured during network setup. Set to 2 (i.e WPA) as configured in Wifi router. 
+<ul><li> <code>//unsigned char security_type = 2;	// 0 - open; 1 - WEP; 2 - WPA; 3 - WPA2 </code>
+</li></ul>
+</li><li>Also set <code> const prog_char <b>security_passphrase[]</b> PROGMEM = {"12345678"} </code>
+</li></ul>
+</li><li>The modified WebServer.pde sketch looks like the code listed below.
+</li><li>Set the board type to <b>Arduino Duemilanove</b> and compile the sketch.
+</li><li>Upload it  <strong class="selflink">Wifi Bee</strong> and press the Reset button
+</li><li>If every thing goes fine the Wifi Bee connects to <b>HOMENETWORK</b> and the BLUE LED (WIFI LED) glows
+</li><li>Open a web browser from a PC connected to <b>HOMENETWORK</b> and type the URL <code><a href="http://192.168.0.4">http://192.168.0.4</a></code>
+</li><li>You would get the message <code><b>Hello World!! I am WifiBee.</b></code>
+</li></ol>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ * Web Server: Modified WebServer.pde example. 
+ * A simple web server example using the WiShield library and WiBee. 
+ */</span>
+ 
+<span class="co2">#include &lt;WiShield.h&gt;</span>
+ 
+<span class="co2">#define WIRELESS_MODE_INFRA	1</span>
+<span class="co2">#define WIRELESS_MODE_ADHOC	2</span>
+ 
+<span class="co1">// Wireless configuration parameters ----------------------------------------</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> local_ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>,<span class="nu0">4</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// IP address of Wifi Bee</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> gateway_ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// router or gateway IP address</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> subnet_mask<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// subnet mask for the local Wireless network</span>
+<span class="kw4">const</span> prog_char ssid<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"HOMENETWORK"</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// max 32 bytes</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> security_type <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>	<span class="co1">// 0 - open; 1 - WEP; 2 - WPA; 3 - WPA2</span>
+ 
+<span class="co1">// WPA/WPA2 passphrase</span>
+<span class="kw4">const</span> prog_char security_passphrase<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"12345678"</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// max 64 characters. The network name.</span>
+ 
+<span class="co1">// WEP 128-bit keys</span>
+<span class="co1">// sample HEX keys</span>
+prog_uchar wep_keys<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span>	<span class="nu12">0x01</span>, <span class="nu12">0x02</span>, <span class="nu12">0x03</span>, <span class="nu12">0x04</span>, <span class="nu12">0x05</span>, <span class="nu12">0x06</span>, <span class="nu12">0x07</span>, <span class="nu12">0x08</span>, <span class="nu12">0x09</span>, <span class="nu12">0x0a</span>, <span class="nu12">0x0b</span>, <span class="nu12">0x0c</span>, <span class="nu12">0x0d</span>,	<span class="co1">// Key 0</span>
+					<span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="nu12">0x00</span>,	<span class="co1">// Key 1</span>
+					<span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="nu12">0x00</span>,	<span class="co1">// Key 2</span>
+					<span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="nu12">0x00</span>	<span class="co1">// Key 3</span>
+				<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// setup the wireless mode</span>
+<span class="co1">// infrastructure - connect to AP</span>
+<span class="co1">// adhoc - connect to another WiFi device</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> wireless_mode <span class="sy1">=</span> WIRELESS_MODE_INFRA<span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> ssid_len<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> security_passphrase_len<span class="sy4">;</span>
+<span class="co1">//---------------------------------------------------------------------------</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	WiFi.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// This is the webpage that is served up by the webserver</span>
+<span class="kw4">const</span> prog_char webpage<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"HTTP/1.1 200 OK<span class="es1">\r</span><span class="es1">\n</span>Content-Type: text/html<span class="es1">\r</span><span class="es1">\n</span><span class="es1">\r</span><span class="es1">\n</span>&lt;center&gt;&lt;h1&gt;Hello World!! I am WifiBee.&lt;/h1&gt;&lt;/center&gt;"</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+	WiFi.<span class="me1">run</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Examples  </h3>
+<h4>  Simple Web Server that sends sensor value to Web browser </h4>
+<ul><li> Use the network setup as describe above.
+</li><li> Use the <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> for programming and power.
+</li><li> Configure apps-conf.h, such that only APP_WISERVER mode is used.
+</li><li> Compile and upload the following sketch to <strong class="selflink">Wifi Bee</strong> using Arduino IDE as described for above example.
+</li><li> Press the reset button. Wait for the Wifi Bee to connect to WiFi network (Blue LED glows).
+<ul><li> Verbose information of the network communication can be seen; if, serial port terminal is open in Arduino IDE (with 57600 baud).
+</li></ul>
+</li><li> Open a web browser from a PC connected to <b>HOMENETWORK</b> and type the URL <code><a href="http://192.168.0.4">http://192.168.0.4</a></code>
+</li><li> WifiBee serves the Sensor value to browser. The HTML code is written in such a way that it auto refreshes every 10 seconds.
+</li></ul>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ * A simple sketch that uses WiServer and Seeedstudios Wifi Bee to serve a webpage.
+ * An analog sensor is connected to A2 of Wifi Bee (use Grove - XBee Carrier). This value is sent to the 
+ * client (a web browser). The HTML page is prepared based on sensor value. It also has direction 
+ * to refresh itself automatically.
+ */</span>
+ 
+<span class="coMULTI">/*This example is based on SimpleServer.pde. Copyrights rests with original author */</span>
+ 
+<span class="coMULTI">/* for this example to work, modify apps-conf.h file as below ; only APP_WISERVER mode is enabled : 
+--------------------------------------------------------------------
+ 
+//Here we include the header file for the application(s) we use in our project.
+//#define APP_WEBSERVER
+//#define APP_WEBCLIENT
+//#define APP_SOCKAPP
+//#define APP_UDPAPP
+#define APP_WISERVER
+----------------------------------------------------------------------
+*/</span>
+ 
+<span class="co2">#include &lt;WiServer.h&gt;</span>
+ 
+<span class="co2">#define WIRELESS_MODE_INFRA	1</span>
+<span class="co2">#define WIRELESS_MODE_ADHOC	2</span>
+ 
+<span class="co1">// Wireless configuration parameters ----------------------------------------</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> local_ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>,<span class="nu0">4</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// IP address of WifiBee</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> gateway_ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// router or gateway IP address</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> subnet_mask<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// subnet mask for the local network</span>
+<span class="kw4">const</span> prog_char ssid<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"HOMENETWORK"</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// max 32 bytes</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> security_type <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>	<span class="co1">// 0 - open; 1 - WEP; 2 - WPA; 3 - WPA2</span>
+ 
+<span class="co1">// WPA/WPA2 passphrase</span>
+<span class="kw4">const</span> prog_char security_passphrase<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"12345678"</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// max 64 characters</span>
+ 
+<span class="co1">// WEP 128-bit keys</span>
+<span class="co1">// sample HEX keys</span>
+prog_uchar wep_keys<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span> <span class="nu12">0x01</span>, <span class="nu12">0x02</span>, <span class="nu12">0x03</span>, <span class="nu12">0x04</span>, <span class="nu12">0x05</span>, <span class="nu12">0x06</span>, <span class="nu12">0x07</span>, <span class="nu12">0x08</span>, <span class="nu12">0x09</span>, <span class="nu12">0x0a</span>, <span class="nu12">0x0b</span>, <span class="nu12">0x0c</span>, <span class="nu12">0x0d</span>,	<span class="co1">// Key 0</span>
+				  <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="co1">// Key 1</span>
+				  <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="co1">// Key 2</span>
+				  <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>	<span class="co1">// Key 3</span>
+				<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// setup the wireless mode</span>
+<span class="co1">// infrastructure - connect to AP</span>
+<span class="co1">// adhoc - connect to another WiFi device</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> wireless_mode <span class="sy1">=</span> WIRELESS_MODE_INFRA<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">int</span>  sensorValue<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> ssid_len<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> security_passphrase_len<span class="sy4">;</span>
+<span class="co1">// End of wireless configuration parameters ----------------------------------------</span>
+ 
+<span class="kw4">int</span> counter<span class="sy4">;</span>
+<span class="co1">// This is our page serving function that generates web pages</span>
+<span class="kw4">boolean</span> sendMyPage<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> URL<span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="co1">// Check if the requested URL matches "/"</span>
+    <span class="kw1">if</span> <span class="br0">(</span><span class="kw3">strcmp</span><span class="br0">(</span>URL, <span class="st0">"/"</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="co1">// Use WiServer's print and println functions to write out the page content</span>
+        WiServer.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;html&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="co1">// Instruct the web broweser to refersh every 10 seconds </span>
+        WiServer.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;head&gt;&lt;meta http-equiv=<span class="es1">\"</span>refresh<span class="es1">\"</span> content=<span class="es1">\"</span>10<span class="es1">\"</span>&gt; &lt;/head&gt;"</span><span class="br0">)</span><span class="sy4">;</span> 
+        WiServer.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"&lt;H1&gt;WifiBee Connected...&lt;H1&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+        WiServer.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;H2&gt;Sensor Value = "</span><span class="br0">)</span><span class="sy4">;</span>
+        WiServer.<span class="kw3">print</span><span class="br0">(</span>sensorValue<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//A2 is connected to an exernal sensor. The RAW value is send to the client.</span>
+        WiServer.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"&lt;/H2&gt;&lt;/html&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="kw2">true</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="co1">// URL not found</span>
+    <span class="kw1">return</span> <span class="kw2">false</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+  <span class="co1">// Initialize WiServer and have it use the sendMyPage function to serve pages</span>
+  WiServer.<span class="kw3">init</span><span class="br0">(</span>sendMyPage<span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Enable Serial output and ask WiServer to generate log messages (optional)</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">57600</span><span class="br0">)</span><span class="sy4">;</span>
+  WiServer.<span class="me1">enableVerboseMode</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  sensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>A2<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//A2 is connected to an exernal sensor via Grove interface in Grove - XBee Carrier .</span>
+  <span class="co1">// Run WiServer</span>
+  WiServer.<span class="me1">server_task</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h4>  Simple Web Client that sends sensor feeds to Pachube.com </h4>
+<p><code> This section will be revised later </code>
+</p>
+<ul><li> Use the network setup as describe above.
+</li><li> Use the <a href="/Grove-XBee_Carrier" title="Grove - XBee Carrier">Grove - XBee Carrier</a> for programming and power.
+</li><li> Configure apps-conf.h, such that only APP_WISERVER mode is used.
+</li><li> Compile and upload the following sketch to <strong class="selflink">Wifi Bee</strong> using Arduino IDE as described for above example.
+</li><li> Press the reset button. Wait for the Wifi Bee to connect to WiFi network (Blue LED glows).
+<ul><li> Verbose information of the network communication can be seen; if, serial port terminal is open in Arduino IDE (with 57600 baud).
+</li></ul>
+</li><li> Wifi Bee periodically feeds the data to Pachube.com
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ * A simple sketch that uses WiServer library and Seeedstudio's WifiBee to send sensor
+ * feed to pachube.com ;
+ * This is modified version SimpleClient.pde. Copyright rests with original author. 
+ */</span>
+ 
+<span class="coMULTI">/* for this example to work, modify apps-conf.h file as below ; only APP_WISERVER mode is enabled : 
+--------------------------------------------------------------------
+//Here we include the header file for the application(s) we use in our project.
+//#define APP_WEBSERVER
+//#define APP_WEBCLIENT
+//#define APP_SOCKAPP
+//#define APP_UDPAPP
+#define APP_WISERVER
+----------------------------------------------------------------------
+*/</span>
+ 
+ 
+<span class="co2">#include &lt;WiServer.h&gt;</span>
+ 
+<span class="co2">#define WIRELESS_MODE_INFRA	1</span>
+<span class="co2">#define WIRELESS_MODE_ADHOC	2</span>
+ 
+<span class="co1">// Wireless configuration parameters ----------------------------------------</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> local_ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>,<span class="nu0">4</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// IP address of WifiBee</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> gateway_ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">192</span>,<span class="nu0">168</span>,<span class="nu0">0</span>,<span class="nu0">1</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// router or gateway IP address</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> subnet_mask<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">255</span>,<span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// subnet mask for the local network</span>
+<span class="kw4">const</span> prog_char ssid<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"HOMENETWORK"</span><span class="br0">}</span><span class="sy4">;</span><span class="co1">// max 32 bytes</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> security_type <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>	<span class="co1">// 0 - open; 1 - WEP; 2 - WPA; 3 - WPA2</span>
+ 
+<span class="co1">// WPA/WPA2 passphrase</span>
+<span class="kw4">const</span> prog_char security_passphrase<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> <span class="br0">{</span><span class="st0">"12345678"</span><span class="br0">}</span><span class="sy4">;</span>	<span class="co1">// max 64 characters</span>
+ 
+<span class="co1">// WEP 128-bit keys</span>
+<span class="co1">// sample HEX keys</span>
+prog_uchar wep_keys<span class="br0">[</span><span class="br0">]</span> PROGMEM <span class="sy1">=</span> 
+<span class="br0">{</span> <span class="nu12">0x01</span>, <span class="nu12">0x02</span>, <span class="nu12">0x03</span>, <span class="nu12">0x04</span>, <span class="nu12">0x05</span>, <span class="nu12">0x06</span>, <span class="nu12">0x07</span>, <span class="nu12">0x08</span>, <span class="nu12">0x09</span>, <span class="nu12">0x0a</span>, <span class="nu12">0x0b</span>, <span class="nu12">0x0c</span>, <span class="nu12">0x0d</span>,	<span class="co1">// Key 0</span>
+  <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="co1">// Key 1</span>
+  <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>,	<span class="co1">// Key 2</span>
+  <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>, <span class="nu12">0x00</span>	<span class="co1">// Key 3</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// setup the wireless mode</span>
+<span class="co1">// infrastructure - connect to AP</span>
+<span class="co1">// adhoc - connect to another WiFi device</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> wireless_mode <span class="sy1">=</span> WIRELESS_MODE_INFRA<span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> ssid_len<span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> security_passphrase_len<span class="sy4">;</span>
+<span class="co1">// End of wireless configuration parameters ----------------------------------------</span>
+ 
+ 
+<span class="co1">// Function that prints data from the server</span>
+<span class="kw4">void</span> printData<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> data, <span class="kw4">int</span> len<span class="br0">)</span> <span class="br0">{</span>
+ 
+  <span class="co1">// Print the data returned by the server</span>
+  <span class="co1">// Note that the data is not null-terminated, may be broken up into smaller packets, and </span>
+  <span class="co1">// includes the HTTP header. </span>
+  <span class="kw1">while</span> <span class="br0">(</span>len<span class="sy2">--</span> <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span>data<span class="sy2">++</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> 
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> sensorValue<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+<span class="co1">//Prepare data to the feed</span>
+<span class="kw4">void</span> pachubefeedData<span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+   sensorValue<span class="sy1">=</span><span class="kw3">analogRead</span><span class="br0">(</span>A2<span class="br0">)</span><span class="sy4">;</span>   <span class="co1">//Read analog sensor connected to A2 (Use Grove - XBee Carrier interface)</span>
+   WiServer.<span class="kw3">print</span><span class="br0">(</span>sensorValue<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+ 
+ 
+<span class="co1">// IP Address for pachube.com</span>
+uint8 ip<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">173</span>,<span class="nu0">203</span>,<span class="nu0">98</span>,<span class="nu0">29</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">char</span> hostName<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="st0">"www.pachube.com<span class="es1">\n</span>X-PachubeApiKey: YOUR_API_KEY_HERE<span class="es1">\n</span>Connection: close"</span><span class="sy4">;</span> <span class="co1">// Replace YOUR_API_KEY_HERE , with your API key</span>
+<span class="kw4">char</span> url<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="st0">"/api/12345.csv?_method=put"</span><span class="sy4">;</span> <span class="co1">//Replace 12345 with your feed number</span>
+ 
+<span class="co1">// A request that POSTS data to Pachube</span>
+POSTrequest postPachubeFeed<span class="br0">(</span>ip, <span class="nu0">80</span>, hostName, url, pachubefeedData<span class="br0">)</span><span class="sy4">;</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// Initialize WiServer (we'll pass NULL for the page serving function since we don't need to serve web pages) </span>
+  WiServer.<span class="kw3">init</span><span class="br0">(</span><span class="kw2">NULL</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Enable Serial output and ask WiServer to generate log messages (optional)</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">57600</span><span class="br0">)</span><span class="sy4">;</span>
+  WiServer.<span class="me1">enableVerboseMode</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Have the processData function called when data is returned by the server</span>
+  postPachubeFeed.<span class="me1">setReturnFunc</span><span class="br0">(</span>printData<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="co1">// Time (in millis) when the data should be retrieved </span>
+<span class="kw4">long</span> updateTime <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+ 
+  <span class="co1">// Check if it's time to send an update</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&gt;=</span> updateTime<span class="br0">)</span> <span class="br0">{</span>
+    postPachubeFeed.<span class="me1">submit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    
+    <span class="co1">// Send another update after a min</span>
+    updateTime <span class="sy2">+</span><span class="sy1">=</span> <span class="nu0">60</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// Run WiServer</span>
+  WiServer.<span class="me1">server_task</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<table border="1">
+<caption>
+</caption>
+<tr>
+<th>Part</th>
+<th>Quantity</th>
+<th>Value</th>
+<th>Package
+</th></tr>
+<tr>
+<td>C1</td>
+<td>1</td>
+<td>10u</td>
+<td>C_TAN_3X3.5
+</td></tr>
+<tr>
+<td>C2,C3</td>
+<td>2</td>
+<td>1u</td>
+<td>0603
+</td></tr>
+<tr>
+<td>C4</td>
+<td>1</td>
+<td>100n</td>
+<td>0603
+</td></tr>
+<tr>
+<td>J1</td>
+<td>1</td>
+<td>CK_2X3_2.0</td>
+<td>CK_2X3_2.0
+</td></tr>
+<tr>
+<td>PWR</td>
+<td>1</td>
+<td>red</td>
+<td>LED0603
+</td></tr>
+<tr>
+<td>R1</td>
+<td>1</td>
+<td>10k</td>
+<td>0603
+</td></tr>
+<tr>
+<td>R2,R3,R4,R5,R7</td>
+<td>5</td>
+<td>4.7k</td>
+<td>0603
+</td></tr>
+<tr>
+<td>R6</td>
+<td>1</td>
+<td>1k</td>
+<td>0603
+</td></tr>
+<tr>
+<td>U1</td>
+<td>1</td>
+<td>OPEN_BEE</td>
+<td>XBEE_EXT_SMD
+</td></tr>
+<tr>
+<td>U3</td>
+<td>1</td>
+<td>MRF24WB0MA</td>
+<td>MRF24WB0MA
+</td></tr>
+<tr>
+<td>U4</td>
+<td>1</td>
+<td>ATmega328P_MU1040</td>
+<td>MLF32X
+</td></tr>
+<tr>
+<td>WIFI</td>
+<td>1</td>
+<td>blue</td>
+<td>LED0603
+</td></tr>
+<tr>
+<td>X1</td>
+<td>1</td>
+<td>16MHz</td>
+<td>XTAL_3X2
+</td></tr></table>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.91b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> April 6, 2011
+</td></tr>
+<tr>
+<td width="300px"> v1.0
+</td>
+<td width="500px"> Change the width of the signal wire from 6 mil to 8 mil
+</td>
+<td width="200px"> Dec 13, 2011
+</td></tr></table>
+<h2>  Resources  </h2>
+<ul><li><a href="res/WifiBee_v1.0_Eagle_Files.zip">WifiBee v1.0 Eagle Files.zip</a>
+</li><li><a href="http://garden.seeedstudio.com/images/9/9f/WifiBee_v0.91b.pdf">WifiBee v0.91b schematics in pdf format</a>
+</li><li><a href="http://garden.seeedstudio.com/images/f/ff/Wifi_Bee_v0.91b_eagle.zip">Wifi Bee v0.91b design files in Eagle format</a>
+</li><li><a href="https://github.com/asynclabs/WiShield">WiShield Library</a>
+</li><li><a href="https://github.com/CapnBry/WiShield_user_contrib">a more up to date WiShield Library, compatible with Arduino 1.0</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,360 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino ADK Main Board</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino ADK Main Board</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Seeeduino_ADK_Main_Board.jpeg" width="400"/> <div class="thumbcaption"></div></div></div>
+
+<p>The Android 3.1 platform (also backported to Android 2.3.4) introduces Android Open Accessory support, which allows external USB hardware (an Android USB accessory) to interact with an Android-powered device in a special "accessory" mode. Based on the Google’s ADK reference design, we merged advantages of Seeeduino into our Seeeduino ADK Main Board. <br/>
+Now connect Seeeduino ADK Main Board to your Android mobile device and get started developing your custom accessory. <br/>
+<br/>
+<a href="http://www.seeedstudio.com/depot/seeeduino-adk-main-board-p-846.html?cPath=6_8"><b>SKU:ARD52028P</b></a>
+<br/>
+</p><p><br/>
+</p>
+<h2> Specifications</h2>
+<ul><li>Android Open Accessories development Kit (ADK) compatible (Android v2.3.4 and above)  <br/>
+</li><li>Works with Android Debug Bridge (ADB) using MicroBridge (Android v1.5 and above) <br/>
+</li><li>Simply works like an Arduino Mega with an integrated USB Shield <br/>
+</li><li>Operating voltage: 5v/3v3 <br/>
+</li><li>Input voltage: 6V - 18V <br/>
+</li><li>Digital I/O : 50 <br/>
+</li><li>Analog inputs: 16 <br/>
+</li><li>PWM outputs: 14 <br/>
+</li><li>Hardware serial ports (UART): 4 <br/>
+</li><li>I2C: 1 <br/>
+</li><li>Hardware SPI (up to 8Mbps): 1 <br/>
+</li><li>On board USB host(MAX3421) <br/>
+</li><li>On board USB slave(FT232RL) <br/>
+</li><li>Build-in 3.3V-500mA LDO power regulator. <br/>
+</li></ul>
+<h2>  Interface </h2>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/Seeeduino_ADK_Parts.jpg" width="500"/> <div class="thumbcaption">Seeeduino ADK Salient Features</div></div></div>
+<p><br clear="all"/>
+</p><p>Seeeduino ADK Hardware blocks are listed below:<br/>
+<b>A</b>: Micro USB Socket, connect main board to PC. Used for uploading sketch using Arduino IDE.<br/>
+<b>B</b>: Slide switch, to choose operating or I/O voltage: 3.3V or 5V<br/>
+<b>C</b>: USB A Plug, connect to Android Mobile Device.<br/>
+<b>D</b>: JST Conector / DC Jack, for external DC power supply. Do not connect PC while using external DC.<br/>
+<b>E</b>: Reset Button, conveniently  placed at the side to allow using reset while using shields.<br/>
+<b>F</b>: I/O pins<br/>
+<b>G</b>: ICSP，for programming Arduino Bootloader using AVR ICSP<br/>
+<b>H</b>: breakouts pins of Max3421E GPIO<br/>
+<b>I</b>: breakouts pins of FT232RL<br/>
+</p>
+<h2>  Demonstration </h2>
+<p>The following image illustrates an application example of <strong class="selflink">Seeeduino ADK Main Board</strong> with an Android Mobile. It runs the demo application based on <b>MicroBridge</b> provided illustrated this page. All basic electronic components are taken from <a href="/Arduino_Sidekick_Basic_Kit" title="Arduino Sidekick Basic Kit">Arduino Sidekick Basic Kit</a>.
+</p><p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:602px;"><img src="img/SeeeduinoADK_Setup.jpg" width="600"/> <div class="thumbcaption">Seeeduino ADK Main Board and Android Mobile Connection</div></div></div>
+<p><br clear="all"/>
+<img src="img/ADK_Demo.jpg" width="648"/>
+</p>
+<ul><li><b>Uploading Firmware</b>
+<ul><li>Set the VCC slide switch to 5V.
+</li><li>Connect the Seeeduino ADK Main Board - Micro USB to PC USB port.
+</li><li>Set the Board type in Arduino IDE to <b>Arduino Mega 2560</b>.
+</li><li>Compile the Demo Sketch and upload to Main Board.
+</li></ul>
+</li></ul>
+<ul><li><b>Android App</b>
+<ul><li>Install Android Platform Development Software.
+</li><li>Import the demo Android app to Eclipse Workspace.
+<ul><li>Connect the mobile device to PC and upload the application
+</li></ul>
+</li></ul>
+</li></ul>
+<ul><li>Connect the mobile to ADK Main Board.
+</li><li>Enable ADB in your Mobile device if not already enabled. This is only for MicroBridge.
+</li><li>Push the Reset button.
+</li></ul>
+<p><br/>
+</p>
+<h3>  Using MicroBridge  </h3>
+<p>The sample applications and library are available in the resources section. The following Arduino Sketch and Android code are commented well explaining the usage.
+</p>
+<ul><li><b>SeeeduinoADKDemo.pde</b>
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//Seeeduino ADK Demo using Niels Brouwers' MicroBridge library. </span>
+<span class="co1">//Connect a LED to D12 and a variable resistor(POT) to A0</span>
+ 
+<span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include &lt;Adb.h&gt;</span>
+ 
+<span class="co1">// Adb connection.</span>
+Connection <span class="sy2">*</span> connection<span class="sy4">;</span>
+ 
+<span class="co1">// Elapsed time for ADC sampling. The rate at which ADC value is sent to Android device.</span>
+<span class="kw4">long</span> lastTime<span class="sy4">;</span>
+ 
+<span class="co1">//State of LED. Initially OFF. </span>
+uint8_t LEDState<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="co1">// Event handler for the shell connection. </span>
+<span class="co1">// This event handler is called whenever data is sent from Android Device to Seeeduino ADK.</span>
+<span class="co1">// Any data / command to be sent to I/O of ADK has to be handled here.</span>
+<span class="co1">//</span>
+<span class="co1">// For eg: 1.Controlling an ouput port 2.Interacting with a device connected</span>
+<span class="co1">// to ADK via IIC or Serial Port.</span>
+ 
+<span class="kw4">void</span> adbEventHandler<span class="br0">(</span>Connection <span class="sy2">*</span> connection, adb_eventType event, uint16_t length, uint8_t <span class="sy2">*</span> data<span class="br0">)</span>
+<span class="br0">{</span>
+ 
+  <span class="co1">// In this example Data packets contain one byte and it decides the state of a LED connected to D12</span>
+  <span class="co1">// The size of data is predetermined for this application. Android device also uses the same size.</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>event <span class="sy1">==</span> ADB_CONNECTION_RECEIVE<span class="br0">)</span>
+  <span class="br0">{</span>
+     <span class="kw1">if</span><span class="br0">(</span>LEDState <span class="sy3">!</span><span class="sy1">=</span> data<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span>
+     <span class="br0">{</span>
+         <span class="kw3">digitalWrite</span><span class="br0">(</span><span class="nu0">12</span>, data<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// Change the state of LED </span>
+         <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>data<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span>,<span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span> 
+       	 LEDState <span class="sy1">=</span> data<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy4">;</span>          <span class="co1">// Store the State of LED</span>
+     <span class="br0">}</span>	
+  <span class="br0">}</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="co1">//Serial port debug purpose</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">57600</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Note start time</span>
+  lastTime <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Set Digital pin 12 (LED is connected) as output</span>
+  <span class="kw3">pinMode</span><span class="br0">(</span><span class="nu0">12</span>,<span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Initialise the ADB subsystem.  </span>
+  ADB<span class="sy4">::</span><span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Open an ADB stream to the phone's shell. Auto-reconnect. Use any unused port number eg:4568</span>
+  connection <span class="sy1">=</span> ADB<span class="sy4">::</span><span class="me2">addConnection</span><span class="br0">(</span><span class="st0">"tcp:4568"</span>, <span class="kw2">true</span>, adbEventHandler<span class="br0">)</span><span class="sy4">;</span>  
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="co1">//Check if ADC needs to be sampled.</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="br0">(</span><span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span> <span class="sy2">-</span> lastTime<span class="br0">)</span> <span class="sy1">&gt;</span> <span class="nu0">20</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    <span class="co1">//Read ADC value</span>
+    uint16_t data <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>A0<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">//Send the ADC value to Android device as two bytes of data.</span>
+    connection<span class="sy2">-</span><span class="sy1">&gt;</span><span class="kw3">write</span><span class="br0">(</span><span class="nu0">2</span>,<span class="br0">(</span>uint8_t<span class="sy2">*</span><span class="br0">)</span><span class="sy3">&amp;</span>data<span class="br0">)</span><span class="sy4">;</span>
+    lastTime <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+  <span class="co1">// Poll the ADB subsystem.</span>
+  ADB<span class="sy4">::</span><span class="me2">poll</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li><b>Android Application</b>
+</li><li>Download the complete Android application from <a href="http://garden.seeedstudio.com/images/1/1b/SeeeduinoADKDemo-App.zip">Seeeduino ADK Demo application package</a>. The main java file is listed below with usage comments :
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="java source-java"><pre class="de1"><span class="coMULTI">/* Application demonstrates the interaction between Seeeduino ADK and Android Device
+ * using Niels Brouwers' MicroBridge library. 
+ * 
+ * Android Device: Any device with Android v1.5 which supports ADB(Android Debug Bridge).   
+ *  
+ * This application uses a very simple (or a trivial) design to make it understandable.
+ * 
+ * Overview:
+ * 1.Seeeduino ADK Main Board periodically samples Analog Channel 0 and sends it
+ *   to Android Device for display. This value is displayed using a TextView and SeekBar Widgets
+ * 
+ * 2.Android device controls the state of a LED connected to Digital Pin 12 of ADK Main Board.
+ *   A Button Widget used for this.
+ * 
+ * Microbridge uses ADB based client-server implementation. The Server code that runs on Android
+ * device runs in a separate thread. Hence any update to UI widgets value has to be carried out 
+ * in UI thread. This application uses XML based UI creation as it is easier for adding addition
+ * UI Widgets. 
+ * 
+ */</span>
+<span class="kw1">package</span> <span class="co2">com.seeedstudio.SeeeduinoADKDemo</span><span class="sy0">;</span>
+ 
+<span class="kw1">import</span> <span class="co2">java.io.IOException</span><span class="sy0">;</span>
+ 
+<span class="kw1">import</span> <span class="co2">org.microbridge.server.AbstractServerListener</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">org.microbridge.server.Server</span><span class="sy0">;</span>
+ 
+<span class="kw1">import</span> <span class="co2">android.view.View</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.view.Window</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.view.View.OnClickListener</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.app.Activity</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.os.AsyncTask</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.os.Bundle</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.util.Log</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.widget.SeekBar</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.widget.TextView</span><span class="sy0">;</span>
+<span class="kw1">import</span> <span class="co2">android.widget.Button</span><span class="sy0">;</span>
+ 
+ 
+<span class="kw1">public</span> <span class="kw1">class</span> SeeeduinoADKDemo <span class="kw1">extends</span> Activity <span class="kw1">implements</span> OnClickListener <span class="br0">{</span>
+	<span class="kw1">private</span> <span class="kw4">int</span> adcSensorValue<span class="sy0">=</span><span class="nu0">10</span><span class="sy0">;</span>
+ 
+	<span class="co1">//UI Widgets</span>
+	TextView tvAdcvalue<span class="sy0">;</span>
+	SeekBar sbAdcValue<span class="sy0">;</span>
+	<span class="kw3">Button</span> bOutPutLED<span class="sy0">;</span>
+ 
+	<span class="kw4">boolean</span> LEDState <span class="sy0">=</span> <span class="kw2">false</span> <span class="sy0">;</span> <span class="co1">//initially OFF</span>
+ 
+	<span class="co1">// Create TCP server (based on  MicroBridge LightWeight Server). </span>
+	<span class="co1">// Note: This Server runs in a separate thread.</span>
+	Server server <span class="sy0">=</span> <span class="kw2">null</span><span class="sy0">;</span>
+ 
+	<span class="co3">/** Called when the activity is first created. */</span>
+	@Override
+	<span class="kw1">public</span> <span class="kw4">void</span> onCreate<span class="br0">(</span>Bundle savedInstanceState<span class="br0">)</span> <span class="br0">{</span>
+		<span class="kw1">super</span>.<span class="me1">onCreate</span><span class="br0">(</span>savedInstanceState<span class="br0">)</span><span class="sy0">;</span>
+		requestWindowFeature<span class="br0">(</span><span class="kw3">Window</span>.<span class="me1">FEATURE_NO_TITLE</span><span class="br0">)</span><span class="sy0">;</span>
+		setContentView<span class="br0">(</span>R.<span class="me1">layout</span>.<span class="me1">main</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+		bOutPutLED <span class="sy0">=</span> <span class="br0">(</span><span class="kw3">Button</span><span class="br0">)</span> findViewById<span class="br0">(</span>R.<span class="me1">id</span>.<span class="me1">buttonOuputLED</span><span class="br0">)</span><span class="sy0">;</span>
+		bOutPutLED.<span class="me1">setOnClickListener</span><span class="br0">(</span><span class="kw1">this</span><span class="br0">)</span><span class="sy0">;</span> 
+ 
+ 
+		<span class="co1">// Create TCP server (based on  MicroBridge LightWeight Server)</span>
+		<span class="kw1">try</span>
+		<span class="br0">{</span>
+			server <span class="sy0">=</span> <span class="kw1">new</span> Server<span class="br0">(</span><span class="nu0">4568</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//Use the same port number used in ADK Main Board firmware</span>
+			server.<span class="me1">start</span><span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span>			
+		<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw3">IOException</span> e<span class="br0">)</span>
+		<span class="br0">{</span>
+			Log.<span class="me1">e</span><span class="br0">(</span><span class="st0">"Seeeduino ADK"</span>, <span class="st0">"Unable to start TCP server"</span>, e<span class="br0">)</span><span class="sy0">;</span>
+			<span class="kw3">System</span>.<span class="me1">exit</span><span class="br0">(</span><span class="sy0">-</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+		<span class="br0">}</span>
+ 
+		server.<span class="me1">addListener</span><span class="br0">(</span><span class="kw1">new</span> AbstractServerListener<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+			@Override
+			<span class="kw1">public</span> <span class="kw4">void</span> onReceive<span class="br0">(</span>org.<span class="me1">microbridge</span>.<span class="me1">server</span>.<span class="me1">Client</span> client, <span class="kw4">byte</span><span class="br0">[</span><span class="br0">]</span> data<span class="br0">)</span>
+			<span class="br0">{</span>
+ 
+				<span class="kw1">if</span> <span class="br0">(</span>data.<span class="me1">length</span><span class="sy0">&lt;</span><span class="nu0">2</span><span class="br0">)</span> <span class="kw1">return</span><span class="sy0">;</span>
+				adcSensorValue <span class="sy0">=</span> <span class="br0">(</span>data<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">&amp;</span> 0xff<span class="br0">)</span> <span class="sy0">|</span> <span class="br0">(</span><span class="br0">(</span>data<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy0">&amp;</span> 0xff<span class="br0">)</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">8</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+				<span class="co1">//Any update to UI can not be carried out in a non UI thread like the one used</span>
+				<span class="co1">//for Server. Hence runOnUIThread is used.</span>
+				runOnUiThread<span class="br0">(</span><span class="kw1">new</span> <span class="kw3">Runnable</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+					@Override
+					<span class="kw1">public</span> <span class="kw4">void</span> run<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+						<span class="kw1">new</span> UpdateData<span class="br0">(</span><span class="br0">)</span>.<span class="me1">execute</span><span class="br0">(</span>adcSensorValue<span class="br0">)</span><span class="sy0">;</span>
+ 
+					<span class="br0">}</span>
+				<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+			<span class="br0">}</span>
+ 
+		<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>	 
+ 
+	<span class="br0">}</span>	<span class="co1">//End of TCP Server code </span>
+ 
+	<span class="co1">// UpdateData Asynchronously sends the value received from ADK Main Board. </span>
+	<span class="co1">// This is triggered by onReceive()</span>
+	<span class="kw1">class</span> UpdateData <span class="kw1">extends</span> AsyncTask<span class="sy0">&lt;</span><span class="kw3">Integer</span>, <span class="kw3">Integer</span>, String<span class="sy0">&gt;</span> <span class="br0">{</span>
+		<span class="co1">// Called to initiate the background activity</span>
+		@Override
+		<span class="kw1">protected</span> <span class="kw3">String</span> doInBackground<span class="br0">(</span><span class="kw3">Integer</span>... <span class="me1">sensorValue</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+			<span class="co1">//Init SeeekBar Widget to display ADC sensor value in SeekBar</span>
+			<span class="co1">//Max value of SeekBar is set to 1024</span>
+			SeekBar sbAdcValue <span class="sy0">=</span> <span class="br0">(</span>SeekBar<span class="br0">)</span> findViewById<span class="br0">(</span>R.<span class="me1">id</span>.<span class="me1">sbADCValue</span><span class="br0">)</span><span class="sy0">;</span>	    	
+			sbAdcValue.<span class="me1">setProgress</span><span class="br0">(</span>sensorValue<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span>    
+			<span class="kw1">return</span> <span class="br0">(</span><span class="kw3">String</span>.<span class="me1">valueOf</span><span class="br0">(</span>sensorValue<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>  <span class="co1">//This goes to result</span>
+ 
+		<span class="br0">}</span>
+ 
+		<span class="co1">// Called when there's a status to be updated</span>
+		@Override
+		<span class="kw1">protected</span> <span class="kw4">void</span> onProgressUpdate<span class="br0">(</span><span class="kw3">Integer</span>... <span class="me1">values</span><span class="br0">)</span> <span class="br0">{</span>
+			<span class="kw1">super</span>.<span class="me1">onProgressUpdate</span><span class="br0">(</span>values<span class="br0">)</span><span class="sy0">;</span>
+			<span class="co1">// Not used in this case</span>
+		<span class="br0">}</span>
+ 
+		<span class="co1">// Called once the background activity has completed</span>
+		@Override
+		<span class="kw1">protected</span> <span class="kw4">void</span> onPostExecute<span class="br0">(</span><span class="kw3">String</span> result<span class="br0">)</span> <span class="br0">{</span>
+			<span class="co1">//Init TextView Widget to display ADC sensor value in numeric. </span>
+			TextView tvAdcvalue <span class="sy0">=</span> <span class="br0">(</span>TextView<span class="br0">)</span> findViewById<span class="br0">(</span>R.<span class="me1">id</span>.<span class="me1">tvADCValue</span><span class="br0">)</span><span class="sy0">;</span>
+			tvAdcvalue.<span class="me1">setText</span><span class="br0">(</span><span class="kw3">String</span>.<span class="me1">valueOf</span><span class="br0">(</span>result<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+ 
+		<span class="br0">}</span>
+	<span class="br0">}</span>
+ 
+	<span class="co1">//Called when the LED button is clicked</span>
+	@Override
+	<span class="kw1">public</span> <span class="kw4">void</span> onClick<span class="br0">(</span><span class="kw3">View</span> v<span class="br0">)</span> <span class="br0">{</span>
+		<span class="kw4">byte</span> data<span class="sy0">;</span> 
+ 
+ 
+		<span class="co1">// Toggle the state of LED</span>
+		<span class="kw1">if</span><span class="br0">(</span>LEDState <span class="sy0">==</span> <span class="kw2">true</span><span class="br0">)</span>
+		<span class="br0">{</span>
+			LEDState <span class="sy0">=</span> <span class="kw2">false</span><span class="sy0">;</span>
+			data <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>
+			bOutPutLED.<span class="me1">setText</span><span class="br0">(</span><span class="st0">"LED Off"</span><span class="br0">)</span><span class="sy0">;</span>
+		<span class="br0">}</span>
+		<span class="kw1">else</span>
+		<span class="br0">{</span>
+			LEDState <span class="sy0">=</span> <span class="kw2">true</span><span class="sy0">;</span>
+			data <span class="sy0">=</span> <span class="nu0">1</span><span class="sy0">;</span>
+			bOutPutLED.<span class="me1">setText</span><span class="br0">(</span><span class="st0">"LED On"</span><span class="br0">)</span><span class="sy0">;</span>
+		<span class="br0">}</span>
+ 
+		<span class="kw1">try</span>
+		<span class="br0">{</span>
+			<span class="co1">//Send the state of LED to ADK Main Board as a byte</span>
+			server.<span class="me1">send</span><span class="br0">(</span><span class="kw1">new</span> <span class="kw4">byte</span><span class="br0">[</span><span class="br0">]</span> <span class="br0">{</span><span class="br0">(</span><span class="kw4">byte</span><span class="br0">)</span> data<span class="br0">}</span><span class="br0">)</span><span class="sy0">;</span>
+		<span class="br0">}</span> <span class="kw1">catch</span> <span class="br0">(</span><span class="kw3">IOException</span> e<span class="br0">)</span>
+		<span class="br0">{</span>
+			Log.<span class="me1">e</span><span class="br0">(</span><span class="st0">"Seeeduino ADK"</span>, <span class="st0">"problem sending TCP message"</span>, e<span class="br0">)</span><span class="sy0">;</span>
+		<span class="br0">}</span>	
+ 
+	<span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3>  Using Google ADK  </h3>
+<p>Visit <a href="http://developer.android.com/guide/topics/usb/adk.html">Android ADK Developer page</a> for complete documentation on how to use Accessory API.
+</p>
+<h3>  As Mega 2560 </h3>
+<p>Seeeduino ADK Main Board can be used as Seeeduino Mega 2560. It also works well with GROVE System. The Grove - Base Shield can be used to connect the numerous Grove modules available. 
+<br clear="all"/>
+<img src="img/Seeeduino_ADK_MainBoard_With_Stem_Base_Shield.jpg" width="400"/>
+<br clear="all"/>
+And following is a demo showing 2.8%27%27 TFT Touch Shield working with Seeeduino ADK Main Board.<br/>
+<img src="img/ADKMainBoard_TFTTouchShield_PhotoframeDemo.jpg" width="500"/>
+</p>
+<ul><li>Connect Seeeduino ADK Main Board to 2.8%27%27 TFT Touch Shield
+</li><li>Format SD card in FAT mode
+</li><li>Set the operating voltage slide switch to 3.3V
+</li><li>Copy few 24-bit Bitmap Images (.bmp) files of 240 x 320 size to SD Card. Few samples are present in <a href="http://seeedstudio.com/wiki/images/1/11/Tftbmp_demo.zip">bmp demo application archive</a>
+</li><li>Connect the SD card / microSD Card Adapter (with a microSD card) as shown in the illustration to <strong class="selflink">Seeeduino ADK Main Board</strong>
+</li></ul>
+<p><img src="img/TFT_Touch_Shield_photoframe.png" width="871"/>
+</p>
+<ul><li>Download and install <a href="http://seeedstudio.com/wiki/images/6/6e/Tft_touch_libraries.zip">TFT Touch Library</a>
+</li><li>Download <a href="https://github.com/adafruit/SD">SD Card</a> library and install it to Arduino folder.
+</li><li>Compile and upload <a href="http://seeedstudio.com/wiki/images/1/11/Tftbmp_demo.zip">this</a> sketch.
+</li></ul>
+<p><b>Output:</b><br/>
+<img src="img/TFT_Touch_Shield_PhotoframeDemo.jpg" width="500"/>
+</p>
+<ul><li>Refer <a href="/w/index.php?title=2.8%27%27_TFT_Touch_Shield&amp;action=edit&amp;redlink=1" title="2.8'' TFT Touch Shield (page does not exist)">2.8'' TFT Touch Shield</a> for more information.
+</li></ul>
+<ul><li> <b>Oleg Mazurov</b> of  <a href="http://www.circuitsathome.com/">Circuits@Home</a> is the one who originally designed USB Host Shield based on MAX3421E. This was adapted by Google's ADK Referece Board. His site has tons of information and code examples to use MAX3421E based USB Host Shield to with USB keyboard, Mouse, Bluetooth Dongle, Wii Remote, etc.
+</li></ul>
+<h2>  Resources  </h2>
+<ul><li> <a href="http://garden.seeedstudio.com/images/1/19/MicroBridge-ModifiedForSeeeduinoADK.zip">Modified MicroBridge Arduino Library</a>
+</li><li> <a href="res/Adb_for_Arduino1.0.zip">Modified MicroBridge Arduino Library for Arduino1.0</a>
+</li><li> <a href="http://garden.seeedstudio.com/images/1/1b/SeeeduinoADKDemo-App.zip">Seeeduino Demo - Android App</a>
+</li><li> <a href="http://garden.seeedstudio.com/images/6/67/Seeeduino_ADK_0.9b_final_Scehmatic.pdf">Seeeduino ADK Eagle Schematic PDF</a>
+</li><li> <a href="http://garden.seeedstudio.com/images/1/1a/Seeeduino_ADK_0.9b_final_Eagle_files.zip">Seeeduino ADK Eagle Schematic and Board Files</a>
+</li><li><a href="http://developer.android.com/guide/topics/usb/adk.html">Android Open Accessory Development Kit Page</a>
+</li><li><a href="http://developer.android.com/guide/developing/tools/adb.html">Android Debug Bridge Page</a>
+</li><li><a href="http://blogs.unpad.ac.id/dominodiaz/">MicroBridge Page</a>
+</li><li><a href="http://adrian-fh98.web.unair.ac.id/">Game controllers using USB Host Shield</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

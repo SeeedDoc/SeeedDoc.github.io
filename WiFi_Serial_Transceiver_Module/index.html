@@ -1,0 +1,156 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>WiFi Serial Transceiver Module</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>WiFi Serial Transceiver Module</h1>
+<h2> Tutorial for ESP8266 Serial WiFi Module </h2>
+<p>In this tutorial, we'll use a seeeduino to control the ESP8266 WiFi module to request a static page from the internet. This is a basic use of TCP socket, for other usage, please refer to the AT command guide of the module.
+</p><p>Material list:
+</p>
+<pre>   <a href="http://www.seeedstudio.com/depot/Seeeduino-V30-Atmega-328P-p-669.html">Seeeduino V3</a> / Arduino Uno
+   <a href="http://www.seeedstudio.com/depot/WiFi-Serial-Transceiver-Module-w-ESP8266-p-1994.html">ESP8266 Serial WiFi module</a>
+   <a href="http://www.seeedstudio.com/depot/UartSBee-V4-p-688.html">UartSBee v4</a> / other USB to TTL converter
+</pre>
+<p><b>Note：</b> We used a software serial to print some debugging information as there’s only one hardware serial on seeeduino board. But the limitation of software serial is that it can’t communicate in a higher baud rate than 19200. So part of the output from ESP module will be dropped because the baud rate 57600 of ESP module is higher than that of the software serial. If you have a board with more than one hardware serial (e.g. Arduino Mega 2560), the case will be easier.
+</p>
+<h3>  Step-By-Step </h3>
+<p><b>Step 1:</b> connect module as the following picture
+</p><p><img src="img/Wifi_connection.jpg" width="600"/>
+</p><p><b>Step 2:</b> Programe the seeeduino board.
+</p>
+<ol><li> Open Arduino IDE and create a new sketch;
+</li><li> Parse the following code into the sketch editor (need modifying the SSID and PASS macros into your own situation);
+</li></ol>
+<pre>   #include &lt;SoftwareSerial.h&gt;
+   #define SSID "xxxxxxxx"
+   #define PASS "xxxxxxxx"
+   #define DST_IP "220.181.111.85" //baidu.com
+   SoftwareSerial dbgSerial(10, 11); // RX, TX
+   void setup()
+   {
+     // Open serial communications and wait for port to open:
+     Serial.begin(57600);
+     Serial.setTimeout(5000);
+     dbgSerial.begin(9600); //can't be faster than 19200 for softserial
+     dbgSerial.println("ESP8266 Demo");
+     //test if the module is ready
+     Serial.println("AT+RST");
+     delay(1000);
+     if(Serial.find("ready"))
+     {
+       dbgSerial.println("Module is ready");
+     }
+     else
+     {
+       dbgSerial.println("Module have no response.");
+       while(1);
+     }
+     delay(1000);
+     //connect to the wifi
+     boolean connected=false;
+     for(int i=0;i&lt;5;i++)
+     {
+       if(connectWiFi())
+       {
+         connected = true;
+         break;
+       }
+     }
+     if (!connected){while(1);}
+     delay(5000);
+     //print the ip addr
+     /*Serial.println("AT+CIFSR");
+     dbgSerial.println("ip address:");
+     while (Serial.available())
+     dbgSerial.write(Serial.read());*/
+     //set the single connection mode
+     Serial.println("AT+CIPMUX=0");
+   }
+   void loop()
+   {
+     String cmd = "AT+CIPSTART=\"TCP\",\"";
+     cmd += DST_IP;
+     cmd += "\",80";
+     Serial.println(cmd);
+     dbgSerial.println(cmd);
+     if(Serial.find("Error")) return;
+     cmd = "GET / HTTP/1.0\r\n\r\n";
+     Serial.print("AT+CIPSEND=");
+     Serial.println(cmd.length());
+     if(Serial.find("&gt;"))
+     {
+       dbgSerial.print("&gt;");
+       }else
+       {
+         Serial.println("AT+CIPCLOSE");
+         dbgSerial.println("connect timeout");
+         delay(1000);
+         return;
+       }
+       Serial.print(cmd);
+       delay(2000);
+       //Serial.find("+IPD");
+       while (Serial.available())
+       {
+         char c = Serial.read();
+         dbgSerial.write(c);
+         if(c=='\r') dbgSerial.print('\n');
+       }
+       dbgSerial.println("====");
+       delay(1000);
+     }
+     boolean connectWiFi()
+     {
+       Serial.println("AT+CWMODE=1");
+       String cmd="AT+CWJAP=\"";
+       cmd+=SSID;
+       cmd+="\",\"";
+       cmd+=PASS;
+       cmd+="\"";
+       dbgSerial.println(cmd);
+       Serial.println(cmd);
+       delay(2000);
+       if(Serial.find("OK"))
+       {
+         dbgSerial.println("OK, Connected to WiFi.");
+         return true;
+         }else
+         {
+           dbgSerial.println("Can not connect to the WiFi.");
+           return false;
+         }
+       }
+</pre>
+<p><b>Step 3:</b> Open Serial Monitor and press the reset button of seeeduino board, you’ll see the output.
+</p><p>At last, Happy Hakcing! :)
+</p><p><br/>
+</p>
+<h2> Related Projects </h2>
+<p><a href="http://www.seeedstudio.com/recipe/">Recipe Community</a> is an awesome place where makers share their amazing works here.
+Our makers have made a lot of awesome projects with esp8266, check this out!
+</p>
+<h3> WiFi Scanner -Know the WiFi Signal around you</h3>
+<p><img src="img/Recipe-WiFi_Scanner-Know_the_WiFi_Signal_around_you.jpg" width="400"/>
+</p><p>Build your own Wifi Scanner with few simple steps, all you need to do is prepare:
+</p>
+<ul><li> A NodeMcu Dev. Board 
+</li><li> An  I2C OLED.
+</li><li> Some cables
+</li><li> And most importantly, a HOT HEART ON ESP8266
+</li></ul>
+<p><a href="http://www.seeedstudio.com/recipe/219-wifi-scanner-know-the-wifi-signal-around-you.html">So, why not make one for yourself?</a>
+</p>
+<h3> Primary IoT Make with NodeMcu -&gt;ESP8266&lt;-</h3>
+<p><img src="img/Recipe-Primary_IoT_Make_with_NodeMcu--ESP8266--.jpg" width="400"/>
+</p><p>An online Temperature&amp;Humidity Monitor made with:
+</p>
+<ul><li> A NodeMcu Dev. Board 
+</li><li> Grove - Temp&amp;Humi Sensor
+</li><li> Some cables
+</li></ul>
+<p>Another easy trick, <a href="http://www.seeedstudio.com/recipe/232-primary-iot-make-with-nodemcu-gt-esp8266-lt.html">why not make one for yourself?</a>
+</p><p><br/>
+</p><p>Na, not enough? <a href="http://www.seeedstudio.com/recipe/index.php?m=Home&amp;controller=Recipe&amp;action=productDetail&amp;id=6">More Awesome Projects with ESP8266</a>.
+</p><p>Even more Awesome Projects On <a href="http://www.seeedstudio.com/recipe/">Recipe</a>.
+</p><p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/3QVJCNK" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

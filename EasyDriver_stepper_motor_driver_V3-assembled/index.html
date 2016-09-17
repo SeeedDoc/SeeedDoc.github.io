@@ -1,0 +1,299 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>EasyDriver stepper motor driver V3 - assembled</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>EasyDriver stepper motor driver V3 - assembled</h1>
+
+<p><b>-- all text and all designs are from <a href="http://schmalzhaus.com/EasyDriver/">Brian Schmalz's Project page</a>.</b>
+</p><p>Bruce Shapiro got me to design and build the <a href="http://schmalzhaus.com/UBW">UBW (USB Bit Whacker) project</a> to solve his problem of disappearing parallel ports on computers. The UBW design has exceeded all of my expectations. As well as meeting the original design objectives, it has proven itself a great platform for many forms of firmware. But there was still a problem! Bruce traditionally used the UCN5804B stepper motor driver chip for his <a href="http://www.taomc.com/bits2bots/">EggBot</a> classes because it is easily breadboardable and very simple to use. Unfortunately, they are now $17 each and very difficult to find. Bruce wondered if I could design and build a replacement driver that would still be mountable on a breadboard, would still just need two input lines (step and direction) and would drive bi-polar stepper motors. And so now we have the EasyDriver design.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/easydriver-stepper-motor-driver-v3-assembled-p-219.html?cPath=170_173">MOT101D1P</a></b>
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/ezd1n.jpg">http://www.seeedstudio.com/depot/images/product/ezd1n.jpg</a>
+</p>
+<h2>  Features  </h2>
+<ul><li>feature1 
+</li><li>feature2 
+</li><li>feature3
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Application1 
+</li><li>Application2 
+</li><li>Application3
+</li></ul>
+<h2>  Cautions  </h2>
+<p>The warnings and wrong operations possible cause dangerous. 
+</p>
+<h2>  Schematic  </h2>
+<p>It is the schematic, the circuit about Eagle resource like .pdf should linked here in order to avoid memory exhausted. 
+</p>
+<h2>  Specification  </h2>
+<p>May include key specification and other specifications. 
+</p><p><br/>
+</p>
+<h3>  Key Specification  </h3>
+<table>
+<tr>
+<th> Item
+</th>
+<th> Minimum
+</th>
+<th> Typical
+</th>
+<th> Maximum
+</th></tr>
+<tr>
+<td width="400px"> Operate voltage
+</td>
+<td width="200px"> 3.0V
+</td>
+<td width="200px"> 3.3V
+</td>
+<td width="200px"> 3.6V
+</td></tr>
+<tr>
+<td> Communication Protocol
+</td>
+<td colspan="3" rowspan="1"> I2C and SPI
+</td></tr></table>
+<h2>  Pin definition and Rating  </h2>
+<h2>  Mechanic Dimensions  </h2>
+<h2>  Usage  </h2>
+<p><b>Status:</b>
+</p>
+<ul><li>(10/21/09) Note that v4.3 and v4.2 (and possibly others) have the MIN and MAX words backwards on the board. So if you have a small motor, be CAREFUL! The likely result is that you will set it to MIN, but a full 750mA will go through your motor, and it will get quite hot. There will be a new v4.4 soon which will fix this problem.
+</li><li>(12/02/09) Version 4.3 has now been released to SparkFun - only difference being two mounting holes.
+</li><li>(10/01/09) After a very long process (due to my procrastination and schedule) we finally have a new version of the EasyDriver! In very close collaboration with SparkFun, I'm happy to release version 4.2 to the world. This new version has several very nice new features, and still has the same great price, $15! Thanks Spark for making this design available to the world. (Some pictures on this page are from SparkFun.)
+</li><li>(09/17/08)Daniel Thompson has created an awesome tutorial (with movie) on using the EasyDriver with an Arduino to run stepper motors! Thanks Daniel!
+</li></ul>
+<p>NOTE: Many people attempt this setup without connecting the grounds of the power supply, EasyDriver and Arduino (or other pulse source) together. It tends to not work that way! So make sure you always connect the grounds, and you'll have much better luck.
+</p>
+<ul><li>(5/23/07) Added project files for V3 design.
+</li><li>(4/6/07) Initial webpage created. Documents V1, V2, and V3 design revisions of EasyDriver board.
+</li></ul>
+<table>
+<tr>
+<td colspan="6"><b>EasyDriver Hardware Versions Matrix</b>
+</td></tr>
+<tr>
+<td width="250px">
+</td>
+<td width="150px"> <b>Schematic</b>
+</td>
+<td width="150px"><b>Board</b>
+</td>
+<td width="150px"><b>Picture</b>
+</td>
+<td width="150px"><b>Guide</b>
+</td>
+<td width="150px"><b>Eagle Files and BOM</b>
+</td></tr>
+<tr>
+<td><b>EasyDriver V1</b>
+</td>
+<td>N.A.
+</td>
+<td>N.A.
+</td>
+<td>Here
+</td>
+<td>N.A.
+</td>
+<td>N.A.
+</td></tr>
+<tr>
+<td><b>EasyDriver V2</b>
+</td>
+<td>N.A.
+</td>
+<td>N.A.
+</td>
+<td>Here
+</td>
+<td>N.A.
+</td>
+<td>N.A.
+</td></tr>
+<tr>
+<td><b>EasyDriver V3</b>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v3/EasyDriverV3Schematic.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v3/EasyDriverV3LayoutBig.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v3/easydriverv3picture.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v3/EasyDriverV3_Description.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v3/EasyDriver_V3.zip">Here</a>
+</td></tr>
+<tr>
+<td><b>EasyDriver V42</b>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v42/EasyDriver_v42_sch.pdf">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v42/EasyDriver_v42_brd.pdf">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v42/EasyDriverV42_Top.PNG">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v42/EasyDriverV42_Guide.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v42/EasyDriver_v42.zip">Here</a>
+</td></tr>
+<tr>
+<td><b>EasyDriver V43</b>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v43/EasyDriver_v43_sch.pdf">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v43/EasyDriver_v43_brd.pdf">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v43/EasyDriver_V43_Top.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v43/EasyDriver_V43_Description.png">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v43/EasyDriver_v43.zip">Here</a>
+</td></tr>
+<tr>
+<td><b>EasyDriver V44</b>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v44/EasyDriver_v44_sch.pdf">Here</a>
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v44/EasyDriver_v44_brd.pdf">Here</a>
+</td>
+<td>N.A.
+</td>
+<td>N.A.
+</td>
+<td><a href="http://schmalzhaus.com/EasyDriver/EasyDriver_v44/EasyDriver_v44.zip">Here</a>
+</td></tr></table>
+<h3>  Hardware Installation  </h3>
+<h3>  Programming  </h3>
+<p>Includes important code snippet. 
+Demo code like : 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">Demo code
+<span class="br0">{</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Example  </h3>
+<p>The projects and application examples.
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<p>All the components used to produce the product. 
+</p>
+<h2>  FAQ  </h2>
+<p><b>Q) How do I adjust the current limit?</b><br/>
+<b>A)</b> Just turn R16 - the 10K current limit pot. At one limit, it will tell the driver chip to supply up to 750mA (limited by coil resistance and input voltage) per coil. At the other limit, it is 150mA/coil. More recent EasyDriver boards have silk screen words MIN and MAX, but I put them on backwards. Version v4.4 and above have the MIN/MAX labels correct.
+</p><p><b>Q) What kind of stepper motors can I use EasyDriver with?</b><br/>
+<b>A)</b> The Allegro 3967 driver chip that the EasyDriver is based off of is a bi-polar driver. This means it has a true H-bridge design internally, and sends current both ways through each of the two coils. You can use 4-wire, 6-wire or 8-wire stepper motors. The only kind you can't use is 5-wire stepper motors. (They need uni-polar drivers.)
+</p><p>Here's a little drawing on one way to hook up a six wire stepper motor to the EasyDriver.
+</p>
+<center><img src="img/EDto6wire.png" width="240"/></center>
+<p><b>Q) Why does EasyDriver get so hot?</b><br/>
+<b>A)</b> PWM current limiting drivers (so-called 'chopper' drivers) are turning the coil currents on and off very rapidly. This makes sure that the maximum amount of current (as set by R16, the current set pot) is _always_ flowing through the coils of the stepper motor, even if it is not moving at all. That's just how these things work. It means that the driver is constantly passing that much current through, and because its internal resistance is not zero, it dissipates some heat. If you turn R16 all the way up so that 750mA flows through each coil, the entire EasyDriver board will get hot to the touch. I've never burned my finger on it, but it certainly gets hot. (At the minimum - about 150mA/coil - it only gets barely warm.) You can put a small fan blowing across the board if you want to. But fear not, the driver chip has a thermal cut out at 165 degrees C, so it will protect itself. The boards have quite a bit of copper pour on them, to maximize heat dissipation, which helps a lot. Also the voltage regulator gets quite hot - this is because the driver chip needs 70mA at 5V for its logic supply. Depending upon what voltage you use into the M+ pin, the voltage regulator needs to drop that down to 5V (and throw the rest away as heat). So the higher the M+ voltage, the hotter that regulator will get.
+</p><p><b>Q) What hardware/software can I use to test my EasyDriver?</b><br/>
+<b>A)</b> Here's what I do. I solder headers in the pins of the EasyDriver and put it into a breadboard. I solder the wires on my stepper motor to a 4-pin .100" male header, and plug that into the breadboard so it connects properly to the EasyDriver. Then I take a PC power supply, and use the 12V from that into the GND and M+ pins on the EasyDriver. Then I tie the DIR pin to Ground with a wire. Then I take a square wave with a frequency of about 500Hz and put it into the STEP pin. This I generate with a signal generator or an Arduino or UBW. The motor should be spinning at this point. You can then take the DIR pin and connect it to +5V to see the motor go in the other direction. As the motor is running, you can slowly adjust the current adjust pot to see the effect that it has on the smoothness of the motor's motion.
+</p><p><b>Q) How do I connect my EasyDriver up?</b><br/>
+<b>A) (For Version 4.2)</b> All of the pins on the EasyDriver are on a .100" grid. If you solder .100 headers into the pins you want to use, it plugs into a standard breadboard. Once you plug it into a breadboard, you can then plug in your stepper motor to the four motor pins (JP3), your 8V to 30V motor power to the GND and M+ PWR IN pins (JP1), and your Step and Direction signals to the STEP, DIR and GND pins (JP2). The GND pin in the lower left corner of the board is really only there for mechanical support, but it is tied to ground and you can use it as such.You could also construct a simple 'carrier' board (on a proto board or some such) with female .100" headers for all for the EasyDriver pins. Then it would be easy to wire up as many EasyDrivers as you wanted to drive lots of stepper motors.
+</p><p><b>A) (For Version 3)</b> All nine of the pins on the EasyDriver are on a .100" grid. This means it plugs into a standard breadboard. Once you plug it into a breadboard, you can then plug in your stepper motor to the four motor pins (JP4), your 5V to 30V motor power to the GND and V+ pins (JP1), and your Step and Direction signals to the STP and DIR pins (J3). The GND pin in the lower left corner of the board is really only there for mechanical support, but it is tied to ground and you can use it as such.You could also construct a simple 'carrier' board (on a proto board or some such) with female .100" headers for all for the EasyDriver pins. Then it would be easy to wire up as many EasyDrivers as you wanted to drive lots of stepper motors.
+</p><p>Note that I made a couple of mistakes with the EasyDriver V3 silk screen. The STEP pin is not labeled, and the motor coil output pins are not clearly marked. This diagram should help clear up any problems:
+</p>
+<center><img src="img/EasyDriver_V43_Description.png" width="668"/></center>
+<p><b>Q) Man, this is a lot of work to just use the A3967 chip. Can't I just solder down a bunch of A3967s on my own board design and save a ton of money?</b><br/>
+<b>A)</b> Sure. &lt;grin&gt; The EasyDriver board is for people who want to spend a little bit of money and not have to worry about making their own board to hold the driver chip. It is for people who want a design that will 'just work' instead of having to try stuff out for themselves. It is for 'software folk' (like myself) who want to spend time writing code, not debugging hardware. It is for people who want to build an EggBot but can't get the 5804B chips. If you're designing your own board, then don't use an EasyDriver! Just put the chip down on your own board yourself.
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Image
+</th>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="200px"> <img src="img/Easydriverv1picture.png" width="200"/>
+</td>
+<td width="100px"> EasyDriver V1
+</td>
+<td width="500px"> This was the first attempt. I had two boards fabbed at BatchPCB (Very highly recommended). The design worked fine but because the board was so small it got _way_ too hot. Also did not have variable current limit or 5V regulator.
+</td>
+<td width="200px"> Jun 08, 2009
+</td></tr>
+<tr>
+<td><img src="img/Easydriverv2picture.png" width="200"/>
+</td>
+<td>EasyDriver V2
+</td>
+<td>This was the second attempt. I had some boards fabbed at Futurlec without solder mask or silkscreen. The board was twice the size of V1, and routed to dissipate heat much better. The 5V regulator was added. I have since modded the completed boards to add the variable current limit.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><img src="img/Easydriverv3picture.png" width="200"/>
+</td>
+<td>EasyDriver V3
+</td>
+<td>A refined version of V2, with the variable current limit on the board, and switched to 0603 components. I have not had any of these boards fabbed yet, as I'm confident in the design from the V2 boards. - Update: SparkFun is now selling these, and they work fine.
+</td>
+<td>
+</td></tr>
+<tr>
+<td><img src="img/EasyDriverV42_Top.PNG" width="200"/>
+</td>
+<td>EasyDriver V4.2
+</td>
+<td>Same footprint (as far as the holes go), slightly longer board, with lots of new features. Here are the difference from V3:
+<ul><li> Every I/O pin on the driver chip now comes out to headers, and is pulled up (or pulled down) with 10K resistors. This means you can now control every aspect of the driver chip yourself. You can change MS1 and MS2 to do full step, half step, quarter step or 1/8th step. You can put the chip to sleep or in reset (drastically reducing power consumption). Also, you get to play with PFD signal.
+</li><li> That horrible tiny pot from V3 is now a somewhat larger pot. :-) The really nice thing is that it doesn't have continuous rotation, so you know where MIN and MAX current are (finally!).
+</li><li> A power-good LED has been added so you know when the EasyDriver has 5V from the on-board regulator.
+</li><li> A ground pin has been added next to the STEP and DIR pins. This allows for a 3-pin cable to your Arduino or whatever you use to drive the EasyDriver.
+</li><li> By soldering SJ2 closed, you can switch the logic supply voltage for the EasyDriver from 5V to 3.3V. This allows interfacing with things like 3.3V Arduinos or other processors that only output 3.3V.
+</li><li> If you want to supply your own logic power to the EasyDriver, cut jumper SJ1, and supply 3.3V or 5V into pin 1 of JP4.
+</li><li> If you want the EasyDriver to power some small circuit, you can use the 5V (or 3.3V) coming from pin 1 of JP4. How much current can you pull from here? Well, feel the regulator. If it is uncomfortably hot, then you're using too much. How hot it gets depends upon what voltage you supply to the EasyDriver.
+</li><li> TP1 allows you to put a meter on the VREF signal as you turn the current adjust pot. Measuring this voltage allows you to calculate the actual max current being supplied to the motor. See the schematic for information on how to do this math. I never do this myself - I adjust the pot until things 'feel' right on my motors since every situation is different.
+</li><li> The value of the bulk cap is listed at 100uF on the datasheet, but 47uF is all that is really necessary. The bigger the better - but the Allegro datasheet says 47uF is fine. SparkFun may use 47uF caps on their boards and that's OK. 
+</li></ul>
+</td>
+<td>
+</td></tr>
+<tr>
+<td><img src="img/EasyDriver_V43_Top.png" width="200"/>
+</td>
+<td>EasyDriver V4.3
+</td>
+<td>Exactly the same as V4.2 except two mounting holes have been added based on user requests.
+</td>
+<td>
+</td></tr>
+<tr>
+<td>
+</td>
+<td>EasyDriver V4.4
+</td>
+<td>Exactly the same as V4.3 except the MIN/MAX silk screen error has been fixed
+</td>
+<td>Jan 25, 2011
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="http://schmalzhaus.com/EasyDriver/">Document</a>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy:<a href="http://www.seeedstudio.com/depot/easydriver-stepper-motor-driver-v3-assembled-p-219.html?cPath=170_173">http://www.seeedstudio.com/depot/easydriver-stepper-motor-driver-v3-assembled-p-219.html?cPath=170_173</a>.
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/Stepper_Motor_Driver_v2.3" title="Stepper Motor Driver v2.3">Stepper Motor Driver v2.3</a>
+</li><li><a href="/Stepper_Motor_Driver" title="Stepper Motor Driver">Stepper Motor Driver</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p><p><br/>
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,681 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove Speech Recognizer Kit for Arduino</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove Speech Recognizer Kit for Arduino</h1>
+
+<p>The Grove Speech Recognizer Kit for Arduino is designed for prototype of Smart Home which includes some basic home elements such as Speech Recognizer, Infrared Emitter. You can learn the functions and applications of Speech Recognizer quickly via this kit, the guideline shows some common demos, let's say you can play music via your speak command 'Play music', or turn on the light according to the corresponding command.
+</p><p><br/>
+</p>
+<h2>   Part List </h2>
+<p>1.	Grove - Speech Recognizer  SKU:101020232 <br/>
+2.	<a href="/Grove-MP3_v2.0">Grove - MP3 v2.0</a> <br/>
+3.	<a href="/index.php-title=Twig-RTC">Grove – RTC</a> <br/>
+4.	<a href="/Base_shield_v2">Base Shield</a> <br/>
+5.	<a href="/Grove-Infrared_Receiver">Grove - Infrared Receiver</a> <br/> 
+6.	<a href="/Grove-Infrared_Emitter">Grove - Infrared_Emitter</a> <br/>
+<br/>
+</p>
+<h2>   Application </h2>
+<h3> <font color="Blue">How to turn on the TV</font> </h3>
+<p>Sometimes, we want to control something by our voice, such as TV, air condition. Those devices are controlled by Infrared Remote controller, so we need to know what the code of each button of infrared remote controller first, and then put the code under our program. Finally your voice could trigger those button codes and you can control those devices like infrared remote controller.
+<br/><br/>
+Before create this demo you should prepare some necessary components:
+</p>
+<ul><li>Grove - Infrared Receiver
+</li><li>Grove - Infrared Emitter
+</li><li>Grove - Speech Recognizer
+</li><li>Base Shield
+</li><li>Arduino UNO
+</li><li>Infrared Remote controller
+</li></ul>
+<h4>   Get code of a infrared remote controller via Grove - Infrared Receiver </h4>
+<p>Download necessary libraries from github : <a href="https://github.com/Seeed-Studio/IRSendRev">IRSendRev</a> ,<font color="Red">pay attention to the path of your libraries: .../arduino/libraries </font>
+<br/>
+</p>
+<ul><li>Now open the example file of "recv" : File --&gt; Sketchbook --&gt; libraries --&gt; IRSendRev --&gt; recv.  
+</li><li>Upload the program to your Arduino UNO.
+</li><li>Plug Base Shield onto the Arduino UNO,and plug the Grove - Receiver onto the D2 port of Base Shield.
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> pinRecv <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span></pre></div></div>
+<dl><dd>Also you can change another port while modifying the definement of pin.
+</dd></dl>
+<ul><li>Open the monitor of Arduino UNO.
+</li></ul>
+<p><br/><br/>
+Press a button of any Infrared Remote Controller, you'll get the detailed information code of the button, see following:
+<br/><br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/IR_Receiver_IR_controller.png" width="900"/></div></div>
+<p><br/><br/>
+Write down the detailed information of the button you want to press. Following are the information of a button:
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="sy2">+------------------------------------------------------+</span>
+LEN <span class="sy1">=</span> <span class="nu0">9</span>
+START_H<span class="sy4">:</span> <span class="nu0">179</span>	START_L<span class="sy4">:</span> <span class="nu0">88</span>
+DATA_H<span class="sy4">:</span> <span class="nu0">11</span>	DATA_L<span class="sy4">:</span> <span class="nu0">33</span>
+ 
+DATA_LEN <span class="sy1">=</span> <span class="nu0">4</span>
+DATA<span class="sy4">:</span> <span class="nu12">0x80</span>	<span class="nu12">0x7E</span>	<span class="nu12">0x10</span>	<span class="nu12">0xEF</span>	
+DATA<span class="sy4">:</span> <span class="nu0">128</span>	<span class="nu0">126</span>	<span class="nu0">16</span>	<span class="nu0">239</span>	
+<span class="sy2">+------------------------------------------------------+</span></pre></div></div>
+<p><br/>
+</p>
+<h4>  Modify the IRSend program  </h4>
+<p>Now we can use the previous information code of a button. 
+</p>
+<ul><li>Open the example file of "send" : File --&gt; Sketchbook --&gt; libraries --&gt; IRSendRev --&gt; send.
+</li><li>Upload the program to your Arduino UNO.
+</li><li>Plug Base Shield onto the Arduino UNO,and plug the Grove - Receiver onto the D3 port of Base Shield.
+</li></ul>
+<p><br/>
+First we need modify the default information of the button:
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">unsigned</span> <span class="kw4">char</span> dtaSend<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> dtaInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  ............
+<span class="br0">}</span></pre></div></div>
+<p>Modify those information according to the previous one you wrote:
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">unsigned</span> <span class="kw4">char</span> dtaSend<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> dtaInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    dtaSend<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">9</span><span class="sy4">;</span>			<span class="co1">// all data that needs to be sent</span>
+    dtaSend<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">179</span><span class="sy4">;</span>			<span class="co1">// the logic high duration of a button</span>
+    dtaSend<span class="br0">[</span>BIT_START_L<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">88</span><span class="sy4">;</span>			<span class="co1">// the logic low duration of a button</span>
+    dtaSend<span class="br0">[</span>BIT_DATA_H<span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">11</span><span class="sy4">;</span>			<span class="co1">// the logic "long" duration in the communication</span>
+    dtaSend<span class="br0">[</span>BIT_DATA_L<span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">33</span><span class="sy4">;</span>			<span class="co1">// the logic "short" duration in the communication</span>
+ 
+    dtaSend<span class="br0">[</span>BIT_DATA_LEN<span class="br0">]</span>   <span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span>			<span class="co1">// Number of data which will sent. If the number is other, you should increase or reduce dtaSend[BIT_DATA+x].</span>
+ 
+    dtaSend<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">0</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">128</span><span class="sy4">;</span>			<span class="co1">// data that will sent</span>
+    dtaSend<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">1</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">126</span><span class="sy4">;</span>
+    dtaSend<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">2</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">16</span><span class="sy4">;</span>
+    dtaSend<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">3</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">239</span><span class="sy4">;</span>
+    <span class="co1">//dtaSend[BIT_DATA+4]     = 192;</span>
+    <span class="co1">//dtaSend[BIT_DATA+5]     = 63;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+You can observe that:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">DATA_LEN <span class="sy1">=</span> <span class="nu0">4</span></pre></div></div>
+<p>So you can note or delete those two lines.
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">    <span class="co1">//dtaSend[BIT_DATA+4]     = 192;</span>
+    <span class="co1">//dtaSend[BIT_DATA+5]     = 63;</span></pre></div></div>
+<p><br/>
+Of course you can also define many buttons:
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;IRSendRev.h&gt;</span>
+ 
+<span class="co2">#define BIT_LEN         0</span>
+<span class="co2">#define BIT_START_H     1</span>
+<span class="co2">#define BIT_START_L     2</span>
+<span class="co2">#define BIT_DATA_H      3</span>
+<span class="co2">#define BIT_DATA_L      4</span>
+<span class="co2">#define BIT_DATA_LEN    5</span>
+<span class="co2">#define BIT_DATA        6</span>
+ 
+<span class="kw4">const</span> <span class="kw4">int</span> ir_freq <span class="sy1">=</span> <span class="nu0">38</span><span class="sy4">;</span>                
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> OpenTV<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> CloseTV<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> IncreaseTemp<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> DecreaseTemp<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> OpenTVInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    OpenTV<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">11</span><span class="sy4">;</span>			
+    OpenTV<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">179</span><span class="sy4">;</span>			
+    <span class="coMULTI">/*............ omit ............*/</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> CloseTVInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    CloseTV<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">11</span><span class="sy4">;</span>			
+    CloseTV<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">179</span><span class="sy4">;</span>			
+    <span class="coMULTI">/*............ omit ............*/</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> IncreaseTempInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    IncreaseTemp<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">11</span><span class="sy4">;</span>			
+    IncreaseTemp<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">179</span><span class="sy4">;</span>			
+    <span class="coMULTI">/*............ omit ............*/</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> DecreaseTempInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    DecreaseTemp<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">11</span><span class="sy4">;</span>			
+    DecreaseTemp<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">179</span><span class="sy4">;</span>			
+   <span class="coMULTI">/*............ omit ............*/</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    OpenTVInit<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    CloseTVInit<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    IncreaseTempInit<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    DecreaseTempInit<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    IR.<span class="me1">Send</span><span class="br0">(</span>OpenTV, <span class="nu0">38</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">200</span><span class="br0">)</span><span class="sy4">;</span>
+    IR.<span class="me1">Send</span><span class="br0">(</span>CloseTV, <span class="nu0">38</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">200</span><span class="br0">)</span><span class="sy4">;</span>
+    IR.<span class="me1">Send</span><span class="br0">(</span>IncreaseTemp, <span class="nu0">38</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">200</span><span class="br0">)</span><span class="sy4">;</span>
+    IR.<span class="me1">Send</span><span class="br0">(</span>DecreaseTemp, <span class="nu0">38</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h4>  Add Speech Recognizer to your IRSend program  </h4>
+<ul><li>It's very simple to use Speech Recognizer alone, please see the wiki of it first.
+</li></ul>
+<p>We can choose what buttons we need according to the table&lt;ref&gt;Table of return value, <a href="/Seeed_BLE_Shield_v1">Grove - Speech Recognizer</a>&lt;/ref&gt; of return value of Speech Recognizer. Following is the table of return value:<br/>
+</p>
+<center>
+<table border="1">
+<tr>
+<th> Command
+</th>
+<th> Return Value
+</th></tr>
+<tr>
+<td width="200px"> Turn on the light
+</td>
+<td width="200px"> 1
+</td></tr>
+<tr>
+<td> Turn off the light
+</td>
+<td> 2
+</td></tr>
+<tr>
+<td> Play music
+</td>
+<td> 3
+</td></tr>
+<tr>
+<td> Pause
+</td>
+<td> 4
+</td></tr>
+<tr>
+<td> Next
+</td>
+<td> 5
+</td></tr>
+<tr>
+<td> Previous
+</td>
+<td> 6
+</td></tr>
+<tr>
+<td> Up
+</td>
+<td> 7
+</td></tr>
+<tr>
+<td> Down
+</td>
+<td> 8
+</td></tr>
+<tr>
+<td> Turn on the TV
+</td>
+<td> 9
+</td></tr>
+<tr>
+<td> Turn off the TV
+</td>
+<td> 10
+</td></tr>
+<tr>
+<td> Increase temperature
+</td>
+<td> 11
+</td></tr>
+<tr>
+<td> Decrease temperature
+</td>
+<td> 12
+</td></tr>
+<tr>
+<td> What's the time
+</td>
+<td> 13
+</td></tr>
+<tr>
+<td> Open the door
+</td>
+<td> 14
+</td></tr>
+<tr>
+<td> Close the door
+</td>
+<td> 15
+</td></tr>
+<tr>
+<td> Left
+</td>
+<td> 16
+</td></tr>
+<tr>
+<td> Right
+</td>
+<td> 17
+</td></tr>
+<tr>
+<td> Stop
+</td>
+<td> 18
+</td></tr>
+<tr>
+<td> Start
+</td>
+<td> 19
+</td></tr>
+<tr>
+<td> Mode 1
+</td>
+<td> 20
+</td></tr>
+<tr>
+<td> Mode 2
+</td>
+<td> 21
+</td></tr>
+<tr>
+<td> Go
+</td>
+<td> 22
+</td></tr></table></center>
+<p><br/>
+The following example uses two commands: "Turn of the TV" and "Turn off the TV"
+</p>
+<ul><li>After reading, we can embed the program of Speech Recognizer in the IRSend program. See the following completed program:
+</li></ul>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;IRSendRev.h&gt;</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+<span class="coMULTI">/*========  IR type ========*/</span>
+ 
+<span class="co2">#define BIT_LEN         0</span>
+<span class="co2">#define BIT_START_H     1</span>
+<span class="co2">#define BIT_START_L     2</span>
+<span class="co2">#define BIT_DATA_H      3</span>
+<span class="co2">#define BIT_DATA_L      4</span>
+<span class="co2">#define BIT_DATA_LEN    5</span>
+<span class="co2">#define BIT_DATA        6</span>
+<span class="kw4">const</span> <span class="kw4">int</span> ir_freq <span class="sy1">=</span> <span class="nu0">38</span><span class="sy4">;</span>                 <span class="co1">// 38k</span>
+ 
+<span class="coMULTI">/* ========  How many IR buttons you wanna send  ========*/</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> OpenTV<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">unsigned</span> <span class="kw4">char</span> CloseTV<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+ 
+<span class="coMULTI">/*=========  Choose the pins of Speech Recognizer  ==========*/</span>
+ 
+<span class="co2">#define SOFTSERIAL_RX_PIN  5</span>
+<span class="co2">#define SOFTSERIAL_TX_PIN  6</span>
+ 
+<span class="kw2">SoftwareSerial</span> speech<span class="br0">(</span>SOFTSERIAL_RX_PIN,SOFTSERIAL_TX_PIN<span class="br0">)</span><span class="sy4">;</span>
+ 
+ 
+<span class="coMULTI">/* =======  How to write the IR data  ========*/</span>
+<span class="coMULTI">/* ====  You can get those data via IR Recevier  ==== */</span>
+ 
+<span class="kw4">void</span> OpenTVInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  OpenTV<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">9</span><span class="sy4">;</span>			<span class="co1">// all data that needs to be sent</span>
+  OpenTV<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">180</span><span class="sy4">;</span>			<span class="co1">// the logic high duration of "OpenTV"</span>
+  OpenTV<span class="br0">[</span>BIT_START_L<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">88</span><span class="sy4">;</span>			<span class="co1">// the logic low duration of "OpenTV"</span>
+  OpenTV<span class="br0">[</span>BIT_DATA_H<span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">11</span><span class="sy4">;</span>			<span class="co1">// the logic "long" duration in the communication</span>
+  OpenTV<span class="br0">[</span>BIT_DATA_L<span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">33</span><span class="sy4">;</span>			<span class="co1">// the logic "short" duration in the communication</span>
+ 
+  OpenTV<span class="br0">[</span>BIT_DATA_LEN<span class="br0">]</span>   <span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span>			<span class="co1">// Number of data which will sent. If the number is other, you should increase or reduce dtaSend[BIT_DATA+x].</span>
+ 
+  OpenTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">0</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">50</span><span class="sy4">;</span>			<span class="co1">// data that will sent</span>
+  OpenTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">1</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">166</span><span class="sy4">;</span>
+  OpenTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">2</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">80</span><span class="sy4">;</span>
+  OpenTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">3</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">175</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> CloseTVInit<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  CloseTV<span class="br0">[</span>BIT_LEN<span class="br0">]</span>        <span class="sy1">=</span> <span class="nu0">9</span><span class="sy4">;</span>			<span class="co1">// all data that needs to be sent</span>
+  CloseTV<span class="br0">[</span>BIT_START_H<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">178</span><span class="sy4">;</span>			<span class="co1">// the logic high duration of "CloseTV"</span>
+  CloseTV<span class="br0">[</span>BIT_START_L<span class="br0">]</span>    <span class="sy1">=</span> <span class="nu0">89</span><span class="sy4">;</span>			<span class="co1">// the logic low duration of "CloseTV"</span>
+  CloseTV<span class="br0">[</span>BIT_DATA_H<span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">10</span><span class="sy4">;</span>			<span class="co1">// the logic "long" duration in the communication</span>
+  CloseTV<span class="br0">[</span>BIT_DATA_L<span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">33</span><span class="sy4">;</span>			<span class="co1">// the logic "short" duration in the communication</span>
+ 
+  CloseTV<span class="br0">[</span>BIT_DATA_LEN<span class="br0">]</span>   <span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span>			<span class="co1">// Number of data which will sent. If the number is other, you should increase or reduce dtaSend[BIT_DATA+x].</span>
+ 
+  CloseTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">0</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">50</span><span class="sy4">;</span>			<span class="co1">// data that will sent</span>
+  CloseTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">1</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">166</span><span class="sy4">;</span>
+  CloseTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">2</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">168</span><span class="sy4">;</span>
+  CloseTV<span class="br0">[</span>BIT_DATA<span class="sy2">+</span><span class="nu0">3</span><span class="br0">]</span>     <span class="sy1">=</span> <span class="nu0">87</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  OpenTVInit<span class="br0">(</span><span class="br0">)</span>
+  CloseTVInit<span class="br0">(</span><span class="br0">)</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  speech.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  speech.<span class="me1">listen</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw4">int</span> a<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span><span class="br0">(</span>speech.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    a <span class="sy1">=</span> speech.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// Read the return value from the Speech Recognizer</span>
+    <span class="kw1">switch</span> <span class="br0">(</span>a<span class="br0">)</span>
+    <span class="br0">{</span>
+    <span class="kw1">case</span> <span class="nu0">9</span><span class="sy4">:</span>                     <span class="co1">//  if (return value) then send (IR data)</span>
+      IR.<span class="me1">Send</span><span class="br0">(</span>OpenTV, <span class="nu0">38</span><span class="br0">)</span><span class="sy4">;</span>  
+      <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="nu0">10</span><span class="sy4">:</span>
+      IR.<span class="me1">Send</span><span class="br0">(</span>CloseTV, <span class="nu0">38</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">default</span><span class="sy4">:</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3> <font color="Blue">How to control music </font> </h3>
+<p>Watch the commands of Speech Recognizer, there're many commands which are related to music, such as "Play music", "Pause", "Stop", "Previous", "Next". So let's do this Speech Music Box!
+<br/>
+Download necessary libraries from github: <a href="https://github.com/Seeed-Studio/Grove_Serial_MP3_Player_V2.0">Grove_Serial_MP3_Player_V2.0</a>&lt;ref&gt;library, <a href="/Grove-MP3_v2.0">Grove - MP3 v2.0</a>&lt;/ref&gt;, <font color="Red">pay attention to the path of your libraries: .../arduino/libraries </font>.<br/>
+</p>
+<h4>  Useful functions about Grove - MP3 v2  </h4>
+<p>There're some useful basic functions of Grove - MP3:
+<br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">PlayPause<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// pause music</span>
+PlayResume<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// restart a music</span>
+PlayNext<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// next song</span>
+PlayPrevious<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// previous song</span>
+PlayLoop<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//  loop all songs</span>
+SetVolume<span class="br0">(</span>uint8_t volume<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// set volume. default value is "0x0E", the range is 0x00 to 0x1E.</span>
+IncreaseVolume<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// increase volume</span>
+DecreaseVolume<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// decrease volume</span></pre></div></div>
+<p><br/>
+</p><p>But there're some special functions you need to pay attention: 
+</p>
+<ul><li>SelectPlayerDevice(uint8_t device). <i>The default device value is 0x02, Select SD card as the player device.</i><br/>
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">SelectPlayerDevice<span class="br0">(</span><span class="nu12">0x02</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><br/><br/>
+</p>
+<ul><li>SpecifyMusicPlay(uint16_t index). <i>play a song by name.</i>
+</li></ul>
+<dl><dd>Pay attention to the name of songs, you can set a name like following type:
+</dd></dl>
+<p><br/><br/>
+</p>
+<center><img src="img/Type_of_songs.png" width="250"/></center>
+<p><br/>
+</p>
+<dl><dd>So we can play the song "005" by this function:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">SpecifyMusicPlay<span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><br/><br/>
+</p>
+<ul><li>SpecifyfolderPlay(uint8_t folder, uint8_t index);   // play a song by name in a appointed folder
+</li></ul>
+<dl><dd>Furthermore, sometimes we may play music in a new folder, the previous function comes in handy.
+</dd></dl>
+<center><img src="img/Form_of_folder.png" width="500"/></center><br/><br/>
+<dl><dd><font color="Red"> Notice:  The folder index range is 01-99, so the folders’ name will only be any number 01 between 99. Pay attention to the number between 1-9, the name of folder should be added to 01-09.</font>
+</dd></dl>
+<p><br/>
+So if we want to play the "005" in the folder "01", we can do this:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">SpecifyfolderPlay<span class="br0">(</span><span class="nu0">1</span>,<span class="nu0">5</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><br/><br/>
+</p>
+<ul><li>Other attention: 
+</li></ul>
+<dl><dd>Each song has its length of time, so if you want to appoint songs one by one, there've two ways you can choose:
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw3">delay</span><span class="br0">(</span>length of <span class="kw3">time</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// delay the length of time until the song is played out</span>
+ 
+<span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//  Return: 0: played out;       1:  not play out</span></pre></div></div>
+<p><br/><br/>
+</p>
+<dl><dd>Normally, we can use the latter. For example: 
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">    SpecifyMusicPlay<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+    SpecifyMusicPlay<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+    SpecifyMusicPlay<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><br/><br/>
+</p>
+<h4>  Integrated Program </h4>
+<p>OK, let's embed Speech Recognizer and Grove - MP3 together. The following demo can control some MP3 functions: play music, pause music, continue music, next song, previous song.
+<br/>
+</p>
+<ul><li>Copy the program and upload it to your Arduino UNO.
+</li><li>Plug Base Shield onto the Arduino UNO,and plug the Grove - MP3 v2 onto the D2 port of Base Shield.
+</li></ul>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+<span class="co2">#include &lt;MP3Player_KT403A.h&gt;</span>
+ 
+<span class="coMULTI">/****** Define the pins of MP3 ******/</span>
+<span class="kw2">SoftwareSerial</span> mp3<span class="br0">(</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="coMULTI">/****** Define the pins of Speech Recognizer ******/</span>
+<span class="co2">#define SOFTSERIAL_RX_PIN  5</span>
+<span class="co2">#define SOFTSERIAL_TX_PIN  6</span>
+ 
+<span class="kw2">SoftwareSerial</span> speech<span class="br0">(</span>SOFTSERIAL_RX_PIN,SOFTSERIAL_TX_PIN<span class="br0">)</span><span class="sy4">;</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  mp3.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  speech.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  SelectPlayerDevice<span class="br0">(</span><span class="nu12">0x02</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// Select SD card as the player device.</span>
+  SetVolume<span class="br0">(</span><span class="nu12">0x15</span><span class="br0">)</span><span class="sy4">;</span>                <span class="co1">// Set the volume, the range is 0x00 to 0x1E.</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw4">int</span> a<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+  <span class="kw1">if</span><span class="br0">(</span>speech.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    a <span class="sy1">=</span> speech.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// Read the return value from the Speech Recognizer</span>
+    <span class="kw1">switch</span> <span class="br0">(</span>a<span class="br0">)</span>
+    <span class="br0">{</span>
+    <span class="kw1">case</span> <span class="nu0">3</span><span class="sy4">:</span>      <span class="co1">//  speech command : Play music</span>
+      SpecifyMusicPlay<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// MP3: play the name of "001"</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="nu0">4</span><span class="sy4">:</span>   <span class="co1">//  speech command : Pause</span>
+      PlayPause<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// MP3: pause music</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="nu0">19</span><span class="sy4">:</span>   <span class="co1">//  speech command : Start</span>
+      PlayResume<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// MP3: continue music</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="nu0">5</span><span class="sy4">:</span>   <span class="co1">//  speech command : Next</span>
+      PlayNext<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// MP3: play next song</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">case</span> <span class="nu0">6</span><span class="sy4">:</span>   <span class="co1">//  speech command : Previous</span>
+      PlayPrevious<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// MP3: play previous song</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="kw1">default</span><span class="sy4">:</span>
+      <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3> <font color="Blue">How to broadcast real-time</font> </h3>
+<p>Did you use Grove - MP3 to broadcast real-time? Let's have a try via Speech Recognizer, Grove - MP3, and Grove - RTC.
+<br/>
+</p>
+<h4>  Adjust the real-time </h4>
+<p>Download necessary libraries from github: <font color="Red"><a href="https://github.com/Seeed-Studio/RTC_DS1307">RTC_DS1307</a>&lt;ref&gt;<a href="/Grove-RTC">library, Grove - RTC</a>&lt;/ref&gt;, pay attention to the path of your libraries: .../arduino/libraries</font> .
+</p>
+<ul><li>Open the example file of "SetTimeAndDisplay" : File --&gt; Sketchbook --&gt; libraries --&gt; RTC_DS1307 --&gt; SetTimeAndDisplay.
+</li><li>Plug Base Shield onto the Arduino UNO,and plug the Grove - RTC onto the  I2C of Base Shield.
+</li></ul>
+<p><br/>
+</p>
+<ul><li>Set the right time of RTC.
+</li></ul>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">        <span class="kw3">clock</span>.<span class="me1">fillByYMD</span><span class="br0">(</span><span class="nu0">2016</span>,<span class="nu0">1</span>,<span class="nu0">19</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//May 23,2016</span>
+	<span class="kw3">clock</span>.<span class="me1">fillByHMS</span><span class="br0">(</span><span class="nu0">15</span>,<span class="nu0">28</span>,<span class="nu0">30</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//15:28 30"</span>
+	<span class="kw3">clock</span>.<span class="me1">fillDayOfWeek</span><span class="br0">(</span>Mon<span class="br0">)</span><span class="sy4">;</span><span class="co1">//Saturday</span></pre></div></div>
+<p><br/>
+</p>
+<ul><li>Upload the modified program to your Arduino UNO.
+</li></ul>
+<h4>  Text-to-speech </h4>
+<p>As all we known, it has 60 numbers while broadcasting time (0 ~ 59), and we can mouth some words before the MP3 broadcast the time (It's). So we need to add 61 sound files in SD Card.<br/>
+<font color="Red">But there're some tips about SD card you need to pay attention to:</font>
+</p>
+<ul><li>Form of SD Card: FAT32.
+</li><li>Format SD Card before deleting any songs; Nothing should to do while adding any songs.
+</li><li>The sequence of playing is depended on the sequence of song addition in SD Card. <i>so if we want to play some songs in order, we need to add those songs in SD Card in order.</i>
+</li></ul>
+<p><br/>
+By the way, we have ranked 61 sound files in a folder, you can <a href="res/Sound_file.zip">download it</a> and copy it to your SD Card. Of course you may need to format SD Card first.
+<br/>
+</p>
+<center>
+<table>
+<tr>
+<th> Name of Sound File </th>
+<th> <font color="Red">NO. of file in SD Card</font> </th>
+<th> Voice Text
+</th></tr>
+<tr>
+<td width="200px"> 000 </td>
+<td width="200px"> 1th </td>
+<td width="200px"> 0
+</td></tr>
+<tr>
+<td width="200px"> 001 </td>
+<td width="200px"> 2th </td>
+<td width="200px"> 1
+</td></tr>
+<tr>
+<td width="200px"> ... </td>
+<td width="200px"> ... </td>
+<td width="200px">  ...
+</td></tr>
+<tr>
+<td width="200px"> 059 </td>
+<td width="200px"> 60th </td>
+<td width="200px"> 59
+</td></tr>
+<tr>
+<td width="200px"> 060 </td>
+<td width="200px"> 61th </td>
+<td width="200px"> It's
+</td></tr></table></center>
+<p><br/>
+</p><p><br/>
+</p>
+<h4>  Integrated Program and broadcast real-time </h4>
+<ul><li>Plug Base Shield onto the Arduino UNO; plug Grove - MP3 v2 onto the D2 port of Base shield; plug Grove - Speech Recognizer onto the D5 port of Base Shield; plug Grove - RTC onto the I2C port of Base Shield.
+</li><li>Copy the following codes on a new sketch of Arduino IDE and upload the program to Arduino UNO.
+</li><li>Say "HiCell, What's the time" , the MP3 will broadcast the real-time.
+</li></ul>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;Wire.h&gt;</span>
+<span class="co2">#include "DS1307.h"</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+<span class="co2">#include &lt;MP3Player_KT403A.h&gt;</span>
+ 
+<span class="coMULTI">/******* Define the pins of MP3 ******/</span>
+<span class="kw2">SoftwareSerial</span> mp3<span class="br0">(</span><span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="coMULTI">/******* Define the pins of Speech Recognizer ******/</span>
+<span class="co2">#define SOFTSERIAL_RX_PIN  5</span>
+<span class="co2">#define SOFTSERIAL_TX_PIN  6</span>
+ 
+<span class="kw2">SoftwareSerial</span> speech<span class="br0">(</span>SOFTSERIAL_RX_PIN,SOFTSERIAL_TX_PIN<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="coMULTI">/******* Define a object of DS1307 class ******/</span>
+DS1307 <span class="kw3">clock</span><span class="sy4">;</span><span class="co1">//define a object of DS1307 class</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span> <span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+  mp3.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  speech.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">clock</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  SelectPlayerDevice<span class="br0">(</span><span class="nu12">0x02</span><span class="br0">)</span><span class="sy4">;</span>       <span class="co1">// Select SD card as the player device.</span>
+  SetVolume<span class="br0">(</span><span class="nu12">0x15</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// Set the volume, the range is 0x00 to 0x1E.</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span> <span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+  <span class="kw4">int</span> a<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+  speech.<span class="me1">listen</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// start to receiver data from the software port of Speech Recognizer</span>
+  <span class="kw1">if</span><span class="br0">(</span>speech.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    a <span class="sy1">=</span> speech.<span class="kw3">read</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//  Read the return value from the Speech Recognizer</span>
+    <span class="kw1">if</span><span class="br0">(</span>a<span class="sy1">==</span><span class="nu0">13</span><span class="br0">)</span>
+    <span class="br0">{</span>
+      <span class="kw3">clock</span>.<span class="me1">getTime</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// get the real-time from Grove - RTC</span>
+      <span class="kw4">int</span> b<span class="sy1">=</span><span class="nu0">1</span><span class="sy2">+</span><span class="kw3">clock</span>.<span class="me1">hour</span><span class="sy4">;</span>  <span class="co1">// get hour data; because the 1th name of song is the voice "0" , so in order to get the voice "60" (it's) , the number of the name should be added 1.</span>
+      <span class="kw4">int</span> c<span class="sy1">=</span><span class="nu0">1</span><span class="sy2">+</span><span class="kw3">clock</span>.<span class="me1">minute</span><span class="sy4">;</span>  <span class="co1">// get hour data; because the 1th name of song is the voice "0" , so in order to get the voice "60" (it's) , the number of the name should be added 1.</span>
+ 
+      mp3.<span class="me1">listen</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// start to receiver data from the software port of Grove - MP3</span>
+      SpecifyMusicPlay<span class="br0">(</span><span class="nu0">61</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// The voice "It's" is the name of "61" song in the folder of SD card</span>
+      <span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// play next song before the previous song is played out</span>
+      SpecifyMusicPlay<span class="br0">(</span>b<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// play the name of "b" song in the folder of SD card</span>
+      <span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+      SpecifyMusicPlay<span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">//  play the name of "c" song in the folder of SD card</span>
+      <span class="kw1">while</span><span class="br0">(</span>QueryPlayStatus<span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h2>   Resource </h2>
+<p><a href="https://github.com/Seeed-Studio/IRSendRev">Github: IRSendRev</a> <br/>
+<a href="https://github.com/Seeed-Studio/Grove_Serial_MP3_Player_V2.0">Github: MP3</a> <br/>
+<a href="https://github.com/Seeed-Studio/RTC_DS1307">Github: RTC</a> <br/>
+<a href="res/Sound_file.zip">Sound files of broadcast</a> <br/>
+</p>
+<h2>   Reference </h2>
+<p>&lt;references /&gt;
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

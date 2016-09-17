@@ -1,0 +1,102 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Line Finder</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Line Finder</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Grovelinefinder1.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+
+
+<p>Line finder Grove is designed for line following robotic. It consists two parts - an IR emitting LED and an IR sensitive phototransistor. It can output digital signal to a microcontroller so the robot can reliably follow a black line on a white background, or vice versa.
+</p><p>Previous Version: v0.9b
+</p><p><b>Model:SEN21177P </b>
+</p><p><br/>
+</p>
+<h2>  Specification  </h2>
+<ul><li>Power supply :5V DC
+</li><li>Digital output mode: TTL (High when black is detected, Low when white is detected)
+</li><li>Connector: 4 pin Buckled Grove interface
+</li><li>Dimension: 20mm*20mm
+</li><li>ROHS: YES
+</li><li>Comparator: MV358
+</li><li>Photo reflective diode: RS-06WD
+</li></ul>
+<p><br/>
+</p>
+<h2>  Demonstration </h2>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>The brick will return HIGH when black line is detected, and LOW when white line is detected.
+Using the adjustable resistor the detection range can be changed from 1.5cm to 5cm.
+If the sensor can’t tell between black and white surfaces, you can also use the adjustable resistor to set a suitable reference voltage.
+</p><p><br/>
+Includes important code snippet. 
+Demo code like : 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="php source-php"><pre class="de1">Demo code
+<span class="br0">{</span>
+ 
+<span class="co1">//------------------------------------------------------------</span>
+<span class="co1">//Name: Line finder digital mode</span>
+<span class="co1">//Function: detect black line or white line    </span>
+<span class="co1">//Parameter:   When digital signal is HIGH, black line</span>
+<span class="co1">//             When digital signal is LOW, white line</span>
+<span class="co1">//-------------------------------------------------------------</span>
+int signalPin <span class="sy0">=</span>  <span class="nu0">3</span><span class="sy0">;</span>    <span class="co1">// connected to digital pin 3</span>
+void setup<span class="br0">(</span><span class="br0">)</span>   <span class="br0">{</span>                
+  pinMode<span class="br0">(</span>signalPin<span class="sy0">,</span> INPUT<span class="br0">)</span><span class="sy0">;</span> <span class="co1">// initialize the digital pin as an output:  </span>
+  Serial<span class="sy0">.</span>begin<span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy0">;</span>  <span class="co1">// initialize serial communications at 9600 bps:</span>
+<span class="br0">}</span>
+<span class="co1">// the loop() method runs over and over again,</span>
+<span class="co1">// as long as the Arduino has power</span>
+void loop<span class="br0">(</span><span class="br0">)</span>                     
+<span class="br0">{</span>
+  <span class="kw1">if</span><span class="br0">(</span>HIGH <span class="sy0">==</span> digitalRead<span class="br0">(</span>signalPin<span class="br0">)</span><span class="br0">)</span>
+    Serial<span class="sy0">.</span>println<span class="br0">(</span><span class="st0">"black"</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="kw1">else</span>  Serial<span class="sy0">.</span>println<span class="br0">(</span><span class="st0">"white"</span><span class="br0">)</span><span class="sy0">;</span>  <span class="co1">// display the color</span>
+  	<span class="co1">//delay(1000);                  // wait for a second</span>
+<span class="br0">}</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<h3>  With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a> </h3>
+<p>1.You should have got a raspberry pi and a grovepi or grovepi+.
+</p><p>2.You should have completed configuring the development enviroment, otherwise follow <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">here</a>.
+</p><p>3.Connection
+</p>
+<ul><li> Plug the sensor to grovepi socket D7 by using a grove cable.<br/>
+</li></ul>
+<p>4.Navigate to the demos' directory: <br/>
+</p>
+<pre>   cd yourpath/GrovePi/Software/Python/
+</pre>
+<ul><li> To see the code
+</li></ul>
+<pre>   nano grove_line_finder.py   # "Ctrl+x" to exit #
+</pre>
+<pre>
+import time
+import grovepi
+
+# Connect the Grove Line Finder to digital port D7
+# SIG,NC,VCC,GND
+line_finder = 7
+
+grovepi.pinMode(line_finder,"INPUT")
+
+while True:
+    try:
+        # Return HIGH when black line is detected, and LOW when white line is detected
+        if grovepi.digitalRead(line_finder) == 1:
+            print "black line detected"
+        else:
+            print "white line detected"
+
+        time.sleep(.5)
+
+    except IOError:
+        print "Error"
+
+</pre>
+<p>5.Run the demo.<br/>
+</p>
+<pre>   sudo python grove_line_finder.py
+</pre>
+<h2>  Resources </h2>
+<ul><li><a href="res/Ealge_files.zip">Ealge files.zip</a>
+</li><li><a href="res/Lmv358.pdf">LMV358.pdf</a>
+</li><li>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

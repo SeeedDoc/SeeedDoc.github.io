@@ -1,0 +1,149 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>AT Command Tester Application</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>AT Command Tester Application</h1><p><a href="http://m2msupport.net/m2msupport/module-tester/">AT Command Tester</a> is an online tool for testing AT commands and other module functionalities such as <a href="http://m2msupport.net/m2msupport/data-call-at-commands-to-set-up-gprsedgeumtslte-data-call/">data call</a>, <a href="http://m2msupport.net/m2msupport/voice-call-at-commands-to-set-up-voice-call/">voice call</a>,<a href="http://m2msupport.net/m2msupport/at-command-for-http-functions-for-remote-server-data-access/">HTTP</a>, <a href="http://m2msupport.net/m2msupport/network-registration/">network registration</a>, <a href="http://m2msupport.net/m2msupport/sms-at-commands/">SMS</a>, <a href="http://m2msupport.net/m2msupport/sim-phonebook-at-commands/">Phonebook</a>, <a href="http://m2msupport.net/m2msupport/signal-quality/">signal quality</a>, <a href="http://m2msupport.net/m2msupport/sim-at-commands-for-sim-presense-and-status/">SIM interface</a>, <a href="http://m2msupport.net/m2msupport/at-commands-to-get-device-information/">device info</a> etc. <br/>
+</p><p>AT Command Tester can be used with <a href="http://m2msupport.net/m2msupport/category/devices/gprs-modem/">2G Modules</a> (GPRS/EDGE/1x) or <a href="http://m2msupport.net/m2msupport/category/devices/3g-modules/">3G Modules</a> (HSDPA/HSPA/EVDO) or <a href="http://m2msupport.net/m2msupport/search-page/?Max!Download!Speed=100%20Mbps">4G modules</a> (LTE) 
+</p><p>First select 'Find Ports' to search for avaialble ports. Then select the modem port and press 'Connect'. Once connected to the module, you can send AT commands from the 'Command Mode' tab 
+</p><p><br/>
+</p><p>'. <img src="img/M2m_img1.PNG" width="647"/>
+</p><p><br/> In script mode, you can send multiple AT commands at a same time as shown below. You can create your own script and save it on the local machine.Then load the script and execute. 
+</p><p><br/> <img src="img/Script_mode.PNG" width="649"/>
+</p><p><br/> To perform basic diagnostics on the SIM900 module, choose the 'Diagnostics' tab,  <br/> <img src="img/Diagnistics_mode.PNG" width="689"/> <br/> The diagnostics commands and the results are shown an below, AT+CGMI SIMCOM_Ltd OK<br/>Manufacturer : SIMCOM_Ltd<br/><a href="http://m2msupport.net/m2msupport/atcgmm-request-model-identificaiton/">AT+CGMM</a>
+</p><p>SIMCOM_SIM900 
+</p><p>OK<br/>Model Number : SIMCOM_SIM900<br/>
+</p><p><a href="http://m2msupport.net/m2msupport/atcgmr-request-revision-identification/">AT+CGMR</a>
+</p><p>Revision:1137B03SIM900M64_ST_MMS 
+</p><p>OK<br/>Revision : Revision:1137B03SIM900M64_ST_MMS 
+</p><p><a href="http://m2msupport.net/m2msupport/atcsq-signal-quality/">AT+CSQ</a>
+</p><p>+CSQ: 8,0 
+</p><p>OK<br/>Signal level is -97 dbm. Signal condition is marginal.The signal strength range is -53 dbm (Excellent) to -109 dbm (Marginal). 
+</p><p><a href="http://m2msupport.net/m2msupport/atcreg-network-registration/">AT+CREG?</a>
+</p><p>+CREG: 0,1 
+</p><p>OK<br/>The device is registered in home network. 
+</p><p><a href="http://m2msupport.net/m2msupport/atcgact-pdp-context-activate-or-deactivate/">AT+CGACT?</a>
+</p><p>+CGACT: 1,0<br/>+CGACT: 2,0<br/>+CGACT: 3,0 
+</p><p>OK<br/>Device is NOT connected. 
+</p><p><a href="http://m2msupport.net/m2msupport/atcops-plmn-selection/">AT+COPS?</a>
+</p><p>+COPS: 0,0,"T-Mobile" 
+</p><p>OK<br/>Device is currently on "T-Mobile" network. 
+</p><p><a href="http://m2msupport.net/m2msupport/atcpin-enter-pin/">AT+CPIN?</a>
+</p><p>+CPIN: READY OK<br/>
+</p><p>SIM is ready.<br/> <br/> Voice Call with SIM900 Select the 'Voice Call' tab to test outgoing and incoming voice calls. The 'AT Command Tester' will check whether the device is registered before dialing the call, <br/> <img src="img/Voicecall.PNG" width="647"/>
+</p><p><br/> The AT command sequence for outgoing call is shown below, Checking registration status... AT+CREG? +CREG: 0,1 OK<br/>The device is registered in home network. Dialing number 858xxxxxxx 
+</p><p><a href="http://m2msupport.net/m2msupport/atd-dial-voice-call/">ATD</a>858XXXXXXX; 
+</p><p>OK<br/>Voice call successfull Hanging up the call.. 
+</p><p>ATH 
+</p><p>OK<br/>Call sucessfully dis-connected.. 
+</p><p><a href="http://m2msupport.net/m2msupport/atcnum-subscriber-number/">AT+CNUM</a>
+</p><p>+CNUM: "","1858XXXXXXX",129,7,4 OK 
+</p><p><br/> GPRS Data call with SIM900 
+</p><p>To setup GPRS call with the SIM900 modem, select the 'Data Call' tab. Here you can get all the PDP context stored on the device. The PDP context has carrier APN and other information that are required to set up a GPRS call. 
+</p><p><img src="img/Datacall.PNG" width="664"/> <br/> Here is the sequence of AT commands to set up data call 
+</p><p><a href="http://m2msupport.net/m2msupport/atcgdcont-define-pdp-context/">AT+CGDCONT?</a>
+</p><p>+CGDCONT: 1,"IP","epc.tmobile.com","0.0.0.0",0,0<br/>+CGDCONT: 2,"IP","test5","0.0.0.0",0,0<br/>+CGDCONT: 3,"IP","","0.0.0.0",0,0 
+</p><p>OK<br/>Checking registration status... 
+</p><p><a href="http://m2msupport.net/m2msupport/atcreg-network-registration/">AT+CREG?</a>
+</p><p>+CREG: 0,1 
+</p><p>OK<br/>The device is registered in home network. 
+</p><p>Checking if device is already connected... 
+</p><p><a href="http://m2msupport.net/m2msupport/atcgact-pdp-context-activate-or-deactivate/">AT+CGACT?</a>
+</p><p>+CGACT: 1,0<br/>+CGACT: 2,0<br/>+CGACT: 3,0 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/atcmee-report-mobile-termination-error/">AT+CMEE=1</a>
+</p><p>OK<br/>Attaching to network...<br/>AT+CGATT=1 
+</p><p>OK 
+</p><p>Connecting... 
+</p><p><a href="http://m2msupport.net/m2msupport/atcgact-pdp-context-activate-or-deactivate/">AT+CGACT=1, 1</a>
+</p><p>OK<br/>Connect Sucessful 
+</p><p><br/>
+</p><p><br/> SMS with SIM900 Select the 'SMS' to send SMS messages. You can also read and delete SMS messages stored on the SIM. 
+</p><p><img src="img/Sms.PNG" width="650"/> <br/> Here is the sequence of AT commands to send SMS message, 
+</p><p>Checking registration status... 
+</p><p><a href="http://m2msupport.net/m2msupport/atcreg-network-registration/">AT+CREG?</a>
+</p><p>+CREG: 0,1 
+</p><p>OK<br/>The device is registered in home network. 
+</p><p>AT+CMGS="858XXXXXXX" 
+</p><p>&gt; Test Message with AT Command Tester� 
+</p><p>+CMGS: 19 
+</p><p>OK<br/>SMS Send successful 
+</p><p><br/>
+</p><p>Network Selection Network selection enables the user to select the network that is available. Use the 'Network Selection' tab for this feature, <br/> <img src="img/Network_selection.PNG" width="651"/>
+</p><p><br/>
+</p><p>Here are the commands for Network Selection, 
+</p><p>Finding Networks. Please wait.. 
+</p><p><a href="http://m2msupport.net/m2msupport/atcops-plmn-selection/">AT+COPS=?</a>
+</p><p>+COPS: (2,"T-Mobile","T-Mobile","310260"),(1,"AT&amp;T","AT&amp;T","310410"),,(0,1,4),(0,1,2) 
+</p><p>OK<br/>Networks found 
+</p><p><br/>
+</p><p>Phonebook<br/>
+</p><p>With the 'Phone Book' tab, you can add/delete/read phone book entries stored on the SIM, 
+</p><p><img src="img/Phone_book.PNG" width="648"/>
+</p><p>Getting phonebook entries.. 
+</p><p><a href="http://m2msupport.net/m2msupport/atcpbr-read-phonebook-entries/">AT+CPBR=1,99</a>
+</p><p>+CPBR: 1,"*233",129,"Refill Now" 
+</p><p>+CPBR: 2,"#999#",255,"Check Balance" 
+</p><p>+CPBR: 3,"8878878878",129,"Test" 
+</p><p>OK<br/>
+</p><p>SIM900 HTTP 
+</p><p>With the 'HTTP' tab, you can read the bearer profiles and test HTTP GET and HTTP POST, 
+</p><p><img src="img/Http.PNG" width="652"/>
+</p><p>Getting Bearer profiles.. 
+</p><p>AT+SAPBR=4,1 
+</p><p>+SAPBR: <br/>CONTYPE: GPRS<br/>APN: <br/>PHONENUM: <br/>USER: <br/>PWD: <br/>RATE: 2 
+</p><p>OK<br/>AT+SAPBR=4,2 
+</p><p>+SAPBR: <br/>CONTYPE: GPRS<br/>APN: <br/>PHONENUM: <br/>USER: <br/>PWD: <br/>RATE: 2 
+</p><p>OK<br/>AT+SAPBR=4,3 
+</p><p>+SAPBR: <br/>CONTYPE: GPRS<br/>APN: <br/>PHONENUM: <br/>USER: <br/>PWD: <br/>RATE: 2 
+</p><p>OK 
+</p><p><br/>Checking registration status... 
+</p><p><a href="http://m2msupport.net/m2msupport/atcreg-network-registration/">AT+CREG?</a>
+</p><p>+CREG: 0,1 
+</p><p>OK<br/>The device is registered in home network. 
+</p><p>Querying bearer 1 . 
+</p><p>AT+SAPBR=2,1 
+</p><p>+SAPBR: 1,1,"162.184.222.162" 
+</p><p>OK<br/>Bearer 1 is Connected.IP address is "162.184.222.162" 
+</p><p>Bearer 1 is Connected. 
+</p><p>Initializing HTTP service... 
+</p><p><a href="http://m2msupport.net/m2msupport/athttpinit-initialize-http-service/">AT+HTTPINIT</a>
+</p><p>OK<br/>Error initializing HTTP service. 
+</p><p>Setting up HTTP parameters.. 
+</p><p><a href="http://m2msupport.net/m2msupport/athttppara-set-paramaters-for-http-connection/">AT+HTTPPARA</a>="URL","<a href="http://www.m2msupport.net/m2msupport/http_get_test.php">http://www.m2msupport.net/m2msupport/http_get_test.php</a>" 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/athttppara-set-paramaters-for-http-connection/">AT+HTTPPARA</a>="CID",1[[|]] 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/athttpaction-perform-getposthead-http-action/">AT+HTTPACTION</a>=0 
+</p><p>OK 
+</p><p>HTTP GET is sucessful 
+</p><p><a href="http://m2msupport.net/m2msupport/athttpread-get-response-from-http-server/">AT+HTTPREAD</a>
+</p><p>+HTTPREAD:58<br/>Sucessful HTTP GET test. Data received from m2msupport.net<br/>OK<br/>Terminating HTTP session.. 
+</p><p><a href="http://m2msupport.net/m2msupport/athttpterm-terminate-the-http-session/">AT+HTTPTERM</a>
+</p><p>OK 
+</p><p><br/>
+</p><p>SIM900 FTP<br/>
+</p><p>FTP Get and Put with SIM900 module can be tested as shown below, 
+</p><p><img src="img/Ftp.PNG" width="649"/>
+</p><p><br/>
+</p><p>Checking registration status... 
+</p><p>AT+CREG? 
+</p><p>+CREG: 0,1 
+</p><p>OK<br/>The device is registered in home network. 
+</p><p>Querying bearer 1 . 
+</p><p>AT+SAPBR=2,1 
+</p><p>+SAPBR: 1,1,"162.184.222.162" 
+</p><p>OK<br/>Bearer 1 is Connected.IP address is "162.184.222.162" 
+</p><p>Bearer 1 is Connected. 
+</p><p>Setting up FTP parameters.. 
+</p><p><a href="http://m2msupport.net/m2msupport/atftpcid-set-ftp-bearer-profile-identifier/">AT+FTPCID</a>=1 
+</p><p>OK 
+</p><p><br/><a href="http://m2msupport.net/m2msupport/atftpserv-set-up-ftp-server-address/">AT+FTPSERV</a>="ftp.m2msupport.net" 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/atftpun-set-up-ftp-user-name/">AT+FTPUN</a>="xxxxxx" 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/atftppw-sets-up-ftp-password/">AT+FTPPW</a>="xxxxxxx" 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/atftpgetname-set-download-file-name/">AT+FTPGETNAME</a>="ftptest.txt" 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/atftpgetpath-set-the-ftp-download-file-path/">AT+FTPGETPATH</a>="/www/m2msupport/" 
+</p><p>OK<br/><a href="http://m2msupport.net/m2msupport/atftpget-set-download-file/">AT+FTPGET</a>=1 
+</p><p>OK 
+</p><p><br/>+FTPGET:1,1<br/>FTP session sucessfully started 
+</p><p><a href="http://m2msupport.net/m2msupport/atftpget-set-download-file/">AT+FTPGET</a>=2,1024 
+</p><p>+FTPGET:2,784<br/>2-11-16 10:53:34.769 -----------------------------------------------<br/>eclipse.buildId=M20120914-1800<br/>java.version=1.6.0_16<br/>java.vendor=Sun Microsystems Inc.<br/>BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US<br/>Framework arguments: -product org.eclipse.epp.package.java.product<br/>Command-line arguments: -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product 
+</p><p>!ENTRY org.eclipse.m2e.logback.appender 4 0 2012-11-16 12:11:54.493<br/>!MESSAGE Unable to update index for central|<a href="http://repo.maven.apache.org/maven2">http://repo.maven.apache.org/maven2</a>: C:\Users\sgobi\.m2\repository\.cache\m2e\1.2.0\26522e0d83a422eed93329ece7565cfc\nexus-maven-repository-index.zip (The system cannot find the file specified) 
+</p><p>!ENTRY org.eclipse.jdt.ui 4 10001 2012-11-16 13:21:21.138<br/>!MESSAGE Internal Error<br/>!STACK 1<br/>OK<br/><a href="http://m2msupport.net/m2msupport/atftpget-set-download-file/">AT+FTPGET</a>=2,1024 
+</p><p>+FTPGET:2,0 
+</p><p>OK<br/>FTP data transfer is complete 
+</p><p><br/>+FTPGET:1,0<br/>FTP session end<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

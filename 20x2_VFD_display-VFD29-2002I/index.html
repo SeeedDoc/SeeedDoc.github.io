@@ -1,0 +1,533 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>20*2 VFD display (VFD29-2002I)</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>20*2 VFD display (VFD29-2002I)</h1>
+
+<p>This is a 20x2 VFD display with a character height of 6mm. We got it from BOE display technology but wasn't able to find a right driving circuit for it. If you have the interest in building a driver for this display, please add this to your shopping cart. We've already provided a full data-sheet from below link, enjoy.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/20x2-vfd-display-vfd292002i-p-673.html?cPath=163_189&amp;zenid=c53d9f0c1da988767e52b400f476853c">VFD101B1B</a></b>
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/vfd29.jpg">http://www.seeedstudio.com/depot/images/product/vfd29.jpg</a>
+</p>
+<h2>  Features  </h2>
+<ul><li>20GridX72 Anode 1 Colors
+</li><li>cadmium Free Phosphor
+</li><li>Lead Free solder
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>color of illumination
+</li></ul>
+<h2>  Cautions  </h2>
+<p>Precautions should be taken to minimize the possibility of static charges occuring during handing and assembly of the VFDs.
+</p>
+<h2>  Schematic  </h2>
+<h3>  Block Diagram Drive Circuit </h3>
+<p><img src="img/VFD-block.JPG" width="611"/><br/>
+<b>Note:</b><br/>
+The series resister RD =22Ω is resister for limitation of over current. The capacitors for noise filter to the VH and VD.
+</p>
+<h2>  Specification  </h2>
+<h3>  Electrical Characteristics </h3>
+<table>
+<tr>
+<td>Item
+</td>
+<td>Symbol
+</td>
+<td colspan="2">Test Condition
+</td>
+<td>Min
+</td>
+<td>Typical
+</td>
+<td>Max
+</td>
+<td>Unit
+</td></tr>
+<tr>
+<td>Filament Current
+</td>
+<td>If
+</td>
+<td colspan="2">Ef=4.5Vac
+</td>
+<td>135.0
+</td>
+<td>150.0
+</td>
+<td>165.0
+</td>
+<td>mA
+</td></tr>
+<tr>
+<td>Supply Current
+</td>
+<td>I<sub>DD</sub>
+</td>
+<td colspan="2">No Load
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td>1
+</td>
+<td>mA
+</td></tr>
+<tr>
+<td>Hi-level Input Current
+</td>
+<td>I<sub>IH</sub>
+</td>
+<td>V<sub>IH</sub>=V<sub>DD</sub>
+</td>
+<td>LAT, CLK, SI, BK
+</td>
+<td> -
+</td>
+<td>0.1
+</td>
+<td>1.0
+</td>
+<td>µA
+</td></tr>
+<tr>
+<td rowspan="2">Lo-level Input Current
+</td>
+<td rowspan="2">I<sub>IL</sub>
+</td>
+<td rowspan="2">V<sub>IL</sub>=0V
+</td>
+<td>LAT, CLK, SI
+</td>
+<td> -
+</td>
+<td>0.1
+</td>
+<td>1.0
+</td>
+<td rowspan="2">µA
+</td></tr>
+<tr>
+<td>BK
+</td>
+<td> -30
+</td>
+<td> -50
+</td>
+<td> -100
+</td></tr>
+<tr>
+<td rowspan="3">Luminance
+</td>
+<td>L(G)
+</td>
+<td colspan="2" rowspan="3">Ef=4.5Vac
+<p>V<sub>H</sub>
+Ek=5.0 Vdc
+Duty=1/21
+</p>
+</td>
+<td>350(102)
+</td>
+<td>700(204)
+</td>
+<td> -
+</td>
+<td>cd/m<sup>2</sup>(fl)
+</td></tr>
+<tr>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td>cd/m<sup>2</sup>(fl)
+</td></tr>
+<tr>
+<td>
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td>cd/m<sup>2</sup>(fl)
+</td></tr>
+<tr>
+<td>Luminance Ratio
+</td>
+<td>Lmin/Lmax
+</td>
+<td colspan="2">
+</td>
+<td>50
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td>%
+</td></tr></table>
+<h3>  Function Table </h3>
+<table>
+<tr>
+<th>Function
+</th>
+<th>Symbol
+</th>
+<th>Input/Output
+</th>
+<th>Description
+</th></tr>
+<tr>
+<td>Shift clock input
+</td>
+<td>CLK
+</td>
+<td>Input
+</td>
+<td>The serial data at the rising shifted on the rising edge is read by the shift register
+</td></tr>
+<tr>
+<td>Serial Data Input
+</td>
+<td>SI
+</td>
+<td>Input
+</td>
+<td>Serial Data Input Pin
+</td></tr>
+<tr>
+<td>Latch Input Pin
+</td>
+<td>LAT
+</td>
+<td>Input
+</td>
+<td>The shift register data is put on hold at the dalling edge
+</td></tr>
+<tr>
+<td>Blanking Input Pins
+</td>
+<td>VH
+</td>
+<td> -
+</td>
+<td> High voltage Pins for Driver
+</td></tr>
+<tr>
+<td>Logic power Supply
+</td>
+<td>V<sub>DD</sub>
+</td>
+<td> -
+</td>
+<td> Power Supply to Logic Circuit
+</td></tr>
+<tr>
+<td> Ground
+</td>
+<td>GND
+</td>
+<td> -
+</td>
+<td>Ground of Pin
+</td></tr>
+<tr>
+<td> Serial Data Output
+</td>
+<td> SO
+</td>
+<td>output
+</td>
+<td>Serial Data output Pin
+</td></tr></table>
+<p><b>Note:</b><br/>
+Drive mode: Dynamic state
+</p>
+<h3>  Absolute Maximum Condition </h3>
+<table>
+<tr>
+<th>Item
+</th>
+<th>Symbol
+</th>
+<th>Terminals
+</th>
+<th>Ratings
+</th>
+<th>Unit
+</th></tr>
+<tr>
+<td>Filament Voltage
+</td>
+<td>Ef
+</td>
+<td>F,F
+</td>
+<td>5.4
+</td>
+<td>Vac
+</td></tr>
+<tr>
+<td>Logic Supply Voltage
+</td>
+<td>V<sub>DD</sub>
+</td>
+<td>V<sub>DD</sub>
+</td>
+<td> -0.3~+6.0
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Driver Supply Voltage
+</td>
+<td>V<sub>H</sub>
+</td>
+<td>V<sub>H</sub>
+</td>
+<td> -0.3~60
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Logic Input Voltage
+</td>
+<td>V<sub>IN</sub>
+</td>
+<td>BK,LAT,CLK,SI
+</td>
+<td> -0.3~V<sub>DD</sub>+0.3
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Operating Temperature
+</td>
+<td>Top
+</td>
+<td> -
+</td>
+<td> -40~+85
+</td>
+<td>℃
+</td></tr>
+<tr>
+<td>Storage Temperature
+</td>
+<td>Tstg
+</td>
+<td> -
+</td>
+<td> -45~+85
+</td>
+<td>℃
+</td></tr></table>
+<h3>  Recommended Operating Condition </h3>
+<table>
+<tr>
+<th>Item
+</th>
+<th>Symbol
+</th>
+<th>Condition
+</th>
+<th>Min
+</th>
+<th>TYP
+</th>
+<th>Max
+</th>
+<th>Unit
+</th></tr>
+<tr>
+<td>Filament Voltage
+</td>
+<td>Ef
+</td>
+<td> -
+</td>
+<td>4.1
+</td>
+<td>4.5
+</td>
+<td>4.9
+</td>
+<td>Vac
+</td></tr>
+<tr>
+<td>Cut-off voltage
+</td>
+<td>Ek
+</td>
+<td> -
+</td>
+<td>5.0
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Logic Supply Voltage
+</td>
+<td>V<sub>DD</sub>
+</td>
+<td> -
+</td>
+<td>4.5
+</td>
+<td>5.0
+</td>
+<td>5.5
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Driver Supply Voltage
+</td>
+<td>V<sub>H</sub>
+</td>
+<td> -
+</td>
+<td>30.0
+</td>
+<td>40.0
+</td>
+<td>43.0
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Hi-level Logic Input
+</td>
+<td>V<sub>IH</sub>
+</td>
+<td>Logic Input
+</td>
+<td>V<sub>DD</sub>X0.7
+</td>
+<td> -
+</td>
+<td>V<sub>DD</sub>
+</td>
+<td>Vdc
+</td></tr>
+<tr>
+<td>Clock Frequency
+</td>
+<td>fclk
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td>8.0
+</td>
+<td>MHz
+</td></tr></table>
+<h2>  Pin definition and Rating  </h2>
+<h2>  Mechanic Dimensions  </h2>
+<table>
+<tr>
+<td rowspan="3">Outer Dimensions
+</td>
+<td>Panel Length
+</td>
+<td>125.0mm
+</td></tr>
+<tr>
+<td>Panel height
+</td>
+<td>29.0mm
+</td></tr>
+<tr>
+<td>Panel thickness
+</td>
+<td>8.0±0.5mm
+</td></tr>
+<tr>
+<td rowspan="2">Lead
+</td>
+<td>Lead Pitch
+</td>
+<td>2.0mm
+</td></tr>
+<tr>
+<td>Lead Out
+</td>
+<td>single-row bending
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3>  Power Supply Sequence </h3>
+<p><img src="img/VFD29-power-supply.JPG" width="308"/>
+</p><p>VDD should be applied and higher than 4.5V when applying VH. <br/>
+VDD and VH should be on at the same time, or VH should be on after VDD is on. <br/>
+VDD and VH should be off at the same time, or VDD should be off after VH is off.<br/>
+</p>
+<h3>  Input Timing Waveform </h3>
+<p><img src="img/VFD-timing-seq.JPG" width="722"/>
+</p>
+<h3>  Hardware Installation  </h3>
+<h3>  Programming  </h3>
+<p>Includes important code snippet. 
+Demo code like : 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">Demo code
+<span class="br0">{</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Example  </h3>
+<p>The projects and application examples.
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<p>All the components used to produce the product. 
+</p>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.9b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> July 06, 2010
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<p>The resources need to be downloaded, like Eagle file, Demo code, project or other datasheet. 
+</p>
+<h2>  How to buy  </h2>
+<p>Click here to buy: <a href="http://www.seeedstudio.com/depot/20x2-vfd-display-vfd292002i-p-673.html?cPath=163_189&amp;zenid=c53d9f0c1da988767e52b400f476853c">http://www.seeedstudio.com/depot/20x2-vfd-display-vfd292002i-p-673.html?cPath=163_189&amp;zenid=c53d9f0c1da988767e52b400f476853c</a>.
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/w/index.php?title=11*1_VFD_display_module&amp;action=edit&amp;redlink=1" title="11*1 VFD display module (page does not exist)">11*1 VFD display module</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

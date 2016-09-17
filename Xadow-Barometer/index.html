@@ -1,0 +1,75 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow - Barometer</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow - Barometer</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/Baro_Meter_01.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>The module can measure the air pressure and temperature of the current environment, and then you can convert this signal to information of altitude. If you are planning to use Xadow to do a wearable device and measure the altitude when you climb the mountain, then the module will be your perfect choice.<br/>
+</p>
+<h2> Specification</h2>
+<ul><li> Working Voltage: 1.8 ~ 3.3v  
+</li><li> Pressure Range:300 ~ 1100hPa(+9000m ~ 4500m above sea level) 
+</li><li> Low Power
+</li><li> Control Mode: I2C (address 0x77)
+</li><li> Operating Temperature：-40 ~ +85 °C
+</li><li> Dimensions: 25.43mm x 20.35mm
+</li></ul>
+<h2> Demonstration </h2>
+<p>The demo will show you how to get the air pressure and temperature of the current environment.
+</p>
+<h3> Hardware Installation</h3>
+<p><br/> <img src="img/XadowBarometerUsage.jpg" width="600"/><br/>
+Note: when connect Xadow Barometer to Xadow Main Board, you should concern about the connection direction. The connection method is that the unfilled corner of one Xadow module need to connect to the right angle of another module(see four corners of each Xadow module).<br/>
+</p>
+<h3> Download Library</h3>
+<ul><li> Xadow Barometer is sharing the library with  Grove - Barometer Sensor. You can download directly <a href="https://github.com/Seeed-Studio/Grove_Barometer_Sensor">the library</a> from Github.  
+</li><li>Now you can open the code and upload it to Xadow Main Board. If you have not installed the Xadow Driver, You can learn the operation steps by referring to <a href="/index.php-title=Main_Page#Getting_Started">the getting started in wiki main page</a>  .
+</li></ul>
+<pre>/*  
+* Get pressure, altitude, and temperature from the BMP085.
+* Serial.print it out at 9600 baud to serial monitor. 
+*/
+#include "Barometer.h"
+#include &lt;Wire.h&gt;
+float temperature;
+float pressure;
+float atm;
+float altitude;
+Barometer myBarometer;
+void setup(){
+  Serial.begin(9600);
+  myBarometer.init(); 
+}
+
+void loop()
+{
+   temperature = myBarometer.bmp085GetTemperature(myBarometer.bmp085ReadUT()); //Get the temperature, bmp085ReadUT MUST be called first
+   pressure = myBarometer.bmp085GetPressure(myBarometer.bmp085ReadUP());//Get the temperature
+   altitude = myBarometer.calcAltitude(pressure); //Uncompensated calculation - in Meters 
+   atm = pressure / 101325; 
+  
+  Serial.print("Temperature: ");
+  Serial.print(temperature, 2); //display 2 decimal places
+  Serial.println("deg C");
+
+  Serial.print("Pressure: ");
+  Serial.print(pressure, 0); //whole number only.
+  Serial.println(" Pa");
+
+  Serial.print("Ralated Atmosphere: ");
+  Serial.println(atm, 4); //display 4 decimal places
+
+  Serial.print("Altitude: ");
+  Serial.print(altitude, 2); //display 2 decimal places
+  Serial.println(" m");
+
+  Serial.println();
+
+  delay(1000); //wait a second and get values again.
+}</pre>
+<ul><li>Open the serial monitor to receive the sensor's data including temperature, barometric pressure value, relative atmosphere pressure and altitude. <br/><img src="img/Xadow_Baremeter_Result.jpg" width="332"/>
+</li><li>Here is a reference graph plotting out the relationship between altitude above sea level and barometric pressure.<br/> <img src="img/Pressure_and_Altitude.jpg" width="500"/><br/>
+</li></ul>
+<h2> Resources</h2>
+<p><a href="res/Xadow_Barometer.zip">Xadow Barometer Eagle File</a><br/>
+<a href="res/Barometer_Sensor.zip">Xadow Barometer Library</a><br/>
+<a href="res/BST-BMP085-DS000-06.pdf">BST-BMP085-DS000-06</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

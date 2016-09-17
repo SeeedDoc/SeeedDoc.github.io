@@ -1,0 +1,181 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>2.04&quot; E-ink Display Shield</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>2.04&quot; E-ink Display Shield</h1>
+
+<p>Do you like Amazon Kindle’s E-paper screen? E-ink Display Shield, an E-paper &amp; shield which uses exactly the same techniques, provides you a smooth and clear reading experience for you. It has a super-low power consumption. It won’t consume power until next refreshing of its screen, which enables it to maintain a clear display even in the power-off state. Users can customize texts and position of the characters displayed .Due to the character chip inside, it knows of 175 countries’ language and their respective characters. 
+</p><p><b> Model:</b> <a href="http://www.seeedstudio.com/depot/eink-display-shield-p-1374.html?cPath=132_134">SLD01093P</a>
+<br/> <img src="img/Einkshield_01.jpg" width="500"/><br/>
+</p>
+<h2>  Features  </h2>
+<ul><li>High resolution
+</li><li>Low power consumption
+</li><li>Wide viewing angle
+</li><li>Four grey level modes
+</li><li>Maintains a clear display  in the power-off state 
+</li><li>Supports characters  of 175 languages
+</li></ul>
+<p><br/>
+</p>
+<h2>  Specifications  </h2>
+<table border="1" cellpadding="1" cellspacing="1" width="505">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td> 4.8
+</td>
+<td> 5.0
+</td>
+<td> 5.2
+</td>
+<td> V
+</td></tr>
+<tr>
+<th scope="row"> E-ink Panel Size
+</th>
+<td colspan="3"> 2.1
+</td>
+<td> inch
+</td></tr>
+<tr>
+<th scope="row"> Active Area
+</th>
+<td colspan="3"> 2.04
+</td>
+<td> inch
+</td></tr>
+<tr>
+<th scope="row"> E-ink Drive Ic
+</th>
+<td colspan="3"> SSD1606
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Interface Type
+</th>
+<td colspan="3"> SPI
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> View angle
+</th>
+<td colspan="3"> 0~180
+</td>
+<td> Deg
+</td></tr>
+<tr>
+<th scope="row"> Display Resolution
+</th>
+<td colspan="3"> 172(H)X72(V)
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Dot Pitch
+</th>
+<td colspan="3">  0.28X0.28
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 68X63
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Backlight
+</th>
+<td colspan="3"> ---
+</td>
+<td> /
+</td></tr></table>
+<h2>  Cautions  </h2>
+<p>The display glass may break when being dropped or bumped on hard surface .Please handle with care.<br/>
+</p>
+<h2>   Pins usage on Arduino  </h2>
+<p><img src="img/E-ink_Pin.jpg" width="715"/>
+</p><p>Pins Used for E-ink Control: 
+</p><p><b>D3:</b> VPP, Power Supply for OTP Programming.<br/>
+<b>D4:</b> GT_CS, GT20L16P1Y select input pin.<br/>
+<b>D5:</b> Eink_D/C, E-ink Data/Command control pin.<br/>
+<b>D6</b>: Eink_CS, E-ink select input pin.<br/>
+<b>D7</b>: BUSY, E-ink Device Busy Signal,When Busy is High, the operation of the chip should not be interrupted, command should not be sent.<br/>
+Pins Used for SPI Interface：<br/> <b> D10:</b> SPI chip select<br/> <b>D11:</b> SPI MOSI pin<br/> <b>D12</b>: SPI MISO pin<br/> <b>D13</b>: SPI serial clock pin<br/>
+</p><p><br/>
+</p>
+<h2>  Usage  </h2>
+<p>Following is a test using E-ink to display Chineses and displaying Characters. 
+</p>
+<h3>  Hardware Installation  </h3>
+<p>1. Connect E-ink Screen with the shield via the FPC connector 
+</p><p>2. Connect Arduino with PC via USB cable 
+</p><p>3. Stack the E-ink Display shield onto your Arduino board 
+</p><p>When you finished the hardware connection, it should look like this. <br/><img src="img/E-ink_Display.jpg" width="500"/><br/>
+</p>
+<h3>  Update E-Ink Library  </h3>
+<p>1. Download the <a href="res/SeeedEink.zip">SeeedEink Library.</a>
+</p><p>2. Unzip/copy the including folder to the path: ..\arduino-1.0\libraries 
+</p><p>The following program is written to test the function of displaying characters. This demo code can be used as a test program as well as reference for your further exploration of other functions of the board. 
+</p><p><b>Demo 1：Displaying characters</b>
+</p><p>1. Restart the Arduino IDE. Open “displayCharacter” example via the path: File --&gt; Examples --&gt; SeeedEink --&gt;displayCharacter. 
+</p><p>2. Learn about the command. In “displayCharacter”, the function we use is described as follow. 
+</p>
+<dl><dd><dl><dd><dl><dd><dl><dd><b>Name:</b> displayChar(INT8U x,INT8U y,INT16U unicode_Char); 
+</dd><dd><b>Function:</b> Display a char of which the starting point is located at (x, y), The parameter unicode_Char is the character machine code.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>3. Upload the code. There should come up several characters on the screen as shown below. <br/><img src="img/45.jpg" width="500"/><br/>
+</p><p>4. If you do not want to change the display, you can remove the screen, the characters will still be displayed. 
+</p><p><b>   Note:</b>
+</p>
+<dl><dd>1) X must be the value in the range of 0 -14, y must be the value in the range of 7-171; The screen area occupied by a character as shown below.
+</dd></dl>
+<p><br/><img src="img/Adder2.jpg" width="500"/> <br/>
+</p>
+<dl><dd>2) If X is greater than 14 or y is less than 7 ,the character cannot display normally; 
+</dd><dd>3) See the page 18 to 24 of the <a href="res/GT20L16P1Y_Datasheet.pdf">GT20L16P1Y datasheet</a> to find references for the unicode_Char; The characters include Latin、Hebrew、 Thai、Greek、 Kirill and Arabic. All the characters size is 8X16; 
+</dd><dd>4) The unicode_Char between 0x0020 to 0x007E can directly input via the keyboard. Such as the display of the character 'G' ,the function can be displayChar(3,10,'S') or displayChar (3,10,0x0047); 
+</dd><dd>5) Every E-ink can display up to 84 characters.
+</dd></dl>
+<p><b>Demo 2：Displaying Chinese</b>
+</p><p>1. Open the “displayChinese” example. 2. Learn about the command. In “displayChinese”, the function we use is described as follow. 
+</p>
+<dl><dd><dl><dd><dl><dd><dl><dd><b>Name:</b> displayChinese(INT8U x, INT8U y, INT16U unicode_Chinese); 
+</dd><dd><b>Function:</b> Display a Chinese character of which the starting point is located at (x, y), The parameter unicode_Chinese is the Chinese machine code
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p><b>     Note:</b>
+</p>
+<dl><dd>1) X value must be between 0 to 14, y value must be between 15 to 171. The screen area occupied by a Chinese character is shown below. If X is greater than 14 or y is less than 15, it cannot display Chinese normally.
+</dd></dl>
+<p><br/><img src="img/Adder1.jpg" width="500"/><br/>        2)The unicode_Chinese of the Chinese can see <a href="res/Character_code_table.pdf">GB2312 (Simplified Chinese) character code table</a>. Every Chinese character size is 16X16. 
+</p>
+<dl><dd>3) The E-ink can display up to 40 Chinese.
+</dd></dl>
+<p>3. The screen can also display two-dimensional code, just add the function displayTwoDimensionalCode(INT8U x,INT8U y) into the demo code, the starting point of two-dimensional code is located at (x, y). The phone can scan two-dimensional code to enter our website. 
+</p>
+<h3>  Displaying two dimensional code  </h3>
+<p>1. If you want to display other two dimensional code, just change the values of the array dimensionalData[]. 
+</p><p>These values can get by converting two-dimensional code to lattice data. My method of getting lattice data is a bit lame, yet you can click <a href="res/Concrete_steps.doc">here</a> to see it if you are interested. 
+</p><p>2. X value must be between 7 to 14. Y value must be between 25 to 171. <br/>3. Upload the code. There should come up several Chinese characters and a two-dimensional code on the screen as shown below.<br/><img src="img/Display2.jpg" width="500"/><br/>
+</p>
+<h2>  Resource  </h2>
+<p><a href="res/SeeedEink.zip">E-ink Display Shield Library</a><br/> <a href="res/E-ink_V0.9b_20121024.zip">E-ink Display Shield Eagle File</a><br/> <a href="res/SSD1606_Datasheet.pdf">SSD1606 Datasheet</a><br/> <a href="res/GT20L16P1Y_Datasheet.pdf">GT20L16P1Y Datasheet</a><br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

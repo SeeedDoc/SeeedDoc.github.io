@@ -1,0 +1,43 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>DSO Nano/OpenOCD gdb</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>DSO Nano/OpenOCD gdb</h1><h1>  Debugging with OpenOCD and gdb </h1>
+<p>Please use openocd 4.0 or newer.
+</p><p>This example assumes you have a Segger J-Link compatible JTAG adapter between your computer and the device (or dev board) you are debugging. It is possible to use an SWD (ST-Link) adapter instead, for this use openocd 0.7 or newer.
+</p><p>Start the openocd server with configuration files matching your hardware:
+</p>
+<pre>openocd -f interface/jlink.cfg -f target/stm32.cfg
+</pre>
+<p>Or, if you are using SWD:
+</p>
+<pre>openocd -f interface/stlink-v2.cfg -f target/stm32f1x_stlink.cfg
+</pre>
+<p>In a second window, start an interactive session with openocd:
+</p>
+<pre>telnet localhost 4444
+</pre>
+<p>This seems to be necessary to avoid "target is not halted" errors and other trouble later:
+</p>
+<pre>reset_config trst_and_srst
+</pre>
+<p>Stop the target (the arm processor):
+</p>
+<pre>reset halt
+</pre>
+<p>If you have not already flashed the binary, using for instance dfu-util, you can do it over JTAG like this:
+</p>
+<pre>reset init
+flash write_image erase dso-lib.hex 0 ihex
+reset halt
+</pre>
+<p>In a third window, start gdb or gdbtui:
+</p>
+<pre>arm-none-eabi-gdb
+(gdb) file dso-lib.elf 
+(gdb) target remote localhost:3333"
+(gdb) load dso-lib.elf
+</pre>
+<p>You should now be able to run and debug:
+</p>
+<pre>(gdb) set $pc = Reset_Handler
+(gdb) display/i $pc
+(gdb) stepi
+</pre>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

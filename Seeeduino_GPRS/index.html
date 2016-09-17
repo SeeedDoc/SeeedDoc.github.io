@@ -1,0 +1,332 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino GPRS</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino GPRS</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Seeeduino_gprs_photo.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p>Seeeduino GPRS is an IoT panel, that can connect to the internet through GPRS wireless network. It can make/answer voice calls and send/receive SMSes. It also supports FM Radio function and Bluetooth communication. Seeeduino GPRS is based on ATmega32U4 and SIM800H. ATmega32U4 is a microcontroller compatible with Arduino. SIM800H supports Quad-band 850/900/1800/1900MHz. It can transmit voice, SMS and data with low power consumption. SIM800H also brings some extra features like Bluetooth and FM Radio. Its low power design results in a current as low as 0.1mA in sleep mode. <br/>
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Seeeduino-GPRS-p-1909.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p><p><br/>
+</p>
+<h2> Specification</h2>
+<ul><li> Compatible with standard Arduino Leonardo
+</li><li> Quad-Band 850/900/1800/1900MHz
+</li><li> Headset jack
+</li><li> Convenient external SIM card holder
+</li><li> Control via AT commands 
+</li><li> Supports Bluetooth
+</li><li> Supports FM Radio
+</li><li> Current &lt; 2A
+</li><li> Arduino Leonardob Bootloader
+</li></ul>
+<p><br/>
+</p>
+<h2> Interface Function</h2>
+<div class="center"><div class="floatnone"><img src="img/Seeeduino_gprs_interface2.jpg" width="900"/></div></div><br/>
+<ul><li> ⑴：SIM Card Interface 
+</li><li> ⑵：Battery CR1220
+</li><li> ⑶：Headset Interface :3.5mm headphones 
+</li><li> ⑷：Micro USB:Port used to connect the board to your PC for programming
+</li><li> ⑸：Power Switch:Slide switch used to change the logic level and power output of the board to either 5V or 3.3V. Nowadays many new and great sensors are being develop to work with 3.3V, with other duino boards you would need to place a logic level converter between the board and these sensor(s), with the Seeeduino GPRS board all you have to do is slide the switch!
+</li><li> ⑹：DC Jack:The DC power jack allows your Seeeduino GPRS board to be powered from a wall adapter so that you can supply more power to your project if needed, for example when using DC motors or other high power devices. The DC input can be 9V-12V. As peak current is 2A when model is power on, DC  Power is your batter choice then USB power.
+</li><li> ⑺：Power LED : it will light when power is normal
+</li><li> ⑻：Reset button :it can reset SIM800h and MCU 
+</li><li> ⑼：Reset indicator LED
+</li><li> ⑽：MCU: The ATMEGA32U4-MUR chip
+</li><li> ⑾：GPRS Model: SIM800h
+</li><li> ⑿：Breakout for SIM800h :You can edbug sim800h by this interface.
+</li><li> ⒀：LEDs indicator
+</li></ul>
+<dl><dd><dl><dd><dl><dd>PWR2:SIM800 Power Indication
+</dd><dd>STA:Operating Status Indication
+</dd><dd>NET:Network status
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<table border="1" cellspacing="0">
+<tr>
+<th colspan="2" scope="col"> Status
+</th>
+<th scope="col"> SIM800H behavior
+</th></tr>
+<tr>
+<td colspan="2" scope="row"> Off
+</td>
+<td> SIM800H is not running
+</td></tr>
+<tr>
+<td colspan="2" scope="row"> 64ms on/800ms off
+</td>
+<td> SIM800H not registered the netwark
+</td></tr>
+<tr>
+<td colspan="2" scope="row"> 64ms on/3000ms off
+</td>
+<td> SIM800H registered the netwark
+</td></tr>
+<tr>
+<td colspan="2" scope="row"> 64ms on/300ms off
+</td>
+<td> SIM800H communication is established
+</td></tr></table>
+<ul><li> ⒁：GPRS antenna 
+</li><li> ⒂：ICSP interface:This is the ICSP connection for the ATMEGA32U4-MUR, it is located in the standard ICSP/SPI position for Arduino Uno, Due, Mega, and Leonardo compatible hardware (e.g. shields) that may use this connector. The SPI pins in this port: MISO, SCK, and MOSI, are also connected to digital pins 12, 13, and 11 respectively just like those of the Arduino Leonardo.
+</li><li> ⒃：Bluetooth antenna
+</li><li> ⒄：The "L" LED is connected to digital pin 13, it can be used a "status" LED in your projects,you can status by programming
+</li></ul>
+<p><br/>
+<br/>
+</p>
+<h2> Hardware Connection</h2>
+<p><b>Note</b>: To test the GPRS function, a headphone and a SIM card would be required.  <br/>
+<img src="img/Seeeduino_gprs_t.jpg" width="500"/>
+<img src="img/Seeeduino_gprs_b.jpg" width="500"/>
+</p><p><br/>
+<br/>
+</p>
+<h2> Getting Started</h2>
+<p>Below is the introduction of how to play with a Seeeduino GPRS module. Please take the example sketch in the library as reference.
+</p>
+<h3>  GPRS Function </h3>
+<p>Seeeduino GPRS offers the function of a mobile phone such as making/receiving voice calls, sending/receiving SMSes, make a TCP connection etc. You can find them in examples. Here is a brief introduction.
+</p>
+<h4>  To make a Call </h4>
+<p>Open the example sketch <b>GPRS_CallUp</b> in libraries/Seeeduino_GPRS/example/GPRS_CallUp/, replace the phone number in callUp function, then compile the sketch and upload it to your board. Seeeduino GPRS will call the number specified in the code. 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;gprs.h&gt;</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+GPRS gprs<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"GPRS - Call up Test..."</span><span class="br0">)</span><span class="sy4">;</span>
+    gprs.<span class="me1">preInit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//power on SIM800</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">0</span> <span class="sy3">!</span><span class="sy1">=</span> gprs.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span> <span class="co1">//gprs init</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"init error<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Init success, start to call..."</span><span class="br0">)</span><span class="sy4">;</span>
+    gprs.<span class="me1">callUp</span><span class="br0">(</span><span class="st0">"150****9566"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">//nothing to do</span>
+<span class="br0">}</span></pre></div></div>
+<h4>  To send an SMS </h4>
+<p>Just like calling, an SMS can be sent with Seeeduino GPRS. Open the example sketch <b>GPRS_SendSMS</b> in libraries/Seeeduino_GPRS/example/GPRS_SendSMS/, and replace the phone number and message in sendSMS function, then compile the sketch and upload it to your board. Seeeduino GPRS will send the message to the number specified in the code.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;gprs.h&gt;</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+GPRS gprs<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"GPRS - Send SMS Test ..."</span><span class="br0">)</span><span class="sy4">;</span>
+    gprs.<span class="me1">preInit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">0</span> <span class="sy3">!</span><span class="sy1">=</span> gprs.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"init error<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Init success, start to send SMS message..."</span><span class="br0">)</span><span class="sy4">;</span>
+    gprs.<span class="me1">sendSMS</span><span class="br0">(</span><span class="st0">"130****3364"</span>,<span class="st0">"hello,world"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//define phone number and text</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">//nothing to do</span>
+<span class="br0">}</span></pre></div></div>
+<h4>  To answer a Call &amp; read an SMS </h4>
+<p>If someone calls or send a message to you, Seeeduino GPRS can also answer the call or read the message out. Open the example sketch <b>GPRS_LoopHandle</b> in libraries/Seeeduino_GPRS/example/GPRS_LoopHandle/, then compile the sketch and upload it to your board, the Seeeduino GPRS will poll to check if there is an incoming call or SMS. If there is an incoming call, Seeeduino GPRS will answer the call automatically. If there is an incoming SMS, Seeeduino GPRS will show the message in Serial Monitor.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;gprs.h&gt;</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+<span class="co2">#include &lt;stdio.h&gt;</span>
+ 
+<span class="kw4">char</span> gprsBuffer<span class="br0">[</span><span class="nu0">64</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">char</span> <span class="sy2">*</span>s <span class="sy1">=</span> <span class="kw2">NULL</span><span class="sy4">;</span>
+<span class="kw4">int</span> inComing <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+GPRS gprs<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"GPRS - LoopHandle Test..."</span><span class="br0">)</span><span class="sy4">;</span>
+    gprs.<span class="me1">preInit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">0</span> <span class="sy3">!</span><span class="sy1">=</span> gprs.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"init error<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Init success, start to monitor your call or message..."</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>gprs.<span class="me1">serialSIM800</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        inComing <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">}</span><span class="kw1">else</span><span class="br0">{</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span>inComing<span class="br0">)</span><span class="br0">{</span>
+        gprs.<span class="me1">readBuffer</span><span class="br0">(</span>gprsBuffer,<span class="nu0">32</span>,DEFAULT_TIMEOUT<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>gprsBuffer<span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="kw1">if</span><span class="br0">(</span><span class="kw2">NULL</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="kw3">strstr</span><span class="br0">(</span>gprsBuffer,<span class="st0">"RING"</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+            gprs.<span class="me1">answer</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span><span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span><span class="kw2">NULL</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="br0">(</span>s <span class="sy1">=</span> <span class="kw3">strstr</span><span class="br0">(</span>gprsBuffer,<span class="st0">"+CMTI: <span class="es1">\"</span>SM<span class="es1">\"</span>"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span> <span class="co1">//SMS: $$+CMTI: "SM",24$$</span>
+            <span class="kw4">char</span> message<span class="br0">[</span>MESSAGE_LENGTH<span class="br0">]</span><span class="sy4">;</span>
+            <span class="kw4">int</span> messageIndex <span class="sy1">=</span> <span class="kw3">atoi</span><span class="br0">(</span>s<span class="sy2">+</span><span class="nu0">12</span><span class="br0">)</span><span class="sy4">;</span>
+            gprs.<span class="me1">readSMS</span><span class="br0">(</span>messageIndex, message,MESSAGE_LENGTH<span class="br0">)</span><span class="sy4">;</span>
+            <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>message<span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        gprs.<span class="me1">cleanBuffer</span><span class="br0">(</span>gprsBuffer,<span class="nu0">32</span><span class="br0">)</span><span class="sy4">;</span>
+        inComing <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h4>  To Make a TCP Connection </h4>
+<p>Seeeduino GPRS has the ability to access internet via GPRS network. We will show a example.This example can  upload your sensor data to <a href="https://xively.com/">Xively</a> and store it up to SD Card. <br/>
+</p>
+<h5>  Hardware </h5>
+<p>Part List : Seeeduino GPRS , Sim Card , Base Shield , Grove - Temperature <br/>
+</p><p>1. Mount Base Shield to your Seeeduino GPRS  and connect  Grove - Temperature to A5. <br/>
+</p><p>2. Connect Arduino to PC via USB cable; <br/>
+</p><p><img src="img/W5500_Usage.jpg" width="500"/>
+</p>
+<h5>  Software </h5>
+<p>1. If you haven't an account,you should Register an account in <a href="https://xively.com/signup">xively</a> and login.
+</p><p>2. Now,we can click Develop to add a device.
+<br/><img src="img/W5500_Add_device.jpg" width="700"/><br/>
+</p><p>3. Download the library：<a href="https://github.com/Seeed-Studio/Seeeduino_GPRS">Seeeduino GPRS Library</a>. 
+</p><p>4. Unzip and put it in the libraries file of Arduino IDE by the path: ..\arduino-1.0.1\libraries. 
+</p><p>5. Restart the Arduino IDE. 
+</p><p>6. Open the example "GPRS_ConnectTCP" via the path: File --&gt; Examples --&gt; Seeeduino_GPRS_master --&gt; GPRS_ConnectTCP. you need to modify some parameters.
+</p><p><br/><img src="img/W5500_Data.jpg" width="700"/><br/>
+</p><p>7. Upload the program to Arduino. If you do not know how to upload code, please click [<a href="/Download_Arduino_and_install_Arduino_driver">here</a>],please pay attention to that driver of Seeeduino GPRS is Leonardo.
+</p>
+<h5>  Results </h5>
+<p>Now,we will show result.<br/>
+</p><p>1. Open Serial Monitor,you will see some temperature information. <br/>
+</p><p>2. What's more, we can see information from web.<br/>
+</p><p><br/><img src="img/W5500_Serial.jpg" width="700"/><br/>
+</p><p>Is it very easy ? you can begin your project.<br/>
+</p>
+<h3>  FM Radio Function </h3>
+<p>Seeeduino GPRS has a FM radio function. Open the example sketch <b>FM_Test</b> in libraries/Seeeduino_GPRS/example/FM_Test/, and connect a button to your board, then compile the sketch and upload it to your board, Seeeduino GPRS functions like an FM radio. Even the channel can be changed with the button.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;fm.h&gt;</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+<span class="kw4">int</span> channelButton <span class="sy1">=</span> <span class="nu0">5</span><span class="sy4">;</span> <span class="co1">//used for changing channel</span>
+FM fm<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>channelButton,<span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"FM Test..."</span><span class="br0">)</span><span class="sy4">;</span>
+    fm.<span class="me1">preInit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">0</span> <span class="sy3">!</span><span class="sy1">=</span> fm.<span class="me1">powerOn</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"FM power on failed, try again..."</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    fm.<span class="me1">setVolume</span><span class="br0">(</span><span class="nu0">6</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">//0,1,2,3,4,5,6</span>
+    fm.<span class="me1">scanChannel</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"FM init success"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="kw2">HIGH</span> <span class="sy1">==</span> <span class="kw3">digitalRead</span><span class="br0">(</span>channelButton<span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">50</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"change Channel<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+    fm.<span class="me1">channelNext</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="kw2">LOW</span> <span class="sy1">==</span> <span class="kw3">digitalRead</span><span class="br0">(</span>channelButton<span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">50</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Bluetooth Function </h3>
+<p>Seeeduino GPRS can be used as a bluetooth device, but it is still not very stable yet. There are two examples sketches in library. The first one is <b>Bluetooth AT Command</b>, you can send AT command to Seeeduino GPRS through it, and the other one is <b>Bluetooth_Communicate</b>, you can communicate with Seeeduino GPRS in SPP profile with it, but it may go wrong while connecting to your bluetooth device or mobile. Below is the code of Bluetooth AT Command
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;bluetooth.h&gt;</span>
+<span class="co2">#include &lt;SoftwareSerial.h&gt;</span>
+ 
+<span class="co2">#define DEFAULT_TIMEOUT 5</span>
+<span class="co2">#define BT_BUF_LEN      32</span>
+BlueTooth bluetooth<span class="sy4">;</span>
+ 
+<span class="kw4">char</span> bluetoothBuffer<span class="br0">[</span>BT_BUF_LEN<span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">int</span> start <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Bluetooth AT Command Test..."</span><span class="br0">)</span><span class="sy4">;</span>
+    bluetooth.<span class="me1">preInit</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">3</span><span class="sy2">*</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">0</span> <span class="sy3">!</span><span class="sy1">=</span> bluetooth.<span class="me1">powerOn</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span> <span class="co1">//bluetooth PowerOn</span>
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"bluetooth power on failed, try again..."</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">if</span><span class="br0">(</span>bluetooth.<span class="me1">serialSIM800</span>.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        start <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">}</span><span class="kw1">else</span><span class="br0">{</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span>start<span class="br0">)</span><span class="br0">{</span>
+        <span class="co1">//bluetooth.cleanBuffer(bluetoothBuffer,64);</span>
+        bluetooth.<span class="me1">readBuffer</span><span class="br0">(</span>bluetoothBuffer,BT_BUF_LEN,DEFAULT_TIMEOUT<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">if</span><span class="br0">(</span><span class="kw2">NULL</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="kw3">strstr</span><span class="br0">(</span>bluetoothBuffer,<span class="st0">"+BTPAIRING:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+            bluetooth.<span class="me1">acceptPairing</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <span class="kw1">if</span><span class="br0">(</span><span class="kw2">NULL</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="kw3">strstr</span><span class="br0">(</span>bluetoothBuffer,<span class="st0">"+BTCONNECTING:"</span><span class="br0">)</span><span class="br0">)</span><span class="br0">{</span>
+            bluetooth.<span class="me1">acceptConnect</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        start <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h2>  IMPORTANT NOTICE  </h2>
+<p>There's a hardware bug in Seeeduino GPRS V1.0. When an external power input, there's very short 6V at the 5V pin, last about 2ms.
+</p><p>So we recommend that don't use the barrel jack to power the system, or there's risk to destroy the device that connected to 5V.
+</p><p>As show at the below image:
+</p><p><img src="img/Seeeduinogprs9V-IN1.png" width="600"/>
+</p><p>If you need to power the system via the barrel jack anyway, there's a solution, remove Q9 on the board. 
+</p><p>But you can't power the system via USB anymore. 
+</p><p>We had considered to fix the bug already, but will not come out very soon.(Data now is Jan26, 2016)
+</p><p><br/>
+<br/>
+</p>
+<h2> Related Projects </h2>
+<p>If you want to make some awesome projects by Seeeduino GPRS, here's some projects for reference.
+</p>
+<h3> Arduino Phone 2.0</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.instructables.com/id/ArduinoPhone-20-an-Open-Source-Mobile-Phone-Based-/"><img src="img/Arduino_phone_2.0_cover.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>More than 2 years ago we had made ArduinoPhone.
+</p><p>ArduinoPhone was big and it's difficult for the beginner to make one. As there's a step to make the charge circuit.
+</p><p>And I had heard so many voice that when will you make ArudinoPhone 2.0 for this 2 years. I think I really should make it someday.
+</p><p>It's lucky that I have got some free time for the past month, so I spend about 3 weekend to design it. And now it's done. Before you read about the steps, let's view some featured of ArduinoPhone2.0.
+</p>
+<ul><li> Even more thinner, about 20 mm
+</li><li> Support of solar and DC adopt charge
+</li><li> Much more easy to install
+</li><li> A longer standby time, more that 50 hours
+</li><li> On board MIC and Speaker, say goodbye to the earphone
+</li><li> 3D print sheel
+</li></ul>
+<p><br/>
+<a href="http://www.instructables.com/id/ArduinoPhone-20-an-Open-Source-Mobile-Phone-Based-/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h2> Resources</h2>
+<ul><li><a href="https://github.com/Seeed-Studio/Seeeduino_GPRS">Seeeduino GPRS library on gitHub</a><br/>
+</li><li><a href="res/Seeeduino_GPRS_v1.0_Eagle.zip">Seeeduino GPRS Eagle</a><br/>
+</li><li><a href="res/Seeeduino_GPRS_v1.0_pdf.pdf">Seeeduino GPRS Sch.pdf</a>
+</li><li><a href="res/Firmware_update_for_Seeeduino_GPRS_v1.0.zip">Firmware update guide</a>
+</li><li><a href="res/SIM800_Series_AT_Command_Manual_V1.01.pdf">SIM800 Series_AT Command Manual_V1.01</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

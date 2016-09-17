@@ -1,0 +1,337 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>NFC Shield V1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>NFC Shield V1.0</h1>
+
+<p><a href="/NFC_Shield" title="NFC Shield">NFC Shield</a> is a <a href="http://www.nfc-forum.org/aboutnfc"><b>Near Field Communication</b></a> interface for <b> Arduino </b> build around the popular <b> NXP PN532 </b> integrated circuit. <b> NFC </b> is a <i>short-distance</i> radio technology that enables communication between devices that are held close together. NFC traces its roots in <b> RFID </b> technology and is an open platform technology standardized in <b>ECMA-340</b> and <b>ISO/IEC 18092</b>.
+</p><p>NFC is widely used like <b>RFID</b> to recognize cards/tags (NXP Mifare Cards / Tags). NFC can be used as an alternative to <b>travel card</b> using the read/write memory provided by cards/tags. Few mobile phones comes with NFC inbuilt - they are used as readers of cards, tags, smart posters with a Web URL(like a Mobile QR-Code reader). This technology is also being applied for <b>smart cashless purchases</b>. 
+</p><p>Like many other standards, NFC technology is regulated by <b> Near Field Communication Forum </b> which standardizes <b> NFC </b> communication -- how they devices pair, share data and allow a secure transaction to happen.<a href="http://www.nfc-forum.org"><b>NFC Forum</b></a> develops and certifies devices compliant with <b>NFC standards</b>. 
+</p><p>NFC operate on unlicensed ISM(Industry Scientific Medical) band of <b>13.56 MHz</b> Frequency. NFC communication range is up to 10 cm. But, this is limited by the antenna and power radiation design. Most devices work within a range of 10mm. <a href="/NFC_Shield" title="NFC Shield">NFC Shield</a> antenna is designed to work within a range of 1cm. <a href="/NFC_Shield" title="NFC Shield">NFC Shield</a> provides all necessary circuitry for <b>PN532</b> like 27.12Mhz crystal, power supply.It also beaks-out the I/O pins of <b>PN532</b> for easy access.
+</p><p>The communication between <b>Arduino</b> and <a href="/NFC_Shield" title="NFC Shield">NFC Shield</a> is via <b>SPI</b>.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/nfc-shield-p-916.html?cPath=132_134">SLD80453P</a></b>
+</p><p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/NFC_Shield1.bmp" width="500"/> <div class="thumbcaption"><a href="/NFC_Shield" title="NFC Shield">NFC Shield</a></div></div></div>
+<p><br clear="all"/>
+</p>
+<h2>  Features  </h2>
+<ul><li> Arduino Shield compatible. No soldering required.
+</li><li> <b>SPI</b> interface. Hence, most <b>Arduino</b> pins are available for other applications.
+</li><li> Built in <b>PCB Antenna</b>.
+</li><li> Supports both 3.3V and 5V operation using TI's <b>TXB0104</b> level translator.
+</li><li> Socket to connect other shields.
+</li><li> The maximum communication range of this NFC Shield is about 5 cm
+</li><li> Not being able to read/write ultralightC chip,Only to Read its ID
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Use as a RFID reader with <b>Mifare One tags</b> (ISO14443 Type-A) and cards (13.56Mhz).
+</li><li>Build visiting card sharing system.
+</li><li>Build attendance systems.
+</li><li>Design authentication systems.
+</li><li>Read Smart Posters.
+</li><li>Securely exchange small data with other NFC devices
+</li><li>Use with <a href="/Seeeduino_ADK_Main_Board" title="Seeeduino ADK Main Board">Seeeduino ADK Main Board</a> for creating mobile NFC applications.
+</li><li>And other endless possibility.
+</li></ul>
+<p><br/>
+</p>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<ul><li>Set <b>Seeeduino</b> power selection slide-switch to <b>3.3V</b>.
+</li><li>Connect <a href="/NFC_Shield" title="NFC Shield">NFC Shield</a> to <b>Seeeduino</b> as shown below.
+</li><li>Compile and upload the example sketch provided.
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:502px;"><img src="img/NFC_Shield_Connected_to_Seeeduino1.jpg" width="500"/> <div class="thumbcaption"><b>NFC Shield - Connected to Seeeduino</b></div></div></div>
+<p><br clear="all"/>
+</p>
+<ul><li>Hold the <b>MIFARE Card</b> near the antenna. The NFC Shield will read the passive id data.
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/MifareCard_near_NFC_Shield1.jpg" width="400"/> <div class="thumbcaption"><b>Mifare Card held near NFC Shield Antenna</b></div></div></div>
+<p><br clear="all"/>
+</p>
+<ul><li>Hold the <b>MIFARE Tag</b> near the antenna. The NFC Shield will read the passive id data.
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/MifareTag_near_NFC_Shield1.jpg" width="400"/> <div class="thumbcaption"><b>Mifare Tag held near NFC Shield Antenna</b></div></div></div>
+<p><br clear="all"/>
+</p>
+<ul><li>Use the following setup for establishing peer to peer communication between two Seeeduinos using NFC Shields.
+</li></ul>
+<p><br clear="all"/>
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/NFC_Shield_Peer_to_Peer_Communication_SetupWithSeeeduino.jpg" width="400"/> <div class="thumbcaption"><b>NFC Peer to Peer Communication Setup</b></div></div></div>
+<p><br clear="all"/>
+</p><p><br/>
+</p>
+<h3>  Programming</h3>
+<p>Donwload the <a href="res/PN532_SPI_V2.zip">PN532_SPI Library For NFC Shield</a> and install it to \arduino\libraries. you can either copy the folling codes into Arduino IDE or open Open the examples in the library to start.<br/>
+<b>Demo 1：Read the complete memory of a MIFARE card</b><br/>1. Open and upload the example <b>readAllMemoryBlocks</b> example as show below. 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">//This example reads all MIFARE memory block from 0x00 to 0x63. </span>
+<span class="co1">//It is tested with a new MIFARE 1K cards. Uses default keys for authenication.</span>
+<span class="co1">//Contributed by Seeed Technology Inc (www.seeedstudio.com)</span>
+ 
+<span class="co2">#include &lt;PN532.h&gt;</span>
+<span class="co2">#include &lt;SPI.h&gt;</span>
+ 
+<span class="coMULTI">/*Chip select pin can be connected to D10 or D9 which is hareware optional*/</span>
+<span class="coMULTI">/*if you the version of NFC Shield from SeeedStudio is v2.0.*/</span>
+<span class="co2">#define PN532_CS 10</span>
+ 
+PN532 nfc<span class="br0">(</span>PN532_CS<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co2">#define  NFC_DEMO_DEBUG 1</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span> <span class="br0">{</span>
+<span class="co2">#ifdef NFC_DEMO_DEBUG</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Hello!"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+  nfc.<span class="kw3">begin</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  uint32_t versiondata <span class="sy1">=</span> nfc.<span class="me1">getFirmwareVersion</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span><span class="sy3">!</span> versiondata<span class="br0">)</span> <span class="br0">{</span>
+<span class="co2">#ifdef NFC_DEMO_DEBUG</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Didn't find PN53x board"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// halt</span>
+  <span class="br0">}</span>
+<span class="co2">#ifdef NFC_DEMO_DEBUG</span>
+  <span class="co1">// Got ok data, print it out!</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Found chip PN5"</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">(</span>versiondata<span class="sy1">&gt;&gt;</span><span class="nu0">24</span><span class="br0">)</span> <span class="sy3">&amp;</span> <span class="nu12">0xFF</span>, <span class="kw2">HEX</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Firmware ver. "</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="br0">(</span>versiondata<span class="sy1">&gt;&gt;</span><span class="nu0">16</span><span class="br0">)</span> <span class="sy3">&amp;</span> <span class="nu12">0xFF</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">'.'</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">(</span>versiondata<span class="sy1">&gt;&gt;</span><span class="nu0">8</span><span class="br0">)</span> <span class="sy3">&amp;</span> <span class="nu12">0xFF</span>, <span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Supports "</span><span class="br0">)</span><span class="sy4">;</span> 
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>versiondata <span class="sy3">&amp;</span> <span class="nu12">0xFF</span>, <span class="kw2">HEX</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+  <span class="co1">// configure board to read RFID tags and cards</span>
+  nfc.<span class="me1">SAMConfig</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span> <span class="br0">{</span>
+  uint32_t id<span class="sy4">;</span>
+  <span class="co1">// look for MiFare type cards</span>
+  id <span class="sy1">=</span> nfc.<span class="me1">readPassiveTargetID</span><span class="br0">(</span>PN532_MIFARE_ISO14443A<span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>id <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span>
+  <span class="br0">{</span>
+<span class="co2">#ifdef NFC_DEMO_DEBUG</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Read card #"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>id<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif</span>
+    uint8_t keys<span class="br0">[</span><span class="br0">]</span><span class="sy1">=</span> <span class="br0">{</span> <span class="nu12">0xFF</span>,<span class="nu12">0xFF</span>,<span class="nu12">0xFF</span>,<span class="nu12">0xFF</span>,<span class="nu12">0xFF</span>,<span class="nu12">0xFF</span> <span class="br0">}</span><span class="sy4">;</span><span class="co1">// default key of a fresh card</span>
+    <span class="kw1">for</span><span class="br0">(</span>uint8_t blockn<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>blockn<span class="sy1">&lt;</span><span class="nu0">64</span><span class="sy4">;</span>blockn<span class="sy2">++</span><span class="br0">)</span> 
+    <span class="br0">{</span>
+      <span class="kw1">if</span><span class="br0">(</span>nfc.<span class="me1">authenticateBlock</span><span class="br0">(</span><span class="nu0">1</span>, id ,blockn,KEY_A,keys<span class="br0">)</span><span class="br0">)</span> <span class="co1">//authenticate block blockn</span>
+      <span class="br0">{</span>
+        <span class="co1">//if authentication successful</span>
+        uint8_t block<span class="br0">[</span><span class="nu0">16</span><span class="br0">]</span><span class="sy4">;</span>
+        <span class="co1">//read memory block blockn</span>
+        <span class="kw1">if</span><span class="br0">(</span>nfc.<span class="me1">readMemoryBlock</span><span class="br0">(</span><span class="nu0">1</span>,blockn,block<span class="br0">)</span><span class="br0">)</span>
+        <span class="br0">{</span>
+<span class="co2">#ifdef NFC_DEMO_DEBUG</span>
+          <span class="co1">//if read operation is successful</span>
+          <span class="kw1">for</span><span class="br0">(</span>uint8_t i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>i<span class="sy1">&lt;</span><span class="nu0">16</span><span class="sy4">;</span>i<span class="sy2">++</span><span class="br0">)</span>
+          <span class="br0">{</span>
+            <span class="co1">//print memory block</span>
+            <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>block<span class="br0">[</span>i<span class="br0">]</span>,<span class="kw2">HEX</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="kw1">if</span><span class="br0">(</span>block<span class="br0">[</span>i<span class="br0">]</span> <span class="sy1">&lt;=</span> <span class="nu12">0xF</span><span class="br0">)</span> <span class="co1">//Data arrangement / beautify</span>
+            <span class="br0">{</span>
+              <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"  "</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">else</span>
+            <span class="br0">{</span>
+              <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" "</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+          <span class="br0">}</span>
+ 
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"| Block "</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw1">if</span><span class="br0">(</span>blockn <span class="sy1">&lt;=</span> <span class="nu0">9</span><span class="br0">)</span> <span class="co1">//Data arrangement / beautify</span>
+          <span class="br0">{</span>
+            <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" "</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="br0">}</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>blockn,<span class="kw2">DEC</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">" | "</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+          <span class="kw1">if</span><span class="br0">(</span>blockn <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span>
+          <span class="br0">{</span>
+            <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Manufacturer Block"</span><span class="br0">)</span><span class="sy4">;</span>
+          <span class="br0">}</span>
+          <span class="kw1">else</span>
+          <span class="br0">{</span>
+            <span class="kw1">if</span><span class="br0">(</span><span class="br0">(</span><span class="br0">(</span>blockn <span class="sy2">+</span> <span class="nu0">1</span><span class="br0">)</span> <span class="sy2">%</span> <span class="nu0">4</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span>
+            <span class="br0">{</span>
+              <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Sector Trailer"</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+            <span class="kw1">else</span>
+            <span class="br0">{</span>
+              <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Data Block"</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="br0">}</span>
+          <span class="br0">}</span>
+<span class="co2">#endif</span>
+        <span class="br0">}</span>
+      <span class="br0">}</span>
+    <span class="br0">}</span>
+  <span class="br0">}</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">2000</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><b>This sketch reads the complete memory of a MIFARE Standard card using default authentication keys. The output gives typical memory layout of fresh MIFARE Standard card.</b> <br/>
+</p><p> 
+</p><p>2. Bring a Mifare Card near the NFC Antenna. Open the serial monitor, you can see the score as show below:
+</p><p> <br/><img src="img/Score_2.jpg" width="576"/>
+</p><p><b>Note:</b> Blocks are classified as Manufacturer Block(read-only), Data Block (user/application writable area), and Sector Trailer(authentication and access bits for that sector) 
+</p><p><br/><b>Demo 2: Write data to MIFARE Memory Block</b><br/>
+</p><p>1. Open the example writeMifareMemory. This example writes a MIFARE memory block 0x08 of a new MIFARE 1K cards using default authentication keys .Read the Block Memory after complete writing data to MIFARE Memory Block. <br/>
+</p><p><b>Note:</b> Memory block 0 is readonly and contains manufacturer data. Do not write to Sector Trailer block unless you know what you are doing. Otherwise, the MIFARE card may be unusable in the future. 
+</p><p>2. Compile and upload the example If you do not know how to upload, please click <a href="/Upload_Code">here</a>. 
+</p><p>3. Bring a Mifare Card near the NFC Antenna..  <br/>4. Open the serial monitor, you can see the score as show below: <br/><img src="img/Score_1.jpg" width="341"/><br/>
+</p><p><br/><b>Demo 3: Peer to Peer communication</b>
+</p><p>An experimental NFC Peer to Peer communication is implemented in the latest NFC library. This uses Active Initiator for P2P communication. 
+</p><p>1. Download the example “PtoPInitiator” and “PtoPTarge” into two different Arduinos with NFC Shields. 
+</p><p>2. Place Antenna close to each other. See hardware setup as below. 　　(图片) 
+</p><p>3. Open the serial terminal and observer the data trans-reception. 
+</p><p><b>Output Score:</b>
+</p><p>P2P Initiator: <br/><img src="img/NFC_Shield_PtoPInitiator.jpg" width="600"/>
+</p><p><br/>
+</p><p>P2P Target: <br/><img src="img/NFC_Shield_PtoPTarget.jpg" width="557"/><br/>
+</p>
+<h2>  Reference code  </h2>
+<p>The APIs make use of the commands to invoke the interfaces provided by PN532 firmware via SPI. All these commands are documented in PN532 User Manual. The following APIs are provided by PN532_SPI Library. 
+</p><p><br/>
+<b>boolean SAMConfig(void)</b>
+</p><p>This API invokes the <b>SAMConfiguration</b> command of PN532 and sets it to <b>Normal Mode</b>. <b>SAM</b> stands for Security Access Module (i.e the PN532 system). PN532 system can work in <b>Normal</b> mode, <b>Virtual Card</b> mode, <b>Wired Card</b> mode and <b>Dual Card</b> mode. 
+</p><p><b>Usage</b>: 
+</p>
+<pre>nfc.SAMConfig(); // Call this before any read/write operation
+</pre>
+<p><br/>
+<b>uint32_t readPassiveTargetID(uint8_t cardbaudrate)</b>
+</p><p>This method reads the Passive Target ID and returns it as a 32-bit number. At the moment only reading MIFARE ISO14443A cards/tags are supported. Hence use <b>PN532_MIFARE_ISO14443A</b> as parameter. <i>Returns</i> 32 bit card number 
+</p><p><b>Usage</b>: 
+</p>
+<pre>uint32_t cid;
+// look for MiFare type cards/tags
+cid = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A);
+</pre>
+<p><b>uint32_t authenticateBlock(uint8_t cardnumber, uint32_t cid, uint8_t blockaddress ,uint8_t authtype, uint8_t * keys)</b>
+</p><p>This method is used to authenticate a memory block with key before read/write operation. <i>Returns</i> <b>true</b> when successful. 
+</p>
+<ul><li><b>cardnumber</b> can be 1 or 2 
+</li><li><b>cid</b> is 32-bit Card ID 
+</li><li><b>blockaddress</b> is block number (any number between 0 - 63 for MIFARE card) 
+</li><li><b>authtype</b> is which key is to be used for authentication (either <b>KEY_A</b> or <b>KEY_B</b>) 
+</li><li><b>keys</b> points to the byte-array holding 6 keys.
+</li></ul>
+<p><b>Usage:</b>
+</p>
+<pre>uint8_t keys[]= {0xFF,0xFF,0xFF,0xFF,0xFF,0xFF};  // default key of a fresh card
+nfc.authenticateBlock(1, id ,3,KEY_A,keys); ////authenticate block 3, id is 32-bit passive target id.
+</pre>
+<p> 
+</p><p><b>uint32_t readMemoryBlock(uint8_t cardnumber,uint8_t blockaddress, uint8_t * block)</b>
+</p><p>This method reads a memory block after authentication with the key. <i>Returns</i> <b>true</b> when successful. 
+</p>
+<ul><li><b>cardnumber</b> can be 1 or 2 
+</li><li><b>blockaddress</b> is block number (any number between 0 - 63 for MIFARE card) to read. Each block is 16bytes long in case of MIFARE Standard card. 
+</li><li><b>block</b> points to buffer(byte-array)to hold 16 bytes of block-data.
+</li></ul>
+<p><b>Usage:</b>
+</p>
+<pre>uint8_t block[16];
+nfc.readMemoryBlock(1,3,block); //Read can be performed only when authentication was successful.
+</pre>
+<p><b>uint32_t writeMemoryBlock(uint8_t cardnumber,uint8_t blockaddress, uint8_t * block)</b>
+</p><p>This method writes data to a memory block after authentication with the key. <i>Returns</i> <b>true</b> when successful. 
+</p>
+<ul><li><b>cardnumber</b> can be 1 or 2 
+</li><li><b>blockaddress</b> is block number (any number between 0 - 63 for MIFARE card) to write. Each block is 16bytes long in case of MIFARE Standard card. 
+</li><li><b>block</b> points to buffer(byte-array) which holds 16 bytes of block-data to write.<b>Usage:</b>
+</li></ul>
+<pre>uint8_t writeBuffer[16];
+    for(uint8_t ii=0;ii&lt;16;ii++)
+     { 
+       writeBuffer[ii]=ii; //Fill buffer with 0,1,2....F
+     }
+nfc.writeMemoryBlock(1,0x08,writeBuffer); //Write writeBuffer[] to block address 0x08. Read can be performed only when authentication was successful.
+</pre>
+<p><b>uint32_t PN532::configurePeerAsInitiator(uint8_t baudrate)</b>
+</p><p>This method implements a Peer to Peer Initiator. <i>Returns</i> <b>true</b> when successful. 
+</p>
+<ul><li><b>baudrate</b> can be any number from 0-2. 0 for 106kbps or 1 for 201kbps or 2 for 424kbps. At the moment only 1 and 2 are supported.
+</li></ul>
+<p><b>This feature is experimental and supports NFC Peer to Peer communication with other NFC shields. Interaction with mobile devices are not tested.</b>
+</p><p><b>Usage:</b>
+</p>
+<pre>// Configure PN532 as Peer to Peer Initiator
+if( nfc.configurePeerAsInitiator(2) ) //if connection is error-free
+    {
+     //Your Send  Receive code here
+    }
+</pre>
+<p><b>uint32_t configurePeerAsTarget()</b>
+</p><p>This method implements a Peer to Peer Target. <i>Returns</i> <b>true</b> when successful. 
+</p><p><b>This feature is experimental and supports NFC Peer to Peer communication with other NFC shields. Interaction with mobile devices are not tested.</b>
+</p><p><b>Usage:</b>
+</p>
+<pre>// Configure PN532 as Peer to Peer Target
+if(nfc.configurePeerAsTarget()) //if connection is error-free
+   {
+        //You code to trans-receive data
+   }
+</pre>
+<p><b>uint32_t initiatorTxRx(char *DataOut,char *DataIn)</b>
+</p><p>This method is used to transmit and receive data to and from target. This code is used by NFC Peer to Peer Initiator. <i>Returns</i> <b>true</b> when successful. 
+</p>
+<ul><li><b>DataOut</b> is pointer and array of chars (16 bytes) transmit data. 
+</li><li><b>DataIn</b> is pointer and array of chars (16 bytes) receive data.
+</li></ul>
+<p><br/><b>This feature is experimental and supports NFC Peer to Peer communication with other NFC shields. Interaction with mobile devices are not tested.</b>
+</p><p><b>Usage:</b>
+</p>
+<pre>    // Configure PN532 as Peer to Peer Initiator in active mode
+    if( nfc.configurePeerAsInitiator(2) ) //if connection is error-free
+    {
+        //trans-receive data
+        if(nfc.initiatorTxRx(DataOut,DataIn))
+        {
+         Serial.print("Data Sent and Received: ");
+         Serial.println(DataIn);
+        }
+    }
+</pre>
+<p><b>uint32_t targetTxRx(char *DataOut,char *DataIn)</b>
+</p><p>This method is used to transmit and receive data to and from initiator. This code is used by NFC Peer to Peer Target to respond to Initiator. <i>Returns</i> <b>true</b> when successful. 
+</p>
+<ul><li><b>DataOut</b> is pointer and array of chars (16 bytes) transmit data. 
+</li><li><b>DataIn</b> is pointer and array of chars (16 bytes) receive data.
+</li></ul>
+<p><b>Usage:</b>
+</p>
+<pre>    // Configure PN532 as Peer to Peer Target
+    if(nfc.configurePeerAsTarget()) //if connection is error-free
+    {
+        //trans-receive data
+        if(nfc.targetTxRx(DataOut,DataIn))
+        {
+         Serial.print("Data Received: ");
+         Serial.println(DataIn);
+        }
+    }
+</pre>
+<p><br/>
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="res/PN532_SPI_V2.zip">PN532_SPI Library For NFC Shield</a>
+</li><li><a href="http://garden.seeedstudio.com/images/8/81/NFC_Shield_V0.9b_Schematic_Board_Files.zip">NFC Shield - Schematic and Board Files in Eagle Format</a>
+</li><li><a href="http://garden.seeedstudio.com/images/4/48/NFC_Shield_V0.9b.pdf">NFC Shield - Schematic in PDF format</a>
+</li><li><a href="http://www.nxp.com/documents/user_manual/141520.pdf">NXP PN532 - User Manual</a>
+</li><li><a href="http://www.nxp.com/acrobat_download2/other/identification/M001053_MF1ICS50_rev5_3.pdf">NXP Mifare One S50 IC</a>
+</li><li><a href="http://www.nfc-forum.org">NFC Forum</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,144 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Wireless Power Supply</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Wireless Power Supply</h1>
+
+<p>The Seeed Wireless Power Supply is a power transfer devise which can be used for close wireless charging or power supply. The module is composed of transmitter (black) and receiver (white) . The transmitter module runs off a 12Vdc power supply and uses the principle of electromagnetic induction to transmit converted power to the receiver module. The receiver module receives the power supply and outputs a stable 5Vdc at 300mA.
+</p><p>Model:<a href="http://www.seeedstudio.com/depot/wireless-power-supply-p-701.html?cPath=155">POW114C1M</a>
+</p>
+<center>
+<p><img src="img/Wireless-ps.jpg" width="500"/>
+</p>
+</center>
+<h2>  Features  </h2>
+<ul><li>Wireless charging or power supply
+</li><li>Output stable 5V direct current
+</li><li>Slim components
+</li><li>Easy-to-use
+</li><li>Easily added to electronic projects
+</li><li>Low heat dissipation
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Robot charging station
+</li><li>Wireless sensors
+</li><li>Mobile phone charging
+</li><li>Non-contact applications
+</li><li>Wireless Seeeduino power supply
+</li><li>Electronic magic tricks
+</li></ul>
+<h2> Specifications </h2>
+<ul><li>Input voltage: 12Vdc
+</li><li>Output voltage: 5Vdc
+</li><li>Output current: 300~400mA
+</li><li>Transmitter module: 5mm*45mm*60mm
+</li><li>Receiver module: 2mm*40mm*55mm
+</li></ul>
+<h2>  Cautions  </h2>
+<ol><li>Can’t be used to charge or supply a voltage bigger or smaller than 5V.
+</li><li>Pay attention to the anode pole and avoid connecting the power to wrong pole! 
+</li></ol>
+<p><br/>
+</p>
+<h2>  Mechanic Dimensions  </h2>
+<p><img src="img/Wireless-dimension.JPG" width="600"/>
+</p>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<center>
+<p><img src="img/Transmitter.jpg" width="400"/>
+<img src="img/Receiver.jpg" width="399"/>
+</p>
+</center>
+<p><br/>
+The transmitter module can simply be directly connected to a 12V power supply. The receiver module will receive power when it is within range of the transmitter module and outputs a stable output voltage. The receiver can then be directly connected to the load without any additional stabilizing circuitry. 
+</p><p>The receiver module has two wires, the red wire is positive, and the white or black is negative. When connecting the receiver to a load, pay close attention to the polarity of the device. (i.e. Red wire to positive) 
+</p><p>When in standby, the transmitter module outputs a low current, when charging the power automatically adjusts according to the load draw. The reciever can supply direct current to electronic devices like mobile phones.
+</p><p>Both modules can be built directly into most electronic projects.
+</p><p>The modules are slim, stable, save electricity and do not give off large amounts of heat.
+</p>
+<h3>  Example  </h3>
+<h3>  Wireless Charging </h3>
+<p>Supply 5V battery directly from the receiver, just make sure to use the right polarity. <b>NB</b>: with this this module, you need to add a 4.2V stabilizing circuit if you want to charge [[|Lipo Rider|LiPo]] batteries. 
+</p>
+<h3>  Power Supply </h3>
+<center>
+<p><img src="img/Ps-example.jpg" width="450"/>
+</p>
+</center>
+<h3>  Lipo Charging circuit using the Seeedstudio Lipo Rider </h3>
+<p>You can use the <b>Wireless Power Supply</b> to charge LiPo batteries easily when connected up to the Seeedstudio <a href="/Lipo_Rider" title="Lipo Rider">Lipo Rider</a>. Just connect the wireless charger to the solar JST connection and your battery to the battery connection. The <a href="/Lipo_Rider" title="Lipo Rider">Lipo Rider</a> can be used to power the 5V needed to power most microcontrollers and can easily be connected to the <a href="/Seeeduino_V2.2" title="Seeeduino V2.2">Seeeduino</a> via the usb connection. This would be the perfect setup for a wireless charging station for a mobile robot running on a LiPo battery .
+</p>
+<center>
+<p><img src="img/Wireless-lipo.jpg" width="494"/>
+</p>
+</center>
+<h2>  FAQ  </h2>
+<p><b>Question 1:</b> What is the minimal distance between the transmitter and the receiver?
+</p><p><b>Answer:</b> The distance that it can provide stable 300 mA at 5V is about 0~10mm.
+</p><p><b>Question 2:</b> May I have a wall (10 cm) between them? If so, does it still provide stable 300 mA at 5V?
+</p><p><b>Answer:</b> Sorry it can't provide stable 300 mA at 5V with this long distance.
+</p>
+<h2>  Version Tracker </h2>
+<h3>  Document Version Tracker  </h3>
+<table border="1">
+<tr>
+<th>Revision
+</th>
+<th>Descriptions
+</th>
+<th>Editor
+</th>
+<th>Release Date
+</th></tr>
+<tr style="font-size: 90%">
+<td width="200px"> Wireless Power Supply v0.9b
+</td>
+<td width="400px"> Initial public release
+</td>
+<td width="200px"> Lafier
+</td>
+<td width="200px"> Nov 12, 2010
+</td></tr>
+<tr style="font-size: 90%">
+<td> Wireless Power Supply v0.9b
+</td>
+<td> Reviewed and Info added
+</td>
+<td> Rob
+</td>
+<td> Dec 05, 2010
+</td></tr></table>
+<h3>  Hardware Version Tracker  </h3>
+<table border="1">
+<tr>
+<th>Revision
+</th>
+<th>Descriptions
+</th>
+<th>Release Date
+</th></tr>
+<tr style="font-size: 90%">
+<td width="300px"> Wireless Power Supply v0.9b
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> Nov 12, 2010
+</td></tr></table>
+<p><br/>
+</p>
+<h2>  Resources  </h2>
+<p><a href="res/Test_Report_of_Wireless_Power_Supply.pdf">Test Report of Wireless Power Supply.pdf</a>
+</p>
+<h2>  How to buy  </h2>
+<p>Click <a href="http://www.seeedstudio.com/depot/wireless-power-supply-p-701.html?cPath=104_107">here</a> to buy <strong class="selflink">Wireless Power Supply</strong> ,or other <a href="http://www.seeedstudio.com/depot">products</a> you like.
+</p>
+<h2>  See Also  </h2>
+<ul><li> <a href="/0.5w_Solar_Panel_55x70" title="0.5w Solar Panel 55*70">0.5w Solar Panel 55*70</a>
+</li><li> <a href="/1w_Solar_Panel_75x100" title="1w Solar Panel 75*100">1w Solar Panel 75*100</a>
+</li><li> <a href="/3.6V_Micro_hydro_generator" title="3.6V Micro hydro generator">3.6V Micro hydro generator</a>
+</li><li> <a href="/Adjustable_Breadboard_Power_Supply" title="Adjustable Breadboard Power Supply">Adjustable Breadboard Power Supply</a>
+</li><li> <a href="/w/index.php?title=Windbelt_Kit&amp;action=edit&amp;redlink=1" title="Windbelt Kit (page does not exist)">Windbelt Kit</a>
+</li><li> <a href="/Solar_Charger_Shield" title="Solar Charger Shield">Solar Charger Shield</a>
+</li><li> <a href="/Lipo_Rider" title="Lipo Rider">Lipo Rider</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

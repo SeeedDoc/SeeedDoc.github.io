@@ -1,0 +1,131 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Xadow - Gesture v1.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Xadow - Gesture v1.0</h1><div class="floatright"><img src="img/Xadow-Gesture_3.jpg" width="600"/></div>
+
+<p>The sensor on Xadow - Gesture v1.0 is <b>PAJ7620U2</b> that integrates gesture recognition function with general I2C interface into a single chip. It can recognize <b>13 gestures</b> including move up, move down, move left, move right, move forward, move backward,circle-clockwise, circle-counter clockwise, up to down ,down to up,left to right ,right to left and wave. These gestures information can be simply accessed via the I2C bus.
+</p>
+<h2>  Features</h2>
+<ol><li>13 gesture recognition<br/>
+</li><li>Gesture speed is 60°/s to 600°/s in Normal Mode and 60°/s to 1200°/s in Gaming Mode<br/>
+</li><li>Ambient light immunity: &lt; 100k Lux<br/>
+</li><li>Built-in proximity detection<br/>
+</li><li>I2C interface up to 400 kbit/s<br/>
+</li><li>Compatible with the Xadow interface<br/>
+</li></ol>
+<h2> Specification</h2>
+<ul><li> <b>Sensor:</b>PAJ7620U2
+</li><li> <b>Power supply:</b>2.8V to 3.3V and I/O voltage is 1.8V~3.3V 
+</li><li> <b>Compatible:</b> Xadow interface
+</li><li> <b>interface:</b>IIC
+</li><li> <b>Operating Temperature:</b> -40°C to +85°C
+</li><li> <b>Dimensions:</b>25 * 20mm;
+</li></ul>
+<p><br/>
+</p>
+<h2>  Interface Function </h2>
+<p><img src="img/Xadow-Gesture_2.jpg" width="500"/><br/>
+<b>P1:</b>Short-circuits,then interrupt signal will be connected with pin <b>PF0/A5</b> .<br/>
+<b>U1:</b>PAJ7620U2;Integrated Gesture Recognition Sensor. <br/>
+<b>J1,J2:</b>FPC interface.<br/>
+<b>Note:</b> when connect Xadow - Gesture to Xadow Main Board, the connection direction should be cautious. The connection method is that the unfilled corner of one xadow module connect to the right angle of another module(see four corners of each xadow module).
+</p>
+<h2> Pins Description</h2>
+<p>Pins on both sides of Xadow modules are symmetrical, here are pins descriptions about Interface from top to bottom. <br/>
+<img src="img/Xadow-Gesture_5.jpg" width="700"/><br/>
+</p>
+<table border="1" cellspacing="0" width="50%">
+<tr>
+<th scope="col"> Xadow Pins
+</th>
+<th scope="col"> PAJ7620U2 Pins
+</th>
+<th scope="col"> Function
+</th></tr>
+<tr>
+<th scope="row"> 1
+</th>
+<td> NC
+</td>
+<td> (PCINT1/SCLK)PB1
+</td></tr>
+<tr>
+<th scope="row"> 2
+</th>
+<td> NC
+</td>
+<td> (PDI/PCINT2/MOSI)PB2
+</td></tr>
+<tr>
+<th scope="row"> 3
+</th>
+<td> NC
+</td>
+<td> (PDO/PCINT3/MISO)PB3
+</td></tr>
+<tr>
+<th scope="row"> 4
+</th>
+<td> 3/INT
+</td>
+<td> PF5(ADC5/TMS)
+</td></tr>
+<tr>
+<th scope="row"> 5
+</th>
+<td> 1/VBUS , 11/VLED , 12/VDD,
+</td>
+<td> VCC
+</td></tr>
+<tr>
+<th scope="row"> 6
+</th>
+<td> 6/GND , 10/GND
+</td>
+<td> GND
+</td></tr>
+<tr>
+<th scope="row"> 7
+</th>
+<td> 6/GND , 10/GND
+</td>
+<td> GND
+</td></tr>
+<tr>
+<th scope="row"> 8
+</th>
+<td> 1/VBUS , 11/VLED , 12/VDD,
+</td>
+<td> VCC
+</td></tr>
+<tr>
+<th scope="row"> 9
+</th>
+<td> 5/SCL
+</td>
+<td>(OC0B/SCL/INT0 )PD0
+</td></tr>
+<tr>
+<th scope="row"> 10
+</th>
+<td> 2/SDA
+</td>
+<td> (SDA/INT1)PD1
+</td></tr>
+<tr>
+<th scope="row"> 11
+</th>
+<td> NC
+</td>
+<td> (RXD/INT2)PD2
+</td></tr>
+<tr>
+<th scope="row"> 12
+</th>
+<td> NC
+</td>
+<td> (TXD/INT3)PD3
+</td></tr></table>
+<h2> Resources</h2>
+<p><a href="res/Xadow-Gesture_v1.0_sch_pcb.zip">Xadow - Gesture v1.0 sch pcb.zip</a><br/>
+<a href="res/PAJ7620U2_Datasheet_V0.8_20140611.pdf">PAJ7620U2_Datasheet_V0.8_20140611.pdf</a><br/>
+<a href="https://github.com/Seeed-Studio/Grove_Guesture">Library of Xadow - Guesture</a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

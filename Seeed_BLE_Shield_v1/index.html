@@ -1,0 +1,270 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeed BLE Shield v1</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeed BLE Shield v1</h1>
+<h2>  Overview </h2>
+<p><br/>
+Seeed BLE v1 Front<img src="img/Seeed_BLE-4.png" width="450"/><img src="img/Seeed_BLE-5.png" width="450"/>Seeed BLE v1 Back
+</p><p><br/>
+</p>
+
+<p><br/>
+This Seeed BLE Shield utilizes an <a href="/Bluetooth_V4.0_HM-11_BLE_Module">HM-11</a> module to provide your Arduino/Seeeduino with serial BLE function. It only takes two pins of the micro controller to communicate your device with this shield. With support for a BLE ComAssistant APK, this BLE Shield can talk to your mobile phone more easily without pairing. You can use it in many conditions, like robot controls or remote control equipment ,etc. We prepared an easy and convenient command set for this shield so that you can use neat and concise code to run the function.
+<br/>
+<br/>
+</p>
+<h2>  Parameters </h2>
+<p><br/>
+</p>
+<table border="1">
+<tr>
+<th> Specifications
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td width="300px"> BT Version
+</td>
+<td width="500px"> Bluetooth Specification V4.0 BLE
+</td></tr>
+<tr>
+<td> Working Frequency
+</td>
+<td> 2.4GHz ISM band
+</td></tr>
+<tr>
+<td> Working Current
+</td>
+<td> &lt; 15 mA
+</td></tr>
+<tr>
+<td> Sourcing Current
+</td>
+<td> &lt; 30 mA
+</td></tr>
+<tr>
+<td> Sleeping Current
+</td>
+<td> &lt; 3 mA
+</td></tr>
+<tr>
+<td> Modulation Method
+</td>
+<td> GFSK(Gaussian Frequency Shift Keying)
+</td></tr>
+<tr>
+<td> RF Power
+</td>
+<td> -23dbm, -6dbm, 0dbm, 6dbm, can modify through AT Command AT+POWE
+</td></tr>
+<tr>
+<td> Speed
+</td>
+<td> Asynchronous: 6K Bytes, Synchronous: 6K Bytes
+</td></tr>
+<tr>
+<td> Sensibility
+</td>
+<td> ≤-84dBm at 0.1% BER
+</td></tr>
+<tr>
+<td> Security
+</td>
+<td> Authentication and encryption
+</td></tr>
+<tr>
+<td> Service
+</td>
+<td> Central &amp; Peripheral UUID FFE0,FFE1
+</td></tr>
+<tr>
+<td> Supply Power
+</td>
+<td> 5v
+</td></tr>
+<tr>
+<td> Working Temperature
+</td>
+<td> –5 ~ +65 Centigrade
+</td></tr>
+<tr>
+<td> Size
+</td>
+<td> 68mm x 43mm
+</td></tr>
+<tr>
+<td> PIN Code
+</td>
+<td> 000000(by default)
+</td></tr></table>
+<p><br/>
+<br/>
+</p>
+
+<p><br/>
+</p>
+<div class="center"><div class="floatnone"><img src="img/BLE_Shield.png" width="1013"/></div></div><br/>
+<ul><li>  HM-11: The basic module is HM-11, more information you can refer to this wiki of <a href="/Bluetooth_V4.0_HM-11_BLE_Module">HM-11</a>.
+</li></ul>
+<ul><li>  Signal lamp: Lamp will blink if no one connect BLE, but the lamp would keep lighting after BLE has been connected.
+</li></ul>
+<ul><li>  Grove connectors: There are two Grove connectors onto the BLE shield, you can plug Grove products onto the board conveniently.
+</li></ul>
+<ul><li>  Hard or Softserial port: You can choose two of seven digital pins as the communication channel. Just plug the jumpers into the headers. <b>There are two mistakes on the silkscreen, please kindly regard "WIFI_TX" and "WIFI_RX" as "BLE_TX" and "BLE_RX". </b>
+</li></ul>
+<ul><li>  Reserved pinouts from HM-11: There are some reserved pinouts from HM-11 module, such as CTS1, RTS1 and PIO2, etc. 
+</li></ul>
+<ul><li>  Reset button: Press the reset button if you need to reset the BLE Shield. However, this reset button does not affect the state of the main board(such as Arduino Uno) if BLE Shield is plugged onto the main board.
+</li></ul>
+<p><br/>
+<br/>
+</p>
+<h2>  Applications </h2>
+<h3>  Hardware Connection </h3>
+<div class="center"><div class="floatnone"><img src="img/Seeed_BLE-2.png" width="600"/></div></div>
+<p><br/>
+Plug Seeed BLE Shield onto the Arduino/Seeeduino directly. <b>Please pay attention to the position of jumpers on the BLE Shield.</b>
+<br/>
+</p>
+<h3>  SoftwareSerial Communication </h3>
+<p><br/>
+Seeed BLE Shield can be acted as a master or slave, you can use the one via different demos.<b>If you are going to use the following SoftwareSerial program, please refer to the way of connection in the previous pic. BLE_TX--&gt;D2, BLE_RX--&gt;D3.</b><br/>
+Open Arduino IDE, copy the following program and upload it onto the Arduino/Seeeduino board. And then two BLE Shields can communicate with each other.
+<br/>
+<br/>
+<b>Demo : BLE Slave</b>
+</p>
+<pre>
+
+#include &lt;SoftwareSerial.h&gt;   //Software Serial Port
+#define RxD 2
+#define TxD 3
+ 
+#define DEBUG_ENABLED  1
+ 
+SoftwareSerial BLE(RxD,TxD);
+ 
+void setup() 
+{ 
+  Serial.begin(9600);
+  pinMode(RxD, INPUT);
+  pinMode(TxD, OUTPUT);
+  setupBleConnection();
+ 
+} 
+ 
+void loop() 
+{ 
+  char recvChar;
+  while(1){
+    if(BLE.available()){//check if there's any data sent from the remote BLE shield
+      recvChar = BLE.read();
+      Serial.print(recvChar);
+    }
+    if(Serial.available()){//check if there's any data sent from the local serial terminal, you can add the other applications here
+      recvChar  = Serial.read();
+      BLE.print(recvChar);
+    }
+  }
+} 
+ 
+void setupBleConnection()
+{
+  BLE.begin(9600); //Set BLE BaudRate to default baud rate 9600
+  BLE.print("AT+CLEAR"); //clear all previous setting
+  BLE.print("AT+ROLE0"); //set the bluetooth name as a slaver
+  BLE.print("AT+SAVE1");  //don't save the connect information
+}
+</pre>
+<p><br/>
+<b>Demo : BLE Master</b>
+<br/>
+</p>
+<pre>
+
+#include &lt;SoftwareSerial.h&gt;   //Software Serial Port
+#define RxD 2
+#define TxD 3
+ 
+#define DEBUG_ENABLED  1
+ 
+SoftwareSerial BLE(RxD,TxD);
+ 
+void setup() 
+{ 
+  Serial.begin(9600);
+  pinMode(RxD, INPUT);
+  pinMode(TxD, OUTPUT);
+  setupBleConnection();
+ 
+} 
+ 
+void loop() 
+{ 
+  char recvChar;
+  while(1){
+    if(BLE.available()){//check if there's any data sent from the remote BLE shield
+      recvChar = BLE.read();
+      Serial.print(recvChar);
+    }
+    if(Serial.available()){//check if there's any data sent from the local serial terminal, you can add the other applications here
+      recvChar  = Serial.read();
+      BLE.print(recvChar);
+    }
+  }
+} 
+ 
+void setupBleConnection()
+{
+  BLE.begin(9600); //Set BLE BaudRate to default baud rate 9600
+  BLE.print("AT+CLEAR"); //clear all previous setting
+  BLE.print("AT+ROLE1"); //set the bluetooth name as a master
+  BLE.print("AT+SAVE1");  //don't save the connect information
+}
+</pre>
+<p><br/>
+</p>
+<h3>  HardwareSerial Communication </h3>
+<p><br/>
+Besides, you can use BLE Shield via AT commands without any program, <b>but you need to change the positions of two jumpers. BLE_TX--&gt;D1, BLE_RX--&gt;D0.</b>
+<br/>
+Then open a Serial Port Tool, like CoolTerm or others.The following are some settings : <b>Baudrate: 9600(default) , Data Bits: 8, Parity: none, Stop Bits: 1.</b>
+<br/>
+<br/>
+First, you can send a(some) "AT" command(s) to BLE Shield to have a test. If it returns an "OK", then you can do the following steps. <b>If not, you can upload a blank program to Arduino/Seeeduino</b>, and see whether you can get response from Serial Port Tool via the previous operation.
+<br/>
+</p>
+<pre>
+void setup()
+{                
+}
+
+void loop() 
+{
+}
+</pre>
+<p><br/>
+Then, send an "AT+ROLE0" command to BLE Shield; it will return an "OK+Set:0", which means now the BLE Shield is ready to act as a slave.
+<br/>
+<br/>
+<img src="img/Seeed_BLE-3.png" width="500"/>
+<br/>
+<br/>
+</p>
+<h3>  AT Commands </h3>
+<p><br/>
+More information about the AT Commands please refer to the data sheet of BLE module. You can download it from the Resource space.
+<br/>
+</p>
+<h2>  Related Reading </h2>
+<p><br/>
+</p>
+<ul><li> <a href="/Talk-Seeed_BLE_Shield_v1">FAQ about Seeed BLE Shield</a>. <i>Also, you can enter the FAQ page by clicking the "FAQ" button which in the right side of product's wiki page. </i><br/>
+</li></ul>
+<h2>  Resource </h2>
+<p><br/>
+<a href="res/BLE_Shield_v1.0.zip">Schematic of Seeed BLE Shield</a>
+<br/>
+<a href="res/HMBLEComAssistant.rar">BLE_apk_for_Android</a>
+<br/>
+<a href="res/Bluetooth4_en.pdf">DataSheet of BLE module</a>
+<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,257 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Moisture Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Moisture Sensor</h1><div class="thumb tright"><div class="thumbinner" style="width:352px;"><img src="img/Moisture_sensor_.jpg" width="350"/> <div class="thumbcaption"></div></div></div>
+<p>Grove - Moisture Sensor is used to detect soil moisture accurately for plants. The usage for this module is simplified. You can just insert this module into soil and conenct it to single-board microcontroller with Grove cable. Then you can get readings for soil mositure. It is compatible with 3.3 V and 5 V input voltage which make it more adaptive. You can use this module to build loads of smart plant-attending applications. 
+</p><p><b>Note</b> that do not insert all module into soil which probably damage this module. Just insert the leg(golden) of this module into soil.
+</p><p><b>Note:</b> This sensor isn't protected from contamination or exposure of the control circuitry to water and may be prone to electrolytic corrosion across the probes, so it is not advisable to be left in place or used outdoors.
+</p><p><a href="http://www.seeedstudio.com/depot/Grove-Moisture-Sensor-p-955.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features </h2>
+<ul><li>Uses soil resistivity measurement
+</li><li>Grove compatible and easy to use
+</li><li>Accurate readings.
+</li></ul>
+<h2> Specification </h2>
+<h3>  Specification </h3>
+<table>
+<tr>
+<th> Item </th>
+<th>  Parameter </th>
+<th> Min </th>
+<th> Typical </th>
+<th> Max </th>
+<th> Unit
+</th></tr>
+<tr>
+<td width="200">  Voltage </td>
+<td width="150"> -  </td>
+<td width="100"> 3.3 </td>
+<td width="100"> ~ </td>
+<td width="100"> 5 </td>
+<td width="100"> V
+</td></tr>
+<tr>
+<td>  Current  </td>
+<td> - </td>
+<td> 0 </td>
+<td> ~ </td>
+<td> 35 </td>
+<td> mA
+</td></tr>
+<tr>
+<td rowspan="3"> Output Value </td>
+<td> Sensor in dry soil  </td>
+<td> 0</td>
+<td>  ~ </td>
+<td> 300 </td>
+<td>  /
+</td></tr>
+<tr>
+<td>  Sensor in humid soil  </td>
+<td>   300  </td>
+<td> ~ </td>
+<td>  700  </td>
+<td> /
+</td></tr>
+<tr>
+<td>   Sensor in water   </td>
+<td>   700  </td>
+<td> ~ </td>
+<td>  950  </td>
+<td> /
+</td></tr></table>
+<h3>  Platforms Supported </h3>
+<ul><li> Arduino
+</li><li> Raspberry Pi
+</li><li> TI LaunchPad
+</li></ul>
+<p><br/>
+</p>
+<h2> Application Ideas </h2>
+<ul><li>Botanical gardening 
+</li><li>Moisture sensoring
+</li></ul>
+<h2> Getting Started </h2>
+<h3> <b>Preliminary reading</b> </h3>
+<p>Following documents help in getting the user started with Grove. 
+</p>
+<ul><li> <a href="/Grove_System">Introduction to Grove system</a>
+</li></ul>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>This demo shows build a simple applicaition with Arduino platform to monitor the environment for plants. When soil moisture descreases, the sensor readings will decrease.
+</p>
+<dl><dd> 1.Connect this module to the analog port A0 of <a href="http://www.seeedstudio.com/depot/grove-base-shield-p-754.html?cPath=132_134">Grove - Base Shield</a> with Grove cable, and then insert mositure sensor into the soil.
+</dd><dd> 2.Plug Grove - Base Shield into the Arduino/Seeeduino. Connnect Arduino to PC  with a USB cable or connect it to a external power supply.
+</dd><dd> The hardware installation as shown below:
+</dd></dl>
+<p><br/>
+</p>
+<dl><dd> <img src="img/Moisture1.jpg" width="400"/>
+</dd></dl>
+<dl><dd> 3.Copy and paste code below to a Arduino sketch. 
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">int</span> sensorPin <span class="sy1">=</span> A0<span class="sy4">;</span>    <span class="co1">// select the input pin for the potentiometer</span>
+<span class="kw4">int</span> sensorValue <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>  <span class="co1">// variable to store the value coming from the sensor</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// declare the ledPin as an OUTPUT:</span>
+   <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>  
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// read the value from the sensor:</span>
+  sensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>sensorPin<span class="br0">)</span><span class="sy4">;</span>    
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>          
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"sensor = "</span> <span class="br0">)</span><span class="sy4">;</span>                       
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>sensorValue<span class="br0">)</span><span class="sy4">;</span>                   
+<span class="br0">}</span></pre></div></div>
+<dl><dd> 4.Upload the code, please click <a href="/Upload_Code">here</a>(a link) if you do not know how to upload.<br/>
+</dd><dd> The Result in different condition in the serial monitor may like follows(<b>click to view larger image</b>):
+</dd></dl>
+<table border="0">
+<tr>
+<td width="220px"><img src="img/No_load.jpg" width="200"/>
+</td>
+<td width="220px"><img src="img/Dry_soil.jpg" width="200"/>
+</td>
+<td width="220px"><img src="img/Humility_soil.jpg" width="200"/>
+</td>
+<td width="220px"><img src="img/IN_water.jpg" width="200"/>
+</td></tr>
+<tr>
+<td>Sensor in air
+</td>
+<td>Sensor in dry soil
+</td>
+<td>Sensor in humid soil
+</td>
+<td>Sensor in water
+</td></tr></table>
+<h3> With <a href="/w/index.php?title=TI_LaunchPad&amp;action=edit&amp;redlink=1" title="TI LaunchPad (page does not exist)">TI LaunchPad</a></h3>
+<p>This demo shows that building a simple applicaiton to attend your plants smartly on LaunchPad platform. With this, you will know whether your plant needs water or not by observing the results from the output of the sensor. 
+</p><p><img src="img/Moisture.jpg" width="600"/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+  Moisture-Sensor
+ The following sketch demonstrates a simple application of sensing 
+ the moisture of the soil. You can know whether a plant needs water 
+ or not by observing the results that the sensor outputs.
+ 
+  The circuit:
+ * Moisture-Sensor attached to pin 24 (J6 plug on Grove Base BoosterPack)
+ * one side pin (either one) to ground
+ * the other side pin to +VCC
+ * LED anode (long leg) attached to RED_LED
+ * LED cathode (short leg) attached to ground
+ 
+ * Note:  
+ 
+ 
+ This example code is in the public domain.
+ 
+ http://seeedstudio.com/wiki/Grove_-_Moisture_Sensor
+ 
+*/</span>
+<span class="co2">#include "TM1637.h"</span>
+ 
+<span class="coMULTI">/* Macro Define */</span>
+<span class="co2">#define CLK               39                  /* clock pin */</span>
+<span class="co2">#define DIO               38                 /* data pin */</span>
+<span class="co2">#define BLINK_LED         RED_LED            /* LED to blink */</span>
+<span class="co2">#define MOISTURE_PIN      24                /* pin for moisture sensor */</span>
+<span class="co2">#define THRESHOLD_VALUE   300                /* threshold for watering the flowers */</span>
+ 
+<span class="co2">#define ON                 HIGH                          /* led on */</span>
+<span class="co2">#define OFF                LOW                           /* led off */</span>
+<span class="co2">#define _handle_led(x)     digitalWrite(BLINK_LED, x)    /* handle led */</span>
+ 
+<span class="coMULTI">/* Global Varibles */</span>
+TM1637 tm1637<span class="br0">(</span>CLK, DIO<span class="br0">)</span><span class="sy4">;</span>                  <span class="coMULTI">/* create a displaying object */</span>
+<span class="kw4">int</span> analog_value <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>                     <span class="coMULTI">/* a varible to store the value coming from rotary angle sensor */</span>
+int8_t bits<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>                     <span class="coMULTI">/* array to store the single bits */</span>
+ 
+<span class="coMULTI">/* the setup() method runs once when the sketch starts */</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="coMULTI">/* Initialize 4-digital display */</span>
+    tm1637.<span class="kw3">init</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    tm1637.<span class="me1">set</span><span class="br0">(</span>BRIGHT_TYPICAL<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* declare the red_led pin as an OUTPUT */</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>BLINK_LED, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="coMULTI">/* the loop() method runs over and over again */</span>
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    analog_value <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>MOISTURE_PIN<span class="br0">)</span><span class="sy4">;</span>      <span class="coMULTI">/* read the value from the sensor */</span>
+ 
+    <span class="coMULTI">/* if the value is smaller than threshold, turn on led */</span>
+    <span class="kw1">if</span><span class="br0">(</span>analog_value <span class="sy1">&lt;</span> THRESHOLD_VALUE<span class="br0">)</span> <span class="br0">{</span>
+        _handle_led<span class="br0">(</span>ON<span class="br0">)</span><span class="sy4">;</span>       
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        _handle_led<span class="br0">(</span>OFF<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="kw3">memset</span><span class="br0">(</span>bits, <span class="nu0">0</span>, <span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>                             <span class="coMULTI">/* reset array when we use it */</span>
+    <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span> i <span class="sy1">&gt;=</span> <span class="nu0">0</span><span class="sy4">;</span> i<span class="sy2">--</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="coMULTI">/* get single bits of the analog value */</span>
+        bits<span class="br0">[</span>i<span class="br0">]</span> <span class="sy1">=</span> analog_value <span class="sy2">%</span> <span class="nu0">10</span><span class="sy4">;</span>
+        analog_value <span class="sy1">=</span> analog_value <span class="sy2">/</span> <span class="nu0">10</span><span class="sy4">;</span>  
+        tm1637.<span class="kw3">display</span><span class="br0">(</span>i, bits<span class="br0">[</span>i<span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>                 <span class="coMULTI">/* display by 4-digital display */</span>
+    <span class="br0">}</span>
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">200</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3> With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a></h3>
+<dl><dd> 1.Prepare a raspberry pi and a grovepi or grovepi+.<br/>
+</dd><dd> 2. We assume that you have configured the development enviroment successfully, otherwise follow the guides at <a href="/GrovePiPlus#Introducing_the_GrovePi.2B">http://www.seeedstudio.com/wiki/GrovePi%2B#Introducing_the_GrovePi.2B</a>
+</dd></dl>
+<p><br/>
+<br/>
+</p>
+<dl><dd> 3.Plug the sensor to grovepi socket A0 by using a grove cable.<br/>
+</dd><dd> 4.Navigate to the demos' directory: <br/>
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">    cd yourpath<span class="sy2">/</span>GrovePi<span class="sy2">/</span>Software<span class="sy2">/</span>Python<span class="sy2">/</span></pre></div></div>
+<p><br/>
+</p>
+<dl><dd> 5.To write code with Nano utility. Run following code.
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">    nano grove_moisture_sensor.<span class="me1">py</span>  <span class="co2"># "Ctrl+x" to exit #</span></pre></div></div>
+<p><br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">import <span class="kw3">time</span>
+import grovepi
+ 
+<span class="co2"># Connect the Grove Moisture Sensor to analog port A0</span>
+<span class="co2"># SIG,NC,VCC,GND</span>
+sensor <span class="sy1">=</span> <span class="nu0">0</span>
+ 
+<span class="kw1">while</span> True<span class="sy4">:</span>
+    <span class="kw2">try</span><span class="sy4">:</span>
+        <span class="kw3">print</span> grovepi.<span class="kw3">analogRead</span><span class="br0">(</span>sensor<span class="br0">)</span>
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu18">.5</span><span class="br0">)</span>
+ 
+    except KeyboardInterrupt<span class="sy4">:</span>
+        <span class="kw1">break</span>
+    except IOError<span class="sy4">:</span>
+        <span class="kw3">print</span> <span class="st0">"Error"</span></pre></div></div>
+<p><br/>
+</p>
+<dl><dd> 6.Run the code.<br/>
+</dd></dl>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">  sudo python grove_moisture_sensor.<span class="me1">py</span></pre></div></div>
+<h2> Resources </h2>
+<ul><li><a href="res/Grove-Moisture_Sensor_Eagle_File.zip">Grove-_Moisture_Sensor_Eagle_File</a>
+</li><li>
+</li></ul>
+<p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/3WH2LVP" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

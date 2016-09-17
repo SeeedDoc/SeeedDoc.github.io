@@ -1,0 +1,477 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>UartSB Frame</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>UartSB Frame</h1>
+
+<p><b>UartSB Frame</b> is a USB based programming adapter for <a href="/w/index.php?title=Seeeduino_Film&amp;action=edit&amp;redlink=1" title="Seeeduino Film (page does not exist)">Seeeduino Film</a> equipped with a FPC socket. The integrated USB UART IC <b>FT232RL</b> can be used for programming or communicating with MCUs with 3.3V logic. It also doubles as a "FT232RL" Low Voltage(3.3V) Breakout board. <strong class="selflink">UartSB Frame</strong> provides breakouts for the bit-bang mode pins of <b>FT232RL</b> as well.This Bit-bang mode pins (8 I/O pins) can be used as a replacement for applications involving PC parallel port which is scares now a days. 
+</p><p><b>Model:<a href="http://www.seeedstudio.com/depot/seeeduino-frame-uartsbs-p-778.html?cPath=132_135">PGM31058P</a></b><br/>
+<img src="img/Seeeduino_Frame_UarSBs_Top.jpg" width="400"/>
+</p>
+<h2>  Features </h2>
+<ul><li>USB 2.0 compatible Serial Interface. 
+</li><li>20 Pin FPC connector for attaching <a href="/w/index.php?title=Seeeduino_Film&amp;action=edit&amp;redlink=1" title="Seeeduino Film (page does not exist)">Seeeduino Film</a>
+</li><li>3.3V compatible I/Os. 
+</li><li>3.3V and 5V dual power outputs. 
+</li><li>Bit-Bang mode ready (8 Serial I/Os or as SPI). 
+</li><li>LEDs for TxD,Rxd and Power.
+</li></ul>
+<h2>  Applications Ideas  </h2>
+<ul><li>Programmer for <a href="/w/index.php?title=Seeeduino_Film&amp;action=edit&amp;redlink=1" title="Seeeduino Film (page does not exist)">Seeeduino Film</a> and 3.3V compatible boards.
+</li><li>USB to Serial adapter for communicating with 3.3V level Serial devices. 
+</li><li>Programmer for micro-controllers / CPLDs using ISP(in-circuit-serial-programming). 
+</li><li>3.3V / 5V power source for a breadboard MCU applications.
+</li><li>The 5V supply can be used to charge the Seeeduino Film battery. (Do not use FPC connection for this application)
+</li><li>Endless possibilities as a USB based parallel device in FT232RL bit-bang mode - Known to work as <b>AVR-ISP</b>, Slowspeed <b>JTAG</b> with OpenOCD and as <b>I2C</b>
+</li></ul>
+<h2>  Cautions  </h2>
+<p><font color="red"><strong>
+</strong></font></p>
+<ul><li> Connect UartSB Frame to Seeeduino Film only as shown in <a href="http://garden.seeedstudio.com/index.php?title=UartSB_Frame#Seeeduino_Film_Programmer">Seeeduino Film Programmer</a> section. 
+</li><li> Do not use FFC (Flexible Flat Cable) to directly connect UartSB Frame to Seeeduino Film. This would reverse the 20 pin FPC connection.
+</li><li> Handle the 20 pin FPC connector with care.
+</li><li> Use <strong class="selflink">UartSB Frame</strong> only with 3.3v I/Os.
+</li></ul>
+<p>
+</p>
+<h2>  Schematic  </h2>
+<p><img src="img/UartSB_Frame_Schematic_1.png" width="800"/>
+</p><p><img src="img/UartSB_Frame_Scehmatic_2.png" width="800"/>
+</p><p><br/>
+</p>
+<h2>  Specifications  </h2>
+<h3>  Key Specifications  </h3>
+<table cellpadding="1" cellspacing="1">
+<tr>
+<th scope="row"> Microprocessor
+</th>
+<td> FT232RL
+</td></tr>
+<tr>
+<th scope="row"> PCB size
+</th>
+<td> 35mm x 20mm
+</td></tr>
+<tr>
+<th scope="row"> Indicators
+</th>
+<td> POWER - Green LED, RX and TX - Red LEDs
+</td></tr>
+<tr>
+<th scope="row"> Power supply
+</th>
+<td> 3.3V and 5V DC
+</td></tr>
+<tr>
+<th scope="row"> Interface
+</th>
+<td> Mini-B USB, 2.54mm pitch pin header
+</td></tr>
+<tr>
+<th scope="row"> Seeeduino Programming Port
+</th>
+<td> 20 Pin FPC socket
+</td></tr>
+<tr>
+<th scope="row"> Connectivity
+</th>
+<td> USB
+</td></tr>
+<tr>
+<th scope="row"> Communication Protocol
+</th>
+<td> UART, Bit Bang I/O, SPI
+</td></tr></table>
+<p><br/>
+</p>
+<h3>  Electrical Characterstics  </h3>
+<table border="1">
+<tr>
+<th> Specification
+</th>
+<th> Minimum
+</th>
+<th> Typical
+</th>
+<th> Maximum
+</th>
+<th> Unit
+</th></tr>
+<tr>
+<td> Input voltage
+</td>
+<td> -
+</td>
+<td> 5
+</td>
+<td> 5
+</td>
+<td> Vdc
+</td></tr>
+<tr>
+<td> Current Consumption
+</td>
+<td> -
+</td>
+<td> -
+</td>
+<td> 500
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Output voltage
+</td>
+<td> 3.3
+</td>
+<td> -
+</td>
+<td> 5
+</td>
+<td> Vdc
+</td></tr></table>
+<p><br/>
+</p>
+<h2>  Pin definition and Rating  </h2>
+<p><img src="img/UartSB_Frame_Outline_35mmx20mm.png" width="250"/>
+</p>
+<table border="1">
+<tr>
+<th> Pad Name
+</th>
+<th> Description
+</th></tr>
+<tr>
+<td width="100px"> GND
+</td>
+<td width="450px"> Ground pin
+</td></tr>
+<tr>
+<td width="100px"> 3v3
+</td>
+<td width="450px"> 3.3V Power Supply
+</td></tr>
+<tr>
+<td width="100px"> 5V
+</td>
+<td width="450px"> 5V Power supply from USB Port
+</td></tr>
+<tr>
+<td> RXD
+</td>
+<td> UART Data input
+</td></tr>
+<tr>
+<td> TXD
+</td>
+<td> UART Data output
+</td></tr>
+<tr>
+<td width="100px"> CTS
+</td>
+<td width="450px"> UART Clear to Send Signal
+</td></tr>
+<tr>
+<td width="100px"> RTS
+</td>
+<td width="450px"> UART Request to Send Signal
+</td></tr>
+<tr>
+<td width="100px"> DTR
+</td>
+<td width="450px"> UART Data Terminal Ready Signal
+</td></tr>
+<tr>
+<td width="100px"> DCD
+</td>
+<td width="450px"> UART Data Carrier Detect Signal
+</td></tr>
+<tr>
+<td width="100px"> DSR
+</td>
+<td width="450px"> UART Data Set Ready Signal
+</td></tr>
+</table>
+<h2> Usage </h2>
+<h3>  Seeeduino Film Programmer </h3>
+<p><b>UartSB Frame</b> is designed exclusively for flashing <a href="/w/index.php?title=Seeeduino_Film&amp;action=edit&amp;redlink=1" title="Seeeduino Film (page does not exist)">Seeeduino Film</a>. It works as a USB to Serial Port (COM port) interface when connected to PC. This kind of configuration can be used to communicate with a MCU serial port.Also useful to program a MCU which support UART based ISP. 
+</p>
+<ul><li>If the FT232RL drivers were not installed, follow the procedure in next section(configuring UartSB Frame).
+</li></ul>
+<ul><li>Connect the Seeeduino Film to UartSB Frame as shown below :
+</li></ul>
+<p><img src="img/Seeeduino_Film_with_UartSB_Frame.jpg" width="700"/>
+</p>
+<ul><li>Set the board type to Arduino Pro or Pro Mini (3.3V, 8MHz) w/ATMega168 in Arduino IDE
+</li></ul>
+<p><img src="img/SeeeduinoFilm_Arduino_Board_Selection.jpg" width="400"/>
+</p>
+<ul><li>Upload the sketch.
+</li></ul>
+<h4>  Configuring UartSB Frame in <b>Windows</b> </h4>
+<ul><li>In Windows OS, the first time you plug in the device, you might be asked for the driver.
+</li></ul>
+<p><img src="img/UartSbee_Detected_Windows.JPG" width="200"/> <br/>
+</p><p>Download and install the <b>Virtual COM port</b> driver from FTDI website : 
+</p><p><a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a>
+</p>
+<ul><li>A wizard opens for installing the driver. Choose "Install from a list or specific location"
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_1.JPG" width="400"/> <br/>
+</p>
+<ul><li>Choose the downloaded driver path
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_2.JPG" width="400"/> <br/>
+</p>
+<ul><li>If you have downloaded unsigned driver, the following Window appears. Just click "Continue Anyway"
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_2.1.JPG" width="200"/> <br/>
+</p>
+<ul><li><b>UartSB Frame</b> driver is successfully installed. Windows assigns a <b>COM</b> port name to <b>FT232RL</b> like <b>COM10</b>, <b>COM11</b> etc... Please check the exact name in Device Manager.  In this case "<b>COM16</b>" is assigned for UartSB Frame
+</li></ul>
+<p><img src="img/UartSbee_Driver_install_3.JPG" width="400"/> <br/>
+</p>
+<h4>  Configuring UartSB Frame in <b>GNU/Linux</b> </h4>
+<p>All modern <b>GNU/Linux OS</b> comes with FT232RL drivers. To check if UartSB Frame is detected, Issue a <b>lsusb</b> command. An output similar to below should appear. 
+</p><p><img src="img/Lsub.png" width="600"/>
+</p><p><b>GNU/Linux</b> assigns <b>/dev/ttyUSB0</b>, <b>/dev/ttyUSB1</b> etc... as device name.   
+</p><p>To verify the working of serial port connect <b>TxD</b> and <b>RxD</b> pins of UartSB Frame and use a terminal application like <b>cutecom</b> to configure the device parameters as shown below.  
+</p><p><b>Baudrate</b>:9600, <b>Data bits</b>:8, <b>Stop bits</b>:None and no Handshake 
+</p><p><br/>
+</p><p><img src="img/UartSB_Frame_Txd_Rxd_connected.jpg" width="325"/>
+</p><p><br/>
+</p><p>Any character typed in terminal would be echoed back as shown. 
+</p><p><img src="img/UartsBee-CuteCom.png" width="480"/><br/><br/>
+</p><p>The same functionality can be verified in <b>Windows</b> - <b>Hyperterminal</b> as well.
+</p>
+<h3>  Battery Charger for Seeeduino Film  </h3>
+<p>The USB 5v supply available in <strong class="selflink">UartSB Frame</strong> breakout can be used to charge the battery of <a href="/w/index.php?title=Seeeduino_Film&amp;action=edit&amp;redlink=1" title="Seeeduino Film (page does not exist)">Seeeduino Film</a>.
+</p>
+<ul><li> Solder the <a href="/w/index.php?title=Seeeduino_Film&amp;action=edit&amp;redlink=1" title="Seeeduino Film (page does not exist)">Seeeduino Film</a> Power-Connector to 5V and GND of <strong class="selflink">UartSB Frame</strong>.
+</li><li> Connect Power connector to <b>CHG</b> jack.
+</li><li> Connect the Battery to Seeeduino Film <b>BAT</b> jack.
+</li><li> Power on the USB.
+</li></ul>
+<p><img src="img/SeeeduinoFilm_Battery_Charging_with_UartSBFrame.jpg" width="350"/>
+</p>
+<h3>  BitBang Mode  </h3>
+<p>An nice feature of UartSB Frame compared to other FT232RL based USB-Serial devices is that all the Bit-Bang I/Os are brought to the header pins. 
+</p><p>Bit-Bang mode is a special feature of FT232RL in which 8 I/O lines (<b>D0 - D7</b>) can be used as a general purpose bidirectional  I/O lines. Three Bit-Bang modes are supported by FT232RL 
+</p>
+<ul><li><b>Asynchronous Bit-Bang mode </b>
+</li></ul>
+<p>Any data written to the device is clocked to the configured output pins. The rate of data transfer is configured based on baud rate generator. In this mode any of 8 I/O lines can be configured as input or ouput. 
+</p>
+<ul><li><b>Synchronous Bit-Bang mode</b>
+</li></ul>
+<p>In this mode data is sent synchronously. An input is read before an output byte is sent to the device. Hence to read input, a write operation must be performed. 
+</p>
+<ul><li><b>CBUS Bit-Bang Mode</b>
+</li></ul>
+<p>This is a special mode which requires reprogramming of FT232RL EEPROM. This uses signals <b>C0 - C3</b>. 
+</p><p><b>Bit-Bang Mode</b> of <b>FT232RL</b> is well documented in the application note<a href="http://www.ftdichip.com/Support/Documents/AppNotes/AN_232R-01_Bit_Bang_Mode_Available_For_FT232R_and_Ft245R.pdf">[1]</a>
+</p><p><br/>
+<b>Table: Bit-Bang I/O Mapping</b>
+</p>
+<table border="1">
+<tr>
+<th> UartSB Frame Signal
+</th>
+<th> BitBang I/O Signal
+</th></tr>
+<tr>
+<td> TxD
+</td>
+<td> D0
+</td></tr>
+<tr>
+<td> RxD
+</td>
+<td> D1
+</td></tr>
+<tr>
+<td> RTS
+</td>
+<td> D2
+</td></tr>
+<tr>
+<td> CTS
+</td>
+<td> D3
+</td></tr>
+<tr>
+<td> DTR
+</td>
+<td> D4
+</td></tr>
+<tr>
+<td> DSR
+</td>
+<td> D5
+</td></tr>
+<tr>
+<td> DCD
+</td>
+<td> D6
+</td></tr>
+<tr>
+<td> RI
+</td>
+<td> D7
+</td></tr></table>
+<p><br/>
+</p><p><b>BitBang Mode Operation:</b>
+</p><p>A simple Asynchronous Bit-Bang mode operation is demonstrated in the below breadboard arrangement in which DTR (D4) pin is connected to an LED. The LED blinking rate is controlled by the PC side application program. 
+</p><p><br/>
+<b>LED Blinky Circuit</b>
+</p><p><img src="img/UartSB_Frame_BitBang_demo.jpg" width="450"/>
+</p><p>This above image is made with Fritzing.org
+</p><p><b>Bit Bang I/O Pins (ISP header) shown at Bottom Layer</b>
+</p><p><img src="img/Seeeduino_Frame_UarSBs_Bottom.jpg" width="220"/>
+</p><p>Bit-Bang mode requires special FTDI direct driver called <a href="http://www.ftdichip.com/Drivers/D2XX.htm">D2XX</a>. This driver needs to be installed after removing the Virtual COM Port driver of FT232RL chip. In GNU/Linux this driver runs in kernel mode. As an alternative to D2XX an Free Open Source driver <a href="http://www.intra2net.com/en/developer/libftdi/">libFTDI</a> is available. This works in Windows, GNU/Linux and Mac OS. It runs in user mode in GNU/Linux. Hence no need to remove the existing FT232RL driver. 
+</p><p><b>libFTDI</b>
+</p><p><a href="http://www.intra2net.com/en/developer/libftdi/">http://www.intra2net.com/en/developer/libftdi/</a>
+</p><p><b>libUSB</b> libFTDI required libusb which can be downloaded from  
+</p><p><a href="http://www.libusb.org/">http://www.libusb.org/</a>
+</p><p><br/>
+</p><p>The below example code can be compiled in the similar way as that of libFTDI example files. An easy way is to copy the contents of the below code to one of the existing example .c file and build the whole driver using 
+</p><p>./configure 
+</p><p>make 
+</p><p><br/> <b>Code Example</b>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+Blinky.C: UartSBee v3.1 (FT232RL) Bit-Bang mode - Blinky.
+ 
+Circuit:
+Connect TXD to Anode of LED, Connect one end of resistor to GND and other end
+to Cathode of the LED
+*/</span>
+ 
+<span class="co2">#ifdef __WIN32__</span>
+<span class="co2">#define sleep(x) Sleep(x)</span>
+<span class="co2">#endif</span>
+ 
+<span class="co1">// 8 bit pin mask for I/O pin </span>
+<span class="co2">#define TXD 0x01  </span>
+<span class="co2">#define RXD 0x02  </span>
+<span class="co2">#define RTS 0x04  </span>
+<span class="co2">#define CTS 0x08  </span>
+<span class="co2">#define DTR 0x10</span>
+<span class="co2">#define DSR 0x20</span>
+<span class="co2">#define DCD 0x40</span>
+<span class="co2">#define RI  0x80</span>
+ 
+<span class="co2">#include &lt;stdio.h&gt;;</span>
+<span class="co2">#include &lt;ftdi.h&gt;;    </span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> ouputState <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw4">struct</span> ftdi_context ftdic<span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* 1. Initialize ftdi device context */</span>
+    ftdi_init<span class="br0">(</span><span class="sy3">&amp;</span>ftdic<span class="br0">)</span><span class="sy4">;</span>  
+ 
+    <span class="coMULTI">/* 2. Open the device based of VID/PID pair */</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span>ftdi_usb_open<span class="br0">(</span><span class="sy3">&amp;</span>ftdic, <span class="nu12">0x0403</span>, <span class="nu12">0x6001</span><span class="br0">)</span> <span class="sy3">&amp;</span>lt<span class="sy4">;</span> <span class="nu0">0</span><span class="br0">)</span> 
+    <span class="br0">{</span>
+        <span class="kw3">printf</span><span class="br0">(</span><span class="st0">"Unable to open UartSBs Frame"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="coMULTI">/* 3. Enable Bit-Bang mode with for DTR line  */</span>
+    ftdi_set_bitmode<span class="br0">(</span><span class="sy3">&amp;</span>ftdic, TXD, BITMODE_BITBANG<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="coMULTI">/* 4. Blink LED every 1 second */</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span>
+        ouputState <span class="sy3">^</span><span class="sy1">=</span> TXD<span class="sy4">;</span>
+        ftdi_write_data<span class="br0">(</span><span class="sy3">&amp;</span>ftdic,<span class="sy3">&amp;</span>ouputState, <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+        sleep<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>FT232RL Bit-Bang mode can be used to construct AVR ISP, JTAG, SPI and I2C Ports. Refer the external links.
+</p>
+<h2>  Image Gallery</h2>
+<table border="1" cellpadding="1" cellspacing="1" width="200">
+<tr>
+<td><div class="thumb tleft"><div class="thumbinner" style="width:402px;"><img src="img/UartSBFrame_SeeeduinoFilm_Programming.jpg" width="400"/> <div class="thumbcaption">UartSB Frame Programming Seeeduino Film (Do not connect Battery)</div></div></div>
+</td></tr></table>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.<br/>
+</p>
+<h2>  Document Version Tracker  </h2>
+<table border="1">
+<tr>
+<th> Revision
+</th>
+<th> Description
+</th>
+<th> Editor
+</th>
+<th> Release Date
+</th></tr>
+<tr>
+<td> V0.9b
+</td>
+<td> Detailed Application Notes
+</td>
+<td> Visweswara R
+</td>
+<td> 22 Feb 2010
+</td></tr></table>
+<h2>  Hardware Version Tracker  </h2>
+<table border="1">
+<tr>
+<th> Revision
+</th>
+<th> Description
+</th>
+<th> Release Date
+</th></tr>
+<tr>
+<td> UartSBs Frame
+</td>
+<td> 0.9b
+</td>
+<td> Feb 22, 2010
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="http://garden.seeedstudio.com/images/d/d3/UartSBs_Frame_Schematic_Board.zip">Schematic and Board Files in Eagle</a>
+</li></ul>
+<ul><li><a href="http://garden.seeedstudio.com/images/9/91/UartSBs_0.9b_Schematic.pdf">PDF Schematic</a>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy <a href="http://www.seeedstudio.com/depot/seeeduino-frame-uartsbs-p-778.html?cPath=132_135">UartSB Frame</a>
+</p>
+<h2>  See Also  </h2>
+<ul><li><a href="/w/index.php?title=Frame_Series&amp;action=edit&amp;redlink=1" title="Frame Series (page does not exist)">Frame_Series</a>
+</li><li><a href="/UartSBee" title="UartSBee">UartSBee</a>
+</li></ul>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a>.  Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<ul><li><b><a href="http://www.ftdichip.com/Products/ICs/FT232R.htm">[2]</a></b><a href="http://www.ftdichip.com/Products/ICs/FT232R.htm">FTDI FT232RL product Page</a>
+</li><li>[<a href="http://www.ftdichip.com/Drivers/VCP.htm">http://www.ftdichip.com/Drivers/VCP.htm</a> FTDI Virtual COM Port (VCP) drivers 
+</li><li><a href="http://www.ftdichip.com/Drivers/D2XX.htm">FTDI D2XX drivers</a>
+</li><li><a href="http://www.ftdichip.com/Support/Documents/AppNotes/AN_232R-01_Bit_Bang_Mode_Available_For_FT232R_and_Ft245R.pdf">FTDI Bit-Bang mode application note</a>
+</li></ul>
+<p><b>Open Source Drivers</b>
+</p>
+<ul><li><a href="http://www.intra2net.com/en/developer/libftdi/">libFTDI</a>
+</li><li><a href="http://www.libusb.org/">libUSB</a>
+</li></ul>
+<p><b> Other Sources of FT232RL application information</b>
+</p>
+<ul><li><a href="http://hackaday.com/2009/09/22/introduction-to-ftdi-bitbang-mode/">Hackaday - Introduction to bit-bang mode</a>
+</li><li><a href="http://vak.ru/doku.php/proj/bitbang/bitbang-jtag">FT232R JTAG implementation with OpenOCD </a>
+</li><li><a href="http://openschemes.com/2009/11/05/bit-banging-spi-on-arduinos-ft232rl/">FT232R SPI Bitbang Mode example</a>
+</li><li><a href="http://www.geocities.co.jp/arduino_diecimila/bootloader/index_en.html">Flashing Arduino with FT232R bitbang mode</a>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

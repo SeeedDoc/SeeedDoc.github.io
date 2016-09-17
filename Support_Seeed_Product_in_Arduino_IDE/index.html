@@ -1,0 +1,29 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Support Seeed Product in Arduino IDE</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Support Seeed Product in Arduino IDE</h1><p>Seeed have 4 main boards that base on Arduino Leonardo, but there's something different.
+</p><p>They are:
+</p>
+<ul><li>Seeeduino Xadow
+</li><li>Seeeduino Clio
+</li><li>Seeeduino Lite
+</li><li>Seeeduino Beacon
+</li></ul>
+<p>To support those board in Arduino IDE, there's a few steps need to be follow.
+</p><p>If you are using a Mac, please refer to <a href="http://www.seeedstudio.com/recipe/index.php?controller=recipe&amp;action=show&amp;recipe_id=47">here</a>.
+</p><p><br/>
+<br/>
+First you can download the files <a href="https://github.com/Seeed-Studio/Files_For_Seeed_Main_Board">here</a>
+</p><p>You will find there're two files:
+</p>
+<ul><li>boards.txt
+</li><li>USBCore.cpp
+</li></ul>
+<p><br/>
+Then open your Arduino IDE(only support Arduino 1.0.x)folder,
+</p><p>1. Open the path: \arduino-1.0.5\hardware\arduino, you can find a boards.txt, replace it with the one you had download just now
+</p><p>2. Open the path: \arduino-1.0.5\hardware\arduino\cores\arduino, you can find a USBCore.cpp, replace it just like boards.txt
+</p><p><br/>
+<i>Note: If you are using an other version of Arduino IDE that is not 1.0.5, then may be the path has a little different.</i>
+</p><p><br/>
+It's ok now, reopen your Arduino IDE, you can see:
+</p><p><img src="img/Seeed_board_in_arduino.png" width="735"/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

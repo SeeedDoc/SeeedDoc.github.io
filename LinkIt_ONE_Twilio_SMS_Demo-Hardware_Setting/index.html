@@ -1,0 +1,33 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>LinkIt ONE Twilio SMS Demo - Hardware Setting</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>LinkIt ONE Twilio SMS Demo - Hardware Setting</h1><p><b>Note:</b> This step is part of <a href="http://seeedstudio.com/wiki/LinkIt_ONE_Twilio_SMS_Demo">LinkIt ONE Twilio SMS Demo</a>.
+</p><p>Before starting the firmware update, make sure the slide switches are in proper position ( <b>MS/UART</b> should be in <b>MS</b> position. <b>USB/BAT</b> in <b>USB</b> position):
+</p><p><img src="img/LinkItONEUpdateFirmware2.jpg" width="254"/>
+</p><p>Then, connect your LinkIt ONE to PC, you will get a 10M Disk(Just like a U-disk).
+</p><p>Open <b>config.txt</b> file. There are some information that needs to be filled. 
+</p>
+<ul><li> <b>TWILIO_ACCOUNT_SID:</b> your_twilio_account_sid
+</li><li> <b>TWILIO_AUTH_TOKEN:</b> your_twilio_auth_token
+</li><li> <b>TWILIO_NUMBER:</b> your_twilio_number
+</li></ul>
+<p><br/>
+</p>
+<ul><li> <b>TEMBOO_ACCOUNT:</b> your_temboo_account
+</li><li> <b>TEMBOO_APP_NAME:</b> myFirstApp
+</li><li> <b>TEMBOO_APP_KEY:</b> your_temboo_app_key
+</li></ul>
+<p><br/>
+</p>
+<ul><li> <b>WIFI_AP:</b> your_ap_name
+</li><li> <b>WIFI_PASSWORD:</b> key_of_ap
+</li></ul>
+<p>Remember, we had got some account info at <a href="http://seeedstudio.com/wiki/Register_a_Twilio_account">Register a Twilio account</a> and <a href="http://seeedstudio.com/wiki/Register_a_Temboo_account">Register a Temboo account</a>?
+</p><p>Then slide the switch to UART position. Connect Grove - OLED 1.12<i> to I2C port. You need to install the WiFi antenna as well</i>
+</p><p><img src="img/Twilio_linkit_hardware_connection.jpg" width="500"/>
+</p><p><img src="img/Twilio_linkit_hardware_connection_antenna.png" width="500"/>
+</p><p>Then, reset LinkIt ONE. You will get some information on LinkIt ONE:
+</p>
+<ul><li> <b>Connecting</b> - LinkIt ONE is connecting to your AP
+</li><li> <b>Wifi ok</b> - LinkIt ONE connected to your AP successful
+</li></ul>
+<p><b>Note:</b> If you don't get <b>Wifi ok</b> for a long time, please check if you had filled the correct information about your AP.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

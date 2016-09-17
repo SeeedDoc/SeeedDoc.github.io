@@ -1,0 +1,554 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Seeeduino-Stalker v3</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Seeeduino-Stalker v3</h1>
+<div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Seeed_Stalker_v3-6.png" width="500"/> <div class="thumbcaption"></div></div></div><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Seeed_Stalker_v3-7.png" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>Seeeduino Stalker v3.0 is a feature rich Arduino compatible <b>Wireless Sensor Network node</b> especially useful for outdoor <b>data-logging</b> applications .  It has a X-Bee carrier board for using with X-Bee modules, such as GPS Bee, Bluetooth Bee and Wifi Bee, etc. Its modular structure and onboard peripherals makes it convenient to log time stamped sensor data on a periodic basis. Seeeduino Stalker comes with a RTC with backup power, SD Card Socket, Bee Socket and Solar based Li-Ion Battery Charger<i>. The Seeeduino Stalker is a good candidate for all your tracking, monitoring and control projects.</i>
+</p><p><br/>
+<b>NOTE:</b> Seeeduino Stalker v3.0  is the latest version of this board. Please Look <a href="/Seeeduino_Stalker#Comparison_between_various_versions_of_Seeeduino_Stalker" title="Seeeduino Stalker"> here</a> for comparison with older versions of this board. Seeeduino Stalker V3 has many features and offers ways to modify the functionalities by soldering or disconnecting PCB jumpers. Please understand this document and refer to the schematic before programming.
+</p><p><br/>
+<span style="color: red">Note</span> that we have updated and made some modifications to Seeeduino Stalker. And we will cover it later in section <b>Hardware Overview</b> of this page.
+</p>
+<h3> Version Tracker</h3>
+<table>
+<tr>
+<td>Product version </td>
+<td> Release date</td>
+<td> Support status </td>
+<td> Notes
+</td></tr>
+<tr>
+<td> <a href="/Seeeduino-Stalker_v3">Seeeduino Stalker v3</a>(v3.0, older version) </td>
+<td> Oct 2015 </td>
+<td> Supported </td>
+<td> None
+</td></tr>
+<tr>
+<td> <a href="/Seeeduino-Stalker_v3">Seeeduino Stalker v3</a>(v3.1, older version) </td>
+<td> July 2016 </td>
+<td> Supported </td>
+<td> None
+</td></tr></table>
+<p><br/>
+<a href="http://seeedstudio.com/Seeeduino-Stalker-v3-p-1882.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2>  Features </h2>
+<ul><li> Compatible with Seeeduino (I/O ports use 3.3V Logic). Can be programmed with Arduino Processing language.
+</li><li> Onboard microcontroller: <b>ATMega328P</b>
+</li><li> Onboard Real Time Clock chip DS1337S (Socket for a CR1220 coin cell, which acts as a backup power source for RTC)
+</li><li> Serial interface with DTR for auto reset during programming when operating in standalone mode. (For programming, <a href="/UartSBee" title="UartSBee">UartSBee</a> must be bought separately).
+</li><li> microSD card socket 
+</li><li> I2C Pin header (operation voltage is selectable: 5.0V or 3.3V)
+</li><li> Grove interface (operation voltage is selectable: 5.0V or 3.3V)
+</li><li> Reset buttons for XBee Modules and ATMega328P
+</li><li> <a href="/w/index.php?title=Bee_series&amp;action=edit&amp;redlink=1" title="Bee series (page does not exist)">Bee series socket</a> - 2*10 pin 2.0mm pitch (which will mate with - one at a time - any of the wireless modules: <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a>, <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a>, <a href="/GPS_Bee_kit" title="GPS Bee kit">GPSBee</a> or <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a>.)
+</li></ul>
+<p><br/>
+<br/>
+</p>
+<h2>  Specification </h2>
+<table border="1">
+<tr>
+<th> Parameter
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td width="300px"> MCU
+</td>
+<td width="500px"> ATmega328
+</td></tr>
+<tr>
+<td> Crystal Oscillator
+</td>
+<td> 8 MHz
+</td></tr>
+<tr>
+<td> RTC
+</td>
+<td> DS1337S
+</td></tr>
+<tr>
+<td> I/O Logic
+</td>
+<td> 3.3v
+</td></tr>
+<tr>
+<td> Board for Arduino IDE
+</td>
+<td> Arduino Pro or Pro Mini (<b>3.3v</b> , 8 MHz)w/ATmega328
+</td></tr>
+<tr>
+<td> Power Supply
+</td>
+<td> 3.7v LiPo Battery, Use 5VDC solar panel for charging the battery.
+</td></tr>
+<tr>
+<td> Power Connector
+</td>
+<td> 2 pin JST/ USB
+</td></tr>
+<tr>
+<td> Connectivity
+</td>
+<td> I<sup>2</sup>C, UART, SPI
+</td></tr>
+<tr>
+<td> Open Circuit Current
+</td>
+<td> 6 mA max
+</td></tr>
+<tr>
+<td> Charging Current
+</td>
+<td> 300mA
+</td></tr>
+<tr>
+<td> Maximum Current on 3.3v port
+</td>
+<td> 800mA
+</td></tr>
+<tr>
+<td> Size of PCB
+</td>
+<td> 86.74mm x 60.96mm
+</td></tr></table>
+<h2>  Application Ideas  </h2>
+<ul><li> Wireless Sensor Network (using <a href="/XBee_Pro_Series2_RF_module" title="XBee Pro Series2 RF module">XBee</a> - bought separately)
+</li><li> GPS Logging (using <a href="/GPS_Bee_kit" title="GPS Bee kit">GPSBee</a> - bought separately)
+</li><li> Data Acquisition System capable of communicating with an App running on iPhone/Android Phone (using <a href="/Bluetooth_Bee" title="Bluetooth Bee">BluetoothBee</a> - bought separately).
+</li><li> RF Remote Control (using <a href="/RFbee_V1.1-Wireless_Arduino_compatible_node" title="RFbee V1.1 - Wireless Arduino compatible node">RFBee</a> - bought separately).
+</li><li> As a simple standalone Arduino compatible physical computing platform (<a href="/UartSBee" title="UartSBee">UartSBee</a> must be bought separately for programming).
+</li></ul>
+<p><br clear="all"/>
+<br/>
+</p>
+<h2>  Hardware Overview </h2>
+<p><span style="color: red">Note</span> that we have updated and made some modifications to Seeeduino Stalker (from version v3.0 to v3.1).
+</p>
+<dl><dd> 1. We add a switch to select between hardware serial ports (through D0, D1) and software serial port (that is, virtual serial port; through D5, D6). The switch is marked in blue rectangle like follows.
+</dd><dd><div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Seeeduino_Stalker_v3.1_serial_port_switch_1200_s.jpg" width="600"/></div></div>
+</dd><dd> 2. For RTC circuitry, there only one power supply (from lithium battery) now. And the applicable lithium polymer battery model is CR1120. 
+</dd><dd> 3. For RTC circuitry, we add two toggle switch to enable two interrupts (INT A and INT B of RTC corresponds INT0 and INT1 of MCU) to MCU. Both interrupts are used to activate MCU from sleep mode. You need to toggle those switch to <b>ON</b> before you want to send interrupt.
+</dd><dd> 4. As MCU is in sleep mode, you can control (enable or disable) the power input on Bee connector and all VCC pins of 3.3 V or 5V, through sending a signal with D9 pin.
+</dd><dd> 5. In sleep mode (for all module), the working current will as low as 100 μA.
+</dd></dl>
+<p><br/>
+<img src="img/Seeed_Stalker_v3.png" width="800"/>
+<br/>
+</p>
+<ul><li> <b>RST for Bee:</b> Press this button to reset the Bee module. However, this reset button does not affect the state of the main board(ATmega328).
+</li></ul>
+<ul><li> <b>RST for ATmega328: </b> Press this button to reset the main board.
+</li></ul>
+<ul><li> <b>ATmega328:</b> The micro controller of the main board. And the crystal oscillator is 8MHz.
+</li></ul>
+<ul><li> <b>SD Socket:</b> It is convenient to store data on an SD card. <b>There is a pad (P2) for soldering to turn the power supply of SD card ON or OFF</b> via Digital pin <b>D4</b>.
+</li></ul>
+<ul><li> <b>Bee Socket:</b> There is provision for the main board to communicate with other wireless modules via the Bee socket. <b>There is a pad (P1) to turn the power supply ON or OFF</b> via Digital pin <b>D5</b>.
+</li></ul>
+<ul><li> <b>Solar Panel:</b> Catch the sunshine and transfer it to power via the solar panel, without the constraint of USB cable.
+</li></ul>
+<ul><li> <b>Li-Po BAT:</b> Provide power supply to the main board via Li-Po BAT; The battery can be charged by solar panel.
+</li></ul>
+<ul><li> <b>CN3065:</b> Lithium Ion Battery charger for solar-powered systems. There are also two director lights on the board, they are "<b>OK</b>" and "<b>CH</b>" on the side of Li-Po BAT, which mean "<b>Charged</b>" and "<b>Charging</b>" respectively.
+</li></ul>
+<ul><li> <b>TD6810:</b> 1.5MHz 800mA Synchronous Step-Down Regulator Dropout, which provides 3.3v power supply to the main board.
+</li></ul>
+<ul><li> <b>RTC:</b> I2C Serial Real-Time Clock -- DS1337S. <b>And two optional interrupt signal pins have been breakout as pads (P3 and P4).</b> These jumper pads can be used to connect RTC /INTA pin to Digital Pin <b>D2</b> and RTC /INTB to Digital pin <b>D3</b>.
+</li></ul>
+<ul><li> <b>BAT for RTC:</b> A CR1220 battery, to provide power supply to RTC independently.
+</li></ul>
+<ul><li> <b>Grove Connectors:</b>  On the board there are two Grove connectors, i.e. I2C and D7. And you can plug Grove products onto the board directly via these Grove connectors.
+</li></ul>
+<ul><li> <b>UartSBee Headers:</b> The UartSBee headers are used with UartSBee v4, you can upload program to the main board via these headers.
+</li></ul>
+<p><br/>
+</p>
+<h3>  PCB Jumper Pads </h3>
+<p>The bottom side of Seeeduino Stalker V3 has many PCB jumper pads optionally changing the configuration / functionality. The below table provides details about the same.
+</p>
+<table border="1">
+<tr>
+<th> Jumper Pads Name
+</th>
+<th> Application
+</th>
+<th> Circuit
+</th></tr>
+<tr>
+<td width="100px"> P1
+</td>
+<td width="300px"> Soldering these jumper enables Digital pin D5 to ON or OFF power-supply of Bee Socket
+</td>
+<td> <img src="img/Seeeduino_Stalker_Jumper_Pad_P1.jpg" width="400"/>
+</td></tr>
+<tr>
+<td> P2
+</td>
+<td> Soldering these jumper pads enables Digital pin D4 to switch ON or OFF power supply of SD.
+</td>
+<td> <img src="img/Seeeduino_Stalker_Jumper_Pad_P2.jpg" width="400"/>
+</td></tr>
+<tr>
+<td> P3
+</td>
+<td> Soldering these jumper pads connects RTC /INTA pin to Digital Pin <b>D2(INT0)</b>.
+</td>
+<td> <img src="img/Seeeduino_Stalker_Jumper_Pad_P3.jpg" width="400"/>
+</td></tr>
+<tr>
+<td> P4
+</td>
+<td> Soldering these jumper pads connects RTC /INTB to Digital pin <b>D3(INT1)</b>.
+</td>
+<td> <img src="img/Seeeduino_Stalker_Jumper_Pad_P4.jpg" width="400"/>
+</td></tr>
+<tr>
+<td> P5
+</td>
+<td> This jumper by default connects BEE_TXD to Digital pin D0 (H/W UART TXD). By cutting the existing PCB connection and soldering to adjacent pad, BEE_TXD can be connected to Digital pin <b>D7</b> for S/W Serial.  <br/> <span style="color: red"> <b>Note</b>: There is a known hardware bug. Please read <a href="/Seeeduino-Stalker_v3#Known_Issue" title="Seeeduino-Stalker v3">here</a> for a work-around.</span>
+</td>
+<td> <img src="img/Seeeduino_Stalker_Jumper_Pads_P5andP6.jpg" width="500"/>
+</td></tr>
+<tr>
+<td> P6
+</td>
+<td> This jumper by default connects BEE_RXD to Digital pin D0 (H/W UART RXD). By cutting the existing PCB connection and soldering to adjacent pad, BEE_RXD can be connected to Digital pin <b>D6</b> for S/W Serial.
+</td>
+<td> <img src="img/Seeeduino_Stalker_Jumper_Pads_P5andP6.jpg" width="500"/>
+</td></tr></table>
+<p>Apart from these, there are other jumper pads for WIRELESS_PROGRAMMING, RSSI_STATUS and CH_STATUS. These are by default connected and please refer to the schematic if you would like to modify any functionalities.
+</p>
+<h2>  Getting Started </h2>
+<p>If you are new to the "Physical Computing" world and if <b>Seeeduino Stalker v3.0</b> is the first physical computing platform you want to begin with, then we suggest you to start with <a href="/Seeeduino_v4.0" title="Seeeduino v4.0"> Seeeduino</a>. 
+</p><p>The following steps will help you assemble the hardware and software resources to get you started with <b>Seeeduino Stalker v3.0</b>.<br/>
+</p>
+<h4>  Step 1. Acquiring the hardware </h4>
+<p><br/>
+<img src="img/Seeed_Stalker_v3-1.png" width="600"/>
+<br/>
+The picture above shows the hardware and components required for Seeeduino Stalker v3 to communicate with PC. The Stalker does not have USB to Serial functionality. Hence, <b>UartSBee</b> is necessary for programming Stalker via PC. Other USB to Serial converter board can be used to replace UartSBee v4.
+<br/>
+<b>Note: UartSBee v4 needs to be bought separately</b>.
+<br/>
+<br/>
+</p>
+<h4>  Step 2: Installing the drivers and plugging in the hardware  </h4>
+<ol><li><a href="/UartSBee" title="UartSBee">UartSBee</a> is like the multi-purpose Swiss Army knife of the Physical Computing world. There is a very detailed procedure to use UartSBee for both Windows and GNU/Linux users <a href="/UartSBee" title="UartSBee">here</a>.  In our case, it will perform three functions: 
+<ul><li>To program the Seeeduino Stalker. 
+</li><li>To communicate with Seeeduino Stalker. 
+</li><li>Provide power (from USB power of PC) to Seeeduino Stalker (including any peripherals connected to it).
+</li></ul>
+</li><li>UartSBee has an on-board voltage regulator and a switch to select the target board voltage ( either 5.0V or 3.3V). In case of Seeeduino Stalker, set this slide switch to 5.0V.
+</li><li>The wiring connection scheme of the hardware is <b>"<font color="Navy">Computer</font><font color="Grey">→(Mini USB Cable)→</font><font color="Navy">UartSBee </font><font color="Grey">→(Flat Ribbon Cable)→</font><font color="Navy">Seeeduino Stalker</font>"</b>. The jumper wires must be connected between UartSBee and Seeeduino Stalker before connecting the UartSBee to the Computer. <b>Note: The TXD and RXD pins must are cross connected as shown in the table</b>. 
+</li><li>Connect the Mini USB cable from UartSBee to PC. If you are using a Windows based PC, the "Found New Hardware" balloon will popup and within a few moments the FT232 drivers will be installed. 
+</li></ol>
+<p><br/>
+<font color="Green"><b>The following table shows the connection between Seeeduino Stalker v3 and UartSBee v4.</b></font>
+<br/>
+</p>
+<table border="1">
+<caption> Pins connection
+</caption>
+<tr>
+<th> Seeeduino Stalker v3
+</th>
+<th>      
+</th>
+<th> UartSBee v4
+</th></tr>
+<tr>
+<td> 5V
+</td>
+<td>   ↔  
+</td>
+<td> VCC
+</td></tr>
+<tr>
+<td> <font color="Red">RXD </font>
+</td>
+<td>   ↔  
+</td>
+<td> <font color="Green">TXD </font>
+</td></tr>
+<tr>
+<td> <font color="Green">TXD </font>
+</td>
+<td>   ↔  
+</td>
+<td> <font color="Red">RXD </font>
+</td></tr>
+<tr>
+<td> GND
+</td>
+<td>   ↔  
+</td>
+<td> GND
+</td></tr>
+<tr>
+<td> DTR
+</td>
+<td>   ↔  
+</td>
+<td> DTR
+</td></tr></table>
+<p><br/>
+<br/>
+</p>
+<h2>  Demos </h2>
+<p>Download and install the DS1337 library and sketches available in the resources section. DS1337 library includes modified version DateTime class by Jean-Claude Wippler at <a href="http://jeelabs.net/projects/cafe/wiki/RTClib">JeeLabs</a>
+</p>
+<ul><li>The datalogger demo sketches makes use of the Arduino SD Library.
+</li></ul>
+<h3> 1.RTC</h3>
+<p><font color="Green"><b>Please pay attention: You need to solder some pads while using the "Interrupts" demo</b></font>
+<br/>
+</p>
+<table border="1">
+<caption> <font color="Red">How to solder </font>
+</caption>
+<tr>
+<th> Pins on RTC
+</th>
+<th> Pads on Seeeduino Stalker v3
+</th>
+<th> Pins on ATmega328
+</th></tr>
+<tr>
+<td> INTA
+</td>
+<td> P3
+</td>
+<td> digital 2
+</td></tr>
+<tr>
+<td> INTB
+</td>
+<td> P4
+</td>
+<td> digital 3
+</td></tr></table>
+<p><br/>
+</p>
+<h4>  Adjust Date/Time </h4>
+<hr/>
+<ul><li>Set Arduino board as <code><b>Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega 328</b></code>.
+</li><li>Open <b>adjust.ino</b> example from DS1337 library
+</li><li>Set the current date/time using the DateTime Class object <b>dt</b> in the example:
+<ul><li> <code>DateTime dt(year, month, date, hour, min, sec,week-day(starts from 0 and goes to 6)); </code>
+</li><li><b>Ex:-</b> <code>DateTime dt(2015, 10, 1, 11, 43, 0, 4);</code>
+</li></ul>
+</li><li> compile and upload to <strong class="selflink">Seeeduino-Stalker v3</strong>
+</li></ul>
+<div class="thumb tnone"><div class="thumbinner" style="width:352px;"><img src="img/Seeeduino_Stalker_v3_adjust.png" width="350"/> <div class="thumbcaption"><b>adjust.ino output</b></div></div></div>
+<h4>  Get Current Date/Time </h4>
+<hr/>
+<ul><li>Set Arduino board as <code><b>Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega 328</b></code> .
+</li><li>Open <b>now.ino</b> example from DS1337 library
+</li><li>The current date/time is read from DS1337 using <code> RTC.now() </code> function.
+<ul><li><b>Ex:- <code> DateTime now = RTC.now();</code></b>
+</li></ul>
+</li><li> compile and upload to <strong class="selflink">Seeeduino-Stalker v3</strong>
+</li></ul>
+<div class="thumb tnone"><div class="thumbinner" style="width:352px;"><img src="img/Seeeduino_Stalker_v3_now.png" width="350"/> <div class="thumbcaption"><b>now.ino output</b></div></div></div>
+<h4>  DS1337 Interrupts Example </h4>
+<hr/>
+<p>This example is a demonstration of interrupt detection from DS1337 <span style="text-decoration: overline">INT</span> output. This feature is useful for data-logger functionality where the MCU is put to sleep mode when not in use and DS1337 <span style="text-decoration: overline">INT</span> wakes up the CPU periodically. This extends battery power. The complete operation is documented in the code.
+</p>
+<ul><li>Solder P3 jumper.
+<ul><li> This connects the DS1337 interrupt out pin to ATmega328 INT0 pin.
+</li></ul>
+</li><li>Set Arduino board as <code><b>Arduino Pro or Pro Mini (3.3V, 8MHz) w/ ATmega 328</b></code>.
+</li><li>Open <b>interrupts.ino</b> example from DS1337 library
+</li><li> compile and upload to <strong class="selflink">Seeeduino-Stalker v3</strong>
+</li></ul>
+<div class="thumb tnone"><div class="thumbinner" style="width:452px;"><img src="img/Seeeduino_Stalker_v3_interrupt.png" width="450"/> <div class="thumbcaption"><b>interrupts.ino output</b></div></div></div>
+<h4>  Data Logger Example </h4>
+<hr/>
+<p>The principal application of Seeeduino Stalker v3.0 is data-logging of sensor signal like battery voltage, etc along with the time-stamp. This sketch puts the MCU in sleep mode when not performing data sampling / logging operation. The complete implementation is documented very well in the code. The following section gives an overview : 
+</p>
+<ol><li><b>StalkerV30_DataLogger_10Sec.ino</b>
+<ul><li>This sketch logs battery voltage data to SD card configured by <b><code>RTC.enableInterrupts(<i>h, m, s</i>)</code></b> function. 
+</li><li>The <i>periodicity</i> is provided using h, m and s. Once an interrupt is detected, the next interrupt time is updated by advancing the h,m and s value. The DateTime Class comes handy for this.
+</li><li>ex:- <code>interruptTime = DateTime(interruptTime.get() + interruptInterval);  //decide the time for next interrupt</code>
+</li><li>This sketch also produces verbose output i.e the various events happening inside MCU are displayed in serial terminal.
+</li></ul>
+</li></ol>
+<div class="thumb tnone"><div class="thumbinner" style="width:552px;"><img src="img/Stalker_v3.0_datalogger_flowchart.png" width="550"/> <div class="thumbcaption"><b>Overview of Data-logger implementation</b></div></div></div>
+<h3>  Read the charging status </h3>
+<hr/>
+<p>The battery charging status can be read using the below sketch. The battery can be charged by plugging solar panel onto the board or via the UartSBee.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">57600</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">analogReference</span><span class="br0">(</span><span class="kw2">INTERNAL</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="co1">//analogRead(6);</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+  <span class="kw4">char</span> CH_status_print<span class="br0">[</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="sy1">=</span>
+  <span class="br0">{</span>
+    <span class="st0">"off"</span>,<span class="st0">"on "</span>,<span class="st0">"ok "</span>,<span class="st0">"err"</span>
+  <span class="br0">}</span><span class="sy4">;</span>
+  <span class="kw4">unsigned</span> <span class="kw4">char</span> CHstatus <span class="sy1">=</span> read_charge_status<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//read the charge status</span>
+  <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"charge status --&gt;"</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>CH_status_print<span class="br0">[</span>CHstatus<span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+ 
+<span class="kw4">unsigned</span> <span class="kw4">char</span> read_charge_status<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw4">unsigned</span> <span class="kw4">char</span> CH_Status<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span>
+  <span class="kw4">unsigned</span> <span class="kw4">int</span> ADC6<span class="sy1">=</span><span class="kw3">analogRead</span><span class="br0">(</span><span class="nu0">6</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="kw1">if</span><span class="br0">(</span>ADC6<span class="sy1">&gt;</span><span class="nu0">900</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    CH_Status <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span><span class="co1">//sleeping</span>
+  <span class="br0">}</span>
+  <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>ADC6<span class="sy1">&gt;</span><span class="nu0">550</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    CH_Status <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span><span class="co1">//charging</span>
+  <span class="br0">}</span>
+  <span class="kw1">else</span> <span class="kw1">if</span><span class="br0">(</span>ADC6<span class="sy1">&gt;</span><span class="nu0">350</span><span class="br0">)</span>
+  <span class="br0">{</span>
+    CH_Status <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span><span class="co1">//done</span>
+  <span class="br0">}</span>
+  <span class="kw1">else</span>
+  <span class="br0">{</span>
+    CH_Status <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span><span class="co1">//error</span>
+  <span class="br0">}</span>
+  <span class="kw1">return</span> CH_Status<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h3>  Reading the voltage of Li-Po BAT </h3>
+<hr/>
+<p>The voltage of the Li-Po battery connected to Seeeduino Stalker V3 can be read by Analog pin A7. The below sketch demonstrates this.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">57600</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">analogReference</span><span class="br0">(</span><span class="kw2">INTERNAL</span><span class="br0">)</span><span class="sy4">;</span> 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+<span class="kw4">float</span> voltage<span class="sy4">;</span>
+<span class="kw4">int</span> BatteryValue<span class="sy4">;</span>
+ 
+    BatteryValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>A7<span class="br0">)</span><span class="sy4">;</span>
+    voltage <span class="sy1">=</span> BatteryValue <span class="sy2">*</span> <span class="br0">(</span><span class="nu16">1.1</span> <span class="sy2">/</span> <span class="nu0">1024</span><span class="br0">)</span><span class="sy2">*</span> <span class="br0">(</span><span class="nu0">10</span><span class="sy2">+</span><span class="nu0">2</span><span class="br0">)</span><span class="sy2">/</span><span class="nu0">2</span><span class="sy4">;</span>  <span class="co1">//Voltage devider</span>
+ 
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Battery Voltage -&gt; "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span>voltage<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"V   "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">500</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><i>Reference: <a href="http://arduino.cc/en/Reference/AnalogReference">analogReference</a></i>
+<br/>
+</p>
+<h2>  Additional information for using the Bee module </h2>
+<p>The following tables show the default UART connection between Bee Socket and ATMega328 MCU.
+</p>
+<table border="1">
+<caption> <font color="Red">How to use </font>
+</caption>
+<tr>
+<th> Pins on Bee socket
+</th>
+<th> Pins on ATmega328
+</th></tr>
+<tr>
+<td> BEE_TXD
+</td>
+<td> digital 0
+</td></tr>
+<tr>
+<td> BEE_RXD
+</td>
+<td> digital 1
+</td></tr></table>
+<p>Also, you can turn the power supply of Bee module on or off by the optional pad. <br/>
+<font color="Green">Operation： On the back of Seeeduino Stalker v3, you can find a solder pad "P1". Solder the P1 and use the following code to cut off the power supply. </font> <br/>
+</p>
+<pre>
+digitalWrite(5,HIGH);
+</pre>
+<h2> Known Issue </h2>
+<p><b>Affected users</b>: This issue affects those who would like to use the optional feature of connecting Bee Socket to software serial port instead of H/W serial port(default).
+</p><p><b>Issue</b>: Jumper P5 can not be configured to use software serial port by cutting the default connection and resoldering (i.e) BEE_RXD can not be connected to PD7 instead of default PD1 by simply cutting/soldering the jumper as per <a href="/Seeeduino-Stalker_v3#PCB_Jumper_Pads" title="Seeeduino-Stalker v3"> P5 description</a>. There is a hardware bug.
+</p><p><b>Workaround</b>:
+</p><p>1. On the top layer cut the routing from PD1/TXD signal to R16 resistor as shown in the following pictures. Please use a sharp knife and gentle cut the connection:
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/StalkerV3.0_P6Issue_1.jpg" width="300"/> <div class="thumbcaption">Before modification</div></div></div>
+<div class="thumb tnone"><div class="thumbinner" style="width:302px;"><img src="img/StalkerV3.0_P6Issue_Workaround.jpg" width="300"/> <div class="thumbcaption">After modification</div></div></div>
+<p>2.Now apply the procedure mentioned in <a href="/Seeeduino-Stalker_v3#PCB_Jumper_Pads" title="Seeeduino-Stalker v3"> P5 jumper description</a> (i.e) cut the jumper and solder the middle pad of Jumper P5 to PD7.
+</p>
+<h2>  Board Layout </h2>
+<p>The Images are taken from the EAGLE Files
+<br/>
+</p>
+<ul class="gallery">
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:33px auto;"><img src="img/Seeeduino_Stalker_v3.0_Board.PNG" width="120"/></div></div>
+<div class="gallerytext">
+<p>Seeeduino_Stalker_v3.0_Board
+</p>
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:33.5px auto;"><img src="img/Seeeduino_Stalker_v3.0_Sceme_1.PNG" width="120"/></div></div>
+<div class="gallerytext">
+<p>Power
+</p>
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:34px auto;"><img src="img/Seeeduino_Stalker_v3.0_Sceme_2.PNG" width="120"/></div></div>
+<div class="gallerytext">
+<p>Arduino
+</p>
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:33.5px auto;"><img src="img/Seeeduino_Stalker_v3.0_Sceme_3.PNG" width="120"/></div></div>
+<div class="gallerytext">
+<p>BEE TF
+</p>
+</div>
+</div></li>
+<li class="gallerybox" style="width: 155px"><div style="width: 155px">
+<div class="thumb" style="width: 150px;"><div style="margin:33.5px auto;"><img src="img/Seeeduino_Stalker_v3.0_Sceme_4.PNG" width="120"/></div></div>
+<div class="gallerytext">
+<p>RTC I2C
+</p>
+</div>
+</div></li>
+</ul>
+<p><br/>
+<br/>
+</p>
+<h2>  Resources </h2>
+<ul><li>Software:
+<ul><li><a href="res/DS1337.zip">Seeeduino Stalker V3 - DS1337 RTC library</a>
+</li><li><a href="res/StalkerV30_DataLogger_10Sec.zip">Seeeduino Stalker V3.0 - Datalogger Example</a>
+</li></ul>
+</li><li>Design:
+<ul><li><a href="res/Seeeduino_Stalker_v3.0.zip">Seeeduino Stalker v3.0 - PDF Schematic &amp; EAGLE files</a>
+</li></ul>
+</li><li>Datasheets:
+<ul><li><a href="res/DS1337-DS1337C-99519.pdf">Datasheet of DS1337S</a>
+</li><li><a href="res/CN3065.pdf">Datasheet of CN3065)</a>
+</li><li><a href="res/DSE-CN3065.pdf">Datasheet of CN3065 (English)</a>
+</li><li><a href="res/TD6810.pdf">Datasheet of TD6810</a>
+</li></ul>
+</li><li>Others:
+<ul><li><a href="res/ATmegaBOOT_168_atmega328_pro_8MHz.hex.zip">Bootloader via AVRISP MKII</a>
+</li><li><a href="res/Stalker_V2_Final.Prjt.zip">Completed file via Offline-AVRISP</a>
+</li></ul>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

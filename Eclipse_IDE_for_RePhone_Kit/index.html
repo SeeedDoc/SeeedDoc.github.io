@@ -1,0 +1,271 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Eclipse IDE for RePhone Kit</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Eclipse IDE for RePhone Kit</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><a href="/Rephone"><img src="img/Xadow_GSMPlusBLE_pingguo.JPG" width="500"/></a> <div class="thumbcaption"></div></div></div>
+<p><br/>
+RePhone can be a learning tool for you to start interesting projects. Currently, RePhone supports various development environment and development languages, you can either built applications with C/C++ based on Eclipse IDE, Arduino IDE, or with Lua and JavaScript.
+</p><p>This wiki is a User Guide to help you start your RePhone project with Eclipse IDE.
+</p>
+<p><br/>
+<br/>
+</p>
+<h2> Download Eclipse IDE for RePhone</h2>
+<p>Before you download the Arduino IDE for RePhone, make sure you have a PC with the following:
+</p>
+<ul><li> Operation system: Microsoft Windows XP, Vista, 7 or 8
+</li><li> Eclipse IDE: Indigo (3.7) with CDT 8.0.2.
+</li></ul>
+<p><br/>
+Now please click the following icons to download and install the Eclipse IDE for C/C++ Developers from the official Eclipse website. The IDE installation may require an appropriate JAVA SE Development Kit 8 to be installed on your PC.<br/>
+<br/>
+</p><p><a href="http://www.eclipse.org/downloads/packages/eclipse-ide-cc-developers-includes-incubating-components/indigosr2"><img src="img/Eclipse_ide-02.png" width="200"/></a>
+<br/><br/>
+</p><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html"><img src="img/JSE-03.png" width="285"/></a>
+<br/><br/>
+</p>
+<h2> Install Eclipse Plug-in: LinkIt Assist 2502 SDK 2.0.46</h2>
+<p>To make use of the RePhone and Eclipse IDE, you would need to <b>install the LinkIt Assist 2502 Eclipse plug-in in the same folder as the Eclipse IDE</b>, where the ‘<i>eclipse.exe</i>’ is located. 
+<br/><br/>
+</p><p><a href="http://download.labs.mediatek.com/MediaTek_LinkIt_Assist_2502_SDK_2_0_46.zip"><img src="img/Linkit_assist_sdk_2.0.46-04.png" width="300"/></a>
+<br/><br/>
+</p><p>To install the LinkIt Assist 2502 SDK 2.0.46, you need to do the following:
+</p><p><b><span style="font-size:1.3em;">Step 1.</span></b> Download the <b>LinkIt Assist 2502 SDK 2.0.46</b> zip file. <br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 2.</span></b> Extract the content of the LinkIt Assist 2502 SDK 2.0.46 zip file. There are tools in addition to the Eclipse plug-in included in the SDK so considering extracting the content to a permanent location. If you extract the content to a temporary location the installer will give you the option to move it to a permanent location.<br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 3.</span></b> Make sure that the Eclipse IDE is not running.<br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 4.</span></b> Run the LinkIt Assist 2502 SDK 2.0.46 installer ‘<b>InstallPlugins.exe</b>’ as shown in the following figure:
+<br/><br/>
+</p><p><br/>
+<img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_1.png" width="474"/>
+<br/>
+<br/>
+</p><p><b><span style="font-size:1.3em;">Step 5.</span></b> In the Welcome Page, Click ‘<b>Next</b>’ 
+<br/><br/>
+</p><p><br/>
+<img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_2.png" width="560"/>
+<br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 6.</span></b> Now you will be asked to select the Eclipse IDE location. Click ‘<b>Browse</b>’ and locate the folder in which you installed Eclipse IDE (the designated folder where you installed the ‘<b>Eclipse IDE for C/C++ Developer</b>’) Click ‘<b>OK</b>’ and ‘<b>Next</b>’.
+<br/><br/>
+</p><p><br/>
+<img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_3.png" width="560"/>
+<br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 7.</span></b> In Move SDK to permanent location, check ‘<b>Move LinkIt Assist 2502 2.0 package to new folder</b>’ if you have extracted the zip file in a temporary location. Click ‘<b>Browse</b>’ and locate a permanent location in which to store the SDK. Then Click ‘<b>Next</b>’ to the next step.
+<br/><br/>
+</p><p><br/>
+<img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_4.png" width="560"/>
+<br/><br/>
+</p><p><br/>
+<b><span style="font-size:1.3em;">Step 8.</span></b> In Ready to install the SDK. Review the selected locations if they are OK click ‘<b>Install</b>’.
+<br/><br/>
+</p><p><img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_5.png" width="560"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 9.</span></b> At the last step of installation, <b>check</b> ‘<b>Install the MediaTek USB Driver</b>’ if this is your first time to install a LinkIt SDK, then click ‘<b>Finish</b>’ to complete the installation.
+<br/><br/>
+</p><p><img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_6.png" width="560"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 10.</span></b> Once the plug-in installation is finished, there will be a folder named ‘<b>LINKIT_ASSIST_SDK</b>’ in the location where you installed the Eclipse IDE.
+<br/><br/>
+</p><p><img src="img/LinkIt_Assist_2502_SDK_2.0.46_installer_77.png" width="407"/>
+<br/><br/>
+</p><p>You can also find the plug-ins in your Eclipse window once you open the "<b>eclipse.exe</b>", see the <b>Step 8</b> in the following section - "<b>Create Your First Project: Hello World</b>"
+<br/><br/>
+</p><p><img src="img/Plug-ins.png" width="300"/>
+<br/><br/>
+</p><p><br/>
+<br/>
+</p>
+<h2> Update/Flash the Firmware</h2>
+<p><b>NB: Please be noticed that flash the firmware will delete all the settings and files(images, musics) stored in the RePhone, please make sure you have been aware of this before you flash/update the firmware.</b><br/><br/>
+</p><p>I know you’ve been agog about your RePhone and can’t wait to start programming, just hold on a second, before you do that, it is essential to make sure the firmware of the core module - Xadow GSM+BLE corresponds to the LinkIt Assist SDK you just installed.
+<br/><br/>
+</p><p><br/>
+</p><p>Here I’introduce two ways to update/flash the firmware of your RePhone. 
+<br/>
+<br/>
+</p>
+<h4> <b><span style="font-size:1.2em;">Build-in Firmware Updater of LinkIt Assist SDK</span></b> </h4>
+<hr/>
+<p><br/>
+<br/>
+</p><p><b><span style="font-size:1.3em;">Step 1.</span></b> Firstly, make sure your Xadow GSM+BLE is disconnected from your PC, then download the <b>latest RePhone SDK</b> on our Github, unzip it.
+<br/><br/>
+</p><p><a href="https://github.com/WayenWeng/RePhone_SDK_Bin_Update//"><img src="img/Download_RePhone_SDK.png" width="262"/></a><br/>
+</p><p><br/>
+</p><p><b><span style="font-size:1.3em;">Step 2.</span></b> Launch the <b>‘FirmwareUpdater.exe’</b> in the SDK folder you just installed, it can be found in the path <i>’eclipse\LINKIT_ASSIST_SDK\tools\FirmwareUpdater\FirmwareUpdater.exe’</i>
+<br/><br/>
+</p><p><img src="img/Linkit_firmwareupdater_000.png" width="1160"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 3.</span></b> In the LinkIt Firmware Updater window, select <b>‘Others’</b> as the platform in the pull-down list. Then Locate <i><b>...\SEEED02A_DEMO_PCB01_gprs_MT2502_S00.MAUI_11CW1418SP5_W15_29.bin\SEEED02A_DEMO_BB.cfg</b></i>
+<br/><br/>
+</p><p><img src="img/Eclipse_Firmware_Update.png" width="664"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 4.</span></b> Click the <b>green update button</b>, and follow the 2 step instructions on the screen, <b>make sure the Xadow GSM+BLE is powered (connected to the battery)</b> when connect it to PC.
+<br/><br/>
+</p><p><img src="img/Eclipse_Firmware_Update_2.png" width="664"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 5.</span></b> Wait until the download finish.
+<br/><br/>
+</p><p><img src="img/Eclipse_Firmware_Update_3.png" width="664"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 6.</span></b> When the firmware update complete this will be confirmed in the Download Complete page, click ‘<b>OK</b>’ and exit the updater.
+<br/><br/>
+</p><p><img src="img/Eclipse_Firmware_Update_4.png" width="664"/>
+<br/><br/>
+<br/>
+</p><p><br/>
+<br/>
+</p>
+<h2> Create Your First Project: Hello World</h2>
+<p><b><span style="font-size:1.3em;">Step 1.</span></b> Almost there! Now launch <b>eclipse.exe</b>. If this is your first time using the Eclipse IDE, you will be asked to select a <b>Workspace</b> for your eclipse projects. In Workspace Launcher, click <b>Browse</b> to find a proper location as your Workspace. I recommend you to set your workspace in the same location you installed the Eclipse IDE.
+<br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_1.png" width="617"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 2.</span></b> To create a new RePhone application - in the Eclipse <b>File</b> menu, point to <b>new </b>and click <b>Other</b>. Or you can simply use the <b>CTRL+N</b> shortcut key.
+<br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_2.jpg" width="754"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 3.</span></b> In the New window, expand the <b>LinkIt Assist 2502 SDK 2.0</b> folder and select <b>Application(*.vxp) </b>
+<br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_3.png" width="525"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 4.</span></b> Now you are lead to the<b>LinkIt Assist 2502 SDK 2.0 Wizard</b>
+</p>
+<ul><li> Enter the name for your new project, in this case we name it as "<b>hello_world</b>"
+</li><li> In the pull-down menu of <b>Hardware Platform</b> , choose <b>LinkIt Assist 2502</b>
+</li><li> Check <b>Empty Application</b>
+</li><li> Click <b>Finish</b> to complete the setup
+</li></ul>
+<p><br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_4.png" width="527"/>
+<br/><br/>
+"
+<b><span style="font-size:1.3em;">Step 5.</span></b> Congrats! XD  You just created your first project! Now open the project from the C/C++ Projects pane and double click "<b>hello_world.c</b>" file, as shown below
+<br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_5.png" width="1221"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 6.</span></b> Before uploading the application,  you need to 
+</p>
+<ul><li> power up your RePhone by <b>plug in the battery</b> to the battery socket on the Xadow GSM+BLE<b>, press and hold the power key (PWR) for 2 second to</b> <b>turn it ON</b> (then the LED indicator shows <b>GREEN</b>)
+</li><li> then connect your RePhone to PC with a Micro USB cable.
+</li></ul>
+<p><br/><br/>
+</p><p><img src="img/Connect_Xadow_GSMPlusBLE_to_PC.png" width="526"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 7.</span></b> Open <b>Device Manager</b> to check for the COM ports. There will be two <b>COM ports</b> (the COM number might be different in your PC):
+</p>
+<ul><li> <b>MTK USB Debug Port(COM4)</b> is used for logs, like printing messages in the serial monitor
+</li><li> <b>MTK USB Modem Port(COM5)</b> is used for uploading code
+</li></ul>
+<p>Open <b>Device Manager</b> by clicking the <b>Start</b> button, clicking <b>Control Panel</b>, clicking <b>System and Security</b>, and then, under <b>System</b>, clicking <b>Device Manager</b>. If you're prompted for an administrator password or confirmation, type the password or provide confirmation. See the following image:
+<br/><br/>
+</p><p><img src="img/Check_ports.png" width="584"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 8.</span></b> Almost there! Put the following code into the "<b>hello_world.c</b>": <br/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include "vmsystem.h"</span>
+<span class="co2">#include "vmtype.h"</span>
+<span class="co2">#include "vmlog.h"</span>
+<span class="co2">#include "vmtimer.h"</span>
+<span class="co2">#include "ResID.h"</span>
+<span class="co2">#include "hello_world.h"</span>
+ 
+VM_TIMER_ID_PRECISE sys_timer_id <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> sys_timer_callback<span class="br0">(</span>VM_TIMER_ID_PRECISE sys_timer_id, <span class="kw4">void</span><span class="sy2">*</span> user_data<span class="br0">)</span>
+<span class="br0">{</span>
+    vm_log_info<span class="br0">(</span><span class="st0">"Hello World!"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> handle_sysevt<span class="br0">(</span>VMINT message, VMINT param<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">switch</span> <span class="br0">(</span>message<span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="kw1">case</span> VM_EVENT_CREATE<span class="sy4">:</span>
+ 
+        sys_timer_id <span class="sy1">=</span> vm_timer_create_non_precise<span class="br0">(</span><span class="nu0">1000</span>, sys_timer_callback, <span class="kw2">NULL</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> VM_EVENT_PAINT<span class="sy4">:</span>
+        <span class="kw1">break</span><span class="sy4">;</span>
+        <span class="kw1">case</span> VM_EVENT_QUIT<span class="sy4">:</span>
+        <span class="kw1">break</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> vm_main<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span>
+<span class="br0">{</span>
+    vm_pmng_register_system_event_callback<span class="br0">(</span>handle_sysevt<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p><p><br/>
+</p>
+<ul><li> Click <b>Build Application</b> to upload the application, as instructed in the image below:
+</li></ul>
+<p><br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_6.png" width="1223"/>
+<br/><br/>
+</p>
+<ul><li> Once the application is successfully uploaded it will be reported in the <b>Console</b> at bottom, if it's not showing, reopen it in the <i><b>Window/Show View/Console</b></i>
+</li></ul>
+<p><br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_7.png" width="1172"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 9.</span></b> Open the <b>Monitor</b> in the <i>LinkIt Assist Plug-in</i>.
+<br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_8.png" width="1221"/>
+<br/><br/>
+</p><p><br/>
+You will be asked to <b>Set Database Path</b>, if not, point to <b>Config</b> menu and click <b>Set Database Path</b>
+</p>
+<ul><li> Click the "<b>...</b>" icon as indicated in the image below
+</li></ul>
+<p><br/><br/>
+<img src="img/Eclipse_ide_helloworld_9.png" width="1200"/>
+<br/><br/>
+</p>
+<ul><li> Locate to "<i><b>eclipse\LINKIT_ASSIST_SDK\tools\FirmwareUpdater\firmware\LinkIt_Device\LinkIt_Assist_2502\W15.19.p2\database.db</b></i> ", click <b>Open</b>
+</li></ul>
+<p><br/><br/>
+<img src="img/Eclipse_ide_helloworld_10.png" width="649"/>
+<br/><br/>
+</p>
+<ul><li> Also select the <b>COM port</b> as <b>MTK USB Debug Port(COM4)</b>, and <b>Baud Rate</b> has a default value of <b>115200</b>. 
+</li></ul>
+<p>The COM number of the Debug Port might be different on your PC, just make sure it is the <b>MTK USB Debug Port</b> listed in <b>Device Manager</b>.
+</p><p>If the window is not showing, point to <b>Config</b> menu and click <b>Configure RS232...</b>
+<br/><br/>
+<img src="img/Eclipse_ide_helloworld_11.png" width="410"/>
+<br/><br/>
+</p><p><b><span style="font-size:1.3em;">Step 10.</span></b> You've done a great job!! Now say "Hello" to the world! 
+<br/><br/>
+</p><p><img src="img/Eclipse_ide_helloworld_12.png" width="1200"/>
+<br/><br/>
+</p><p><br/>
+</p>
+<h2> Reset to defaults</h2>
+<p><b>Please be noticed that reset your Rephone to defaults will delete all the settings and files(images, musics) in the RePhone, do aware of this before you reset it to defaults.</b><br/>
+</p><p>To reset your RePhone to <b>DEFAULTS</b>:<br/>
+</p><p>1. Follow the instructions in "Update/Flash the Firmware" section to flash the firmware<br/>
+</p><p>2. Download the RePhone_Create_Kit_VXP file<br/><br/>
+</p><p><a href="https://github.com/WayenWeng/RePhone_Create_Kit_VXP/"><img src="img/RePhone_Kit_Create_VXP.png" width="215"/></a><br/><br/>
+</p><p>3. Enter the <a href="/Xadow_GSMPlusBLE#Operating_Mode">RePhone Mass Storage Mode</a><br/>
+</p><p>4. Copy everything under the file named "RePhone Create Kit VXP" into the RePhone 5MB mass storage. <br/>
+</p><p>5. Restart your RePhone then its done. As reset have deleted all the files, you would have to put an mp3 file in the mass storage as well for the use of ringtone.
+<br/>
+<br/>
+</p>
+<h2> RePhone Community</h2>
+<p><a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4"><img src="img/RePhone_Community-2.png" width="300"/></a>
+</p><p>We’ve been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.
+</p><p>Now join us in the <a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4">RePhone Community</a>! 
+</p><p>Together we seek answers, make interesting stuff, care about each other, and share our experiences.
+<br/>
+<br/>
+</p>
+<h2> More About LinkIt Assist SDK</h2>
+<p>As RePhone is mostly developed with the LinkIt Assist SDK, and Mediatek has made a very detailed developer guide for the developers, to find more info you can refer to :<br/>
+</p><p><br/>
+<a href="res/MediaTek_LinkIt_Assist_2502_Developers_Guide_v1_1.pdf"><img src="img/Developer_guide_en-06.png" width="420"/></a><br/>
+</p><p><a href="res/MediaTek_LinkIt_Assist_2502_cn_v1_1.pdf"><img src="img/Developer_guide_cn-07_1.png" width="365"/></a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

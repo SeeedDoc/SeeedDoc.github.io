@@ -1,0 +1,112 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Solar Charger Shield V2.2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Solar Charger Shield V2.2</h1>
+
+<p>The solar charger is a stackable shield to Arduino compatible platforms, enables adaptive battery power and act as energy harvester for in-field charging. You may use various batteries that has the voltage of 3.0V-4.2V to shift up for 5V output, or put on Li-ion battery and solar panel to form an autonomous sensor unit. The maximum current provided by the board can get up to 600mA. An usb connector is also useful to charge the battery. <br/>
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:802px;"><img src="img/Solar_Charger_Shield_v2.2.jpg" width="800"/> <div class="thumbcaption"></div></div></div></div>
+<h2>  Features  </h2>
+<ul><li> Output Disconnect
+</li><li> Short circuit protection
+</li><li> 3W Output Power when connecting battery
+</li><li> Continuous Charge Current Up to 900mA
+</li><li> Battery status indication ( Red : Charging , Green: Charged )
+</li><li> Micro-USB Connector
+</li></ul>
+<h2>  Specification  </h2>
+<ul><li> Battery input voltage: 3.0~4.5V
+</li><li> USB input voltage: 4.75~5.25V
+</li><li> Solar input voltage: 4.8~6V
+</li><li> Maximum Output Power(with battery): 3W(600mA@5V)
+</li><li> Ripple voltage：&lt;100mV @ 500mA
+</li><li> Dimensions: 68*53mm
+</li></ul>
+<h2>  Applications  </h2>
+<ul><li>Wireless sensor unit 
+</li><li>Solar charge 
+</li><li>Tweet-a-volt-arduino
+</li></ul>
+<h2> Information on use of Solar panels for charging</h2>
+<p>1) The solar charger shield produces charges under sunlight and light from filament bulbs. Its function is more effective in the former than in the latter. Solar panels require invisible radiations namely ultraviolet and infrared radiations for producing current.
+</p><p>2) In order to test the system under filament bulb, hold the solar panel at a distance, less than 20cm(&lt; 0.5 feet). However, the charging may not be effective under filament bulbs.
+</p><p>3) Place the solar panel at an angle such that the maximum amount of sunlight is incident on it. 
+</p><p>4) Protect the solar panel from excessive exposure to water/water vapors. This may oxidize the surface of the solar panel and reduce its performance.
+</p><p>5) The Solar panel usually comes with a protective transparent sheet of cover. Remove the transparent plastic sheet for better performance of the solar panel.
+</p><p>6) Protect the surface of the solar panel from scratches
+</p>
+<h2>  Caution  </h2>
+<p>1) The solar charger shield is designed to protect any potential short circuit. However care must be taken to avoid any such situations. 
+</p><p>2) The solar shield should not be operated at voltages greater than 5V
+</p>
+<h2>  Usage  </h2>
+<p>1) Connect the Solar panel and the Li-Pol battery in their designated places as shown in the figure below: 
+</p>
+<br/><div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:642px;"><img src="img/Solar_Charger_Shield_v2.2_inputs.jpg" width="640"/> <div class="thumbcaption">Solar_Charger_Shield_v2.2_inputs.jpg</div></div></div></div>
+<p><br/>
+</p><p>2) Place the solar under sunlight or filament bulbs as mentioned in the "Information for using solar panels" section 
+</p><p><br/>
+</p><p>3) Ensure that the charging (Red) light glows as shown in the figure below: 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:642px;"><img src="img/Solar_Charger_Shield_v2.2_charging.jpg" width="640"/> <div class="thumbcaption"></div></div></div></div>
+<p>4) When the battery is fully charged, the green light glows. 
+</p><p>5) Once you have charged the battery, you may mount the shield on to the arduino. As you power up the solar charger shield, it should power up the arduino as shown in the figure below: 
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:642px;"><img src="img/Solar-Charger-Shield-v2.2_power-arduino.jpg" width="640"/> <div class="thumbcaption"></div></div></div></div>
+<p><br/>
+</p><p><br/>
+</p>
+<h2>  Testing the solar shield with a simple arduino program  </h2>
+<p>Short R7 using a 0ohm resistor as shown in the figure:
+</p>
+<div class="center"><div class="thumb tnone"><div class="thumbinner" style="width:636px;"><img src="img/Solar_Charger_Shield_v2.2_shortR7.jpg" width="634"/> <div class="thumbcaption">Img Solar_Charger_Shield_v2.2_shortR7.jpg</div></div></div></div>
+<h3>  Programming Example  </h3>
+<p>You can measure the voltage of Battery using the following example: 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="c source-c"><pre class="de1"><span class="coMULTI">/*
+ Solar charger shield voltage measurement example. Connect VBAT pin to analog pin A0.
+ 
+ The pin measures 2.0 V when not under direct exposre to sunlight and 5V when exposed to sunlight. 
+ 
+ This example code is in the public domain.
+ 
+ */</span>
+ 
+<span class="co1">// These constants won't change.  They're used to give names</span>
+<span class="co1">// to the pins used:</span>
+<span class="kw4">const</span> <span class="kw4">int</span> analogInPin <span class="sy0">=</span> A0<span class="sy0">;</span>  <span class="co1">// Analog input pin that the VBAT pin is attached to</span>
+ 
+ 
+<span class="kw4">int</span> BatteryValue <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>        <span class="co1">// value read from the VBAT pin</span>
+<span class="kw4">float</span> outputValue <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span>        <span class="co1">// variable for voltage calculation</span>
+ 
+<span class="kw4">void</span> setup<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// initialize serial communications at 9600 bps:</span>
+  Serial.<span class="me1">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy0">;</span> 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> loop<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// read the analog in value:</span>
+  BatteryValue <span class="sy0">=</span> analogRead<span class="br0">(</span>analogInPin<span class="br0">)</span><span class="sy0">;</span>            
+  <span class="co1">// Calculate the battery voltage value</span>
+  outputValue <span class="sy0">=</span> <span class="br0">(</span><span class="kw4">float</span><span class="br0">(</span>BatteryValue<span class="br0">)</span><span class="sy0">*</span><span class="nu0">5</span><span class="br0">)</span><span class="sy0">/</span><span class="nu0">1023</span><span class="sy0">*</span><span class="nu0">2</span><span class="sy0">;</span>
+ <span class="co1">// print the results to the serial monitor:</span>
+  Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"Analog value = "</span> <span class="br0">)</span><span class="sy0">;</span>                       
+  Serial.<span class="me1">print</span><span class="br0">(</span>BatteryValue<span class="br0">)</span><span class="sy0">;</span>      
+  Serial.<span class="me1">print</span><span class="br0">(</span><span class="st0">"<span class="es1">\t</span> voltage = "</span><span class="br0">)</span><span class="sy0">;</span>      
+  Serial.<span class="me1">println</span><span class="br0">(</span>outputValue<span class="br0">)</span><span class="sy0">;</span>
+  Serial.<span class="me1">println</span><span class="br0">(</span><span class="st0">"V <span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy0">;</span>  
+ 
+  <span class="co1">// wait 10 milliseconds before the next loop</span>
+  <span class="co1">// for the analog-to-digital converter to settle</span>
+  <span class="co1">// after the last reading:</span>
+  delay<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy0">;</span>                     
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<h2>  Resources  </h2>
+<p><a href="res/Solar_Charger_Shield_v2.2_sch_pcb.zip">Solar Charger Shield v2.2 sch&amp;pcb</a> <br/>
+<a href="res/DSE-CN3065.pdf">DSE-CN3065.pdf</a> <br/>
+<a href="res/ETA1036.pdf">ETA1036.pdf</a> <br/>
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://seeedstudio.com/wish">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

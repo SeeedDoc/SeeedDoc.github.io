@@ -1,0 +1,341 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Energy Monitor Shield V2</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Energy Monitor Shield V2</h1><div class="thumb tright"><div class="thumbinner" style="width:302px;"><img src="img/EM_shield_face_v2.jpg" width="300"/> <div class="thumbcaption"></div></div></div>
+
+<p>Energy Monitor Shield v2 is an Arduino-compatible expansion card designed for building energy monitoring system with support I2C OLED display, with the phototransistor to read data from the built-in LED for different energy meters, interface RS485 and  built-in wireless transceiver nRF24L01 +.
+</p><p>Model: <a href="//www.seeedstudio.com/depot/Energy-Monitor-Shield-V2-p-2393.html?cPath=1_75">106990026</a>
+</p><p><img src="img/EMS_introV2.jpg" width="580"/>
+</p>
+<h2>  Feature </h2>
+<ul><li> Connection <a href="http://www.seeedstudio.com/depot/s/AC%2BCurrent%2BSensor.html?search_in_description=0">current sensor</a>
+</li><li> Support for OLED-display <a href="http://www.seeedstudio.com/depot/Grove-OLED-Display-096-p-824.html?cPath=34_36">I2C</a>
+</li><li> Terminal for connecting the phototransistor <a href="http://www.vishay.com/docs/81531/bpw85a.pdf">BPW85C</a>
+</li><li> RS485 interface
+</li><li> Two buttons to control (enabled one analog pin)
+</li><li> Transceiver for 2.4G <a href="http://www.seeedstudio.com/depot/s/nRF24L01%2B.html?search_in_description=0">nRF24L01 +</a> soldered on the motherboard
+</li><li> <a href="http://www.seeedstudio.com/depot/category_products?themes_id=1417">GROVE</a> -compatible connector: I2C
+</li><li> Full compatibility with <a href="http://www.seeedstudio.com/depot/w5200-ethernet-shield-p-1577.html?cPath=19_17">(Wiznet 5100 + SD)</a>
+</li></ul>
+<h2>  Layout and schematics </h2>
+<p><img src="img/Emv2-top.png" width="400"/>
+</p><p>The left side of EM Shield is a connector for current sensors (terminals X1 and X1 '- duplicate each other).
+</p><p>X2 - connector for the phototransistor.
+</p><p>In the upper right corner - I2C-connector.
+</p><p>Just below the right are two buttons (labeled S1 and S2).
+</p><p>Left-bottom-placed terminals for interface RS485 (referred to as PWR and AB).
+</p><p>Below I2C connector is a switch that connects / disconnects Arduino-pins RX / TX on chip MAX485 (switching "programming" and "work with the interface RS485").
+</p><p><img src="img/Emv2-sch.png" width="500"/>
+</p>
+<h2>  Basic functionality </h2>
+<p>In the basic version (without the use of Ethernet Shield) is possible to organize a non-invasive monitoring of energy consumption using current sensor.
+</p><p>When connecting the phototransistor can be arranged to read data from the meter (LED flashes on the counter).
+</p><p>With the RS485 interface can be carried out to obtain data from the meters (and other devices) equipped with this interface.
+</p><p>Information about the current level of consumption can be displayed on an optional OLED-screen.
+</p><p>Control of the device can be arranged with the help of two buttons on Shield.
+</p><p>The data obtained can be transmitted via nRF24L01 +
+</p>
+<h2>  Expansion </h2>
+<p>Additionally EM Shield v2 can be connected to any device using i2c Grove-compatible connections (sensors, displays, etc.).
+</p><p>EM Shield v2 was designed to be fully compatible with <a href="http://devicter.ru/goods/Ethernet-shield-V1-0-Wiznet-W5100-2">Ethernet Shield (Wiznet 5100 + SD)</a> - so you can use these two together Schild to create even more advanced device monitoring electricity (logging on SD-card and presenting the data on a web page).
+</p>
+<h2>  Interfaces </h2>
+<ul><li> A0 - engaged to connect the sensor AC
+</li><li> A1 - to connect phototransistor
+</li><li> A4 (SDA), A5 (SCL) - displayed on connector "I2C" (the other two pins in the connector - VCC and GND for sensor supply)
+</li><li> Interface for connecting an RF-module nRF24L01 +:
+<ul><li> D11 - MOSI
+</li><li> D12 - MISO
+</li><li> D13 - SCK
+</li><li> D7 - RF_CE
+</li><li> D8 - RF_CSN
+</li><li> D2 - RF_IRQ
+</li></ul>
+</li><li> Interface for MAX485:
+<ul><li> D0 - RX (switched off switch for programming)
+</li><li> D1 - TX (switched off switch for programming)
+</li><li> D5 - Reception / Transmission
+</li></ul>
+</li><li> A3 - Buttons
+</li></ul>
+<h2>   Libraries </h2>
+<h3>   Necessary library </h3>
+<p>To use the EM Shield requires the following libraries:
+</p>
+<ul><li> Work with the transceiver nRF24L01 + - <a href="https://github.com/maniacbug/RF24/archive/master.zip">RF24</a>
+</li><li> Work with the display OLED (<a href="http://www.elecrow.com/i2c-096-oled-128x64-blueyellow-p-1086.html">I2C 0.96" OLED 128x64 - Blue&amp;Yellow</a>)- <a href="http://www.elecrow.com/download/U8glib.zip">U8glib</a>
+</li><li> Work with the display OLED (<a href="http://www.seeedstudio.com/depot/Grove-OLED-Display-096-p-824.html?cPath=34_36">Grove - OLED Display 0.96<i></i></a>)- <a href="https://github.com/Seeed-Studio/Grove_OLED_Display_96X96">OLED_Display_96X96</a>
+</li><li> Work with current sensors - <a href="https://github.com/openenergymonitor/EmonLib/archive/master.zip">EmonLib</a>
+</li></ul>
+<ul><li> You must use the library from - <a href="https://github.com/mysensors/Arduino/tree/master">www.mysensors.org</a>
+</li></ul>
+<p>API 
+</p>
+<ul><li> MySensors Arduino Library <a href="http://www.mysensors.org/download/sensor_api_15">(v1.5)</a>
+</li></ul>
+<p>Additionally required libraries that are used when working RF24:
+</p>
+<ul><li> SPI
+</li></ul>
+<h3>  Features use libraries  </h3>
+<p>Library has used examples that allow easy to understand how they work.
+</p><p>Initialization RF-module as follows:
+</p>
+<pre>...
+
+//RF24 radio(CE,CSN);
+RF24 radio(7,8);
+
+...</pre>
+<p><br/>
+</p>
+<h2> Simple demonstration  with wireless technology</h2>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"> 
+<span class="coMULTI">/*
+This sketch is for a Energy Monitor v 2.0 
+http://www.seeedstudio.com/depot/Energy-Monitor-Shield-V2-p-2393.html
+and MySensors 1.5
+http://www.mysensors.org/
+ 
+ modified
+ 1 April 2016
+ by greengo
+ */</span>
+ 
+<span class="co2">#include &lt;SPI.h&gt;</span>
+<span class="co2">#include "U8glib.h"</span>
+<span class="co2">#include &lt;MySensor.h&gt;  </span>
+<span class="co2">#include "EmonLib.h"</span>
+ 
+<span class="co2">#define WINDOW 15</span>
+ 
+<span class="co1">// Define a static node address, remove if you want auto address assignment</span>
+<span class="co2">#define NODE_ADDRESS   40</span>
+ 
+<span class="co2">#define NODE_REPEAT true</span>
+<span class="co1">//#define RF24_PA_LEVEL RF24_PA_MAX</span>
+ 
+<span class="co1">// How many milli seconds between each measurement</span>
+<span class="co2">#define MEASURE_INTERVAL    1000 // 1 sec</span>
+ 
+<span class="co1">// FORCE_TRANSMIT_INTERVAL, this number of times of wakeup, the sensor is forced to report all values to the controller</span>
+<span class="co2">#define FORCE_TRANSMIT_INTERVAL 300 //every 5 min</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">long</span> SLEEP_TIME <span class="sy1">=</span> <span class="nu0">1000</span><span class="sy4">;</span> <span class="co1">// Sleep time between reads (in milliseconds)</span>
+ 
+<span class="kw4">int</span> TEMP_TRANSMIT_THRESHOLD <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">//~35 Watt</span>
+ 
+<span class="co2">#define CHILD_ID_POWER 0</span>
+<span class="co2">#define CHILD_ID_FLOATING_CUR_SENSOR 1 //floating sensor</span>
+ 
+<span class="co1">// HW SPI Com: CS = 10, A0 = 9 (Hardware Pins are  SCK = 13 and MOSI = 11)</span>
+U8GLIB_SSD1306_128X64 u8g<span class="br0">(</span>U8G_I2C_OPT_NONE<span class="br0">)</span><span class="sy4">;</span>
+ 
+EnergyMonitor emon<span class="sy4">;</span>
+ 
+MyTransportNRF24 transport<span class="br0">(</span><span class="nu0">7</span>, <span class="nu0">8</span>, RF24_PA_LEVEL<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//for EMv2</span>
+MySensor gw<span class="br0">(</span>transport<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">unsigned</span> <span class="kw4">long</span> CHECK_TIME <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+MyMessage IrmsMsg<span class="br0">(</span>CHILD_ID_POWER, V_WATT<span class="br0">)</span><span class="sy4">;</span>
+MyMessage kWhMsg<span class="br0">(</span>CHILD_ID_POWER, V_KWH<span class="br0">)</span><span class="sy4">;</span>
+MyMessage FloatingMsg<span class="br0">(</span>CHILD_ID_FLOATING_CUR_SENSOR, V_VAR1<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">// Global settings</span>
+<span class="kw4">int</span> measureCount <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">boolean</span> transmission_occured <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+ 
+<span class="co1">// Storage of old measurements</span>
+<span class="kw4">float</span> realWatt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">float</span> realkWt <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">double</span> Irms<span class="sy4">;</span>
+<span class="kw4">float</span> lastIrms <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="kw4">int</span> Floating<span class="sy4">;</span>
+<span class="kw4">float</span> PMin <span class="sy1">=</span> <span class="nu0">99</span><span class="sy4">;</span>
+<span class="kw4">float</span> PMax <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> stateFloating <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>  
+<span class="br0">{</span> 
+ <span class="kw4">double</span> cIrms <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>  
+  <span class="co1">//  emon.current(0, 111.1);       // Current: input pin, calibration.</span>
+    emon.<span class="me1">current</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu16">71.2</span><span class="br0">)</span><span class="sy4">;</span> 
+ 
+ <span class="kw4">double</span> Irms<span class="br0">[</span>WINDOW<span class="br0">]</span><span class="sy4">;</span>   
+         Irms<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy1">=</span> emon.<span class="me1">calcIrms</span><span class="br0">(</span><span class="nu0">1480</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// the first value in the measurement clearly "crooked"</span>
+      <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">0</span><span class="sy4">;</span> i<span class="sy1">&lt;</span>WINDOW<span class="sy4">;</span> i<span class="sy2">++</span><span class="br0">)</span> <span class="br0">{</span>
+        Irms<span class="br0">[</span>i<span class="br0">]</span> <span class="sy1">=</span> emon.<span class="me1">calcIrms</span><span class="br0">(</span><span class="nu0">1480</span><span class="br0">)</span><span class="sy4">;</span>
+     cIrms <span class="sy1">=</span> cIrms <span class="sy2">+</span> Irms<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>      
+      <span class="br0">}</span> 
+ 
+<span class="co2">#ifdef NODE_ADDRESS</span>
+   gw.<span class="kw3">begin</span><span class="br0">(</span>incomingMessage, NODE_ADDRESS, NODE_REPEAT<span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#else</span>
+  gw.<span class="kw3">begin</span><span class="br0">(</span>incomingMessage, AUTO, NODE_REPEAT<span class="br0">)</span><span class="sy4">;</span>
+<span class="co2">#endif    </span>
+  gw.<span class="me1">sendSketchInfo</span><span class="br0">(</span><span class="st0">"Energy Monitor v2.0"</span>, <span class="st0">"1.5.0"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="co1">// Register all sensors to gw (they will be created as child devices)</span>
+  gw.<span class="me1">present</span><span class="br0">(</span>CHILD_ID_POWER, S_POWER<span class="br0">)</span><span class="sy4">;</span> 
+  gw.<span class="me1">present</span><span class="br0">(</span>CHILD_ID_FLOATING_CUR_SENSOR, S_CUSTOM<span class="br0">)</span><span class="sy4">;</span>
+  sendPowerMeasurements<span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>      
+<span class="br0">{</span>      
+   gw.<span class="me1">process</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> 
+ 
+   displayUpdate<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw4">unsigned</span> <span class="kw4">long</span> NOW_TIME <span class="sy1">=</span> <span class="kw3">millis</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span><span class="br0">(</span>NOW_TIME <span class="sy2">-</span> CHECK_TIME <span class="sy1">&gt;=</span> SLEEP_TIME<span class="br0">)</span>
+  <span class="br0">{</span> 
+  measureCount <span class="sy2">++</span><span class="sy4">;</span>
+  <span class="kw4">bool</span> forceTransmit <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+  transmission_occured <span class="sy1">=</span> <span class="kw2">false</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>measureCount <span class="sy1">&gt;</span> FORCE_TRANSMIT_INTERVAL<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// force a transmission</span>
+    forceTransmit <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span> 
+    measureCount <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+     sendPowerMeasurements<span class="br0">(</span>forceTransmit<span class="br0">)</span><span class="sy4">;</span>
+ 
+ <span class="co1">// Serial.print(" measureCount: ");</span>
+ <span class="co1">// Serial.println(measureCount); </span>
+ <span class="co1">// Serial.print(" ");</span>
+ 
+       CHECK_TIME <span class="sy1">=</span> NOW_TIME<span class="sy4">;</span>
+     <span class="br0">}</span> 
+  <span class="br0">}</span>
+ 
+<span class="kw4">void</span> sendPowerMeasurements<span class="br0">(</span><span class="kw4">bool</span> force<span class="br0">)</span>
+<span class="br0">{</span>
+  <span class="kw4">bool</span> tx <span class="sy1">=</span> force<span class="sy4">;</span>
+ 
+   Irms <span class="sy1">=</span> emon.<span class="me1">calcIrms</span><span class="br0">(</span><span class="nu0">1480</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// Calculate Irms only</span>
+   realWatt  <span class="sy1">=</span> <span class="br0">(</span>emon.<span class="me1">Irms</span> <span class="sy2">*</span> <span class="nu0">220</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// Extract Real Power into variable</span>
+   realkWt   <span class="sy1">=</span> <span class="br0">(</span>Irms <span class="sy2">*</span> <span class="nu16">0.220</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+ <span class="co1">// fixing minimum and maximum values</span>
+  <span class="kw1">if</span> <span class="br0">(</span>realkWt<span class="sy1">&gt;</span>PMax<span class="br0">)</span> PMax <span class="sy1">=</span> realkWt<span class="sy4">;</span>
+  <span class="kw1">if</span> <span class="br0">(</span>realkWt<span class="sy1">&lt;</span>PMin <span class="sy3">&amp;&amp;</span> realkWt<span class="sy1">&gt;</span><span class="nu16">0.05</span><span class="br0">)</span> PMin <span class="sy1">=</span> realkWt<span class="sy4">;</span>       
+ 
+<span class="co1">// Set relay to last known state (using eeprom storage) </span>
+  TEMP_TRANSMIT_THRESHOLD <span class="sy1">=</span> gw.<span class="me1">loadState</span><span class="br0">(</span>CHILD_ID_FLOATING_CUR_SENSOR<span class="br0">)</span><span class="sy4">;</span>
+  Floating <span class="sy1">=</span> TEMP_TRANSMIT_THRESHOLD<span class="sy4">;</span>
+ 
+<span class="co1">//  Serial.print("TEMP_TRANSMIT_THRESHOLD: ");Serial.println(TEMP_TRANSMIT_THRESHOLD);</span>
+ 
+  <span class="kw4">float</span> diffIrms <span class="sy1">=</span> <span class="kw3">abs</span><span class="br0">(</span>lastIrms <span class="sy2">-</span> Irms<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="co1">//  Serial.print(F("IrmsDiff :"));Serial.println(diffIrms);</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>diffIrms <span class="sy1">&gt;</span> TEMP_TRANSMIT_THRESHOLD<span class="br0">)</span> tx <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>tx<span class="br0">)</span> <span class="br0">{</span>
+    measureCount <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="co1">//    Serial.print("Watt: ");Serial.println(realWatt);</span>
+<span class="co1">//    Serial.print("kWt : ");Serial.println(realkWt);</span>
+ 
+  gw.<span class="kw3">send</span><span class="br0">(</span>IrmsMsg.<span class="me1">set</span><span class="br0">(</span>realWatt, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+  gw.<span class="kw3">send</span><span class="br0">(</span>kWhMsg.<span class="me1">set</span><span class="br0">(</span>realkWt, <span class="nu0">2</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    lastIrms <span class="sy1">=</span> Irms<span class="sy4">;</span>
+    transmission_occured <span class="sy1">=</span> <span class="kw2">true</span><span class="sy4">;</span>
+  <span class="br0">}</span>
+ 
+ <span class="co1">// Serial.print("Irms : ");Serial.println(Irms);</span>
+ 
+<span class="br0">}</span>  
+  <span class="co1">// OLED SSD1306 128X64 (yello line top)</span>
+ <span class="kw4">void</span> displayUpdate<span class="br0">(</span><span class="br0">)</span>
+ <span class="br0">{</span>
+    u8g.<span class="me1">firstPage</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  
+  <span class="kw1">do</span> <span class="br0">{</span>
+    draw<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+  <span class="br0">}</span> <span class="kw1">while</span><span class="br0">(</span> u8g.<span class="me1">nextPage</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> draw<span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+  <span class="co1">// graphic commands to redraw the complete screen should be placed here  </span>
+  u8g.<span class="me1">setFont</span><span class="br0">(</span>u8g_font_6x12r<span class="br0">)</span><span class="sy4">;</span>
+ <span class="co1">// u8g.print("Energy Monitor");</span>
+ 
+  u8g.<span class="me1">setPrintPos</span><span class="br0">(</span><span class="nu0">0</span>, <span class="nu0">30</span><span class="br0">)</span><span class="sy4">;</span> 					<span class="co1">// Scale up all draw procedures</span>
+  u8g.<span class="kw3">print</span><span class="br0">(</span>realkWt<span class="br0">)</span><span class="sy4">;</span>  
+<span class="br0">}</span>
+ 
+<span class="co1">//*********************************************</span>
+ <span class="kw4">void</span> incomingMessage<span class="br0">(</span><span class="kw4">const</span> MyMessage <span class="sy3">&amp;</span>message<span class="br0">)</span> <span class="br0">{</span>
+  <span class="co1">// We only expect one type of message from controller. But we better check anyway.</span>
+  <span class="kw1">if</span> <span class="br0">(</span>message.<span class="me1">isAck</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+ <span class="co1">//    Serial.println("This is an ack from gateway");</span>
+  <span class="br0">}</span>
+ 
+  <span class="kw1">if</span> <span class="br0">(</span>message.<span class="me1">type</span> <span class="sy1">==</span> V_VAR1<span class="br0">)</span> <span class="br0">{</span>
+     <span class="co1">// Change state</span>
+     stateFloating <span class="sy1">=</span> message.<span class="me1">getInt</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+     <span class="co1">// Store state in eeprom</span>
+     gw.<span class="me1">saveState</span><span class="br0">(</span>CHILD_ID_FLOATING_CUR_SENSOR, stateFloating<span class="br0">)</span><span class="sy4">;</span>
+ 
+     <span class="co1">// Write some debug info</span>
+<span class="co1">//     Serial.print("Incoming change for sensor:");</span>
+<span class="co1">//     Serial.print(message.sensor);</span>
+<span class="co1">//     Serial.print(", Delta =: ");</span>
+<span class="co1">//     Serial.println(message.getInt());</span>
+   <span class="co1">//  Serial.print(", New status: ");</span>
+   <span class="co1">//  Serial.println(message.getBool());</span>
+   <span class="br0">}</span> 
+ <span class="br0">}</span></pre></div></div>
+<h2> Version Tracker</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td width="150"> <b>Revision</b>
+</td>
+<td width="450"> <b>Description</b>
+</td>
+<td width="80"> <b>Release</b>
+</td></tr>
+<tr style="font-size: 90%">
+<td> 1.0
+</td>
+<td> Prototype V1
+</td>
+<td> 01.04.2014
+</td></tr>
+<tr style="font-size: 90%">
+<td> 2.0
+</td>
+<td> Public version
+</td>
+<td> 29.12.2014
+</td></tr></table>
+<h2>  Applications </h2>
+<ul><li> Monitoring of electricity consumption
+</li><li> Get the data from the meters LED flash
+</li><li> Receive data via RS485 interface
+</li><li> Data transfer to other devices via nRF24l01 +
+</li><li> Logging data to SD-card and display on a web page (via Ethernet Shield) <br/>
+</li></ul>
+<h2>  Questions and Answers </h2>
+<ul><li>Blog <a href="//devicter.blogspot.ru/2014/03/energy-monitor-shield.html#more">Energy Monitor Shield - Wireless energy monitoring</a> RU
+</li><li>Ask a question by e-mail support@devicter.ru
+</li></ul>
+<h2>  How to buy </h2>
+<p>This product can be purchased via distributors:
+</p>
+<ul><li>China (shipping worldwide)
+<ul><li><a href="http://www.seeedstudio.com/depot/Energy-Monitor-Shield-V2-p-2393.html?cPath=1_75">Seeed store</a>
+</li><li><a href="http://www.elecrow.com/energy-monitor-shield-v2-p-1203.html">Elecrow store</a>
+</li></ul>
+</li><li>Russia
+<ul><li><a href="http://devicter.ru/goods/EM-Shield-V2?from=MDgy">Devicter store</a>
+</li></ul>
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

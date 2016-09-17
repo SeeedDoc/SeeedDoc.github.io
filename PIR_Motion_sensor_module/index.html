@@ -1,0 +1,117 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>PIR Motion sensor module</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>PIR Motion sensor module</h1>
+
+<p>PIR（Passive Infrared Detection）are used to detect motion of human movement. This version has a large lens which can support long range and wide angle. 2.54mm standard connector is easy to fix it anywhere. 
+</p><p><b>Model:<a href="http://www.seeedstudio.com/depot/pir-motion-sensor-module-p-74.html?cPath=84_88&amp;zenid=020999c566d2f31841dc54602b7d02ef">SEN116A2B</a></b>
+</p>
+<div class="thumb tright"><div class="thumbinner" style="width:182px;"><img src="img/Pir_motion_sensor_v1.0.jpg" width="180"/> <div class="thumbcaption"></div></div></div>
+<p><br/>
+<br/>
+<br/>
+</p>
+<h2>  Features </h2>
+<ul><li>Long range
+</li><li>Wide angle
+</li><li>Low consumption
+</li><li>DC 3.0-5.5V power supplier
+</li></ul>
+<h2>  Specifications </h2>
+<ul><li>Input Voltage: DC3.0-5.5V
+</li><li>Current: 100uA(max)
+</li><li>Detecting distance: 9m(max)
+</li><li>Output signal: 0,VCC (Output high when motion detected)
+</li><li>Sentry Angle: 120°
+</li><li>Connector:3Pin 2.54mm pitch 
+</li><li>Size： L36*W26*H21(mm)
+</li></ul>
+<h2>  Usage  </h2>
+<p>The following sketch demonstrates a simple application of sensing montion. When someone moves in its detecting range, it will output High through its SIG pin and the LED will light. Otherwise, it will output LOW. Then you can use it to detect the motion of people. 
+<br/>
+<img src="img/PIR_motion_sensor_module_connection.JPG" width="480"/>
+</p>
+<h3>  Programming  </h3>
+<p>Includes important code snippet. 
+Demo code like : 
+</p>
+<pre> 
+/*******************************************************************************/
+/*macro definitions of PIR motion sensor pin and LED pin*/
+#define PIR_MOTION_SENSOR 8//Use pin 8 to receive the signal from the module 
+#define LED	4//the Grove - LED is connected to D4 of Arduino
+
+void setup()
+{
+	pinsInit();
+}
+
+void loop() 
+{
+	if(isPeopleDetected())//if it detects the moving people?
+		turnOnLED();
+	else
+		turnOffLED();
+}
+void pinsInit()
+{
+	pinMode(PIR_MOTION_SENSOR, INPUT);
+	pinMode(LED,OUTPUT);
+}
+void turnOnLED()
+{
+	digitalWrite(LED,HIGH);
+}
+void turnOffLED()
+{
+	digitalWrite(LED,LOW);
+}
+/***************************************************************/
+/*Function: Detect whether anyone moves in it's detecting range*/
+/*Return:-boolean, ture is someone detected.*/
+boolean isPeopleDetected()
+{
+	int sensorValue = digitalRead(PIR_MOTION_SENSOR);
+	if(sensorValue == HIGH)//if the sensor value is HIGH?
+	{
+		return true;//yes,return ture
+	}
+	else
+	{
+		return false;//no,return false
+	}
+}
+</pre>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Picture
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v0.9b
+</td>
+<td width="300px"> <a href="res/Pir_motion_sensor_v0.9.JPG">http://www.seeedstudio.com/wiki/images/1/1c/Pir_motion_sensor_v0.9.JPG</a>
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> Jun 08, 2009
+</td></tr>
+<tr>
+<td width="300px"> v1.0
+</td>
+<td width="300px"><a href="res/Pir_motion_sensor_v1.0.jpg">http://www.seeedstudio.com/wiki/images/6/62/Pir_motion_sensor_v1.0.jpg</a>
+</td>
+<td width="500px"> Change the hardware design, smaller and sensitive. Supply voltage change to 3.0-5.5V
+</td>
+<td width="200px"> July 30, 2014
+</td></tr></table>
+<h2>  Resources  </h2>
+<p><a href="res/PIR_sensor_v1.0.zip">PIR Motion sensor Eagle file</a>
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

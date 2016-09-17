@@ -1,0 +1,318 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>CAN-BUS Shield</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>CAN-BUS Shield</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/Can_bus_shield_all.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p>CAN-BUS is a common industrial bus because of its long travel distance, medium communication speed and high reliability.  It is commonly found on modern machine tools and as an automotive diagnostic bus. This CAN-BUS Shield adopts MCP2515 CAN Bus controller with SPI interface and MCP2551 CAN transceiver to give your Arduino/Seeeduino CAN-BUS capibility. With an OBD-II converter cable added on and the OBD-II library imported, you are ready to build an onboard diagnostic device or data logger. 
+</p><p><br/>
+<b>Note:</b> We are trying our best to make <a href="http://wiki.seeed.cc/Platform/Arduino/CAN_BUS_Shield">a better document syste</a>, if you have any suggestion, please feel free to contact loovee@seeed.cc.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/CANBUS-Shield-V12-p-2256.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p><p><br/>
+</p>
+<h2> Features</h2>
+<ul><li> Implements CAN V2.0B at up to 1 Mb/s 
+</li><li> SPI Interface up to 10 MHz 
+</li><li> Standard (11 bit) and extended (29 bit) data and remote frames 
+</li><li> Two receive buffers with prioritized message storage
+</li><li> Industrial standard 9 pin sub-D connector 
+</li><li> LED indicators 
+</li></ul>
+<p><br/>
+</p>
+<h2> Hardware Overview</h2>
+<p>Voltage：5V<br/>
+Dimensions： 68x53mm<br/>
+Net Weight：50g<br/>
+</p><p><img src="img/Canbus_interface.jpg" width="747"/><br/>
+</p><p><br/>
+<b>Note:</b>
+</p><p><i><b>When you use more than two CAN Bus Shield in one net, you should think about the impedance.</b></i>
+</p><p><i><b>You can just cut P1 in the PCB with a knife, or just remove R3 on the PCB.</b></i>
+</p>
+<h3> Digital Pin Used</h3>
+<table>
+<tr>
+<th> Arduino Pin </th>
+<th> Function
+</th></tr>
+<tr>
+<td> D0 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D1 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D2 </td>
+<td> <b>Receive Interrupt</b>
+</td></tr>
+<tr>
+<td> D3 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D4 </td>
+<td> Not_Used
+</td></tr>
+<tr>
+<td> D5 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D6 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D7 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D8 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> D9 </td>
+<td> <b>SPI_CS(default)</b>
+</td></tr>
+<tr>
+<td> D10 </td>
+<td> <b>SPI_CS(selectable)</b>
+</td></tr>
+<tr>
+<td> D11 </td>
+<td> <b>SPI_MOSI</b>
+</td></tr>
+<tr>
+<td> D12 </td>
+<td> <b>SPI_MISO</b>
+</td></tr>
+<tr>
+<td> D13 </td>
+<td> <b>SPI_SCK</b>
+</td></tr></table>
+<h3> Analog Pin Used</h3>
+<table>
+<tr>
+<th> Arduino Pin </th>
+<th> Function
+</th></tr>
+<tr>
+<td> A0 </td>
+<td> Not_Used
+</td></tr>
+<tr>
+<td> A1 </td>
+<td> Not_Used
+</td></tr>
+<tr>
+<td> A2 </td>
+<td> Not_Used
+</td></tr>
+<tr>
+<td> A3 </td>
+<td> Not_Used
+</td></tr>
+<tr>
+<td> A4 </td>
+<td> Not Used
+</td></tr>
+<tr>
+<td> A5 </td>
+<td> Not Used
+</td></tr></table>
+<p><br/>
+<br/>
+</p>
+<h2> Getting Started </h2>
+<p><img src="img/Can_bus_shield_connect.jpg" width="700"/>
+</p><p>1. Download the <a href="https://github.com/Seeed-Studio/CAN_BUS_Shield">CAN-BUS Source code file for Arduino 1.0</a> and release it in the libraries file in the Arduino-1.0 program.: <b>..\arduino-1.0\libraries</b>.
+</p><p>If the folder name include "-master", just remove it.
+</p><p>2. Open the Arduino-1.0, and you will find 3 examples: receive_check ,send and receive_interrupt. Here we'll use send and receive_check, open it then you should get two programming windows now.
+</p><p><img src="img/Open_CAN_BUS_examples.jpg" width="400"/>
+</p><p>3. Upload two examples to two boards separately. Choose the board via the path: Tools --&gt;Serial Port--&gt;COMX. Note down which board is assigned as a "send" node and which board is assigned as a "receive" node.
+</p><p>4. Open the "Serial Monitor" on the "receive" COM, you will get message sent from the "send" node. Here we have the preset message "0  1  2  3  4  5  6  7" showing in the following picture.
+</p><p><img src="img/CAN_BUS_message.jpg" width="400"/>
+</p><p><br/>
+</p>
+<h2> APIs </h2>
+<h3> 1. Set the BaudRate</h3>
+<p>This function is used to initialize the baudrate of the CAN Bus system.
+</p><p>The available baudrates are listed as follws:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define CAN_5KBPS    1</span>
+<span class="co2">#define CAN_10KBPS   2</span>
+<span class="co2">#define CAN_20KBPS   3</span>
+<span class="co2">#define CAN_25KBPS   4 </span>
+<span class="co2">#define CAN_31K25BPS 5</span>
+<span class="co2">#define CAN_33KBPS   6</span>
+<span class="co2">#define CAN_40KBPS   7</span>
+<span class="co2">#define CAN_50KBPS   8</span>
+<span class="co2">#define CAN_80KBPS   9</span>
+<span class="co2">#define CAN_83K3BPS  10</span>
+<span class="co2">#define CAN_95KBPS   11</span>
+<span class="co2">#define CAN_100KBPS  12</span>
+<span class="co2">#define CAN_125KBPS  13</span>
+<span class="co2">#define CAN_200KBPS  14</span>
+<span class="co2">#define CAN_250KBPS  15</span>
+<span class="co2">#define CAN_500KBPS  16</span>
+<span class="co2">#define CAN_666kbps  17</span>
+<span class="co2">#define CAN_1000KBPS 18</span></pre></div></div>
+<h3> 2. Set Receive Mask and Filter</h3>
+<p>There are 2 receive mask registers and 5 filter registers on the controller chip that guarantee you get data from the target device. They are useful especially in a large network consisting of numerous nodes.
+</p><p>We provide two functions for you to utilize these mask and filter registers. They are:
+</p><p><b>Mask</b>:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">init_Mask<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> num, <span class="kw4">unsigned</span> <span class="kw4">char</span> ext, <span class="kw4">unsigned</span> <span class="kw4">char</span> ulData<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><b>Filter</b>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">init_Filt<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> num, <span class="kw4">unsigned</span> <span class="kw4">char</span> ext, <span class="kw4">unsigned</span> <span class="kw4">char</span> ulData<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p><i>"<b>num</b>"</i> represents which register to use. You can fill 0 or 1 for mask and 0 to 5 for filter.
+</p><p><i>"<b>ext</b>"</i> represents the status of the frame. 0 means it's a mask or filter for a standard frame. 1 means it's for a extended frame.
+</p><p><i>"<b>ulData</b>" </i>represents the content of the mask of filter.
+</p>
+<h3> 3. Check Receive</h3>
+<p>The MCP2515 can operate in either a polled mode, where the software checks for a received frame, or using additional pins to signal that a frame has been received or transmit completed.  Use the following function to poll for received frames.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">INT8U MCP_CAN<span class="sy4">::</span><span class="me2">checkReceive</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>The function will return 1 if a frame arrives, and 0 if nothing arrives.
+</p>
+<h3> 4. Get CAN ID</h3>
+<p>When some data arrive, you can use the following function to get the CAN ID of the "send" node. 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">INT32U MCP_CAN<span class="sy4">::</span><span class="me2">getCanId</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span></pre></div></div>
+<h3> 5. Send Data</h3>
+<p><i>CAN.sendMsgBuf(INT8U id, INT8U ext, INT8U len, data_buf);</i>
+</p><p>is a function to send data onto the bus. In which:
+</p><p><i>"<b>id</b>"</i> represents where the data come from.
+</p><p><i>"<b>ext</b>"</i> represents the status of the frame. '0' means standard frame. '1' means extended frame.
+</p><p><i>"<b>len</b>"</i> represents the length of this frame.
+</p><p><i>"<b>data_buf</b>"</i> is the content of this message.
+</p><p>For example, In the 'send' example, we have:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw4">unsigned</span> <span class="kw4">char</span> stmp<span class="br0">[</span><span class="nu0">8</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="nu0">4</span>, <span class="nu0">5</span>, <span class="nu0">6</span>, <span class="nu0">7</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+CAN.<span class="me1">sendMsgBuf</span><span class="br0">(</span><span class="nu12">0x00</span>, <span class="nu0">0</span>, <span class="nu0">8</span>, stmp<span class="br0">)</span><span class="sy4">;</span> <span class="co1">//send out the message 'stmp' to the bus and tell other devices this is a standard frame from 0x00.</span></pre></div></div>
+<h3> 6. Receive Data</h3>
+<p>The following function is used to receive data on the 'receive' node:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">CAN.<span class="me1">readMsgBuf</span><span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">char</span> len, <span class="kw4">unsigned</span> <span class="kw4">char</span> buf<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>In conditions that masks and filters have been set. This function can only get frames that meet the requirements of masks and filters.
+</p><p><i>"<b>len</b>"</i> represents the data length.
+</p><p><i>"<b>buf</b>"</i> is where you store the data.
+</p><p><br/>
+</p>
+<h2> Set Baud Reate </h2>
+<p>We had provided many frequently-used baud rate, as below:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define CAN_5KBPS    1</span>
+<span class="co2">#define CAN_10KBPS   2</span>
+<span class="co2">#define CAN_20KBPS   3</span>
+<span class="co2">#define CAN_25KBPS   4 </span>
+<span class="co2">#define CAN_31K25BPS 5</span>
+<span class="co2">#define CAN_33KBPS   6</span>
+<span class="co2">#define CAN_40KBPS   7</span>
+<span class="co2">#define CAN_50KBPS   8</span>
+<span class="co2">#define CAN_80KBPS   9</span>
+<span class="co2">#define CAN_83K3BPS  10</span>
+<span class="co2">#define CAN_95KBPS   11</span>
+<span class="co2">#define CAN_100KBPS  12</span>
+<span class="co2">#define CAN_125KBPS  13</span>
+<span class="co2">#define CAN_200KBPS  14</span>
+<span class="co2">#define CAN_250KBPS  15</span>
+<span class="co2">#define CAN_500KBPS  16</span>
+<span class="co2">#define CAN_666kbps  17</span>
+<span class="co2">#define CAN_1000KBPS 18</span></pre></div></div>
+<p>Yet you may still can't find the rate you want. 
+Here we provide a software to help you to calculate the baud rate you need. 
+</p><p>Click <a href="res/CAN_Baudrate_CalcV1.3.zip">here</a> to download the software, it's in Chinese, but never mind, it's easy to use. And the software <b>support Windows only</b>. 
+</p><p><img src="img/CAN_BUS_Shield_SetBaud.jpg" width="500"/>
+</p><p>Open the software, what you need to do is set the baud rate you want, and do some simple setting, then click <b>calculate</b>
+</p><p><br/>
+Then you will get some data, cfg1, cfg2 and cfg3. 
+</p><p>You need to add some code to the library.
+</p><p>Open <b>mcp_can_dfs.h</b>, you need to add some code at about line 272,
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define MCP_16MHz_xxxkBPS_CFG1 (cfg1)    // xxx is the baud rate you need</span>
+<span class="co2">#define MCP_16MHz_xxxkBPS_CFG2 (cfg2)</span>
+<span class="co2">#define MCP_16MHz_xxxkBPS_CFG3 (cfg2)</span></pre></div></div>
+<p>Then let's go to about line 390, add some code:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#define CAN_xxxKBPS NUM       // xxx is the baudrate you need, and NUM is a number, you need to get a different from the other rates.</span></pre></div></div>
+<p>Open <b>mcp_can.cpp</b>, goto the function <b>mcp2515_configRate</b>(at about line 190), then add some code:
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="kw1">case</span> <span class="br0">(</span>CAN_xxxKBPS<span class="br0">)</span><span class="sy4">:</span>
+    cfg1 <span class="sy1">=</span> MCP_16MHz_xxxkBPS_CFG1<span class="sy4">;</span>
+    cfg2 <span class="sy1">=</span> MCP_16MHz_xxxkBPS_CFG2<span class="sy4">;</span>
+    cfg3 <span class="sy1">=</span> MCP_16MHz_xxxkBPS_CFG3<span class="sy4">;</span>
+    <span class="kw1">break</span><span class="sy4">;</span></pre></div></div>
+<p>Then you can use the baud rate you need. And please give me a pull request at github when you use a new rate, so I can add it to the library to help the other guys.
+</p><p><br/>
+</p>
+<h2> FAQ</h2>
+<h3>  How to Change SS Pin </h3>
+<p>The SPI SS pin is default D10, you can change it to D9 easily.
+</p><p>Firstly, cut off the copper wire between CS and digital 10 via a knife, then do some soldering just like the following image
+</p><p><br/>
+<img src="img/CAN_BUS_CHANGE_CS.png" width="600"/>
+</p><p>Then, you need to change the SS Pin in the library.
+</p><p>You can refer to <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=23&amp;t=5231">here</a>
+</p>
+<h3>  CAN BUS Shield init fail </h3>
+<p>As from CAN BUS shield V1.1 to latest version, we changed CS pin from D10 to D9 by default. 
+</p><p>So please do this modification 
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1">MCP_CAN CAN<span class="br0">(</span><span class="nu0">9</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Set CS to pin 9</span></pre></div></div>
+<h3>  How to Compatible With Arduino Mega and Leonardo </h3>
+<p>In the old version(this bug had been fixed on 1.1 and the later version) of CAN BUS Shield, SPI pin only connect to D11~D13. For Arduino UNO(all board based on Atmega328), it works fine.
+</p><p>But for the others Arduino boards, it doesn't work, because SPI pin of those board was no D11~D12, so you need to do some hacking.
+</p><p>Just as following:
+</p><p><br/>
+<img src="img/CAN_BUS_SHIELD_MEGA.JPG" width="600"/>
+</p><p>More details refer to <a href="http://www.seeedstudio.com/forum/viewtopic.php?f=23&amp;t=5172">here</a>
+</p><p><br/>
+</p>
+<h3>  How to remove the terminal resistor </h3>
+<p>There's a 62 Ohm(120 Ohm in version 1.1 hardware) on CAN BUS Shield. Sometime it's not need. You can remove it easily, just as follow:
+</p><p><br/>
+<img src="img/Can_bus_shield_cut_p1.JPG" width="600"/>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2> Related Projects </h2>
+<p>If you want to make some awesome projects with CAN-BUS shield, here's one example.
+</p>
+<h3> Volkswagen CAN BUS Gaming</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/557fd2a2ec429.JPG" width="400"/> <div class="thumbcaption"></div></div></div>
+<p>Ever wanted to play a car/truck simulator with a real dashboard on your PC? Me too! I'm trying to control a VW Polo 6R dashboard via CAN Bus with an Arduino Uno and a Seeed CAN Bus Shield. Inspired by Silas Parker. Thanks to Sepp and Is0-Mick for their great support!
+</p><p><br/>
+<a href="http://www.seeedstudio.com/recipe/291-volkswagen-can-bus-gaming.html"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+<br/>
+</p>
+<h3> Hack your vehicle CAN-BUS</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><img src="img/FCHMWCKHTYHF301.MEDIUM.jpg" width="400"/> <div class="thumbcaption"></div></div></div>
+<p>Modern Vehicles all come equipped with a CAN-BUS Controller Area Network, Instead of having a million wires running back and forth from various devices in your car to the battery, its making use of a more clever system.
+</p><p>All electronic functions are connected to the TIPM, (Totally integrated Power Module), such as solenoids/relays to lock the doors or mini motors to wind the windows ect ect.
+</p><p>From each node (IE Switch pod that controls your windows or electric door locks) it broadcasts a message across the CAN. When the TIPM detects a valid message it will react accordingly like, lock the doors , switch on lights and so on.
+</p><p><br/>
+<a href="http://www.instructables.com/id/Hack-your-vehicle-CAN-BUS-with-Arduino-and-Seeed-C/"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+<br/>
+</p>
+<h2> Resources </h2>
+<ul><li> <a href="res/CAN-BUS_Shield_v1.2.pdf">CAN-BUS Shield V1.2 Schmatics </a>
+</li><li> <a href="res/CAN-BUS_Shield_v1.2_sch_pcb.zip">CAN-BUS Shield V1.2 eagle file</a>
+</li><li> <a href="https://github.com/Seeed-Studio/CAN_BUS_Shield">CAN-BUS Source code file for Arduino 1.0</a>
+</li><li> <a href="res/MCP2515.pdf">MCP2515 datasheet</a>
+</li><li> <a href="res/Mcp2551en.pdf">MCP2551 datasheet</a><br/>
+</li><li> <a href="https://github.com/Seeed-Studio/CANBUS_SHIELD_OBD_RECIPLE">An OBD Demo</a>
+</li><li> <a href="res/CAN_Baudrate_CalcV1.3.zip">MCP2515 Baud Rate Tool</a>
+</li></ul>
+<p><br/>
+</p><p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/32WG3KT" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

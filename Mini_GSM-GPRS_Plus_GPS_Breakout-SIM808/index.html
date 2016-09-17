@@ -1,0 +1,424 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Mini GSM/GPRS + GPS Breakout - SIM808</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Mini GSM/GPRS + GPS Breakout - SIM808</h1>
+<h2>  Overview  </h2>
+<p>This board based on the latest SIMCOM SIM808 GSM/GPS module, it offers cellular GSM and GPRS data along with GPS technology for satellite navigation. 
+</p><p>The board features ultra-low power consumption in sleep mode, giving the project incredibly long standby times. Furthermore there's an onboard battery charging circuit that can be used with LiPo batteries.
+</p><p>The GPS receiver is incredibly sensitive with 22 tracking and 66 acquisition channels, and also supports assisted-GPS (A-GPS) for indoor localisation. The board is controlled by AT command via UART and supports 3.3V and 5V logical level. It comes with a mini GPS and GSM antenna, however a battery is optional. 
+</p><p>The board uses the 2G (not 3G or LTE) GSM networks.
+</p>
+<h2>  Features </h2>
+<ul><li>Quad-band 850/900/1800/1900MHz
+</li><li>GPRS multi-slot class12 connectivity: max. 85.6kbps(down-load/up-load)
+</li><li>GPRS mobile station class B
+</li><li>Controlled by AT Command (3GPP TS 27.007, 27.005 and SIMCOM enhanced AT Commands)
+</li><li>Supports charging control for Li-Ion battery
+</li><li>Supports Real Time Clock
+</li><li>Supply voltage range 3.4V ~ 4.4V
+</li><li>Integrated GPS/CNSS and supports A-GPS
+</li><li>Supports 3.0V to 5.0V logic level
+</li><li>Low power consumption, 1mA in sleep mode
+</li><li>Supports GPS NMEA protocol
+</li><li>Compact size 27mm x 46mm x 10mm
+</li><li>Standard SIM Card
+</li></ul>
+<h2>  GPS Specifications   </h2>
+<ul><li>Receiver channels: 22 tracking / 66 acquisition
+</li><li>Coarse/Acquisition code: GPS L1
+</li><li>Tracking sensitivity: -165dBm
+</li><li>Cold start time: 30s (typ.)
+</li><li>Hot start time: 1s (typ.)
+</li><li>Warm start time: 28s (typ.)
+</li><li>Horizontal position accuracy: &lt; 2.5m CEP
+</li><li>Power consumption - Acquisition: 42mA
+</li><li>Power consumption - Continuous tracking: 24mA
+</li><li>Update rate: 5Hz
+</li></ul>
+<h2>  Functional Block  </h2>
+<p><img src="img/Lonet_pcb_top.jpg" width="500"/>
+</p>
+<ul><li>GPS Antenna: this is an uFL GPS antenna connector. You can connect either passive or active GPS antenna to it. Active GPS antenna runs at 2.8V voltage.
+</li><li>MicroUSB: the charging interface for Li-Ion battery, of input voltage range from 5V to 7V.
+</li><li>Power Button: this is the hard power switch for the module. When the module is power up, you can turn on or turn off the module by pressing the button for 2s.
+</li><li>Net Indicator: Red LED, it will tell the what status is about the module linking to network. It can be turned off by LEDs_EN jumper pad.
+</li><li>Status Indicator: Green LED, it will tell whether the module is on, light when the module is running. It can be turned off by LEDs_EN jumper pad.
+</li><li>Li-ion Battery: this is power supply for the module, input voltage is from 3.4V to 4.4V. It uses the JST-2.0mm connector, that make it convenient to connect to 3.7V Li-Po Battery.
+</li><li>GSM Antenna: this is an uFL GSM antenna connector, just connect it to a GSM antenna for receiving GSM signal.
+</li><li>SIM - Card Holder: SIM card holder for standard SIM card
+</li></ul>
+<h3>  Pin Definitions </h3>
+<table border="1">
+<tr>
+<th scope="col"> <b>Name</b>
+</th>
+<th scope="col"> <b>I/O</b>
+</th>
+<th scope="col"> <b>Description</b>
+</th>
+<th scope="col"> <b>Note</b>
+</th></tr>
+<tr>
+<th scope="row"> BAT
+</th>
+<td>
+</td>
+<td> Power input / output
+</td>
+<td> 3.4V - 4.4V DC
+</td></tr>
+<tr>
+<td> GND
+</td>
+<td>
+</td>
+<td> Power ground / logic ground
+</td>
+<td>
+</td></tr>
+<tr>
+<td> VIO
+</td>
+<td> I
+</td>
+<td> Logic level reference
+</td>
+<td> 3.0V - 5.0V DC
+</td></tr>
+<tr>
+<td> DTR
+</td>
+<td> I
+</td>
+<td> Wake up pin for module in sleep mode
+</td>
+<td>
+</td></tr>
+<tr>
+<td> PWR
+</td>
+<td> O
+</td>
+<td> Power switch
+</td>
+<td> Low level pulse
+</td></tr>
+<tr>
+<td> RI
+</td>
+<td> O
+</td>
+<td> Event/ message pin
+</td>
+<td>
+</td></tr>
+<tr>
+<td> TXD
+</td>
+<td> O
+</td>
+<td> Transmit data
+</td>
+<td> UART output from SIM808
+</td></tr>
+<tr>
+<td> RXD
+</td>
+<td> I
+</td>
+<td> Receive data
+</td>
+<td> UART Input to SIM808
+</td></tr>
+<tr>
+<td> RST
+</td>
+<td> I
+</td>
+<td> Module rest
+</td>
+<td>
+</td></tr></table>
+<h3>  Indicator LEDs </h3>
+<table border="1">
+<tr>
+<th scope="col"> <b>Indicator LEDs</b>
+</th>
+<th scope="col"> <b>Status</b>
+</th>
+<th scope="col"> <b>Behavior</b>
+</th></tr>
+<tr>
+<th scope="row"> Operating Status (Green)
+</th>
+<td> Off
+</td>
+<td> SIM808 is not running
+</td></tr>
+<tr>
+<td>
+</td>
+<td> On
+</td>
+<td> SIM808 is running
+</td></tr>
+<tr>
+<th scope="row"> Network Status (Red)
+</th>
+<td> Off
+</td>
+<td> SIM808 is not running
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 64ms on/ 800ms Off
+</td>
+<td> SIM808 not registered to the network
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 64ms On/ 3000ms Off
+</td>
+<td> SIM808 registered to the network
+</td></tr>
+<tr>
+<td>
+</td>
+<td> 64ms On/ 300ms Off
+</td>
+<td> PPP GPRS communication is established
+</td></tr></table>
+<h2>  Usage  </h2>
+<h3>  Related Product </h3>
+<p>The module comes with a mini GPS and GSM antenna, but not includes Li-Po battery. In addition, to use this module, you still need a unlock SIM-Card that supports GPRS service. 
+</p>
+<ul><li>3.7 V Li-ion Battery 
+</li></ul>
+<p>&lt;picture&gt;
+</p>
+<ul><li>SIM-Card
+</li></ul>
+<p>&lt;picture&gt;
+</p>
+<ul><li>USB to UART Tool
+</li></ul>
+<p>&lt;picture&gt;
+</p>
+<h3>  Reference Circuit </h3>
+<p><img src="img/Rerfer_Circuit_SIM808.png" width="800"/>
+</p>
+<h3>  Getting Started with AT Command </h3>
+<p>The module is controlled by AT command via serial port, here we use Arduino as USB to serial tool. Upload the following code to Arduino and open the serial monitor. If you use other USB to serial tools, you can use <a href="/AT_Command_Tester_Application">AT Command Tester</a> or <a href="res/Sscom32E.zip">SSCOM32</a> to test AT commands.
+</p>
+<pre>
+// this sketch is used for testing LoNet with Arduino 
+
+// Connect VIO to +5V
+// Connect GND to Ground
+// Connect RX (data into SIM808) to Digital 11
+// Connect TX (data out from SIM808) to Digital 10
+
+#include &lt;SoftwareSerial.h&gt;
+
+SoftwareSerial mySerial(10, 11); // RX, TX
+
+void setup()  
+{
+  // Open serial communications and wait for port to open:
+  Serial.begin(9600);
+  mySerial.begin(9600);
+
+}
+
+void loop() // run over and over
+{
+  if (mySerial.available())
+    Serial.write(mySerial.read());
+    
+  if (Serial.available())
+  { 
+    while(Serial.available())
+    {
+      mySerial.write(Serial.read());
+    }
+    mySerial.println();
+  }
+}
+</pre>
+<h4>  Set Baud and Enable Charging Function </h4>
+<p>It is recommended to execute this process when first time to use the module. In the Serial Monitor columns of following tables, input of AT commands are in back, module returns values are in orange.
+</p>
+<table cellpadding="0">
+<tr>
+<th scope="col" width="50"> Serial Monitor
+</th>
+<th scope="col" width="100"> Description
+</th></tr>
+<tr>
+<td> AT <br/><span style="color: rgb(242,133,0)">OK</span> </td>
+<td> Send command “AT” to synchronize baud rate. Serial port of module is by default set at auto-baud mode, and in this mode, it will not output any indications when the module is on.
+</td></tr>
+<tr>
+<td> AT+IPR=9600<br/><span style="color: rgb(242,133,0)">OK</span></td>
+<td> Set baud rate at 9600bps, supports baud rate from 1200bps to 115200bps.
+</td></tr>
+<tr>
+<td> AT+ECHARGE=1<br/><span style="color: rgb(242,133,0)">OK</span></td>
+<td> Send command “AT+ECHARGE=1” to enable battery charging function. By default the charging function is closed.
+</td></tr>
+<tr>
+<td> AT&amp;W<br/><span style="color: rgb(242,133,0)">OK</span></td>
+<td> Save parameter setting.
+</td></tr>
+<tr>
+<td> AT+CPOWD=1<br/><span style="color: rgb(242,133,0)">NORMAL POWER DOWN</span></td>
+<td>Power down the module.
+</td></tr>
+<tr>
+<td> <span style="color: rgb(242,133,0)">RDY<br/>+CFUN: 1<br/>GPS Ready<br/>+CPIN: READY<br/>Call Ready<br/>SMS Ready</span></td>
+<td>Turn on the module again by the power button, it will response status about GPS and GSM.
+</td></tr>
+<tr>
+<td> AT+CBC<br/><span style="color: rgb(242,133,0)"> +CBC: 1,96,4175 <br/> OK</span></td>
+<td>Inquire charging status and remaining battery capacity.
+</td></tr>
+<tr>
+<td> AT+CSQ <br/><span style="color: rgb(242,133,0)"> +CSQ: 14,0 <br/> OK</span></td>
+<td>Inquire GSM signal quality.
+</td></tr>
+</table>
+<h4>  Get location with GPS </h4>
+<table cellpadding="0">
+<tr>
+<th scope="col" width="11"> Serial Monitor
+</th>
+<th scope="col" width="700"> Description
+</th></tr>
+<tr>
+<td> AT+CGPSPWR=1<br/><span style="color: rgb(242,133,0)">OK</span> </td>
+<td> Open GPS
+</td></tr>
+<tr>
+<td> AT+CGPSSTATUS?<br/><span style="color: rgb(242,133,0)"> +CGPSSTATUS: Location Not Fix<br/>OK</span></td>
+<td> Read GPS fix status, “Location Not Fix” means that positioning is not successful. For the first time to start, it will take at least 30s. <i><b>GPS must be tested by the window or outdoor.</b></i>
+</td></tr>
+<tr>
+<td> AT+CGPSSTATUS?<br/><span style="color: rgb(242,133,0)"> +CGPSSTATUS: Location 3D Fix<br/>OK</span></td>
+<td> GPS has fixed with 3D status.
+</td></tr>
+<tr>
+<td> AT+CGPSINF=0<br/><span style="color: rgb(242,133,0)"> +CGPSINF:<br/> 0,2234.931817,11357.122485,<br/>92.461185,20141031041141.000,<br/>88,12,0.000000,0.000000 </span></td>
+<td> Get the current GPS location information. Parameters formate: &lt;mode&gt;, &lt;altitude&gt;, &lt;longitude&gt;, &lt;UTC time&gt;, &lt;TTFF&gt;, &lt;num&gt;, &lt;speed&gt;, &lt;course&gt;
+</td></tr>
+<tr>
+<td> AT+CGPSOUT=32<br/><span style="color: rgb(242,133,0)">OK<br/>$GPRMC,043326.000,A,<br/>2234.9414,N,11357.1187,E,<br/>0.000,143.69,311014,,,A*50 </span></td>
+<td> Read NMEA $GPRMC data, of which, “2234.9414 N, 11357.1187 E” is the location coordinates. For more details about NMEA sentences, <a href="http://www.gpsinformation.org/dale/nmea.htm">check this site</a>.
+</td></tr>
+<tr>
+<td> AT+CGPSRST=0<br/><span style="color: rgb(242,133,0)"> OK</span></td>
+<td>Reset GPS in Cold Start Mode.
+</td></tr>
+<tr>
+<td> AT+CGPSRST=1<br/><span style="color: rgb(242,133,0)"> OK</span></td>
+<td>Reset GPS in Hot Start Mode.
+</td></tr>
+<tr>
+<td> AT+CGPSPWR=0<br/><span style="color: rgb(242,133,0)"> OK</span></td>
+<td>Close GPS.
+</td></tr>
+</table>
+<h2>  Resource  </h2>
+<ul><li><a href="res/LoNet_DesignSchematic.pdf">LoNet_DesignSchematic</a>
+</li><li> <a href="res/SIM800_ATCommand_Manual_V1.02.pdf">SIM800_ATCommand_Manual</a>
+</li><li> <a href="res/SIM808_Hardware_Design_V1.00.pdf">SIM808_HardwareDesign_Manual</a>
+</li><li> <a href="res/SIM808_GPS_Application_Note_V1.00.pdf">SIM808_GPSApplication_Note</a>
+</li><li> <a href="https://github.com/Seeed-Studio/GPRS_Shield_Suli">GPRS_Shield library on gitHub</a><br/>
+</li><li><a href="https://github.com/adafruit/Adafruit_FONA_Library/">Adafruit_FONA_Library</a>
+</li></ul>
+<p><br/>
+</p>
+<h2>  Related Projects </h2>
+<p>It's a pity that we don't have any demo about LoNet-GSM/GPRS/GPS Breakout in the <a href="http://www.seeedstudio.com/recipe/">Recipe</a> yet. 
+</p><p>Post your awesome project about LoNet-GSM/GPRS/GPS Breakout to <font color="#FF0000">win $100 Coupon!</font>. Please feel free to contact us: <a href="mailto:recipe@seeed.cc">recipe@seeed.cc</a>
+</p><p><br/>
+Here we introduce some projects about <a href="http://www.seeedstudio.com/depot/GPRS-Shield-V30-p-2333.html">GPRS Shield</a> as a reference.
+</p>
+<h3> What is GPRS shield</h3>
+<p><img src="img/113030009_1.jpg" width="600"/>
+</p><p>Features: 
+</p>
+<ul><li> Compatible with standard Arduino and Arduino Mega
+</li></ul>
+<ul><li> Quad band support: 850/900/1800/1900MHz
+</li></ul>
+<ul><li> Full control via AT commands set: Standard - GSM 07.07 &amp; 07.05 and Enhanced - SIMCOM AT Commands
+</li></ul>
+<ul><li> Support TCP/UDP protocols
+</li></ul>
+<p><br/>
+</p>
+<h3>  SMS Remote Control </h3>
+<p><img src="img/54c720959dae7.JPG" width="600"/>
+<br/>
+<br/>
+This project describes how to turn your hot water heater on and off via SMS and check if it is on or off.
+</p><p>It is reliable, secure, easy and flexible because of the reasons below:
+</p>
+<ul><li> Commands are always responded to and lost messages are re-requested
+</li></ul>
+<ul><li> It uses 128 bit password protection
+</li></ul>
+<ul><li> The pfodDesigner generates all the code, and you can use it to create you own custom menu.
+</li></ul>
+<ul><li> All the pfod screens are available via SMS, like sub-menus, multi and single selection list, text input, data logging and plotting.
+</li></ul>
+<p><br/>
+<a href="http://www.seeedstudio.com/recipe/98-sms-remote-control.html"><b>I want to make it.</b></a>
+<br/>
+</p>
+<h3>  Arduino Phone </h3>
+<p><img src="img/Recipe-arduinophone.png" width="520"/>
+<br/>
+<br/>
+Arduino phone is a cell phone made by ourselves via combining Arduino and other shield modules.
+</p><p>This project tells us what you need to do when Arduino Phone apps can't fit your needs.
+</p><p>This Arduino Phone contains the following main functions.
+</p>
+<ul><li> receive &amp; send message, letter input
+</li></ul>
+<ul><li> dial &amp; answer calls
+</li></ul>
+<ul><li> real time clock display
+</li></ul>
+<ul><li> A convenient and concise UI
+</li></ul>
+<p><br/>
+<br/>
+<a href="http://www.seeedstudio.com/recipe/37-arduinophone.html"><b>I want to make it.</b></a>
+<br/>
+<br/>
+<a href="http://www.seeedstudio.com/recipe/index.php?query=GPRS"><b>More Awesome Projects by GPRS</b></a>
+</p><p><br/>
+</p>
+<h3>  Share Your Awesome Projects with Us </h3>
+<p>Born with the spirit of making and sharing, that is what we believe makes a maker. 
+</p><p>And only because of this, the open source community can be as prosperous as it is today.
+</p><p>It does not matter what you are and what you have made, hacker, maker, artist or engineers.
+</p><p>As long as you start sharing your works with others, you are being part of the open source community and you are making your contributions.
+</p><p>Now share your awesome projects with us on <a href="http://www.seeedstudio.com/recipe/">Recipe</a>, and win a chance to become the Core User of Seeed.
+</p>
+<ul><li> Core Users, are those who show high interests in Seeed products and make significant contributions on Recipe. 
+</li><li> We cooperate with our Core Users in the development of our new product, this, in another word, the Core Users will have the chance to experience any new products of Seeed before its official launch, and in return we expect valuable feedback from them to help us improve the product performance and user experience. And in most cases when our Core Users have some good ideas of making things, we'll offer hardware pieces, PCBA services as well as technical support. Besides, further commercial cooperation with the Core Users is highly possible.
+</li></ul>
+<p><br/>
+<font color="#FF0000">Get more information about Core User, please email to:</font> <a href="mailto:recipe@seeed.cc">recipe@seeed.cc</a>
+</p><p><br/>
+</p><p><br/>
+</p>
+<h2>  Support </h2>
+<p>Any tech support, please contact <a href="http://www.deegou.com"><i>support@deegou.com</i></a>
+</p>
+<h2>  Service </h2>
+<p>We do also provide PCB services ( Electronics design, prototype assembly and batch manufacturing )
+If you have any requirements, please contact <a href="http://www.deegou.com"><i>info@deegou.com</i></a>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

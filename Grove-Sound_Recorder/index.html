@@ -1,0 +1,365 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Sound Recorder</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Sound Recorder</h1>
+
+<p>The Grove-Sound Recorder is based on <a href="http://garden.seeedstudio.com/images/4/43/Datasheet_of_APR9600.pdf">APR9600</a>, which offers true single-chip voice recording, no-volatile storage, and playback capability for 32 to 60 seconds. The sample is 8k and the total 32s for the Seeed Twig-Sound Recorder, divided into 4 sections, each section can be controlled separately. Besides, this Sound Recorder is also Grove compatible interface and can be controlled manually or Arduino/Seeeduino.<br/>
+Model:<a href="http://www.seeedstudio.com/depot/grove-sound-recorder-p-904.html?cPath=144_148">SEN71254P</a><br/>
+<img src="img/Sound_Recorder1.jpg" width="400"/>
+</p>
+<h2> Features</h2>
+<ul><li>Grove compatible interface
+</li><li>Can be controlled both manually or by MCU
+</li><li>Non-volatile Flash memory technology, No battery backup required
+</li><li>User-friendly, easy-to-use operation
+</li><li>Low Power consumption
+</li><li>Sample rate and duration changeable by replacing a single resistor.
+</li></ul>
+<h2> Application Ideas</h2>
+<ul><li>Toys
+</li></ul>
+<h2> Specifications</h2>
+<table border="1" cellspacing="0" width="80%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td> 3.0
+</td>
+<td> 5.0
+</td>
+<td> 5.25
+</td>
+<td> V
+</td></tr>
+<tr>
+<th scope="row"> Operating current
+</th>
+<td colspan="3"> 25
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> standby current
+</th>
+<td colspan="3"> 1
+</td>
+<td> uA
+</td></tr>
+<tr>
+<th scope="row"> Range
+</th>
+<td colspan="3">±1.5
+</td>
+<td>g
+</td></tr></table>
+<h2> Usage</h2>
+<p>This Grove-Sound Recorder supports 4 Message segments of fixed duration. Each segments can be controlled manually or by the MCU(Arduino/Seeeduino). And the duration of every segment can be changed by the customer.
+<a href="http://ijam.com.au/">Recorder Method</a>
+</p><p>Control the recorder manually is so easy. OK, let's have a look at it:
+The switch(SW1) is for recording/playing selecting, push it to "Rec" when you want to record voice, and push it to "Play" when you want to replay the voice in the recorder.
+The 4 buttons(K1~K4) are the control button, you can control with segment to record/replay by  pressing the related button.
+The output connector is for connecting a 8 0.5w speaker, and the Grove connector is for powering and MCU controlling.
+</p>
+<h3> How to control it manually</h3>
+<p>Step 1: Power the recorder. You could connect the "control" to the Base Shield via the grove 4 pin wire or any 5V voltage source.<br/>
+</p><p><b>Note :</b> if you connect it to the Base Shield via 4 pin wire, you should make sure the SEL1 and SEL2 low by programming the connected pins.
+<br/>
+I connected the "Control" connector to Digital port D1. And set the D1 and D2 to low by:
+</p>
+<pre>
+  const int D1 =  1;     
+  const int D2 =  2;
+  int State = LOW;             
+  void setup() {
+  pinMode(D1, OUTPUT); 
+  pinMode(D2, OUTPUT); 
+  digitalWrite(D1, State );
+  digitalWrite(D2, State );
+ }
+ void loop()
+ {   
+ }
+</pre>
+<p>Step 2: Push the SW1 to "rec".<br/>
+Step 3: Push and hold the segment related button, K1 for example, to begin the recording, and release the button to stop recording, and you will hear "DI" both the beginning and stopping of recording.<br/>
+<b>Note:</b> The recording time for each segment is no more than 15s, or it will be stop automatically even you still hold on the button, please reference:<a href="http://garden.seeedstudio.com/index.php?title=Twig_-_Sound_Recorder_v0.92b#How_to_change_the_sample_rate_and_duration_for_each_section">How to change the record time</a>.
+<br/>
+Step 4: When you want to replay the sound you recorded, just push the SW1 to "Play", and push the related button(Do not need to hold on), then you will hear the sound what you have recorded in this segment.
+<br/>
+</p>
+<h3> How to control the Recorder by Arduino/Seeeduino</h3>
+<p>The Recorder can also controlled by the MCU(Arduino or Seeeduino), this feature makes this recorder module suitable for much more applications and gives the user fantastic feeling.
+<br/>
+Ok, let's begin the MCU controlling for this recorder. Note that we define the 4 segments that controlled by K1/K2/K3/K4 as Section_1/Section_2/Section_3/Section_4.
+<br/>
+Step 1: Prepare the hardware:wire the connector "Control" to the digital port D2 of the Base Shield. And push the SW1 to "Rec".
+<br/>
+<img src="img/D2.jpg" width="300"/>
+<img src="img/Sel.jpg" width="300"/>
+<br/>
+Step 2: Prepare the software. In order to control select the section to Record/Play, each decode of Sel_1 and Sel_2 point to different section.
+</p>
+<table border="1">
+<tr>
+<td width="300">Sel_1(D2)/Sel_2(D1)
+</td>
+<td width="500">Segment selected
+</td></tr>
+<tr>
+<td>0 0
+</td>
+<td>None<i>(it means when 00,none of segment is selected)</i>
+</td></tr>
+<tr>
+<td>0 1
+</td>
+<td>Section_2
+</td></tr>
+<tr>
+<td>1 0
+</td>
+<td>Section_3
+</td></tr>
+<tr>
+<td>1 1
+</td>
+<td>Section_4
+</td></tr></table>
+<p><b> Note:</b>  when controlled by MCU, the Section_1can not be selected.
+<br/>
+I am not interested in such a table, it is confusing! I just want the code!
+<br/>
+Download the following code to your Arduino/Seeeduino,please click <a href="/Upload_Code">here</a> if you do not know how to upload.<br/>
+</p>
+<pre>
+/****************************************************************************/
+
+#include "APR9600.h"
+
+/*macro definition of the Grove interface on the Sounder Recorder*/
+#define SEL1 2
+#define SEL2 3
+ARP9600 recorder(SEL1,SEL2);
+/*Store the command from the serial monitor you type.*/
+char index;//can be '2','3','4',that is the index of section 2,section 3,section 4
+char control;//control byte, can be 'r' for record, 's' for stop recording,
+			 //'p' for play
+
+void setup()
+{
+	Serial.begin(9600);
+	recorder.begin();
+}
+void loop()
+{
+	getCommand();
+	delay(50);
+}
+void getCommand()
+{
+	if (Serial.available()&gt;0)
+	{   
+	/*Get the command from the serial monitor*/
+		index = Serial.read();
+		control = Serial.read();
+	}
+	while(Serial.available()&gt;0)Serial.read();//clear the receive buffer
+	if((index &gt; '1')&amp;&amp;(index &lt; '5'))// index should be 2~4
+	{
+		if(control == 'r')//if it is record command?
+		{
+			recorder.record(index - 0x30);
+			Serial.print("get the ");
+			Serial.write(index);
+			Serial.write(control);
+			Serial.print(" command, ");
+			Serial.print("begin to record section_");
+			Serial.println(index - 0x30);
+		}
+		else if(control == 'p')//if it is play command
+		{
+			recorder.play(index - 0x30);
+			Serial.print("get the ");
+			Serial.write(index);
+			Serial.write(control);
+			Serial.print(" command, ");
+			Serial.print("begin to play section_");
+			Serial.println(index - 0x30);
+		}
+		else if(control == 's')//if it is stop command
+		{
+			recorder.stop();//stop recording
+			Serial.print("get the ");
+			Serial.write(index);
+			Serial.write(control);
+			Serial.print(" command, ");
+			Serial.print("stop recording");
+		}
+		/*Clear the command*/
+		index = 0;
+		control = 0;
+	}
+}
+</pre>
+<p>Now, you can begin to control the recorder, with the following command (Baud Rate:9600):
+</p>
+<table border="1">
+<tr>
+<td width="200">Command
+</td>
+<td width="400">Description
+</td>
+<td width="200">State of SW1
+</td></tr>
+<tr>
+<td>2rb
+</td>
+<td>Begin to record Section_2
+</td>
+<td>REC
+</td></tr>
+<tr>
+<td>2rs
+</td>
+<td>Stop to record Section_2
+</td>
+<td>REC
+</td></tr>
+<tr>
+<td>2p
+</td>
+<td>Play Section_2
+</td>
+<td>Play
+</td></tr>
+<tr>
+<td>3rb
+</td>
+<td>Begin to record Section_3
+</td>
+<td>REC
+</td></tr>
+<tr>
+<td>3rs
+</td>
+<td>Stop to record Section_3
+</td>
+<td>REC
+</td></tr>
+<tr>
+<td>3p
+</td>
+<td>Play Section_3
+</td>
+<td>Play
+</td></tr>
+<tr>
+<td>4rb
+</td>
+<td>Begin to record Section_4
+</td>
+<td>REC
+</td></tr>
+<tr>
+<td>4rs
+</td>
+<td>Stop to record Section_4
+</td>
+<td>REC
+</td></tr>
+<tr>
+<td>4p
+</td>
+<td>Play Section_4
+</td>
+<td>Play
+</td></tr></table>
+<p><b>Note:</b> the section_1 can not be controlled by MCU. 
+<br/>
+After download the firmware to your Arduino/Seeeduino, make sure the connector "Control" is connected to the D2&amp;D3&amp;V&amp;G.
+<br/>
+Switch the SW1 to Rec, and type in the command with any serial port transceiver. OCTOPUS for example. Type in the command "2rb" first to begin to record the section_2, type in "2rs" to stop the recording. Note that the recording will automatic terminate after about about 15s if no "2rs" was typed in.
+<br/>
+<img src="img/2rb.jpg" width="400"/> <img src="img/2b.jpg" width="400"/>
+<br/>
+And now, you can type in the "2p" to play the Section_2, note that you should make sure the SW1 is pushed to "Play".
+<br/>
+<img src="img/2p.jpg" width="400"/>
+<br/>
+You can record the 3 Sections (Section_2, Section_3, Section_4) first, and then, with the serial port, to control which section you want to replay.
+</p>
+<h3> How to change the sample rate and duration for each section</h3>
+<p>You can control the quality/duration trade off by controlling the sampling frequency. Oscillator frequency can be changed by changing the resistance<b>(R7 in the PCB)</b> from the OscR pin to GND. Table summarizes resistance values and the corresponding sampling frequencies, as well as the resulting input bandwidth and duration. 
+</p>
+<table border="1">
+<tr>
+<th>Resistance
+</th>
+<th>Sampling Frequency
+</th>
+<th>Input  Bandwidth
+</th>
+<th>Duration
+</th></tr>
+<tr>
+<td width="100px"> 44 K
+</td>
+<td width="200px"> 4.2 KHZ
+</td>
+<td width="200px"> 2.1 KHZ
+</td>
+<td width="100PX"> 60 S
+</td></tr>
+<tr>
+<td width="100px"> 38 K
+</td>
+<td width="200px"> 6.4 KHZ
+</td>
+<td width="200px"> 3.2 KHZ
+</td>
+<td width="100px"> 40 S
+</td></tr>
+<tr>
+<td width="100px"> 24 K
+</td>
+<td width="200px"> 8.0 KHZ
+</td>
+<td width="200px"> 4.0 KHZ
+</td>
+<td width="100px"> 32 S
+</td></tr></table>
+<p>The R7 is 24K when it is shipped to your hand, you can change it to 38K/44K to get a longer duration of recording, with the tradeoff of lower sample rate.
+</p>
+<h2> Version Tracker</h2>
+<table border="1">
+<tr>
+<td width="300">Revision
+</td>
+<td width="500">Descriptions
+</td>
+<td width="200">Release Date
+</td></tr>
+<tr>
+<td>Grove-Sound Recorder V0.92b
+</td>
+<td>Initial public release
+</td>
+<td>Jun 10 2011
+</td></tr></table>
+<h2> Resources</h2>
+<ul><li><a href="res/Sound_Recorder_Eagle_File.zip">Grove-Sound Recorder Eagle File</a>
+</li><li><a href="http://garden.seeedstudio.com/images/4/43/Datasheet_of_APR9600.pdf">APR9600 Datasheet</a>
+</li><li>User contributed software Library that works(Use Old Arduino IDE / Software): <a href="https://github.com/wendellinfinity/GroveSoundRecorder">https://github.com/wendellinfinity/GroveSoundRecorder</a>
+</li></ul>
+<h2> Support</h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,122 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>SD Card Shield V3.0</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>SD Card Shield V3.0</h1>
+
+<p>The SD card v3.0 shield adds storage to your Arduino project. It supports SD, SDHC, or MicroSD TF cards. Use the on-board toggle switch to select the SD card type. The card supports use of one and only one format of SD card, either SD/SDHC, or MicroSD. Before using an SD or MicroSD card, please set the shields "SELECT" switch to the proper setting: toward the SD/SDHC slot, or the MicroSD slot.<br/><br/>
+</p><p>The SD Card shield v3.0 uses only the the SPI ports of Arduino. The shield is also stackable, so additional shields can go on top. There are Grove compatible sockets for the I2C and UART ports on board.<br/><br/>
+</p><p>The SD Card shield v3.0 makes use of pin 10 as a chip select. Please be sure other stacked shields do not make use of that same pin. See v4.0 of this shield for a version that uses pin 4.<br/><br/>
+</p><p>These next lines were user added: This shield works fine for the Arduino Mega 2560, you just have to make the appropriate connections. 4or10 -&gt;53, 11-&gt;51, 12 -&gt;50, and 13 -&gt;52. This arrangement works fine so long as you make sure not to assign anything else to those pins.<br/><br/>
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/sd-card-shield-p-492.html?cPath=109">INT106D1P</a></b> <br/> <img src="img/SD_card_shield.jpg" width="400"/>
+</p>
+<h2>  Features  </h2>
+<ul><li>Arduino/Seeeduino compatible<font color="red">( Do not compatible with Mega)</font>
+</li><li>Grove compatible 
+</li><li>SD card, Micro SD card and SDHC card supportable 
+</li><li>3.3v and 5v logical voltage compatible 
+</li><li>2.6~3.6v DC power supply
+</li></ul>
+<h2>  Specification  </h2>
+<table border="1" cellspacing="0" width="100%">
+<tr>
+<th scope="col"> Item
+</th>
+<th scope="col"> Min
+</th>
+<th scope="col"> Typical
+</th>
+<th scope="col"> Max
+</th>
+<th scope="col"> Unit
+</th></tr>
+<tr>
+<th scope="row"> Voltage
+</th>
+<td> 2.7
+</td>
+<td> 3.3
+</td>
+<td> 3.6
+</td>
+<td> V
+</td></tr>
+<tr>
+<th scope="row"> Current
+</th>
+<td> 0.159
+</td>
+<td> 40
+</td>
+<td> 200
+</td>
+<td> mA
+</td></tr>
+<tr>
+<th scope="row"> Supported Card Type
+</th>
+<td colspan="3"> SD card(&lt;=2G); Micro SD card(&lt;=2G); SDHC card(&lt;=16G)
+</td>
+<td> /
+</td></tr>
+<tr>
+<th scope="row"> Dimension
+</th>
+<td colspan="3"> 57.15x44.70x19.00
+</td>
+<td> mm
+</td></tr>
+<tr>
+<th scope="row"> Net Weight
+</th>
+<td colspan="3"> 16.6
+</td>
+<td> g
+</td></tr></table>
+<h2>  Interface Function  </h2>
+<p><img src="img/SD_Card_interface.png" width="600"/><br/> <b>D10</b> – Used for CS of SPI<br/> <b>D11</b> – Used for MOSI of SPI<br/> <b>D12</b> – Used for MISO of SPI<br/> <b>D13</b> – Used for SCK of SPI<br/> <b>Grove connectors</b> - One for Uart serial port, and the other one for I2C port. 
+</p>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<p>Plug the SD Card Shield onto the Arduino; Insert your SD card into the socket and make sure the card selector pointing to the right way (Standard card or micro).And then connect the Arduino to PC with USB cable. <br/> <font color="red"><b>Warning:</b> Don't insert SD card and microSD card into the shield at the same time.</font><br/> <img src="img/SD_shield_hardware.jpg" width="400"/><br/>
+</p>
+<h3>  Software  </h3>
+<p>First you have to get an <a href="http://www.seeedstudio.com/depot/sandisk-microsd%C3%82%E2%84%A2-card-2gb-p-546.html?cPath=178_182">SD card or micro SD card</a>, and then format the SD card as FAT16 or FAT32 if it is necessary.<br/>Format the SD card as the screenshots below: <br/> <img src="img/Format.jpg" width="400"/> <img src="img/Format2.jpg" width="180"/><br/>
+</p>
+<ol><li>Download the latest version of <a href="https://code.google.com/p/sdfatlib/">SdFat for Arduino</a>.<br/>
+</li><li>Uncompress this package and put it in Arduino-1.0 program: ..\arduino-1.0\libraries.<br/>
+</li><li>Select the corresponding Arduino board, like Arduino UNO or Duemilanove or others, and the COM port you are using.<br/>
+</li><li>Upload the sketch <i><b>Sdinfo</b></i>.The following image is the result from the serial monitor. Of course you can upload other sketches.<br/><img src="img/SD_card_software.jpg" width="600"/> <br/>
+</li><li>If an error occurs, please recheck all the steps, and make sure the SD card is working. If none of that fixes the problem, try replacing the SD card.<br/>With that done, you can take a look at the other library examples for reading, writing, and sample logging with a GPS or real time clock. Enjoy!
+</li></ol>
+<h2>  FAQ  </h2>
+<ol><li>SD card can't be initialized .
+</li></ol>
+<ul><li><font color="grey">Please reformat SD card to FAT/FTA32 .If it still can't work ,suggest to download the <a href="https://www.sdcard.org/downloads/formatter_3/">SD Formatter</a> and reformat SD card by this software.</font>
+</li></ul>
+<h2>  Version Tracker  </h2>
+<table border="1" cellspacing="0" width="85%">
+<tr>
+<th scope="col"> Revision
+</th>
+<th scope="col"> Descriptions
+</th>
+<th scope="col"> Release
+</th></tr>
+<tr>
+<td> v3.0
+</td>
+<td> V3.0 Release
+</td>
+<td> 2012/3/29
+</td></tr>
+<tr>
+<td> v3.1
+</td>
+<td> Voltage regulator upgraded to MIC5205
+</td>
+<td> 2012/5/10
+</td></tr></table>
+<h2>  Resources  </h2>
+<ul><li><a href="res/Eagle_file_for_SD_card_shiled.zip">Eagle file of SD Card Shield v3.1</a>
+</li><li><a href="res/SD_Card_Shield.pdf">PDF file of SD Card Sheile v3.1</a>
+</li><li><a href="http://garden.seeedstudio.com/images/0/09/Eagle_file_of_SD_Card_Shield_v3.0.ZIP">Eagle file of SD Card Shield v3.0</a>. 
+</li><li><a href="http://code.google.com/p/beta-lib/downloads/detail?name=SdFatBeta20120327.zip&amp;can=2&amp;q=">SdFat For Arduino1.0</a>.
+</li></ul>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

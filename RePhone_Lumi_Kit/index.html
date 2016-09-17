@@ -1,0 +1,260 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>RePhone Lumi Kit</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>RePhone Lumi Kit</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/RePhone_Lumi_Kit_wiki_2.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>RePhone Lumi Kit is specially designed for LED lovers - embedding the Xadow GSM+BLE module into your awesome lighting device and control the light via SMS or Bluetooth!
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/RePhone-Lumi-Kit-p-2623.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<h2>  Specification </h2>
+<h3>  Xadow GSM+BLE </h3>
+<table>
+<tr>
+<td> Microcontroller </td>
+<td> MT2502
+</td></tr>
+<tr>
+<td> MCU Core </td>
+<td> 32-bit ARM7EJ-STM RISC processor
+</td></tr>
+<tr>
+<td> RAM </td>
+<td> 4 MB
+</td></tr>
+<tr>
+<td> Flash Memory </td>
+<td> 16 MB
+</td></tr>
+<tr>
+<td> Power Supply </td>
+<td> 3.3 ~ 4.2V(no SIM)/3.5 ~ 4.2V(with SIM)
+</td></tr>
+<tr>
+<td> Power Consumption </td>
+<td> 20mW/30mW/52mW @ standby(no radio)/standby(GSM)/standby(BT)
+</td></tr>
+<tr>
+<td> Quad-band </td>
+<td> 850/900/1800/1900 MHz
+</td></tr>
+<tr>
+<td> GPRS </td>
+<td> Class 12 modem
+</td></tr>
+<tr>
+<td> Clock Speed </td>
+<td> 260 MHz
+</td></tr>
+<tr>
+<td> Connectors </td>
+<td> 35 PIN Connector &amp; 11 PIN Connector for Xadow Modules; JST 1.0 Connector for the battery
+</td></tr>
+<tr>
+<td> Interfaces </td>
+<td> LCD, Audio, I2C, SPI, UART, and GPIOs etc
+</td></tr>
+<tr>
+<td> Dimensions </td>
+<td> 25.37mm × 20.30mm / 1” × 0.8”
+</td></tr></table>
+<h3>  Xadow Duino </h3>
+<table>
+<tr>
+<td> Microcontroller </td>
+<td> ATmega32u4
+</td></tr>
+<tr>
+<td> Power Supply </td>
+<td> 5V via USB, current draw is 1.5A at Max
+<p>3.3 ~ 4.2V via battery socket, current draw is 1.5A at Max
+</p><p>3.3 ~ 6V via breakout pins, current draw is 500 mA at Max
+</p><p>3.3 ~ 4.2 V via Xadow GSM+BLE, current draw is 500 mA at Max
+</p>
+</td></tr>
+<tr>
+<td> Charging Current </td>
+<td> 500 mA
+</td></tr>
+<tr>
+<td> Flash Memory </td>
+<td> 32 KB (ATmega32u4) of which 4 KB used by bootloader
+</td></tr>
+<tr>
+<td> SRAM </td>
+<td> 2.5 KB (ATmega32u4)
+</td></tr>
+<tr>
+<td> EEPROM </td>
+<td> 1 KB (ATmega32u4)
+</td></tr>
+<tr>
+<td> Clock Speed </td>
+<td> 16 MHz
+</td></tr>
+<tr>
+<td> Connector </td>
+<td> 2 × 11 PIN Xadow Connector
+<p>Bonding pads for RGB LED WS2812b
+</p>
+</td></tr>
+<tr>
+<td> Interfaces </td>
+<td> Interface with Xadow GSM+BLE through
+<p>I2C (7-bit address 0x23)
+</p>
+</td></tr>
+<tr>
+<td> Dimensions </td>
+<td> 25.37mm × 20.30mm / 1”× 0.8”
+</td></tr></table>
+<h3>  Xadow GSM Breakout </h3>
+<table>
+<tr>
+<td> Dimensions </td>
+<td> 25.37mm × 20.30mm / 1” × 0.8”
+</td></tr></table>
+<p><br/>
+</p>
+<h2> Module Connection</h2>
+<p>The Xadow GSM+BLE integrates a Xadow 36 Pin connector and a Xadow 11 Pin connector. As the image shows here, you can connect the Xadow GSM+BLE to Xadow GSM breakout with a Xadow 36 Pin cable, but do bear in mind that the cable has to be inserted <b>firmly</b> and <b>flat</b>, and most importantly, <b>keep the 'TOP' side upwards</b>. The Xadow 11 Pin connector have much more flexible design, you can connect the Xadow Duino and the mainboard with a Xadow 11 Pin ribbon cable in whatever way you want, again just make sure cable is firmly inserted.
+</p><p><img src="img/RePhone_Lumi_Kit_wiki_2.jpg" width="500"/>
+</p><p><br/>
+</p>
+<h2> Control the Light with SMS!</h2>
+<p>Here is an example of controlling you RGB LEDs by sending a message to your RePhone.
+</p><p>Firstly you need to follow the instructions in the <b><a href="/Arduino_IDE_for_RePhone_Kit" title="Arduino IDE for RePhone Kit">Arduino IDE for RePhone Kit</a></b> to download the Arduino IDE for RePhone Kit as well as install the drivers.
+Then copy the following code to your Arduino IDE for RePhone. Choose the <b>board as "RePhone"</b> and <b>download it with the "MTK USB Debug Port"</b>.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2">#include &lt;LCheckSIM.h&gt;</span>
+<span class="co2">#include &lt;LGSM.h&gt;</span>
+<span class="co2">#include &lt;LWs2812.h&gt;</span>
+<span class="co2">#include &lt;string.h&gt;</span>
+<span class="co2">#include &lt;stdio.h&gt;</span>
+<span class="co2">#include &lt;stdlib.h&gt;</span>
+ 
+<span class="co1">//SMS command 0 : "OFF" - off display.</span>
+<span class="co1">//SMS command 1 : "R100G0B0" - red color is 100, green color is 0, blue coler is 0.</span>
+<span class="kw4">char</span> num<span class="br0">[</span><span class="nu0">20</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">char</span> buf_contex<span class="br0">[</span><span class="nu0">200</span><span class="br0">]</span><span class="sy4">;</span>
+ 
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">115200</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Ws2812 test.<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">unsigned</span> <span class="kw4">long</span> rgb_color<span class="sy4">;</span>
+ 
+    <span class="kw1">if</span><span class="br0">(</span>LSMS.<span class="kw3">available</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+    <span class="br0">{</span>
+        LSMS.<span class="me1">remoteNumber</span><span class="br0">(</span>num, <span class="nu0">20</span><span class="br0">)</span><span class="sy4">;</span>
+        LSMS.<span class="me1">remoteContent</span><span class="br0">(</span>buf_contex, <span class="nu0">50</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span><span class="st0">"Get new sms: "</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Number:"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>num<span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"Content:"</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>buf_contex<span class="br0">)</span><span class="sy4">;</span>
+ 
+        <span class="kw1">if</span><span class="br0">(</span><span class="kw3">strcmp</span><span class="br0">(</span><span class="st0">"OFF"</span>, buf_contex<span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span>
+        <span class="br0">{</span>
+            <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"RGB off.<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+            LWs2812.<span class="me1">monochrome</span><span class="br0">(</span><span class="nu0">5</span>, <span class="nu0">0</span>, <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+        <span class="br0">}</span>
+        <span class="kw1">else</span>
+        <span class="br0">{</span>
+            <span class="kw1">if</span><span class="br0">(</span>StingFind<span class="br0">(</span>buf_contex, <span class="st0">"R"</span>, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>
+            <span class="br0">{</span>
+                <span class="kw1">if</span><span class="br0">(</span>StingFind<span class="br0">(</span>buf_contex, <span class="st0">"G"</span>, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>
+                <span class="br0">{</span>
+                    <span class="kw1">if</span><span class="br0">(</span>StingFind<span class="br0">(</span>buf_contex, <span class="st0">"B"</span>, <span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span>
+                    <span class="br0">{</span>
+                        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"RGB flag is find.<span class="es1">\r</span><span class="es1">\n</span>"</span><span class="br0">)</span><span class="sy4">;</span>
+                        <span class="kw4">char</span> color_r<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+                        <span class="kw4">char</span> color_g<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+                        <span class="kw4">char</span> color_b<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+                        <span class="kw3">sscanf</span><span class="br0">(</span>buf_contex <span class="sy2">+</span> <span class="nu0">1</span>,<span class="st0">"%[^G]"</span>, color_r<span class="br0">)</span><span class="sy4">;</span>
+                        <span class="kw3">sscanf</span><span class="br0">(</span>buf_contex,<span class="st0">"%*[^G]G%[^B]"</span>, color_g<span class="br0">)</span><span class="sy4">;</span>
+                        <span class="kw3">sscanf</span><span class="br0">(</span>buf_contex,<span class="st0">"%*[^B]B%[^<span class="es5">\0</span>]"</span>, color_b<span class="br0">)</span><span class="sy4">;</span>
+ 
+                        rgb_color <span class="sy1">=</span> <span class="kw3">atol</span><span class="br0">(</span>color_r<span class="br0">)</span><span class="sy2">*</span><span class="nu0">256</span><span class="sy2">*</span><span class="nu0">256</span> <span class="sy2">+</span> <span class="kw3">atol</span><span class="br0">(</span>color_g<span class="br0">)</span><span class="sy2">*</span><span class="nu0">256</span> <span class="sy2">+</span> <span class="kw3">atol</span><span class="br0">(</span>color_b<span class="br0">)</span><span class="sy4">;</span>
+ 
+                        <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"rgb color is "</span><span class="br0">)</span><span class="sy4">;</span>
+                        <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>rgb_color<span class="br0">)</span><span class="sy4">;</span>
+                        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+                        LWs2812.<span class="me1">monochrome</span><span class="br0">(</span><span class="nu0">5</span>, rgb_color, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+                        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">100</span><span class="br0">)</span><span class="sy4">;</span>
+                        LWs2812.<span class="me1">monochrome</span><span class="br0">(</span><span class="nu0">5</span>, rgb_color, <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+                    <span class="br0">}</span>
+                <span class="br0">}</span>
+            <span class="br0">}</span>
+        <span class="br0">}</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> StingFind<span class="br0">(</span><span class="kw4">char</span><span class="sy2">*</span> string, <span class="kw4">char</span><span class="sy2">*</span> find, <span class="kw4">int</span> number<span class="br0">)</span>
+<span class="br0">{</span>
+	<span class="kw4">char</span><span class="sy2">*</span> pos <span class="sy1">=</span> string<span class="sy4">;</span>
+	<span class="kw4">char</span><span class="sy2">*</span> p <span class="sy1">=</span> string<span class="sy4">;</span>
+	<span class="kw4">int</span> count <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+	<span class="kw1">while</span><span class="br0">(</span>number <span class="sy1">&gt;</span> <span class="nu0">0</span><span class="br0">)</span>
+	<span class="br0">{</span>
+		pos <span class="sy1">=</span> <span class="kw3">strstr</span><span class="br0">(</span>p, find<span class="br0">)</span><span class="sy4">;</span>
+		<span class="kw1">if</span><span class="br0">(</span>pos <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">)</span><span class="kw1">return</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>
+ 
+		<span class="kw1">while</span><span class="br0">(</span>p <span class="sy1">&lt;=</span> pos<span class="br0">)</span>
+		<span class="br0">{</span>
+			<span class="kw1">if</span><span class="br0">(</span><span class="sy2">*</span>p <span class="sy1">&gt;</span> <span class="nu12">0x80</span> <span class="sy3">||</span> <span class="sy2">*</span>p <span class="sy1">&lt;</span> <span class="nu0">0</span><span class="br0">)</span>
+			<span class="br0">{</span>
+				p <span class="sy2">++</span><span class="sy4">;</span>
+			<span class="br0">}</span>
+			p <span class="sy2">++</span><span class="sy4">;</span>
+			count <span class="sy2">++</span><span class="sy4">;</span>
+		<span class="br0">}</span>
+		number <span class="sy2">--</span><span class="sy4">;</span>
+	<span class="br0">}</span>
+	<span class="kw1">return</span> count<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p><p><br/>
+In this code we set the SMS command as:<br/>
+</p>
+<pre><b>"OFF"</b> - off display.
+<b>"R100G0B0"</b> - red color is 100, green color is 0, blue coler is 0.
+</pre>
+<p>So if we send  <b>"R100G0B0"</b> to the RePhone, the LEDs will become red as showing below:<br/>
+</p><p><img src="img/TESTR100.jpg" width="500"/>
+<br/>
+<br/>
+</p>
+<h2> More Example Code</h2>
+<p>Playing with some example code would a good start if you are heading into some even more interesting project.<br/>
+</p><p>1. Simply setup your <b>sketchbook location</b> in the <b>preference</b> as where you install the Arduino IDE for RePhone, then you'll be able to see the example codes.<br/><br/>
+</p><p><img src="img/Arduino_Sketchlocation.png" width="528"/><br/><br/>
+<br/>
+</p><p>2. You may find the Arduino example coded manually for all the RePhone modules in the following path:<br/>
+<i><b>Arduino_IDE_for_RePhone-master\hardware\arduino\mtk\libraries</b></i><br/><br/>
+</p><p><br/>
+<img src="img/Example_code_Arduino_IDE.png" width="465"/><br/>
+</p><p><br/>
+<br/>
+</p>
+<h2> RePhone Community</h2>
+<p><a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4"><img src="img/RePhone_Community-2.png" width="300"/></a>
+</p><p>We’ve been looking for a better place where our backers (RePhone Users) can sit together, warmly and comfortably, have conversations about RePhone, discuss technical problems, share ideas/projects, and give feedback on the modules’ development in the future. And then here we go, the RePhone Community.
+</p><p>Now join us in the <a href="http://www.seeedstudio.com/forum/viewforum.php?f=71&amp;sid=b70f8138c89becf7701260bb41faf9f4">RePhone Community</a>! Together we seek answers, make interesting stuff, care about each other, and share our experiences.
+</p>
+<h3>  Frequently Asked Questions</h3>
+<p>Some frequently asked questions in RePhone Community are collected and answered to the topic <b><a href="http://www.seeedstudio.com/forum/viewtopic.php?f=71&amp;t=6664&amp;p=23753#p23753">"Frequently Asked Questions of RePhone (FAQ)"</a></b> , the topic will be kept updating whenever a new FAQ comes out. 
+<br/>
+<br/>
+</p>
+<h2> Resources</h2>
+<p>Please go the Wiki page <a href="/Xadow_Duino">Xadow Duino</a> for more info.
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

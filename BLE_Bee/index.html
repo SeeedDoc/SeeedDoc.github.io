@@ -1,0 +1,367 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>BLE Bee</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>BLE Bee</h1>
+
+<p>The BLE Bee is a Bluetooth Smart enabled XBEE form factor module based on HM-11 module. The BLE Bee can be used in hardware setups, where normally an XBEE module is used. Using a BLE Bee an XBee socket enabled embedded system can communicate with desktop computers, smartphones, table computers and even other embedded systems providing Bluetooth Smart aka Bluetooth Low Energy (BLE).
+</p><p>Prototype version:
+</p><p><img src="img/Ble_bee.jpg" width="400"/>
+</p>
+<h2>    Features  </h2>
+<ul><li>Compatible XBee shape 
+</li><li>Bluetooth protocol: Bluetooth Specification V4.0 BLE
+</li><li>Working frequency: 2.4 GHz ISM band
+</li><li>Interface way: a serial port
+</li><li>Open environment within 30 meters can realize communication between modules
+</li><li>To send and receive no byte limit between modules
+</li><li>Modulation method: GFSK (Gaussian Frequency Shift Keying)
+</li><li>Transmission power: - DBM, 23-6 DBM, 0 DBM, 6 DBM, can be modified by the AT command
+</li><li>use TI CC2540 chip, configuration space of 256 KB, support the AT command, the user can according to need to <br/> change the role (master, slave mode) and the serial port baud rate, name of equipment, matching parameters such as passwords, use agile.
+</li><li>power supply: + 3.3 VDC 50 mA
+</li><li>working temperature: - 5 ~ + 65 Centigrade
+</li></ul>
+<p><br/>
+Note: BLE Bee 
+</p>
+<h2>  Specification  </h2>
+<table>
+<tr>
+<th> Specification
+</th>
+<th> Value
+</th></tr>
+<tr>
+<td width="200px"> Microprocessor
+</td>
+<td width="200px"> CC2540
+</td></tr>
+<tr>
+<td> Resources
+</td>
+<td> Support the AT command, the user can according to need to change the role (master, slave mode) and the serial port baud rate,name of equipment,Matching parameters such as password, the use of flexible.
+</td></tr>
+<tr>
+<td> PCB size
+</td>
+<td> 24.5mmx30.5mmx0.8mm
+</td></tr>
+<tr>
+<td> Outline Dimension
+</td>
+<td> 24.5mmx30.5mmx9.77mm
+</td></tr>
+<tr>
+<td> Power supply
+</td>
+<td> 3.3V
+</td></tr>
+<tr>
+<td> Communication Protocol
+</td>
+<td> Uart(TTL)
+</td></tr>
+<tr>
+<td> IO counts
+</td>
+<td> 2
+</td></tr>
+<tr>
+<td> Key input IO
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> LED Indicators IO
+</td>
+<td> 1
+</td></tr>
+<tr>
+<td> Connectivity
+</td>
+<td> Socket compatible with XBee
+</td></tr></table>
+<h2>    Electrical Characteristics </h2>
+<table border="1">
+<tr>
+<th> Specification
+</th>
+<th> Min
+</th>
+<th> Typ
+</th>
+<th> Max
+</th>
+<th> Unit
+</th></tr>
+<tr>
+<td width="400px"> Max Input Voltage
+</td>
+<td width="150px"> -0.3
+</td>
+<td width="150px">
+</td>
+<td width="150px"> 3.6
+</td>
+<td width="150px"> V
+</td></tr>
+<tr>
+<td> Working Input Voltage
+</td>
+<td> 2.0
+</td>
+<td> 3.3
+</td>
+<td> 3.6
+</td>
+<td> V
+</td></tr>
+<tr>
+<td> Transmit Current
+</td>
+<td>
+</td>
+<td> 15
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Receive Current
+</td>
+<td>
+</td>
+<td> 8.5
+</td>
+<td>
+</td>
+<td> mA
+</td></tr>
+<tr>
+<td> Deep Sleep Current
+</td>
+<td>
+</td>
+<td> 600
+</td>
+<td>
+</td>
+<td> uA
+</td></tr>
+<tr>
+<td> Operating Temperature
+</td>
+<td> -40
+</td>
+<td>
+</td>
+<td> 125
+</td>
+<td> °C
+</td></tr></table>
+<h2>    Pin definition </h2>
+<p><img src="img/BLE_BEE.jpg" width="600"/>
+</p><p><br/>
+Note: Only important alternate functions are listed, may have more, please refer to datasheet.
+</p>
+<h2>    Usage </h2>
+<p><img src="img/Ble_bee_user.jpg" width="600"/>
+</p>
+<ul><li>  Plug Seeed BLE Shield onto the Arduino/Seeeduino directly. <b>Please pay attention to the position of jumpers on the XBee Shield.</b>
+</li></ul>
+<ul><li>  Hard or Softserial port: You can choose two of seven digital pins as the communication channel. Just plug the jumpers into the headers. 
+</li></ul>
+<ul><li>  Signal lamp: Lamp will blink if no one connect BLE, but the lamp would keep lighting after BLE has been connected.
+</li></ul>
+<h2>   AT commands &amp; Configuration </h2>
+<p><b>1）	Query the native MAC address<br/></b>
+Send: AT + ADDR? <br/>
+Send after a successful return: OK + LADD: MAC address (address for 12 string)<br/>
+</p><p><b>2）	Query the baud rate<br/></b>
+Send: AT+BAUD? <br/>
+Send after a successful return: OK + Get: [para1]<br/>
+Scope of para1:0 ~ 8. The parameters corresponding to: 0 represents 9600, 1, 2, 9600, 38400, on behalf of the representative representative of 57600, 115200, 5, 4800, 6, 7 represents 1200, 1200 2400. The default baud rate to 9600.<br/>
+</p><p><b>3）	Set the baud rate<br/></b>
+Send: AT+BAUD[para1] <br/>
+Send after a successful return: OK+Set:[para1] <br/>
+Example: send: AT + BAUD1, return: OK + Set: 2.The baud rate is set to 19200. <br/>
+Note: after the switch to the 1200, module will no longer support the configurations of the AT command, and press the PIO0 under standby, module can restore the factory Settings.Do not recommend using the baud rate.After setting the baud rate, modules should be on electricity, anew set parameters can take effect.<br/>
+</p><p><b>4）	from the device connected to the bluetooth address specified<br/></b>
+Send: AT+CON[para1] <br/>
+Send after a successful return: OK+CONN[para2]<br/>
+Para2 range is: A, E, F<br/>
+Example: from the bluetooth address is: 0017EA0943AE, sending the AT + CON0017EA0943AE, module returns: OK + CONNA or OK + + CONNF CONNE or OK.<br/>
+</p><p><b>5）	removal equipment matching information<br/></b>
+Send: AT + CLEAR<br/>
+Send after a successful return: OK + CLEAR<br/>
+Clear success had connected device address code information. <br/>
+</p><p><b>6）	query module working mode<br/></b>
+Send: AT + MODE? <br/>
+Send after a successful return: OK + Get: [para]<br/>
+Para: the range of 0 ~ 2. 0 represents passthrough mode, on behalf of the PIO acquisition + remote control + 1 passthrough, 2 representative passthrough + remote control mode.The default is 0.<br/>
+</p><p><b>7）	set module working mode: <br/></b>
+Send: AT + MODE []<br/>
+Send after a successful return: OK + Set: [para]<br/>
+</p><p><b>8）	query device name<br/></b>
+Send: AT + NAME? <br/>
+Send after a successful return: OK + NAME [para1]<br/>
+</p><p><b>9）	set the device name<br/></b>
+Send: AT + NAME [para1]<br/>
+Send after a successful return: OK + Set: [para1]<br/>
+Example: Set the device name to Seeed, sending the AT + NAMESeeed, return OK + Set: Seeed AT this time, the name of the bluetooth module has been changed to Seeed.
+Note: after the instruction execution, required to electricity, set the parameters of the approval.<br/>
+</p><p><b>10）	query matching password<br/></b>
+Send: AT + PASS? <br/>
+Send after a successful return: OK + PASS: [para1]<br/>
+Para1 range is 000000 ~ 999999, the default is 000000.<br/>
+</p><p><b>11）	pairing set password<br/></b>
+Send the AT + PASS [para1]<br/>
+Send after a successful return: OK + Set: [para1]<br/>
+</p><p><b>12）	restore factory Settings<br/></b>
+The AT + RENEW send<br/>
+Send after a successful return: OK + RENEW<br/>
+Restore the default factory Settings module, the module Settings will be reset so, back to the factory with the status of the factory default, delay module 500 ms after the restart.If no need, please be careful.<br/>
+</p><p><b>13）	module reset<br/></b>
+Send: AT + RESET<br/>
+Send after a successful return: OK + RESET<br/>
+After the instruction execution module will delay 500 ms after the restart.<br/>
+</p><p><b>14）	set the master-slave mode<br/></b>
+Send: AT + ROLE [para1]<br/>
+Send after a successful return: OK + Set: [para1]<br/>
+</p><p><br/>
+More information about the AT Commands please refer to the data sheet of BLE module. You can download it from the Resource space.
+<br/>
+</p>
+<h2>  SoftwareSerial Communication </h2>
+<p><br/>
+BLE Bee can be acted as a master or slave, you can use the one via different demos.<b>If you are going to use the following SoftwareSerial program, please refer to the way of connection in the previous pic. BLE_TX--&gt;D2, BLE_RX--&gt;D3.</b><br/>
+Open Arduino IDE, copy the following program and upload it onto the Arduino/Seeeduino board. And then two BLE Shields can communicate with each other.
+<br/>
+<br/>
+<b>Demo : BLE Slave</b>
+</p>
+<pre>
+
+#include &lt;SoftwareSerial.h&gt;   //Software Serial Port
+#define RxD 2
+#define TxD 3
+ 
+#define DEBUG_ENABLED  1
+ 
+SoftwareSerial BLE(RxD,TxD);
+ 
+void setup() 
+{ 
+  Serial.begin(9600);
+  pinMode(RxD, INPUT);
+  pinMode(TxD, OUTPUT);
+  setupBleConnection();
+ 
+} 
+ 
+void loop() 
+{ 
+  char recvChar;
+  while(1){
+    if(BLE.available()){//check if there's any data sent from the remote BLE shield
+      recvChar = BLE.read();
+      Serial.print(recvChar);
+    }
+    if(Serial.available()){//check if there's any data sent from the local serial terminal, you can add the other applications here
+      recvChar  = Serial.read();
+      BLE.print(recvChar);
+    }
+  }
+} 
+ 
+void setupBleConnection()
+{
+  BLE.begin(9600); //Set BLE BaudRate to default baud rate 9600
+  BLE.print("AT+CLEAR"); //clear all previous setting
+  BLE.print("AT+ROLE0"); //set the bluetooth name as a slaver
+  BLE.print("AT+SAVE1");  //don't save the connect information
+}
+</pre>
+<p><br/>
+<b>Demo : BLE Master</b>
+<br/>
+</p>
+<pre>
+
+#include &lt;SoftwareSerial.h&gt;   //Software Serial Port
+#define RxD 2
+#define TxD 3
+ 
+#define DEBUG_ENABLED  1
+ 
+SoftwareSerial BLE(RxD,TxD);
+ 
+void setup() 
+{ 
+  Serial.begin(9600);
+  pinMode(RxD, INPUT);
+  pinMode(TxD, OUTPUT);
+  setupBleConnection();
+ 
+} 
+ 
+void loop() 
+{ 
+  char recvChar;
+  while(1){
+    if(BLE.available()){//check if there's any data sent from the remote BLE shield
+      recvChar = BLE.read();
+      Serial.print(recvChar);
+    }
+    if(Serial.available()){//check if there's any data sent from the local serial terminal, you can add the other applications here
+      recvChar  = Serial.read();
+      BLE.print(recvChar);
+    }
+  }
+} 
+ 
+void setupBleConnection()
+{
+  BLE.begin(9600); //Set BLE BaudRate to default baud rate 9600
+  BLE.print("AT+CLEAR"); //clear all previous setting
+  BLE.print("AT+ROLE1"); //set the bluetooth name as a master
+  BLE.print("AT+SAVE1");  //don't save the connect information
+}
+</pre>
+<p><br/>
+</p>
+<h3>  HardwareSerial Communication </h3>
+<p><br/>
+Besides, you can use BLE Shield via AT commands without any program, <b>but you need to change the positions of two jumpers. BLE_TX--&gt;D1, BLE_RX--&gt;D0.</b>
+<br/>
+Then open a Serial Port Tool, like CoolTerm or others.The following are some settings : <b>Baudrate: 9600(default) , Data Bits: 8, Parity: none, Stop Bits: 1.</b>
+<br/>
+<br/>
+First, you can send a(some) "AT" command(s) to BLE Shield to have a test. If it returns an "OK", then you can do the following steps. <b>If not, you can upload a blank program to Arduino/Seeeduino</b>, and see whether you can get response from Serial Port Tool via the previous operation.
+<br/>
+</p>
+<pre>
+void setup()
+{                
+}
+
+void loop() 
+{
+}
+</pre>
+<p><br/>
+Then, send an "AT+ROLE0" command to BLE Shield; it will return an "OK+Set:0", which means now the BLE Shield is ready to act as a slave.
+<br/>
+<br/>
+<img src="img/Seeed_BLE-3.png" width="500"/>
+<br/>
+<br/>
+</p><p><br/>
+</p>
+<h2>  Resource </h2>
+<p><br/>
+<a href="res/BLE_Bee_v1.0.zip">Schematic of BLE_Bee_v1.0</a>
+<br/>
+<a href="res/HMBLEComAssistant.rar">BLE_apk_for_Android</a>
+<br/>
+<a href="res/Bluetooth40_en.pdf">DataSheet of BLE module</a>
+<br/>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

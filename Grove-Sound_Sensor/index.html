@@ -1,1408 +1,347 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <title>Grove - Sound Sensor - Seeed Wiki</title>
-  
-
-  <link rel="shortcut icon" href="../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight-fix.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/tomorrow-night-eighties.min.css">
-
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Grove - Sound Sensor";
-    var mkdocs_page_input_path = "Grove-Sound_Sensor.md";
-    var mkdocs_page_url = "/Grove-Sound_Sensor/";
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script>
-  <script src="../js/theme.js"></script> 
-
-  
-</head>
-
-<body class="wy-body-for-nav" role="document">
-
-  <div class="wy-grid-for-nav">
-
-    
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Seeed Wiki</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="..">Home</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Platform</span></li>
-        
-            
-    <ul class="subnav">
-    <li><span>Arduino</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../2.8inch_TFT_Touch_Shield_v2.0/">2.8&#39;&#39; TFT Touch Shield v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_1050mAh_3.7V/">Battery Detector with Polymer Lithium Ion 1050mAh 3.7V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Battery_Detector_with_Polymer_Lithium_Ion_5100mAh_3.8V/">Battery Detector with Polymer Lithium Ion 5100mAh 3.8V</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../CAN-BUS_Shield_V1.2/">CAN-BUS Shield V1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../EL_Shield/">EL Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Energy_Shield/">Energy Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Motor_Shield_V2.0/">Motor Shield V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../RS232_Shield/">RS232 Shield</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Lotus/">Seeeduino Lotus</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_Stalker_V3.1/">Seeeduino Stalker V3.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Seeeduino_v4.2/">Seeeduino v4.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../UartSBee_v5/">UartSBee v5</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>BeagleBone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Beagle_Bone_Green_and_Grove_IoT_Starter_Kit_Powered_by_AWS/">Beagle Bone Green and Grove IoT Starter Kit Powered by AWS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green/">BeagleBone Green</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../BeagleBone_Green_HDMI_Cape/">BeagleBone Green HDMI Cape</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../SeeedStudio_BeagleBone_Green_Wireless/">SeeedStudio BeagleBone Green Wireless</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Raspberry Pi</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi/">Raspberry Pi</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_Breakout_Board_v1.0/">Raspberry Pi Breakout Board v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Raspberry_Pi_R232_Board_v1.0/">Raspberry Pi RS232 Board v1.0</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>LinkIt</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_Breakout_for_LinkIt_Smart_7688_Duo/">Arduino Breakout for LinkIt Smart 7688 Duo</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Breakout_for_LinkIt_Smart_7688_v2.0/">Breakout for LinkIt Smart 7688 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../LinkIt_ONE/">LinkIt ONE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Linkit_Connect_7681/">Linkit Connect 7681</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>mbed</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_BLE/">Arch BLE</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_GPRS_V2/">Arch GPRS V2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Link/">Arch Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Max_v1.1/">Arch Max v1.1</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_Pro/">Arch Pro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arch_V1.1/">Arch V1.1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>RePhone</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_Basic_Sensors/">Xadow - Basic Sensors</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Xadow_GSMPlusBLE/">Xadow GSM&#43;BLE</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Wio</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link/">Wio Link</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Bootcamp_Kit/">Wio Link Bootcamp Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Environment_Kit/">Wio Link Environment Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Event_Kit/">Wio Link Event Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Link_Starter_Kit/">Wio Link Starter Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Wio_Node/">Wio Node</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Others</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Differential_Amplifier_v1.2/">Grove - Differential Amplifier v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Hub/">Grove - I2C Hub</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MOSFET/">Grove - MOSFET</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Camera/">Grove - Mini Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Serial_Camera/">Grove - Serial Camera</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Platform_Others/">Platform Others</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Grove</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove_System/">Grove System</a>
-        
-    </li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Sensor</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Analog_Accelerometer/">Grove - 3-Axis Analog Accelerometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Compass_V1.0/">Grove - 3-Axis Compass V1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-1.5g/">Grove - 3-Axis Digital Accelerometer(±1.5g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Accelerometer-400g/">Grove - 3-Axis Digital Accelerometer(±400g)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-3-Axis_Digital_Gyro/">Grove - 3-Axis Digital Gyro</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-6-Axis_AccelerometerAndCompass_V2.0/">Grove - 6-Axis Accelerometer&amp;Compass V2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-80cm_Infrared_Proximity_Sensor/">Grove - 80cm Infrared Proximity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Alcohol_Sensor/">Grove - Alcohol Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer-High-Accuracy/">Grove - Barometer (High-Accuracy)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor/">Grove - Barometer Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP180/">Grove - Barometer Sensor (BMP180)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Barometer_Sensor-BMP280/">Grove - Barometer Sensor (BMP280)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-CO2_Sensor/">Grove - CO2 Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chest_Strap_Heart_Rate_Sensor/">Grove - Chest Strap Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Collision_Sensor/">Grove - Collision Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Infrared_Temperature_Sensor/">Grove - Digital Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Digital_Light_Sensor/">Grove - Digital Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EMG_Detector/">Grove - EMG Detector</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Ear-clip_Heart_Rate_Sensor/">Grove - Ear-clip Heart Rate Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electricity_Sensor/">Grove - Electricity Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Electromagnet/">Grove - Electromagnet</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Encoder/">Grove - Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-FM_Receiver/">Grove - FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Fingerprint_Sensor/">Grove - Fingerprint Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Flame_Sensor/">Grove - Flame Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GSR_Sensor/">Grove - GSR Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor/">Grove - Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ2/">Grove - Gas Sensor(MQ2)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ3/">Grove - Gas Sensor(MQ3)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ5/">Grove - Gas Sensor(MQ5)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-MQ9/">Grove - Gas Sensor(MQ9)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Gas_Sensor-O2/">Grove - Gas Sensor(O₂)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-HCHO_Sensor/">Grove - HCHO Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Hall_Sensor/">Grove - Hall Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-High_Temperature_Sensor/">Grove - High Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Color_Sensor/">Grove - I2C Color Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Touch_Sensor/">Grove - I2C Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_10DOF/">Grove - IMU 10DOF</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IMU_9DOF_v2.0/">Grove - IMU 9DOF v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-IR_Distance_Interrupter_v1.2/">Grove - IR Distance Interrupter v1.2</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Receiver/">Grove - Infrared Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Reflective_Sensor/">Grove - Infrared Reflective Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Temperature_Sensor/">Grove - Infrared Temperature Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Light_Sensor/">Grove - Light Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Loudness_Sensor/">Grove - Loudness Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Luminance_Sensor/">Grove - Luminance Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Magnetic_Switch/">Grove - Magnetic Switch</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_Track_Ball/">Grove - Mini Track Ball</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mouse_Encoder/">Grove - Mouse Encoder</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Multichannel_Gas_Sensor/">Grove - Multichannel Gas Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Piezo_Vibration_Sensor/">Grove - Piezo Vibration Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Q_Touch_Sensor/">Grove - Q Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-RTC/">Grove - RTC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Slide_Potentiometer/">Grove - Slide Potentiometer</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">Grove - Sound Sensor</a>
-        
-            <ul>
-            <li class="toctree-l3"><a href="#introduction">Introduction</a></li>
-            
-                <li class="toctree-l3"><a href="#features">Features</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#specifications">Specifications</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#platform-support">Platform Support</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#getting-started">Getting Started</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#connection">Connection</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#upload-the-code-to-arduino">Upload the code to Arduino</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#get-raw-data">Get Raw Data</a></li>
-                
-            
-                <li class="toctree-l3"><a href="#resources">Resources</a></li>
-                
-            
-            <li class="toctree-l3"><a href="#help-us-to-make-it-better">Help us to make it better</a></li>
-            </ul>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Switch-P/">Grove - Switch(P)</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Touch_Sensor/">Grove - Touch Sensor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Water_Sensor/">Grove - Water Sensor</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Actuator</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Actuator/">Actuator</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-2-Coil_Latching_Relay/">Grove - 2-Coil Latching Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Chainable_RGB_LED/">Grove - Chainable RGB LED</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Dry-Reed_Relay/">Grove - Dry-Reed Relay</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-EL_Driver/">Grove - EL Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Haptic_Motor/">Grove - Haptic Motor</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver/">Grove - I2C Motor Driver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_Motor_Driver_V1.3/">Grove - I2C Motor Driver V1.3</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Infrared_Emitter/">Grove - Infrared Emitter</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Matrix_Driver_v1.0/">Grove - LED Matrix Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-MP3_v2.0/">Grove - MP3 v2.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Mini_I2C_Motor_Driver_v1.0/">Grove - Mini I2C Motor Driver v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Speaker/">Grove - Speaker</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-Variable_Color_LED/">Grove - Variable Color LED</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Display</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-4-Digit_Display/">Grove - 4-Digit Display</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LCD_RGB_Backlight/">Grove - LCD RGB Backlight</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-LED_Bar/">Grove - LED Bar</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-OLED_Display_1.12inch/">Grove - OLED Display 1.12&#34;</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../I2C_LCD/">I2C LCD</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-            
-    <ul class="subnav">
-    <li><span>Communication</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Communication/">Communication</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-125KHz_RFID_Reader/">Grove - 125KHz RFID Reader</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-315MHz_RF_Kit/">Grove - 315MHz RF Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-433MHz_Simple_RF_Link_Kit/">Grove - 433MHz Simple RF Link Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE-dual_model-v1.0/">Grove - BLE (dual model) v1.0</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-GPS/">Grove - GPS</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_ADC/">Grove - I2C ADC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-I2C_FM_Receiver/">Grove - I2C FM Receiver</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC/">Grove - NFC</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-NFC_Tag/">Grove - NFC Tag</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Grove-BLE_v1/">Grove BLE v1</a>
-        
-    </li>
-
-        
-    </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>IoT</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Microsoft_IoT_Grove_Kit/">Microsoft IoT Grove Kit (Azure Certified)</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Tutorial</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../survey_end/">Survey</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../Arduino_IDE_for_RePhone_Kit/">Arduino IDE for RePhone Kit</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../How_to_Install_an_Arduino_Library/">How to install an Arduino library</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>MakerPro</span></li>
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../MakerPro/">Maker Pro</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
-      </div>
-      &nbsp;
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Seeed Wiki</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Grove &raquo;</li>
-        
-      
-        
-          <li>Sensor &raquo;</li>
-        
-      
-    
-    <li>Grove - Sound Sensor</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main">
-            <div class="section">
-              
-                <h1>Grove - Sound Sensor</h1>
-                <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link"></a></h2>
-                <p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/images/page.jpg" /></p>
-<p>Grove - Sound Sensor can detect the sound strength of the environment. The main component of the module is a simple microphone, which is based on the LM358 amplifier and an electret microphone. This module&rsquo;s output is analog and can be easily sampled and tested by a Seeeduino. </p>
-<p><a href="http://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html"><img alt="" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/get_one_now.png" /></a></p>
-<h3 id="features">Features<a class="headerlink" href="#features" title="Permanent link"></a></h3>
-<ul>
-<li>Easy to use </li>
-<li>Provides analog output signal</li>
-<li>Easily integrates with Logic modules on the input side of Grove circuits</li>
-<li><a href="http://127.0.0.1:8000/Grove/Grove_System/">Grove System</a></li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>This sound sensor is to detect if there&rsquo;s sound surround or not, please don&rsquo;t use the module to collect sound signal. Such as you can use it to make a sound control lamp, but not as a recording device.</p>
-</div>
-<h3 id="specifications">Specifications<a class="headerlink" href="#specifications" title="Permanent link"></a></h3>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Operating Voltage Range</td>
-<td>3.3/5 V</td>
-</tr>
-<tr>
-<td>Operating Current(Vcc=5V)</td>
-<td>4~5 mA</td>
-</tr>
-<tr>
-<td>Voltage Gain(V=6V, f=1kHz)</td>
-<td>26 dB</td>
-</tr>
-<tr>
-<td>Microphone sensitivity(1kHz)</td>
-<td>52-48 dB</td>
-</tr>
-<tr>
-<td>Microphone Impedance</td>
-<td>2.2k Ohm</td>
-</tr>
-<tr>
-<td>Microphone Frequency</td>
-<td>16-20 kHz</td>
-</tr>
-<tr>
-<td>Microphone S/N Radio</td>
-<td>54 dB</td>
-</tr>
-</tbody>
-</table>
-<h3 id="platform-support">Platform Support<a class="headerlink" href="#platform-support" title="Permanent link"></a></h3>
-<table>
-<thead>
-<tr>
-<th>Arduino</th>
-<th>Wio</th>
-<th>BeagleBone</th>
-<th>Raspberry Pi</th>
-<th>LinkIt</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/arduino_logo.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/wio_logo.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/bbg_logo.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/raspberry_pi_logo.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Seeed-WiKi/master/docs/images/linkit_logo.jpg" /></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link"></a></h3>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This chapter is based on Win10 and Arduino IDE 1.6.9</p>
-</div>
-<p>This an easy-to-use module, what you need to do is connect the signal pin (the YELLOW pin of Grove cable) to the ADC input of your controller. If there&rsquo;s no internal ADC in your controller, <a href="http://www.seeedstudio.com/Grove-I2C-ADC-p-1580.html">Grove - I2C ADC</a> is recommend. </p>
-<p>Here we will show you how this Grove - Sound Sensor works via a simple demo. First of all, you need to prepare the below stuffs:</p>
-<table>
-<thead>
-<tr>
-<th>Seeeduino V4</th>
-<th>Grove - Sound Sensor</th>
-<th>Base Shield</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_1.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/images/gs_1.jpg" /></td>
-<td><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Light_Sensor/master/images/gs_4.jpg" /></td>
-</tr>
-<tr>
-<td><a href="http://www.seeedstudio.com/Seeeduino-V4.2-p-2517.html">Get ONE Now</a></td>
-<td><a href="http://www.seeedstudio.com/Grove-Sound-Sensor-p-752.html">Get ONE Now</a></td>
-<td><a href="http://www.seeedstudio.com/Grove-Universal-4-Pin-20cm-Unbuckled-Cable-%285-PCs-Pack%29-p-749.html">Get ONE Now</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="connection">Connection<a class="headerlink" href="#connection" title="Permanent link"></a></h3>
-<p>Thanks to the benefit of Grove series modules, you don&rsquo;t need to make soldering or bread board, what you need to do is connect the modules to the right port of Base Shield. For this demo, we have only one Grove module. </p>
-<ul>
-<li>Grove - Sound Sensor is an analog output module, we connect it to <strong>A0</strong> at this demo</li>
-</ul>
-<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/images/connection.jpg" /></p>
-<h3 id="upload-the-code-to-arduino">Upload the code to Arduino<a class="headerlink" href="#upload-the-code-to-arduino" title="Permanent link"></a></h3>
-<p>Copy the below code to Arduino IDE.</p>
-<pre><code>// test code for Grove - Sound Sensor
-// loovee @ 2016-8-30
-
-const int pinAdc = A0;
-
-void setup()
-{
-    Serial.begin(115200);
-    //Serial.println(&quot;Grove - Sound Sensor Test...&quot;);
-}
-
-void loop()
-{
-    long sum = 0;
-    for(int i=0; i&lt;32; i++)
-    {
-        sum += analogRead(pinAdc);
-    }
-
-    sum &gt;&gt;= 5;
-
-    Serial.println(sum);
-    delay(10);
-}
-
-</code></pre>
-
-<p>Then choose the right Board and COM port, and then click on the Upload button, this process take few seconds. </p>
-<h3 id="get-raw-data">Get Raw Data<a class="headerlink" href="#get-raw-data" title="Permanent link"></a></h3>
-<p>Here let&rsquo;s click on <strong>Serial &gt; Plotter</strong> to get the changing curve of the sensor. Please make a noise to view the change of the value. </p>
-<p><img alt="enter image description here" src="https://raw.githubusercontent.com/SeeedDocument/Grove_Sound_Sensor/master/images/sound_raw.png" /></p>
-<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link"></a></h2>
-<ul>
-<li><a href="https://github.com/SeeedDocument/Grove_Sound_Sensor/raw/master/resources/Grove%20-%20Sound%20Sensor.zip">Schematic in Eagle File</a></li>
-<li><a href="https://github.com/SeeedDocument/Grove_Sound_Sensor">Github Page of this Document</a></li>
-</ul>
-                <h2 id="help-us-to-make-it-better">Help us to make it better<a class="headerlink" href="#help-us-to-make-it-better" title="Permanent link"></a></h2>
-                <iframe style="height: 600px; width: 700px; margin: 10px 0 10px;" allowTransparency="true" src="https://www.surveymonkey.com/r/SoundSensor" frameborder="0"></iframe></iframe>
-              
-            </div>
-          </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Grove-Switch-P/" class="btn btn-neutral float-right" title="Grove - Switch(P)">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Grove-Slide_Potentiometer/" class="btn btn-neutral" title="Grove - Slide Potentiometer"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
-    </div>
-  
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
-  </div>
-
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
-</footer>
-	  
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-<div class="rst-versions" role="note" style="cursor: pointer">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-      
-      
-        <span><a href="../Grove-Slide_Potentiometer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Grove-Switch-P/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-
-</body>
-</html>
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Sound Sensor</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Sound Sensor</h1><div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.seeedstudio.com/depot/Grove-Sound-Sensor-p-752.html"><img src="img/Wiki_soundsensor.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>Grove - Sound Sensor can detect the sound strength of the environment. The main component of the module is a simple microphone, which is based on the LM358 amplifier and an electret microphone. This module's output is analog and can be easily sampled and tested by a <a href="/Seeeduino" title="Seeeduino">Seeeduino</a>.
+</p><p><br/>
+<a href="http://www.seeedstudio.com/depot/Grove-Sound-Sensor-p-752.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p><p><br/>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li> Easy to use sound sensor module
+</li><li> Provides analog output signal
+</li><li> Easily integrates with Logic modules on the input side of Grove circuits
+</li><li> Uses Standard 4-pin <a href="/GROVE_System#Grove_Cables" title="GROVE System">Grove Cables</a> to connect to other Grove modules such as <a href="/GROVE_System#Power" title="GROVE System">Grove Power Modules</a>, <a href="/GROVE_System#Logic_Gates" title="GROVE System">Logic Gates</a> and <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a>
+</li></ul>
+<p><br/>
+</p>
+<h2> Specifications</h2>
+<ul><li> Operating voltage range: 4-12V
+</li><li> Operating current (Vcc=5V): 4-8mA
+</li><li> Voltage Gain (VS=6V, f=1 kHz): 26dB
+</li><li> Microphone sensitivity (1Khz): 52-48dB
+</li><li> Microphone Impedance: 2.2KΩ
+</li><li> Microphone Frequency: 16-20Khz
+</li><li> Microphone S/N ratio: 54dB
+</li></ul>
+<p><br/>
+</p>
+<h2> Getting Started</h2>
+<h3> Standalone</h3>
+<p>Follow these steps to build a sample Grove circuit using this module but without using any microcontroller board:
+</p>
+<ol><li> Connect the sound sensor module to the input side of your circuit (to the left of the power module). On the output side of the circuit, you may use a range of <a href="/GROVE_System#User_Interface" title="GROVE System">User Interface</a> modules (<a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a>, <a href="/Grove-LED_String_Light" title="Grove - LED String Light">Grove - LED String Light</a>, <a href="/Grove-Mini_Fan" title="Grove - Mini Fan">Grove - Mini Fan</a>, <a href="/Grove-Buzzer" title="Grove - Buzzer">Grove - Buzzer</a>, <a href="/Grove-Recorder" title="Grove - Recorder">Grove - Recorder</a> etc.) 
+</li><li> Power up the circuit when complete.
+</li><li> The sound sensor module can now be used to trigger an output. For example:
+</li></ol>
+<dl><dd><dl><dd><dl><dd><ul><li> When used in conjunction with a <a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a> output module, observe that the LED turns ON when the sound sensor detects audio and turns off in silence. The same behavior can be seen when the sound sensor is used with the <a href="/Grove-LED_String_Light" title="Grove - LED String Light">Grove - LED String Light</a> module - when there is sound, the lights will turn ON, and when there is silence, the lights will turn OFF.
+</li></ul>
+<dl><dd><ul><li> Add a <a href="/Grove-NOT" title="Grove - NOT">Grove - NOT</a> module between the sound sensor and the power module to reverse the logic that triggers the LEDs on the <a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a> or <a href="/Grove-LED_String_Light" title="Grove - LED String Light">Grove - LED String Light</a> modules. With the addition of the Logical NOT gate on the input side, you should see that the LEDs remain OFF when sound or music is detected, and turn ON when there is silence. <br/>
+</li></ul>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<p>You can use either the <a href="/Grove-Mixer_Pack#2._USB_Power" title="Grove - Mixer Pack">Grove - USB Power</a> module or the <a href="/Grove-DC_Jack_Power" title="Grove - DC Jack Power">Grove - DC Jack Power</a> module for building this Grove circuit.
+</p>
+<h3> With <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a></h3>
+<p>Follow these simple steps to build a Grove circuit using the light sensor:
+</p>
+<ol><li> When using the module in conjunction with an <a href="/w/index.php?title=Arduino&amp;action=edit&amp;redlink=1" title="Arduino (page does not exist)">Arduino</a> or a <a href="/Seeeduino" title="Seeeduino">Seeeduino</a>, use the <a href="/Grove-Base_Shield" title="Grove - Base Shield">Grove - Base Shield</a> and connect the Grove - Sound Sensor module to the shield using a designated Grove Interface. Also attach an output module such as a <a href="/Grove-LED" title="Grove - LED">Grove - LED</a> or <a href="/Grove-Red_LED" title="Grove - Red LED">Grove - Red LED</a> which will get triggered based on input received from the sound sensor (shown below).<br/><div class="center"><div class="floatnone"><img src="img/Sound_LED.jpg" width="400"/></div></div>
+</li><li> Upload the following sample sketch to make the LED turn ON and OFF based on input from the sound sensor:
+</li></ol>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co1">// Function: If the sound sensor senses a sound that is up to the threshold you set in the code, the LED is on for 200ms.</span>
+<span class="co1">// Hardware: Grove - Sound Sensor, Grove - LED</span>
+ 
+<span class="coMULTI">/*macro definitions of the sound sensor and the LED*/</span>
+<span class="co2">#define SOUND_SENSOR A0</span>
+<span class="co2">#define LED 3      // the number of the LED pin</span>
+ 
+<span class="co2">#define THRESHOLD_VALUE 400//The threshold to turn the led on 400.00*5/1024 = 1.95v</span>
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw2">Serial</span>.<span class="kw3">begin</span><span class="br0">(</span><span class="nu0">9600</span><span class="br0">)</span><span class="sy4">;</span>
+    pins_init<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> sensorValue <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>SOUND_SENSOR<span class="br0">)</span><span class="sy4">;</span><span class="co1">//use A0 to read the electrical signal</span>
+    <span class="kw2">Serial</span>.<span class="kw3">print</span><span class="br0">(</span><span class="st0">"sensorValue "</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw2">Serial</span>.<span class="kw3">println</span><span class="br0">(</span>sensorValue<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">if</span><span class="br0">(</span>sensorValue <span class="sy1">&gt;</span> THRESHOLD_VALUE<span class="br0">)</span>
+    <span class="br0">{</span>
+        turnOnLED<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span><span class="co1">//if the value read from A0 is larger than 400,then light the LED</span>
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">200</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    turnOffLED<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> pins_init<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>LED, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>SOUND_SENSOR, <span class="kw2">INPUT</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> turnOnLED<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>LED,<span class="kw2">HIGH</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> turnOffLED<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>LED,<span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br/>
+</p>
+<dl><dd>If the sound of the environment is greater than the threshold, then the LED will light up.
+</dd></dl>
+<h3> With <a href="/w/index.php?title=TI_LaunchPad&amp;action=edit&amp;redlink=1" title="TI LaunchPad (page does not exist)">TI LaunchPad</a></h3>
+<p>Turning on a LED by Sound (Sound Sensor)<br/>
+</p>
+<dl><dd>    This example program shows how to use the sound sensor (microphone. When the incoming sound amplitude exceeds a threshold, we will turn an LED on for 1 second.
+</dd></dl>
+<p><img src="img/Sound_sensor.jpg" width="600"/>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="coMULTI">/*
+ Sound Sensor
+ A simple program demonstrate sound sensor senses a sound that is up to the threshold you set 
+ in the code, the LED is on for 1s. 
+ 
+ The circuit:
+ * sig pin of the sound sensor to the analog pin 24 (J6 plug on Grove Base BoosterPack)
+ * one side pin (either one) to ground
+ * the other side pin to +VCC
+ * LED anode (long leg) attached to RED_LED
+ * LED cathode (short leg) attached to ground
+ 
+ * Note:   
+ 
+ 
+ This example code is in the public domain.
+ 
+ http://www.seeedstudio.com/depot/Grove-Sound-Sensor-p-752.html?cPath=25_128
+ */</span>
+ 
+<span class="co2">#define SOUND_SENSOR       24           /* sound sensor pin */          </span>
+<span class="co2">#define LED                RED_LED      /* LED pin */</span>
+<span class="co2">#define THRESHOLD_VALUE    3000          /* Depending on your LaunchPad’s ADC resolution you may have to adjust the threshold */</span>
+ 
+<span class="co2">#define ON                 HIGH                    /* led on */</span>
+<span class="co2">#define OFF                LOW                     /* led off */</span>
+<span class="co2">#define _handle_led(x)     digitalWrite(LED, x)    /* handle led */</span>
+ 
+<span class="coMULTI">/* Global Variables */</span>
+<span class="kw4">int</span> sound_value <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> <span class="kw2">setup</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="coMULTI">/* Initialize led pin */</span>
+    <span class="kw3">pinMode</span><span class="br0">(</span>LED, <span class="kw2">OUTPUT</span><span class="br0">)</span><span class="sy4">;</span>  
+    <span class="kw3">digitalWrite</span><span class="br0">(</span>LED, <span class="kw2">LOW</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> <span class="kw2">loop</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+ 
+    <span class="coMULTI">/* read the sound value */</span>
+    sound_value <span class="sy1">=</span> <span class="kw3">analogRead</span><span class="br0">(</span>SOUND_SENSOR<span class="br0">)</span><span class="sy4">;</span>         
+    <span class="coMULTI">/* if the value is larger than threshold, turn on led */</span>
+    <span class="kw1">if</span><span class="br0">(</span>sound_value <span class="sy1">&gt;</span> THRESHOLD_VALUE<span class="br0">)</span> <span class="br0">{</span>
+        _handle_led<span class="br0">(</span>ON<span class="br0">)</span><span class="sy4">;</span> 
+        <span class="kw3">delay</span><span class="br0">(</span><span class="nu0">1000</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    _handle_led<span class="br0">(</span>OFF<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h3> With <a href="/GrovePiPlus" title="GrovePi+">Raspberry Pi</a></h3>
+<p>You should connect to <a href="/GrovePiPlus" title="GrovePi+">GrovePi+</a> with Grove - Sound Sensor and <a href="/w/index.php?title=Grove_-_Green_LED&amp;action=edit&amp;redlink=1" title="Grove - Green LED (page does not exist)">Grove - Green LED</a>. Such as the following picture. When sound level greater than a certain value,the LED will turn on.
+</p>
+<div class="thumb tnone"><div class="thumbinner" style="width:402px;"><img src="img/GrovePiPlus_sound_sensor.jpeg" width="400"/> <div class="thumbcaption"></div></div></div>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="arduino source-arduino"><pre class="de1"><span class="co2"># GrovePi + Grove Sound Sensor + Grove LED</span>
+ 
+import <span class="kw3">time</span>
+import grovepi
+ 
+<span class="co2"># Connect the Grove Sound Sensor to analog port A0</span>
+<span class="co2"># SIG,NC,VCC,GND</span>
+sound_sensor <span class="sy1">=</span> <span class="nu0">0</span>
+ 
+<span class="co2"># Connect the Grove LED to digital port D5</span>
+<span class="co2"># SIG,NC,VCC,GND</span>
+led <span class="sy1">=</span> <span class="nu0">5</span>
+ 
+grovepi.<span class="kw3">pinMode</span><span class="br0">(</span>sound_sensor,<span class="st0">"INPUT"</span><span class="br0">)</span>
+grovepi.<span class="kw3">pinMode</span><span class="br0">(</span>led,<span class="st0">"OUTPUT"</span><span class="br0">)</span>
+ 
+<span class="co2"># The threshold to turn the led on 400.00 * 5 / 1024 = 1.95v</span>
+threshold_value <span class="sy1">=</span> <span class="nu0">400</span>
+ 
+<span class="kw1">while</span> True<span class="sy4">:</span>
+    <span class="kw2">try</span><span class="sy4">:</span>
+        <span class="co2"># Read the sound level</span>
+        sensor_value <span class="sy1">=</span> grovepi.<span class="kw3">analogRead</span><span class="br0">(</span>sound_sensor<span class="br0">)</span>
+ 
+        <span class="co2"># If loud, illuminate LED, otherwise dim</span>
+        <span class="kw1">if</span> sensor_value <span class="sy1">&gt;</span> threshold_value<span class="sy4">:</span>
+            grovepi.<span class="kw3">digitalWrite</span><span class="br0">(</span>led,<span class="nu0">1</span><span class="br0">)</span>
+        <span class="kw1">else</span><span class="sy4">:</span>
+            grovepi.<span class="kw3">digitalWrite</span><span class="br0">(</span>led,<span class="nu0">0</span><span class="br0">)</span>
+ 
+        <span class="kw3">print</span> <span class="st0">"sensor_value ="</span>, sensor_value
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu18">.5</span><span class="br0">)</span>
+ 
+    except IOError<span class="sy4">:</span>
+        <span class="kw3">print</span> <span class="st0">"Error"</span></pre></div></div>
+<h4> Run the program</h4>
+<ul><li> Find the path to the file(According to your own path)
+</li></ul>
+<pre>   cd GrovePi/Software/Python/
+</pre>
+<ul><li> Run Program
+</li></ul>
+<pre>   sudo python grove_sound_sensor.py
+</pre>
+<h3>  With Beaglebone Green</h3>
+<p>To begin editing programs that live on BBG, you can use the Cloud9 IDE.<br/>
+As a simple exercise to become familiar with Cloud9 IDE, creating a simple application to blink one of the 4 user programmable LEDs on the BeagleBone is a good start.
+</p><p>If this is your first time to use Cloud9 IDE, please follow this <a href="/Beaglebone_green#Getting_Started"><b>link</b></a>.
+<br/>
+</p><p><br/>
+<b>Step1:</b> Set the Grove - UART socket as a Grove - GPIO Socket, just follow this <a href="http://www.seeedstudio.com/recipe/362-how-to-use-the-grove-uart-port-as-a-gpio-on-bbg.html"><b>link</b></a>.
+</p><p><b>Step2:</b> Click the "+" in the top-right to create a new file.
+</p><p><img src="img/C9-create-tab.png" width="168"/>
+</p><p><img src="img/C9_newfile.jpg" width="440"/>
+</p><p><b>Step3:</b> Copy and paste the following code into the new tab
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">from</span> Adafruit_I2C <span class="kw1">import</span> Adafruit_I2C
+<span class="kw1">import</span> <span class="kw3">time</span>
+ 
+ADDR_ADC121 <span class="sy0">=</span> <span class="nu0">0x50</span>
+ 
+REG_ADDR_RESULT <span class="sy0">=</span> <span class="nu0">0x00</span>
+REG_ADDR_ALERT <span class="sy0">=</span> <span class="nu0">0x01</span>
+REG_ADDR_CONFIG <span class="sy0">=</span> <span class="nu0">0x02</span>
+REG_ADDR_LIMITL <span class="sy0">=</span> <span class="nu0">0x03</span>
+REG_ADDR_LIMITH <span class="sy0">=</span> <span class="nu0">0x04</span>
+REG_ADDR_HYST <span class="sy0">=</span> <span class="nu0">0x05</span>
+REG_ADDR_CONVL <span class="sy0">=</span> <span class="nu0">0x06</span>
+REG_ADDR_CONVH <span class="sy0">=</span> <span class="nu0">0x07</span>
+ 
+i2c <span class="sy0">=</span> Adafruit_I2C<span class="br0">(</span>ADDR_ADC121<span class="br0">)</span>           
+ 
+<span class="kw1">class</span> I2cAdc:
+    <span class="kw1">def</span> <span class="kw4">__init__</span><span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+        i2c.<span class="me1">write8</span><span class="br0">(</span>REG_ADDR_CONFIG<span class="sy0">,</span> <span class="nu0">0x20</span><span class="br0">)</span>
+ 
+    <span class="kw1">def</span> read_adc<span class="br0">(</span><span class="kw2">self</span><span class="br0">)</span>:
+        <span class="st0">"Read ADC data 0-4095."</span>
+        data_list <span class="sy0">=</span> i2c.<span class="me1">readList</span><span class="br0">(</span>REG_ADDR_RESULT<span class="sy0">,</span> <span class="nu0">2</span><span class="br0">)</span>
+        <span class="co1">#print 'data list', data_list</span>
+        data <span class="sy0">=</span> <span class="br0">(</span><span class="br0">(</span>data_list<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> &amp; <span class="nu0">0x0f</span><span class="br0">)</span> <span class="sy0">&lt;&lt;</span> <span class="nu0">8</span> | data_list<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="br0">)</span> &amp; <span class="nu0">0xfff</span>
+        <span class="kw1">return</span> data
+ 
+<span class="kw1">if</span> __name__ <span class="sy0">==</span> <span class="st0">'__main__'</span>:
+    <span class="co1"># Connect the Grove - I2C ADC to I2C Grove port of Beaglebone Green.</span>
+    adc <span class="sy0">=</span> I2cAdc<span class="br0">(</span><span class="br0">)</span>
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        <span class="kw1">print</span> <span class="st0">'sensor value '</span><span class="sy0">,</span> adc.<span class="me1">read_adc</span><span class="br0">(</span><span class="br0">)</span>
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">.2</span><span class="br0">)</span></pre></div></div>
+<p><b>Step4:</b> Save the file by clicking the disk icon with a name "grove_i2c_adc.py".
+</p><p><b>Step5:</b> Create a new file Copy the following code into the new tab and save it with the .py extension.
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="python source-python"><pre class="de1"><span class="kw1">import</span> <span class="kw3">time</span>
+<span class="kw1">from</span> logo <span class="kw1">import</span> print_seeedstudio
+<span class="kw1">import</span> grove_i2c_adc
+<span class="kw1">import</span> Adafruit_BBIO.<span class="me1">GPIO</span> <span class="kw1">as</span> GPIO
+ 
+<span class="co1"># Reference voltage of ADC is 3.0v</span>
+ADC_REF <span class="sy0">=</span> <span class="nu0">3.0</span>
+ 
+<span class="co1"># Vcc of the grove interface is normally 3.3v</span>
+GROVE_VCC <span class="sy0">=</span> <span class="nu0">3.3</span>
+ 
+ 
+ 
+adc <span class="sy0">=</span> grove_i2c_adc.<span class="me1">I2cAdc</span><span class="br0">(</span><span class="br0">)</span>
+ 
+<span class="kw1">def</span> read_sound_sensor_values<span class="br0">(</span><span class="br0">)</span>:
+    <span class="st0">"Read voltage values from Grove Sound Sensor"</span>
+    total_value <span class="sy0">=</span> <span class="nu0">0</span>
+    <span class="kw1">for</span> index <span class="kw1">in</span> <span class="kw2">range</span><span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span>:
+        sensor_value <span class="sy0">=</span> adc.<span class="me1">read_adc</span><span class="br0">(</span><span class="br0">)</span>
+<span class="co1">#        print "sensor_value = ", sensor_value</span>
+        total_value +<span class="sy0">=</span> sensor_value
+        <span class="kw3">time</span>.<span class="me1">sleep</span><span class="br0">(</span><span class="nu0">0.01</span><span class="br0">)</span>
+<span class="co1">#    print "total_value = ", total_value</span>
+    average_value <span class="sy0">=</span> <span class="kw2">float</span><span class="br0">(</span>total_value / <span class="nu0">5</span><span class="br0">)</span>
+ 
+    voltage_value <span class="sy0">=</span> average_value / <span class="nu0">4095</span> * ADC_REF * <span class="nu0">2</span>
+    <span class="kw1">return</span> voltage_value
+ 
+<span class="co1"># Function: If the sound sensor senses a sound that is up to the threshold you set in the code, the LED is on for 1s.</span>
+<span class="co1"># Hardware: Grove - I2C ADC, Grove - Sound Sensor, Grove - LED(You can also replace Grove - LED with Grove - Buzzer.)</span>
+<span class="co1"># Note: Use P9_22(UART2_RXD) as GPIO.</span>
+<span class="co1"># Connect the Grove LED to UART Grove port of Beaglebone Green.</span>
+<span class="co1"># Connect the Grove - I2C ADC to I2C Grove port of Beaglebone Green, and then connect the Grove - Sound Sensor to Grove - I2C ADC.</span>
+<span class="kw1">if</span> __name__<span class="sy0">==</span> <span class="st0">'__main__'</span>:
+    print_seeedstudio<span class="br0">(</span><span class="br0">)</span>
+ 
+    <span class="kw1">while</span> <span class="kw2">True</span>:
+        <span class="kw1">try</span>:
+            <span class="co1"># Read voltage values from Grove Sound Sensor</span>
+            sensor_voltage_value <span class="sy0">=</span> read_sound_sensor_values<span class="br0">(</span><span class="br0">)</span>
+ 
+            <span class="kw1">print</span> <span class="st0">"sensor_voltage_value = "</span><span class="sy0">,</span> sensor_voltage_value
+<span class="co1">#            time.sleep(2)</span>
+ 
+        <span class="kw1">except</span> <span class="kw2">IOError</span>:
+            <span class="kw1">print</span> <span class="st0">"Error"</span></pre></div></div>
+<p><b>Step6:</b> Connect Grove Sound Sensor to Grove I2C ADC which is connected to Grove I2C socket on BBG.
+</p><p><b>Step7:</b> Run the code.
+You'll find that the terminal outputs Sound value every 2 seconds.
+</p>
+<h2> Availability</h2>
+<p>This <a href="/Grove" title="Grove">Grove</a> module is available as part of the following <a href="/GROVE_System#GROVE_Kit_Series" title="GROVE System">Grove Kit Series</a>:
+</p>
+<ul><li> <a href="/GROVE_MIXER_PACK_V2" title="GROVE MIXER PACK V2">Grove Mixer Pack V2</a>
+</li><li> <a href="/Grove-Mixer_Pack" title="Grove - Mixer Pack">Grove - Mixer Pack</a>
+</li><li> <a href="/Grove-Toy_Kit" title="Grove - Toy Kit">Grove - Toy Kit</a>
+</li></ul>
+<p>Alternatively, it can be bought stand-alone <a href="http://www.seeedstudio.com/depot/Grove-Sound-Sensor-p-752.html">here</a> at the <a href="http://www.seeedstudio.com/depot/Grove-Sound-Sensor-p-752.html">Seeed Studio Bazaar</a>.
+</p>
+<h2> Resources</h2>
+<ul><li> <a href="res/Grove-Sound_Sensor_v1.pdf">Grove - Sound Sensor Schematic (pdf)</a>
+</li><li> <a href="res/Grove-Sound_Sensor_v1.3_eagle.zip">Grove - Sound Sensor Source Files v1.3</a>
+</li><li> <a href="http://garden.seeedstudio.com/images/6/6c/Sound_sensor_v0.9b.zip">Grove - Sound Sensor Eagle files v0.9b</a>
+</li><li> <a href="http://garden.seeedstudio.com/images/a/ae/LM386.pdf">LM386pdf</a>
+</li><li> <a href="/Upload_Code">how to upload code</a>
+</li><li>
+</li></ul>
+<h2> Related Projects </h2>
+<p>If you want to make some awesome projects by Grove - Sound Sensor, here's some projects for reference.
+</p>
+<h3> Swing Baby Groot</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:202px;"><a href="http://www.seeedstudio.com/recipe/141-swing-baby-groot.html"><img src="img/54fe9de747c9e.jpg" width="200"/></a> <div class="thumbcaption"></div></div></div>
+<p>When someone talk to Groots， they will dance for him/her and show him/her their wonderful performance.
+It is the sound sensor that works the magic. The servo is activated whenever a sound is received by the sensor.
+</p><p><a href="http://link_to_the_demo1"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h3> LinkIt ONE IoT Demo</h3>
+<div class="thumb tright"><div class="thumbinner" style="width:402px;"><a href="http://www.seeedstudio.com/recipe/77-linkit-one-iot-demo.html"><img src="img/Seeed-recipe-77-20141020151546.jpg" width="400"/></a> <div class="thumbcaption"></div></div></div>
+<p>This is an IoT demo made by LinkIt ONE and <a href="/Grove_System" title="Grove System">Grove</a> including sounder sensor.
+</p><p>With this demo, we can:
+</p>
+<ul><li> Display household temperautre, humidity, luminosity, volume control data collection on OLED screen
+</li></ul>
+<ul><li> Cloud service, data uploaded to Cloud platform Xively, real-time monitoring
+</li></ul>
+<ul><li> Data retention for reviewing how data changes over time
+</li></ul>
+<ul><li> Remote control Household Appliances by sending a message
+</li></ul>
+<ul><li> Table Lamp, 3D Printing, controlled by your phone
+</li></ul>
+<p><a href="http://link_to_the_demo1"><img src="img/Wiki_makeitnow_logo.png" width="200"/></a>
+</p><p><br/>
+</p>
+<h2> Help us to make it better </h2>
+<p><iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/3WMLBP9" width="500"></iframe>
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

@@ -1,0 +1,120 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Renbotics ServoShield Rev</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Renbotics ServoShield Rev</h1>
+
+<p>The Renbotics ServoShield is an Arduino-compatible shield that uses two 4017 decade counters to drive up to 16 servos using only 4 pins (digital pins 6 to 9) and as little as one 8bit timer (Timer 2) in standard mode or two 16/8bit timers (Timer 1 and Timer 2 for Duemilanove or Timer 3 for Mega) in high accuracy mode. It also includes a 196 point breadboard style prototyping area.
+</p><p><b>Model: <a href="http://www.seeedstudio.com/depot/renbotics-servoshield-rev-11-p-498.html?cPath=132_134">OSK102E1P</a></b>
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/ServoShieldKitLarge.jpg">http://www.seeedstudio.com/depot/images/product/ServoShieldKitLarge.jpg</a>
+</p>
+<h2>  Features  </h2>
+<ul><li>16 Servo Channels
+</li><li>Convenient screw terminal for servo power supply
+</li><li>196 Point breadboard style prototyping area
+</li><li>Compatible with Arduino Duemilanove and Arduino Mega
+</li><li>Easy to use API
+</li></ul>
+<h2>  Application Ideas  </h2>
+<ul><li>Robotics
+</li><li>Animatronics
+</li><li>Mechatronic Art
+</li></ul>
+<h2>  Cautions  </h2>
+<p>The warnings and wrong operations possible cause dangerous. 
+</p>
+<h2>  Schematic  </h2>
+<p>It is the schematic, the circuit about Eagle resource like .pdf should linked here in order to avoid memory exhausted. 
+</p>
+<h2>  Specification  </h2>
+<p>May include key specification and other specifications. 
+</p>
+<h3>  Key Specification  </h3>
+<h2>  Pin definition and Rating  </h2>
+<h2>  Mechanic Dimensions  </h2>
+<h2>  Usage  </h2>
+<h3>  Hardware Installation  </h3>
+<p>Accembled View:
+</p><p><a href="http://www.seeedstudio.com/depot/images/product/StackedLarge.jpg">http://www.seeedstudio.com/depot/images/product/StackedLarge.jpg</a>
+</p>
+<h3>  Programming  </h3>
+<p><b>Sample 1: Simple servo sweeper</b>
+</p>
+<div class="mw-geshi mw-code mw-content-ltr container" dir="ltr"><div class="php source-php"><pre class="de1"><span class="co2">#include &lt;ServoShield.h&gt;
+</span>ServoShield servos<span class="sy0">;</span> <span class="co1">//Create a ServoShield object</span>
+void setup<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+<span class="kw1">for</span> <span class="br0">(</span>int servo <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> servo <span class="sy0">&lt;</span> <span class="nu0">16</span><span class="sy0">;</span> servo<span class="sy0">++</span><span class="br0">)</span><span class="co1">//Initialize all 16 servos</span>
+<span class="br0">{</span>
+servos<span class="sy0">.</span>setbounds<span class="br0">(</span>servo<span class="sy0">,</span> <span class="nu0">1000</span><span class="sy0">,</span> <span class="nu0">2000</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//Set the minimum and maximum pulse duration</span>
+servos<span class="sy0">.</span>setposition<span class="br0">(</span>servo<span class="sy0">,</span> <span class="nu0">1500</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//Set the initial position of the servo</span>
+<span class="br0">}</span>
+servos<span class="sy0">.</span>start<span class="br0">(</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//Start the servo shield</span>
+<span class="br0">}</span>
+void loop<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+<span class="kw1">for</span><span class="br0">(</span>int <span class="kw3">pos</span> <span class="sy0">=</span> <span class="nu0">1000</span><span class="sy0">;</span> <span class="kw3">pos</span> <span class="sy0">&lt;</span> <span class="nu0">2000</span><span class="sy0">;</span> <span class="kw3">pos</span><span class="sy0">++</span><span class="br0">)</span> <span class="co1">//Move the servos from 0 degrees to 180 degrees</span>
+<span class="br0">{</span> <span class="co1">//in steps of 1 degree</span>
+<span class="kw1">for</span> <span class="br0">(</span>int i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">16</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span> <span class="co1">//for all 16 servos</span>
+servos<span class="sy0">.</span>setposition<span class="br0">(</span>i<span class="sy0">,</span> <span class="kw3">pos</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//Tell servo to go to position in variable 'pos'</span>
+delay<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="kw1">for</span><span class="br0">(</span>int <span class="kw3">pos</span> <span class="sy0">=</span> <span class="nu0">2000</span><span class="sy0">;</span> <span class="kw3">pos</span> <span class="sy0">&gt;=</span> <span class="nu0">1000</span><span class="sy0">;</span> pos<span class="sy0">--</span><span class="br0">)</span><span class="co1">//Move the servos from 180 degrees to 0 degrees</span>
+<span class="br0">{</span>
+<span class="kw1">for</span> <span class="br0">(</span>int i <span class="sy0">=</span> <span class="nu0">0</span><span class="sy0">;</span> i <span class="sy0">&lt;</span> <span class="nu0">16</span><span class="sy0">;</span> i<span class="sy0">++</span><span class="br0">)</span> <span class="co1">//all 16 servos</span>
+servos<span class="sy0">.</span>setposition<span class="br0">(</span>i<span class="sy0">,</span> <span class="kw3">pos</span><span class="br0">)</span><span class="sy0">;</span> <span class="co1">//Tell servo to go to position in variable 'pos'</span>
+delay<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3>  Example  </h3>
+<p>The projects and application examples. 
+</p>
+<h2>  Bill of Materials (BOM) /parts list  </h2>
+<ul><li>2 x 4017 Decade Counter DIP16
+</li><li>2 x 10nf Capacitors
+</li><li>2 x 6 pin Female Shield Stacking Headers
+</li><li>2 x 8 pin Female Shield Stacking Headers
+</li><li>1 x 2 pin Screw Terminal
+</li><li>3 x 16 pin Male Breakaway Headers
+</li></ul>
+<h2>  FAQ  </h2>
+<p>Please list your question here:
+</p>
+<h2>  Support  </h2>
+<p>If you have questions or other better design ideas, you can go to our <a href="http://www.seeedstudio.com/forum">forum</a> or <a href="http://wish.seeedstudio.com">wish</a> to discuss.
+</p>
+<h2>  Version Tracker  </h2>
+<table>
+<tr>
+<th> Revision
+</th>
+<th> Descriptions
+</th>
+<th> Release
+</th></tr>
+<tr>
+<td width="300px"> v1.1
+</td>
+<td width="500px"> Initial public release
+</td>
+<td width="200px"> Aug 23, 2009
+</td></tr></table>
+<h2>  Bug Tracker  </h2>
+<p>Bug Tracker is the place you can publish any bugs you think you might have found during use. Please write down what you have to say, your answers will help us improve our products. 
+</p>
+<h2>  Additional Idea  </h2>
+<p>The Additional Idea is the place to write your project ideas about this product, or other usages you've found. Or you can write them on Projects page. 
+</p>
+<h2>  Resources  </h2>
+<ul><li><a href="http://www.seeedstudio.com/depot/datasheet/RenboticsServoShield1.5.pdf">Manual Rev 1.5</a>
+</li><li><a href="http://www.seeedstudio.com/depot/images/product/ServoShield.zip">Arduino Library Rev 1.3 (Updated 07-09-2009)</a>
+</li></ul>
+<h2>  How to buy  </h2>
+<p>Click here to buy: <a href="http://www.seeedstudio.com/depot/renbotics-servoshield-rev-11-p-498.html?cPath=132_134">http://www.seeedstudio.com/depot/renbotics-servoshield-rev-11-p-498.html?cPath=132_134</a>.
+</p>
+<h2>  See Also  </h2>
+<p>Other related products and resources.
+</p>
+<h2>  Licensing  </h2>
+<p>This documentation is licensed under the Creative Commons <a href="http://creativecommons.org/licenses/by-sa/3.0/">Attribution-ShareAlike License 3.0</a> Source code and libraries are licensed under <a href="http://www.gnu.org/licenses/gpl.html">GPL/LGPL</a>, see source code files for details.
+</p>
+<h2>  External Links  </h2>
+<p>Links to external webpages which provide more application ideas, documents/datasheet or software libraries
+</p>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>

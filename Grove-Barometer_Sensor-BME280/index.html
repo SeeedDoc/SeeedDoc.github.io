@@ -1,0 +1,166 @@
+<html><head><meta name="viewport" content="width=device-width, initial-scale=1"><link href=//fonts.googleapis.com/css?family=Raleway:400,300,600 rel=stylesheet type=text/css><link rel="stylesheet" type="text/css" href="../common/css/normalize.css"><link rel="stylesheet" type="text/css" href="../common/css/skeleton.css"><link rel="stylesheet" type="text/css" href="../common/css/wiki.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><title>Grove - Barometer Sensor(BME280)</title><meta charset="utf-8"/></head><body><div class"container"><a href="../index.html"><img src="../common/logo.png"/></a></div><div class="mw-content-ltr container" dir="ltr" id="mw-content-text" lang="en"><h1>Grove - Barometer Sensor(BME280)</h1><div class="thumb tright"><div class="thumbinner" style="width:502px;"><img src="img/Grove-Barometer_Sensor-BMP280-700_s.jpg" width="500"/> <div class="thumbcaption"></div></div></div>
+<p>Grove - Barometer Sensor (BME280) is a breakout board for Bosch BMP280 high-precision, low-power combined humidity, pressure, and temperature sensor. This module can be used to measure temperature, atmospheric pressure and humidity accurately and fast. As the atmospheric pressure changes with altitude, it can also measure approximate <b>altitude</b> of a place. It can be connected to a microcontroller with I<sup>2</sup>C (integrated with Grove socket) or through SPI bus. We have also provided highly abstracted library to make this more product easier to use. 
+</p><p>The BME280 is an upgraded version of BMP180, and BME280 gets dramatic improvements from BMP180. BME280 comes with a smaller footprint, lower power consumption, lower noise measurements, higher resolutions for pressure and temperature, lower RMS noise, newly added SPI  bus, more measuring modes, higher measuring rate, and newly added filter against environmental interference. Since the atmosphere pressure reading is affected by altitude and temperature, we have added compensation features. Hence, Grove - Barometer Sensor (BME280) will be more reliable in providing precise temperature, atmospheric pressure values, humidity and approximate altitude data.
+</p><p>Using the sensor is easy. For <a href="http://www.seeedstudio.com/depot/Seeeduino-V42-p-2517.html?cPath=6_7">Seeeduino</a> (compliant with Arduino), just connect this breakout board using <a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> to I2C Grove connector. Then, use the provided library and example code from GitHub. If you are using an Arduino either use Base Shield v2.0 or simply connect the VCC pin to the 5V voltage pin, GND to ground, SCL to I2C Clock (Analog 5) and SDA to I2C Data (Analog 4).
+</p><p>Typical applications: Enhancement of GPS navigation, outdoor/indoor navigation, weather forecast, or any other project that requires accurate atmospheric pressure reading.
+</p>
+<h3> Version Tracker</h3>
+<table>
+<tr>
+<td>Product version </td>
+<td> Release date</td>
+<td> Support status </td>
+<td> Notes
+</td></tr>
+<tr>
+<td> Grove - Barometer Sensor (BME280) (v1.0, latest version) </td>
+<td> May 2016 </td>
+<td> Supported </td>
+<td> None
+</td></tr></table>
+<p><a href="http://www.seeedstudio.com/depot/Grove-TempHumiBarometer-Sensor-BME280-p-2653.html"><img src="../common/Get_One_Now_Banner.png" width="300"/></a>
+</p>
+<p><br/>
+</p>
+<h2> Features</h2>
+<ul><li>Get more precise temperature, atmospheric pressure values, humidity and approximate altitude data fast.
+</li><li>Grove compatible and easy to use
+</li><li>Highly abstracted library for building projects quicker
+</li></ul>
+<h2> Specifications</h2>
+<table>
+<tr>
+<td> Input voltage </td>
+<td>  3.3V or 5V
+</td></tr>
+<tr>
+<td> I/O voltage</td>
+<td> 3.3V or 5V
+</td></tr>
+<tr>
+<td> Operating current </td>
+<td> 0.4mA
+</td></tr>
+<tr>
+<td> Operating temperature  </td>
+<td>  -40 - 85 ℃
+</td></tr>
+<tr>
+<td> Atmospheric pressure sensor measurement range </td>
+<td> 300 - 1100 hPa (1 hPa= one hundred Pa) with ±1.0 hPa accuracy
+</td></tr>
+<tr>
+<td> Temperature sensor measurement range </td>
+<td> -40 - 85 ℃, with ±1.0°C accuracy
+</td></tr>
+<tr>
+<td> Humidity sensor measurements range </td>
+<td> 0% - 100% relative humidity , with ±3% accuracy
+</td></tr>
+<tr>
+<td> Measurement modes </td>
+<td> Piezo &amp; Temperature, forced or periodic
+</td></tr>
+<tr>
+<td> Chip </td>
+<td> BME280(<a href="res/Grove-Barometer_Sensor-BME280-.pdf">datasheet</a>)
+</td></tr>
+<tr>
+<td>Interface Bus </td>
+<td> SPI, I<sup>2</sup>C (use either one of them)
+</td></tr>
+<tr>
+<td> Weight </td>
+<td> 3.2 g (for breakout board), 9.3 g for whole package each piece
+</td></tr>
+<tr>
+<td> Dimensions </td>
+<td>  40 (length) × 20 (width) mm
+</td></tr></table>
+<p><b>Note 1:</b> We will show/describe how to select interface bus soon. <br/>
+<b>Note 2:</b> The altitude is calculated by a combination of temperature and atmospheric pressure. No specialized components for altitude.
+</p>
+<h3> Platforms supported (only for battery) </h3>
+<table>
+<tr>
+<td>Platform</td>
+<td> Seeeduino/Arduino </td>
+<td> Rasberry Pi </td>
+<td>  Beaglebone </td>
+<td> LinkIt ONE
+</td></tr>
+<tr>
+<td> Supported status</td>
+<td> Supported </td>
+<td> Not supported </td>
+<td> Supported </td>
+<td> Supported
+</td></tr>
+<tr>
+<td> Notes </td>
+<td colspan="5"> If no version number is mentioned for a specific platform, it means this product support all versions within this platform.
+</td></tr></table>
+<h2> Hardware Overview </h2>
+<div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove-Barometer_Sensor-BME280-Components_1200_s.jpg" width="600"/></div></div>
+<p><br/>
+</p>
+<ul><li><b>SPI soldering pads</b>, a voltage monitoring circuit.
+</li><li><b>Interface bus selection pads </b>, to select I<sup>2</sup>C bus, connect the two pads by soldering (it is connected by default); to select SPI bus, cut the two pads with a sharp knife or a soldering iron. 
+</li><li><b>Slave board address selection pads</b>, to select slave board address to avoid address collision. 
+</li></ul>
+<dl><dd><dl><dd>If you have selected I2C bus, the default address for slave board is <b>0x76</b>(right-two pads are connected). If you want to use the address <b>0x77</b>, connect only the left two (disconnect right two) by soldering. <b>Tips:</b> you can disconnect pads with just a sharp knife. 
+</dd><dd>If you have selected SPI bus, the default address for slave board is <b>0x76</b>(right-two pads are connected). If you want to use the address <b>0x77</b>, disconnect all three pads.
+</dd></dl>
+</dd></dl>
+<dl><dd><b>Note:</b> Do not touch or shake or let this product in vibration when it works. This will cause interference and will affect the accuracy of data collected.
+</dd></dl>
+<h3> <b>Package includes</b> (main parts) </h3>
+<table>
+<tr>
+<th>Parts name   </th>
+<th> Quantity
+</th></tr>
+<tr>
+<td>  Grove - Barometer Sensor (BME280) </td>
+<td> 1 piece
+</td></tr>
+<tr>
+<td> <a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> </td>
+<td> 1 piece
+</td></tr></table>
+<h2> Getting Started </h2>
+<p>Now let us run some basic examples with this module.
+</p>
+<h3> With Arduino</h3>
+<p>This section shows you how to build a simple project with Arduino platform. Even if you are using a different type of main control board, these instructions and source code are useful.
+</p>
+<h4> Materials required</h4>
+<ul><li>Grove - Barometer Sensor (BME280) × 1
+</li><li><a href="http://www.seeedstudio.com/depot/Seeeduino-V42-p-2517.html">Seeeduino 4.2</a> (fully compatible with Arduino) or Arduino UNO (other models are also fine) × 1
+</li><li><a href="/Grove-Base_shield_v2">Grove - Base Shield</a> × 1 (it is optional if you are using Seeeduino which has two I2C sockets on Seeeduino v4.2)
+</li><li>USB cable (type A to type B, for Arduino) × 1 or USB cable (Type-A to micro Type-B, for Seeeduino) × 1
+</li><li><a href="http://www.seeedstudio.com/depot/Grove-Universal-4-Pin-Buckled-5cm-Cable-5-PCs-Pack-p-925.html?cPath=98_106_57">Grove cable</a> × 1
+</li></ul>
+<h4> Connections</h4>
+<dl><dd>  Connect all parts as follows: the first picture shows connection with Seeeduino, the second one demonstrates connection with Arduino UNO:
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove-Barometer_Sensor-BME_280-Demo_1200_s.jpg" width="600"/></div></div>
+</dd><dd> <div style="margin:0px 0px; display: inline-block;"><div class="floatnone"><img src="img/Grove-Barometer_Sensor-BME_280-Demo_Arduino_UNO_1200_s.jpg" width="600"/></div></div>
+</dd></dl>
+<h4> Coding Work</h4>
+<dl><dd> You can find more demo sketches at <a href="https://github.com/Seeed-Studio/Grove_BME280/tree/master/example">https://github.com/Seeed-Studio/Grove_BME280/tree/master/example</a> and development library at <a href="https://github.com/Seeed-Studio/Grove_BME280">https://github.com/Seeed-Studio/Grove_BME280</a>
+</dd><dd> 1. A typical demo code. You can upload code to main control board with <a href="https://codebender.cc">Codebender</a>.
+</dd><dd> <iframe frameborder="0" height="500" src="https://codebender.cc/embed/sketch:310854" width="50%"></iframe>
+</dd></dl>
+<dl><dd> 3. Download and upload the code. If you do not know how to upload an Arduino sketch, please visit <a href="https://www.arduino.cc/en/Guide/Windows">https://www.arduino.cc/en/Guide/Windows</a> for Windows user or <a href="https://www.arduino.cc/en/Guide/MacOSX">https://www.arduino.cc/en/Guide/MacOSX</a> for Mac user. You can see the result as below. 
+</dd><dd> <b>Tips:</b> if you use Seeeduino, please also select <b>Boards</b> under <b>Tools</b> as you upload sketches.
+</dd></dl>
+<h2> Resources</h2>
+<ul><li><a href="res/Grove-Barometer_Sensor-BME280-v1.0_Schematics.zip">Schematic(Eagle) file</a>
+</li><li><a href="res/Grove-Barometer_Sensor-BME280-.pdf">BME280 Datasheet</a>
+</li><li><a href="https://github.com/Seeed-Studio/Grove_BME280">Library and example code</a> on GitHub
+</li><li><a href="https://www.arduino.cc/en/Reference/Wire">I<sup>2</sup>C how-to for Arduino</a>
+</li></ul>
+<h2> Is this page helpful</h2>
+<dl><dd> <iframe frameborder="0" height="500" src="https://www.surveymonkey.com/r/XX7S5RW" width="50%"></iframe>
+</dd></dl>
+Copyright (c) 2008-2016 Seeed Development Limited (<a href="http://www.seeedstudio.com">www.seeedstudio.com</a> / <a href="http://www.seeed.cc">www.seeed.cc</a>)<h6>This static html page was created from http://www.seeedstudio.com/wiki</h6></div></body></html>
