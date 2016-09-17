@@ -12,10 +12,20 @@ img {
     box-shadow: 1px 1px 1px 1px #988888;
 }
 
-table {
+table, th, td, tr, tbody {
+    table-layout:fixed;
+    width:100%;
+}
 
+td, th {
+    word-wrap: break-word;
+}
+
+.thumbinner {
+  max-width:100%;
   display: block;
-  width: auto;
+  margin: auto;
+  vertical-align:middle;
 }
 
 a:link {
