@@ -61,7 +61,7 @@ Note: when connect Xadow - BLE to Xadow Main Board, you should concern about the
 <h3>  AT Commands </h3>
 <p><b>1. Test Command</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -81,7 +81,7 @@ If module has an error, will receive: “ER” <br/>
 If Module has connected, module will disconnected from remote device, if “AT + NOTI” is setup to 1, will receive information string <br/>
 <b>2. Query module EDR address</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -98,7 +98,7 @@ If Module has connected, module will disconnected from remote device, if “AT +
 </td></tr></table>
 <p><b>3. Query module BLE address</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -115,7 +115,7 @@ If Module has connected, module will disconnected from remote device, if “AT +
 </td></tr></table>
 <p><b>4. Query/Set Authentication mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -142,7 +142,7 @@ If Module has connected, module will disconnected from remote device, if “AT +
 AT+AUTH1: every connection must with authentication. <br/>
 <b>5. Query/Set A to B mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -168,7 +168,7 @@ AT+AUTH1: every connection must with authentication. <br/>
 <p>This command must work with AT+MODE0 command. When A device (SPP mode) connect to the module and B device (BLE mode) is also connect to the module, The data string from A device send to the module will send to B device. The data string from B device send to the module is also send to the A device. <br/>
 <b>6. Query/Set baud rate</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -198,7 +198,7 @@ AT+AUTH1: every connection must with authentication. <br/>
 </td></tr></table>
 <p><b>7. Clear bond information</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -223,7 +223,7 @@ AT+AUTH1: every connection must with authentication. <br/>
 <p>BLE mode not supports it yet. <br/>
 <b>8. Clear Last Connected EDR Device Address</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -240,7 +240,7 @@ AT+AUTH1: every connection must with authentication. <br/>
 </td></tr></table>
 <p><b>9. Clear Last Connected BLE Device Address</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -257,7 +257,7 @@ AT+AUTH1: every connection must with authentication. <br/>
 </td></tr></table>
 <p><b>10. Query/Set Module DUAL Work Mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -284,7 +284,7 @@ AT+AUTH1: every connection must with authentication. <br/>
 AT+DUAL1: Only allow one connection at same time (SPP or BLE) <br/>
 <b>11. Query/Set hardware flow control switch</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -309,7 +309,7 @@ AT+DUAL1: Only allow one connection at same time (SPP or BLE) <br/>
 </td></tr></table>
 <p><b>12. Query/Set module data transmission speed mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -338,7 +338,7 @@ In high speed mode, module lost RESETB pin function, but you still could use <br
 “AT+RESET” command to reset module. <br/>
 <b>13. System Help Information</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -355,7 +355,7 @@ In high speed mode, module lost RESETB pin function, but you still could use <br
 </td></tr></table>
 <p><b>14. Query/Set module loaded notify</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -381,7 +381,7 @@ In high speed mode, module lost RESETB pin function, but you still could use <br
 <p>When “AT+INIT1” is setup, after module loaded, module will output “OK+INIT” string through UART. <br/>
 <b>15. Query/Set Module Work Mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -408,7 +408,7 @@ In high speed mode, module lost RESETB pin function, but you still could use <br
 AT+MODE1: Transfer data and response AT commands. <br/>
 <b>16. Query/Set Notify information</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -440,7 +440,7 @@ OK+LSTB ========= BLE disconnect <br/>
 OK+LSTA ========= except disconnect, module will reset after 500 ms. <br/>
 <b>17. Query/Set notify mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -466,7 +466,7 @@ OK+LSTA ========= except disconnect, module will reset after 500 ms. <br/>
 <p>This command must work with “AT+NOTI1”, if this switch is open, when the module connect to disconnect, the prompt string will include the remote address. <br/>
 <b>18. Query/Set Module EDR name</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -491,7 +491,7 @@ Default: HMSoft
 </td></tr></table>
 <p><b>19. Query/Set Module BLE name</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -516,7 +516,7 @@ Default: HMSoft
 </td></tr></table>
 <p><b>20. Query/Set PIO1 output status (System LED)e</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -542,7 +542,7 @@ Default: 0
 </td></tr></table>
 <p><b>21. Query/Set PIO output status</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -569,7 +569,7 @@ Default: 0
 </td></tr></table>
 <p><b>22. Query/Set EDR Pin Code</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -594,7 +594,7 @@ Default: 1234
 </td></tr></table>
 <p><b>23. Query/Set BLE Pin Code</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -619,7 +619,7 @@ Default: 000000
 </td></tr></table>
 <p><b>24. Query/Set UART parity bit</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -645,7 +645,7 @@ Default: 000000
 </td></tr></table>
 <p><b>25. Restore all setup value to factory setup</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -662,7 +662,7 @@ Default: 000000
 </td></tr></table>
 <p><b>26. Restart module</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -679,7 +679,7 @@ Default: 000000
 </td></tr></table>
 <p><b>27. Query BLE RSSI value</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -703,7 +703,7 @@ Xxxx: RSSI value
 This command is only used by remote Bluetooth device.
 <b>28. Query EDR RSSI value</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -725,7 +725,7 @@ Xxxx: RSSI value
 </td></tr></table>
 <p><b>29. Query Last Connected EDR Device Address</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -742,7 +742,7 @@ Xxxx: RSSI value
 </td></tr></table>
 <p><b>30. Query Last Connected BLE Device Address</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -759,7 +759,7 @@ Xxxx: RSSI value
 </td></tr></table>
 <p><b>31. Query/Set Master and Slaver Role</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -785,7 +785,7 @@ Xxxx: RSSI value
 <p>This command will take effect after module next power on or reset.
 <b>32. Query/Set EDR work mode</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -810,7 +810,7 @@ Xxxx: RSSI value
 </td></tr></table>
 <p><b>33. Query/Set UART stop bit</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>
@@ -835,7 +835,7 @@ Xxxx: RSSI value
 </td></tr></table>
 <p><b>34. Query Software Version</b>
 </p>
-<table border="1">
+<table >
 <tr>
 <th> Send
 </th>

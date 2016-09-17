@@ -16,7 +16,7 @@ Model:<a href="http://www.seeedstudio.com/depot/grove-sound-recorder-p-904.html?
 <ul><li>Toys
 </li></ul>
 <h2> Specifications</h2>
-<table border="1" cellspacing="0" width="80%">
+<table  cellspacing="0" width="80%">
 <tr>
 <th scope="col"> Item
 </th>
@@ -107,7 +107,7 @@ Step 1: Prepare the hardware:wire the connector "Control" to the digital port D2
 <br/>
 Step 2: Prepare the software. In order to control select the section to Record/Play, each decode of Sel_1 and Sel_2 point to different section.
 </p>
-<table border="1">
+<table >
 <tr>
 <td width="300">Sel_1(D2)/Sel_2(D1)
 </td>
@@ -211,7 +211,7 @@ void getCommand()
 </pre>
 <p>Now, you can begin to control the recorder, with the following command (Baud Rate:9600):
 </p>
-<table border="1">
+<table >
 <tr>
 <td width="200">Command
 </td>
@@ -299,7 +299,7 @@ You can record the 3 Sections (Section_2, Section_3, Section_4) first, and then,
 <h3> How to change the sample rate and duration for each section</h3>
 <p>You can control the quality/duration trade off by controlling the sampling frequency. Oscillator frequency can be changed by changing the resistance<b>(R7 in the PCB)</b> from the OscR pin to GND. Table summarizes resistance values and the corresponding sampling frequencies, as well as the resulting input bandwidth and duration. 
 </p>
-<table border="1">
+<table >
 <tr>
 <th>Resistance
 </th>
@@ -339,7 +339,7 @@ You can record the 3 Sections (Section_2, Section_3, Section_4) first, and then,
 <p>The R7 is 24K when it is shipped to your hand, you can change it to 38K/44K to get a longer duration of recording, with the tradeoff of lower sample rate.
 </p>
 <h2> Version Tracker</h2>
-<table border="1">
+<table >
 <tr>
 <td width="300">Revision
 </td>
