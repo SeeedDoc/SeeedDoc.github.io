@@ -31,3 +31,60 @@ td, th {
 a:link {
     text-decoration: none;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ 
+li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+ 
+li:last-child {
+  border: none;
+}
+ 
+li a {
+  text-decoration: none;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+ 
+li a:hover {
+  background: #f6f6f6;
+}
+
+.de1, .de2 {font-weight:normal;background:transparent;color:#cccccc; padding-left: 5px;}
+.kw1 {color: #cc99cc;;}
+.kw2 {color: #6699cc; font-weight: bold;}
+.kw3 {color: #f99157;}
+.kw4 {color: #f99157;}
+.co1, .co2, .coMULTI {color: #999999;}
+.es0 {color: #000033; font-weight: bold;}
+.br0 {color: #cccccc;}
+.st0 {color: #99cc99;}
+.nu0 {color: #f99157;}
+.nu16 {color: #f99157;}
+.me0 {color: #006600;}
+.me1 {color: #f99157;}
+
+div.mw-geshi div  {
+  font-family: monospace, sans-serif !important;
+  font-size: 60%;
+}
+
+.mw-geshi.mw-content-ltr
+{
+
+    padding: 1px;
+    margin-top: 2px;
+    margin-bottom: 4px;
+    box-shadow: 1px 1px 1px 1px #988888;
+    background: #2d2d2d;
+
+}
+
+#content div.mw-geshi pre {
+  font-family: monospace, sans-serif;
+}
